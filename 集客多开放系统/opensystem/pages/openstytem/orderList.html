@@ -1,0 +1,621 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+        <title></title>
+        <script src="../../js/jquery-2.1.0.js"></script> 
+        <script src="../../js/util.js" type="text/javascript"></script>
+        <link href="../../css/main.css" rel="stylesheet"/>
+        <link href="../../css/order.css" rel="stylesheet"/>
+        <!--网址跳转  -->
+        <link rel="stylesheet" type="text/css" href="http://www.jq22.com/jquery/font-awesome.4.6.0.css">
+        <script src="http://www.jq22.com/jquery/jquery-1.10.2.js"></script>
+        <!--本地跳转  -->
+        <script src="../../js/borain-timeChoice.js"></script>
+        <link rel="stylesheet" href="../../css/borain-timeChoice.css">
+    </head>
+	<body >
+		<div>
+            <div class="order_title">
+                <p class="top_tab "><span class="bottom_line" id="myOrderTab">我的订单</span><span  id="checkOrderTab">审核订单</span></p>
+            </div>
+            <div class="order_form">
+                <div class="order_form_cell">
+                    <div class="order_form_left">
+                        <span class="lspan">订单号：</span>
+                        <input id="orderNumber" type="text" class="linput">
+                    </div>
+                    <div class="order_form_right">
+                        <span class="lspan2">下单时间：</span>
+                        <input id="beginDate" type="date" class="date_input" />
+                        <span style="margin: 0 10px 0 10px">至</span>
+                        <input id="endDate" type="date"  class="date_input" />
+                        <span id="sevenDays" style="margin-left: 30px;margin-right: 20px;color:#00a9f1;    cursor: pointer;">最近7天</span>
+                        <span id="thirtyDays" style="color:#00a9f1;    cursor: pointer;">最近30天</span>
+                    </div>
+                </div>
+                <div class="order_form_cell">
+                    <div class="order_form_left">
+                        <span class="lspan">原始订单号：</span>
+                        <input id="orderoldnumber" type="text" class="linput">
+                    </div>
+                    <div class="order_form_right">
+                        <span class="lspan2">订单状态：</span>
+                        <select id="orderStatus" class="form_select" readonly="readonly">
+                            <option value="" selected="selected">全部</option>
+                            <option value="1">未转化</option>
+                            <option value="2">商家待审核</option>
+                            <option value="3">系统待审核</option>
+                            <option value="4">系统待发货</option>
+                            <option value="5">系统已发货</option>
+                            <option value="6">系统已取消</option>
+                            <option value="7">缺货</option>
+                            <option value="8">系统发货失败</option>
+                        </select>
+                        <span style="margin: 0 10px 0 10px">平台：</span>
+                        <input id="way" type="text" class="form_select" value="全部" readonly="readonly">
+                    </div>
+                </div>
+                <div class="order_form_cell">
+                    <div class="order_form_left">
+                        <span class="lspan">店铺：</span>
+                        <input id="shopname" type="text" class="linput">
+                    </div>
+                    <div class="order_form_right" style="position: relative">
+                        <span class="lspan2">拦截状态：</span>
+                        <select id="interuptedStatus" class="form_select">
+                            <option value="" selected="selected">全部</option>
+                            <option value="1">未拦截</option>
+                            <option value="2">拦截待处理</option>
+                            <option value="3">拦截可处理</option>
+                        </select>
+                        <button class="search_bnt" onclick="loadData()">筛选</button>
+                        <button class="search_bnt" onclick="clean()">清除</button>
+                    	<!-- <button class="search_bnt" id="table2Excel" style=" position: absolute;top: 0px;right:150px;width: 60px;">导出订单</button> -->
+                        <button class="search_bnt" id="table2Excel" onclick="table2Excel()" style=" position: absolute;top: 0px;right:150px;width: 60px;">导出订单</button>
+
+                        <form id="upload" enctype="multipart/form-data"  accept-charset="UTF-8" method="post" action="ggg"style="  position: absolute;top: 0px;right:50px">
+                            <div style=" font-size: 12px;border: 0;background: #f0ad4e; color: #fff;width: 60px; height: 25px; line-height: 25px;text-align: center; border-radius: 3px;cursor: pointer;margin-top:0.5px ">
+                                                        导入订单
+                            </div>
+                            <input style=" position: absolute;width: 100%;height: 100%;z-index: 999;top: 0;opacity: 0;" type="file" accept="application/vnd.openxmlformats-officedocument.spreadsheetml.sheet, application/vnd.ms-excel"name="orderExcel" id="orderExcel"/>
+                        </form>
+                     </div>
+                </div>
+            </div>
+            <div class="row" id="orderrow1">
+                <table width="100%" class="table" id="orderTableList1">
+                    <thead>
+                        <tr>
+                            <th>订单号</th>
+                            <th>原始订单号</th>
+                            <th>平台</th>
+                            <th>店铺</th>
+                            <th>买家</th>
+                            <th>下单时间</th>
+                            <th>订单状态</th>
+                            <th>实付金额</th>
+                            <th>操作</th>
+                        </tr>
+                    </thead>
+                    <tbody id="orderList">
+
+                    </tbody>
+                </table>
+                <div class="table_bottom">
+                    <div id="Pagination" class="pagination"><!-- 这里显示分页 --></div>
+                </div>
+            </div>
+            <div class="row" id="orderrow2" style="display: none">
+                <table width="100%" class="table" id="orderTableList2">
+                    <thead>
+                    <tr>
+                        <th width="20"><input type="checkbox" id="allorder1"> </th>
+                        <th>订单号</th>
+                        <th>原始订单号</th>
+                        <th>平台</th>
+                        <th>店铺</th>
+                        <th>买家</th>
+                        <th>下单时间</th>
+                        <th>订单状态</th>
+                        <th>实付金额</th>
+                        <th>操作</th>
+                    </tr>
+                    </thead>
+                    <tbody id="orderList2">
+                        
+                    </tbody>
+                </table>
+                <div class="table_bottom">
+                    <input type="checkbox" id="allorder2" style="margin-left: 10px; margin-top: 18px;"> <span style="margin-left: 10px;font-size: 14px;color: #666;cursor: pointer;" id="selectAll">全选</span>
+                    <button class="search_bnt" style="width: 100px" onclick="checkOrder()">批量审核</button>
+                    <div id="Pagination2" class="pagination"><!-- 这里显示分页 --></div>
+                </div>
+            </div>
+        </div>
+        <!--导出订单确认框111  -->
+        <div class="getListInfo" style='display:none'>
+           导出订单
+           <div class="listmain">
+                <form style="margin-bottom:5px">
+                     <span>开始日</span> 
+                     <input class="start-two" type="text" value="" /> 
+                    <!-- <input class="start" type="text" value="" /> -->
+                    <!-- <input class="end" type="text" value="" />    -->
+                </form> 
+                 <form>
+                    <span>结束日</span>
+                    <input class="start-two1" type="text" value="" />   
+                </form> 
+           </div>
+            <div class="sure" onclick="getlist()">确认</div>
+            <div class="closee" onclick="closelist()">取消</div>  
+        </div>
+    </body>
+    <script src="../../js/jquery.table2excel.min.js" type="text/javascript"></script>
+    <script src="../../js/jquery.ui.widget.js"></script>
+    <script src="../../js/jquery.iframe-transport.js"></script>
+    <script src="../../js/jquery.fileupload.js"></script>
+    <script>
+        var totalNum=0;
+        var pagesize=10;
+        var defaultOrderStatus = "";
+        $(function () {
+           $("#upload").attr('action',util.baseURL+"order/uploadOrder?open_session_id=" + commFun.getData("open_session_id"));
+
+            $('#upload').fileupload({
+                dataType: 'json',
+                add: function (e, data) {
+                    data.context = $('<p/>').text('Uploading...').appendTo(document.body);
+                    data.submit();
+                },
+                done: function (e, data) {
+                    var resu = data.result;
+                   if(resu.retCode == "1"){
+                       $.openTxt.info("导入订单成功");
+                       window.location.reload();
+                   }else{
+                       $.openTxt.info(resu.msg);
+                   }
+
+                },
+                always:function (e, data) {
+
+                },
+            });
+
+            var index = commFun.getUrlPara("back");
+            if(index && index=="2"){
+                back();
+                return false;
+            }
+            loadData();
+            $("#myOrderTab").on("click",function () {
+                clean();
+                $(this).removeClass("bottom_line").addClass("bottom_line");
+                $("#checkOrderTab").removeClass("bottom_line");
+                defaultOrderStatus = "";
+                $("#orderList2").children().remove();
+                $("#orderrow1").css("display","block");
+                $("#orderrow2").css("display","none");
+                $("#orderStatus").val(defaultOrderStatus);
+                $("#orderStatus").removeAttr("disabled");
+
+                loadData();
+            });
+            $("#checkOrderTab").on("click",function () {
+                clean();
+                $(this).removeClass("bottom_line").addClass("bottom_line");
+                $("#myOrderTab").removeClass("bottom_line");
+                defaultOrderStatus = "2";
+                $("#orderList").children().remove();
+                $("#orderrow2").css("display","block");
+                $("#orderrow1").css("display","none");
+                $("#orderStatus").val(defaultOrderStatus);
+                $("#orderStatus").attr("disabled","disabled");
+
+                loadData();
+            });
+            $("#allorder1,#allorder2").on("click",function(){
+                if(this.checked){
+                    if(this.id=="allorder1"){
+                        $("#allorder2").prop("checked", true);
+                    }else{
+                        $("#allorder1").prop("checked", true);
+                    }
+                    $("#orderList2 :checkbox").prop("checked", true);
+                }else{
+                    if(this.id=="allorder1"){
+                        $("#allorder2").prop("checked", false);
+                    }else{
+                        $("#allorder1").prop("checked", false);
+                    }
+                    $("#orderList2 :checkbox").prop("checked", false);
+                }
+            });
+        });
+
+function back(){
+        $(this).removeClass("bottom_line").addClass("bottom_line");
+        $("#myOrderTab").removeClass("bottom_line");
+        defaultOrderStatus = "2";
+        $("#orderList").children().remove();
+        $("#orderrow2").css("display","block");
+        $("#orderrow1").css("display","none");
+        $("#orderStatus").val(defaultOrderStatus);
+        $("#orderStatus").attr("disabled","disabled");
+
+        loadData();
+
+}
+       function loadData() {
+           //$.loading.info("数据加载中",2000);
+           opt.callback = pageselectCallback;
+           opt.items_per_page = pagesize;
+           var initPagination = function (num) {
+               if(defaultOrderStatus=="2"){
+                   $("#Pagination2").pagination(num, opt);
+               }else{
+                   $("#Pagination").pagination(num, opt);
+               }
+
+           };
+           getData(1);
+           if (Number(totalNum) > 0) {
+               initPagination(totalNum);
+           }
+         //  $.loading.close();
+       }
+            function getData(pagenum){
+                var orderStatus = $("#orderStatus").val();
+                var interuptedStatus = $("#interuptedStatus").val();;
+
+                var beginDate = $("#beginDate").val();
+                if(beginDate && !beginDate==""){
+                    beginDate = beginDate+ " 00:00:00";
+                }
+                var   endDate = $("#endDate").val();
+                if(endDate && !endDate==""){
+                    endDate = endDate+ " 00:00:00";
+                }
+                var   orderNumber = $("#orderNumber").val();
+                var   consignee = $("#consignee").val();
+                var   orderoldnumber = $("#orderoldnumber").val();
+                var   shopname = $("#shopname").val();
+             //   var   way = $("#way").val();
+
+                var sessionid = commFun.getData("open_session_id");
+                // alert(sessionid);
+                var url=util.baseURL+"order/getOrderList?open_session_id=" + sessionid;
+                var obj={
+                    orderStatus:orderStatus,
+                    interuptedStatus:interuptedStatus,
+                    beginDate:beginDate,
+	                endDate:endDate,
+                    orderNumber:orderNumber,
+                    consignee:consignee,
+                  //  way:way,
+                    shopname:shopname,
+                    orderoldnumber:orderoldnumber,
+                    startPage:pagenum,
+                    pageSize:10
+                };
+                sendAjax.post(url,JSON.stringify(obj),function(msg){
+                    if(msg.retCode=="1"){
+                        totalNum=msg.totalNum;
+                        if(totalNum>0){
+                            orderlistHtml(msg.orderList);
+                            return false;
+                        }
+                    }
+                    var orderList;
+                    if(defaultOrderStatus=="2"){
+                        orderList = $("#orderList2");
+                    }else{
+                        orderList = $("#orderList");
+                    }
+                    orderList.html("<tr class='grade'><td class='gra_shoper la_top'  colspan='10' style='text-align: center !important;line-height: 40px;color:orangered'>没有找到相关内容</td></tr>");
+                    return false;
+                });
+            }
+
+            function pageselectCallback(page_index, jq){
+                getData(page_index+1);
+            }
+
+            function orderlistHtml(dataList){
+                var orderCount = 0;
+                var commemtHtml ="";
+                var  productHtml ="";
+                if (dataList.length >0){
+                    commemtHtml +='';
+                    var len = dataList.length;
+                    for (var i=0; i<len;i++){
+                        var data =dataList[i];
+                        var statusid= data.statusid;
+                        commemtHtml+='<tr>';
+                        if(defaultOrderStatus=="2"){
+                            commemtHtml+='<td class="gra_num"><input type="checkbox" value="'+data.ordernumber+'" name="orderItem"></td>;'
+                        }
+                        commemtHtml+='<td class="gra_num"><p class="d_num"><span>'+ data.ordernumber+'</span></p></td>;'
+                        commemtHtml+='<td class="gra_num"><p class="d_num"><span>'+ data.oldordernumber+'</span></p></td>;'
+                        commemtHtml+='<td class="gra_num"><p class="d_num"><span>'+ data.way+'</span></p></td>;'
+                        commemtHtml+='<td class="gra_num"><p class="d_num"><span>'+ data.shopname+'</span></p></td>;'
+                        commemtHtml+='<td class="gra_num"><p class="d_num"><span>'+ data.consignee+'</span></p></td>;'
+                        commemtHtml+='<td class="gra_time ma_top"><p>'+data.orderdate+'</p></td>';
+                        commemtHtml+='<td class="gra_zt"><p>'+commFun.getOrderStatue(statusid)+'</p></td>';
+                        commemtHtml+='<td class="gra_gold la_top"><p class="gold">'+data.actualamount+'</p><p class="gold_yf">(含运费:'+ data.memberdeliverycost+')</p></td>';
+                        commemtHtml+='<td class="gra_zt" style="text-align: center !important;"><a href="openHome.html?page=orderdetail&orderNumber='+data.ordernumber+'">查看详情</a></td>';
+                        commemtHtml+='</tr>';
+                    }
+                }
+                if(defaultOrderStatus=="2"){
+                    commFun.saveData("pageFrom","2");
+                    $("#orderList2").html(commemtHtml);
+                }else{
+                    commFun.saveData("pageFrom","1");
+                    $("#orderList").html(commemtHtml);
+                }
+
+            }
+
+        function checkOrder(){
+            var list= new Array();
+
+            var sessionid = commFun.getData("open_session_id");
+            $("input:checkbox[name=orderItem]:checked").each(function(i){
+                list[i] = $(this).val();
+            });
+            if($("#all2").is(':checked')){
+                list = idList;
+            }
+            if(list.size == 0){
+                $.openTxt.info("未选中订单，请点击前面勾选框");
+            }else{
+                sendAjax.post(util.baseURL+"order/businessCheckOrder?open_session_id="+ sessionid +"&ordernumbers="+ list,'',function(msg){
+
+                    if(msg.retCode == "1"){
+                        $.openTxt.info(msg.msg,1000);
+
+                       loadData();
+                    }else{
+                        $.openTxt.info(msg.msg,1000);
+                    }
+                });
+            }
+
+        }
+
+        function clean(){
+            $("#orderStatus").val("");
+            $("#interuptedStatus").val("");
+            $("#beginDate").val("");
+            $("#endDate").val("");
+            $("#orderNumber").val("");
+            $("#consignee").val("");
+            $("#orderoldnumber").val("");
+            $("#shopname").val("");
+        }
+
+        function timeStamp2String(time){
+            var datetime = new Date();
+            datetime.setTime(time);
+            var year = datetime.getFullYear();
+            var month = datetime.getMonth() + 1 < 10 ? "0" + (datetime.getMonth() + 1) : datetime.getMonth() + 1;
+            var date = datetime.getDate() < 10 ? "0" + datetime.getDate() : datetime.getDate();
+            var hour = datetime.getHours()< 10 ? "0" + datetime.getHours() : datetime.getHours();
+            var minute = datetime.getMinutes()< 10 ? "0" + datetime.getMinutes() : datetime.getMinutes();
+            var second = datetime.getSeconds()< 10 ? "0" + datetime.getSeconds() : datetime.getSeconds();
+            return year + "-" + month + "-" + date+" "+hour+":"+minute+":"+second;
+        }
+        // 导出订单111
+        function table2Excel(){
+            // alert('导出订单')
+            $(".getListInfo").css("display","block");
+        }   
+        function closelist(){
+            $(".getListInfo").css("display","none");
+        }
+        function getlist(){
+            var sessionid = commFun.getData("open_session_id");
+            // var sessionid ='fad5d48da8f44a859837ae72540df23e'
+
+            $(".getListInfo").css("display","none");
+            var beginTime = $(".start-two").val();
+            var endTime = $(".start-two1").val();
+            // 下载表单
+            // console.log(beginTime)
+            // console.log(endTime)
+            if(beginTime != '' && endTime != ''){
+                window.location.href = util.baseURL+"order/exportOrderExcel?open_session_id="+ sessionid +"&beginTime=" + beginTime + "&endTime=" + endTime
+            }else{
+                $.openTxt.info("请检查日期时间");
+            }
+        }
+</script>
+
+<script>
+    document.getElementById('sevenDays').onclick=function(){
+        var now = getSomeDaysBefore(0);
+        var before7Days = getSomeDaysBefore(-7);
+         $("#beginDate").val(before7Days);
+        $("#endDate").val(now);
+    }
+    document.getElementById('thirtyDays').onclick=function(){
+        var now = getSomeDaysBefore(0);
+        var before30Days = getSomeDaysBefore(-30);
+        $("#beginDate").val(before30Days);
+        $("#endDate").val(now);
+    }
+
+
+//    function getNowFormatDate() {
+//
+//        var date = new Date();
+//        var seperator1 = "-";
+//        var seperator2 = ":";
+//        var month = date.getMonth() + 1;
+//        var strDate = date.getDate();
+//        if (month >= 1 && month <= 9) {
+//            month = "0" + month;
+//        }
+//        if (strDate >= 0 && strDate <= 9) {
+//            strDate = "0" + strDate;
+//        }
+//        var currentdate = date.getFullYear() + seperator1 + month + seperator1 + strDate;
+//            + " " + date.getHours() + seperator2 + date.getMinutes()
+//           + seperator2 + date.getSeconds();
+//        return currentdate;
+//    }
+    function getSomeDaysBefore(days){
+
+        var date1 = new Date(),
+            time1=date1.getFullYear()+"-"+(date1.getMonth()+1)+"-"+date1.getDate();//time1表示当前时间
+        var date2 = new Date(date1);
+        date2.setDate(date1.getDate()+days);
+        var month = date2.getMonth()+1;
+        if(month < 10){
+            month = "0" + (date2.getMonth()+1);
+        }
+        var day =date2.getDate();
+        if(day < 10){
+            day = "0" + date2.getDate();
+        }
+
+        var time2 = date2.getFullYear()+"-"+ month + "-" + day;
+
+        return time2;
+    }
+    // $("#table2Excel").click(function(){
+    //     if(defaultOrderStatus=="2"){
+    //         $("#orderTableList2").table2excel({
+    //             exclude: ".noExl",
+    //             name: "Excel Document Name",
+    //             filename: "myFileName",
+    //             exclude_img: true,
+    //             exclude_links: true,
+    //             exclude_inputs: true
+    //         });
+    //     }else{
+    //         $("#orderTableList1").table2excel({
+    //             exclude: ".noExl",
+    //             name: "Excel Document Name",
+    //             filename: "myFileName",
+    //             exclude_img: true,
+    //             exclude_links: true,
+    //             exclude_inputs: true
+    //         });
+    //     }
+    // });
+
+</script>
+ <script>
+//  level分为 YM YMD H HM 四个有效值，分别表示年月 年月日 年月日时 年月日时分,less表示是否不可小于当前时间。年-月-日 时:分 时为24小时制
+//  为确保控件结构只出现一次，在有需要的时候进行一次调用。
+    onLoadTimeChoiceDemo();
+
+    borainTimeChoice({
+        start:".start",
+        end:".end",
+        level:"YM",
+        less:true
+    });
+
+    borainTimeChoice({
+        start:".start-two",
+        end:"",
+        level:"H",
+        less:false
+    });
+    borainTimeChoice({
+        start:".start-two1",
+        end:"",
+        level:"H",
+        less:false
+    });
+
+</script> 
+
+<style>
+    *{margin:0;padding:0;list-style:none;}
+     .choiceBox{
+        z-index: 9999999!important;
+    } 
+    .borain-timeChoice{
+        z-index: 9999999!important;
+    }
+    .content{width: 100%; height: 100%; }
+    /* form{display:block; margin: 30px 20px;} */
+    input{padding: 5px;}
+    h2{line-height:30px; font-size:20px;}
+    a,a:hover{ text-decoration:none;}
+    pre{font-family:'微软雅黑'}
+    .box{width:970px; padding:10px 20px; background-color:#fff; margin:10px auto;}
+    .box a{padding-right:20px;}
+    .demo3{
+        /* width: 100%; */
+        height: 100%;
+        /* margin-left:40px; */
+        /* padding-top:40px; */
+    } 
+    h3{margin:10px 0;}
+    .layinput{height: 22px;line-height: 22px;width: 150px;margin: 0;}
+    
+    .getListInfo{
+        width: 400px;
+        height: 200px;
+         background-color: #fff ; 
+        position: fixed;
+        top: 150px;
+        left: 500px;
+        z-index: 9999;
+        /* text-align: center; */
+        border: 1px solid grey;
+        padding-top: 20px;
+        /* padding-left: 10px; */
+        /* padding-right: 10px; */
+        color:black;
+        font-weight: 700;
+        /* position: relative; */
+        text-align: center;
+    }
+    .inline{
+        margin: 0;
+        padding-top: 12px;
+    }
+    .listmain{
+        background-color: #fff;
+        width: 400px;
+        height: 110px;
+        margin-top:35px;
+        /* padding-left: 10px; */
+    }
+    .sure{
+        width: 65px;
+        height: 25px;
+          margin-left: 73px;  
+        /* margin-top: 5px; */
+        border-radius: 5px;
+         display: block; 
+        border: 1px solid #008EE5;
+        color: #008EE5;
+        text-align: center;
+        line-height: 25px;
+        font-size: 14px;
+    }
+    .closee{
+        width: 65px;
+        height: 25px;
+        position: absolute;
+        top: 186px;
+        left: 262px;
+        display: block; 
+        border: 1px solid #008EE5;
+        border-radius: 5px;
+        color: #fff;
+        background-color: #008EE5;
+        line-height: 25px;
+        font-size: 14px;
+    }
+</style>
+</html>

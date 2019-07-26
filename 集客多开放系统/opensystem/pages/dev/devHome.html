@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>登录</title>
+    <link rel="icon" href="../img/titleLogo.png" type="image/x-icon"/>
+    <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+    <meta http-equiv="X-UA-Compatible" content="IE=11;IE=10;IE=9;IE=8;IE=edge,chrome=1">
+    <meta http-equiv="Cache-Control" content="no-siteapp">
+    <meta name="keywords" content="">
+    <meta name="description" content="">
+    <link href="../../css/main.css" rel="stylesheet"/>
+    <link href="../../css/dev.css" rel="stylesheet"/>
+</head>
+<body>
+<div class="containers">
+    <div class="top">
+        <img src="../../icon/yz.png" class="top_log" id="logoImage" style="cursor: pointer;"/>
+        <img src="../../icon/txtyz.png" class="top_txt"/>
+        <div class="top_rigth2">
+            <span style="margin-right: 50px" id="home"><a href="../Home.html" style="color: #666;">首页</a></span>
+            <span style="margin-right: 110px;color: #f0ad4e;" id="devsystem">开发者后台</span>
+            <span id="user" style="margin-right: 10px "></span>|
+            <span id="exit" style="margin-right: 10px " onclick="logout()">退出</span>|
+            <span id="setup">设置</span>
+        </div>
+    </div>
+    <div class="contents">
+        <div class="left_content">
+            <ul class="menu_ul" id="menu_ul">
+                <li class="lb">我的应用</li>
+                <li>开发者信息</li>
+                <li>接入说明</li>
+                <li>API</li>
+                <li id="shopBackEnd">微商城后台</li>
+            </ul>
+        </div>
+        <div class="right_content" id="page1">
+            <div class="rigth_top">
+                <button id="creatapp">创建应用</button>
+            </div>
+            <div class="app_list">
+                <table class="table table-hover">
+                    <thead>
+                    <tr>
+                        <th>应用名称</th>
+                        <th style="text-align: center;">client_id</th>
+                        <th style="width: 300px;text-align: center;">client_secret</th>
+                        <th style="text-align: center;">状态</th>
+                        <th style="text-align: center;">操作</th>
+                    </tr>
+                    </thead>
+                    <tbody id="myApp">
+
+
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <div class="right_content" id="page6" style="display: none">
+            <div class="rigth_top">
+                <p>我的应用>>创建应用</p>
+                <p class="sqsm">
+                    应用创建标准：应用名称正式,完整，不可重复；应用申请理由描述准确，全面；回调地址真实可用；开发者联系信息真实有效；是具有标准化开发能力的第三方开发者（或服务商），御馔上架自开发请不要在此申请。</p>
+            </div>
+            <div class="app_list">
+                <div class="form_cell">
+                    <div class="form_inner">
+                        <span>应用名称:</span>
+                        <input id="appName"><em style="color: red">*</em>
+                    </div>
+                    <p class="mark">应用通过审核后，应用名称不支持修改，请慎重</p>
+                </div>
+                <div class="form_cell">
+                    <div class="form_inner">
+                        <span>网站回调:</span>
+                        <input id="callbackUrl"><em style="color: red">*</em>
+                    </div>
+                    <p class="mark">授权完成后的跳转地址，通常是应用开发者的应用地址，如：http://www.***.com/callback</p>
+                </div>
+                <div class="form_cell">
+                    <div class="form_inner">
+                        <span>应用类型:</span>
+                        <select id="appType">
+                            <option value="体育" selected="selected">体育</option>
+                            <option value="互联网">互联网</option>
+                            <option value="金融">金融</option>
+                        </select><em style="color: red">*</em>
+                    </div>
+                </div>
+                <div class="form_cell">
+                    <div class="form_inner">
+                        <span>申请理由:</span>
+                        <textarea id="reson"></textarea>
+                    </div>
+                    <p class="mark"><input type="checkbox" name="checkbox2" value="" id="agree" style="margin-right: 5px">同意《御馔开发平台合作伙伴服务协议》
+                    </p>
+                </div>
+                <button class="app_submit" onclick="creatApp()">提交</button>
+            </div>
+        </div>
+        <div class="right_content" id="page2" style="display: none">
+            <div class="rigth_top">
+                <p class="sqsm2">请完善以下信息，以便于我们为您提供更好的服务。</p>
+            </div>
+            <div class="app_list">
+                <div class="form_cell">
+                    <div class="form_inner">
+                        <span>公司名称:</span>
+                        <input id="company"><em style="color: red">*</em>
+                    </div>
+                    <p class="mark">如果为个人开发者，请填写"个人"</p>
+                </div>
+               <!-- <div class="form_cell">
+                    <div class="form_inner">
+                        <span>LOGO:</span>
+                        <img src="../../img/upload.png" style="width: 100px;height: 100px;">
+                        <input type="file" style="height: 100px;position: relative;left: -100px;opacity: 0">
+                    </div>
+                    <p class="mark">尺寸要求：220X220 正方形图片</p>
+                </div>-->
+                <div class="form_cell">
+                    <div class="form_inner">
+                        <span>开发者网站:</span>
+                        <input id="website">
+                    </div>
+                </div>
+                <div class="form_cell">
+                    <div class="form_inner">
+                        <span>联系人:</span>
+                        <input id="linkman"><em style="color: red">*</em>
+                    </div>
+                </div>
+                <div class="form_cell">
+                    <div class="form_inner">
+                        <span>服务电话:</span>
+                        <input id="telephone"><em style="color: red">*</em>
+                    </div>
+                </div>
+                <div class="form_cell">
+                    <div class="form_inner">
+                        <span>邮箱:</span>
+                        <input id="email"><em style="color: red">*</em>
+                    </div>
+                    <p class="mark">如果为个人开发者，请填写"个人"</p>
+                </div>
+                <div class="form_cell">
+                    <div class="form_inner">
+                        <span>开发者简介:</span>
+                        <textarea placeholder="非必填" id="developerDescribe"></textarea>
+                    </div>
+                </div>
+                <button class="app_submit" style="margin-left: 525px" onclick="registerDev()">提交</button>
+            </div>
+        </div>
+    </div>
+    <div class="foot2">
+        <span>©</span>上海御馔网络科技有限公司
+    </div>
+</div>
+</body>
+<script src="../../js/jquery.min.js" type="text/javascript"></script>
+<script src="../../js/util.js" type="text/javascript"></script>
+<script>
+    $("#logoImage").click(function(){
+
+        window.location.href="../openstytem/openHome.html";
+    });
+    $("#shopBackEnd").click(function(){
+        //点击图片后发送跳转到指定页面的事件。
+        window.location.href="../openstytem/openHome.html";
+    });
+    $(function () {
+        var data = commFun.getData("userData");
+        if(!data || data == ""){
+            window.location.href="../login.html"
+        };
+        var user = JSON.parse(data);
+        $("#user").html("你好，" + user.phone);
+        loadData();
+        var tabs=document.getElementById("menu_ul").children;
+        for(var i=0,len=tabs.length;i<len;i++){
+            tabs[i].onclick=(function (arg) {
+                return function () {
+                  $(this).attr("class","lb");
+                  $(this).siblings().attr("class","");
+                  switch (arg){
+                      case 0://我的应用
+                          $("#page1").css("display","block");
+                          $("#page2,#page6").css("display","none");
+                          break;
+                      case 1://开发者信息
+                          $("#page2").css("display","block");
+                          $("#page1,#page6").css("display","none");
+                          break;
+                      case 2://接入说明
+                          break;
+                      case 3://API
+                          break;
+                      case 4://微商城后台
+                          break;
+                      default:
+                          break;
+                  }
+                }
+            })(i)
+        }
+        document.getElementById("creatapp").onclick=function () {//创建应用
+            $("#page6").css("display","block");
+            $("#page2,#page1").css("display","none");
+        }
+    })
+    function creatApp(){
+        var url=util.baseURL + "user/creatMyApp?open_session_id=" + commFun.getData("open_session_id");
+        var appName=$("#appName").val();
+        if(!appName || appName==''){
+            $.openTxt.info("应用名称为必填项");
+            return false;
+        }
+        var callbackUrl=$("#callbackUrl").val();
+        if(!callbackUrl || callbackUrl==''){
+            $.openTxt.info("回调链接为必填项");
+            return false;
+        }
+        var appType=$("#appType").val();
+        if(!appType || appType==''){
+            $.openTxt.info("应用类型为必填项");
+            return false;
+        }
+        var reson=$("#reson").val();
+        if($("#agree").is(":checked")==false){
+            $.openTxt.info("请同意《御馔开发平台合作伙伴服务协议》");
+            return false;
+        }
+        var data={};
+        data.appName=appName;
+        data.callbackUrl=callbackUrl;
+        data.appType=appType;
+        data.reson=reson;
+        sendAjax.post(url,JSON.stringify(data),function(msg){
+            if(msg.retCode=="1"){
+                $.openTxt.info("您已成功创建应用");
+                window.location.href="devHome.html";
+            }else{
+                $.openTxt.info("创建应用失败，请稍后重试");
+            }
+        })
+        return false;
+    }
+
+    function registerDev(){
+        var url=util.baseURL + "user/registerDeveloper?open_session_id=" + commFun.getData("open_session_id");
+        var company =$("#company").val();
+        if(!company || company==''){
+            $.openTxt.info("公司名称为必填项");
+            return false;
+        }
+        var website=$("#website").val();
+
+        var linkman=$("#linkman").val();
+        if(!linkman || linkman==''){
+            $.openTxt.info("联系人为必填项");
+            return false;
+        }
+        var telephone=$("#telephone").val();
+        if(!telephone || telephone==''){
+            $.openTxt.info("服务电话为必填项");
+            return false;
+        }
+        var email=$("#email").val();
+        if(!email || email==''){
+            $.openTxt.info("联系邮箱为必填项");
+            return false;
+        }
+        var developerDescribe=$("#developerDescribe").val();
+        var data={};
+        data.company=company;
+        data.website=website;
+        data.linkman=linkman;
+        data.telephone=telephone;
+        data.email=email;
+        data.developerDescribe=developerDescribe;
+        sendAjax.post(url,JSON.stringify(data),function(msg){
+            if(msg.retCode=="1"){
+                $.openTxt.info("您已成功注册为开发者");
+            }else{
+                $.openTxt.info(msg.msg);
+            }
+        })
+        return false;
+    }
+    function loadData(){
+        var url=util.baseURL + "user/getMyAppInfo?open_session_id=" + commFun.getData("open_session_id");
+        sendAjax.get(url,"",function(msg){
+            if(msg.retCode=="1"){
+                applistHtml(msg.dtoList)
+            }
+    })
+    }
+    function applistHtml(dataList){
+        var commemtHtml ="";
+        if (dataList.length >0){
+            commemtHtml +='';
+            var len = dataList.length;
+            for (var i=0; i<len;i++){
+                var data =dataList[i];
+                if(data.state == "1"){
+                    commemtHtml+=' <tr>  <td><span>'+data.appName+'</span></td> <td style="text-align: center;"><span>'+data.appid+'</span></td> <td ><p style="width:250px">'+data.secret+'</p></td> ';
+                    commemtHtml+= '<td style="text-align: center;"><span>审核通过</span></td>';
+                    commemtHtml+='  <td style="text-align: center;"><span style="color: blue" class="tabinner" onclick="delApp(\''+ data.appid +'\')">删除</span></td> </tr>';
+                }else{
+                    commemtHtml+=' <tr>  <td><span>'+data.appName+'</span></td> <td style="text-align: center;"><span>……</span></td> <td ><p style="width:250px;text-align: center">……</p></td> ';
+                    commemtHtml+= '<td style="text-align: center;"><span>审核中</span></td>';
+                    commemtHtml+='  <td style="text-align: center;"><span class="tabinner"></span></td> </tr>';
+                }
+
+
+            }
+        }else{
+            commemtHtml = '<tr class="grade"><td class="gra_shoper la_top"  colspan="8" style="text-align: center !important;line-height: 40px;color:orangered">还没有应用，点击“创建应用”立刻创建一个应用</td></tr>")';
+
+        }
+        $("#myApp").html(commemtHtml);
+    }
+    function logout(){
+        commFun.delData("open_session_id");
+        commFun.delData("userData");
+        commFun.delData("phone");
+        window.location.href="../Home.html";
+    }
+    function delApp(appid){
+        var data = {};
+        data.appId = appid;
+        var url=util.baseURL + "user/delApp?open_session_id=" + commFun.getData("open_session_id");
+        sendAjax.get(url,data,function(msg){
+            if(msg.retCode=="1"){
+                $.openTxt.info("删除应用成功");
+                loadData();
+            }else{
+                $.openTxt.info(msg.msg);
+            }
+        })
+    }
+</script>
+
+
+</html>

@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+</head>
+<body>
+    <div class="statustar">
+       <p>我的资产</p>
+    </div>
+    <div class="money_card">
+        <div class="money_shop">
+            <img src="../../icon/yz.png" style="width: 60px;height: 60px">
+            <div class="money_right" >
+              <!--  <p><span>店铺名称：</span><span>谁单小店</span></p>-->
+                <p><button class="interbnt">充值</button></p>
+            </div>
+        </div>
+        <div class="money_cardb">
+            <div class="money_z1">
+                <p>当前余额</p>
+                <p style="font-size: 16px;font-weight: bold;color: #f0ad4e"><span id="amount"></span>元</p>
+            </div>
+            <div class="money_z1">
+                <p>已消费金额</p>
+                <p style="font-size: 16px;font-weight: bold;color: #f0ad4e"><span id="costamount"></span>元</p>
+            </div>
+            <div class="money_z1">
+                <p>最后充值时间</p>
+                <p><span id="lastrechargedate"></span></p>
+            </div>
+        </div>
+    </div>
+    <div class="order_title"  style="margin-top: 10px;font-size: 14px">
+        <p class="top_tab " id="top_tab"><span class="bottom_line" id="producttab1">充值记录</span><span  id="producttab2">消费记录</span></p>
+    </div>
+    <div class="orderdetail">
+        <div class="order_products">
+            <div class="pd_table">
+                <table class="table2" style="margin-top: 0">
+                    <thead>
+                    <tr>
+                        <th>单号</th>
+                        <th>变更前金额</th>
+                        <th>变更金额</th>
+                        <th>变更后金额</th>
+                        <th>变更时间</th>
+                    </tr>
+                    </thead>
+                    <tbody id="moneyList">
+
+
+                    </tbody>
+                </table>
+                <div class="table_bottom">
+                    <div id="Pagination" class="pagination"><!-- 这里显示分页 --></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+<script>
+var type=1
+    $(function () {
+        loadData()
+        type = 1;
+        $("#producttab1").on("click", function () {
+            type = 1;
+            $("#top_tab span").attr("class", "");
+            $(this).attr("class", "bottom_line");
+            loadData()
+        });
+        $("#producttab2").on("click", function () {
+            type = 0;
+            $("#top_tab span").attr("class", "");
+            $(this).attr("class", "bottom_line");
+            loadData()
+        })
+    });
+
+        var totalNum=0;
+        var pagesize=10;
+
+        function loadData() {
+            opt.callback = pageselectCallback;
+            opt.items_per_page = pagesize;
+            var initPagination = function (num) {
+                $("#Pagination").pagination(num, opt);
+            };
+            getData(1);
+            if (Number(totalNum) > 0) {
+                initPagination(totalNum);
+            }
+        }
+
+        function getData(pagenum){
+            var sessionid = commFun.getData("open_session_id");
+            // alert(sessionid);
+
+            var url=util.baseURL+"user/amountChangeList?open_session_id=" + sessionid;
+            url = url + "&pageNum="+pagenum+"&pageSize=10&type="+type;
+            sendAjax.get(url,'',function(msg){
+                if(msg.retCode=="1"){
+                    $("#amount").html(msg.businessInfo.amount);
+                    $("#costamount").html(msg.businessInfo.costamount);
+                    $("#lastrechargedate").html(msg.businessInfo.lastrechargedate);
+                    totalNum=msg.totalNum;
+                    if(totalNum>0){
+                        moneylistHtml(msg.dtoList);
+                    }else{
+                       /* $("#orderList").html("<tr class='grade'><td class='gra_shoper la_top'  colspan='8' style='text-align: center !important;line-height: 40px;color:orangered'>没有找到相关内容</td></tr>");
+                  */  }
+                }else{
+                   /* $("#orderList").html("<tr class='grade'><td class='gra_shoper la_top'  colspan='8' style='text-align: center !important;line-height: 40px;color:orangered'>没有找到相关内容</td></tr>");
+               */ }
+            });
+        }
+
+        function pageselectCallback(page_index, jq){
+            getData(page_index+1);
+        }
+
+        function moneylistHtml(dataList) {
+
+            var commemtHtml = "";
+
+            if (dataList.length > 0) {
+                commemtHtml += '';
+                for (var i = 0, len = dataList.length; i < len; i++) {
+                    var data = dataList[i];
+                    commemtHtml+='<tr>';
+                    commemtHtml+='<td class="gra_num" style="text-align: center"><p class="d_num"><span>'+ data.ordernumber+'</span></p></td>;'
+                    commemtHtml+='<td class="gra_num"><p class="d_num"><span>'+ data.beforeamount+'</span></p></td>;'
+                    commemtHtml+='<td class="gra_num"><p class="d_num"><span>'+ data.amount+'</span></p></td>;'
+                    commemtHtml+='<td class="gra_num"><p class="d_num"><span>'+ data.afteramount+'</span></p></td>;'
+                    commemtHtml+='<td class="gra_time ma_top"><p>'+data.postdate+'</p></td>';
+                    commemtHtml+='</tr>';
+
+                }
+
+            }
+
+            $("#moneyList").html(commemtHtml);
+
+
+    }
+</script>
+</html>

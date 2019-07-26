@@ -1,0 +1,150 @@
+.left_content {
+    width: 15%;
+    float: left;
+    height: 100%;
+}
+
+.right_content {
+    width: 85%;
+    float: right;
+}
+
+.menu_ul {
+    margin-left: 10px;
+    color: #666;
+    margin-top: 30px;
+}
+
+.menu_ul li {
+    margin-bottom: 30px;
+    padding-left: 5px;
+    cursor: pointer;
+}
+
+.menu_ul > .lb {
+    color: #f0ad4e;
+    border-left: 1px solid #f0ad4e;
+}
+
+.right_content {
+    padding-top: 30px;
+}
+
+.rigth_top {
+    border-bottom: 2px #eee dashed;
+    width: 90%;
+}
+
+.rigth_top button {
+    border: 0;
+    background: #f0ad4e;
+    width: 90px;
+    height: 35px;
+    margin-bottom: 10px;
+    color: #fff;
+    font-size: 15px;
+    border-radius: 3px;
+    cursor: pointer;
+    outline: none;
+}
+
+.table {
+    background: #FFF;
+    font-size: 12px;
+    border-top: 1px solid #e1e6eb;
+    margin-top: 8px;
+    border: 1px solid #e1e6eb;
+    width: 90%;
+
+}
+
+.table tr {
+    height: 50px;
+}
+
+.table thead tr th {
+    padding: 8px 8px;
+    font-weight: normal;
+    color: #666;
+    border-bottom: 1px solid #e1e6eb;
+    /*background-color: #F5F6FA;*/
+    width: 20%;
+    text-align: left;
+}
+
+.table tbody tr td {
+    padding: 12px 8px;
+    border-top: 0px;
+    border-bottom: 1px solid #e1e6eb;
+    vertical-align: middle;
+    width: 20%;
+    color: #666;
+}
+
+.tabinner {
+    color: #00a9f1;
+    margin-right: 20px;
+    cursor: pointer;
+}
+
+.sqsm {
+    color: #666;
+    font-size: 13px;
+    margin-bottom: 15px;
+    margin-top: 15px
+}
+.form_cell{
+    width: 90%;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+.form_inner{
+    width: 100%;
+    display: flex;
+}
+.form_inner span{
+    display: inline-block;
+    width: 90px;
+    font-size: 15px;
+    line-height: 30px;
+}
+.form_inner input{
+    display: inline-block;
+    flex: 1;
+    height: 30px;
+}
+.form_inner select{
+    height: 30px;
+    width: 120px;
+    border: 1px #eee solid;
+}
+.form_inner textarea{
+    width: 500px;
+    height: 200px;
+    border: 1px #eee solid;
+    padding: 10px;
+}
+.mark{
+    font-size: 12px;
+    color: #666;
+    margin-left: 90px;
+    margin-top: 10px;
+}
+.app_submit{
+    border: 0;
+    background: #f0ad4e;
+    width: 90px;
+    height: 35px;
+    margin-top: 20px;
+    color: #fff;
+    font-size: 15px;
+    border-radius: 3px;
+    margin-left: 90px;
+    cursor: pointer;
+    outline: none;
+}
+.sqsm2{
+    color: #666;
+    font-size: 14px;
+    margin-bottom: 15px;
+}

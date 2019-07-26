@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+	<head>
+		<meta charset="UTF-8">
+		<title>注册</title>
+		<link rel="icon" href="../img/titleLogo.png" type="image/x-icon"/>
+		<meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+		<meta http-equiv="X-UA-Compatible" content="IE=11;IE=10;IE=9;IE=8;IE=edge,chrome=1">
+		<meta http-equiv="Cache-Control" content="no-siteapp">
+		<meta name="keywords" content="">
+		<meta name="description" content="">
+		<link href="../css/bootstrap.css" rel="stylesheet" />
+		<link href="../css/login.css" rel="stylesheet" />
+		<link href="../css/register.css" rel="stylesheet" />
+		<link href="../css/main.css" rel="stylesheet" />
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+	</head>
+	<body>
+		<div class="containers">
+		  	<div class="top">
+  				<img src="../icon/yz.png" class="top_log"  id="logoImage"/>
+  				<img src="../icon/txtyz.png" class="top_txt" />
+  				<span class="top_span">注册</span>
+  				<div class="top_zc">
+  					已有账号，立即登录
+  				</div>
+  			</div>
+  			<div class="progress_top">
+  				<ul>
+  					<li><span class="on">1</span><p class="oncor" style="right: 10px;">创建账户</p><label class="on"></label></li>
+  					<li><span class="on">2</span><p class="oncor" style="right: 25px;">设置身份信息</p><label></label></li>
+  					<li><span>3</span><p style="left: 5px;">成功</p></li>
+  				</ul>
+  			</div>
+  			<div class="contents">
+  				<form role="form" enctype="multipart/form-data"  id="myForm" accept-charset="UTF-8">
+	  				<div class="con_top">
+						御馔账户名<span id="phone"></span>
+	  				</div>
+	  				<div class="con_pwd in">
+	  					<p class="ts oncor">设置登录密码<span style="color: #999;">登录时需验证，保护账户信息</span></p>
+	  					<span class="pwd_span">登录密码：<input type="password"  class="inps" name="passwd" id="passwd"/><em style="color: red">*</em></span>
+	  					<span class="pwd_span" style="right: 17px;">再一次输入：<input type="password" class="inps" name="checkpasswd" id="checkpasswd"/><em style="color: red">*</em></span>
+	  				</div>
+	  				<div class="sf in">
+	  					<p class="ts oncor">设置身份信息</p>
+	  					<span class="pwd_span" style="right: 17px;">身份证姓名：<input type="text"   placeholder="请输入身份证姓名" class="inps" name="realName" id="realName"/><em style="color: red">*</em></span>
+	  					<span class="pwd_span" style="right: 17px;">身份证号码：<input type="text"   placeholder="请输入身份证号码" class="inps" name="idNumber" id="idNumber"/><em style="color: red">*</em></span>
+				        <span class="chect_txt">身份证是否长期 :</span>
+			            <span class="chect">
+			            	<input type="radio" value="1"  name="longTerm" checked="checked">
+			              	长期
+			            </span>
+			            <span class="chect">
+			            	<input type="radio" value="0"  name="longTerm">
+			            	有效期截止
+			            </span>
+						<span class="pwd_span" style="right: 34px;">身份证到期日：<input name="idcardValidity" type="text"  placeholder="例：20140908" class="inps" id="idcardValidity"/></span>
+						<span class="pwd_span">联系电话：<input type="text" name ="telephone" placeholder="请输入您的联系电话" class="inps" id="telephone"/><em style="color: red">*</em></span>
+						<span class="pwd_span">联系地址：<input type="text" name="address"  placeholder="请输入您的联系地址" class="inps" id="address"/><em style="color: red">*</em></span>
+						<div class="file_div">
+							<div class="file1 fh">
+								<img src="../img/1.jpg" class="file_img" id="ImgPr1"/>
+								<p>身份证正面照片</p>
+								<div class="btn_file">单击上传<input name="idcardImage1" id="idcardImage1"class="ipt_none" type="file"/></div>
+							</div>
+							<div class="file2 fh">
+								<img src="../img/3.jpg" class="file_img" id="ImgPr2"/>
+								<p>身份证反面照片</p>
+								<div class="btn_file">单击上传<input name="idcardImage2" id="idcardImage2"class="ipt_none" type="file"/></div>
+							</div>
+							<div class="file3 fh">
+								<img src="../img/2.jpg" class="file_img" id="ImgPr3"/>
+								<p>手持身份证照片</p>
+								<div class="btn_file">单击上传<input name="idcardImage3" id="idcardImage3"class="ipt_none" type="file"/></div>
+							</div>
+						</div>
+						<div class="pormpt">提示语：请本人手持身份证拍照后上传照片，手执身份证照片要求五官清晰可见；双手手臂完整露出，身份证置于胸前，政件正面信息清晰可见；身份证照片支持ipg，png或bmp格式，单个文件大小≤1MB。</div>
+						<div class="checkboxs">
+		  					<input id="agree" type="checkbox" name="checkbox1" value="checkbox"> 同意《平台协议》
+		  				</div>
+		  				<div class="fots">
+		  					<button class="on" onclick="return formSubmit()">提交</button>
+		  				</div>
+			        </div>
+  				</form>
+  			</div>
+  			<div class="foot">
+  				<span>©</span>上海御馔网络科技有限公司
+  			</div>
+		</div>
+	</body>
+	<script src="../js/jquery.min.js" type="text/javascript"></script>
+	<script src="../js/util.js" type="text/javascript"></script>
+	<script src="../js/imge.preview.js" type="text/javascript"></script>
+	<script src="../js/jquery-form.js" type="text/javascript"></script>
+        <script>
+            $("#logoImage").click(function(){
+                //点击图片后发送跳转到指定页面的事件。
+                window.location.href="index.html";
+            });
+        $(function(){
+			var phoneValue = commFun.getUrlPara("phone");
+			$("#phone").html(phoneValue);
+            $("#idcardImage1").uploadPreview({ Img: "ImgPr1", Width: 165, Height: 120 });
+            $("#idcardImage2").uploadPreview({ Img: "ImgPr2", Width: 165, Height: 120 });
+            $("#idcardImage3").uploadPreview({ Img: "ImgPr3", Width: 165, Height: 120 });
+        })
+        function formSubmit() {
+
+            var checkpasswd = $("#checkpasswd").val();
+           	var passwd = $("#passwd").val();
+           	var idNumber = $("#idNumber").val();
+         	var formData = new FormData($("#myForm")[0]);
+          	formData.append("phone",commFun.getData("phone"));
+            formData.append("accountType",1);
+            if (passwd == "" || checkpasswd =="" ){
+                $.openTxt.info("密码不可以为空",2000);
+               return false;
+            }
+            if(passwd != checkpasswd){
+                $.openTxt.info("两次密码不一致",2000);
+               return false;
+			}
+            if($('input:radio:checked').val()==0){
+                var idcardValidity = $("#idcardValidity").val();
+                if(!idcardValidity || idcardValidity == ''){
+                    $.openTxt.info("非长期有效身份证必须填写身份证到期时间",1000);
+                   return false;
+				}
+
+			}
+            if (!idNumber || idNumber =="" ){
+                $.openTxt.info("身份证号码不可以为空",1000);
+                return false;
+            }else{
+
+                if(idNumber.length == 15 || idNumber.length == 18){
+
+				}else{
+                    $.openTxt.info("身份证号码位数不正确",1000);
+                    return false;
+				}
+			}
+            var checkBoxValue = $("#agree").is(':checked');
+            if (!checkBoxValue ){
+                $.openTxt.info("请阅读协议且同意",1000);
+                return false;
+            }
+
+            sendAjax.postImage(util.baseURL + "user/uploadImage",formData,function (msg) {
+
+                if(msg.retCode=="1"){
+                    window.location.href="register_success.html";
+                    return false;
+                }else{
+
+                    $.openTxt.info(msg.msg,1000);
+                    return false;
+                }
+            });
+            return false;
+        }
+
+	</script>
+
+</html>

@@ -1,0 +1,106 @@
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <script src="../../js/util.js" type="text/javascript"></script>
+    <link href="../../css/main.css" rel="stylesheet"/>
+</head>
+<body>
+    <div class="statustar">
+       <p>店铺管理</p>
+    </div>
+    <div class="orderdetail">
+        <div class="order_products">
+            <div class="pd_table">
+                <table class="table2">
+                    <thead>
+                    <tr>
+                        <th width="50">序号</th>
+                        <th>店铺名称</th>
+                        <th>所属平台</th>
+                        <th>状态</th>
+                        <th>创建时间</th>
+                        <th>上次订单同步时间</th>
+                        <th>操作</th>
+                    </tr>
+                    </thead>
+                    <tbody id="shopList">
+                    </tbody>
+                </table>
+
+            </div>
+        </div>
+    </div>
+</body>
+
+<script>
+    $(document).ready(function() {
+        loadData();
+    });
+
+    function loadData() {
+        var sessionid = commFun.getData("open_session_id");
+        var url = util.baseURL + "shop/getShopList?open_session_id=" + sessionid;
+        var obj = {};
+        sendAjax.get(url, JSON.stringify(obj), function (msg) {
+            if (msg.retCode == "1") {
+                var length = msg.shopInfoList.length;
+                if (length > 0) {
+                    shoplistHtml(msg.shopInfoList);
+                } else {
+                    $("#orderList").html("<tr class='grade'><td class='gra_shoper la_top'  colspan='8' style='text-align: center !important;line-height: 40px;color:orangered'>没有找到相关内容</td></tr>");
+                }
+            } else {
+            	 if(!msg.retCode){
+                     dejson(msg);
+					}
+            	 }
+        });
+    }
+        function shoplistHtml(dataList){
+            var commemtHtml ="";
+            var len = dataList.length;
+            for (var i=0; i<len;i++){
+                var data =dataList[i];
+                var status = "";
+                var action = "";
+                if(data.isEnabled == 0){
+                    status = '禁用';
+                    action = '启用';
+                }else{
+                    status = '启用';
+                    action = '禁用';
+                }
+                commemtHtml+='<tr>';
+                commemtHtml+='<td class="gra_num"><p class="d_num"><span>'+ data.id+'</span></p></td>;'
+                commemtHtml+='<td class="gra_num"><p class="d_num"><span class="test">'+ data.shopName+'</span></p></td>;'
+                commemtHtml+='<td class="gra_num"><p class="d_num"><span></span></p></td>;'
+                commemtHtml+='<td class="gra_num" style="text-align: center !important><p class="d_num"><span>'+ status+'</span></p></td>;'
+                commemtHtml+='<td class="gra_time ma_top"><p>'+data.postDate+'</p></td>';
+                commemtHtml+='<td class="gra_time ma_top"><p>'+data.lastSyncTime+'</p></td>';
+                commemtHtml+='<td class="gra_time ma_top"><p style="text-align: center;cursor:pointer;color: blue" onclick="delOrAddShop(\''+data.shopName+'\')">'+action+'</p></td></tr>';
+            }
+            $("#shopList").html(commemtHtml);
+        }
+
+    function delOrAddShop(shopName){
+        var sessionid = commFun.getData("open_session_id");
+        var url=util.baseURL+"shop/delOrAddShop?open_session_id=" + sessionid +"&shopName="+shopName;
+        sendAjax.get(url,"",function (msg) {
+            if(msg.retCode=="1"){
+                $.openTxt.info("店铺操作成功");
+                window.location.reload();
+            }else{
+                $.openTxt.info("店铺操作失败");
+            }
+        });
+    }
+    function dejson(msg){
+        var js =  eval('(' + msg + ')');
+       if(js.msg == 'Please login first'){
+           $.openTxt.info(msg.msg);
+           window.location.href = "../login.html";
+       }
+     }
+</script>
+</html>

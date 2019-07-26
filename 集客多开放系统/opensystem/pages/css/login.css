@@ -1,0 +1,169 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: "Helvetica Neue", Helvetica, "Nimbus Sans L", Arial, "Liberation Sans", "PingFang SC", "Hiragino Sans GB", "Source Han Sans CN", "Source Han Sans SC", "Microsoft YaHei", "Wenquanyi Micro Hei", "WenQuanYi Zen Hei", "ST Heiti", SimHei, "WenQuanYi Zen Hei Sharp", sans-serif;
+
+}
+
+body, ol, ul, h1, h2, h3, h4, h5, h6, p, th, td, dl, dd, form, fieldset, legend, input, textarea, select {
+    margin: 0;
+    padding: 0
+}
+
+a {
+    color: #2d374b;
+    text-decoration: none
+}
+
+a:hover {
+    color: #cd0200;
+    text-decoration: underline
+}
+
+em {
+    font-style: normal
+}
+
+li {
+    list-style: none
+}
+
+input,select {
+    outline: none;
+}
+
+img {
+    border: 0;
+    vertical-align: middle
+}
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0
+}
+
+p {
+    word-wrap: break-word
+}
+
+.top {
+    height: 106px;
+    border-bottom: 1px solid #eee;
+    margin-bottom: 45px;
+}
+
+img.top_log {
+    width: 59px;
+    height: 61px;
+    margin-top: 33px;
+    cursor: pointer !important;
+}
+
+img.top_txt {
+    margin-top: 40px;
+    margin-left: 10px;
+    margin-right: 20px;
+}
+
+span.top_span {
+    position: relative;
+    font-size: 21px;
+    top: 24px;
+    right: 10px;
+    display: inline-block;
+    border-left: 1px solid #eee;
+    padding-left: 10px;
+}
+
+.top_zc {
+    float: right;
+    margin-top: 50px;
+    font-size: 18px;
+    color: #eabb28;
+}
+
+.containers {
+    margin: auto;
+    width: 980px;
+}
+
+.content {
+    background: #fff;
+    padding-top: 60px;
+    border: 1px solid #eee;
+    padding-bottom: 100px;
+}
+
+.content ul {
+    width: 441px;
+    margin: auto;
+}
+
+.content li {
+    height: 60px;
+    border-bottom: 1px solid #eee;
+    margin-top: 30px;
+}
+
+span.c_span {
+    line-height: 60px;
+    margin-right: 54px;
+    font-size: 15px;
+}
+
+select {
+    border: 0;
+    width: 50px;
+    font-size: 15px;
+}
+
+.c_ipt {
+    border: 0;
+    height: 40px;
+    text-indent: 10px;
+    width: 200px;
+}
+
+.phone_ipt {
+    margin-left: 10px;
+}
+
+.yzm_ipt {
+    margin-left: 12px;
+    width: 150px;
+}
+
+.fot_btn {
+    width: 441px;
+    height: 58px;
+    margin: auto;
+}
+
+.fot_btn button {
+    width: 100%;
+    height: 100%;
+    background: #eab828;
+    border: 0;
+    font-size: 24px;
+    color: #fff;
+    border-radius: 5px;
+}
+
+.dl {
+    width: 441px;
+    margin: auto;
+    height: 100px;
+    line-height: 100px;
+    font-size: 15px;
+}
+
+.dl span {
+    float: right;
+}
+
+img.yzm_img {
+    width: 133px;
+    float: right;
+    height: 40px;
+    margin-top: 10px;
+}

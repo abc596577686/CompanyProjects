@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+</head>
+<body>
+<div>
+    <a  href="#" id="backBtn"> <img style="width: 22px;position: absolute;top: 20px;cursor:pointer" src="../../img/back.png"></a>
+</div>
+    <div class="statustar" style=" padding-left: 25px;">
+       <p><span class="pddt_title">订单号：</span><span id="ordernumber"></span></p>
+    </div>
+    <!--<div class="possbar">-->
+        <!--<p class="posimgp">-->
+            <!--<img src="../../img/state2.png">-->
+        <!--</p>-->
+    <!--</div>-->
+    <div class="orderdetail">
+        <div class="orderdetail_top">
+            <p class="margin">订单概况</p>
+        </div>
+        <div class="orderdetail_content">
+            <div class="pd_conleft">
+                <p><span class="pddt_title">订单状态：</span><span id="statusid"></span></p>
+                <p><span class="pddt_title">应付金额：</span>¥&nbsp<span id="actualamount"></span> (含运费&nbsp¥&nbsp<span id="memberdeliverycost"></span>)</p>
+                <p><span class="pddt_title">收货人：</span><input id="consignee" style="width: 100px" value=""></p>
+                <p><span class="pddt_title">手机号：</span><input id="mobilephone" style="width: 100px" value=""></p>
+                <p><span class="pddt_title">支付方式：</span><span  id="paymenttype"></span></p>
+                <p><span class="pddt_title">物流方式：</span><span>快递配送</span></p>
+                <p><span class="pddt_title">收货信息：</span><input id="address" value=""></p>
+                <p><span class="pddt_title">身份证：</span><input id="identitycard" value=""></p>
+                <p><span class="pddt_title">真实姓名：</span><input id="realname" value=""></p>
+                <p><span class="pddt_title">买家留言：</span><span  id="buyermemo"></span></p>
+                <p class="qdxiugai" onclick = 'update()'>确定修改</p>
+            </div>
+            <div class="pd_conright" id="logistics">
+                <p>物流信息:</p>
+                <div>
+                    <p><span>包裹：</span><span id ="logisticname"></span> <span id ="expressnumber"></span></p>
+                </div>
+            </div>
+        </div>
+        <div class="order_products">
+            <div class="pd_table">
+                <table class="table2 table-hover">
+                    <thead>
+                    <tr>
+                        <th width="50"></th>
+                        <th style="text-align: left">商品名称</th>
+                        <th>原价（元）</th>
+                        <th>数量</th>
+                        <th>让利金额（元）</th>
+                        <th>小计（元）</th>
+                        <th>操作</th>
+                    </tr>
+                    </thead>
+                    <tbody id="orderitems">
+                    <tr>
+                        <td><img src="../../icon/yz.png" style="width: 40px;height:40px;margin: 10px"><span>商品名称商品名称</span></td>
+                        <td><span>56128727</span></td>
+                        <td><span>TYGHIUOGGF</span></td>
+                        <td><span>正常</span></td>
+                    </tr>
+
+                    </tbody>
+                </table>
+
+            </div>
+            <div class="pd_bottom">
+                <div class="pd_bottom_inner">
+                    <p><span class="pddt_title">商品小计：</span>¥<span id="sumAmount"></span>
+                        <button class="search_bnt" style="width: 100px;display: none" onclick="checkOrder()" id="checkOrder">审核</button>
+                        <!--<button class="search_bnt" style="width: 100px;" onclick="editorderItem()" id="editbnt">修改</button>-->
+                    </p>
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="openModal2" class="modalDialog2" style="display: none">
+        <div>
+            <a href="#" title="Close" class="close" onclick="reshpage2()"><img src="../../img/close.jpeg" width="40px"></a>
+            <div class="delago_centent" id="modalcontent2">
+                <div><span class="mdspan">时间</span><span>地点和跟踪进度</span></div>
+                <div>
+                    <p><span class="mdspan">2017-03-06 12:34:32</span><span>在上海闵行分公司进行扫描</span></p>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+<script>
+    $(function () {
+        var pageFrom = commFun.getData("pageFrom");
+        $('#backBtn').attr("href","openHome.html?page=order&back="+pageFrom );
+        commFun.delData("pageFrom");
+
+       $("#showwuliu").click(function () {
+           $("#openModal2").css("display","block");
+       })
+
+        var orderNumber = commFun.getUrlPara("orderNumber");
+        var data =JSON.stringify({'orderNumber':orderNumber});
+        sendAjax.post(util.baseURL + "order/getOrderInfo",data,function(msg){
+            if(msg.retCode=="1"){//请求成功
+                var orderDetail = msg.orderDetail;
+                $("#ordernumber").html(orderDetail.ordernumber);
+                $("#actualamount").html(orderDetail.actualamount);
+                $("#memberdeliverycost").html(orderDetail.memberdeliverycost);
+                var statusid= orderDetail.statusid;
+                if(statusid=="2"){
+                    $("#checkOrder").show();
+                }
+
+                $("#statusid").html(commFun.getOrderStatue(statusid));
+                $("#consignee").val(orderDetail.consignee);
+                $("#mobilephone").val(orderDetail.mobilephone);
+                $("#paymenttype").html(orderDetail.paymenttype);
+                $("#address").val(orderDetail.address);
+                $("#buyermemo").html(orderDetail.buyermemo);
+                $("#identitycard").val(orderDetail.identitycard);
+                $("#realname").val(orderDetail.realname);
+                $("#logisticname").html(orderDetail.logisticname);
+                $("#expressnumber").html(orderDetail.expressnumber);
+                $("#sumAmount").html(orderDetail.sumAmount);
+                $("#memberdeliverycost1").html(orderDetail.memberdeliverycost);
+                $("#actualamount1").html(orderDetail.actualamount);
+                var html="";
+                var orderitems = orderDetail.orderItemList;
+                var length = orderitems.length;
+                for(var i=0;i<length;i++){
+                    var each = orderitems[i];
+                    var id = "amount" + i;
+                    html+='<tr>'+
+                    '<td width="50"><img src="../../icon/yz.png" style="width: 40px;height:40px;margin: 10px"></td>'+
+                    '<td style="text-align: left"><span>'+each.productname+'</span></td>'+
+                    '<td><span>'+each.price+'</span></td>'+
+                    '<td><span>'+each.ordercount+'</span></td>'+
+                    '<td><span>'+each.discountfee+'</span></td>'+
+                   /* '<td><span>'+each.amount+'</span></td>'+*/
+                    '<td><input id="'+id+'" style="text-align: center;border: 1px #999 solid;height: 30px;width: 80px;" value="'+each.amount+'"></td>';
+                    if(statusid=="2") {
+                        html+= '<td style="color: #00a9f1;cursor: pointer" onclick="editorderItem(' + each.itemid + ', ' + id + ')"><span>修改</span></td>';
+                    }
+                    html+= '</tr>';
+                }
+                $("#orderitems").html(html);
+
+            }else{
+
+            }
+        });
+    })
+    function reshpage2() {
+        $("#openModal2").css("display","none");
+    }
+
+    function update() {
+        var consignee = $("#consignee").val();
+        var mobilephone = $("#mobilephone").val();
+        var address = $("#address").val();
+        var identitycard = $("#identitycard").val();
+        var realname = $("#realname").val();
+        var ordernumber = $("#ordernumber").html();
+
+        var sessionid = commFun.getData("open_session_id");
+        var url = util.baseURL+"order/editOrder?open_session_id=" + sessionid;
+
+        var data =JSON.stringify({'ordernumber':ordernumber,'consignee':consignee, 'mobilephone':mobilephone, 'address':address, 'identitycard':identitycard,  'realname':realname});
+        sendAjax.post(url,data,function(resp){
+            if(resp.retCode=="1") {//请求成功
+                $.openTxt.info(resp.msg);
+                window.location.reload();
+            }else{
+                $.openTxt.info(resp.msg);
+            }
+        });
+    }
+
+    function checkOrder(){
+        var list= new Array();
+        var ordernumber = $("#ordernumber").html();
+        var sessionid = commFun.getData("open_session_id");
+        list[0] = ordernumber;
+
+        if(list.size == 0){
+            $.openTxt.info("未选中订单，请点击前面勾选框");
+        }else{
+            sendAjax.post(util.baseURL+"order/businessCheckOrder?open_session_id="+ sessionid +"&ordernumbers="+ list,'',function(msg){
+
+                if(msg.retCode == "1"){
+                    $.openTxt.info(msg.msg,1000);
+                    window.location.reload();
+
+                }else{
+                    $.openTxt.info(msg.msg,1000);
+                }
+            });
+        }
+
+    }
+    function  editorderItem(itemid,id) {
+        var amount = $(id).val();
+        var sessionid = commFun.getData("open_session_id");
+        var ordernumber = $("#ordernumber").html();
+        var url = util.baseURL+"order/editOrderItem?open_session_id=" + sessionid;
+
+        var data =JSON.stringify({'ordernumber':ordernumber,'itemid':itemid, 'amount':amount});
+        sendAjax.post(url,data,function(resp){
+            if(resp.retCode=="1") {//请求成功
+                $.openTxt.info(resp.msg,1000);
+                window.location.reload();
+            }else{
+                $.openTxt.info(resp.msg,1000);
+            }
+        });
+    }
+</script>
+</html>
