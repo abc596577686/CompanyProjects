@@ -1,0 +1,176 @@
+.payment-page{
+  background-color: #eee;
+  min-height:100%;
+  .page-box{
+    padding: 30px 120px;
+    background: #fff;
+    height:100%;
+    margin-top:15px;
+    min-height:100vh;
+    .pay-head{
+      padding-bottom: 30px;
+      font-size: 12px;
+      .pay-t{
+        font-size: 14px;
+        font-weight: bold;
+        .pay-count{
+          color: #e82c0c;
+        }
+        .go-order{
+          color: #0069af !important;
+          margin-left: 15px;
+          cursor: pointer;
+        }
+      }
+      .pay-b{
+        padding: 5px 0 10px;
+        border-bottom: 1px solid #ff5200;
+        .pull-left{
+          float: left!important;
+          .go-order{
+            color: #0069af;
+          }
+        }
+        .pull-right{
+          float: right!important;
+          .count{
+            font-size: 20px;
+            color: #e82c0c;
+            font-weight: 700;
+          }
+        }
+      }
+    }
+    .pay-body{
+      .pay-sel{
+        margin-bottom: 15px;
+        .label{
+          float: left;
+          width: 16%;
+          cursor: pointer;
+          padding-top:10px;
+          font-weight:600;
+          font-size:14px;
+        }
+        .payList{
+          float: right;
+          width: 84%;
+          .item{
+            position: relative;
+            _zoom: 1;
+            float: left;
+            background-color: #fff;
+            padding: 8px 0;
+            height: 45px;
+            width: 188px;
+            margin-right: 10px;
+            margin-bottom: 10px;
+            cursor: pointer;
+            border: 1px solid #b0c2e1;
+            border-radius: 2px;
+            -webkit-transition: all .2s;
+            -moz-transition: all .2s;
+            -ms-transition: all .2s;
+            transition: all .2s;
+            &.active{
+              border-color: #ff5200;
+              -webkit-box-shadow: 0 0 4px #ff5200;
+              -moz-box-shadow: 0 0 4px #ff5200;
+              box-shadow: 0 0 4px #ff5200;
+              .ck{
+                display: block;
+              }
+            }
+            &:hover{
+              border-color: #ff5200;
+              -webkit-box-shadow: 0 0 4px #ff5200;
+              -moz-box-shadow: 0 0 4px #ff5200;
+              box-shadow: 0 0 4px #ff5200;
+            }
+            .ck{
+              display: none;
+              position: absolute;
+              top: 0;
+              right: 5px;
+              font-size: 16px;
+              color: #ff641a;
+            }
+            .bk{
+              position: relative;
+              display: block;
+              width: 125px;
+              height: 28px;
+              margin-left: 28px;
+              overflow: hidden;
+              text-indent: -9999px;
+              &.bank-alipay{
+                width: 83px;
+                height: 28px;
+                margin-left: 50px;
+                background: url('../../resource/assets/images/alipay_l.jpg') no-repeat;
+              }
+              &.bank-wechatpay{
+                width: 110px;
+                height: 30px;
+                margin-left: 40px;
+                background: url('../../resource/assets/images/wechat_pay.png') no-repeat;
+              }
+              &.bank-mfb{
+                width:90px;
+                height:28px;
+                margin-left:49px;
+                background: url('../../resource/assets/images/mfb_logo.jpg') no-repeat;
+                -webkit-background-size: 90px 28px;
+                background-size: 90px 28px;
+              }
+            }
+          }
+        }
+        .formList{
+          float: left;
+          width: 84%;
+          .formGroup{
+            display: inline-block;
+            margin-bottom: 0;
+            vertical-align: middle;
+            .form-control{
+              width: auto;
+            }
+            .remain{
+              margin-left: 10px;
+              font-size: 12px;
+              .remainder{
+                font-weight: bold;
+              }
+            }
+          }
+        }
+        .paymentBtn{
+          padding: 6px 16px;
+          font-size: 14px;
+          line-height: 1.3333333;
+          border-radius: 6px;
+        }
+      }
+    }
+  }
+}
+
+.orderDetailInfo{
+  .item{
+    overflow: hidden;
+    font-size: 12px;
+    margin-bottom: 15px;
+    .label{
+      float: left;
+      width: 60px;
+    }
+    .cont{
+      float: left;
+      width: 100%;
+    }
+  }
+  .good-item {
+    padding-bottom:8px;
+  }
+}

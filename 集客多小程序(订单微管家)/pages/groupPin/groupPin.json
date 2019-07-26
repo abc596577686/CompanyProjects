@@ -1,0 +1,6 @@
+{
+  "usingComponents": {
+    "btn": "/components/btn/btn",
+    "groupUser": "/components/groupUser/groupUser"
+  }
+}

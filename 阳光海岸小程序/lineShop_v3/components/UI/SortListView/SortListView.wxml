@@ -1,0 +1,19 @@
+<!-- 排列滚动视图组件 -->
+<template name="Jyo-SortListView">
+  <view class="{{_theme}}">
+    <scroll-view id="{{_id}}" class="Jyo-SortListView" wx:if="{{_isVisible}}" data-id="{{_id}}" scroll-y="true" scroll-with-animation="true" enable-back-to-top="true" scroll-into-view="{{toFast}}">
+      <block wx:for="{{list}}" wx:key="title">
+        <view class="{{item.ict===1?'Jyo-SortListViewClassificationTitle':'Jyo-SortListViewItem'}} {{item.hb===1?'Jyo-SortListViewHasBorder':''}}" id="{{item.id}}" data-title="{{item.title}}" data-desc="{{item.desc}}" data-other="{{item.other}}" catchtap="{{_onSelect}}"
+          data-canClick="{{item.cc}}">{{item.title}}
+          <view wx:if="{{item.desc}}" class="Jyo-SortListViewDesc">{{item.desc}}</view>
+        </view>
+      </block>
+      <view class="Jyo-SortListViewFooterText" wx:if="{{_footerText}}">{{_footerText}}</view>
+    </scroll-view>
+    <view class="Jyo-SortListView-FastBar" wx:if="{{_isVisible}}">
+      <view class="Jyo-SortListView-FastBarFrame">
+        <view wx:for="{{fastList}}" wx:key="*this" data-value="{{item}}" catchtouchstart="{{_onFast}}">{{item}}</view>
+      </view>
+    </view>
+  </view>
+</template>

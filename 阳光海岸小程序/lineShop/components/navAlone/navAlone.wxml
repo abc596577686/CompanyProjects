@@ -1,0 +1,7 @@
+<!--components/navAlone/navAlone.wxml-->
+<view class='navWrap'>
+  <view class='navItem' wx:for="{{data}}" wx:key="{{index}}">
+    <image class='navImg' bindload='imageLoad' style="height:{{imageHeight + 'px'}}" src='{{item.pictureIcon}}'></image>
+    <text class='navText'>{{item.navigationName}}</text>
+  </view>
+</view>

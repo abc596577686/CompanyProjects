@@ -1,0 +1,210 @@
+ .search_form {
+     background-color: #f5f5f5;
+     padding: 0.5rem;
+     display: flex;
+ }
+.search_form input {
+    height: 1.5rem;
+ }
+.search_form .search_input {
+     flex: 4;
+     border: 1px solid #eee;
+     /*@include sc(0.55rem, #333);*/
+     font-size: .55rem;
+     color: #333;
+     border-radius: 0.125rem;
+     background-color: #fff;
+     padding: 0 0.25rem;
+     text-indent: 1.5rem;
+ }
+.search_form .custom-search-button {
+     position: absolute;
+     top: 0.85rem;
+     left: 0.55rem;
+     border: 0px none;
+     height: 1rem;
+     line-height: 1rem;
+     width: 1.5rem;
+     padding: 0;
+     color: #fff;
+     font-size: 0.6rem;
+     background: #fff url(../../common/images/search_icon.png) center center no-repeat;
+     background-size: 0.68rem 0.68rem;
+     border-radius: 0.213rem 0 0 0.213rem;
+ }
+ .search_submit {
+     margin-left: .2rem;
+     /*@include sc(0.6rem, #999);*/
+     font-size: .6rem;
+     color: #999;
+     border-radius: 0.125rem;
+     background-color: #f5f5f5;
+     padding: 0 0.25rem;
+     margin-left: .2rem;
+     width: 2rem;
+ }
+ 
+ .cho_list {
+     height: 1.8rem;
+     background: #fff;
+     overflow: hidden;
+     margin-bottom: 0.426rem;
+ }
+ 
+ .cho_list ul {
+     display: inline;
+     white-space: nowrap;
+     overflow-x: scroll;
+     float: left;
+     overflow-y: hidden;
+     height: 1.8rem;
+     list-style: none;
+     width: 100%;
+ }
+ 
+ .cho_list li {
+     display: inline-block;
+     width: 20%;
+     font-size: 0.6rem;
+     list-style: none;
+     text-align: center;
+     line-height: 1.8rem;
+     height: 1.8rem;
+     margin-right: -4px;
+     color: #333;
+ }
+ 
+ .cho_list a {
+     color: #333;
+     text-decoration: none;
+     background: transparent;
+     font-size: 0.51rem;
+ }
+ 
+ .cho_list_span {
+     border-bottom: 1px #FE5000 solid;
+     color: #FE5000;
+     padding-bottom: 0.42rem;
+     line-height: 1.8rem;
+ }
+ 
+.search_history .history_list {
+     background-color: #fff;
+     border-bottom: 0.025rem solid #e4e4e4;
+     /*@include font(0.7rem, 2rem);*/
+     font-size: .7rem;
+     line-height: 2rem;
+     padding: 0 0.3rem;
+     display: flex;
+     justify-content: space-between;
+     align-items: center;
+}
+.search_history .history_text {
+     display: inline-block;
+     width: 80%;
+ }
+.search_history .delete_icon {
+    width: 1rem;
+    height: 1rem;
+ }
+.search_history .clear_history {
+     background-color: #fff;
+     /*color: $blue;*/
+     color: #fe5000;
+     /*@include font(.7rem, 2rem);*/
+     font-size: .7rem;
+     line-height: 2rem;
+     font-weight: bold;
+     text-align: center;
+ }
+
+ 
+.search_none {
+    margin: 0 auto;
+    font-size: 0.5rem;
+    color: #999;
+    text-align: center;
+    margin-top: 1rem;
+}
+ 
+ .double {
+     width: 98%;
+     padding-bottom: 5rem;
+     margin: auto;
+     overflow: auto;
+ }
+ 
+ .items {
+     position: relative;
+     width: 50%;
+     float: left;
+     background: #fff;
+     border: 0.1rem #f5f5f5 solid;
+     border-radius: 0.213rem;
+     overflow: auto;
+     height: 10rem;
+ }
+ 
+ .placeholder img {
+     width: 90%;
+     height: 6.5rem;
+     margin-left: 5%;
+ }
+ 
+p.mc {
+     text-align: left;
+     font-size: 0.6rem;
+     padding-left: 0.4rem;
+     padding-right: 0.4rem;
+     display: -webkit-box;
+     -webkit-line-clamp: 2;
+     -webkit-box-orient: vertical;
+     overflow: hidden;
+     line-height: 0.81rem;
+     color: #000;
+     height: 1.5rem;
+ }
+ 
+ .price {
+     position: absolute;
+     bottom: 0;
+     padding-left: 0.4rem;
+     padding-right: 0.4rem;
+     color: #F44336;
+     font-weight: 600;
+     padding-bottom: 0.213rem;
+     font-size: 0.6rem;
+ }
+ 
+ .loader_more {
+     /*@include font(0.6rem, 3);*/
+     font-size: .6rem;
+     line-height: 3;
+     text-align: center;
+     color: #999;
+ }
+ 
+ .empty_data {
+     /*@include sc(0.5rem, #666);*/
+     font-size: .5rem;
+     color: #666;
+     text-align: center;
+     line-height: 2rem;
+     margin-bottom: 3rem;
+     margin-top: -2rem;
+ }
+ 
+ .return_top {
+     position: fixed;
+     bottom: 3rem;
+     right: 0;
+     z-index: 9999999;
+     text-align: center;
+     padding: .8rem;
+     z-index: 10000;
+ }
+.return_top .back_top_svg{
+     /*@include wh(1.5rem, 1.5rem);*/
+     width: 1.5rem;
+     height: 1.5rem;
+ }

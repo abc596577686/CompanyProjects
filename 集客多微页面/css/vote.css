@@ -1,0 +1,232 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+img{
+    width: 100%;
+    /* height: 100%; */
+}
+.main{
+    width: 100%;
+    height: auto;
+}
+.time{
+    width: 1.6rem;
+    height: 1.24rem;
+    text-align: center;
+    line-height: 1.24rem;
+    color: #fff;
+    font-size: 1.6rem;
+}
+.time_a{
+    position: absolute;
+    top: 7.84rem;
+    left: 4.4rem;
+}
+.time_b{
+    position: absolute;
+    top: 7.84rem;
+    left: 6.8rem;
+}
+.time_c{
+    position: absolute;
+    top: 7.84rem;
+    left: 9rem;
+}
+.mh_1{
+    color: #fff;
+    position: absolute;
+    top: 7.74rem;
+    left: 6.3rem;
+}
+.mh_2{
+    color: #fff;
+    position: absolute;
+    top: 7.74rem;
+    left: 8.5rem;
+}
+.name{
+    width: 3rem;
+    height: 9rem;
+    font-size: .7rem;
+    line-height: .7rem;
+    color: #fff;
+    position: absolute;
+    left: 3.1rem;
+    top: 10.9rem;
+}
+.name span{
+    display: block;
+    margin-bottom: 1.35rem;
+}
+.weight{
+    width: 1.8rem;
+    height: 9rem;
+    font-size: .7rem;
+    line-height: .7rem;
+    color: #fff;
+    position: absolute;
+    left: 5.9rem;
+    top: 10.9rem;
+}
+.weight span{
+    display: block;
+    margin-bottom: 1.35rem;
+}
+.height{
+    width: 1.8rem;
+    height: 9rem;
+    font-size: .7rem;
+    line-height: .7rem;
+    color: #fff;
+    position: absolute;
+    left: 8.9rem;
+    top: 10.9rem;
+}
+.height span{
+    display: block;
+    margin-bottom: 1.35rem;
+}
+.gitClik_1{
+    width: 2.84rem;
+    height: 1.2rem;
+    position: absolute;
+    left: 11.48rem;
+    top: 10.66rem;
+}
+.gitClik_2{
+    width: 2.84rem;
+    height: 1.2rem;
+    position: absolute;
+    left: 11.48rem;
+    top: 12.7rem;
+}
+.gitClik_3{
+    width: 2.84rem;
+    height: 1.2rem;
+    position: absolute;
+    left: 11.48rem;
+    top: 14.8rem;
+}
+.gitClik_4{
+    width: 2.84rem;
+    height: 1.2rem;
+    position: absolute;
+    left: 11.48rem;
+    top: 16.8rem;
+}
+.sr{
+    width: 2.84rem;
+    height: 1.2rem;
+}
+.sr img{
+    /* height: 100%; */
+}
+.coverimg1{
+    width: 12.4rem;
+    height: 4.5rem;
+    position: absolute;
+    left: .7rem;
+    top: 29.7rem;
+    padding: .426667rem;  
+    padding-top: .853333rem;  
+}
+.coverimg1 img{
+    width: 100%;
+    height: 2.6rem;
+}
+.coverimg2{
+    width: 12.4rem;
+    height: 4.5rem;
+    position: absolute;
+    left: .7rem;
+    top: 37.9rem; 
+    padding: .426667rem;  
+    padding-top: .853333rem;     
+}
+.coverimg2 img{
+    width: 100%;
+    height: 2.6rem;
+}
+.markSure1{
+    width: 12rem;
+    height: 5rem;
+    position: fixed;
+    left: 1.43rem;
+    top: 9rem;
+    background-color: #fff; 
+    padding-top: 1.4rem;
+    font-size: .8rem;
+    font-weight: 700;
+    color: black;
+    text-align: center;
+    border-radius: .2rem;
+    border: 2px solid black;
+}
+.markSure2{
+    width: 12rem;
+    height: 5rem;
+    position: fixed;
+    left: 1.43rem;
+    top: 9rem;
+    background-color: #fff; 
+    padding-top: 1.4rem;
+    font-size: .8rem;
+    font-weight: 700;
+    color: black;
+    text-align: center;
+    border-radius: .2rem;
+    border: 2px solid black;
+}
+.markSure3{
+    width: 12rem;
+    height: 5rem;
+    position: fixed;
+    left: 1.43rem;
+    top: 9rem;
+    background-color: #fff; 
+    padding-top: 1.4rem;
+    font-size: .8rem;
+    font-weight: 700;
+    color: black;
+    text-align: center;
+    border-radius: .2rem;
+    border: 2px solid black;
+}
+.markSure4{
+    width: 12rem;
+    height: 5rem;
+    position: fixed;
+    left: 1.43rem;
+    top: 9rem;
+    background-color: #fff; 
+    padding-top: 1.4rem;
+    font-size: .8rem;
+    font-weight: 700;
+    color: black;
+    text-align: center;
+    border-radius: .2rem;
+    border: 2px solid black;
+}
+.msSpan1{
+    display: block;
+    border: 1px solid black;
+    width: 4.2rem;
+    height: 1.1rem;
+    line-height: 1.1rem;
+    position: absolute;
+    left: .4rem;
+    top: 3.8rem;
+    border-radius: .2rem;
+}
+.msSpan2{
+    display: block;
+    border: 1px solid black;
+    width: 4.2rem;
+    height: 1.1rem;
+    line-height: 1.1rem;
+    position: absolute;
+    left: 7.1rem;
+    top: 3.8rem;
+    border-radius: .2rem;
+}

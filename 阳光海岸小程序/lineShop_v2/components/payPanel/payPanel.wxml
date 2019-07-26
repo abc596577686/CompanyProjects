@@ -1,0 +1,26 @@
+<!--components/payPanel/payPanel.wxml-->
+<view class='payPanel' id="payPanel" wx:if="{{isShowPayPanel}}" animation="{{payPanelAni}}">
+  <view class='topWrap'>
+    <text class='title'>支付方式</text>
+    <image class='closeBtn' mode='widthFix' src='/assets/images/icon_close.png' catchtap='_closePayPanelEnv'></image>
+  </view>
+  <view class='content'>
+    <view class='item topLine'>
+      <text class='label'>请在72小时内完成支付</text>
+      <text class='price'>¥{{orderInfo.payAmount}}</text>
+    </view>
+    <view class='item topLine'>
+      <view class='label'>
+        <image class='logo' src='/assets/images/icon_paywchat.png' mode='widthFix'></image>
+        <text>微信支付</text>
+      </view>
+      <view class='handle'>
+        <image class='icon' mode='widthFix' src='/assets/images/icon_select.png'></image>
+        <!-- <image mode='widthFix' src='/assets/images/icon_hollow.png'></image> -->
+      </view>
+    </view>
+  </view>
+  <view class='btnWrap topLine'>
+    <view class='btn' bindtap='paymentBtn'>确认支付</view>
+  </view>
+</view>

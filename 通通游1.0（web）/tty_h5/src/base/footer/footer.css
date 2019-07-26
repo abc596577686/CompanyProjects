@@ -1,0 +1,39 @@
+.pagefoot{
+    width: 100%;
+    height: 2.218667rem;
+    position: fixed;
+    bottom: 0;
+    background-color: #fff;
+    box-shadow: 0 0.09rem 0.21rem #ccc;
+    z-index: 9999;
+    display: flex;
+}
+.item{
+    flex: 1;
+    // width: 5.33rem;
+    height: 2.218667rem;
+    display: inline-block;
+    position: relative;
+}
+.inbt_im{
+    width: 1.02rem;
+    height: 1.02rem;
+    position: absolute;
+    left: 2.176rem;
+    top: .469333rem;
+}
+.inbt_im img{
+    width: 100%;
+    height: 100%;
+}
+.inbt_t{
+    width: 2.517333rem;
+    height: .597333rem;
+    line-height: .597333rem;
+    position: absolute;
+    left: 1.408rem;
+    top: 1.536rem;
+    font-size: 0.51rem;
+    color: #666666;
+    text-align: center;
+}

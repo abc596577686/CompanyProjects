@@ -1,0 +1,115 @@
+/* pages/orderMes/orderMes.wxss */
+
+.orderHeader {
+  height: 137rpx;
+  padding-top: 27rpx;
+  padding-left: 28rpx;
+  padding-right: 32rpx;
+  padding-bottom: 39rpx;
+  background-color: #fff;
+  margin-bottom: 1rpx;
+}
+
+.orderHeader .query {
+  display: flex;
+}
+
+.orderMes {
+  color: #fb4a4c;
+  font-size: 32rpx;
+  margin-bottom: 18rpx;
+  font-weight: 500;
+}
+
+.good {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  color: #666;
+  font-size: 24rpx;
+}
+
+
+.justDo {
+  width: 12rpx;
+  height: 22rpx;
+  margin-left: 23rpx;
+}
+
+.money, .orderNum {
+  height: 78rpx;
+  background-color: #fff;
+  line-height: 78rpx;
+  padding-left: 27rpx;
+}
+
+.name {
+  color: #666;
+  font-size: 24rpx;
+  width: 172rpx;
+  display: inline-block;
+  line-height: 78rpx;
+}
+
+.num {
+  color: #666;
+  font-size: 28rpx;
+  flex: 1;
+  line-height: 78rpx;
+}
+
+.money .num {
+  color: #fe5000;
+}
+
+.userMes {
+  margin-top: 20rpx;
+}
+
+.userMes .address {
+  display: -webkit-box;
+  line-height: 78rpx;
+  word-break: break-all;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 1;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.userHead {
+  background-color: #fff;
+  height: 90rpx;
+  line-height: 90rpx;
+  padding-left: 27rpx;
+  color: #333;
+  font-size: 28rpx;
+}
+
+.item {
+  height: 78rpx;
+  background-color: #fff;
+  /* line-height: 78rpx; */
+  padding: 0 27rpx;
+  display: flex;
+}
+
+.footer {
+  height: 117rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  background-color: #fff;
+}
+
+button {
+  width: 686rpx;
+  height: 74rpx;
+  background-color: #fb4a4c;
+  color: #fff;
+  text-align: center;
+  line-height: 74rpx;
+  border-radius: 10rpx;
+}

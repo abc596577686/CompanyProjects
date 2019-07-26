@@ -1,0 +1,30 @@
+.tipsBox{
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 3.41rem;
+  text-align: center;
+  display: inline-block;
+  transition: all .56s cubic-bezier(.55,0,.1,1);
+  z-index: 9999999;
+}
+.tips{
+  display: inline-block;
+  text-align: center;
+  font-size: 0.6rem;
+  color: #fff;
+  border-radius: 15px;
+  background-color: rgba(51, 51, 51, 0.86);
+  height: 1.54rem;
+  padding: 0.43rem .6rem;
+  box-sizing: border-box;
+  z-index: 9999999;
+}
+.tipsBox.tipsAni-enter, .tipsBox.tipsAni-leave-active{
+  opacity: 0;
+  transform: translate3d(0, 10px, 0);
+}
+.tipsBox.tipsAni-leave-active, .tipsBox.tipsAni-enter{
+  opacity: 0;
+  transform: translate3d(0, -10px, 0);
+}

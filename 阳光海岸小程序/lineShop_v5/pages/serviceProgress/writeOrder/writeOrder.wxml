@@ -1,0 +1,67 @@
+<!--pages/refund/writeOrder/writeOrder.wxml-->
+<view class='container'>
+  <view class='goodInfo'>
+    <view class='imgBox'>
+      <image src='{{goodsInfo.image}}' mode='widthFix'></image>
+    </view>
+    <view>
+      <view class='goodName'>
+        <text>{{goodsInfo.productName}}</text>
+      </view>
+      <view class='goodNum'>
+        <text>x {{goodsInfo.refundCount}}</text>
+      </view>
+    </view>
+
+  </view>
+  <form bindsubmit='formSubmit'>
+    <view class='service'>
+      <view class='ser-item'>
+        <view class='ser-left'>
+          <text>物流公司</text>
+        </view>
+        <view class='ser-right'>
+          <picker name="company" mode='selector' range='{{expressCompanys}}' range-key="companyName" value='{{index}}' bindchange='pickerChange'>
+            <text class='tuihuo'>{{expressCompanys[index].companyName}}</text>
+          </picker>
+          <image class='seeMore' src='../../../assets/images/icon_floor.png' mode='widthFix'></image>
+        </view>
+      </view>
+      <view class='ser-item'>
+        <view class='ser-left'>
+          <text>填写单号</text>
+        </view>
+        <view class='ser-right'>
+          <input name="orderNum" class='tuihuo Ordernum' placeholder='填写单号' placeholder-style='text-align:right'></input>
+        </view>
+      </view>
+    </view>
+    <view class='proarea'>
+      <textarea name="remark" class='problems' placeholder='最多100字' placeholder-style='color:#666;font-size:24rpx;'></textarea>
+      <text class='info'>备注信息：</text>
+    </view>
+    <view class='imgArea'>
+      <view class='imgWrap'>
+        <block wx:for="{{imgList}}" wx:key="index">
+          <view class='imgBox'>
+            <image src='{{item}}' mode='widthFix' bindtap='previewImgEnv' data-imgUrl="{{item}}"></image>
+            <!-- <view class='progress'>{{}}</view>  -->
+          </view>
+        </block>
+      </view>
+      <view class='bandle' bindtap='chooseImageEnv'>
+        <image class='camera' src='/assets/images/camera.png ' mode='widthFix'></image>
+        <text class='Mesmore'>上传凭证</text>
+        <text class='Mesmore'>（最多3张）</text>
+      </view>
+    </view>
+    <view class='footer'>
+      <button class='btn' form-type='submit'>
+        提交申请
+      </button>
+    </view>
+  </form>
+</view>
+
+<!-- 提示语  -->
+<toast wx:if="{{msgTips}}" message="{{msgTips}}"></toast>

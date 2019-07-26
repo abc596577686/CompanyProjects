@@ -1,0 +1,59 @@
+body{
+        background-color: #fff;
+}
+.toptit{
+    width: 100%;
+    height: 2.005333rem;
+    background-color: #3677ff;
+    font-size: .682667rem;
+    color: #ffffff;
+    text-align: center;
+    line-height: 2.005333rem;
+    position: relative;
+}
+.topim1{
+    display: block;
+    width: .426667rem;
+    height: .768rem;
+    position: absolute;
+    left: .512rem;
+    top: .597333rem;
+}
+.topim2{
+    display: block;
+    width: .768rem;
+    height: .768rem;
+    position: absolute;
+    left: 14.72rem;
+    top: .597333rem;
+}
+.maintxt{   
+    width: 100%;
+    height: 14.933333rem;
+    font-size: 0;
+    background-color: #f0f0f0;
+}
+.maintxt > div{
+    display: inline-block;
+    background-color: #fff;
+}
+.mainPick{
+    width: 4.053333rem;
+    height: 14.933333rem;
+}
+.mainPick > div{
+    float: left;
+    width: 4.053333rem;
+    height: 2.133333rem;
+    font-size: .597333rem;
+    color: #333333;
+    text-align: center;
+    line-height: 2.133333rem;
+}
+.mainShow{
+    width: 11.136rem;
+    height: 14.933333rem;
+    margin-left: .384rem !important;
+    font-size: .426667rem;
+}
+

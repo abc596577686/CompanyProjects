@@ -1,0 +1,118 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+body{
+    background-color: #EEEEEE;
+}
+.topc{
+    width: 100%;
+    height: 8.832rem;
+    position: relative;
+    background-image: url(../../images/tty/bg_1.png)
+}
+.topc_im{
+    width: 2.602667rem;
+    height: 2.602667rem;
+    position: absolute;
+    left: 6.698667rem;
+    top: 2.005333rem;
+}
+.topc_im img{
+    width: 100%;
+    height: 100%;
+}
+.topc_tit{
+    width: 3.2rem;
+    height: .853333rem;
+    position: absolute;
+    left: 6.528rem;
+    top: 5.973333rem;
+    font-size: .64rem;
+    color: #333333;
+}
+.midc{
+    width: 100%;
+    height: 2.816rem;
+    position: relative;
+    background-color: #fff;
+}
+.midc_mine{
+    width: 2.56rem;
+    height: .725333rem;
+    line-height: .725333rem;
+    position: absolute;
+    left: .512rem;
+    top: 1.152rem;
+    font-size: .554667rem;
+    color: #666666;
+}
+.midc_find{
+    width: 4rem;
+    height: .725333rem;
+    line-height: .725333rem;
+    position: absolute;
+    left: 11.477333rem;
+    top: 1.08rem;
+    font-size: .512rem;
+    color: #999999;
+}
+.midc_im{
+    width: .341333rem;
+    height: .554667rem;
+    position: absolute;
+    left: 15.146667rem;
+    top: 1.152rem;
+}
+.midc_im img{
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+.midd{
+    width: 100%;
+    height: 2.816rem;
+    background-color: #fff;
+}
+.midd img{
+    width: 100%;
+    height: 100%;
+}
+.midd > div{
+    width: 5rem;
+    height: 2.816rem;
+    display: inline-block;
+    position: relative;
+}
+.midd_1_num{
+    width: .554667rem;
+    height: .554667rem;
+    line-height: .554667rem;
+    border-radius: 50%;
+    border: 1px solid #FF0000;
+    position: absolute;
+    top: .469333rem;
+    left: 2.261333rem;
+    font-size: .341333rem;
+    text-align: center;
+    color: red;
+    z-index: 100;
+}
+.midd_1_im{
+    width: .725333rem;
+    height: .768rem;
+    position: absolute;
+    left: 1.834667rem;
+    top: .64rem;
+}
+.midd_1_txt{
+    width: 2.133333rem;
+    height: .64rem;
+    line-height: .64rem;
+    font-size: .512rem;
+    color: #666666;
+    position: absolute;
+    left: 1.2rem;
+    top: 1.7rem;
+    text-align: center
+}

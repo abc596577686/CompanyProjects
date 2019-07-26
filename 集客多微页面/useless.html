@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <!--页面设计基于iphone6设计 环境下1rem=25px  -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,user-scalable=no,initial-scale=0.33333,minimum-scale=0.33333,maximum-scale=0.33333" />
+    <title>页面失效</title>
+    <link rel="stylesheet" href="css/useless.css"/>
+    <!-- <script src = "js/jquery-3.2.1.min.js"></script> -->
+    <script>
+        //1.获取像素比
+        var pixelRatio=1/window.devicePixelRatio;
+        console.log(pixelRatio);
+        //2.通过js动态来设置视口
+        document.write('<meta name="viewport" content="width=device-width,initial-scale='+pixelRatio+',minimum-scale='+pixelRatio*2+',maximum-scale='+pixelRatio+'">');
+        //3.获取html节点
+        var html=document.getElementsByTagName('html')[0];
+        //        console.log(html)
+        //4.获取屏幕宽度
+        var pageWidth=html.getBoundingClientRect().width;
+        console.log(pageWidth);
+        //屏幕宽度/固定数值=基准值;
+        html.style.fontSize=pageWidth/15+'px';
+    </script>
+    <style>
+
+    </style>
+</head>
+<body>
+    <div class="jt_im">
+        <img src="img/jt@.png">
+    </div>
+    <div class="jt_wz">
+        <img src="img/sx@.png">
+    </div>
+    <div class="yellowGr">
+        <div class="yG_1">
+             <img src="img/ji@.png"> 
+        </div>
+    </div>
+    <div class="bottomTit_1">很抱歉,该链接已失效</div>
+    <div class="bottomTit_2">请点击上方刷新链接或联系你的小伙伴</div>
+    <div class="bottomTit_3">重新获取邀请链接</div>
+</body>
+</html>

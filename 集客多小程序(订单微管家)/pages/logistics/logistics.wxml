@@ -1,0 +1,46 @@
+<!--pages/logistics/logistics.wxml-->
+<view class='container'>
+  <view class='tabBar'>
+    <view class='package {{selectActive==index?"active":""}}' wx:for='{{packageList}}' wx:key='{{item.index}}' bindtap='selPack' data-index='{{index}}'>
+      <text class='tab'>包裹{{index+1}}</text>
+    </view>
+  </view>
+  <view class='goodList'>
+    <view class='order-main' wx:for='{{packageList[selectActive].productList}}' wx:key='{{index}}'>
+      <view class='imgBox'>
+        <image class='good-img' mode='widthFix' src='{{item.imageUrl}}'></image>
+      </view>
+      <view class='good-info'>
+        <text class='good-name'>{{item.productName}}</text>
+        <view>
+          <text class='cate'>{{item.productTags}}</text>
+        </view>
+      </view>
+      <view class='good-price'>
+        <text class='price'>￥{{item.price}}</text>
+        <text class='num'>X{{item.productNumber}}</text>
+      </view>
+    </view>
+  </view>
+  <view class='sendDetail'>
+    <text class='packNum'>包裹{{selectActive+1}}：{{packageList[selectActive].total}}件物品</text>
+    <text class='sendCompany'>物流公司：{{packageList[selectActive].logistics}}</text>
+    <text class='orderNum'>物流编号：{{packageList[selectActive].expressNo}}</text>
+    <text class='orderTime'>下单时间：{{packageList[selectActive].createTime}}</text>
+  </view>
+  <view class='logistics'>
+    <view class='log' wx:for='{{packageList[selectActive].dataList}}' wx:key='{{index}}'>
+      <view class='log-left'>
+        <text class='circle {{index==0?"circler":""}}'></text>
+        <view class='line'></view>
+      </view>
+      <view class='log-right'>
+        <view class='log-item'>
+          <text class='log-detail '>{{item.title}}</text>
+          <text class='log-time '>{{item.createTime}}</text>
+        </view>
+      </view>
+    </view>
+
+  </view>
+</view>

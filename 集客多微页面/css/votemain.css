@@ -1,0 +1,1112 @@
+*{
+    margin: 0;
+    padding: 0
+}
+img{
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+header{
+    width: 100%;
+    height: 14rem;
+    position: relative;
+}
+.toptit{
+    width: 100%;
+    height: .64rem;
+    font-size: .64rem;
+    line-height: .64rem;
+    text-align: center;
+    font-weight: 600;
+    color: #333333;
+    position: absolute;
+    bottom: .52rem;
+}
+.toplitimg1{
+    width: 1rem;
+    height: .4rem;
+    position: absolute;
+    bottom: .64rem;
+    left: 4.5rem;
+}
+.toplitimg2{
+    width: 1rem;
+    height: .4rem;
+    position: absolute;
+    bottom: .64rem;
+    right: 4.5rem;
+}
+.timeTip{
+    width: 100%;
+    height: 2.48rem;
+    padding-top: .4rem;
+}
+.timeTip > div{
+    width: 100%;
+    height: .56rem;
+    font-size: .56rem;
+    color: #333333;
+    text-align: center;
+    margin-bottom: .5rem;
+}
+.timeTip3{
+    width: 100%;
+    height: .56rem;
+    font-size: .56rem;
+    color: #333333;
+    text-align: center;
+    margin-top: .5rem;
+}
+.sureBtn{
+    width: 100%;
+    height: 1.6rem;
+}
+.sureBtn1{
+    width: 6.88rem;
+    height: 1.6rem;
+    border: none;
+    border-radius: .3rem;
+    background-color: #FFD946;
+    float: left;
+    margin-left: .4rem;
+    font-size: .68rem;
+    color: black;
+}
+.sureBtn2{
+    width: 6.88rem;
+    height: 1.6rem;
+    border: none;
+    border-radius: .3rem;
+    background-color: #FB4A4C;
+    float: right;
+    margin-right: .4rem;
+    font-size: .68rem;
+    color: #fff;
+}
+.sureBtn3{
+    width: 10.12rem;
+    height: 1.6rem;
+    border: none;
+    border-radius: .3rem;
+    background-color: #FB4A4C;
+    float: right;
+    margin-right: 2.44rem;
+    font-size: .68rem;
+    color: #fff;
+}
+.voteKname{
+    position: relative;
+    padding-top: 1.6rem;
+    width: 100%;
+    height: .52rem;
+
+    /* display: -webkit-flex;  
+    display: flex;
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    justify-content: space-evenly; */
+}
+.voteKname >div {
+    width: 2.4rem;
+    height: .52rem;
+    line-height: .52rem;
+    text-align: center;
+    font-size: .52rem;
+    color: #000;
+
+    float: left;
+    margin-left: 1.9rem;
+}
+.voteKnum{
+    position: relative;
+    padding-top: .2rem;
+    width: 100%;
+    height: .52rem;
+
+    /* display: -webkit-flex;  
+    display: flex;
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    justify-content: space-evenly; */
+}
+.voteKnum >div {
+    width: 2.4rem;
+    height: .52rem;
+    line-height: .52rem;
+    text-align: center;
+    font-size: .52rem;
+    color: #666666;
+
+    float: left;
+    margin-left: 1.9rem;
+}
+/* 搜索 */
+.search{
+    width: 100%;
+    height: 1.6rem;
+    padding-top: 1rem;
+    position: relative;
+}
+.searchin{
+    width: 10.4rem;
+    height: 1.4rem;
+    float: left;
+    border: .04rem solid #999;
+    border-radius: .2rem;
+    margin-left: .52rem;
+    padding-left: 1.4rem;
+    font-size: .5rem;
+}
+.search img{
+    width: .72rem;
+    height: .72rem;
+    position: absolute;
+    left: .84rem;
+    top: 1.3rem;
+}
+.searchbtn{
+    width: 3.08rem;
+    height: 1.4rem;
+    float: right;
+    margin-right: .52rem;
+    border: none;
+    background-color: #FB4A4C;
+    border-radius: .2rem;
+    font-size: .68rem;
+    color: #fff;
+}
+.clikdiv{
+    padding-top: .8rem;
+    width: 100%;
+    height: 1.48rem;
+
+    /* display: -webkit-flex;  
+    display: flex;
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    justify-content: center; */
+}
+.clikdiv > div{
+    width: 4.68rem;
+    height: 1.4rem;
+    font-size: .56rem;
+    text-align: center;
+    line-height: 1.48rem;
+    border: .04rem solid #333;
+    float: left;
+}
+.onclic{
+    background-color: #333;
+    color: #fff;
+}
+.mainShow{
+    width: 100%;
+    height: 44rem; 
+    /* height: 37.2rem; */
+}
+.mainShow > div{
+    border: .04rem solid #000;
+    width: 13.96rem;
+    height: 3.64rem;
+    float: left;
+    margin-left: .52rem;
+    margin-top: .52rem;
+    position: relative;
+}
+.mainShowDiv{
+    position: relative;
+}
+.sortImg{
+    width: .44rem;
+    height: .32rem;
+    position: absolute;
+    left: 4rem;
+    top: 2.68rem;
+}
+.listNum{
+    width: 2.08rem;
+    height: 1.28rem;
+    z-index: 10;
+    position: absolute;
+    left: 0;
+    top: 0;
+
+    font-size: .6rem;
+    /* text-align: center; */
+    /* line-height:1.28rem; */
+    color: green; 
+}
+.listNum p{
+    width: .72rem;
+    height: .36rem;
+    line-height: .8rem;
+    position: absolute;
+    left: 0;
+    top: 0;
+    font-size: .36rem;
+    color: #fff; 
+    text-indent: .1rem;
+}
+.peoImg{
+    width: 3.12rem;
+    height: 3.12rem;
+    position: absolute;
+    left: .36rem;
+    top: .28rem;
+}
+.peoImg{
+    z-index: 2;
+}
+.peoName{
+    width: 2.8rem;
+    height: .64rem;
+    font-size: .64rem;
+    color: #333333;
+    /* text-align: center; */
+    line-height: .64rem;
+    position: absolute;
+    left: 4rem;
+    top: .28rem;
+}
+.peoTitle{
+    width: 5.6rem;
+    height: .7rem;
+    line-height: .7rem;
+    font-size: .4rem;
+    color: #333333;
+    font-family: HiraginoSansGB-W3;
+    position: absolute;
+    left: 4rem;
+    top: 1.4rem;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+}
+.peoPiaoNum{
+    width: 1.4rem;
+    height: .48rem;
+    line-height: .48rem;
+    font-size: .48rem;
+    color: #FB4A4C;
+    position: absolute;
+    left: 5.24rem;
+    bottom: .6rem;
+}
+.peoPiaoTxt{
+    width: 1rem;
+    height: .48rem;
+    line-height: .48rem;
+    font-size: .48rem;
+    color: #000;
+    position: absolute;
+    left: 6.4rem;
+    bottom: .6rem;
+}
+.mainShowDiv button{
+    width: 2.76rem;
+    height: 1.16rem;
+    border: none;
+    background-color: #FB4A4C;
+    font-size: .56rem;
+    position: absolute;
+    top: 1.48rem;
+    right: .36rem;
+    border-radius: .2rem;
+    color: #fff;
+}
+.buttonclick{
+    background-color: #BFBFBF !important;
+    color: #FFFFFF !important;    
+}
+.pagenation{
+    width: 100%;
+    height: 1.8rem;
+}
+/* 小弹窗 */
+/* alert */
+#div_alert{
+    width: 8rem; 
+    height: 1.4rem; 
+    text-align:center; 
+    background-color:black; 
+    color: White;
+    display: none; 
+    position:fixed;
+    top: 6rem;
+    left: 3.485rem;  
+    border:1px solid grey; 
+    border-top:0;
+    border-radius: 0.2rem;
+    font-size: .6rem;
+    line-height: 1.4rem; 
+    z-index: 9999999999;
+}
+/* 拉票指南 */
+.competitionGet{
+    width: 100%;
+    height: 10.4rem;
+    position: relative;   
+}
+/* 比赛规则 */
+.competitionRules{
+    width: 100%;
+    height: 10.4rem;
+    position: relative;   
+}
+.maintit{
+    width: 100%;
+    height: .64rem;
+    font-size: .64rem;
+    line-height: .64rem;
+    text-align: center;
+    font-weight: 600;
+    color: #333333;
+    position: absolute;
+    top: 1.3rem;
+}
+.mainlitimg1{
+    width: 1rem;
+    height: .4rem;
+    position: absolute;
+    top: 1.4rem;
+    left: 4.5rem;
+}
+.mainlitimg2{
+    width: 1rem;
+    height: .4rem;
+    position: absolute;
+    top: 1.4rem;
+    right: 4.5rem;
+}
+.apresent{
+    width: 100%;
+    height: 9rem;
+    position: relative;
+    top: 5.56rem;
+}
+/* 抽奖 */
+.competitionPlay{
+    width: 100%;
+    height: 18rem;
+    position: relative;  
+}
+.gameData{
+    width: 13.68rem;
+    height: 8.68rem;
+    margin-left: .64rem;
+    position: relative;
+    top: 3.4rem;
+}
+.luckCover{
+    width: 13.9rem;
+    height: 14rem;
+    position: absolute;
+    top: -.9rem;
+    /* z-index: 999; */
+    /* left: 0; */
+}
+.competitionMatch{
+    width: 100%;
+    height: 12rem;
+    position: relative; 
+}
+.pickBig{
+    width: 100%;
+    height: 100%;
+    background-color: #000;
+    position: fixed;
+    top: 0;
+    left: 0;
+}
+.imgBig{
+    width: 100%;
+    height: 15rem;
+    position: relative;
+    top: 5.24rem;
+}
+/* 填写信息 */
+/* .liaojie{
+    position: fixed;
+    left:.68rem;
+    top: 6rem;
+    width: 13.6rem;
+    height:14.64rem;
+    border-radius: 5px;
+    background-color: #fff;
+    z-index: 1000;
+} */
+.background{
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    left: 0;
+    top: 0;
+    z-index: 999;
+    background-color: #000;
+    opacity: .3;
+}
+.closeCover{
+    width: 2rem;
+    height: 2rem;
+    position: absolute;
+    top: 0rem;
+    right: 0rem;
+}
+.topDiv{
+    width: 100%;
+    height: 2.04rem;
+    font-size: .6rem;
+    color: #333333;
+    text-align: center;
+    line-height: 2.04rem;
+    position: relative;
+    /* padding-bottom: .8rem; */
+}
+.coversspp{
+    width: 100%;
+    height: .04rem;
+    background: #333;
+    opacity: .1;
+}
+.liaojiesp{
+    width: .52rem;
+    height: .52rem;
+    display: block;
+    position: absolute;
+    top: .6rem;
+    right: .6rem;
+}
+.liaojiesp img{
+    width: 100%;
+    height: 100%;
+    display: block;
+}
+.liaojiemain{
+    width: 100%;
+    height: 7.8rem;
+    /* padding: .8rem; */
+    position: relative;
+}
+.inp{
+    width: 12rem;
+    height: 1.6rem;
+    background-color: #F0F0F0;
+    border: none;
+    margin-left: .8rem;
+    text-indent: .4rem;
+    font-size: .56rem;
+    margin-bottom: .44rem;
+}
+.beiTip{
+    padding-top: .2rem;
+    width: 100%;
+    height: .48rem;
+    color: #FB4A4C;
+    font-size: .48rem;
+    text-indent: .9rem;
+}
+.liaojieBtn{
+    width: 12rem;
+    height: 1.48rem;
+    text-align: center;
+    line-height: 1.48rem !important;
+    padding: 0;
+    font-size: .7rem;
+    color: #fff;
+    border: none;
+    background-color: #FB4A4C;
+    border-radius: .2rem;
+    position: absolute;
+    /* bottom: .4rem; */
+    bottom: 0;
+    left: .8rem;
+}
+/* 抽奖 */
+#begin{
+    background-color: #FB4A4C;
+    color: #fff;
+    text-decoration: none;
+}
+/* 比赛规则 */
+.competitionRules{
+    width: 100%;
+    height: 10.4rem;
+    position: relative;   
+}
+.competitionRules_txt{
+    position: relative;
+    top: 3rem;
+    width: 100%;
+    height: 6rem;
+}
+.competitionRules_txt li {
+    position: relative;
+    left: .64rem; 
+    width: 13.68rem;
+    height: 2rem;
+    line-height: .96rem;
+    text-indent: .64rem;
+    font-size: .56rem;
+    list-style: none;
+}
+/* 拉票指南 */
+.competitionGet{
+    width: 100%;
+    height: 10.4rem;
+    position: relative;   
+}
+.competitionGet_txt{
+    position: relative;
+    top: 3rem;
+    width: 100%;
+    height: 6rem;
+}
+.competitionGet_txt li {
+    position: relative;
+    left: .64rem; 
+    width: 13.68rem;
+    height: 2rem;
+    line-height: .96rem;
+    text-indent: .64rem;
+    font-size: .56rem;
+    list-style: none;
+}
+/* 二维码页面 */
+.toCode{
+    width: 100%;
+    height: 100%;
+    background-color: #000;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 999909999;
+}
+.cocode{
+    width: 12rem;
+    height: 12rem;
+    position: fixed;
+    top: 3rem;
+    left: 1.4rem;
+}
+.cocode_txt{
+    width: 100%;
+    height: 1rem;
+    font-size: .72rem;
+    color: #fff;
+    position: fixed;
+    top: 17rem;
+    line-height: .72rem; 
+    text-align: center;
+}
+/* 、、、过来的、、、、 */
+.peresentMain{
+    width: 100%;
+    height: 5.24rem;
+    position: absolute;
+    top: 2.7rem;
+
+    /* display: -webkit-flex;  
+    display: flex;
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    justify-content: space-evenly; */
+
+    /* display: -webkit-box;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-box-pack: center;
+    -webkit-justify-content: center;
+    justify-content: center; */
+}
+.peresentMain > div{
+    /* width: 3.6rem;
+    height: 4.8rem; */
+    width: 4.64rem;
+    height: 4.04rem;
+    
+    float: left;
+    /* margin-left: 1.1rem; */
+}
+.peresentMain div:first-child{
+    margin-left: .54rem;
+}
+.peresentMainName{
+    width: 100%;
+    height: .5rem;
+    position: absolute;
+    top: 8rem;
+
+    /* display: -webkit-flex;  
+    display: flex;
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    justify-content: space-evenly; */
+
+    /* display: -webkit-box;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-box-pack: center;
+    -webkit-justify-content: center;
+    justify-content: center; */
+}
+.peresentMainName > div{
+    width: 3.6rem;
+    height: .48rem;
+    font-size: .48rem;
+    color: #fff;
+    text-align: center;
+    line-height: .48rem;
+
+    float: left;
+    margin-left: 1.1rem;
+}
+.Coupon{
+    width: 4.52rem;
+    height: 2.52rem;
+    position: absolute;
+    left: 5.2rem;
+    top: 3rem;
+}
+/* 比赛规则 */
+.competitionRules{
+    width: 100%;
+    height: 10.4rem;
+    position: relative;   
+}
+.competitionRules_txt{
+    position: relative;
+    top: 3rem;
+    width: 100%;
+    height: 6rem;
+}
+.competitionRules_txt li {
+    position: relative;
+    left: .64rem; 
+    width: 13.68rem;
+    height: 2rem;
+    line-height: .96rem;
+    /* text-indent: .64rem; */
+    font-size: .56rem;
+    list-style: none;
+}
+/* 比赛流程 */
+.competitionKer{
+    width: 100%;
+    height: 6rem;
+    position: relative;  
+}
+.ker{
+    width: 14rem;
+    height: 2.8rem;
+    position: absolute;
+    left: .48rem;
+    bottom: .4rem;
+}
+/* 合作伙伴 */
+.competitionPeo{
+    width: 100%;
+    height: auto;
+    min-height: 8.57rem;
+    position: relative;  
+}
+.workPeo{
+    width: 100%;
+    height: auto;
+    min-height: 2.52rem;
+    position: relative;
+    top: 3rem;
+    /* 去除默认间隔 */
+    font-size: 0; 
+}
+.workPeo > div{
+    width: 3.68rem;
+    height: 2.52rem;
+    display: inline-block;
+    margin-left: 1rem;
+    margin-bottom: .5rem;
+}
+.competitionKefu{
+    width: 100%;
+    height: 10.4rem;
+    position: relative; 
+    top: 3rem; 
+}
+.maintit1{
+    width: 100%;
+    height: .64rem;
+    font-size: .64rem;
+    line-height: .64rem;
+    text-align: center;
+    font-weight: 600;
+    color: #333333;
+    position: absolute;
+    top: 2.5rem;
+}
+.secCode{
+    width: 100%;
+    height: 4.32rem;
+    position: relative;
+    top: 4.6rem;
+
+    /* display: -webkit-flex;  
+    display: flex;
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    justify-content: space-evenly; */
+
+    /* display: -webkit-box;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-box-pack: center;
+    -webkit-justify-content: center;
+    justify-content: center; */
+}
+.secCode > div {
+    width: 4.32rem;
+    height: 4.32rem;
+
+    float: left;
+    margin-left: 2rem;
+}
+.secCode1{
+    width: 100%;
+    height: .56rem;
+    position: relative;
+    top: 5rem;
+    
+    /* display: -webkit-flex;  
+    display: flex;
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    justify-content: space-evenly; */
+
+    /* display: -webkit-box;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-box-pack: center;
+    -webkit-justify-content: center;
+    justify-content: center; */
+}
+.secCode1 > div {
+    text-align: center;
+    line-height: .56rem;
+    font-size: .56rem;
+    width: 4.32rem;
+    height: .56rem;
+
+    float: left;
+    margin-left: 2rem;
+}
+/* 填写信息 */
+.liaojie{
+    padding-top: 1.3rem;
+    position: fixed;
+    left:.68rem;
+    /* bottom: 6rem; */
+    top: 25%;
+    width: 13.6rem;
+    height: 11rem;
+    border-radius: 5px;
+    background-color: #fff;
+    z-index: 1000;
+} 
+.background{
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    left: 0;
+    top: 0;
+    z-index: 999;
+    background-color: #000;
+    opacity: .8;
+}
+.closeCover{
+    width: 2rem;
+    height: 2rem;
+    position: absolute;
+    top: 0rem;
+    right: 0rem;
+}
+.topDiv{
+    width: 100%;
+    height: 2.04rem;
+    font-size: .6rem;
+    color: #333333;
+    text-align: center;
+    line-height: 2.04rem;
+    position: relative;
+    /* padding-bottom: .8rem; */
+}
+.topDiv1{
+    width: 100%;
+    height: 2.04rem;
+    font-size: .6rem;
+    color: #333333;
+    text-align: center;
+    line-height: 2.04rem;
+    position: relative;
+    /* padding-bottom: .8rem; */
+}
+
+.liaojiesp{
+    width: .52rem;
+    height: .52rem;
+    display: block;
+    position: absolute;
+    top: .6rem;
+    right: .6rem;
+}
+.liaojiesp img{
+    width: 100%;
+    height: 100%;
+    display: block;
+}
+.liaojiemain{
+    width: 100%;
+    height: 7.8rem;
+    /* padding: .8rem; */
+    position: relative;
+}
+.inp{
+    width: 12rem;
+    height: 1.6rem;
+    background-color: #F0F0F0;
+    border: none;
+    margin-left: .8rem;
+    text-indent: .4rem;
+    font-size: .56rem;
+    margin-bottom: .44rem;
+}
+.beiTip{
+    padding-top: .2rem;
+    width: 100%;
+    height: .48rem;
+    color: #FB4A4C;
+    font-size: .48rem;
+    text-indent: .9rem;
+}
+.liaojieBtn{
+    width: 12rem;
+    height: 1.48rem;
+    text-align: center;
+    line-height: 1.48rem;
+    font-size: .7rem;
+    color: #fff;
+    border: none;
+    background-color: #FB4A4C;
+    border-radius: .2rem;
+    position: absolute;
+    /* bottom: .4rem; */
+    bottom: 0;
+    left: .8rem;
+}
+/* 了解集客多 */
+.knowMore{
+    position: fixed;
+    left:.68rem;
+    top: 4rem;
+    width: 13.6rem;
+    height:18rem;
+    border-radius: 5px;
+    background-color: #fff;
+    z-index: 1000;
+}
+.closeCover1{
+    width: 2rem;
+    height: 2rem;
+    position: absolute;
+    top: 0rem;
+    right: 0rem;
+}
+.moreTxt{
+    width: 11.64rem;
+    height: 7rem;
+    font-size: .6rem;
+    color: #333333;
+    word-wrap: auto;
+    margin-left: 1rem;
+    text-indent: .6rem;
+    margin-top: 1.8rem;
+}
+.isknow{
+    width: 12rem;
+    height: 1.48rem;
+    font-size: .6rem;
+    color: #fff;
+    border-radius: .2rem;
+    font-family: HiraginoSansGB-W3;
+    position: absolute;
+    left: .8rem;
+    bottom: 1.12rem;
+    border: none;
+    background-color: #FB4A4C;
+}
+.maintit{
+    width: 100%;
+    height: .64rem;
+    font-size: .64rem;
+    line-height: .64rem;
+    text-align: center;
+    font-weight: 600;
+    color: #333333;
+    position: absolute;
+    top: 1.3rem;
+}
+.mainlitimg1{
+    width: 1rem;
+    height: .4rem;
+    position: absolute;
+    top: 1.4rem;
+    left: 4.5rem;
+}
+.mainlitimg2{
+    width: 1rem;
+    height: .4rem;
+    position: absolute;
+    top: 1.4rem;
+    right: 4.5rem;
+}
+.apresent{
+    width: 100%;
+    height: 9rem;
+    position: relative;
+    top: 5.56rem;
+}
+.aPre{
+    width: 5.72rem;
+    height: 2rem;
+    position: absolute;
+    left: 4.65rem;
+    /* top: 5.56rem; */
+    background-image: url('../img/yellowsicle.png');
+    background-size: 100% 100%;
+    font-size: .48rem;
+    text-align: center;
+    line-height: 1.5rem;
+    font-weight: 600;
+}
+.aPretxt{
+    color: #fff;
+    position: absolute;
+    top: 4rem;
+    font-size: .56rem;
+    text-indent: .8rem;
+    padding-left: .9rem;
+    padding-right: .9rem;
+}
+.peresentMain{
+    width: 100%;
+    height: 5.24rem;
+    position: absolute;
+    top: 2.7rem;
+
+    /* display: -webkit-flex;  
+    display: flex;
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    justify-content: space-evenly; */
+
+    /* display: -webkit-box;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-box-pack: center;
+    -webkit-justify-content: center;
+    justify-content: center; */
+}
+.peresentMain > div{
+    /* width: 3.6rem;
+    height: 4.8rem; */
+    width: 4.64rem;
+    height: 4.04rem;
+    
+    float: left;
+    /* margin-left: 1.1rem; */
+}
+.pageMainShow{
+    width: 100%;
+    height: 40rem;
+    position: relative;
+    background-image: url('../img/pageimg.png');
+    background-size: 100% 100%;
+}
+.maintit{
+    width: 100%;
+    height: .64rem;
+    font-size: .64rem;
+    line-height: .64rem;
+    text-align: center;
+    font-weight: 600;
+    color: #333333;
+    position: absolute;
+    top: 1.3rem;
+}
+.mainlitimg1{
+    width: 1rem;
+    height: .4rem;
+    position: absolute;
+    top: 1.4rem;
+    left: 4.5rem;
+}
+.mainlitimg2{
+    width: 1rem;
+    height: .4rem;
+    position: absolute;
+    top: 1.4rem;
+    right: 4.5rem;
+}
+.apresent{
+    width: 100%;
+    height: 9rem;
+    position: relative;
+    top: 5.56rem;
+}
+.yqtou{
+    width: 100%;
+    height: 100%;
+}
+.yqimg1{
+    position: fixed;
+    width: 4rem;
+    height: 3.88rem;
+    left: 5.52rem;
+    top: 5.96rem;
+    z-index: 1000;
+}
+.yqimg2{
+    position: fixed;
+    width: 4rem;
+    height: 3.88rem;
+    right: 3.16rem;
+    top: 1.76rem;
+    z-index: 1000;
+}
+.yqtxttt{
+    z-index: 1000;
+    width: 100%;
+    height: 1rem;
+    font-size: .72rem;
+    line-height: .72rem;
+    color: #fff;
+    position: fixed;
+    top: 10.36rem;
+    text-align: center;
+}
+.kbtimg{
+    width: 1.2rem;
+    height: 1.2rem;
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    z-index: 9999099990;
+}

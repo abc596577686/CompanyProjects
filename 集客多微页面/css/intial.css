@@ -1,0 +1,23 @@
+/*日期样式*/
+.mbsc-android-holo-light .mbsc-fr-hdr{
+	color: #e3264e;
+	border-color: #e3264e;
+}
+.mbsc-android-holo-light .mbsc-sc-whl-l{
+	border-color: #e3264e;
+}
+
+.displaynone{
+	display: none;
+}
+/*选框*/
+.aui-radio:checked, .aui-radio.aui-checked, .aui-checkbox:checked, .aui-checkbox.aui-checked{
+	background: #ffffff;
+	border: 1px solid #fd1142;
+}
+
+.aui-radio:checked:before, .aui-radio.aui-checked:before, .aui-checkbox:checked:before, .aui-checkbox.aui-checked:before, .aui-radio:checked:after, .aui-radio.aui-checked:after, .aui-checkbox:checked:after, .aui-checkbox.aui-checked:after{
+	border: 1px solid #fd1142;
+	border-top: none;
+  border-right: none;
+}

@@ -1,0 +1,11 @@
+<!--components/bannerAlone/bannerAlone.wxml-->
+<view class='bannerWrap'>
+  <navigator wx:if="{{data.contents[0].jumpUrl}}" url="{{data.contents[0].jumpUrl+'&name='+data.contents[0].title}}" hover-class='none'>
+    <view class='imgWrap'>
+      <image class='image' mode="widthFix" src='{{data.picture}}'></image>
+    </view>
+  </navigator>
+  <view wx:else>
+    <image class='image' mode="widthFix" src='{{data.picture}}'></image>
+  </view>
+</view>

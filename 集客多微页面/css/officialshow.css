@@ -1,0 +1,248 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+img{
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+.headpage{
+    width: 100%;
+    height: 25.16rem;
+    border-bottom: .4rem solid #F0F0F0;
+}
+/* 小伙伴们说 */
+.customerShare{
+    width: 100%;
+    height: 8.64rem;
+    background-color: #fff;
+    padding-top: .68rem;
+    position: relative;
+}
+.say{
+    width: 4rem;
+    height: .64rem;
+    background-color: #fff;
+    line-height: .6rem;
+    color: #333333; 
+    font-size: .6rem;
+    text-indent: .72rem;  
+    font-weight: bold; 
+}
+.allShow{
+    width: 2.6rem;
+    height: .52rem;
+    color: #666666;
+    line-height: .52rem;
+    text-align: center;
+    position: absolute;
+    right: 1rem;
+    font-size: .52rem;
+    top: .66rem;
+}
+.all_icon{
+    width: .32rem;
+    height: 0.4rem;
+    position: absolute;
+    right: 0.5rem;
+    top: .71rem;
+}
+.showMain{
+    /* width: 100%; */
+    width: 15rem;
+    height: 5.64rem;
+    margin-top: .8rem;
+    padding-top: .2rem;
+    background-color: #fff;
+    font-size: 0;
+    overflow-y: hidden;
+    overflow-x: auto;
+    white-space: nowrap
+}
+.showMain::-webkit-scrollbar {
+    display: none;
+}
+.showMain > div{
+    width: 9.96rem;
+    height: 4.64rem;
+    background-color: #fff;
+    display: inline-block;
+    box-shadow: 0px 0px .2rem .04rem #f0f0f0;
+    margin-left: .4rem;
+    position: relative;
+}
+.tit1{
+    width: 1.32rem;
+    height: 1.32rem;
+    position: absolute;
+    overflow: hidden;
+    border-radius: 50%;
+    position: absolute;
+    left: 1.4rem;
+    top: .44rem;
+}
+.tit2{
+    width: 6rem;
+    height: .56rem;
+    font-size: .52rem;
+    line-height: .56rem;
+    color: #333333;
+    font-weight: bold;
+    position: absolute;
+    left: 3.5rem;
+    top: .8rem;
+    text-align: left;
+    /* overflow: hidden; */
+}
+.tit3{
+    width: 8.8rem;
+    height: 2rem;
+    font-size: .48rem;
+    line-height: .7rem;
+    color: #666666;
+    position: absolute;
+    left: 1rem;
+    top: 2.24rem;
+    text-indent: 2em;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 3;
+    overflow: hidden;
+    white-space: normal
+}
+/* 礼包 */
+.giftBag{
+    width: 100%;
+    height: 12.64rem;
+    background-color: #fff;
+    position: relative;
+}
+.bagTit{
+    width: 12.36rem;
+    height: .6rem;
+    margin-left: 1.32rem;
+}
+.bagMain{
+    width: 100%;
+    height: 10rem;
+    font-size: 0;
+}
+.bagMain > div{
+    width: 29%;
+    margin-left: .5rem;
+    height: 10rem;
+    /* background-color: #999; */
+    display: inline-block;
+    position: relative;
+}
+.bagImg{
+    /* width: 2.4rem; */
+    position: absolute;
+    top: 1.8rem;
+    left:0;
+    right:0;
+    margin:auto;
+}
+.bagname{
+    width: 100%;
+    height: .4rem;
+    color: #4E2700;
+    text-align: center;
+    line-height: .4rem;
+    font-size: .4rem;
+    position: absolute;
+    top: 6.5rem;
+}
+.bagprice{
+    width: 100%;
+    height: .6rem;
+    color: #FB4A4C;
+    text-align: center;
+    line-height: .6rem;
+    font-size: .6rem;
+    position: absolute;
+    top: 7.3rem;
+    font-weight: bold;
+}
+.bagprice > span{
+    width: .36rem;
+    height: .36rem;
+    font-size: .36rem;
+    padding-right: .12rem;
+    text-indent: -.08rem;
+    /* font-size: .36rem; */
+    display: inline-block;
+}
+.bagline{
+    width: 85%;
+    height: .4rem;
+    position: absolute;
+    bottom: 1.3rem;
+    margin-left: .5rem;
+}
+.goBtn1{
+    width: 13.72rem;
+    height: 1.56rem;
+    background-color: #fff!important;
+    border: none;
+    color: #FB4A4C!important;
+    font-weight: bold;
+    border-radius: .2rem;
+    margin-top: .4rem;
+    position: absolute;
+    left: .56rem;
+    bottom: .4rem;
+    box-shadow: 0px 0px 0.2rem 0.04rem #FB4A4C;
+}
+.middle{
+    width: 100%;
+    height: 19.6rem;
+    background-color: #fff;
+}
+.bottom{
+    width: 100%;
+    height: 31rem;
+    border-bottom: .4rem solid #F0F0F0;
+}
+.btn{
+    width: 100%;
+    height: 2.4rem;
+    background-color: #fff;
+    position: fixed;
+    bottom: 0;
+    z-index: 2;
+}
+.bottomCover{
+    width: 100%;
+    height: 2.4rem;
+    background-color: #fff;
+}
+.goBtn{
+    width: 13.72rem;
+    height: 1.56rem;
+    background-color: #FB4A4C;
+    border: none;
+    color: #fff;
+    font-weight: bold;
+    border-radius: .2rem;
+    margin-top: .4rem;
+    font-size: .6rem;
+}
+.goBtn2{
+    width: 13.72rem;
+    height: 1.56rem;
+    background-color: #FB4A4C;
+    border: none;
+    color: #fff;
+    font-weight: bold;
+    border-radius: .2rem;
+    margin-top: .4rem;
+    margin-left: .6rem;
+    font-size: .6rem;
+}
+.s_img{
+    display: block;
+    position: absolute;
+    left: 0;
+}

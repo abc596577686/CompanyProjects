@@ -1,0 +1,9 @@
+ {
+    "navigationBarTitleText": "收货人信息",
+    "navigationBarBackgroundColor": "#fff",
+    "usingComponents": {
+      "areaPicker": "/components/areaPicker/areaPicker",
+      "toast": "/components/toast/toast",
+      "timeout": "/components/timeout/timeout"
+    }
+}

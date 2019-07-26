@@ -1,0 +1,74 @@
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="width=device-width,user-scalable=no,initial-scale=0.33333,minimum-scale=0.33333,maximum-scale=0.33333" />
+    <title>领取红包</title>
+    <link rel="stylesheet" href="./css/getfor.css">
+    <script src="./js/wechat.js"></script>
+    <script src="./js/jquery-3.2.1.js"></script>
+    <script>
+            //1.获取像素比
+            var pixelRatio=1/window.devicePixelRatio;
+            // console.log(pixelRatio);
+            //2.通过js动态来设置视口
+            document.write('<meta name="viewport" content="width=device-width,initial-scale='+pixelRatio+',minimum-scale='+pixelRatio*2+',maximum-scale='+pixelRatio+'">');
+            //3.获取html节点
+            var html=document.getElementsByTagName('html')[0];
+            //console.log(html)
+            //4.获取屏幕宽度
+            var pageWidth=html.getBoundingClientRect().width;
+            // console.log(pageWidth);
+            //屏幕宽度/固定数值=基准值;
+            html.style.fontSize=pageWidth/15+'px';
+        </script>
+</head>
+<body>
+    <div class="bgc">
+        <div class="bigImg">
+            <img src="./img/succ.png" alt="error">
+        </div>
+        <div class="liq">您已领取红包</div>
+        <button class="goUse">前往使用</button>
+    </div>
+</body>
+<script>
+
+	// 返回上一页
+	function goback(){
+    	window.history.go(-1);
+	}
+
+    //获取URL上参数
+    function getUrlPara(paraName) {
+    	var reg = new RegExp("(^|&)" + paraName + "=([^&]*)(&|$)", "i");
+       	var r = window.location.search.substr(1).match(reg);
+        if (r != null){
+        	return unescape(r[2]);
+        }
+       	return null;    
+    }
+
+    // 点击前往使用
+    $(".goUse").click(function(){
+        var u = navigator.userAgent, app = navigator.appVersion;   
+        var isAndroid = u.indexOf('Android') > -1 || u.indexOf('Linux') > -1; //android终端或者uc浏览器   
+        var isIOS = !!u.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/); //ios终端   
+        // alert('是否是Android：'+isAndroid);   
+        // alert('是否是iOS：'+isiOS);  
+        // if(isAndroid){  
+        //     window.location.href = "http://a.app.qq.com/o/simple.jsp?pkgname=com.webapp.jkd";
+        // }
+        // if(isiOS){  
+        //     window.location.href = "http://a.app.qq.com/o/simple.jsp?pkgname=com.webapp.jkd";
+        // }
+        if(isAndroid){
+            document.location.href = 'http://a.app.qq.com/o/simple.jsp?pkgname=com.webapp.jkd'; 
+        }
+
+        if(isIOS){
+            document.location.href = 'http://a.app.qq.com/o/simple.jsp?pkgname=com.webapp.jkd';  
+        }
+       
+    })
+</script>
+</html>

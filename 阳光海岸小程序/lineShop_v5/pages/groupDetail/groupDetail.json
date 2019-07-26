@@ -1,0 +1,14 @@
+{
+  "usingComponents":
+  {
+    "groupUser" : "/components/groupUser/groupUser",
+    "btn" : "/components/btn/btn",
+    "toast": "/components/toast/toast",
+    "loading": "/components/loading/loading",
+    "timeout": "/components/timeout/timeout",
+    "goodsTwoColumns": "/components/goodsTwoColumns/goodsTwoColumns",
+    "noMore": "/components/noMore/noMore"
+     
+    
+  }
+}

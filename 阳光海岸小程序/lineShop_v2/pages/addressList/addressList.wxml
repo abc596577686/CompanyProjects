@@ -1,0 +1,31 @@
+<!--pages/addressList/addressList.wxml-->
+<loading wx:if="{{isLoading}}"></loading>
+<view class='bg border-t' wx:if='{{addressList.length > 0}}'>
+<block wx:for="{{addressList}}" wx:key="{{index}}">
+  <view class='addressItem bottomLine' data-addressInfo="{{item}}" bindtap='selectAddressEnv'>
+    <view class='nameWrap'>
+      <text class='name'>{{item.name}}</text>
+      <view class='iconText' wx:if="{{item.isDefault === '1'}}">默认</view>
+    </view>
+    <view class='infoWrap'>
+      <text class='phone'>{{item.mobile}}</text>
+      <text class='address'>{{item.fullAddress}}</text>
+    </view>
+    <view class='handleWrap' data-curEditAddress="{{item}}" catchtap='editEnv'>
+      <view>
+        <image class='btn' mode='widthFix' src='/assets/images/icon_edit.png'></image>
+      </view>
+    </view>
+  </view>
+</block>
+</view>
+<view class='bg border-t' wx:if='{{!addressList.length}}'>
+  <view class='empty'>
+    <image class='emptyImg' src='/assets/images/icon_addresss@2x.png' mode='widthFix'></image>
+    <text class='emptyInfo'>您还没有收货地址</text>
+  </view>
+</view>
+
+<view class='btnWrap'>
+  <view class='addAddressBtn' bindtap='addEnv'>添加收件人</view>
+</view>

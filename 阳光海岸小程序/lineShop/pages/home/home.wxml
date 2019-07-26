@@ -1,0 +1,72 @@
+<!-- home.wxml  -->
+
+<!-- topHead  -->
+<view id='topHead' class='topHead'>
+  <view class='topHeadWrap'>
+    <view class='searchWrap' bindtap='jumpSearchEnv'>
+      <image src='/assets/images/icon_search.png'></image>
+      <!-- <input placeholder="商品" placeholder-style='color:#ccc'></input> -->
+      <text>商品</text>
+    </view>
+    <view class='scanCodeBtnWrap' bindtap='scanCodeEnv'>
+      <image src='/assets/images/icon_scanCode.png'></image>
+      <text>扫 码</text>
+    </view>
+  </view>
+  <!-- tabBar  -->
+  <scroll-view class='tabWrap' wx:if="{{tabList}}" scroll-x="true" scroll-with-animation="true" scroll-left="{{scrollLeft}}">
+    <view class='tabBox' wx:for="{{tabList}}" wx:key="id">
+      <view id="{{index}}" class="tabItem {{activeId == index ? 'active' : ''}}" data-id="{{item.channelId}}" bindtap='switchTabEnv'>{{item.channelName}}</view>
+    </view>
+  </scroll-view>
+</view>
+
+<!--refresh  -->
+
+<view id='refreshWrap' class="refreshWrap" style="top:{{refreshMarginTop +'px'}}">
+  <view class='refreshBox'>
+    <image class='icon' src='../../assets/images/icon_pullDown.png'></image>
+    <view class='text'>
+      <text class="tips">{{refreshTips}}</text>
+      <view class='time'>最后更新：{{curTime}}</view>
+    </view>
+  </view>
+</view>
+<view class='refreshMask' style="margin-top:{{refreshMarginTop +'px'}};height:{{refreshMaskHeight + 'px'}};transition:height {{timing}} cubic-bezier(0.075, 0.82, 0.165, 1)"></view>  
+
+<!-- swiperContainer  -->
+<swiper class='swiperWrap' bindchange='swiperSlideEnv' bindanimationfinish="swiperSlideEndEnv" current="{{currentIndex}}" interval="{{interval}}" duration="{{duration}}" style="height:{{swiperHeight ? swiperHeight+'px' : 'auto'}}">
+
+  <view wx:for="{{channelList}}" wx:key="{{index}}">
+    <swiper-item>
+      <scroll-view scroll-y="true" bindtouchend='touchEnd'  scroll-with-animation="true" bindscroll="scrollEnv" enable-back-to-top="true" style="height:{{swiperHeight ? swiperHeight +'px' : 'auto'}};margin-top:{{scrollViewMarginTop+'px'}}">
+        <!-- <view style="height:{{swiperHeight ? swiperHeight +'px' : 'auto'}}; overflow:auto;"> -->
+        <block wx:for="{{item}}" wx:key="index">
+          <view>
+            <!-- bannerMore  -->
+            <bannerMore wx:if="{{item.type == 0 && item.attribute == 0 && item.contents}}" data="{{item.contents}}"></bannerMore>
+
+            <!-- bannerAlone  -->
+            <bannerAlone wx:if="{{item.type == 0 && item.attribute == 1 && item}}" data="{{item}}"></bannerAlone>
+
+            <!-- bannerDouble  -->
+            <bannerDouble wx:if="{{item.type == 0 && item.attribute == 2 && item.contents}}" data="{{item.contents}}"></bannerDouble>
+
+            <!-- navAlone  -->
+            <navAlone wx:if="{{item.type == 1 && item.attribute == 0 && item.contents.length}}" data="{{item.contents}}"></navAlone>
+
+            <!-- navDouble  -->
+            <!-- <navDouble wx:if="{{item.type == 1 && item.attribute == 1}}"></navDouble> -->
+
+            <!-- theme  -->
+            <theme wx:if="{{item.type == 2}}" data="{{item}}"></theme>
+
+            <!-- goodTwoColumns  -->
+            <goodTwoColumns wx:if="{{item.type == 3 && item.contents.length}}"></goodTwoColumns>
+          </view>
+        </block>
+      </scroll-view>
+      <!-- </view> -->
+    </swiper-item>
+  </view>
+</swiper>

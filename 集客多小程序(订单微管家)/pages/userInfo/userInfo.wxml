@@ -1,0 +1,28 @@
+<!--pages/userInfo/userInfo.wxml-->
+
+<view class='item'>
+  <view class='lable'>头像</view>
+  <view class='content'>
+    <view class='headWrap'>
+      <image mode='widthFix' src='{{userInfo.headerImage}}'></image>
+    </view>
+  </view>
+</view>
+
+<view class='infoList'>
+  <view class='item'>
+    <view class='lable'>昵称</view>
+    <view class='content'>
+      <text>{{userInfo.nickname}}</text>
+    </view>
+  </view>
+  <view class='item border-t'>
+    <view class='lable'>手机号</view>
+    <view class='content'>
+      <navigator hover-class='none' url='/pages/userInfo/verify/verify?phoneNumber={{userInfo.mobile}}' class='content'>
+        <text>{{userInfo.mobile}}</text>
+        <image class='seeMoreIcon' mode='widthFix' src='/assets/images/icon_more.png'></image>
+      </navigator>
+    </view>
+  </view>
+</view>

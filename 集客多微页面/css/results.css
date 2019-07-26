@@ -1,0 +1,367 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+img{
+    width: 100%;
+    height: 100%;
+}
+.deng{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: 6; 
+}
+.lian{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: 5;
+}
+.main{
+    width: 100%;
+    height: 100%;
+}
+.lis_1{
+    width: 2.7rem;
+    height: .6rem;
+    line-height: .6rem;
+    font-size: .6rem;
+    color: #FFFFFF;
+    position: absolute;
+    left: 7.32rem;
+    top: 6.88rem;
+}
+.lisName{
+    width: 2.7rem;
+    height: 6rem;
+    position: absolute;
+    left: 7.32rem;
+    top: 5.7rem; 
+}
+.kname{
+    width: 2.7rem;
+    height: .6rem;
+    line-height: .6rem;
+    font-size: .6rem;
+    color: #FFFFFF;
+    margin-bottom: .92rem;
+}
+.lisWei{
+    width: 2.7rem;
+    height: 6rem;
+    position: absolute;
+    left: 11.24rem;
+    top: 5.7rem; 
+}
+.kwei{
+    width: 2.7rem;
+    height: .6rem;
+    line-height: .6rem;
+    font-size: .6rem;
+    color: #FFFFFF;
+    margin-bottom: .92rem;
+}
+.sortlist{
+    width: 2.7rem;
+    height: 6rem;
+    position: absolute;
+    left: 4.669333rem;
+    top: 5.7rem; 
+}
+.sort{
+    width: 2.7rem;
+    height: .6rem;
+    line-height: .6rem;
+    font-size: .6rem;
+    color: #FFFFFF;
+    margin-bottom: .92rem;
+}
+.imglist{
+    width: 2.7rem;
+    height: 6rem;
+    position: absolute;
+    left: 3.369333rem;
+    top: 5.7rem; 
+}
+ .pic{
+    width: .64rem;
+    height: .64rem;
+    line-height: .6rem;
+    font-size: .6rem;
+    color: #FFFFFF;
+    margin-bottom: .92rem;
+} 
+
+/* .lis_2{
+    width: 2.2rem;
+    height: .6rem;
+    line-height: .6rem;
+    font-size: .6rem;
+    color: #FFFFFF;
+    position: absolute;
+    left: 7.32rem;
+    top: 8.51rem;
+}
+.lis_3{
+    width: 2.2rem;
+    height: .6rem;
+    line-height: .6rem;
+    font-size: .6rem;
+    color: #FFFFFF;
+    position: absolute;
+    left: 7.32rem;
+    top: 10.2rem;
+} */
+.num_1{
+    width: 2.2rem;
+    height: .6rem;
+    line-height: .6rem;
+    font-size: .6rem;
+    color: #FFFFFF;
+    position: absolute;
+    left: 11.24rem;
+    top: 6.88rem;
+}
+.num_2{
+    width: 2.2rem;
+    height: .6rem;
+    line-height: .6rem;
+    font-size: .6rem;
+    color: #FFFFFF;
+    position: absolute;
+    left: 11.24rem;
+    top: 8.51rem;
+}
+.num_3{
+    width: 2.2rem;
+    height: .6rem;
+    line-height: .6rem;
+    font-size: .6rem;
+    color: #FFFFFF;
+    position: absolute;
+    left: 11.24rem;
+    top: 10.2rem;
+}
+.get{
+    width: 7.12rem;
+    height: 1.8rem;
+    position: absolute;
+    left: 4.0rem;
+    bottom: 1.1rem;
+    z-index: 10;
+}
+.registered{
+    width: 100%;
+    height: 10.04rem;
+    position: fixed;
+    bottom: 0;
+    background-color: #fff;
+    z-index: 99999;
+}
+.name{
+    width: 8rem;
+    height: .6rem;
+    font-size: .6rem;
+    line-height: .6rem;
+    position: absolute;
+    left: .52rem;
+    top: .72rem;
+}
+.nameSp{
+    font-size: .6rem;
+    line-height: .6rem;
+}
+.close{
+    width: .52rem;
+    height: .52rem;
+    position: absolute;
+    left: 13.72rem;
+    top: .72rem;
+}
+hr{
+    width: 100%;
+    height: .001rem;
+    background-color: lightgrey;
+    position: absolute;
+    top: 2rem;
+    opacity: 0.3;
+}
+.phone{
+    width: 13.76rem;
+    height: 1.8rem;
+    line-height: 1.8rem;
+    background-color: #F7F7F7;
+    position: absolute;
+    left: .4rem;
+    top: 2.64rem;
+    border: none;
+    text-indent: .6rem;
+    font-size: .7rem;  
+}
+.number{
+    width: 13.76rem;
+    height: 1.8rem;
+    line-height: 1.8rem;
+    background-color: #F7F7F7;
+    position: absolute;
+    left: .4rem;
+    top: 5rem;
+    border: none;
+    text-indent: .6rem;
+    font-size: .7rem; 
+}
+.keyNum{
+    width: 3.4rem;
+    height: 1.12rem;
+    border: .04rem solid #FB4A4C;
+    font-size: .56rem;
+    line-height: 1.12rem;
+    text-align: center;
+    color: #FB4A4C;
+    position: absolute;
+    left: 9.84rem;
+    top: 5.32rem;
+    background-color: #fff;
+}
+.sure{
+    width: 13.76rem;
+    height: 1.88rem;
+    background-color: #D94E58;
+    box-shadow: -3px  3px  8px  #F5C77E;
+    text-align: center;
+    line-height: 1.88rem;
+    border-radius: .2rem;
+    position: absolute;
+    left: .44rem;
+    bottom: .88rem;
+    color: #fff;
+}
+#div_alert{
+    width: 8rem; 
+    height: 1.4rem; 
+    text-align:center; 
+    background-color:black; 
+    color: White;
+    display: none; 
+    position:fixed;
+    top: 6rem;
+    left: 3.485rem;  
+    border:1px solid grey; 
+    border-top:0;
+    border-radius: 0.2rem;
+    font-size: .6rem;
+    line-height: 1.4rem; 
+    z-index: 99999;
+}
+.preImg{
+    width: 11.04rem;
+    height: 3rem;
+    position: absolute;
+    left: 1.54rem;
+    top: 15rem;
+    padding: .426667rem;  
+    padding-top: .853333rem;
+    background-image: url('../img/imgdiv.png');
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    z-index: 10;
+}
+.iimg{
+     width: 100%; 
+     height: 2.3rem; 
+     /* margin-top: 1rem; */
+}
+.sortlist img{
+    width: 100%;
+    height: 100%;
+}
+/*四行展示栏  */
+.matchshow{
+    width: 100%;
+    height: 1.44rem;
+    background-image: url('../img/yyu.png');
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    margin-bottom: .2rem;
+    position: relative;
+}
+.showmain{
+    width: 100%;
+    height: 8rem;
+    position: absolute;
+    top: 5.5rem;
+    font-size: 0;
+    z-index: 4;   
+}
+.matchshow > div{
+    float: left;
+}
+.showimg1{
+    width: 1.2rem;
+    height: 1.2rem;
+    margin-top: .12rem;
+    margin-left: 2rem;
+}
+.showimg2{
+    width: .8rem;
+    height: .8rem;
+    margin-top: .36rem;
+    margin-left: .4rem;
+}
+.showimg2{
+    /* display: none; */
+}
+.showimg3{
+    width: 2rem;
+    height: .6rem;
+    font-size: .6rem;
+    line-height: .6rem;
+    text-align: center;
+    margin-top: .4rem;
+    margin-left: .3rem;
+    color: #fff;
+}
+.showimg4{
+    width: 2rem;
+    height: .6rem;
+    font-size: .6rem;
+    line-height: .6rem;
+    text-align: center;
+    margin-top: .4rem;
+    margin-left: 1rem;
+    color: #fff;
+}
+.showimg5{
+    width: 2rem;
+    height: .6rem;
+    font-size: .6rem;
+    line-height: .6rem;
+    text-align: center;
+    margin-top: .4rem;
+    margin-left: 1.2rem;
+    color: #fff;
+}
+.jieguo{
+    width: 7.24rem;
+    height: 1.84rem; 
+    position: absolute;
+    left: 3.7rem;
+    top: 2.3rem;
+    font-size: 0;
+    z-index: 4; 
+}
+.jiangpin{
+    width: 7.24rem;
+    height: 1.84rem; 
+    position: absolute;
+    left: 3.7rem;
+    top: 12.6rem;
+    font-size: 0;
+    z-index: 4; 
+}
+

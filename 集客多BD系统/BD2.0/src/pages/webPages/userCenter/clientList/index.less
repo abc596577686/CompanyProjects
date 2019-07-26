@@ -1,0 +1,364 @@
+
+
+#superWebClientList{
+    padding: .3rem;
+    // padding-bottom: 0;
+    background-color:#002140;
+    min-height: calc(100vh);
+    .pageTitle{
+        position: relative;
+        width: 100%;
+        height: 1rem;
+        line-height: 1rem;
+        background-color: #999;
+        color: #000;
+        font-size: .3rem;
+        text-align: center;
+        font-weight: bold;
+        .am-icon{
+            position: absolute;
+            width: 1rem;
+            height: .7rem;
+            top: .5rem;
+            right: .6rem;
+            padding: .1rem;
+        }
+        .returnIcons{
+            width: .7rem;
+            height: .7rem;
+            position: absolute;
+            right: .2rem;
+            top: .2rem;
+        }
+        .returnIcons svg{
+            width: 100%;
+            height: 100%;
+        }
+        .returnIcon{
+            width: .45rem;
+            height: .58rem;
+            position: absolute;
+            left: .2rem;
+            top: .2rem;
+        }
+        .returnIcon svg{
+            width: 100%;
+            height: 100%;
+        }
+    }
+    .head{
+        width: 100%;
+        height: .8rem;
+        background-color: #fff;
+    }
+    .head_flex{
+        // width: 100%;
+        height: .8rem;
+    }
+    .head_img{
+        width: .6rem;
+        height: .6rem;
+        border-radius: 50%;
+        overflow: hidden;
+    }
+    .head_name{
+        width: 4rem;
+        height: .6rem;
+        text-align: left;
+        line-height:  .6rem;
+        font-size: .4rem;
+        font-weight: bold;
+        margin-left: .2rem;
+        input{
+            margin-top: .17rem;
+            font-size: .3rem;
+        }
+    }
+    .head_search{
+        width: .6rem;
+        height: .6rem;
+        margin-left: .9rem;
+        cursor: pointer;
+        :first-child{
+            width: .6rem;
+            height: .6rem;
+        }
+    }
+    .mainUserInfo{
+        width: 100%;
+        height: 4.2rem;
+        margin-bottom: .3rem;
+        background-color: #fff;
+        .head_flexs{
+            width: 100%;
+            min-height: 2.6rem;
+        }
+        .userHeadImg{
+            width: 1rem;
+            height: 2.3rem;
+            img{
+                width: .9rem;
+                height: .9rem;
+                border-radius: 50%;
+                overflow: hidden;
+                margin-right: .1rem;
+            }
+            a{
+                height: .5rem;
+                line-height: .5rem;
+                margin-top: .2rem;
+                margin-right: .1rem;
+                border: .02rem solid #333;
+                background-color: #fff;
+            }
+            span{
+                height: .5rem;
+                line-height: .5rem;
+                color: #333;
+                font-size: .3rem;
+                font-weight: bold;
+                display: inline-block;
+            }
+            .dataStatusSp{
+                font-size: .27rem;
+                margin-top: .2rem;
+                padding: .03rem;
+                background-color: #f0f0f0;
+            }
+        }
+        .userMaintxt{
+            margin-left: .2rem;
+            width: 2.7rem;
+            height: 1.8rem;
+            color: #333;
+            font-size: .25rem;
+            font-weight: bold;
+            p{
+                margin-bottom: .1rem;
+            }
+        }
+        .userCopy{
+            width: 1rem;
+            height: 1.8rem;
+            padding-top: .4rem;
+            :first-child{
+                background-color: #fff;
+            }
+            a{
+                border: .02rem solid #333;
+            }
+            span{
+                color: #333;
+                font-size: .3rem;
+                font-weight: bold;
+            }
+        }
+        .userMoreInfo{
+            // line-height: 3.8rem; 
+            padding-top: .4rem;
+            margin-left: .2rem;
+            width: 3.3rem;
+            height: 3.8rem; 
+            color: #333;
+            font-size: .25rem;
+            font-weight: bold;
+            p{
+                margin-bottom: .1rem;
+            }
+        }
+    }
+
+    .foo-menu {
+        position: fixed;
+        bottom: 0;
+        width: 92.8%;
+        z-index: 1000 !important;
+        border: none;
+    }
+    .kt{
+        bottom: 420px;
+    }
+      
+    .menu-active .top-nav-bar{
+        z-index: 80;
+    }
+      
+    .top-nav-bar {
+        position: relative;
+        background-color: #008AE6;
+        color: #FFF;
+    }
+    .am-navbar-title {
+        color: #FFF!important;
+    }
+    .menu-mask {
+        content: ' ';
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: #000;
+        opacity: 0.4;
+        z-index: 79;
+    }
+    .menuShow{
+
+    }
+    .am-list-content{
+        font-size: .3rem;
+        font-weight: bold;
+        line-height: .8rem;
+        height: .8rem;
+    }
+    .am-radio .am-radio-checked{
+        height: .8rem;
+    }
+    .am-radio-input{
+        height: .8rem;
+    }
+    .am-list .am-list-item.am-radio-item .am-list-line .am-list-extra .am-radio-inner{
+        top: .35rem;
+        right: .4rem;
+    }
+    .am-radio-inner{
+        width: .4rem!important;
+        height: .4rem!important;
+        :first-child{
+            width: .4rem;
+            height: .4rem;
+        }
+    }
+    .am-radio-inner:after{
+        width: .1rem!important;
+        height: .2rem!important;
+    }
+    .am-modal-content{
+        width: 80%;
+    }
+}
+.menu-active{
+
+}
+.menu-actives{
+
+}
+
+.sureBtn{
+    width: 92.8%;
+    text-align: center;
+    position: fixed;
+    bottom: 0;
+    left: .3rem;
+    // width: 100%;
+    height: 1rem;
+    background-color: #fff;
+    z-index: 100000000;
+    // padding-left: .3rem;
+    // padding-right: .3rem;
+    font-size: .4rem;
+    line-height: 1rem;
+    color: #000;
+    font-weight: bold;
+    border-bottom: .02rem solid #f0f0f0;
+    border-top: .02rem solid #f0f0f0;
+}
+.am-list-footer{
+    min-height: .4rem;
+    font-size: .3rem;
+}
+.list-view-section-body{
+    background-color: #002140;
+}
+.toTop{
+    width: 1rem;
+    height: 1rem;
+    position: fixed;
+    bottom: .6rem;
+    right: .6rem;
+    border-radius: 50%;
+    border: .02rem solid #333;
+    overflow: hidden;
+    background-color: #fff;
+    i{
+        width: .7rem;
+        height: .7rem;
+        margin-left: .14rem;
+        margin-top: .15rem;
+        svg{
+            width: .7rem;
+            height: .7rem;
+        }
+    }
+}
+.topCover{
+    width: 100%;
+    height: .6rem;
+    position: relative;
+    .resetBtn{
+        // min-height: .5rem;
+        // padding: .05rem;
+        height: .5rem;
+        width: 1.8rem;
+        display: inline-block;
+        position: absolute!important;
+        right: .04rem;
+        span{
+            width: 1.8rem;
+            display: inline-block;
+            line-height: .5rem;
+            color: #333;
+            font-size: .27rem;
+        }
+    }
+}
+.totalp{
+    width: 3rem;
+    display: inline-block;
+    text-align: left;
+    color: #999;
+    font-weight: bold;
+    font-size: .3rem;
+}
+.am-modal-title{
+    font-size: .3rem!important;
+}
+.am-modal-alert-content{
+    font-size: .3rem!important;
+    padding-top: .3rem;
+    padding-bottom: .3rem;
+}
+.am-modal-button{
+    font-size: .35rem!important;
+    margin-top: .3rem;
+}
+.am-modal-transparent{
+    font-size: .36rem!important;
+    width: 80%!important;
+    padding: .3rem;
+    .am-modal-body{
+        height:70%
+    }
+}
+.am-modal-footer{
+    // border: none!important;
+    padding-top: .3rem!important;
+    padding: .2rem;
+}
+.am-list-body{
+    height: 100%!important;
+}
+.am-list{
+    height: 100%!important;
+}
+// @media (-webkit-min-device-pixel-ratio: 2){
+//     background-color: #fff!important;
+// }
+.am-modal-button-group-v{
+    padding-top: .3rem;
+    // padding-bottom: .3rem;
+}
+.am-modal-button{
+    padding-top: .22rem;
+    min-height: .7rem;
+}

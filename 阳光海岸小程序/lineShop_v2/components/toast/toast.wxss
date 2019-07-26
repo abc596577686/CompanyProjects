@@ -1,0 +1,18 @@
+/* components/toast/toast.wxss */
+
+.toast{
+  position: fixed;
+  width: 50%;
+  top: 50%;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  font-size: 26rpx;
+  color: #fff;
+  padding: 20rpx;
+  border-radius: 10rpx;
+  background: rgba(0,0,0, .5);
+  z-index: 999;
+  line-height: 1.5;
+  text-align: center;
+}

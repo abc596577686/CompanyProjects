@@ -1,0 +1,53 @@
+<!--search.wxml  -->
+
+<!-- loading  -->
+<loading wx:if="{{isLoading}}"></loading>
+
+<!--topHeadWrap  -->
+<view class='topHeadWrap'>
+  <view class='searchWrap' bindtap='jumpSearchEnv'>
+    <image src='/assets/images/icon_search.png' mode="widthFix"></image>
+    <input class='input' confirm-type='search' type="text" focus='true' bindblur='searchEnv' value='{{searchKeywords}}' placeholder="{{placeholder}}" placeholder-style='color:#ccc' bindinput='inputChange' maxlength="50"></input>
+  </view>
+  <view class='searchBtn' bindtap='searchEnv'>
+    <text class='text'>搜索</text>
+  </view>
+</view>
+
+<!--container  -->
+<scroll-view class='container' scroll-y="true" style="height:{{localHeight+'rpx'}}" bindscrolltolower="bottom" scroll-top="{{scrollTop}}">
+  <view class='searchHistoryWrap' wx:if="{{!searchResult.length && !searchResultNull}}">
+    <view class='top'>
+      <text class='title'>历史搜索</text>
+      <view class='imgWrap' bindtap='clearHistoryEnv'>
+        <image class='img' mode='widthFix' src='../../assets/images/icon_clear.png'></image>
+      </view>
+    </view>
+    <view class='content'>
+      <block wx:if="{{searchHistory.length}}" wx:for="{{searchHistory}}" wx:key="{{index}}">
+        <view class='item' bindtap='quickSearchEnv' data-text="{{item}}">{{item}}</view>
+      </block>
+      <text wx:if="{{!searchHistory.length}}" class='tips'>暂无搜索记录</text>
+    </view>
+  </view>
+
+  <!--searchResultWrap  -->
+  <view class='searchResultWrap' wx:if="{{searchResult.length}}">
+    <view id='topTit'>
+      <block>
+        <view data-select="0" class="{{isSelect == 0 ? 'active':''}} tip" bind:tap="chooseCatalog">销量</view>
+        <view data-select="1" class="{{isSelect == 1 ? 'active':''}} tip" bind:tap="chooseCatalog">人气</view>
+        <view data-select="2" class="{{isSelect == 2 ? 'active':''}} tip" bind:tap="chooseCatalog">价格</view>
+        <image class='proMa' mode='widthFix' src='/assets/images/y1.png' wx:if="{{isSortCt == 0}}"></image>
+        <image class='proMa' mode='widthFix' src='/assets/images/y2.png' wx:if="{{isSortCt == 1}}"></image>
+        <image class='proMa' mode='widthFix' src='/assets/images/y3.png' wx:if="{{isSortCt == 2}}"></image>
+      </block>
+    </view>
+
+    <goodsTwoColumns data="{{searchResult}}"></goodsTwoColumns>
+  </view>
+  <noMore wx:if="{{isShowEnd == 1}}"></noMore>
+  <!-- <view class='searchResultNull' wx:if="{{searchResultNull}}">
+    <text>没有找到对应商品</text>
+  </view> -->
+</scroll-view>

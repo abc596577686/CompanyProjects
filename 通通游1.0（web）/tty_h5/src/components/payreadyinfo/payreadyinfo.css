@@ -1,0 +1,144 @@
+.toptit{
+    width: 100%;
+    height: 1.877333rem;
+    position: relative;
+    padding-top: .64rem;
+    padding-left: .554667rem;
+    background-color: #fff;
+}
+  .top_t{
+    width: .469333rem;
+    height: .853333rem;
+    position: absolute;
+}
+  .top_o{
+    width: 3.2rem;
+    height: .853333rem;
+    line-height: .682667rem;
+    position: absolute;
+    left: 6.613333rem;
+    top: .810667rem;
+    font-size: .682667rem;
+    color: #333333;
+}
+  .sure{
+    width: 1.493333rem;
+    height: .853333rem;
+    line-height: .682667rem;
+    font-size: .682667rem;
+    color: #333333;
+    position: absolute;
+    left: 14.122667rem;
+    top: .853333rem;
+}
+  .gte{
+    display: block;
+    width: 100%;
+    height:.085333rem;
+    background-color: #f5f5f5;
+}
+  .gte1{
+    display: block;
+    width: 100%;
+    height: .469333rem;
+    background-color: #f5f5f5;
+}
+  .peoInfo{
+    width: 100%;
+    height: 3.029333rem;
+    position: relative;
+    background-color: #fff;
+    border-bottom: 1px solid #ccc;
+}
+  .peoInfo .editImg{
+    width: .768rem;
+    height: .768rem;
+    position: absolute;
+    left: .597333rem;
+    top: 1.237333rem;
+    z-index: 9999;
+}
+  .peoName{
+    height: .853333rem;
+    font-size: .597333rem;
+    color: #333333;
+    position: absolute;
+    left: 1.749333rem;
+    top: .725333rem;
+}
+  .peoClass{
+    height: .853333rem;
+    font-size: .597333rem;
+    color: #333333;
+    position: absolute;
+    left: 1.749333rem;
+    top: 1.749333rem;
+}
+.peoClass .IDnumber{
+    margin-left: .2rem;
+}
+  .yx_img{
+    display: block;
+    width: .768rem;
+    height: .768rem;
+    position: absolute;
+    right: 2rem;
+    bottom: 1.2rem;
+}
+  .red_img{
+    display: block;
+    width: .768rem;
+    height: .768rem;
+    position: absolute;
+    right: 2rem;
+    bottom: 1.2rem;
+}
+.eer{
+  width: 100%;
+  height: 1.493333rem;
+  font-size: .554667rem;
+  padding-left: .554667rem;
+  padding-top: .469333rem;
+  color: #646464;
+  background-color: #fff;
+}
+.maintxt{
+  width: 100%;
+  height: 3.370667rem;
+  font-size: .512rem;
+  color: #666666;
+  background-color: #fff;
+  padding-left: .64rem;
+  padding-right: .64rem;
+  padding-top: .426667rem;
+  line-height: .8rem;
+}
+.remark{
+  width: 16rem;
+  height: 4.949333rem;
+  background-color: #fff;
+  padding-left: .597333rem;
+  padding-top: .469333rem;
+  font-size: .597333rem;
+  color: #666666;
+  line-height: .597333rem;
+}
+.remark textarea{
+  margin-top: .213333rem;
+  width: 14.976rem;
+  height: 3.029333rem;
+  /* outline:none; */
+  resize:none;
+}
+ /* .wrapper{
+  width: 100%;
+  height: 22.101333rem;
+  overflow: scroll; 
+}  */
+.wrapper{
+    position: absolute;
+    bottom: 0;
+    top: 1.877333rem;
+    overflow: hidden;
+    width: 100%;
+  }

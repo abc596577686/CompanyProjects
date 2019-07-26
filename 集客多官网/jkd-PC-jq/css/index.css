@@ -1,0 +1,438 @@
+* {
+  margin: 0;
+  padding: 0;
+  font-family: PingFangSC-Regular, sans-serif !important;
+}
+img {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+#mainPage {
+  background: #f5f5f5;
+}
+#mainPage header {
+  width: 100%;
+  margin: 0 auto;
+  background-color: #333;
+}
+#mainPage header .swiper-pagination-bullet {
+  border-radius: 0%;
+  width: 60px;
+}
+#mainPage header .swiper-container-horizontal > .swiper-pagination-bullets,
+#mainPage header .swiper-pagination-custom,
+#mainPage header .swiper-pagination-fraction {
+  bottom: 60px;
+}
+#mainPage header .swiper-pagination-bullet-active {
+  background: #ED9121;
+}
+#mainPage header .headerTitle {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 180px;
+  z-index: 10;
+}
+#mainPage header .headerTitle img {
+  width: 57px;
+  height: 57px;
+  float: left;
+  margin-left: 128px;
+  margin-top: 46px;
+}
+#mainPage header .headerTitle .hT_txt {
+  width: 120px;
+  height: 55px;
+  float: left;
+  margin-left: 18px;
+  margin-top: 48px;
+}
+#mainPage header .headerTitle .hT_txt1 {
+  width: 73px;
+  height: 31px;
+  font-size: 23px;
+  line-height: 31px;
+  font-weight: bold;
+  color: #fff;
+}
+#mainPage header .headerTitle .hT_txt2 {
+  width: 114px;
+  height: 21px;
+  font-size: 15px;
+  line-height: 21px;
+  color: #fff;
+}
+#mainPage header .headerTitles {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 80px;
+  background-color: #fff;
+  z-index: 20;
+}
+#mainPage header .headerTitles img {
+  width: 57px;
+  height: 57px;
+  float: left;
+  margin-left: 128px;
+  margin-top: 12px;
+}
+#mainPage header .headerTitles .hT_txt {
+  width: 120px;
+  height: 55px;
+  float: left;
+  margin-left: 18px;
+  margin-top: 12px;
+}
+#mainPage header .headerTitles .hT_txt1 {
+  width: 73px;
+  height: 31px;
+  font-size: 23px;
+  line-height: 31px;
+  font-weight: bold;
+  color: #000;
+}
+#mainPage header .headerTitles .hT_txt2 {
+  width: 114px;
+  height: 21px;
+  font-size: 15px;
+  line-height: 21px;
+  color: #000000;
+}
+#mainPage header .tabs {
+  float: right;
+  z-index: 10;
+  width: 400px;
+  height: 40px;
+  margin-top: 62px;
+  display: -webkit-flex;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+#mainPage header .tabs li {
+  width: 80px;
+  height: 25px;
+  line-height: 22px;
+  font-size: 15px;
+  color: #fff;
+  text-align: center;
+  margin-right: 10px;
+  cursor: pointer;
+}
+#mainPage header .tabss {
+  float: right;
+  z-index: 10;
+  width: 400px;
+  height: 40px;
+  margin-top: 28px;
+  display: -webkit-flex;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+#mainPage header .tabss li {
+  width: 80px;
+  height: 25px;
+  line-height: 22px;
+  font-size: 15px;
+  color: #000;
+  text-align: center;
+  margin-right: 10px;
+  cursor: pointer;
+}
+#mainPage .business {
+  width: 100%;
+  height: 620px;
+  display: -webkit-flex;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+#mainPage .business .intrduction {
+  width: 471px;
+  height: 320px;
+  position: relative;
+  margin-top: 158px;
+}
+#mainPage .business .intrduction .title1 {
+  width: 471px;
+  height: 47px;
+  line-height: 47px;
+  color: #333;
+  word-spacing: 2px;
+  font-weight: bold;
+  font-size: 34px;
+  margin-bottom: 10px;
+}
+#mainPage .business .intrduction .title2 {
+  width: 141px;
+  height: 38px;
+  line-height: 38px;
+  color: #333;
+  font-size: 27px;
+  margin-bottom: 10px;
+}
+#mainPage .business .intrduction .title3 {
+  width: 398px;
+  height: 159px;
+  font-size: 18px;
+  line-height: 22px;
+  color: #333;
+  letter-spacing: 1px;
+  line-height: 28px;
+}
+#mainPage .business .swiper-containers {
+  margin-top: 158px;
+  overflow: hidden;
+}
+#mainPage .business .swiper-wrapper {
+  z-index: 0;
+}
+#mainPage .txtContent {
+  width: 100%;
+  background-color: #fff;
+  display: -webkit-flex;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+#mainPage .txtContent .tC_contnent_1 {
+  width: 270px;
+  height: 400px;
+  padding-left: 10px;
+  background-color: #f0f0f0;
+  margin-top: 90px;
+  margin-right: 40px;
+  -webkit-box-shadow: #999 3px 0px 10px;
+  -moz-box-shadow: #999 3px 0px 10px;
+  box-shadow: #999 3px 0px 10px;
+}
+#mainPage .txtContent .tC_contnent_1 .txt_1 {
+  width: 250px;
+  height: 31px;
+  line-height: 31px;
+  font-size: 21px;
+  font-weight: bold;
+  text-align: center;
+  margin-top: 40px;
+}
+#mainPage .txtContent .tC_contnent_1 .txt_2 {
+  width: 250px;
+  height: 20px;
+  line-height: 20px;
+  font-size: 14px;
+  font-weight: bold;
+  text-align: center;
+  margin-top: 20px;
+}
+#mainPage .txtContent .tC_contnent_1 .txt_3 {
+  width: 250px;
+  height: 20px;
+  line-height: 20px;
+  font-size: 14px;
+  font-weight: bold;
+  text-align: center;
+  margin-top: 20px;
+}
+#mainPage .txtContent .tC_contnent_1 .txt_4 {
+  width: 250px;
+  line-height: 20px;
+  font-size: 13px;
+  text-align: center;
+  margin-top: 40px;
+  text-indent: 2px;
+}
+#mainPage .brand {
+  width: 100%;
+  height: 540px;
+  padding-top: 30px;
+}
+#mainPage .brand .tit_1 {
+  width: 100%;
+  height: 47px;
+  line-height: 47px;
+  word-spacing: 2px;
+  font-size: 34px;
+  font-weight: bold;
+  text-align: center;
+}
+#mainPage .brand .tit_2 {
+  width: 100%;
+  height: 38px;
+  line-height: 38px;
+  word-spacing: 2px;
+  font-size: 27px;
+  text-align: center;
+  margin-top: 10px;
+}
+#mainPage .brand .tit_3 {
+  width: 100%;
+  height: 38px;
+  line-height: 38px;
+  word-spacing: 2px;
+  font-size: 18px;
+  text-align: center;
+  margin-top: 10px;
+  color: #999;
+}
+#mainPage .brand .brandPlay {
+  width: 100%;
+  height: 300px;
+}
+#mainPage .brand .swiper-slide {
+  background: none;
+}
+#mainPage .brand .swiper-pagination-bullet {
+  border-radius: 0%;
+  width: 60px;
+}
+#mainPage .brand .swiper-container-horizontal > .swiper-pagination-bullets,
+#mainPage .brand .swiper-pagination-custom,
+#mainPage .brand .swiper-pagination-fraction {
+  bottom: 10px;
+  z-index: 1000;
+}
+#mainPage .brand .swiper-pagination-bullet-active {
+  background: #ED9121;
+}
+#mainPage .rightDiv {
+  width: 110px;
+  height: 330px;
+  position: fixed;
+  bottom: 70px;
+  right: 20px;
+  z-index: 30;
+}
+#mainPage .rightDiv div {
+  width: 100px;
+  height: 100px;
+  box-shadow: #999 1px 1px 10px;
+  margin-bottom: 10px;
+  position: relative;
+  cursor: pointer;
+}
+#mainPage .rightDiv div img {
+  width: 100px;
+  height: 100px;
+}
+#mainPage .rightDiv div .cover1 {
+  width: 300px;
+  height: 100px;
+  position: absolute;
+  right: 120px;
+  top: 0px;
+  text-align: center;
+  line-height: 100px;
+  font-size: 22px;
+  font-weight: bold;
+  background-color: #f0f0f0;
+}
+#mainPage .rightDiv div .cover {
+  width: 200px;
+  height: 200px;
+  position: absolute;
+  right: 120px;
+  top: -100px;
+  background-color: #999;
+}
+#mainPage .rightDiv div .cover img {
+  width: 100%;
+  height: 100%;
+}
+#mainPage .swiper-wrapper {
+  z-index: 0;
+}
+#mainPage .mainContent {
+  width: 100%;
+  background-color: #fff;
+  height: 400px;
+  display: -webkit-flex;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+#mainPage .mainContent .contactus {
+  width: 270px;
+  height: 200px;
+  margin-right: 200px;
+  margin-top: 80px;
+}
+#mainPage .mainContent .contactus ul {
+  width: 100px;
+  height: 23px;
+  font-size: 23px;
+  line-height: 23px;
+}
+#mainPage .mainContent .contactus .ca_coverline {
+  width: 150px;
+  height: 2px;
+  background-color: #f0f0f0;
+  margin-top: 20px;
+}
+#mainPage .mainContent .contactus .txt {
+  width: 270px;
+  height: 18px;
+  font-size: 15px;
+  color: #666;
+  margin-top: 10px;
+}
+#mainPage .mainContent .ewCode {
+  width: 600px;
+  height: 300px;
+  margin-top: 80px;
+  font-size: 0;
+}
+#mainPage .mainContent .ewCode .ewCodeMain {
+  width: 150px;
+  height: 300px;
+  display: inline-block;
+  margin-right: 30px;
+}
+#mainPage .mainContent .ewCode .ewCodeMain ul {
+  width: 170px;
+  height: 23px;
+  font-size: 23px;
+  line-height: 23px;
+}
+#mainPage .mainContent .ewCode .ewCodeMain .ca_coverline {
+  width: 150px;
+  height: 2px;
+  background-color: #f0f0f0;
+  margin-top: 20px;
+}
+#mainPage .mainContent .ewCode .ewCodeMain .showcode {
+  margin-top: 14px;
+  width: 150px;
+  height: 150px;
+}
+#mainPage footer {
+  width: 100%;
+  height: 70px;
+  background-color: #333;
+  color: #fff;
+  text-align: center;
+  line-height: 70px;
+  font-size: 12px;
+}
+.swiper-containers {
+  overflow: hidden;
+}
+.swiper-containerss {
+  overflow: hidden;
+}
+.active {
+  border-bottom: 2px solid #fff;
+}
+.actives {
+  border-bottom: 2px solid #000;
+}

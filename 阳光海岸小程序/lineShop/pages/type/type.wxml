@@ -1,0 +1,43 @@
+
+<view id='topTit'>
+    <block wx:for="{{catalogs}}" wx:key="select">
+        <text data-select="{{item.select}}" class="{{item.select == catalogSelect ? 'active':''}} tip" bind:tap="chooseCatalog">{{item.catalogName}}</text>
+        <image class='titImage' src='../../assets/images/icon_search.png'></image>
+    </block>
+</view>
+<view id="pageMaina" wx:if="{{isActivePage == 0}}">
+    <scroll-view scroll-y="true" style="width:176rpx;height: 1035rpx;" bindscrolltoupper="upper" bindscrolltolower="lower" bindscroll="scroll" >
+        <view class="leftPilot">
+            <block wx:for="{{dhlist}}" wx:key="select">
+                <text data-select="{{item.catId}}" class="{{item.catId == dhSelect ? 'active1':''}} leftList" catch:tap="choosedhlist">{{item.catName}}</text>
+            </block>
+        </view>
+    </scroll-view>
+    <scroll-view scroll-y="true" style="width:574rpx;height: 1035rpx;" bindscrolltoupper="upper" bindscrolltolower="lower" bindscroll="scroll" >
+        <view class="rightView">
+            <block>
+                <image class='topImage' src='../../assets/images/tc.png'></image>
+            </block>
+            <view class="midTit" bind:tap="clean">
+                <text>查看全部</text><text>{{viewName}}</text>
+                <image class='midIconImage' src='../../assets/images/yjjx.png'></image>
+            </view>
+            <view class="showProList">
+                <view class="spl_tit" wx:if="{{ishow_spl}}">
+                    此分类没有商品啦 -v -
+                </view>
+                <block wx:for="{{dhProlist}}" wx:key="catName">
+                    <view class="showPro">
+                        <image class='proImage' src="{{item.catPic}}"></image>
+                        <view class="showProName">{{item.catName}}</view>
+                    </view>
+                </block>    
+            </view>
+        </view>
+    </scroll-view>    
+</view>
+<view id="pageMainb" wx:if="{{isActivePage == 1}}">
+    <view class="hotTit">
+        
+    </view>
+</view>

@@ -1,0 +1,158 @@
+<!--pages/userCenter/allOrder/allOrder.wxml-->
+<!-- loading  -->
+<loading wx:if="{{isLoading}}"></loading>
+
+<!-- 这部分不用了  -->
+<view class='container'>
+  <view class='tab' wx:if="{{false}}">
+    <view class='allOrder'>
+      <view class='sel' bindtap='selOrder' id='all'>
+        <text>全部订单</text>
+        <text class='liner' style='visibility:{{tabSel?"visible":"hidden"}}'></text>
+      </view>
+    </view>
+    <view class='homeOrder'>
+      <view class='sel' id='home' bindtap='selOrder'>
+        <text>店内订单</text>
+        <text class='liner' style='visibility:{{!tabSel?"visible":"hidden"}}'></text>
+      </view>
+    </view>
+  </view>
+  <view class='searchBox' wx:if="{{false}}">
+    <image class='search-icon' src='/assets/images/icon_search.png'></image>
+    <input type='text' class='search' placeholder='商品' bindfocus='focus' bindblur='blur'></input>
+    <view class='searchBtn'>
+      <text>搜索</text>
+    </view>
+  </view>
+
+
+  <!-- tab切换  -->
+  <view class='status'> 
+    <scroll-view  class='tabWrap' wx:if="{{tabList}}"  id='status' scroll-x="true" scroll-with-animation="true" scroll-left="{{scrollLeft}}">
+      <view class='tabBox' wx:for='{{tabList}}' wx:key="id" data-id='{{item.id}}' data-index="{{item.index}}" bindtap='selStatusEnv'>
+        <text>{{item.text}}</text>
+        <view class='line' wx:if='{{curSelectIndex == index}}'></view>
+      </view>
+    </scroll-view>
+  </view>
+
+  <scroll-view class='main' scroll-y="true" style="height:{{mainHeight + 'px'}}" bindscrolltolower="bottomEnv">
+    <view wx:if="{{loadOver && !orderList.length}}" class='placeholder'>
+      <image src='/assets/images/icon_order@2x.png' class='newOrder' mode='widthFix'></image>
+      <text class='newInfo'>您还没有相关订单哦~</text>
+    </view>
+    <block wx:for="{{orderList}}" wx:key="{{index}}">
+      <view class='order-item'>
+
+        <view class='order-header'>
+          <view>
+            <text class='order-num'>订单号：{{item.orderNo}}</text>
+            <text class='icon' wx:if='{{item.isUnderLineBuy=="1"}}'>门店</text>
+          </view>
+          <text class='order-status' wx:if="{{isRefund}}">{{item.statusName}}</text>
+          <text class='order-status' wx:else>{{item.statusName}}</text>
+        </view>
+        <block wx:if="{{item.productList.length}}" wx:for='{{item.productList}}' wx:for-item='goods' wx:key='index'>
+          <navigator wx:if="{{!isRefund}}" hover-class='hover' url='/pages/orderDetail/orderDetail?orderId={{item.orderId}}'>
+            <view class='order-main'>
+              <view class='imgBox'>
+                <image class='good-img' mode='widthFix' src='{{goods.imageUrl}}'></image>
+              </view>
+              <view class='good-info'>
+                <!-- <text class="xsg_icon1"></text>   -->
+                <text class='good-name'><text class="xsg_icon" wx:if="{{goods.isSeckillProduct == 1}}">限时购</text> {{goods.productName}}</text>
+                <view class='tagsBox'>
+                  <text class='tags' wx:if="{{goods.productTags}}">{{goods.productTags}}</text>
+                </view>
+              </view>
+              <view class='good-price'>
+                <text class='price'>￥{{goods.price}}</text>
+                <text class='num'>x {{goods.productNumber}}</text>
+                <view class='refundStatusName'>{{goods.refundStatusName}}</view>
+              </view>
+            </view>
+          </navigator>
+          <view wx:else>
+            <view class='order-main'>
+              <view class='imgBox'>
+                <image class='good-img' mode='widthFix' src='{{goods.imageUrl}}'></image>
+              </view>
+              <view class='good-info'>
+                <text class='good-name'>{{goods.productName}}</text>
+                <view>
+                  <text class='tags' wx:if="{{goods.productTags}}">{{goods.productTags}}</text>
+                </view>
+              </view>
+              <view class='good-price'>
+                <text class='price'>￥{{goods.price}}</text>
+                <text class='num'>x {{goods.productNumber}}</text>
+                <!-- <view class='refundStatusName' wx:if="{{goods.refundType == '1'}}">{{goods.refundStatusName}}</view> -->
+              </view>
+            </view>
+          </view>
+        </block>
+        <view class='order-footer'>
+          <view class='goodDetail'>
+            <text wx:if="{{!isRefund}}" class='good-num'>共{{item.totalNumber}}件</text>
+            <text wx:if="{{isRefund}}">退款金额：</text>
+            <text wx:else>合计：</text>
+            <text class='refundMoney'>￥{{item.payAmount}}</text>
+            <text wx:if="{{!isRefund && item.isUnderLineBuy == 0}}" class='extra'>( 含快递费  ￥{{item.postage}} )</text>
+          </view>
+
+          <!--操作按钮  -->
+          <view class='order-handle'>
+            <block wx:if="{{!isRefund}}" wx:for="{{item.btns}}" wx:for-item="btn" wx:key="index">
+              <view class="btn-one {{btn.primary ? 'red' : ''}}" data-orderid="{{item.orderId}}" data-price="{{item.payAmount}}" catchtap="{{btn.env}}">{{btn.name}}</view>
+            </block>
+            <view class='order-handle' wx:if="{{isRefund}}">
+              <navigator class='btns' hover-class='none' url='/pages/serviceProgress/serviceProgress?orderId={{item.orderId}}'>
+                <view class="btn-one">查看详情</view>
+              </navigator>
+            </view>
+          </view>
+        </view>
+      </view>
+    </block>
+    <!-- <view class="endWrap" wx:if="{{isShowEndLogo && orderList.length}}">
+      <image class='endImg' src='/assets/images/endd.png' mode='widthFix'></image>
+    </view> -->
+    <noMore wx:if="{{isShowEndLogo && orderList.length}}"></noMore>
+  </scroll-view>
+</view>
+
+<!-- 遮罩层  -->
+<view animation="{{maskLayerAni}}" class='maskLayer' wx:if="{{isShowMaskLayer}}" catchtap='_clickMaskLayer'></view>
+
+<!-- 支付面板  -->
+<view class='payPanel' id="payPanel" wx:if="{{isShowPayPanel}}" animation="{{payPanelAni}}">
+  <view class='topWrap'>
+    <text class='title'>支付方式</text>
+    <image class='closeBtn' mode='widthFix' src='/assets/images/icon_close.png' catchtap='_closePayPanelEnv'></image>
+  </view>
+  <view class='content'>
+    <view class='item topLine'>
+      <text class='label'>请在24小时内完成支付</text>
+      <text class='price'>¥{{paymentAmount}}</text>
+    </view>
+    <view class='item topLine'>
+      <view class='label'>
+        <image class='logo' src='/assets/images/icon_paywchat.png' mode='widthFix'></image>
+        <text>微信支付</text>
+      </view>
+      <view class='handle'>
+        <image class='icon' mode='widthFix' src='/assets/images/icon_select.png'></image>
+        <!-- <image mode='widthFix' src='/assets/images/icon_hollow.png'></image> -->
+      </view>
+    </view>
+  </view>
+  <view class='btnWrap topLine'>
+    <view class='btn' bindtap='paymentBtn'>确认支付</view>
+  </view>
+</view>
+
+<!-- loading  -->
+<loading wx:if="{{isLoading}}"></loading>
+
+<timeout wx:if="{{!isLoading && timeout}}" bind:refreshEnv="refreshEnv"></timeout>

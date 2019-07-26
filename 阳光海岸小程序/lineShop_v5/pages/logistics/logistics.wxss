@@ -1,0 +1,166 @@
+/* pages/logistics/logistics.wxss */
+.container {
+  margin-top: 98rpx;
+}
+.tabBar {
+  height: 78rpx;
+  background-color: #fff;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  border-top: 1rpx solid #DEDEDE;
+  margin-bottom: 20rpx;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 10;
+
+ 
+}
+.package {
+  width: 72rpx;
+  height: 100%;
+  text-align: center;
+  line-height: 78rpx;
+  margin:0 40rpx;
+  color: #666;
+  font-size: 26rpx;
+}
+.active {
+  border-bottom: 5rpx solid #2EA7E0;
+  color: #2EA7E0;
+}
+
+
+.order-main {
+  height: 192rpx;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 29rpx 0;
+  padding-right: 32rpx;
+  border-bottom: 1rpx solid #f0f0f0;
+  background-color: #fff;
+  position: relative;
+
+}
+.imgBox {
+  width: 190rpx;
+  height: 100%;
+  /* background-color: yellowgreen; */
+}
+.good-img {
+  width: 144rpx;
+  /* height: 118rpx; */
+  background-color: #ccc;
+  margin-left: 46rpx;
+}
+.good-info {
+  width: 355rpx;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+.good-name {
+  margin-bottom: 14rpx;
+  color: #666;
+  font-size: 26rpx;
+  line-height: 36rpx;
+}
+.weight {
+  color: #999;
+  font-size: 22rpx;
+  margin-right: 20rpx;
+}
+.cate {
+  color: #999;
+  font-size: 22rpx;
+}
+.good-price {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  color: #666;
+  font-size: 24rpx;
+}
+.price {
+  margin-bottom: 29rpx;
+}
+
+.sendDetail {
+  display: flex;
+  padding: 26rpx 0;
+  flex-direction: column;
+  color: #999;
+  font-size: 26rpx;
+  padding-left: 27rpx;
+  background-color: #fff;
+  margin-bottom: 20rpx;
+  
+}
+.sendDetail text {
+  margin-bottom: 18rpx;
+}
+.log {
+  display: flex;
+  flex-direction: row;
+  background-color: #fff;
+}
+.log-left {
+  width: 88rpx;
+  display: flex;
+  justify-content: center;
+  position: relative;
+}
+.line {
+  width: 2rpx;
+  height: 100%;
+  background-color: #dfdfdf;
+}
+.log-right {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  padding-right: 40rpx
+}
+.log-item {
+  display: flex;
+  flex-direction: column;
+  padding: 32rpx 0;
+  padding-right: 93rpx;
+  border-bottom: 1rpx solid #dfdfdf;
+  flex: 1;
+}
+.log-detail {
+  font-size: 26rpx;
+  color: #666;
+  margin-bottom: 20rpx;
+  line-height: 1.3;
+}
+.log-time {
+  color: #999;
+  font-size: 20rpx;
+}
+.circle {
+  width: 14rpx;
+  height: 14rpx;
+  background-color: #DEDEDE;
+  border-radius: 50%;
+  position: absolute;
+  top: 32rpx;
+  left: 50%;
+   margin-left: -5rpx; 
+}
+.circler {
+  width: 24rpx;
+  height: 24rpx;
+  background-color: #2EA7E0;
+  margin-left: -11rpx
+}
+.log:first-child .log-left {
+  padding-top: 32rpx;
+}
+.logistics {
+  padding-bottom: 20rpx;
+  background-color: #fff;
+}

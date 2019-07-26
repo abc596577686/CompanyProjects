@@ -1,0 +1,120 @@
+
+*{
+    margin: 0;
+    padding: 0;
+}
+img{
+    width: 100%;
+    height: 100%;
+    display: block;
+}
+.toptit{
+    width: 100%;
+    padding: .554667rem;
+    background-color: #fff;
+    border-bottom: .426667rem solid #F0F0F0;
+}
+.toptit span{
+    color: #666666;
+    margin-left: .64rem;
+}
+.toptit > div{
+    width: 100%;
+    height: 1rem;
+    line-height: 1rem;
+    font-size: .597333rem;
+    color: #333333;
+}
+.card{
+    width: 100%;
+    padding: .554667rem;
+    font-size: 0;
+    background-color: #fff;
+}
+.card > span {
+    display: inline-block;
+    font-size: .597333rem;
+    color: #333333;
+}
+.cov{
+    width: 100%;
+    height: .042667rem;
+    background-color: #F0F0F0;
+}
+.keyNum{
+    color: #FB4A4C;
+    border: none;
+    font-size: .597333rem;
+    background-color: #fff;
+    /* margin-left: .813333rem; */
+}
+.sureBtn{
+    width: 14.933333rem;
+    height: 1.706667rem;
+    line-height: 1.706667rem;
+    font-size: .768rem;
+    background-color: #FB4A4C;
+    color: #fff;
+    margin-left: .554667rem;
+    margin-top: 1.194667rem;
+    border-radius: .213333rem;
+}
+.cover11{
+    width: 100%;
+    height: 100%;
+    background-color: #000;
+    opacity: .3;
+    z-index: 1000;
+    position: fixed;
+    top: 0;
+    left: 0;
+}
+.name{
+    width: 4rem;
+    height: .682667rem;
+    line-height: .682667rem;
+    font-size: .597333rem;
+}
+.tim{
+    width: 11rem;
+    padding: .4rem;
+    /* height: 4.266667rem; */
+    /* margin: auto; */
+    position: fixed;
+    text-align: center;
+    line-height: 1.3rem;
+    top: 7rem;
+    left: 2.566667rem;
+    font-size: .6rem;
+    color: #000;
+    /* border: .085333rem solid grey; */
+    z-index: 10001;
+    background-color: #fff;
+    border-radius: .213333rem;
+    word-wrap: auto;
+}
+.surediv{
+    padding-top: .213333rem;
+    width:  10rem;
+    height: 1.28rem;
+    /* position: ; */
+    position: relative;
+    /* top: -.213333rem; */
+}
+.sure{
+    display: inline-block;
+    width:  46%;
+    height: 1.28rem;
+    font-size: .7rem;
+    color: #6262b9;
+    /* display: inline-block; */
+    text-align: center;
+    line-height: 1.28rem;
+}
+.coverline{
+    margin-top: .085333rem;
+    height: .042667rem;
+    width:  11rem;
+    background-color: #6b6969;
+    opacity: .1;
+}

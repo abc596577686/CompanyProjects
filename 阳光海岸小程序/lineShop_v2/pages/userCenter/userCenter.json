@@ -1,0 +1,10 @@
+{
+  "navigationBarTitleText": "个人中心",
+  
+  "disableScroll": true,
+  "usingComponents": {
+    "tabBar": "/components/tabBar/tabBar",
+    "loading": "/components/loading/loading"
+  }
+ 
+}

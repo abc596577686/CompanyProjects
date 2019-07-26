@@ -1,0 +1,97 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+body{
+    margin: 0;
+    padding: 0;
+}
+img{
+    width: 100%;
+    height: 100%;
+}
+.main{
+    width: 100%;
+    height: 100%;
+}
+.goin{
+    width: 11.52rem;
+    height: 1.88rem;
+    background-color: #D94E58;
+    position: absolute;
+    left: 1.76rem;
+    bottom: 1.8rem;
+    border-radius: .2rem;
+    color: #fff;
+    font-size: .9rem;
+    text-align: center;
+    line-height: 1.88rem;
+}
+.time{
+    color: #333333;
+    font-size: 1.48rem;
+    font-weight: 700;
+    text-align: center;
+    line-height: 1.08rem;
+}
+/* .time_a{
+    width: 1.6rem;
+    height: 1.08rem;
+    position: absolute;
+    left: 2.5rem;
+    top: 16.28rem; 
+}
+.time_b{
+    width: 1.6rem;
+    height: 1.08rem;
+    position: absolute;
+    left: 6.7rem;
+    top: 16.28rem;; 
+}
+.time_c{
+    width: 1.6rem;
+    height: 1.08rem;
+    position: absolute;
+    left: 10.8rem;
+    bottom: 7.5rem;
+    top: 16.28rem; 
+} */
+.timeoutDiv{
+    /* width: 15rem; */
+    height: 2.68rem;
+    position: absolute;
+    bottom: 6.4rem;
+    font-size: 0;
+    padding-left: 2.18rem;
+    padding-right: 1.88rem;
+}
+.timeoutDiv > span{
+     float: left; 
+     margin-right: .5rem;
+}
+.yeTime{
+    width: 2.68rem;
+    height: 2.68rem;
+    background-image: url("../img/yellowdiv.png");
+    background-repeat:no-repeat; 
+    background-size:100% 100%;
+    -moz-background-size:100% 100%;
+    font-size: 1.48rem;
+    text-align: center;
+    line-height:  2.68rem;
+    color: #333333;
+    font-weight: 700;
+}
+.yeTime img{
+    width: 100%;
+    height: 100%;
+}
+.maohao{
+    width: .2rem;
+    height: .68rem;
+    margin-top: .9rem; 
+}
+.maohao img{
+    width: 100%;
+    height: 100%;
+}

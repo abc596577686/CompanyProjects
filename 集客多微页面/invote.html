@@ -1,0 +1,630 @@
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="width=device-width,user-scalable=no,initial-scale=0.33333,minimum-scale=0.33333,maximum-scale=0.33333" />
+    <title>我为集客多代言</title>
+    <link rel="stylesheet" href="./css/voteRegister.css"/>
+    <script src="https://res.wx.qq.com/open/js/jweixin-1.3.2.js"></script>
+    <script src="./js/jquery-3.2.1.js"></script>
+    <script src="./js/wechat.js"></script>
+    <script>
+        //1.获取像素比
+        var pixelRatio=1/window.devicePixelRatio;
+        // console.log(pixelRatio);
+        //2.通过js动态来设置视口
+        document.write('<meta name="viewport" content="width=device-width,initial-scale='+pixelRatio+',minimum-scale='+pixelRatio*2+',maximum-scale='+pixelRatio+'">');
+        //3.获取html节点
+        var html=document.getElementsByTagName('html')[0];
+        //console.log(html)
+        //4.获取屏幕宽度
+        var pageWidth=html.getBoundingClientRect().width;
+        // console.log(pageWidth);
+        //屏幕宽度/固定数值=基准值;
+        html.style.fontSize=pageWidth/15+'px';
+    </script>
+</head>
+<body>
+    <!-- 顶部背景图 -->
+    <header>
+        <img src="./img/bg.png">
+        <div class="toptit">
+            比赛时间
+        </div>
+        <img class="toplitimg1" src="./img/leftyua.png" >
+        <img class="toplitimg2" src="./img/rightyua.png" >
+    </header>
+    <!-- 时间提示 -->
+    <div class="timeTip">
+        <div class="timeTip1"></div>
+        <div class="timeTip2"></div>
+    </div>
+    <!-- 按钮 -->
+    <div class="sureBtn">
+        <button class="sureBtn1">了解集客多</button>
+        <button class="sureBtn2">我要报名</button>
+        <!-- <button class="sureBtn3">邀请投票</button> -->
+    </div>
+    <!-- 奖品展示大图 -->
+    <div class="pageMainShow">
+        <div class="maintit">
+            比赛奖品
+        </div>
+        <img class="mainlitimg1" src="./img/leftyua.png" >
+        <img class="mainlitimg2" src="./img/rightyua.png" >
+        <!-- 前10 -->
+        <div class="apresent apresent1">
+        </div>
+        <!-- 前30 -->
+        <div class="apresent apresent2">
+        </div>
+        <!-- 抽奖奖品 -->
+        <div class="apresent apresent3">
+        </div>
+        <!-- 参与投票奖 -->
+        <div class="apresent apresent4" style="height:6rem;">
+        </div>
+    </div>
+    <!-- 比赛规则 -->
+    <div class="competitionRules">
+        <div class="maintit">
+            比赛规则
+        </div>
+        <img class="mainlitimg1" src="./img/leftyua.png" >
+        <img class="mainlitimg2" src="./img/rightyua.png" >
+        <!-- 文字 -->
+        <ul class="competitionRules_txt">
+        </ul>
+    </div>
+    <!-- 比赛流程 -->
+    <div class="competitionKer">
+        <div class="maintit">
+            比赛流程
+        </div>
+        <img class="mainlitimg1" src="./img/leftyua.png" >
+        <img class="mainlitimg2" src="./img/rightyua.png" >
+        <div class="ker ">
+            <img class="matchlist" src="">
+        </div>
+    </div>
+    <!-- 领取流程 -->
+    <div class="competitionKer">
+        <div class="maintit">
+            领取流程
+        </div>
+        <img class="mainlitimg1" src="./img/leftyua.png" >
+        <img class="mainlitimg2" src="./img/rightyua.png" >
+        <div class="ker ">
+            <img class="lqlist" src="">
+        </div>
+    </div>
+    <!-- 合作伙伴 -->
+    <div class="competitionPeo">
+        <div class="maintit">
+            合作伙伴
+        </div>
+        <img class="mainlitimg1" src="./img/leftyua.png" >
+        <img class="mainlitimg2" src="./img/rightyua.png" >
+        <div class="workPeo">
+        </div>
+    </div>
+    <!-- 联系客服 -->
+    <div class="competitionKefu">
+        <div class="maintit">
+            有疑问请扫码联系客服
+        </div>
+        <img class="mainlitimg1" src="./img/leftyua.png" style="left: 3rem;">
+        <img class="mainlitimg2" src="./img/rightyua.png"  style="right: 3rem;">
+        <div class="maintit1">
+                4000639639
+        </div>
+        <!-- 二维码 -->
+        <div class="secCode">
+        </div>
+        <div class="secCode1">
+            <div>
+                公众号
+            </div>
+            <div>
+                微博
+            </div>
+        </div>
+    </div>
+    <!-- 填写信息 -->
+    <div class="liaojie" style="display: none;">
+        <div class="topDiv">填写信息</div>
+        <span class="coversspp" style="display: block;"></span>
+        <div class="closeCover">
+            <span class="liaojiesp">
+                    <img src="./img/close.png">
+            </span>
+        </div>
+        <div class="liaojiemain">
+            <input type="text" class="inp name1" placeholder="姓名">
+            <input type="number" class="inp phone1" placeholder="手机号码">
+            <input type="text" class="inp area1" placeholder="所在地区">
+            <input type="text" class="inp mainarea1" placeholder="街道、小区门牌等详细地址">
+            <div class="beiTip">
+                备注：填写信息是为了邮寄奖品哦
+            </div>
+            <button class="liaojieBtn">
+                抽奖
+            </button>
+        </div>
+    </div>
+    <!-- 蒙层 -->
+    <div class="background" style="display: none;">
+        
+    </div>
+    <!-- 了解集客多 -->
+    <div class="knowMore" style="display: none;">
+        <div class="topDiv1" ></div>
+        <span class="coversspp" style="display: block;"></span>
+        <div class="closeCover1">
+            <span class="liaojiesp">
+                    <img src="./img/close.png">
+            </span>
+        </div>
+        <div class="moreTxt">
+                集客多是一款主卖补剂（运动营养品）的跨境电商平台,目标是
+                做全球营养供应商。集客多APP上主要销售全球一线大牌运动营养
+                品，让热爱健身和从事健身行业的人利用零散时间和个人特长，引
+                导身边的健身人合理正确摄取补剂。
+        </div>
+        <button class="isknow">
+            知道了
+        </button>
+    </div>
+    <!-- 注册 -->
+    <section id="register" style="display: none">
+        <div class="reg_name">
+            请先完成注册
+            <span class="kkktr">
+                <span class="reg_name_closesp">
+                    <img src="./img/close.png">
+                </span>
+            </span>
+        </div>
+        <div class="reg_main">
+            <input type="number" class="phone" id="phone" placeholder="手机号">
+            <input type="number" class="code" placeholder="验证码" maxlength="6">
+            <button class="getcode" onclick="settime(this)">获取验证码</button>
+            <button class="goRegister">立即注册</button>
+        </div>
+    </section>
+    <!-- alert -->
+    <div id="div_alert"></div>
+    <div class="localtop" style="display: none"></div>
+</body>
+
+<script>
+    // 移动端影响input定位
+    (function bottonm(){
+        if($(document).height() > $(window).height()){
+            $('#register').css({'position':'fixed','bottom':'0'});
+            $(document).height( $(window).height()+'px');  
+            console.log($(document).height())
+        } 
+    })(); 
+    
+    var resultStatus = '';
+    
+    $(function() {
+	 	// 页面初载时接口
+	    $.post("/clt/activity/checkRegisterVote.msp", {}, function(res) {
+	        if(res.code == '1'){  
+	        	if(res.status == '0'){
+	        		//未注册(点击按钮注册)
+	        		resultStatus = res.status;
+	        		init();
+	        	}else if(res.status == '1'){
+	        		//报名未开始
+	        		resultStatus = res.status;
+	        		init();
+	        	}else if(res.status == '2'){
+	        		//报名已开始
+	        		resultStatus = res.status;
+	        		init();
+	        	}else if(res.status == '11'){
+	        		//报名已结束
+	        		window.location.replace ( 'registerEnd.html')
+	        	}else if(res.status == '5'){
+	        		//审核已成功
+	        		window.location.replace ( 'votemain.html')
+	        	}else if(res.status == '6' || res.status == '7'){
+	        		// 待审核和审核失败
+	        		window.location.replace ( 'waitvote.html')
+	        	}else if(res.status == '3'){
+	        		// 投票未开始
+	        		if(res.activityLevel == '3'){
+	        			// 第二轮投票未开始
+	        			window.location.replace( 'timeOutPage.html')
+	        		}else{
+	        			window.location.replace( 'votemain.html')
+	        		}
+	        	}else if(res.status == '4'){
+	        		// 投票已开始
+	        		window.location.replace( 'votemain.html')
+	        	}else if(res.status == '10'){
+	        		// 投票已结束
+	        		window.location.replace( 'matchResult.html')
+	        	}
+	        }else{  //错误信息
+	        	alert(res.msg)
+	        }
+	    });
+	 	
+	    var link = location.href.split('#')[0];
+		var title =  '集客多杯';
+		var imgUrl = window.location.origin + '/wap/img/logo.png';
+		var desc = '为你喜爱的选手投票吧！';
+	   	$.post("/clt/weixin/getToken.msp", {url: link}, function(res) {
+	   		wx.config({
+	   	        debug: false, // 开启调试模式,调用的所有api的返回值会在客户端alert出来，若要查看传入的参数，可以在pc端打开，参数信息会通过log打出，仅在pc端时才会打印。
+	   	        appId: res.appId, // 必填，公众号的唯一标识
+	   	        timestamp: res.timestamp, // 必填，生成签名的时间戳
+	   	        nonceStr: res.nonceStr, // 必填，生成签名的随机串
+	   	        signature: res.signature, // 必填，签名，见附录1
+	   	        jsApiList: [
+	   	            'onMenuShareAppMessage', // 获取“分享给朋友”按钮点击状态及自定义分享内容接口
+	   	            'onMenuShareTimeline' // 获取“分享到朋友圈”按钮点击状态及自定义分享内容接口
+	   	        ] // 必填，需要使用的JS接口列表，所有JS接口列表见附录2
+	   	    });
+
+	   	    wx.ready(function () {
+	   	        wx.onMenuShareTimeline({
+	   	            title: title, // 分享标题
+	   	            link: link, // 分享链接
+	   	            imgUrl: window.location.origin + '/wap/img/logo.png', // 分享图标
+	   	            success() {
+	   	                console.log('分享成功')
+	   	            },
+	   	            cancel() {
+	   	            	//console.log('分享11成功')
+	   	                // 用户取消分享后执行的回调函数
+	   	            }
+	   	        })
+	   	        
+	   	        
+	   	        // 分享给朋友
+	   	        wx.onMenuShareAppMessage({
+	   	            title: title, // 分享标题
+	   	            desc: desc, // 分享描述
+	   	            link: link, // 分享链接
+	   	            imgUrl: window.location.origin + '/wap/img/logo.png', // 分享图标
+	   	            success: function() {
+	   	            	console.log('分享成功')
+	   	            },
+	   	            cancel: function() {
+	   	            	//console.log('分享111成功')
+	   	                // 用户取消分享后执行的回调函数
+	   	            }
+	   	        })
+	   	    });
+    	})
+    });
+
+    function init() {
+	
+	    // 页面初载时接口
+	    $.post('/clt/index.json?a=v1/entrollCheckInfo',{},function(res){
+            console.log(res)
+            // 投票时间
+	        $('.timeTip1').html('报名时间：' + res.data.enrollTime)
+	        $('.timeTip2').html('投票时间：' + res.data.firstVoteTime)
+	        
+
+	        /*
+                activityInfoListMap数据
+            */ 
+            var k = null
+            for(k=0;k<res.activityInfoListMap.length;k++){
+                if(res.activityInfoListMap[k].level == 1){ //比赛规则
+                    $('.competitionRules_txt').html('')
+                    var i = null
+                    var pagedata = "";
+                    var index = res.activityInfoListMap[k].infoList.length
+                    for(i=0; i<index; i++){ 
+                        pagedata += "<li>"+ res.activityInfoListMap[k].infoList[i].content +"</li>"
+                    }
+                    $(".competitionRules_txt").append(pagedata);
+                }else if(res.activityInfoListMap[k].level == 2){ //比赛流程
+                    $('.matchlist').attr('src',res.activityInfoListMap[k].infoList[0].content)
+                }else if(res.activityInfoListMap[k].level == 3){ //领取流程
+                    $('.lqlist').attr('src',res.activityInfoListMap[k].infoList[0].content)
+                }else if(res.activityInfoListMap[k].level == 4){ //合作伙伴
+                    $('.workPeo').html('')
+                    var i = null
+                    var pagedata = "";
+                    var index = res.activityInfoListMap[k].infoList.length
+                    for(i=0; i<index; i++){ 
+                        pagedata += "<div><img class='workPeoch' src='"+ res.activityInfoListMap[k].infoList[i].content +"'></div>"
+                    }
+                    $(".workPeo").append(pagedata);
+                    // 合作伙伴点击显示信息
+                    $('.workPeoch').each(function(num){
+                        $(this).click(function(){
+                            $('.moreTxt').html(res.activityInfoListMap[3].infoList[num].introduce)
+                            $('.topDiv1').html(res.activityInfoListMap[3].infoList[num].title)
+                            $('.knowMore').show()
+                            $('.background').show()
+                            var top
+                            top = $(window).scrollTop();
+                            $('.localtop').html(top)
+                            $('body').css("top",-top+"px");
+                            $('body').addClass('addfix')
+                        })
+                    })
+                }else if(res.activityInfoListMap[k].level == 5){ //二维码
+                    $('.secCode').html('')
+                    var i = null
+                    var pagedata = "";
+                    var index = res.activityInfoListMap[k].infoList.length
+                    for(i=0; i<index; i++){ 
+                        pagedata += "<div><img src='"+ res.activityInfoListMap[k].infoList[i].content +"'></div>"
+                    }
+                    $(".secCode").append(pagedata);
+                }else if(res.activityInfoListMap[k].level == 6){ //拉票指南
+                    $('.competitionGet_txt').html('')
+                    var i = null
+                    var pagedata = "";
+                    var index = res.activityInfoListMap[k].infoList.length
+                    for(i=0; i<index; i++){ 
+                        pagedata += "<li>"+ res.activityInfoListMap[k].infoList[i].content +"</li>"
+                    }
+                    $(".competitionGet_txt").append(pagedata);
+                }
+            }
+            
+            /*
+                activityPrizeListMap数据
+            */ 
+            var k = null
+            for(k=0;k<res.activityInfoListMap.length;k++){
+                if(res.activityInfoListMap[k].level == 1){  //前10
+                    $('.apresent1').html('')
+                    var pagedata = "";
+                        pagedata += "<div class='aPre'>前10名奖品</div><div class='peresentMain'><div><img src='" + res.activityPrizeListMap[k].prizeList[0].imageURL + 
+                            "'></div><div><img src='" + res.activityPrizeListMap[k].prizeList[1].imageURL + "'></div><div><img src='"+res.activityPrizeListMap[k].prizeList[2].imageURL+"'></div></div><div>"+
+                                res.activityPrizeListMap[0].prizeList[1].content+"</div><div>"+res.activityPrizeListMap[k].prizeList[2].content+"</div></div>"
+                    $(".apresent1").append(pagedata);
+                }else if(res.activityInfoListMap[k].level == 2){  //前30
+                    $('.apresent2').html('')
+                    var pagedata = "";
+                        pagedata += "<div class='aPre'>前30名奖品</div><div class='peresentMain'><div><img src='" + res.activityPrizeListMap[k].prizeList[0].imageURL + 
+                            "'></div><div><img src='" + res.activityPrizeListMap[k].prizeList[1].imageURL + "'></div><div><img src='"+res.activityPrizeListMap[k].prizeList[2].imageURL+"'></div></div><div>"+
+                                res.activityPrizeListMap[k].prizeList[1].content+"</div><div>"+res.activityPrizeListMap[1].prizeList[2].content+"</div></div>"
+                    $(".apresent2").append(pagedata);
+                }else if(res.activityInfoListMap[k].level == 3){  //抽奖奖品
+                    $('.apresent3').html('')
+                    var pagedata = "";
+                        pagedata += "<div class='aPre'>抽奖奖品</div><div class='peresentMain'><div><img src='" + res.activityPrizeListMap[k].prizeList[0].imageURL + 
+                            "'></div><div><img src='" + res.activityPrizeListMap[k].prizeList[1].imageURL + "'></div><div><img src='"+res.activityPrizeListMap[k].prizeList[2].imageURL+"'></div></div><div>"+
+                                res.activityPrizeListMap[k].prizeList[1].content+"</div><div>"+res.activityPrizeListMap[k].prizeList[2].content+"</div></div>"
+                    $(".apresent3").append(pagedata);
+                }else if(res.activityInfoListMap[k].level == 4){  //参与奖
+                    $('.apresent4').html('')
+                    var pagedata = "";
+                        pagedata +=  "<div class='aPre'>参与奖</div><div class='Coupon'><img src='"+res.activityPrizeListMap[k].prizeList[0].imageURL+"'></div>"
+                    $(".apresent4").append(pagedata)
+                }
+            }
+    	})
+    }
+    
+    // 我要报名
+   	$('.sureBtn2').click(function(){
+    	if(resultStatus == '0'){
+      		$('.background').show()
+        	$('#register').show()
+          	var top  = $(window).scrollTop();
+            $('.localtop').html(top)
+            $('body').css("top",-top+"px");
+            $('body').addClass('addfix')
+        }else if(resultStatus == '1'){
+           	$("#div_alert").html("报名活动还未开始");
+            tanchuang();
+       	}else if(resultStatus == '2'){
+           	window.location.href =  'matchregister.html'
+       	}
+  	});
+
+    
+    // 关闭
+    $('.closeCover').click(function(){
+        $('body').css('top', '');
+        $('body').removeClass('addfix') 
+        var tt = $('.localtop').html()
+        $(window).scrollTop(tt)
+        $('.localtop').html('')
+
+        $('.liaojie').hide()
+        $('.background').hide()
+    });
+    
+    // 了解集客多提示
+    $('.sureBtn1').click(function(){
+        $('.topDiv1').html('了解集客多')
+        $('.moreTxt').html('集客多是一款主卖补剂（运动营养品）的跨境电商平台,目标是做全球营养供应商。集客多APP上主要销售全球一线大牌运动营养品，让热爱健身和从事健身行业的人利用零散时间和个人特长，引导身边的健身人合理正确摄取补剂。')
+        $('.knowMore').show()
+        $('.background').show()
+        var top
+        top = $(window).scrollTop();
+        $('.localtop').html(top)
+        $('body').css("top",-top+"px");
+        $('body').addClass('addfix')
+    });
+
+    // 注册关闭
+    $('.kkktr').click(function(){
+        $('body').css('top', '');
+        $('body').removeClass('addfix') 
+        var tt = $('.localtop').html()
+        $(window).scrollTop(tt)
+        $('.localtop').html('')
+
+        $('#register').hide();
+        $('.background').hide();
+    });
+    
+    // 关闭品牌简介
+    $('.closeCover1').click(function(){
+        $('body').css('top', '');
+        $('body').removeClass('addfix') 
+        var tt = $('.localtop').html()
+        $(window).scrollTop(tt)
+        $('.localtop').html('')
+
+        $('.knowMore').hide()
+        $('.background').hide()
+    });
+    
+    //关闭品牌简介 (知道了按钮) 
+    $('.isknow').click(function(){
+        $('body').css('top', '');
+        $('body').removeClass('addfix') 
+        var tt = $('.localtop').html()
+        $(window).scrollTop(tt)
+        $('.localtop').html('')
+
+        $('.knowMore').hide()
+        $('.background').hide()
+    });
+    
+    // 验证码
+    var countdown = 60;             //验证码初始 
+    var phone = $("#phone").val();
+    var timeoutKey = 0;            	//倒计时控制变量
+    var linkKey = 1;              	//接口控制变量
+
+    function settime(obj) {
+      	//如果输入为空
+      	var phone = $("#phone").val();
+        // if (phone == '') {
+        //     $("#div_alert").html("请输入手机号");
+        //     tanchuang();
+        //     $('#phone').focus();
+        //     return false;       
+        // }else if(phone.length != 11){
+        //     $("#div_alert").html("请输入正确的手机号码");
+        //     tanchuang();
+        //     $('#phone').focus();
+        //     return false;  
+        // }
+
+        if (linkKey == 1) {                                        
+        	//当接口控制开启 可走接口交互验证码
+        	$.post("/api/user/sendCode.msp", { 
+               	mobile: phone,
+                countryCode: 86,
+                codeType: 5
+        	},function(data){
+            	console.log(data)
+            	if (data.code == '0'){                                 
+            		//发送失败 跳出提示 不进行倒计时
+                	var k1 = data.msg
+                	$("#div_alert").html(k1);
+                	tanchuang();
+                	clearTimeout(ttt);
+            	}else if(data.code == '1'){                            
+            		//发送成功 进入倒计时 按钮持续不可操作 直到cuntdown为0后恢复
+                	var k2 = data.msg
+                	$("#div_alert").html(k2);
+                	tanchuang();
+                	timeoutKey = 1;         //倒计时控制变量 开启
+                	linkKey = 0;            //接口关闭                                     
+            	}
+        	}, "json");
+        }
+
+        if(timeoutKey == '1' && linkKey != '1'){                //倒计时控制开启  接口控制关闭  此时进行倒计时
+            obj.setAttribute("disabled", true);                //不可选中
+            $(".getcode").html("重新发送(" + countdown + ")");
+            countdown--;                                       //数字倒计时  
+        }
+
+        if (countdown == 0) {                                  //倒计时结束 重置按钮 可重新走接口
+            linkKey++                 //开启接口
+            timeoutKey--              //关闭倒计时
+            obj.removeAttribute("disabled");  //重置倒计时按钮样式
+            $(".getcode").html("获取验证码");
+            countdown = 60;
+            return;
+        }
+
+        var ttt = setTimeout(function(){
+            settime(obj)
+        }, 1000) 
+    }
+    
+ 	// 立即注册
+    $('.goRegister').click(function(){
+        var mobile = $('.phone').val()
+        var smsCode = $('.code').val()
+        
+        $.post("/clt/wap/userRegister.msp", {
+        	isVote: true,
+            mobile : mobile,
+            smsCode : smsCode
+        }, function(res) {
+            if(res.code == 1){  
+            	$('body').css('top', '');
+                $('body').removeClass('addfix') 
+                var tt = $('.localtop').html()
+                $(window).scrollTop(tt)
+                $('.localtop').html('')
+
+                $('#register').hide()
+                $('.background').hide()
+                
+                // 注册成功发送短信
+                var phone = $("#phone").val();
+                $.post("/clt/user/sendRegisterSucc.msp", {
+                    mobile: phone,
+                    countryCode: 86,
+                    codeType: 6
+                },function(res){
+                    if(res){
+                        location.reload()
+                    }
+                });
+                location.reload()
+            }else{  
+            	//注册失败
+                $("#div_alert").html(res.msg);
+                tanchuang();
+            }
+        })
+    });
+ 	
+    //通用神奇小弹窗
+    function tanchuang(){
+        var cler;
+        var i = 0;
+        var count = 5;
+        if (cler!= null && cler!= undefined) {
+            window.clearInterval(cler);
+        }
+        // $("#div_alert").html("");
+        $("#div_alert").fadeIn();
+        i = 0;
+        var tcount = 2;
+        count = tcount;
+        timerun();
+        function timerun() {
+            if (i >= count) {
+                // document.getElementById("div_alert").style.display = "none";
+                $("#div_alert").fadeOut();
+                window.clearInterval(cler);
+            }else {
+                cler = window.setTimeout(timerun, 900);
+            }
+            i++;
+        }
+    }
+</script>
+<style>
+    .addfix{
+        position:fixed;
+    }
+</style>
+</html>

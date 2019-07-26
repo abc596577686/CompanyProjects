@@ -1,0 +1,52 @@
+.trad_container{
+  background-color: #f0f0f0;
+  .trad_content{
+    width:1220px;
+    margin:0 auto;
+    background-color: #fff;
+    border-radius: 10px;
+    min-height:800px;
+    padding:15px;
+    .trad_header{
+      padding:20px;
+      background-color: #f6f6f6;
+      .search_box{
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-start;
+        align-items: center;
+        .timeBox{
+          margin:10px;
+        }
+      }
+      .chooseBox{
+        .box_item{
+          display: flex;
+          flex-direction:row;
+          padding:5px;
+          align-items: center;
+        }
+        .item{
+          margin:5px;
+          display: flex;
+          padding-left:20px;
+          align-items: center;
+          li{
+            padding:3px 8px;
+            &:active{
+              background-color: #FF4200;
+              color: #fff;
+              border-radius: 2px;
+            }
+            &:hover{
+              background-color: #FF4200;
+              color: #fff;
+              border-radius: 2px;
+            }
+          }
+        }
+      }
+    }
+
+  }
+}

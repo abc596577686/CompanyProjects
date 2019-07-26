@@ -1,0 +1,4 @@
+<!--components/btn/btn.wxml-->
+<view class='footer'>
+  <view class='footer-btn'>{{btnInfo}}</view>
+</view>

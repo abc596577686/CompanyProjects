@@ -1,0 +1,132 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+body{
+    background-color: #FFFFFF;
+}
+.topimg {
+    width:3.242667rem;
+    height:3.2rem;
+    position: relative;
+    left: 6.357333rem;
+    top: 2.005333rem; 
+}
+.topimg img{
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+.sec_phone_1{
+    width: 1.706667rem;
+    height: .768rem;
+    line-height: .768rem;
+    position: absolute;
+    left: 1.92rem;
+    top: 7.381333rem;
+    font-size: .64rem;
+    color: #333333;
+}
+.sec_phone_2{
+    width: 5.12rem;
+    height: .853333rem;
+    line-height: .853333rem;
+    position: absolute;
+    left: 4.821333rem;
+    top: 7.296rem;
+    font-size: .64rem
+}
+.sec_yz_1{
+    width: 2.346667rem;
+    height: .853333rem;
+    line-height: .853333rem;
+    position: absolute;
+    left: 1.92rem;
+    top: 9.941333rem;
+    font-size: .64rem;
+}
+.sec_yz_2{
+    width: 5.12rem;
+    height: .853333rem;
+    line-height: .853333rem;
+    position: absolute;
+    left: 4.821333rem;
+    top: 9.941333rem;
+    font-size: .64rem
+}
+.sec_yzbtn{
+    width: 3.797333rem;
+    height: 1.237333rem;
+    border-radius: .597333rem .597333rem .597333rem .597333rem;
+    background-color: white;
+    color: #008EE5;
+    border: 1px solid #008EE5;
+    position: absolute;
+    left: 10.624rem;
+    top: 9.8rem;
+}
+.deshr{
+    display: block;
+    width: 296px;
+    height: 1px;
+    background-color: #E5E5E5;
+    position: absolute;
+    top: 11.221333rem;
+    left: 1.706667rem;
+}
+.sec_mm_1{
+    width: 2.346667rem;
+    height: .853333rem;
+    line-height: .853333rem;
+    position: absolute;
+    left: 1.92rem;
+    top: 12.629333rem;
+    font-size: .64rem;
+}
+.sec_mm_2{
+    width: 5.12rem;
+    height: .853333rem;
+    line-height: .853333rem;
+    position: absolute;
+    left: 4.821333rem;
+    top: 12.629333rem;
+    font-size: .64rem
+}
+.sec_qr_1{
+    width: 2.986667rem;
+    height: .853333rem;
+    line-height: .853333rem;
+    position: absolute;
+    left: 1.92rem;
+    top: 15.274667rem;
+    font-size: .64rem;
+}
+.sec_qr_2{
+    width: 5.12rem;
+    height: .853333rem;
+    line-height: .853333rem;
+    position: absolute;
+    left: 4.821333rem;
+    top: 15.274667rem;
+    font-size: .64rem
+}
+.deshr1{
+    display: block;
+    width: 296px;
+    height: 1px;
+    background-color: #E5E5E5;
+    position: absolute;
+    top: 16.554667rem;
+    left: 1.706667rem;
+}
+.sec_zcbtn{
+    width: 12.672rem;
+    height: 1.621333rem;
+    background-color: #008EE5;
+    font-size: .725333rem;
+    color: #fff;
+    font-weight: 600;
+    position: absolute;
+    top: 18.688rem;
+    left: 1.664rem;
+}

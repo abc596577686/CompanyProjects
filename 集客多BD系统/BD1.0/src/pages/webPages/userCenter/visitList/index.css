@@ -1,0 +1,165 @@
+#superWebVisitList {
+  padding-bottom: 1rem!important;
+  padding: .3rem;
+  background-color: #002140;
+  min-height: calc(100vh);
+}
+#superWebVisitList .pageTitle {
+  position: relative;
+  width: 100%;
+  height: 1rem;
+  line-height: 1rem;
+  background-color: #999;
+  color: #000;
+  font-size: .3rem;
+  text-align: center;
+  font-weight: bold;
+}
+#superWebVisitList .pageTitle .returnIcon {
+  width: .45rem;
+  height: .58rem;
+  position: absolute;
+  left: .2rem;
+  top: .2rem;
+}
+#superWebVisitList .pageTitle .returnIcon svg {
+  width: 100%;
+  height: 100%;
+}
+#superWebVisitList .head {
+  width: 100%;
+  height: .8rem;
+  background-color: #fff;
+}
+#superWebVisitList .head_flex {
+  height: .8rem;
+}
+#superWebVisitList .head_img {
+  width: .6rem;
+  height: .6rem;
+  border-radius: 50%;
+  overflow: hidden;
+}
+#superWebVisitList .head_name {
+  width: 4rem;
+  height: .6rem;
+  text-align: left;
+  line-height: .6rem;
+  font-size: .4rem;
+  font-weight: bold;
+  margin-left: .2rem;
+}
+#superWebVisitList .head_name input {
+  margin-top: .17rem;
+  font-size: .3rem;
+}
+#superWebVisitList .head_search {
+  width: .6rem;
+  height: .6rem;
+  margin-left: .9rem;
+  cursor: pointer;
+}
+#superWebVisitList .head_search :first-child {
+  width: .6rem;
+  height: .6rem;
+}
+#superWebVisitList .mainUserInfo {
+  z-index: 1000;
+  width: 100%;
+  min-height: 4rem;
+  background-color: #fff;
+  margin-bottom: .3rem;
+}
+#superWebVisitList .mainUserInfo .head_flexs {
+  padding-left: .22rem;
+}
+#superWebVisitList .mainUserInfo .mainUserInfo_img {
+  width: .6rem;
+  height: .6rem;
+}
+#superWebVisitList .mainUserInfo .mainUserInfo_txt1 {
+  color: #333;
+  width: 1.6rem;
+  height: .4rem;
+  font-size: .3rem;
+  font-weight: bold;
+  line-height: .4rem;
+  margin-bottom: 0;
+  margin-left: .2rem;
+  overflow: hidden;
+}
+#superWebVisitList .mainUserInfo .mainUserInfo_txt2 {
+  width: 3rem;
+  height: .4rem;
+  font-size: .3rem;
+  line-height: .4rem;
+  margin-bottom: 0;
+  margin-left: 1.6rem;
+}
+#superWebVisitList .mainUserInfo > div:nth-child(1) {
+  width: 100%;
+  height: 1.5rem;
+}
+#superWebVisitList .mainUserInfo > div:nth-child(1) div {
+  width: 100%;
+  height: 1rem;
+}
+#superWebVisitList .mainUserInfo > div:nth-child(2) {
+  width: 100%;
+  min-height: 2.5rem;
+  padding-bottom: .07rem;
+}
+#superWebVisitList .mainUserInfo > div:nth-child(2) div {
+  width: 100%;
+  height: 2rem;
+}
+#superWebVisitList .mainUserInfo > div:nth-child(2) p {
+  color: #333;
+  font-weight: bold;
+  font-size: .26rem;
+  margin-bottom: .1rem;
+  padding-left: .22rem;
+  padding-right: .22rem;
+}
+#superWebVisitList .mainUserInfo > div:nth-child(3) {
+  width: 100%;
+  min-height: 2.5rem;
+}
+#superWebVisitList .mainUserInfo > div:nth-child(3) img {
+  width: 2rem;
+  height: 2rem;
+  margin-left: .23rem;
+}
+#superWebVisitList .mainUserInfo > div .head_flexss {
+  width: 100%;
+  height: 2.5rem;
+}
+#superWebVisitList .return {
+  z-index: 10000;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: .8rem;
+  background-color: #fff;
+  -webkit-touch-callout: none;
+  /*系统默认菜单被禁用*/
+  -webkit-user-select: none;
+  /*webkit浏览器*/
+  -khtml-user-select: none;
+  /*早期浏览器*/
+  -moz-user-select: none;
+  /*火狐*/
+  -ms-user-select: none;
+  /*IE10*/
+  user-select: none;
+}
+#superWebVisitList .return :first-child {
+  width: 100%;
+  height: .8rem;
+  line-height: .8rem;
+  font-size: .36rem;
+  background-color: #fff;
+  color: #333;
+  font-weight: bold;
+}

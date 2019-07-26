@@ -1,0 +1,139 @@
+
+.editBankInfo{
+	min-height: 100%;
+	background: #F0F0F0;
+}
+
+.outItem{
+	background: #fff;
+	margin-bottom: .5rem;
+}
+
+.innerItem{
+	display: flex;
+	width: 100%;
+	flex-direction: row;
+	justify-content: space-between;
+	font-size: .6rem;
+	padding: .5rem;
+	position: relative;
+}
+
+.innerItem:after{
+	position: absolute;
+	content: '';
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: .03rem;
+	background: #ccc;
+	transform: scaleY(.5);
+}
+
+.desc{
+	color: #666;
+	flex: 1;
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: flex-end;
+}
+
+.content{
+	color: #666;
+	flex: 1;
+	margin-left: .3rem;
+}
+
+.content.phoneIdentifyCode{
+	position: relative;
+/*	display: flex;
+	flex-direction: row;
+	justify-content: space-between;*/
+}
+
+.getCode{
+	position: absolute;
+	right: -.5rem;
+	top: -.5rem;
+	padding: .5rem;
+	color: #FB4A4C;
+}
+
+.content input{
+	color: #666;
+	width: 100%;
+	outline: none;
+	padding: 0 .5rem;
+	font-size: .56rem;
+}
+
+.desc img{
+	margin-left: .2rem;
+	width: .3rem;
+}
+
+.btnWrap{
+	width: 100%;
+	background: transparent;
+	padding: .3rem .8rem;
+	/*position: fixed;*/
+	/*bottom: 0;*/
+	/*left: 0;*/
+}
+
+.btnWrap .btn{
+	width: 100%;
+	padding: .4rem 0;
+	text-align: center;
+	color: #fff;
+	font-size: .7rem;
+	border-radius: .2rem;
+	background: #FB4A4C;
+}
+
+.bankListWrap{
+	position: fixed;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	margin: .6rem .4rem;
+	background: #fff;
+	font-size: .6rem;
+	text-align: center;
+	z-index: 100;
+	max-height: 13rem;
+	overflow: auto;
+	border-radius: .3rem;
+}
+
+.bankListWrap .item,
+.bankCardTypeWrap .item{
+	background: #fff;
+	padding: .5rem 0;
+	position: relative;
+}
+
+.bankListWrap .item:after,
+.bankCardTypeWrap .item:after{
+	position: absolute;
+	content: '';
+	left: 0;
+	right: 0;
+	bottom: 0;
+	height: .05rem;
+	background: #ccc;
+	transform: scaleY(.5);
+}
+
+.bankCardTypeWrap{
+	position: fixed;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	background: #fff;
+	font-size: .6rem;
+	text-align: center;
+	z-index: 100;
+}
+

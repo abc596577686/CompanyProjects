@@ -1,0 +1,112 @@
+/* components/loading/loading.wxss */
+
+.loadingWrap {
+  display: flex;
+  justify-content: center;
+  height: 100rpx;
+}
+
+.loadImg {
+  width: 50rpx;
+  height: 50rpx;
+
+  /* position: fixed;
+  bottom: 50rpx;
+  left: 50%;
+  margin-left: -25rpx; */
+  /* transform: translate3d(-25rpx, -25rpx, 0); */
+  /* z-index: 9999999999999; */
+
+}
+
+.loadImg.rotateAni {
+  animation: rotate 0.8s ease-in-out infinite;
+}
+
+@keyframes rotate {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.loadBox {
+  position: relative;
+  width: 80rpx;
+  height: 80rpx;
+  border-radius: 50%;
+  /* margin: 75px; *//* display: inline-block; *//* vertical-align: middle; */
+}
+
+.rotateAni .loadOuter {
+  position: absolute;
+  border: 6rpx solid #FFDA32;
+  border-left-color: transparent;
+  border-bottom: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  -webkit-animation: loadOuterAni 1s cubic-bezier(0.42, 0.61, 0.58, 0.41) infinite;
+  animation: loadOuterAni 1s cubic-bezier(0.42, 0.61, 0.58, 0.41) infinite;
+}
+
+.rotateAni .loadInner {
+  position: absolute;
+  border: 6rpx solid #FFDA32;
+  border-radius: 50%;
+  width: 40rpx;
+  height: 40rpx;
+  left: calc(50% - 20rpx);
+  top: calc(50% - 20rpx);
+  border-right: 0;
+  border-top-color: transparent;
+  -webkit-animation: loadInnerAni 1s cubic-bezier(0.42, 0.61, 0.58, 0.41) infinite;
+  animation: loadInnerAni 1s cubic-bezier(0.42, 0.61, 0.58, 0.41) infinite;
+}
+
+@-webkit-keyframes loadInnerAni {
+  0% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+
+  100% {
+    -webkit-transform: rotate(-360deg);
+    transform: rotate(-360deg);
+  }
+}
+
+@keyframes loadInnerAni {
+  0% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+
+  100% {
+    -webkit-transform: rotate(-360deg);
+    transform: rotate(-360deg);
+  }
+}
+
+@-webkit-keyframes loadOuterAni {
+  0% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+
+  100% {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes loadOuterAni {
+  0% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+
+  100% {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}

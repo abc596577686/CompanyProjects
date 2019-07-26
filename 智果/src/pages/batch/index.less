@@ -1,0 +1,111 @@
+.batch_container{
+  background-color: #f0f0f0;
+  .batch_content{
+    background-color: #fff;
+    width:1220px;
+    margin:0 auto;
+    min-height:600px;
+    padding:30px;
+    margin-top:15px;
+    .title{
+      color: #999;
+      font-size:20px;
+      font-weight:bold;
+      margin-bottom:30px;
+    }
+    .item{
+      padding-bottom:20px;
+      .downLoad {
+        color: #5b9bd1!important;
+        &:hover{
+          color: #FF4200!important;
+        }
+
+      }
+    }
+    .fileBox{
+      width:350px;
+      height:30px;
+      border-radius: 5px;
+      border:1px solid #ccc;
+      box-sizing: border-box;
+      overflow: hidden;
+      .fileName{
+        float: left;
+        width:270px;
+        height:100%;
+        line-height:30px;
+        box-sizing: border-box;
+      }
+      .oprateFile{
+        float:right;
+        width:70px;
+        height:100%;
+        background-color: #e31436;
+        text-align: center;
+        line-height:30px;
+        font-size:12px;
+        box-sizing: border-box;
+        color: #fff;
+        cursor: pointer;
+        .del {
+          background-color: #cf1322;
+        }
+
+      }
+    }
+  }
+}
+.table-box1 {
+  .ant-table{
+    font-size:11px!important;
+    //-webkit-text-size-adjust:none;
+    td{
+      font-size: 11px!important;
+      //-webkit-text-size-adjust:none;
+      padding: 0.1px!important;
+    }
+    th{
+      padding:1px!important;
+      font-weight:700;
+    }
+  }
+  .ant-table-row {
+    &.abnormal {
+      td {
+        background: #f1353d !important;
+      }
+    }
+  }
+}
+.orderModal{
+  top:50px;
+  .ant-modal-body{
+    //max-height:400px;
+    //overflow-y: scroll;
+  }
+  .ant-modal-header {
+    padding: 10px 14px !important;
+    border-radius: 4px 4px 0 0;
+    background: #fff;
+    color: rgba(0,0,0,.65);
+    border-bottom: 1px solid #e8e8e8;
+  }
+  .ant-modal-body {
+    padding: 4px !important;
+    font-size: 12px !important;
+    line-height: 1.5;
+    word-wrap: break-word;
+  }
+  .ant-modal-confirm .ant-modal-body {
+    padding: 32px 32px 24px !important;
+  }
+  .switchBox{
+    margin : 5px;
+    .info{
+      font-size:12px;
+      vertical-align: middle;
+      margin-left:5px;
+    }
+  }
+}

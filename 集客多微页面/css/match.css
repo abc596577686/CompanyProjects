@@ -1,0 +1,54 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+img{
+    width: 100%;
+    /* height: 100%;  */
+}
+.name{
+    width: 5rem;
+    height: 1.6rem;
+    font-size: 1.2rem;
+    color: #fff;
+    line-height: 1.6rem;
+    position: absolute;
+    left: 4.9rem;
+    top: 12.3rem;
+    text-align: center;
+}
+.lookReult{
+    width: 9.4rem;
+    height: 1.56rem;
+    text-align: center;
+    line-height: 1.56rem;
+    position: absolute;
+    left: 2.8rem;
+    top: 14.24rem;
+}
+.coverimg1{
+    width: 12.4rem;
+    height: 4.1rem;
+    position: absolute;
+    left: .7rem;
+    top: 26.5rem;
+    padding: .426667rem;  
+    padding-top: .853333rem;  
+}
+.coverimg1 img{
+    width: 100%;
+    height: 2.6rem;
+}
+.coverimg2{
+    width: 12.4rem;
+    height: 4.1rem;
+    position: absolute;
+    left: .7rem;
+    top: 33.63rem;    
+    padding: .426667rem; 
+    padding-top: .853333rem;  
+}
+.coverimg2 img{
+    width: 100%;
+    height: 2.6rem;
+}

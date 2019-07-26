@@ -1,0 +1,133 @@
+<!--pages/groupShoping/groupShoping.wxml-->
+<view class='container {{(groupStatus && status != "5")?"contain":""}}' wx:if='{{hide}}'>
+  <view class='top' wx:if='{{!groupGoing && groupGoing != undefined}}'>
+    <view class='shopMes'>
+      <icon type='success' color='#FB4A4C' size='19' wx:if='{{status == "1"||status=="3"||status=="5"}}'></icon>
+      <icon type='clear' color='#FB4A4C' size='19' wx:else></icon>
+      <text class='mes'>{{statusName}}</text>
+    </view>
+    <view class='goodMes' wx:if='{{groupStatus}}'>商家正在努力发货，请耐心等待</view>
+    <view class='goodMes' wx:if='{{!groupStatus}}'>这个团没有拼成功哦~</view>
+    <!--拼团头像 -->
+    <groupUser data='{{groupUserImg}}' size='{{groupSize}}' id='groupUserImg'></groupUser>
+    <!-- 参团开团成功团未满 -->
+    <block wx:if='{{groupStatus && status!=5}}'>
+      <view class='inviteBox'>
+        <button class='inviteBtn' catchtap='shareEnv' open-type='share' wx:if='{{status != "5"}}'>邀请好友参团{{restTime}} 后结束</button>
+      </view>
+      <view class='share' wx:if='{{groupStatus && status != "5"}}'>分享到3个群后，成功率达98%</view>
+    </block>
+    <block wx:if='{{!groupStatus}}'>
+      <btn btnInfo='再来一单' catchtap='goDetail'></btn>
+    </block>
+    <block wx:if='{{status=="5"}}'>
+      <btn btnInfo='去首页逛逛' catchtap='goHome'></btn>
+    </block>
+  </view>
+  <view class='top' wx:if='{{groupGoing && groupGoing != undefined}}'>
+    <!-- 参团开团成功团未满 -->
+    <view class='shareBox'  style='background-image:url({{collageShareBackgroundImg}});' >
+      <view class='contentBox'>
+        <view class='share-left'>
+          <image class='left-img' mode='widthFix' src='{{shareImg}}'></image>
+        </view>
+        <view class='share-right'>
+          <view class='top-box'>
+            <text class='price1'>限时立省{{preferential}}%</text>
+            <text class='price2'>￥ {{price}}</text>
+            <text class='price3'>￥{{collagePrice}}</text>
+          </view>
+          <view class='userImgs'>
+            <UserElipse data='{{groupUserImg}}' size='{{groupSize}}' id='groupUserImg'></UserElipse>
+          </view>
+          <text class='btn'>点击抢购</text>
+        </view>
+      </view>
+    </view>
+    <view class='inviteBox'>
+      <button class='inviteBtn' catchtap='shareEnv' open-type='share'>邀请好友参团{{restTime}} 后结束</button>
+    </view>
+    <view class='share' wx:if='{{groupStatus && status != "5"}}'>分享到3个群后，成功率达98%</view>
+
+
+  </view>
+  <view class='bottom' wx:if='{{groupGoing != undefined}}'>
+    <view class='goodName' catchtap='goDetail'>
+      <view class='left'>商品名称</view>
+      <view class='right txtInfo'>
+        <text class='nameInfo'>{{productName}}</text>
+        <image class='more' src='/assets/images/icon_justDo.png' mode='widthFix'></image>
+      </view>
+    </view>
+    <block wx:if='{{groupStatus && status != 5 || status == "0"}}'>
+      <view class='groupTime'>
+        <view class='left'>参团时间</view>
+        <view class='right'>{{jionTime}}</view>
+      </view>
+      <view class='groupKonw' catchtap='showGroupBox'>
+        <view class='left'>拼团须知</view>
+        <view class='right'>
+          <text>好友参团.人满发货.人不满退款</text>
+          <image class='more' src='/assets/images/icon_justDo.png' mode='widthFix'></image>
+        </view>
+      </view>
+    </block>
+    <block wx:if='{{status == "4" || status=="5"}}'>
+      <view class='groupKonw' catchtap='showAddressBox'>
+        <view class='left'>订单信息</view>
+        <view class='right'>收件人 · 收货地址 · 成团时间</view>
+      </view>
+    </block>
+    <!-- 推荐商品 -->
+    <view wx:if="{{recommendProductList.length>0}}">
+      <view class='otherHeader bgWhite'>
+        <view class='line'></view>
+        <view class='headMes'>更多拼团商品</view>
+        <view class='line'></view>
+      </view>
+      <goodsTwoColumns data="{{recommendProductList}}"></goodsTwoColumns>
+    </view>
+    <view class='bg' catchtap='hideMasker' wx:if='{{isMaskShow}}'>
+    </view>
+  </view>
+</view>
+<!-- <view class='footer' wx:if='{{status != "5"}}'>
+  <view class='footer-btn' catchtap='goHome'>去首页逛逛</view>
+</view> -->
+<view class='bger' wx:if='{{isMaskShower}}' catchtap='close'></view>
+<view class='detailBox' wx:if='{{showDetailBox}}' catchtap='close'>
+  <view class='knowDetailBox' wx:if='{{showAddressBox}}'>
+    <view class='box-head'>
+      <text>订单信息</text>
+      <image src='/assets/images/close.png' class='close' catchtap='close'></image>
+    </view>
+    <view class='box-main'>
+      <view class='main-item'>
+        <text>· 收货人：{{userName}}</text>
+        <image class='more' src='/assets/images/icon_justDo.png' mode='widthFix'></image>
+      </view>
+      <view class='main-item'>
+        <text class='nameInfo'>· 收货地址：{{address}}</text>
+        <image class='more' src='/assets/images/icon_justDo.png' mode='widthFix'></image>
+      </view>
+      <view class='main-item'>
+        <text>· 成团时间：{{succTime}}</text>
+        <image class='more' src='/assets/images/icon_justDo.png' mode='widthFix'></image>
+      </view>
+    </view>
+  </view>
+  <view class='knowDetailBox' wx:if='{{showGroupBox}}'>
+    <view class='box-head'>
+      <text>如何参加拼团</text>
+      <image src='/assets/images/close.png' class='close' catchtap='close'></image>
+    </view>
+    <view class='box-main'>
+      <view class='main-item'>· 开团或参加别人的团</view>
+      <view class='main-item'>· 在规定时间内，邀请好友参团</view>
+      <view class='main-item'>· 达到拼团人数，分别给团长和团员发货</view>
+      <view class='main-item'>· 未到达拼团人数，货款将自动原路退还</view>
+    </view>
+  </view>
+</view>
+<loading wx:if='{{isLoading}}'></loading>
+<noMore wx:if="{{isShowEnd == 1}}"></noMore>

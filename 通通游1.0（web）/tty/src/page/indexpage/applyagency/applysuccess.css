@@ -1,0 +1,29 @@
+
+body{
+    background-color: #fff;
+    background-image: url("../../../images/tty/6d4f9be2ad9210b2c0a19144531b592f@2x.png");
+    background-size: 100% 100%;
+}
+.topT{
+    width: 3.2rem;
+    height:  .725333rem;
+    font-size: .725333rem;
+    line-height: .725333rem;
+    color: #333333;
+    position: absolute;
+    left: 6.570667rem;
+    top: 4.48rem;
+}
+.onloadBtn{
+    width: 15.018667rem;
+    height: 2.133333rem;
+    background-color: #008ee5;
+    border-radius: .341333rem .341333rem .341333rem .341333rem ;
+    color: #ffffff;
+    font-size: .682667rem;
+    text-align: center;
+    line-height: 2.133333rem;
+    position: absolute;
+    top: 9.429333rem;
+    left: .597333rem;
+}

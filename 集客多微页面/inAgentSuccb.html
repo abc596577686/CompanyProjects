@@ -1,0 +1,40 @@
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="width=device-width,user-scalable=no,initial-scale=0.33333,minimum-scale=0.33333,maximum-scale=0.33333" />
+    <title>领取成功</title>
+    <link rel="stylesheet" href="./css/yqlink.css">
+    <script src="./js/wechat.js"></script>
+    <script src="./js/jquery-3.2.1.js"></script>
+    <script>
+            //1.获取像素比
+            var pixelRatio=1/window.devicePixelRatio;
+            // console.log(pixelRatio);
+            //2.通过js动态来设置视口
+            document.write('<meta name="viewport" content="width=device-width,initial-scale='+pixelRatio+',minimum-scale='+pixelRatio*2+',maximum-scale='+pixelRatio+'">');
+            //3.获取html节点
+            var html=document.getElementsByTagName('html')[0];
+            //console.log(html)
+            //4.获取屏幕宽度
+            var pageWidth=html.getBoundingClientRect().width;
+            // console.log(pageWidth);
+            //屏幕宽度/固定数值=基准值;
+            html.style.fontSize=pageWidth/15+'px';
+        </script>
+</head>
+<body>
+    <div class="bgImg">
+  		<img src="./img/bg@2x.png">
+  		<img class="dg" src="./img/dagou2@2x.png">
+      	<span class="dg_2">恭喜您成功获得</span>
+      	<span class="dg_3">集客多大礼包</span>
+        <a href="http://a.app.qq.com/o/simple.jsp?pkgname=com.webapp.jkd">下载集客多</a>
+    </div>
+</body>
+<script>
+	// 返回上一页
+	function goback(){
+    	window.history.go(-1);
+	}
+</script>
+</html>

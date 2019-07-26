@@ -1,0 +1,176 @@
+<!--pages/groupDetail/groupDetail.wxml-->
+<view class='container' wx:if="{{hide}}">
+  <view class='goodItem' catchtap='goProductDegtail'>
+    <view class='imgBox'>
+      <image class='goodImg' mode='widthFix' src='{{productInfo.productImgUrl}}'></image>
+    </view>
+    <view class='goodInfo'>
+      <view class='goodName'>{{productInfo.productName}}</view>
+      <view class='groupNum'>
+        <text class='allNum'>{{productInfo.salesDetails}}</text>
+        <text> · </text>
+        <text class='person'>{{productInfo.collageSize}}人团</text>
+      </view>
+      <view class='money'>
+        <text class='price'>￥{{productInfo.collagePrice}}</text>
+        <text class='priceInfo'>拼团省{{productInfo.saveMoney}}元</text>
+      </view>
+    </view>
+  </view>
+  <view class='mesItem'>
+    <view class='item' wx:for='{{infoList}}' wx:key='{{index}}'>
+      <icon type='success_circle' size='12' color='#FB4A4C'></icon>
+      <text class='mesTxt'>{{item}}</text>
+    </view>
+  </view>
+  <view class='groupBox'>
+    <groupUser data='{{groupUserImg}}' size='{{groupSize}}'></groupUser>
+    <view class='rest' wx:if='{{productInfo.status=="0"}}'>仅剩
+      <text class='restNum'>{{productInfo.needPeopleNumber}}</text>个名额，
+      <text class='restTime'>{{restTime}}</text> 后结束
+    </view>
+    <view class='rest' wx:if='{{productInfo.status=="1"||productInfo.status=="2"}}'>
+      <icon type='warn' size='16' style='margin-right:5px'></icon>
+      <text wx:if='{{productInfo.status=="1"}}'>该团人数已满</text>
+      <text wx:if='{{productInfo.status=="2"}}'>该团已结束</text>
+    </view>
+    <btn btnInfo='一键参团' wx:if='{{productInfo.status=="0"}}' bindtap='grouPin1' data-collageid='{{collageId}}'></btn>
+    <btn btnInfo='我来开这个团' wx:if='{{productInfo.status=="1"||productInfo.status=="2"}}' bindtap='groupBuy'></btn>
+    <block wx:if='{{fakerGroupList.length>0}}'>
+      <view class='otherBox' wx:if='{{productInfo.status=="1"||productInfo.status=="2"}}'>
+        <view class='otherHeader'>
+          <view class='line'></view>
+          <view class='headMes'>或参与别的团</view>
+          <view class='line'></view>
+        </view>
+        <view class='scrollBox {{fakerGroupList.length == 1? "oneItem":""}}'>
+          <view class='{{top==0?"scroller":"scroll"}}' id='scrollEle' style='top:{{-top+"px"}}'>
+            <view class='scroll-item' wx:for='{{fakerGroupList}}' wx:key='{{index}}'>
+              <view class='s-left'>
+                <view class='s-imgBox'>
+                  <image class='s-img' mode='widthFix' src='{{item.imageUrl}}'></image>
+                </view>
+                <view class='s-name line-01'>{{item.userName}}</view>
+              </view>
+              <view class='s-right'>
+                <view class='s-info'>
+                  <view class='s-rest'>还差
+                    <text>{{item.needPeopleNumber}}</text>人成团</view>
+                  <view class='s-restTime'>剩余{{item.restTime}}</view>
+                </view>
+                <view class='s-btn' catchtap='grouPin' data-collageid='{{item.collageId}}' data-join='{{item.isJoinedCollage}}' wx:if='{{item.isJoinedCollage=="0"}}' data-orderid='{{item.joinedOrderId}}'>去拼单</view>
+                <view class='s-btn' catchtap='grouPin' data-collageid='{{item.collageId}}' wx:if='{{item.isJoinedCollage=="1"}}' data-join='{{item.isJoinedCollage}}' data-orderid='{{item.joinedOrderId}}'>去邀请</view>
+              </view>
+            </view>
+          </view>
+        </view>
+      </view>
+    </block>
+    <view class='groupKonw' catchtap='knowDetail'>
+      <view class='left'>拼团须知</view>
+      <view class='right'>好友参团.人满发货.人不满退款</view>
+    </view>
+  </view>
+</view>
+<!-- <btn btnInfo='去首页逛逛' style='position:fixed;bottom:0;left:0;right:0'></btn> -->
+<view class='bg' wx:if='{{showBg}}'>
+</view>
+<view class='bger' wx:if='{{showBg}}' bindtap='hideBg'>
+  <view class='knowDetailBox' wx:if='{{showDetailBox}}'>
+    <view class='box-head'>
+      <text>如何参加拼团</text>
+      <image src='/assets/images/close.png' class='close' catchtap='close'></image>
+    </view>
+    <view class='box-main'>
+      <view class='main-item'>· 开团或参加别人的团</view>
+      <view class='main-item'>· 在规定时间内，邀请好友参团</view>
+      <view class='main-item'>· 达到拼团人数，分别给团长和团员发货</view>
+      <view class='main-item'>· 未到达拼团人数，货款将自动原路退还</view>
+    </view>
+
+  </view>
+</view>
+<!-- 商品规格选择  -->
+<view animation="{{productSpecSelectPlainAni}}" id="productSpecSelectPlain" class='specSelectWrap' wx:if="{{isShowProductSpecSelectPlain}}">
+
+  <view class='topWrap'>
+    <view class='topBox'>
+      <view class='imgWrap'>
+        <image mode='widthFix' src="{{specImage}}"></image>
+      </view>
+      <view class='specDesc'>
+        <text class='price'>￥{{productInfo.collagePrice}}</text>
+        <view class='specs' wx:if="{{productSpecList && productSpecList.length}}">
+          <text wx:if="{{!isSelectedFinish && !isSelected}}">请选择规格</text>
+          <text wx:if="{{!isSelectedFinish && isSelected}}">请选择{{tipSelectSpecTypes}}</text>
+          <view wx:if="{{isSelectedFinish}}">
+            <text class='label'>已选:</text>
+            <block wx:for="{{selectedSpecName}}" wx:key="{{index}}">
+              <text>{{item}}<text wx:if="{{index !== selectedSpecName.length -1}}">、</text></text>
+            </block>
+          </view>
+        </view>
+      </view>
+    </view>
+    <view class='closeWrap' bindtap='closeSpecSelectPlainEnv'>
+      <image class='closeBtn' mode='widthFix' src='/assets/images/icon_close.png' catchtap='closeSpecSelectPlainEnv'></image>
+    </view>
+  </view>
+  <view class='specList' wx:if="{{productSpecList && productSpecList.length}}">
+
+    <!--一级规格  -->
+    <view class='specTypeItem'>
+      <view class='title' wx:if="{{selectSpecType.length}}">{{selectSpecType[0]}}</view>
+      <view>
+        <block wx:for="{{productSpecList}}" wx:key="{{index}}">
+          <view wx:if="{{productSpecList[index].primarySpecId !== productSpecList[index+1].primarySpecId}}" class="item {{item.primaryDisabled ? 'disabled' : ''}} {{item.primarySelected ? 'selected' : ''}}" data-spec="{{item}}" data-index="{{index}}" bindtap='selectPrimarySpecEnvs'>{{item.primarySpecName}}</view>
+        </block>
+      </view>
+    </view>
+
+    <!-- 二级规格  -->
+    <view class='specTypeItem topLine' wx:if="{{selectSpecType[1]}}">
+      <view class='title' wx:if="{{selectSpecType.length}}">{{selectSpecType[1]}}</view>
+      <view>
+        <block wx:for="{{productSpecList}}" wx:key="{{index}}">
+          <view class="item {{item.secondaryDisabled ? 'disabled' : ''}} {{item.secondarySelected ? 'selected' : ''}}" wx:if="{{index+1 <= listLength / primaryLength}}" data-spec="{{item}}" data-index="{{index}}" bindtap='selectSecondarySpecEnvs'>{{item.secondarySpecName}}</view>
+        </block>
+      </view>
+    </view>
+
+  </view>
+  <view class='goodsNumberWrap topLine'>
+    <text class='label'>数量</text>
+    <view class='handle'>
+      <view class="btn reduce {{!isReduce ? 'disabled' : ''}}" catchtap='reduceNumEnv'>-</view>
+      <view class='inputWrap'>
+        <input value="{{inputGoodsNum}}" type="number" bindinput="changeInputValEnv" bindblur="inputBlurEnv"></input>
+      </view>
+      <view class="btn add {{!isAdd ? 'disabled' : ''}}" catchtap='addNumEnv'>+</view>
+    </view>
+  </view>
+  <view class='taxWrap topLine' wx:if="{{productInfo.productType === '2'}}">
+    <text class='label'>进口税</text>
+    <view class='tag'>本商品已包税</view>
+  </view>
+  <view class='bottomBtn' bindtap='checkBuyEnv'>确定</view>
+</view>
+
+<!-- 遮罩层  -->
+<view animation="{{maskLayerAni}}" class='maskLayer' wx:if="{{isShowMaskLayer}}" catchtap='_clickMaskLayer'></view>
+
+<!-- 提示语  -->
+<toast wx:if="{{msgTips}}" message="{{msgTips}}"></toast>
+
+<!-- loading  -->
+<loading wx:if="{{isLoading}}"></loading>
+<!-- 推荐商品 -->
+<view wx:if="{{recommendProductList.length>0}}">
+  <view class='otherHeader bgWhite'>
+    <view class='line'></view>
+    <view class='headMes'>更多拼团商品</view>
+    <view class='line'></view>
+  </view>
+  <goodsTwoColumns data="{{recommendProductList}}"></goodsTwoColumns>
+</view>
+<noMore wx:if="{{isShowEnd == 1}}"></noMore>

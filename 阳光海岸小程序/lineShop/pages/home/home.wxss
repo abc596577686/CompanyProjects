@@ -1,0 +1,172 @@
+/**index.wxss**/
+
+/*
+  topHead
+  */
+
+.topHead {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 999;
+}
+
+.topHeadWrap {
+  position: relative;
+  padding: 0 0;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  background: #fff;
+}
+
+.topHeadWrap::after {
+  position: absolute;
+  content: '';
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 1rpx;
+  background: #ccc;
+  transform: scaleY(0.1);
+}
+
+.searchWrap {
+  flex: 1;
+  margin: 20rpx;
+  margin-right: 0;
+  background-color: #ececec;
+  border-radius: 80rpx;
+  padding: 10rpx 30rpx;
+  height: 60rpx;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.searchWrap image {
+  width: 30rpx;
+  height: 30rpx;
+  margin-right: 19rpx;
+}
+
+.searchWrap text {
+  flex: 1;
+  margin-right: 20rpx;
+  color: #999;
+  font-size: 26rpx;
+}
+
+.scanCodeBtnWrap {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 0 30rpx;
+}
+
+.scanCodeBtnWrap image {
+  width: 38rpx;
+  height: 38rpx;
+}
+
+.scanCodeBtnWrap text {
+  font-size: 22rpx;
+  margin-top: 10rpx;
+  color: #333;
+}
+
+/*
+  tabBar
+  */
+
+.tabWrap {
+  white-space: nowrap;
+  width: 100%;
+  height: 88rpx;
+  background: #fff;
+  overflow: hidden;
+}
+
+.tabBox {
+  width: 160rpx;
+  display: inline-block;
+  font-size: 28rpx;
+  text-align: center;
+  overflow: hidden;
+}
+
+.tabItem {
+  height: 88rpx;
+  line-height: 88rpx;
+  color: #333;
+  /* transition: all 0.3s; */
+}
+
+.tabItem.active {
+  color: #000;
+  font-weight: bold;
+  position: relative;
+}
+
+.tabItem.active::after {
+  position: absolute;
+  content: '';
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 4rpx;
+  background: #fdd215;
+  transform: scaleX(0.5);
+}
+
+/*
+  refresh
+*/
+
+.refreshWrap {
+  padding: 15rpx 0;
+  position: absolute;
+  left: 0;
+  right: 0;
+}
+
+.refreshBox {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+
+/* .refreshMask{
+   transition: height 1s cubic-bezier(0.075, 0.82, 0.165, 1);
+}  */
+
+.refreshWrap .icon {
+  width: 50rpx;
+  height: 50rpx;
+  margin-right: 10rpx;
+  margin-top: 10rpx;
+  margin-bottom: 10rpx;
+}
+
+.refreshWrap .text {
+  text-align: center;
+  font-size: 26rpx;
+  color: #333;
+}
+
+.refreshWrap .time {
+  padding-top: 13rpx;
+}
+
+/*
+  swiperContainer
+*/
+
+.swiperWrap  view {
+  font-size: 30rpx;
+  color: #000;
+}

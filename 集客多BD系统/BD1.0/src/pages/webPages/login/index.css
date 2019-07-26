@@ -1,0 +1,121 @@
+#superWebLogin {
+  padding-top: 2.2rem;
+  background-color: #002140;
+  height: calc(100vh);
+}
+#superWebLogin .loginCard {
+  border-radius: .12rem;
+  width: 6.5rem;
+  overflow: hidden;
+}
+#superWebLogin .loginCard .am-card-header-content {
+  text-align: center;
+  display: block;
+}
+#superWebLogin .placeholder {
+  background-color: #ebebef;
+  color: #bbb;
+  text-align: center;
+  height: .6rem;
+  line-height: .6rem;
+  width: 100%;
+}
+#superWebLogin .loginHeader {
+  width: 100%;
+  height: 1rem;
+  font-size: .5rem;
+  font-weight: bold;
+}
+#superWebLogin .loginBody {
+  height: 6rem;
+  font-size: .5rem;
+  padding-top: 1rem;
+}
+#superWebLogin .loginBody .am-list-item.am-input-item {
+  height: 1rem;
+  width: 6rem;
+  display: block;
+  margin-bottom: .4rem;
+  border: .02rem solid #f0f0f0;
+}
+#superWebLogin .loginBody .ewCodeimg {
+  width: 1.4rem;
+  height: .5rem;
+  position: absolute;
+  bottom: 1.42rem;
+  right: .8rem;
+}
+#superWebLogin .loginBody .ewCodeimg img {
+  float: left;
+  width: 1.4rem;
+  height: .5rem;
+}
+#superWebLogin .loginBody .am-list-line {
+  height: 1rem;
+}
+#superWebLogin .loginBody .am-list-line .am-input-label {
+  width: 1.4rem;
+  font-size: .4rem;
+  font-weight: bold;
+}
+#superWebLogin .loginBody .am-list-line .am-input-control {
+  height: .5rem;
+  line-height: .5rem;
+}
+#superWebLogin .loginBody .am-list-line .am-input-control input {
+  font-size: .4rem;
+  font-weight: bold;
+}
+#superWebLogin .btnName {
+  height: 1rem;
+  line-height: 1rem;
+  font-size: .4rem;
+  position: relative;
+  top: .1rem;
+  border-bottom-left-radius: .12rem;
+  border-bottom-right-radius: .12rem;
+  color: #fff;
+  font-weight: bold;
+  -webkit-touch-callout: none;
+  /*系统默认菜单被禁用*/
+  -webkit-user-select: none;
+  /*webkit浏览器*/
+  -khtml-user-select: none;
+  /*早期浏览器*/
+  -moz-user-select: none;
+  /*火狐*/
+  -ms-user-select: none;
+  /*IE10*/
+  user-select: none;
+}
+.am-toast-notice-content {
+  width: 3rem!important;
+  position: relative;
+}
+.am-toast-notice-content .am-toast-text-info {
+  width: 2.8rem;
+  font-size: .3rem;
+  position: absolute;
+  top: .4rem;
+}
+.am-toast-notice-content :first-child {
+  height: 3rem;
+}
+.am-toast-notice-content :first-child :first-child {
+  width: .8rem;
+  height: .8rem;
+  position: absolute;
+  top: 2rem;
+  left: 1.05rem;
+}
+.am-toast-notice-content .am-toast-text.am-toast-text-icon .am-toast-text-info {
+  margin-top: -0.3rem;
+}
+.am-toast-text > div {
+  text-align: center;
+  width: 2rem!important;
+  font-size: .36rem;
+  position: absolute;
+  top: 1.2rem!important;
+  left: .5rem!important;
+}

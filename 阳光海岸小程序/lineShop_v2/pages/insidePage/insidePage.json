@@ -1,0 +1,6 @@
+{
+  "navigationBarBackgroundColor": "#fff",
+  "usingComponents": {
+    "goodsTwoColumns": "/components/goodsTwoColumns/goodsTwoColumns"
+  }
+}

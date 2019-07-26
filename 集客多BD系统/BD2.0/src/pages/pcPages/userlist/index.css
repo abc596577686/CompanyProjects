@@ -1,0 +1,34 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+.superUserList {
+  background-color: #fff;
+  padding-top: 27px;
+}
+.superUserList .m-t-lg {
+  background-color: #fff;
+  padding: 27px;
+  padding-top: 13px;
+  min-height: 520px;
+}
+.superUserList .userList {
+  width: 100%;
+  height: 100%;
+}
+.superUserList .addBtn {
+  display: block;
+  margin-left: 27px;
+}
+.superUserList .addBdModal {
+  width: 300px;
+}
+.superUserList .searchForm {
+  padding-top: 20px;
+}
+.superUserList .searchForm div:nth-child(1) {
+  padding: 0;
+}
+.superUserList input {
+  border: #fff;
+}

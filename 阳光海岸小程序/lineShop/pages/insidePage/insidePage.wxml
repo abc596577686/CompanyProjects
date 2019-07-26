@@ -1,0 +1,4 @@
+<!--pages/insidePage/insidePage.wxml-->
+<text>内页</text>
+
+<navigator url='../productDetail/productDetail'>双肩包 -- 商品详情</navigator>

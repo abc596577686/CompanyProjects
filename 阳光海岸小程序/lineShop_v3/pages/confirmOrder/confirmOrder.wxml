@@ -1,0 +1,191 @@
+<!--pages/confirmOrder/confirmOrder.wxml-->
+
+<loading wx:if='{{isLoading}}'></loading>
+
+<view wx:if="{{productList && productList.length > 0}}">
+<navigator wx:if="{{!isHaveAddressInfo}}" url='/pages/addressDetail/addressDetail?handleType=0&productType={{productType}}&isConfirm="1"' hover-class='none' class=''>
+  <view class='addressInfo'>
+    <view class='iconWrap addressIconWrap'>
+      <image class='addressIcon' mode='widthFix' src='/assets/images/icon_address_2.png '></image>
+    </view>
+    <view class='firmHeader nullAddress'>
+      <text>收货地址</text>
+      <text>请填写收货地址</text>
+    </view>
+    <view class='iconWrap'>
+      <image class='intoIcon' mode='widthFix' src='/assets/images/icon_justDo.png'></image>
+    </view>
+  </view>
+</navigator>
+<navigator wx:if="{{isHaveAddressInfo}}" url='/pages/addressList/addressList?productType={{productType}}' hover-class='none' class=''>
+  <view class='addressInfo'>
+    <view class='iconWrap addressIconWrap'>
+      <image class='addressIcon' mode='widthFix' src='/assets/images/icon_address_2.png '></image>
+    </view>
+    <view class='firmHeader'>
+      <view class='userInfo'>
+        <text class='userName'>{{addressInfo.name}}</text>
+        <text class='userTel'>{{addressInfo.mobile}}</text>
+      </view>
+      <view class='userAdd'>
+        <text class='add' wx:if="{{isSelectAddress}}">{{addressInfo.fullAddress}}</text>
+        <text class='add' wx:else>{{addressInfo.address}}</text>
+      </view>
+      <text class='warn' wx:if="{{!isValidIdentity}}">（未上传实名身份信息）</text>
+    </view>
+    <view class='iconWrap'>
+      <image class='intoIcon' mode='widthFix' src='/assets/images/icon_justDo.png'></image>
+    </view>
+  </view>
+</navigator>
+<view class='goodList' wx:if="{{productList && productList.length > 0}}">
+  <block wx:for="{{productList}}" wx:for-item="goods" wx:key="{{index}}">
+    <view class='good-item'>
+      <view class='good-img'>
+        <image mode='widthFix' src="{{goods.imageUrl}}"></image>
+      </view>
+      <view class='good-info'>
+        <text class='good-name'>{{goods.productName}}</text>
+        <!-- <view class='good-tags'>{{goods.productTags}}</view> -->
+        <view class='good-price'>
+          <view class='good-lefter'>
+            <text class='tags' wx:if="{{goods.productTags}}">{{goods.productTags}}</text>
+          </view>
+        </view>
+      </view>
+      <view class='good-desc'>
+        <text class='price'>￥{{goods.price}}</text>
+        <text class='num'><text class='icon'>x</text>{{goods.productNumber}}</text>
+      </view>
+    </view>
+  </block>
+</view>
+<view class='coupon' catchtap='selectCouponEnv'>
+  <text>优惠劵</text>
+  <view class='noCoupon'>
+    <text wx:if="{{couponList.availableCouponList.length == 0}}">无可用优惠劵</text>
+    <text wx:if="{{couponList.availableCouponList.length != 0}}">{{orderInfo.couponName}}</text>
+    <image class='no-icon' src='/assets/images/icon_justDo.png' mode='widthFix'></image>
+  </view>
+</view>
+<view class='price-info'>
+  <view class='price-item topLine'>
+    <text class='price-name'>商品合计</text>
+    <text class='price-num'>¥{{orderInfo.productAmount}}</text>
+  </view>
+  <view class='price-item topLine'>
+    <text class='price-name'>运费</text>
+    <text class='price-num'>¥{{orderInfo.postage}}</text>
+  </view>
+  <view class='price-item topLine'>
+    <text class='price-name'>进口税</text>
+    <text class='price-num'>¥{{orderInfo.tax}}</text>
+  </view>
+  <view class='price-item topLine'>
+    <text class='price-name'>优惠券</text>
+    <text class='price-num'>-¥{{orderInfo.preferentialAmount}}</text>
+  </view>
+  <view class='price-item topLine'>
+    <text class='price-name'>总金额</text>
+    <text class='price-num'>¥{{orderInfo.orderAmount}}</text>
+  </view>
+</view>
+<view class='sendInfo' wx:if="{{orderInfo.productType === '1'}}">
+  <image class='icon' mode='widthFix' src='/assets/images/icon_warning.png'></image>
+  <text>发货通知:跨境商品统一工作日发货</text>
+</view>
+<view class='footer'>
+  <text class='ying'>应付：<text class='num'>¥ {{orderInfo.payAmount}}</text></text>
+  <view class='confirmBtn' bindtap='confirmOrderEnv'>确认订单</view>
+</view>
+
+<!-- 支付面板  -->
+<view class='payPanel' id="payPanel" wx:if="{{isShowPayPanel}}" animation="{{payPanelAni}}">
+  <view class='topWrap'>
+    <text class='title'>支付方式</text>
+    <image class='closeBtn' mode='widthFix' src='/assets/images/icon_close.png' catchtap='_closePayPanelEnv'></image>
+  </view>
+  <view class='content'>
+    <view class='item topLine'>
+      <text class='label'>请在24小时内完成支付</text>
+      <text class='price'>¥{{orderInfo.payAmount}}</text>
+    </view>
+    <view class='item topLine'>
+      <view class='label'>
+        <image class='logo' src='/assets/images/icon_paywchat.png' mode='widthFix'></image>
+        <text>微信支付</text>
+      </view>
+      <view class='handle'>
+        <image class='icon' mode='widthFix' src='/assets/images/icon_select.png'></image>
+        <!-- <image mode='widthFix' src='/assets/images/icon_hollow.png'></image> -->
+      </view>
+    </view>
+  </view>
+  <view class='btnWrap topLine'>
+    <view class='btn' bindtap='paymentBtn'>确认支付</view>
+  </view>
+</view>
+
+<!-- 遮罩层  -->
+<view animation="{{maskLayerAni}}" class='maskLayer' wx:if="{{isShowMaskLayer}}" catchtap='_clickMaskLayer'></view>
+
+<!--窗口提示  -->
+<view animation="{{tipsContainerAni}}" wx:if="{{isShowTipsContainer}}" class='tipsContainer' id='tipsContainer'>
+  <view class='title'>温馨提示</view>
+  <view class='content'>
+    <text class='desc'>请点击添加收货地址</text>
+    <image mode='widthFix' src='/assets/images/img_gift.png'></image>
+  </view>
+  <navigator url='/pages/addressDetail/addressDetail?handleType=0&productType={{productType}}' class='handleWrap'>
+    <view class='btn'>确认</view>
+  </navigator>
+  <image class='closeBtn' mode='widthFix' src='/assets/images/icon_close.png' catchtap='_closeTipsPanelEnv'></image>
+</view>
+
+<!-- loading  -->
+<loading wx:if="{{isLoading}}"></loading>
+
+<!-- 提示语  -->
+<toast wx:if="{{msgTips}}" message="{{msgTips}}"></toast>
+<!-- 身份证填写弹窗 -->
+<!-- <view class='bg' wx:if='{{showMask}}'></view>
+<view class='bger' wx:if='{{showMask}}'> -->
+  <view class='confirmBox' id='idBox' wx:if='{{isShowIdBox}}' animation='{{idBoxAni}}'>
+    <view class='box-header'>
+      <text class='head-title'>实名认证</text>
+      <icon class='cancel' type='cancel' color='#ccc' catchtap='cancelBox'></icon>
+    </view>
+    <view class='idBox'>
+      <view class='id-header'>
+        <image src='/assets/images/icon_warning.png' class='icon-warn'></image>
+        <text class='id-info'>海关要求购买跨境商品需提供实名信息</text>
+      </view>
+      <view class='id-mian'>
+        <input type='text' class='ipt' placeholder='您的身份证姓名' bindinput='getName'></input>
+        <input type='num' class='ipt' placeholder='您的身份证号码' bindinput='getIdNum'></input>
+      </view>
+    </view>
+    <block wx:if="{{productType=='3'}}">
+      <view class='idHeader'>请上传身份证正反面共两张照片</view>
+      <view class='idMain'>
+        <view class='main-left'>
+          <view class='imgBox'>
+            <image class='userImg' src='/assets/images/icon_id.png' mode='aspectFill' wx:if='{{!frontImg}}'></image>
+            <image class='userImg' src='{{frontImg}}' mode='aspectFill' wx:else></image>
+            <text class='Loadbtn' catchtap='upLoadEnv' data-type='0'>上传</text>
+          </view>
+        </view>
+        <view class='main-right'>
+          <view class='imgBox'>
+            <image src='/assets/images/icon_id_back.png' class='userImg' mode='aspectFill' wx:if='{{!backImg}}'></image>
+            <image src='{{backImg}}' class='userImg' mode='aspectFill' wx:else></image>
+            <text class='Loadbtn' catchtap='upLoadEnv' data-type='1'>上传</text>
+          </view>
+        </view>
+      </view>
+    </block>
+    <view class='footerOne'>
+      <view class='btner' catchtap='saveAddressEnv'>提交</view>
+    </view>  
+  </view>
+</view>

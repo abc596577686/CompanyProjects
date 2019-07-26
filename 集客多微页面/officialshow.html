@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=0">
+    <title>集客多官方介绍</title>
+    <link rel="stylesheet" href="./css/officialshow.css">
+    <script src="https://res.wx.qq.com/open/js/jweixin-1.3.2.js"></script>
+    <link rel="stylesheet" href="./css/swiper.css">
+    <!-- 数据埋点 -->
+    <script>
+        (function(para) {
+          var p = para.sdk_url, n = para.name, w = window, d = document, s = 'script',x = null,y = null;
+          w['sensorsDataAnalytic201505'] = n;
+          w[n] = w[n] || function(a) {return function() {(w[n]._q = w[n]._q || []).push([a, arguments]);}};
+          var ifs = ['track','quick','register','registerPage','registerOnce','trackSignup', 'trackAbtest', 'setProfile','setOnceProfile','appendProfile', 'incrementProfile', 'deleteProfile', 'unsetProfile', 'identify','login','logout','trackLink','clearAllRegister','getAppStatus'];
+          for (var i = 0; i < ifs.length; i++) {
+            w[n][ifs[i]] = w[n].call(null, ifs[i]);
+          }
+          if (!w[n]._t) {
+            x = d.createElement(s), y = d.getElementsByTagName(s)[0];
+            x.async = 1;
+            x.src = p;
+            x.setAttribute('charset','UTF-8');
+            y.parentNode.insertBefore(x, y);
+            w[n].para = para;
+          }
+        })({
+          sdk_url: 'http://static.sensorsdata.cn/sdk/1.10.9/sensorsdata.min.js',
+          heatmap_url: 'http://static.sensorsdata.cn/sdk/1.10.9/heatmap.min.js',
+          name: 'sa',
+          // web_url: 'http://sa.jikeduo.com.cn/?project=default',
+          web_url: 'http://sa.jikeduo.com.cn/?project=production',
+          // server_url: 'http://sa.jikeduo.com.cn:8106/sa?project=default',
+          server_url: 'http://sa.jikeduo.com.cn:8106/sa?project=production',
+          heatmap:{
+            clickmap:'default',
+            scroll_notice_map:'default',
+            loadTimeout:  3000,
+            isTrackLink: true,
+            collect_url: function(){
+              return true;
+            },
+            collect_element: function(element_target){
+              // 如果这个元素有属性sensors-disable=true时候，不采集
+              if(element_target.getAttribute('sensors-disable') === 'true'){
+                console.log('不采集');
+                return false;
+              } else{
+                console.log('采集');
+                return true;
+              }
+            },
+            collect_input:function(element_target){
+              //例如如果元素的id是a，就采集这个元素里的内容
+              if(element_target.id === 'a'){
+                return true;
+              }
+            },
+            scroll_delay_time: 2000
+          }
+        });
+
+    </script>
+    <script>
+        //1.获取像素比
+        var pixelRatio=1/window.devicePixelRatio;
+        // console.log(pixelRatio);
+        //2.通过js动态来设置视口
+        document.write('<meta name="viewport" content="width=device-width,initial-scale='+pixelRatio+',minimum-scale='+pixelRatio*2+',maximum-scale='+pixelRatio+'">');
+        //3.获取html节点
+        var html=document.getElementsByTagName('html')[0];
+        //console.log(html)
+        //4.获取屏幕宽度
+        var pageWidth=html.getBoundingClientRect().width;
+        // console.log(pageWidth);
+        //屏幕宽度/固定数值=基准值;
+        html.style.fontSize=pageWidth/15+'px';
+    </script>
+    <style>
+        .swiper-container {
+            width: 100%;
+            height: 6.64rem;
+        }
+        .swiper-slide {
+            height: 90%;
+            text-align: center;
+            font-size: .768rem;
+            background: #fff;
+            box-shadow: 0px 0px .2rem .04rem #f0f0f0;
+            display: -webkit-box;
+            display: -ms-flexbox;
+            display: -webkit-flex;
+            display: flex;
+            -webkit-box-pack: center;
+            -ms-flex-pack: center;
+            -webkit-justify-content: center;
+            justify-content: center;
+            -webkit-box-align: center;
+            -ms-flex-align: center;
+            -webkit-align-items: center;
+            align-items: center;
+        }
+    </style>
+</head>
+<body>
+    <!-- 顶部 -->
+    <div class="headpage">
+        <img src="/base/share/img/present@2x.png">
+    </div>
+    <div class="customerShare">
+        <div class="say">小伙伴们说</div>
+        <div class="allShow goshare">查看全部</div>
+        <div class="all_icon">
+            <img src="/base/share/img/u481.png">
+        </div>
+
+        <!-- <div class="swiper-container showMain"> -->
+        <div class="swiper-container">
+            <div class="swiper-wrapper" style="margin-top: .426667rem;">
+                <div class="swiper-slide" style="width: 8.533333rem!important">
+                    <div class="tit1">
+                        <img src="/base/share/img/shareImg/1.png">
+                    </div>
+                    <div class="tit2">
+                        爱撸铁的卡卡罗特
+                    </div>
+                    <div class="tit3">
+                        用集客多已经快2年了，一开始还抱着怀疑的态度用的，记得在集客多买的第一个补剂是肌肉科技的谷氨酰胺，买回来之后，问了好多人：这是真的还是假的？在用了一段时间后感觉效果很好，就马上升级成经销商了。因为它的价格要比淘宝和微商便宜好多，一年多的时间里我也不知道省了多少钱，赚了多少钱。
+                        最后要感谢集客多，希望它越做越好！
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                    <div class="tit1">
+                        <img src="/base/share/img/shareImg/2.png">
+                    </div>
+                    <div class="tit2">
+                        旎
+                    </div>
+                    <div class="tit3">
+                        我是去年通过一个好肌友接触到集客多，刚开始不相信这么便宜，担心是不是正品，所以没敢用。不过亲眼看到他在集客多囤了货，果然货真价实！就毫不犹豫的升级了经销商，用着舒心，吃着放心，还实惠！
+                        当时虽然在做教练，倒没有卖补剂，感觉赚不了什么钱。后来越来越多的会员问我补剂怎么吃，在哪里买放心等等。我就想到了集客多，果断推荐给了他们。后来认可集客多的会员越来越多，也让我小赚了一点钱。虽说不多，但足够自己买补剂了，感谢集客多！祝集客多越来越好！
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                    <div class="tit1">
+                        <img src="/base/share/img/shareImg/3.png">
+                    </div>
+                    <div class="tit2">
+                        Smileyu呇optimal
+                    </div>
+                    <div class="tit3">
+                        集客多品牌挺全面的，最满意的是有一个稳定的平台，安全售后有保障，商品的质量也有保证，上下级价格一致是做的最出色的部分。
+                        最先接触到是在北京赛普，自己健身吃粉，完全是为了降低成本。后来慢慢看到了它的市场，开始着手经营。从经销商到总代，一步步的发展，到目前手下有一批自己的经销商，拿拿提成还是不错的。
+                        集客多给我带来的变化，最大的应该就是增加了我的零花钱吧，这是我的一个副业，不用操心就能赚钱的项目，一本万利。
+                        建议活动机制更加趋于完善，可以适当在增加点对团队发展的福利，发货再快点。祝集客多越来越好，价格越来越低，品质越来越高，大家越赚越多！
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                    <div class="tit1">
+                        <img src="/base/share/img/shareImg/4.png">
+                    </div>
+                    <div class="tit2">
+                        □
+                    </div>
+                    <div class="tit3">
+                        我是通过我的学长接触到集客多的，成为经销商后，我不仅自己买补剂省钱了，而且还能在自己的圈子里挣取一点零花钱。集客多的发货和到货速度挺快的，就是海关那边有时候特别拖时间，建议还能有更多一些品牌就好了，库存也更充足一些。
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                    <div class="tit1">
+                        <img src="/base/share/img/shareImg/5.png">
+                    </div>
+                    <div class="tit2">
+                        舍得
+                    </div>
+                    <div class="tit3">
+                        我是通过朋友介绍加入集客多的，他跟我说这个app里面有很多补剂都很便宜，我就下载了一个看了看，感觉还不错。只要你原价买桶粉，就可以成为经销商，在原价的基础上可以让利35%！加上我平时自己就喝补剂，这样来买也挺便宜的！我就成为了经销商！没想到之后集客多的工作人员就给我打电话了，我才知道原来优惠还不止这些。
+                        我感觉加入这个集客多不但买补剂便宜，而且还是可以挣钱的！你们创办的这个app简直是教练的天堂！顶起来！
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                    <div class="tit1">
+                        <img src="/base/share/img/shareImg/6.png">
+                    </div>
+                    <div class="tit2">
+                        阿菲
+                    </div>
+                    <div class="tit3">
+                        当我健身初起需要补剂时，寻找了很多购买渠道，但迟迟没有购买。因为两方面：真假？性价比？这时集客多就像天上掉馅饼一样出现。我看到了推广信息、分享名片，下载之后感觉产品很多、针对兴强、产品分析到位。
+                        咱们的线下客户群加进去，时不时有老客户会有很好的心得体验分享。我观察了一段时间，充分了解后就毫不犹豫的加入了经销商。在我个人需要的前提下还能挣个零花，何乐而不为呢？这样也能更好的进行推广，简直完美。
+                        说到底能抓住消费者两点，产品自身和价格，而你们都已经做到，想不火都很难！谢谢你们为广大需求者提供好平台！
+                    </div>
+                </div>
+                <div class="swiper-slide" style="box-shadow: none">
+                    <img class="s_img" style="width: 6.016rem;height: 6.016rem;" src="./img/Seemore@2x_80.png">
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="giftBag">
+        <div class="bagTit">
+            <img src="/base/share/img/rttw@2x.png">
+        </div>
+        <div class="bagMain goRouetr">
+            <!-- 循环数据 -->
+        </div>
+        <button class="goBtn1 goBtn">查看更多超值礼包</button>
+    </div>
+    <div class="middle">
+        <img src="/base/share/img/zuzu@2x.png">
+    </div>
+    <div class="bottom">
+        <img src="/base/share/img/zuzu1.png">
+    </div>
+    <div class="bottomCover">
+
+    </div>
+    <div class="btn">
+        <button class="goBtn2 goBtn">一键成为经销商</button>
+    </div>
+</body>
+<script src="./js/swiper.js"></script>
+<script>
+    var swiper = new Swiper('.swiper-container', {
+      slidesPerView: 1.4,
+      spaceBetween: 30,
+      freeMode : true,
+      pagination: {
+        el: '.swiper-pagination',
+        clickable: true,
+      },
+    });
+</script>
+<script src="/base/share/js/jquery-2.1.4.min.js" type="text/javascript"></script>
+<script>
+    //获取URL上参数
+    function getUrlPara(paraName) {
+        var reg = new RegExp("(^|&)" + paraName + "=([^&]*)(&|$)", "i");
+        var r = window.location.search.substr(1).match(reg);
+        if (r != null) return unescape(r[2]);
+        return null;
+    }
+</script>
+<script>
+
+    $(function() {
+        var st = getUrlPara('storeId')
+        console.log(st)
+        var storeName = '';
+        var storeLogo='';
+        $.post("/clt/wap/getStoreInfo.msp", {
+        		 storeId: st
+            },function(data) {
+               	if (data.code == '1' || data.code == '-10') {
+                    if(data.shopName !=''){
+                    	storeName = data.shopName
+                    }
+                    if(data.logo !=''){
+                    	storeLogo = data.logo
+                    }
+                                     
+            var link = location.href.split('#')[0];
+        	var title =  storeName+'邀请你加入集客多';
+        	var imgUrl = storeLogo;
+        	var desc = '听说打开这条链接的人都赚了大钱';
+           	$.post("/clt/weixin/getToken.msp", {url: link}, function(res) {
+           		wx.config({
+           	        debug: false, // 开启调试模式,调用的所有api的返回值会在客户端alert出来，若要查看传入的参数，可以在pc端打开，参数信息会通过log打出，仅在pc端时才会打印。
+           	        appId: res.appId, // 必填，公众号的唯一标识
+           	        timestamp: res.timestamp, // 必填，生成签名的时间戳
+           	        nonceStr: res.nonceStr, // 必填，生成签名的随机串
+           	        signature: res.signature, // 必填，签名，见附录1
+           	        jsApiList: [
+           	            'onMenuShareAppMessage', // 获取“分享给朋友”按钮点击状态及自定义分享内容接口
+           	            'onMenuShareTimeline' // 获取“分享到朋友圈”按钮点击状态及自定义分享内容接口
+           	        ] // 必填，需要使用的JS接口列表，所有JS接口列表见附录2
+           	    });
+
+           	    wx.ready(function () {
+           	        wx.onMenuShareTimeline({
+           	            title: title, // 分享标题
+           	            link: link, // 分享链接
+           	            imgUrl: imgUrl, // 分享图标
+           	            success() {
+           	                console.log('分享成功')
+           	            },
+           	            cancel() {
+           	            	//console.log('分享11成功')
+           	                // 用户取消分享后执行的回调函数
+           	            }
+           	        })
+           	        
+           	        // 分享给朋友
+           	        wx.onMenuShareAppMessage({
+           	            title: title, // 分享标题
+           	            desc: desc, // 分享描述
+           	            link: link, // 分享链接
+           	            imgUrl: imgUrl, // 分享图标
+           	            success: function() {
+           	            	console.log('分享成功')
+           	            },
+           	            cancel: function() {
+           	            	//console.log('分享111成功')
+           	                // 用户取消分享后执行的回调函数
+           	            }
+           	        })
+           	    });
+        	})
+           }
+            }, "json");
+        
+        $.ajax({
+            type: 'GET',
+            headers: {
+                'X-STORE-ID':st
+            },
+            url:"/clt/index.json?a=v1/productGiftInfo",
+            dataType: 'json',
+            success: function(data, textStatus, res) {
+
+                // 数据埋点
+                let user_id = res.getResponseHeader('x-user-id') || '';
+                sa.login(user_id);
+                localStorage.setItem('__userId__', user_id)
+
+                sa.quick('autoTrack');
+
+                sa.track('inviteH5View', {
+                  inviteType: '邀请经销商',
+                  inviteCode: ''
+                })
+
+                if(data.data.productSpecList.length>=3){
+                    var baglist = []
+                    for(var i=0;i<3;i++){
+                        baglist.push(data.data.productSpecList[i])
+                    }
+                    // console.log(baglist)
+                    var content = ''
+                    for(j=0; j<baglist.length; j++){
+                        content += "<div class='main1'><div class='bagImg'><img src='" + baglist[j].imageUrl +"'></div><div class='bagname'>"+baglist[j].primarySpecName+
+                        "</div><div class='bagprice'><span>￥</span>"+baglist[j].price+"</div><div class='bagline'><img src='/base/share/img/line.png'></div></div>"
+                    }
+                    $(".bagMain").append(content)
+                }
+            }
+        });
+    });
+
+    $('.goBtn').click(function(){
+        var productId = getUrlPara("productId");
+        var storeId = getUrlPara("storeId");
+        window.location.href = "/wap/invitation?productId=" + productId +"&storeId=" + storeId
+    })
+    
+    $('.goRouetr').click(function(){
+        var productId = getUrlPara("productId");
+        var storeId = getUrlPara("storeId");
+        window.location.href = "/wap/invitation?productId=" + productId +"&storeId=" + storeId
+    })
+
+    $('.swiper-slide').click(function(){
+        var productId = getUrlPara("productId");
+    	var storeId = getUrlPara("storeId");
+        window.location.href = "shareAll.html?productId=" + productId+'&storeId=' + storeId
+    })
+
+    $('.goshare').click(function(){
+        var productId = getUrlPara("productId");
+    	var storeId = getUrlPara("storeId");
+        window.location.href = "shareAll.html?productId=" + productId+'&storeId=' + storeId
+    })
+</script>
+<script>
+  window.onload = function() {
+
+  };
+</script>
+<style>
+    body {
+        background: #fff8ec;
+    }
+</style>
+</html>

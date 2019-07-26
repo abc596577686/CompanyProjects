@@ -1,0 +1,58 @@
+<!-- topHead is hide  -->
+<loading wx:if='{{isLoading}}'></loading>
+<scroll-view style="width:100%;height:110rpx" class="performance" scroll-x="true" scroll-with-animation="true" wx:if='{{seckillList.length > 0}}'>
+    <block wx:for="{{seckillList}}" wx:key="id">
+        <view id="{{index}}" class="timek" bindtap='switchTab' wx:if='{{dataList}}' data-item="{{item}}">
+            <view class="t {{activeId == index ? 'active' : ''}}">{{item.seckillName}}</view>
+            <view class="t {{activeId == index ? 'active' : ''}}">{{item.seckillStatus}}</view>
+        </view>
+    </block>
+</scroll-view>
+<view style="height:{{outHeight+'px'}}" scroll-y scroll-with-animation="true"  class='rushView' wx:if='{{isShowView == 1 && seckillList.length > 0}}'>
+    <view class="timeout" wx:if='{{isshowtimeout == 1}}'>
+        <view class="jx">秒杀{{msStatus}} 先下单先得哦</view>
+        本场还剩  <text>{{countDownHour}}</text>:<text>{{countDownMinute}}</text>:<text>{{countDownSecond}}</text>
+    </view>
+    <view class="timeout" wx:if='{{isshowtimeout != 1}}'>
+        <view class="jx">秒杀即将开始 先下单先得哦</view>
+        距开始剩  <text>{{countDownHour}}</text>:<text>{{countDownMinute}}</text>:<text>{{countDownSecond}}</text>
+    </view>                                                                                                             
+    <block wx:for="{{dataList}}" wx:key="id">
+        <view class="product" wx:if='{{maindata!=""}}'>
+            <view class='pro_image' >
+                <image class='slide-image' src="{{item.imageUrl}}" mode='widthFix' id="{{index}}" bindtap="goProductDetail"></image>
+            </view>
+            <image class='cover-image' src="/assets/images/overing.png" mode='widthFix' wx:if='{{isSell == 1 && item.stockNumber == 0}}'id="{{index}}" bindtap="goProductDetail" ></image>
+            <view class="productName" id="{{index}}" bindtap="goProductDetail">{{item.productName}}</view>
+            <text class="xsprice">限时价</text>
+            <view class="price">{{item.price}}</view>
+            <view class="originalPrice">{{item.originalPrice?'原价   '+item.originalPrice:''}}</view>
+            <view class="seckillTotalStock" wx:if='{{isSell == 0}}'>{{item.seckillTotalStock?'限量'+item.seckillTotalStock+'件':''}}</view>
+            <view class="seckillTotalStock1" wx:if='{{isSell == 1}}'>{{item.stockNumber?'仅剩'+item.stockNumber+'件':''}}</view>
+            <view class="seckillTotalStock2" style="width:{{slidewidth*(item.stockNumber/item.seckillTotalStock)+'rpx'}}" wx:if='{{isSell == 1}}'> </view>
+            <button class="remind" wx:if='{{isSell == 0}}' bindtap='showphone' id="{{index}}">开抢提醒</button>
+            <button class="gopay" wx:if='{{isSell == 1 && item.stockNumber >= 0}}' id="{{index}}" bindtap="goProductDetail" >去抢购</button>
+            <button class="golook" wx:if='{{isSell == 1 && item.stockNumber == 0}}'  id="{{index}}" bindtap="goProductDetail">去看看</button>
+        </view>
+    </block>
+    <view class="emptyView"  wx:if='{{dataList == "" || dataList.length <= 1}}'>
+        <image class='empty' src='../../assets/images/emptyy.png' mode='widthFix'></image>
+        <text>秒杀信息不存在</text>
+    </view>
+    <view class="phoneTip" wx:if='{{isphone == 1}}'>
+        <text class="covertitle">设置短信提醒</text>
+        <text class="covertitle1">请留下您的手机号码，商品开抢前阳光海岸会第一时间通知您</text>
+        <input value="{{inputNum}}" type="number" bindblur="changecode"></input>
+        <button class="btn1" bindtap='hidephone'>取消</button>
+        <button class="btn2" bindtap='sendphone'>确定</button>
+    </view>
+    <view class="cover" wx:if='{{isphone == 1}}'></view>
+</view>
+<!-- 当前无场次 -->
+<view class="emptyView" wx:if='{{isNoChoice == 1}}'>
+    <image class='empty1' src='../../assets/images/emptyy.png' mode='widthFix'></image>
+    <text class="text1">暂无相关数据</text>
+</view>
+
+
+<timeout wx:if="{{!isLoading && timeout}}" bind:refreshEnv="refreshEnv"></timeout>

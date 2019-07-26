@@ -1,0 +1,171 @@
+/**index.wxss**/
+
+/*
+  type
+*/
+page{
+    width: 100%;
+    /* height: 100%; */
+    background-color: #fff;
+}
+/* 顶部点选 */
+#topTit{
+    width: 100%;    
+    height: 77rpx;
+    border-bottom: 1rpx solid #E5E5E5;
+    display: flex;
+    justify-content: space-evenly;
+    padding-left: 200rpx;
+    padding-right: 200rpx;
+    position: relative;
+}
+.titImage{
+    width: 29rpx;
+    height: 29rpx;
+    position: absolute;
+    top: 25rpx;
+    right: 25rpx;
+}
+.tip{
+    text-align: center;
+    line-height: 72rpx;
+    width: 117rpx;
+    height: 72rpx;
+    border-bottom: 5rpx solid #fff;
+}
+.active{
+    border-bottom: 5rpx solid #FFd946;
+}
+/* 分类 */
+#pageMaina{
+    width: 100%;
+    /* height: 1118rpx; */
+    display: flex;
+}
+/* 品牌 */
+#pageMainb{
+    width: 100%;
+    height: 500rpx;
+    display: flex;
+    background-color: grey;
+    text-align: center;
+}
+/* 分类 左侧导航 */
+.leftPilot{
+    width:176rpx;
+    height: 1035rpx; 
+    overflow: scroll;
+    border-right: 1rpx solid#E5E5E5;
+}
+/* 分类 右侧展示 */
+.rightView{
+    width:574rpx;
+    height: 1035rpx; 
+    overflow: scroll;
+    position: relative;
+}
+.spl_tit{
+    width:574rpx;
+    height: 1035rpx; 
+    font-size: 40rpx;
+    color: #999;
+    position: absolute;
+    left: 0;
+    top: 0;
+    text-align: center;
+    line-height: 1035rpx; 
+}
+/* 分类 左侧导航小分类 */
+.leftList{
+    display: block;
+    font-size: 28rpx;
+    width: 172rpx;
+    height: 60rpx;
+    text-align: center;
+    line-height: 60rpx;
+    color: #666666;
+    border-left: 5rpx solid #fff;
+    margin-top: 30rpx;
+    margin-bottom: 30rpx;
+}
+/* 导航点选后效果 */
+.active1{
+    font-size: 32rpx !important;
+    border-left: 5rpx solid #FFd946 !important;
+    color: #333333 !important;
+}
+/* 分类 右侧大图 */
+.topImage{
+    width: 530rpx;
+    height: 195rpx;
+    /* position: absolute; */
+    margin-left: 18rpx;
+    margin-top: 34rpx;
+}
+/* 分类 中间导航字段 */
+.midTit{
+    width: 535rpx;
+    height: 100rpx;
+    line-height: 100rpx;
+    margin-left: 12rpx;
+    font-size: 24rpx;
+    color: #666666;
+    position: relative;
+}
+.midTit text{
+    margin-left: 20rpx;
+}
+.midIconImage{
+    width: 20rpx;
+    height: 20rpx;
+    position: absolute;
+    right: 0;
+    top: 39rpx;
+}
+/* 分类 右侧商品列表 */
+.showProList{
+    width: 530rpx;
+    /* height: 700rpx; */
+    height: auto;
+    margin-left: 18rpx;
+    /* display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    align-content: space-evenly; */
+    /* overflow: scroll; */
+    font-size: 0;
+}
+.showPro{
+    font-size: 24rpx;
+    width: 143rpx;
+    height: 180rpx;
+    /* background-color: #E5E5E5; */
+    margin-left: 20rpx;
+    margin-bottom: 28rpx;
+    display: inline-block;
+    position: relative;
+}
+.showProName{
+    width: 143rpx;
+    height: 25rpx;
+    font-size: 24rpx;
+    color: #333333;
+    position: absolute;
+    bottom: 0;
+    text-align: center;
+    line-height: 25rpx;
+}
+.proImage{
+    width: 111rpx;
+    height: 143rpx;
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 16rpx;
+}
+/* 品牌 热门品牌 */
+.hotTit{
+    width: 100%;
+    height: 164rpx;
+}

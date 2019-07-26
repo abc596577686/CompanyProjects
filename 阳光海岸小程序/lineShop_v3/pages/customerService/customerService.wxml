@@ -1,0 +1,79 @@
+<!--pages/customerService/customerService.wxml-->
+<loading wx:if='{{isLoading}}'></loading>
+<view class='container'>
+  <view class='goodInfo'>
+    <view class='imgBox'>
+      <image src='{{goodsInfo.productImage}}' mode='widthFix'></image>
+    </view>
+    <view class='goodsDesc'>
+      <view class='goodName'>{{goodsInfo.productName}}</view>
+      <view class='goodNum'>x {{goodsInfo.quantity}}</view>
+    </view>
+
+  </view>
+  <view class='service'>
+    <view class='ser-item'>
+      <view class='ser-left'>
+        <text>申请服务</text>
+      </view>
+      <view class='ser-right'>
+        <picker mode='selector' range="{{services}}" range-key="refundName" value="{{index1}}" bindchange="bindPickerChange">
+          <text class='tuihuo'>{{services[index1].refundName || '请选择服务类型'}}</text>
+        </picker>
+        <image class='seeMore' src='../../assets/images/icon_floor.png' mode='widthFix'></image>
+      </view>
+    </view>
+    <view class='ser-item topLine'>
+      <view class='ser-left'>
+        <text>申请售后原因</text>
+      </view>
+      <view class='ser-right'>
+        <picker mode='selector' range="{{reasons}}" range-key="reason" value="{{index2}}" bindchange="bindReasonChange">
+          <text class='tuihuo'>{{reasons[index2].reason || '请选择退款原因'}}</text>
+        </picker>
+        <image class='seeMore' src='../../assets/images/icon_floor.png' mode='widthFix'></image>
+      </view>
+    </view>
+    <view class='ser-item topLine'>
+      <view class='ser-left'>
+        <text class='label'>退款金额：</text>
+        <view class='numWrap'>
+          <text>￥</text>
+          <input class='input' bindblur='inputBlurEnv' type='digit' value='{{inputMaxAmount}}' placeholder='请输入退款金额'></input>
+        </view>
+      </view>
+    </view>
+  </view>
+  <view class='max'>
+    <text>最大退款金额<text>￥{{maxAmount}}</text></text>
+  </view>
+  <view class='proarea'>
+    <text class='info'>问题描述:</text>
+    <view class='textarea'>
+      <textarea class='problems' value='{{textAreaVal}}' bindinput="onInput" placeholder='最多100字' placeholder-class='place'></textarea>
+    </view>
+  </view>
+  <view class='imgArea'>
+    <view class='imgWrap'>
+      <block wx:for="{{imgList}}" wx:key="index">
+        <view class='imgBox'>
+          <image src='{{item}}' mode='widthFix' bindtap='previewImgEnv' data-imgUrl="{{item}}"></image>
+          <!-- <view class='progress'>{{}}</view>  -->
+        </view>
+      </block>
+    </view>
+    <view class='bandle' bindtap='chooseImageEnv'>
+      <image class='camera' src='/assets/images/camera.png ' mode='widthFix'></image>
+      <text class='Mesmore'>上传凭证</text>
+      <text class='Mesmore'>（最多3张）</text>
+    </view>
+  </view>
+  <view class='footer'>
+    <button class='btn' bindtap='submissionEnv'>
+      提交申请
+    </button>
+  </view>
+</view>
+
+<!-- 提示语  -->
+<toast wx:if="{{msgTips}}" message="{{msgTips}}"></toast>

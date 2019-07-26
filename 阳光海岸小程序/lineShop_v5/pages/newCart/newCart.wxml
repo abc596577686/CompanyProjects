@@ -1,0 +1,81 @@
+<!--pages/cart/cart.wxml-->
+<loading wx:if="{{isLoading}}"></loading>
+<view class='container' wx:if='{{orderList.length}}'>
+  <!-- <view class='editBox'>
+    <text class='editer' bindtap='editOrder'>{{isEdit?editMes[1]:editMes[0]}}</text>
+  </view> -->
+  <view class='item' wx:for='{{orderList}}' wx:key='{{item.warehouseId}}' wx:for-index='idx'>
+    <view class='item-header' wx:if='{{orderList.length}}'>
+      <view class='head-left'>
+        <view class='sel' bindtap='selectAll' data-idx='{{idx}}'>
+          <icon class='selAll' type='circle' wx:if='{{!item.isCheck}}' size='20'></icon>
+          <icon class='selAll' size='20' wx:else type='success' color='#2EA7E0'></icon>
+        </view>
+        <text class='shopName'>{{item.warehouseName}}</text>
+      </view>
+      <view class='head-right'>
+        <text class='editer' bindtap='editOrder' data-idx='{{idx}}'>{{item.isEdit?editMes[1]:editMes[0]}}</text>
+      </view>
+
+    </view>
+    <view class='item-main'>
+      <view class='goodItem border-t' hover-class='none' wx:for='{{item.productList}}' wx:for-item='eve' wx:key='{{eve.cartId}}'>
+        <view class='goodLeft'>
+          <view bindtap='selectOne' data-index='{{index}}' data-idx='{{idx}}'>
+            <icon class='selOne' type='circle' size='20' wx:if='{{!eve.everyCheck}}'></icon>
+            <icon class='selOne' size='20' type='success' color='#2EA7E0' wx:else></icon>
+          </view>
+          <view class='imgBox' catchtap='goDetail' data-index='{{index}}' data-idx='{{idx}}'>
+            <image mode='widthFix' src='{{eve.imageUrl}}'></image>
+          </view>
+        </view>
+        <view class='goodRight' catchtap='goDetail' data-index='{{index}}' data-idx='{{idx}}'>
+          <view class='goodName'>
+            <text class="xsg_icon" wx:if="{{item.isSeckillProduct == 1}}">限时购</text>
+            <text class="xsg_icon1"></text>
+            <text class='info'>{{eve.productName}}</text>
+          </view>
+          <view class='goodInfo'>
+            <view>
+              <text class='taste' wx:if='{{eve.productTags}}'>{{eve.productTags}}</text>
+              <text class='weight'>{{eve.weight}}</text>
+            </view>
+            <text class='num' style='visibility:{{!item.isEdit?"visibility":"hidden"}}'>×{{eve.productNumber}}</text>
+          </view>
+          <view class='extra'>
+            <text class='price'>￥{{eve.price}}</text>
+            <view class='numBox' style='visibility:{{!item.isEdit?"hidden":"visible"}}'>
+              <text class='del' catchtap='delNum' data-index='{{index}}' data-idx='{{idx}}'>-</text>
+              <input type='number' class='numInput' value='{{eve.productNumber}}' data-index='{{index}}' catchtap='noGoto' bindblur='changeNum' maxlength='3' data-idx='{{idx}}'></input>
+              <text class='add' catchtap='addNum' data-index='{{index}}' data-idx='{{idx}}'>+</text>
+            </view>
+          </view>
+        </view>
+      </view>
+
+    </view>
+  </view>
+</view>
+<view class='footer'>
+  <view class='foot-left'>
+    <view class='all'>
+      <text>合计：<text class='allPrice'>￥{{totalPrice}}</text></text>
+      <text class='tax'>（税费：￥0.00）</text>
+    </view>
+    <text class='explain'>(税费金额以提交订单时应付总额明细为准)</text>
+  </view>
+  <view class='foot-right'>
+    <text class='btn' wx:if='{{AllEdit}}' bindtap='toDel'>删除</text>
+    <text class='btn' wx:else bindtap='toBuy'>结算</text>
+  </view>
+</view>
+<view class='bg' wx:if='{{dataLoaded&&!orderList.length}}'>
+  <view class='empty'>
+    <image class='emptyImg' src='/assets/images/icon_shopcart@2x.png' mode='widthFix'></image>
+    <text class='emptyInfo'>您的购物车还没有商品哦~</text>
+  </view>
+</view>
+
+<timeout wx:if="{{!isLoading && timeout}}" bind:refreshEnv="refreshEnv"></timeout>
+<!-- tabBar -->
+<!-- <tabBar activeIndex="2"></tabBar> -->

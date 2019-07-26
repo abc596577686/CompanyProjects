@@ -1,0 +1,219 @@
+
+.toptit{
+    width: 100%;
+    /* height: 2.944rem; */
+    padding: .64rem;
+    background-color: #fff;
+}
+.ready{
+    width: 100%;
+    height: .7rem;
+    font-size: .68rem;
+    color: #F84C51;
+    text-align: left;
+    line-height: .7rem;
+    font-weight: 700;
+}
+.chaxun{
+    padding-top: .213333rem;
+    width: 100%;
+    /* height: .7rem; */
+    font-size: .512rem;
+    color: #666666;
+    position: relative;
+    line-height: .7rem;
+}
+.cx{
+    width: 2.4rem;
+    height: .512rem;
+    position: absolute;
+    top: .213333rem;
+    right: 1.365333rem;
+}
+.chaxun > img{
+    width: .256rem;
+    height: .469333rem;
+    position: absolute;
+    top: .32rem;
+    right: .5rem;
+}
+.toptit1{
+    width: 100%;
+    /* padding: .64rem; */
+    background-color: #fff;
+}
+.ee{
+    width: 100%;
+    height: 1.664rem;
+    font-size: .512rem;
+    color: #666666;
+    line-height: 1.664rem;
+    text-indent: .64rem;
+    position: relative;
+}
+.ee > div{
+    width: 4.266667rem;
+    height: 1.664rem;
+    position: absolute;
+    left: 3.26667rem;
+    top: 0;
+    line-height: 1.664rem;
+    color: #F84C51;
+}
+.ff{
+    width: 100%;
+    height: 1.664rem;
+    font-size: .512rem;
+    color: #666666;
+    line-height: 1.664rem;
+    text-indent: .64rem;
+    position: relative;
+}
+.ff > div{
+    width: 4.266667rem;
+    height: 1.664rem;
+    position: absolute;
+    left: 3.26667rem;
+    top: 0;
+    line-height: 1.664rem;
+    color: #333333;
+}
+.coverline{
+    width: 100%;
+    height: .042667rem;
+    background-color: #DCDCDC;
+    display: block;
+    opacity: .7;
+}
+.paySuccess_page {
+    
+}
+.s_top {
+    width: 100%;
+    height: 40px;
+    text-align: center;
+    color: #333;
+    font-size: 16px;
+    line-height: 40px;
+}
+.bottomobrd {
+    border-bottom: 1px #eee solid;
+    background: #fff;
+}
+.mjyfk {
+    margin-left: 20px;
+    line-height: 35px;
+    font-size: 16px;
+    color: #fe5000;
+    /*// font-weight: bold;*/
+}
+.baoguo {
+    width: auto;
+    margin-left: .64rem;
+    position: relative;
+    font-size: .512rem;
+    margin-bottom: .853333rem;
+    color: #666;
+}
+.dccx {
+    position: absolute;
+    right: 10px;
+}
+.bent {
+    position: absolute;
+    left: 80px;
+}
+.my_address_but {
+    width: 100%;
+    height: 60px;
+    line-height: 50px;
+    background: #fff;
+    text-align: center;
+    position: fixed;
+    bottom: 0;
+}
+.my_address_but button {
+    width: 90%;
+    border-radius: 5px;
+    height: 38px;
+    line-height: 38px;
+    margin-top: 12px;
+    background: #FB4A4C;
+    font-size: 15px;
+    color: #fff;
+    border: none;
+}
+
+/*// .router-slid-enter-active,
+// .router-slid-leave-active {
+//     transition: all .4s;
+// }
+// .router-slid-enter,
+// .router-slid-leave-active {
+//     transform: translate3d(2rem, 0, 0);
+//     opacity: 0;
+// }
+// .router-fade-enter-active,
+// .router-fade-leave-active {
+//     transition: all .4s;
+// }
+// .router-fade-enter,
+// .router-fade-leave-active {
+//     transform: translate3d(2rem, 0, 0);
+//     opacity: 0;
+// }*/
+.successInfo{
+    width: 100%;
+    height: 9.813333rem;
+    position: relative;
+    background-color: #fff;
+}
+.bigImg{
+    width: 2.645333rem;
+    height: 2.645333rem;
+    position: absolute;
+    left: 6.656rem;
+    top: 1.578667rem;
+}
+.successTxt{
+    width: 4.626667rem;
+    height: .725333rem;
+    line-height: .725333rem;
+    color: #333333;
+    position: absolute;
+    left: 5.785333rem;
+    top: 4.736rem;
+    text-align: center;
+}
+.successPrice{
+    width: 3.986667rem;
+    height: .682667rem;
+    line-height: .682667rem;
+    color: #FB4A4C;
+    font-weight: 700;
+    position: absolute;
+    left: 5.841333rem;
+    top: 6.188rem;
+    text-align: center;
+}
+.txt1{
+    width: 6.4rem;
+    height: .682667rem;
+    line-height: .682667rem;
+    font-size: .554667rem;
+    color: black;
+    position: absolute;
+    left: 5.161333rem;
+    top: 7.34rem;
+}
+.txt2{
+    width: 10.4rem;
+    height: .682667rem;
+    line-height: .682667rem;
+    font-size: .554667rem;
+    color: black;
+    position: absolute;
+    left: 3.713333rem;
+    top: 8.306667rem;
+}
+

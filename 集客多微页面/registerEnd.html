@@ -1,0 +1,108 @@
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="width=device-width,user-scalable=no,initial-scale=0.33333,minimum-scale=0.33333,maximum-scale=0.33333" />
+    <title>报名已结束</title>
+    <link rel="stylesheet" href="css/registerend.css"/>
+    <script src="https://res.wx.qq.com/open/js/jweixin-1.3.2.js"></script>
+    <script src="./js/jquery-3.2.1.js"></script>
+    <script>
+        //1.获取像素比
+        var pixelRatio=1/window.devicePixelRatio;
+        // console.log(pixelRatio);
+        //2.通过js动态来设置视口
+        document.write('<meta name="viewport" content="width=device-width,initial-scale='+pixelRatio+',minimum-scale='+pixelRatio*2+',maximum-scale='+pixelRatio+'">');
+        //3.获取html节点
+        var html=document.getElementsByTagName('html')[0];
+        //console.log(html)
+        //4.获取屏幕宽度
+        var pageWidth=html.getBoundingClientRect().width;
+        // console.log(pageWidth);
+        //屏幕宽度/固定数值=基准值;
+        html.style.fontSize=pageWidth/15+'px';
+    </script>
+</head>
+<body>
+    <!-- 页面背景图 -->
+    <header>
+        <img src="./img/vote_end.png">
+    </header>
+    <!-- 报名状态 -->
+    <div class="status">报名结束</div>
+    <div class='tip'>是否参与投票,参与投票也会获得奖品</div>
+    <!-- 参与投票按钮 -->
+    <button class="btn_vote">参与投票</button>
+</body>
+<script>
+    //获取URL上参数
+    function getUrlPara(paraName) {
+    	var reg = new RegExp("(^|&)" + paraName + "=([^&]*)(&|$)", "i");
+       	var r = window.location.search.substr(1).match(reg);
+        if (r != null){
+        	return unescape(r[2]);
+        }
+       	return null;    
+    }
+    
+    
+	$(function() {
+	   	var link = location.href.split('#')[0];
+		var title =  '集客多杯';
+		var imgUrl = window.location.origin + '/wap/img/logo.png';
+		var desc = '为你喜爱的选手投票吧！';
+	   	$.post("/clt/weixin/getToken.msp", {url: link}, function(res) {
+	   		wx.config({
+	   	        debug: false, // 开启调试模式,调用的所有api的返回值会在客户端alert出来，若要查看传入的参数，可以在pc端打开，参数信息会通过log打出，仅在pc端时才会打印。
+	   	        appId: res.appId, // 必填，公众号的唯一标识
+	   	        timestamp: res.timestamp, // 必填，生成签名的时间戳
+	   	        nonceStr: res.nonceStr, // 必填，生成签名的随机串
+	   	        signature: res.signature, // 必填，签名，见附录1
+	   	        jsApiList: [
+	   	            'onMenuShareAppMessage', // 获取“分享给朋友”按钮点击状态及自定义分享内容接口
+	   	            'onMenuShareTimeline' // 获取“分享到朋友圈”按钮点击状态及自定义分享内容接口
+	   	        ] // 必填，需要使用的JS接口列表，所有JS接口列表见附录2
+	   	    });
+
+	   	    wx.ready(function () {
+	   	        wx.onMenuShareTimeline({
+	   	            title: title, // 分享标题
+	   	            link: link, // 分享链接
+	   	            imgUrl: window.location.origin + '/wap/img/logo.png', // 分享图标
+	   	            success() {
+	   	                console.log('分享成功')
+	   	            },
+	   	            cancel() {
+	   	            	//console.log('分享11成功')
+	   	                // 用户取消分享后执行的回调函数
+	   	            }
+	   	        })
+	   	        
+	   	        
+	   	        // 分享给朋友
+	   	        wx.onMenuShareAppMessage({
+	   	            title: title, // 分享标题
+	   	            desc: desc, // 分享描述
+	   	            link: link, // 分享链接
+	   	            imgUrl: window.location.origin + '/wap/img/logo.png', // 分享图标
+	   	            success: function() {
+	   	            	console.log('分享成功')
+	   	            },
+	   	            cancel: function() {
+	   	            	//console.log('分享111成功')
+	   	                // 用户取消分享后执行的回调函数
+	   	            }
+	   	        })
+	   	    });
+    	})
+	});
+
+    var storeId = getUrlPara('storeId')
+
+
+    // 投票按钮
+    $('.btn_vote').click(function(){
+        // alert('跳转参与投票')
+        window.location.replace ( 'votemain.html')
+    })
+</script>
+</html>

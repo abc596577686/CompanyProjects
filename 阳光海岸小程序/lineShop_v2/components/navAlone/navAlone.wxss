@@ -1,0 +1,30 @@
+/* components/navAlone/navAlone.wxss */
+
+.navWrap {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  /* margin: 36rpx 0;  */
+  background: #fff;
+}
+
+.navItem {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 22rpx 0;
+}
+
+.navItem .navImg {
+  width: 100rpx;
+  min-height: 90rpx;
+  margin-bottom: 22rpx;
+}
+
+.navItem .navText {
+  font-size: 24rpx;
+  color: #333;
+}

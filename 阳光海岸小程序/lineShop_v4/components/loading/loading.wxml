@@ -1,0 +1,8 @@
+<!--components/loading/loading.wxml-->
+<view class='loadingWrap'>
+   <image class='loadImg rotateAni' src="/assets/images/_loading.png"></image> 
+  <!-- <view class='loadBox rotateAni'>
+    <view class='loadInner'></view>
+    <view class='loadOuter'></view>
+  </view> -->
+</view>

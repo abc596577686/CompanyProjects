@@ -1,0 +1,552 @@
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <!-- <script>!function(e){function t(a){if(i[a])return i[a].exports;var n=i[a]={exports:{},id:a,loaded:!1};return e[a].call(n.exports,n,n.exports,t),n.loaded=!0,n.exports}var i={};return t.m=e,t.c=i,t.p="",t(0)}([function(e,t){"use strict";Object.defineProperty(t,"__esModule",{value:!0});var i=window;t["default"]=i.flex=function(e,t){var a=e||100,n=t||1,r=i.document,o=navigator.userAgent,d=o.match(/Android[\S\s]+AppleWebkit\/(\d{3})/i),l=o.match(/U3\/((\d+|\.){5,})/i),c=l&&parseInt(l[1].split(".").join(""),10)>=80,p=navigator.appVersion.match(/(iphone|ipad|ipod)/gi),s=i.devicePixelRatio||1;p||d&&d[1]>534||c||(s=1);var u=1/s,m=r.querySelector('meta[name="viewport"]');m||(m=r.createElement("meta"),m.setAttribute("name","viewport"),r.head.appendChild(m)),m.setAttribute("content","width=device-width,user-scalable=no,initial-scale="+u+",maximum-scale="+u+",minimum-scale="+u),r.documentElement.style.fontSize=a/2*s*n+"px"},e.exports=t["default"]}]);  flex(100, 1);</script> -->
+    <meta name="viewport" content="width=device-width,user-scalable=no,initial-scale=0.33333,minimum-scale=0.33333,maximum-scale=0.33333" />
+    <title>订单支付</title>
+    <link rel="stylesheet" href="./css/swiper.min.css">
+    <link rel="stylesheet" href="./css/A15.css">
+    <link rel="stylesheet" href="/base/share/css/weui.css">
+    <link rel="stylesheet" href="/base/share/css/invite.css">
+    <link rel="stylesheet" type="text/css" href="./css/index.css"/>
+    <script src="./js/jquery-3.2.1.js"></script>
+    <script>
+        //1.获取像素比
+        var pixelRatio=1/window.devicePixelRatio;
+        // console.log(pixelRatio);
+        //2.通过js动态来设置视口
+        document.write('<meta name="viewport" content="width=device-width,initial-scale='+pixelRatio+',minimum-scale='+pixelRatio*2+',maximum-scale='+pixelRatio+'">');
+        //3.获取html节点
+        var html=document.getElementsByTagName('html')[0];
+        //console.log(html)
+        //4.获取屏幕宽度
+        var pageWidth=html.getBoundingClientRect().width;
+        // console.log(pageWidth);
+        //屏幕宽度/固定数值=基准值;
+        html.style.fontSize=pageWidth/15+'px';
+</script>
+</head>
+<body>
+    <hr>
+    <hr>
+    <div class='warnTxt'>
+        <p>请填写您的登录手机号码</p>
+    </div>
+    <hr>
+    <hr>
+     <div class='phoneKey'>
+        <input name="area_code" id="area_code" value="+86" readonly="readonly">
+        <input id="phone" class="phoneKey" type="number" maxlength="11" placeholder="登录手机号码" data-bind-0=name autofocus>
+    </div>
+    <hr>
+    <hr>
+    <div class='verification'>
+        <span>验证码</span>
+        <input type="text" maxlength="6" id="phone_code" type="number" >
+        <button  id="btn" onclick="settime(this)">获取验证码</button>
+    </div>
+    <hr>
+    <hr>
+    <div class='warnTxt2' >
+        <p>为了保证您能收到商品，请填写收货地址</p>
+    </div>
+    <hr>
+    <hr>
+    <div class='addressee'>
+        <span>收件人</span>
+        <input type="text" id='picName'>
+    </div>
+    <hr>
+    <hr>
+
+    <div class='phoneShow'>
+        <span id="plpi">手机号</span>
+        <input type="text" readonly="readonly" data-bind-0="name" id='ppp'>
+    </div>
+    <hr>
+    <hr>
+    <div class='cityTable'>
+        <span id="select1" readonly="readonly" value=""/>省市区</span>
+        <span id="select" >(请选择)</span>
+        <span id='selectPic'>
+            <img src="./img/icon_youjian@3x.png">
+        </span>
+        <div class="tab-modal">
+            <div class="tab-header">
+                <span class="tab-title title-province active">省份</span>
+                <span class="tab-title title-city">城市</span>
+                <span class="tab-title title-area">区域</span>
+                <div style="display:none" id='idPick1'><span id="selectId1" style="font-size: 30px"></span></div>
+                <div style="display:none" id='idPick2'><span id="selectId2" style="font-size: 30px"></span></div>
+                <div style="display:none" id='idPick3'><span id="selectId3" style="font-size: 30px"></span></div>
+            </div>
+            <div class="tab-body">
+                <div class="tab-item tab-province ">
+                    <ul class="tab-town">
+                    </ul>
+                </div>
+                <div class="tab-item tab-city">
+                    <ul class="tab-town">
+                    </ul>
+                </div>
+                <div class="tab-item tab-area">
+                    <ul class="tab-town">
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="tab-shadow"></div>
+    </div>
+    <hr>
+    <hr>
+    <div class='mainAdress'>
+        <span class='mA-1'>请填写详细地址</span>
+        <span class='mA-2'>(无需重复填写省市区)</span>
+        <input type="text" id="addrPic" onfocus="hidZf()" onblur="showZf()"/>
+    </div>
+    <hr>
+    <hr>
+    <!--身份证信息  -->
+    <div class='userInfo'>
+        <span id="plpi">身份证</span>
+        <input type="text" id='info'>     
+    </div>
+    <hr>
+    <hr>
+    <!-- <hr> -->
+    <div class="sm_tit">
+        <span class='sm_tit_im'>
+            <img src='./img/wh@2x.png'>
+        </span>
+         <div class="sm_tit_1">为什么需要上传身份证</div>
+         <div class="sm_tit_2">根据海关规定,购买跨境商品需实名认证,以确保商品通过海关检查。</div> 
+         <div class="sm_tit_3">本方承诺所传身份证只用于办理跨境商品的清关手续，不作他途使用，其他任何人均无法查看。</div> 
+        <!-- <div class="sm_tit_4">如果上传身份证照片不清晰,可能会被海关拒绝清关，请您仔细检查。</div> -->
+    </div>
+    
+    <div class="suShow">
+        <div class="payWay">
+            <span class="pW1">支付方式</span>
+            <img class="pW2" src="./img/icon_guanbi@2x.png">
+        </div>
+        <hr>
+        <div class="pWTime">
+            <span class="pW3">请在72小时内完成支付</span>
+            <span class="pW4" id="pW4Price"></span>
+        </div>
+        <hr>
+        <div class="weiXin">
+            <img class="pW5" src="./img/icon_weixin@2x.png">
+            <span class="pW6">微信支付</span>
+            <img  class="pW7" src="./img/icon_dagou@2x 2.png">
+        </div>
+        <hr>
+        <div class="zfan">
+            <button class="payBtn1" onclick="msZF()">
+                马上支付
+            </button>
+        </div>
+        <span class="hidSp">1</span>
+    </div>
+    <div class="payBtnAr" id="showPayKey">
+            <button class="payBtn" >
+                确定支付
+            </button>
+    </div>
+
+    <!-- 灰色遮罩层 -->
+    <div class="greyPw"></div>
+
+    <div id="div_alert"></div>
+    <script>
+        window.alert = function(name){
+            var iframe = document.createElement("IFRAME");
+            iframe.style.display="none";
+            iframe.setAttribute("src", 'data:text/plain,');
+            document.documentElement.appendChild(iframe);
+            window.frames[0].window.alert(name);
+            iframe.parentNode.removeChild(iframe);
+        }  
+    </script>  
+    <script>
+    //输入详细地址时 隐藏支付按钮
+    // function hidZf(){
+    //     $("#showPayKey").hide();
+    // }
+    // function showZf(){
+    //     $("#showPayKey").show();
+    // }
+    function dsds(){
+        window.history.go(-1);
+    }    
+
+    // 返回上一页
+    function goback(){
+        window.history.go(-1);
+    }
+
+    //小弹窗
+    function tanchuang(){
+        var cler;
+        var i = 0;
+        var count = 5;
+        if (cler!= null && cler!= undefined) {
+            window.clearInterval(cler);
+        }                
+        // document.getElementById("div_alert").style.display = "block";
+        // $("#div_alert").html("请填写手机号");
+        // $("#div_alert").fadeIn();
+        alert('请填写手机号')
+        i = 0;
+        var tcount = 2;
+        count = tcount;
+        timerun();
+        function timerun() {
+            if (i >= count) {
+                // document.getElementById("div_alert").style.display = "none";
+                $("#div_alert").fadeOut();
+                window.clearInterval(cler);
+            }else {
+                cler = window.setTimeout(timerun, 900);
+            }
+            i++;
+        }
+    }
+    
+
+    // 确定支付按钮
+    $(".payBtn").click(function(){
+        var yzMa = $("#phone_code").val();
+        if(yzMa.length == 6){
+            // $(".hidSp").html(66666)
+            // $(".suShow,.greyPw").show();
+            $(".payBtn").attr("readonly","readonly");  //请求时按钮无法操作 
+            var smsCode = $("#phone_code").val();		//smsCode
+            var provinceId = $('#idPick1').text()   	//provinceId
+            var cityId = $('#idPick2').text()   		//cityId
+            var areaId = $('#idPick3').text()   		//areaId
+            var address = $('#addrPic').val()    		//address
+            var mobile = $('#ppp').val()        		//mobile
+            var name = $('#picName').val()    			//name    
+            var storeId = getUrlPara("s")       		//店铺ID
+            var identityNo = $('#info').val()        	//用户身份证号
+
+            $.post("/api/order/inviteAgentConfrim.msp", {     
+                provinceId: provinceId,
+                cityId: cityId,
+                areaId: areaId,
+                address: address,
+                mobile: mobile,
+                name: name,
+                storeId: storeId,
+                smsCode: smsCode,
+                identityNo: identityNo
+        	},function(resp){
+                $(".payBtn").removeAttr("readonly");   //请求结束 恢复
+                if(resp.code = '1'){                   //订单确认完毕 进行支付
+                    var orderIdk = resp.orderId;       // 取得接口里的 orderId
+                    if(resp.orderId == null || resp.orderId == 'undifined'){
+                        alert(resp.msg)
+                    }else{
+                        if($(".suShow,.greyPw").css("display")=="none"){   //唤醒微信支付框
+                            $(".suShow,.greyPw").show();
+                            $(".hidSp").html(orderIdk)
+                        }
+                    }
+                }else{             //如果订单确认接口返回code不为1 报错
+                    var olkr = resp.msg
+                    alert(olkr)
+                }
+        }, "json");
+
+        }else{                                 //验证验证码是否为6位
+            alert('请输入正确的验证码')
+        }
+    });
+
+ 	// 马上支付按钮
+    var isReadonly = false;
+    function msZF(){
+    	if(isReadonly){
+    		return;	
+    	}
+    	isReadonly = true;
+    	 
+        $(".payBtn").attr("disabled","disabled"); 
+        var payType = "weixin";
+        var orderIdk = $(".hidSp").html();  
+        $.post("/api/pay/orderPay.msp", {
+            orderId: orderIdk,
+            payType: payType
+        },function(resp1){
+            if (resp1.code == "1") {
+                function onBridgeReady() {
+                    WeixinJSBridge.invoke(
+                        'getBrandWCPayRequest', {
+                            "appId": resp1.orderPayInfo.appId, //公众号名称，由商户传入
+                            "timeStamp": resp1.orderPayInfo.timeStamp, //时间戳，自1970年以来的秒数
+                            "nonceStr": resp1.orderPayInfo.nonceStr, //随机串
+                            "package": resp1.orderPayInfo.package,
+                            "signType":resp1.orderPayInfo.signType, //微信签名方式：
+                            "paySign": resp1.orderPayInfo.paySign //微信签名
+                        },
+                        function(res3) {
+                            if (res3.err_msg == "get_brand_wcpay_request:ok") {
+                                $("#div_alert").html("订单支付成功");
+                                tanchuang();
+
+                                // 新增注册成功确认短信接口
+                                var phone = $("#phone").val();
+                                var area_code = 86;
+                                $.post("/api/user/sendRegisterSucc.msp", {
+                                    mobile: phone,
+                                    countryCode: area_code,
+                                    codeType: 6
+                                },function(res){
+                                    
+                                })
+                                window.location.href = "inAgentSucc.html";
+                            }else if(res3.err_msg == "get_brand_wcpay_request:cancel"){
+                           	 	isReadonly = false;
+                                $("#div_alert").html("订单支付取消");
+                                tanchuang();
+                                $(".payBtn").removeAttr("disabled"); 
+                            }else if(res3.err_msg == "get_brand_wcpay_request:fail"){
+                            	isReadonly = false;
+                                $("#div_alert").html("订单支付失败");
+                                tanchuang();
+                                $(".payBtn").removeAttr("disabled");
+                            }
+                        });
+                }
+                if (typeof WeixinJSBridge == "undefined") {
+                    if (document.addEventListener) {
+                        document.addEventListener('WeixinJSBridgeReady', onBridgeReady, false);
+                    } else if (document.attachEvent) {
+                        document.attachEvent('WeixinJSBridgeReady', onBridgeReady);
+                        document.attachEvent('onWeixinJSBridgeReady', onBridgeReady);
+                    }
+                } else {
+                    onBridgeReady();
+                }
+            }else{
+                isReadonly = false;
+                //如果支付确认接口返回不为1 报错
+                alert(resp1.msg)
+            }
+        }, "json");
+    }
+
+    $(".Pw2").click(function(){
+        $(".suShow,.greyPw").hide();
+        // $(".payBtn").html('马上支付');
+        paykey = 0 ;
+    });
+
+        //选择微信还是支付宝
+    $(".weiXin").click(function(){
+        if($(".pW7").css("display")=="none"){
+            $(".hidSp").html(""),  //为空时 微信支付
+            $(".pW7").show(),
+            $(".pW10").hide();
+        }else{
+            $(".pW10").hide(),
+            $(".pW7").show();
+        }
+    });
+    $(".zfBao").click(function(){
+        if($(".pW10").css("display")=="none"){
+            $(".hidSp").html("1"),  //为1时 支付宝支付
+            $(".pW10").show(),
+            $(".pW7").hide();
+        }else{
+            $(".pW7").hide(),
+            $(".pW10").show();
+        }
+    });
+
+    </script>
+
+    <!-- 手机号数据绑定 -->
+    <script type="text/javascript">
+        function DataBinder(object_id){  
+            var pubSub = jQuery({});  
+            var data_attr = "bind-"+object_id,  
+                message = object_id+":change";  
+            jQuery(document).on("change","[data-" + data_attr +"]",function(evt){  
+                var $input = jQuery(this);  
+                pubSub.trigger(message, [$input.attr("data-" + data_attr), $input.val()]);  
+            });  
+            pubSub.on(message, function(evt,prop_name,new_val){  
+                jQuery("[data-" + data_attr + "=" + prop_name + "]").each(function(){  
+                    var $bound = jQuery(this);  
+                    if($bound.is("input,textarea,select")) {  
+                        $bound.val(new_val);  
+                    }  
+                    else{  
+                        $bound.html(new_val);  
+                    }  
+                });  
+            });  
+            return pubSub;  
+        }  
+        
+        function User(uid){  
+            var binder = new DataBinder(uid),  
+                user = {  
+                    attributes: {},  
+                    set: function(attr_name,val){  
+                        this.attributes[attr_name] = val;  
+                        binder.trigger(uid + ":change", [attr_name, val, this]);  
+                    },  
+        
+                    get: function(attr_name){  
+                        return this.attributes[attr_name];  
+                    },  
+                    _binder: binder  
+                };  
+                
+                return user;  
+        }  
+        
+        var user = new User(0); 
+        // 默认设置个名字
+        user.set("name","");    
+    </script>  
+
+    <script src="/base/share/js/jquery-2.1.4.min.js" type="text/javascript"></script>
+    <script>
+        //获取商品价格
+        $(function(){
+                $.post("/wap/index.json?a=v1/invitationDetail", {
+                   
+                }, function(data) {
+                    if (data.code == '1') {
+                        $("#pW4Price").html(data.data.price);
+                    } else {
+                        // $("#div_alert").html("商品价格获取失败");
+                        // tanchuang();
+                        alert('商品价格获取失败')
+                    }
+                }, "json");
+        })
+        //获取URL上参数
+        function getUrlPara(paraName) {
+                var reg = new RegExp("(^|&)" + paraName + "=([^&]*)(&|$)", "i");
+                var r = window.location.search.substr(1).match(reg);
+                if (r != null) return unescape(r[2]);
+                return null;    
+        }
+
+        //小弹窗
+        function tanchuang(){
+                var cler;
+                var i = 0;
+                var count = 5;
+                if (cler!= null && cler!= undefined) {
+                    window.clearInterval(cler);
+                }
+                // $("#div_alert").html("");
+                $("#div_alert").fadeIn();
+                i = 0;
+                var tcount = 2;
+                count = tcount;
+                timerun();
+                function timerun() {
+                    if (i >= count) {
+                        // document.getElementById("div_alert").style.display = "none";
+                        $("#div_alert").fadeOut();
+                        window.clearInterval(cler);
+                    }else {
+                        cler = window.setTimeout(timerun, 900);
+                    }
+                    i++;
+                }
+        }
+        
+        // 验证码
+        
+        var countdown = 60;             //验证码初始
+        var userid = getUrlPara("userid"); 
+        var phone = $("#phone").val();
+
+        var timeoutKey = 0;                               //倒计时控制变量
+        var linkKey = 1;                                  //接口控制变量
+
+        function settime(obj) {
+
+            var area_code = 86;
+            var phone = $("#phone").val();
+            
+            if (phone =='') {                                           //如果输入为空
+                $("#div_alert").html("请输入手机号");
+                tanchuang();
+                $('#phone').focus();
+                return false;
+            }
+
+            // if (area_code == "86") {
+            //     if (!phone.match(/^1[3|4|5|7|8][0-9]{9}$/)) {           //检查手机号格式
+            //         // $("#div_alert").html("请输入正确的手机号");           //恢复默认样式
+            //         // tanchuang();
+            //         alert('请输入正确的手机号')
+            //         timeoutKey = 0              //关闭倒计时
+            //         linkKey = 1                 //开启接口
+            //         obj.removeAttribute("disabled");  //重置倒计时按钮样式
+            //         $("#btn").html("获取验证码");
+            //         countdown = 60;
+            //         $('#phone').focus();
+            //         return false;
+            //     }
+            // }  
+
+            if (linkKey == 1) {                                        //当接口控制开启 可走接口交互验证码
+            $.post("/api/user/sendCode.msp", {
+                    mobile: phone,
+                    countryCode: area_code,
+                    codeType: 1
+            },function(data){
+                console.log(data)
+                if (data.code == '0'){                                 //发送失败 跳出提示 不进行倒计时
+                    var k1 = data.msg
+                    // $("#div_alert").html(k1);
+                    // tanchuang();
+                    alert(k1)
+                    clearTimeout(ttt);
+                    
+                }else if(data.code == '1'){                            //发送成功 进入倒计时 按钮持续不可操作 直到cuntdown为0后恢复
+                    var k2 = data.msg
+                    // $("#div_alert").html(k2);
+                    // tanchuang();
+                    alert(k2)
+                    timeoutKey = 1;         //倒计时控制变量 开启
+                    linkKey = 0;            //接口关闭                                     
+                }
+            }, "json");
+            }
+
+            if(timeoutKey == '1' & linkKey != '1'){                //倒计时控制开启  接口控制关闭  此时进行倒计时
+                obj.setAttribute("disabled", true);                //不可选中
+                $("#btn").html("重新发送(" + countdown + ")");
+                countdown--;                                       //数字倒计时  
+            }
+
+            if (countdown == 0) {                                  //倒计时结束 重置按钮 可重新走接口
+                linkKey++                 //开启接口
+                timeoutKey--              //关闭倒计时
+                obj.removeAttribute("disabled");  //重置倒计时按钮样式
+                $("#btn").html("获取验证码");
+                countdown = 60;
+                return;
+            }
+
+            var ttt = setTimeout(function(){
+                settime(obj)
+            }, 1000) 
+        }
+        
+    </script>
+    <!-- <script src="./js/jquery-2.1.0.js" type="text/javascript" charset="utf-8"></script> -->
+    <script src="./js/index.js" type="text/javascript" charset="utf-8"></script>
+</body>
+</html>

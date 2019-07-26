@@ -1,0 +1,138 @@
+#superWebUserInfo {
+  padding: .3rem;
+  background-color: #002140;
+  min-height: calc(100vh);
+}
+#superWebUserInfo .pageTitle {
+  position: relative;
+  width: 100%;
+  height: 1rem;
+  line-height: 1rem;
+  background-color: #999;
+  color: #000;
+  font-size: .3rem;
+  text-align: center;
+  font-weight: bold;
+}
+#superWebUserInfo .pageTitle .returnIcon {
+  width: .45rem;
+  height: .58rem;
+  position: absolute;
+  left: .2rem;
+  top: .2rem;
+}
+#superWebUserInfo .pageTitle .returnIcon svg {
+  width: 100%;
+  height: 100%;
+}
+#superWebUserInfo .head {
+  width: 100%;
+  height: .8rem;
+  background-color: #fff;
+}
+#superWebUserInfo .head_flex {
+  height: .8rem;
+}
+#superWebUserInfo .head_img {
+  width: .6rem;
+  height: .6rem;
+  border-radius: 50%;
+  overflow: hidden;
+}
+#superWebUserInfo .head_name {
+  width: 4rem;
+  height: .6rem;
+  text-align: left;
+  line-height: .6rem;
+  font-size: .4rem;
+  font-weight: bold;
+  margin-left: .2rem;
+}
+#superWebUserInfo .head_name input {
+  margin-top: .17rem;
+  font-size: .3rem;
+}
+#superWebUserInfo .head_search {
+  width: .6rem;
+  height: .6rem;
+  margin-left: .9rem;
+  cursor: pointer;
+}
+#superWebUserInfo .head_search :first-child {
+  width: .6rem;
+  height: .6rem;
+}
+#superWebUserInfo .mainUserInfo {
+  width: 100%;
+  min-height: 3rem;
+  background-color: #fff;
+}
+#superWebUserInfo .mainUserInfo .head_flexs {
+  width: 100%;
+  min-height: 3rem;
+}
+#superWebUserInfo .mainUserInfo .userHeadImg {
+  width: 1rem;
+  height: 1.8rem;
+}
+#superWebUserInfo .mainUserInfo .userHeadImg img {
+  width: .9rem;
+  height: .9rem;
+  border-radius: 50%;
+  overflow: hidden;
+  margin-right: .1rem;
+}
+#superWebUserInfo .mainUserInfo .userHeadImg a {
+  height: .5rem;
+  line-height: .5rem;
+  margin-top: .4rem;
+  margin-right: .1rem;
+  border: .02rem solid #333;
+  background-color: #fff;
+}
+#superWebUserInfo .mainUserInfo .userHeadImg span {
+  height: .5rem;
+  line-height: .5rem;
+  color: #333;
+  font-size: .3rem;
+  font-weight: bold;
+  display: inline-block;
+}
+#superWebUserInfo .mainUserInfo .userMaintxt {
+  margin-left: .2rem;
+  width: 2.7rem;
+  height: 1.8rem;
+  color: #333;
+  font-size: .25rem;
+  font-weight: bold;
+}
+#superWebUserInfo .mainUserInfo .userMaintxt p {
+  margin-bottom: .1rem;
+}
+#superWebUserInfo .mainUserInfo .userCopy {
+  width: 1rem;
+  height: 1.8rem;
+  padding-top: .4rem;
+}
+#superWebUserInfo .mainUserInfo .userCopy :first-child {
+  background-color: #fff;
+}
+#superWebUserInfo .mainUserInfo .userCopy a {
+  border: .02rem solid #333;
+}
+#superWebUserInfo .mainUserInfo .userCopy span {
+  color: #333;
+  font-size: .3rem;
+  font-weight: bold;
+}
+#superWebUserInfo .mainUserInfo .userMoreInfo {
+  margin-left: .2rem;
+  width: 3.3rem;
+  height: 1.8rem;
+  color: #333;
+  font-size: .25rem;
+  font-weight: bold;
+}
+#superWebUserInfo .mainUserInfo .userMoreInfo p {
+  margin-bottom: .1rem;
+}

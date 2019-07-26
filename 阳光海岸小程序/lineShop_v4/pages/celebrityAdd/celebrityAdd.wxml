@@ -1,0 +1,58 @@
+<!--pages/celebrityAdd/celebrityAdd.wxml-->
+<view class='container'>
+    <view class='idNumBox'>
+      <view class='idNumTitle'>身份信息
+        <text>（必填）</text>
+      </view>
+      <input type='text' placeholder='您的真实姓名' bindinput='setIdentityName' value='{{identityName}}' placeholder-class='txt'></input>
+      <input type='text' placeholder='您的身份证号码（将加密处理）' bindinput='setIdentityNum' value='{{identityNo}}' placeholder-class='txt'></input>
+    </view>
+    <view class='idImg'>
+      <view class='idNumTitle'>身份证正反面照片
+        <text>（选填）</text>
+      </view>
+      <view class='idImgWarn'>
+        <image class='warnIcon' mode='widthFix' src=''></image>
+        <text class='warnInfo'>温馨提示：请上传原始比例的身份证正反面，请勿裁剪涂改，保证身份信息清晰显示，否则无法通过审核</text>
+      </view>
+
+      <!-- <view class='idHeader'>请上传身份证正反面共两张照片</view> -->
+      <view class='idMain'>
+        <view class='main-left'>
+          <view class='imgBox'>
+            <image class='userImg' src='/assets/images/icon_id.png' mode='aspectFill' wx:if='{{!frontImg}}'></image>
+            <image class='userImg' src='{{frontImg}}' mode='aspectFill' wx:else></image>
+            
+            <text class='Loadbtn' catchtap='upLoadEnv' data-type='0'>上传</text>
+          </view>
+          <text class='idTxt'>身份证正面</text>
+        </view>
+        <view class='main-right'>
+          <view class='imgBox'>
+            <image src='/assets/images/icon_id_back.png' class='userImg' mode='aspectFill' wx:if='{{!backImg}}'></image>
+            <image src='{{backImg}}' class='userImg' mode='aspectFill' wx:else></image>
+            
+            <text class='Loadbtn' catchtap='upLoadEnv' data-type='1'>上传</text>
+          </view>
+          <text class='idTxt'>身份证反面</text>
+        </view>
+      </view>
+
+    </view>
+    <view class='explain'>
+      <view class='ex-head'>为什么需要实名认证？</view>
+      <view class='ex-main'>
+        <text>根据海关要求，购买跨境商品对订购人进行实名认证，错误信息可能导致无法清关
+你的身份证信息将加密保管，集客多将保证信息安全，绝不对外泄露</text>
+      </view>
+    </view>
+  
+</view>
+<btn btnInfo='保存' style='position: fixed;bottom: 0;left: 0;right: 0;' catchtap='_saveIdentityInfo'></btn>
+<!-- 遮罩层  -->
+<view animation="{{maskLayerAni}}" class='maskLayer' wx:if="{{isShowMaskLayer}}" catchtap='_clickMaskLayer'></view>
+<view class='knowMoreBox' wx:if='{{showKnowMore}}'>
+  <view class='title'>为什么需要实名认证？</view>
+  <view class='main'></view>
+  <view class='btn'>我知道了</view>
+</view>

@@ -1,0 +1,30 @@
+/* components/timeout/timeout.wxss */
+
+.timeout {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 25%;
+  background: transparent;
+}
+
+.timeout .imgWrap {
+  width: 200rpx;
+  margin-bottom: 50rpx;
+}
+
+.timeout .text {
+  font-size: 28rpx;
+  color: #999;
+}
+
+.refresh {
+  padding: 20rpx 50rpx;
+  border-radius: 5rpx;
+  border: 1px solid #ccc;
+  margin-top: 50rpx;
+  font-size: 28rpx;
+  color: #999;
+}

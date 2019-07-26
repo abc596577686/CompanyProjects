@@ -1,0 +1,310 @@
+/* 
+    邀请页css样式
+*/
+.loadingIcon {
+  width: 160px;
+  height: 160px;
+  position: absolute;
+  top: 200px;
+  z-index: 1111;
+  left: 50%;
+  margin-left: -80px;
+}
+img {
+  display: block;
+}
+#h5_invite {
+  min-height: calc(100vh);
+}
+#h5_invite header {
+  width: 100%;
+  height: 1.76rem;
+}
+#h5_invite header .headImg {
+  width: .88rem;
+  height: .88rem;
+  border-radius: 50%;
+  overflow: hidden;
+}
+#h5_invite header .headImg img {
+  width: 100%;
+  height: 100%;
+}
+#h5_invite header .headTxt {
+  height: .88rem;
+  width: 5.8rem;
+  margin-left: .2rem;
+}
+#h5_invite header .headTxt p {
+  margin: 0;
+  width: 5.8rem;
+  height: .44rem;
+  line-height: .44rem;
+  font-size: .27rem;
+}
+#h5_invite .localBigWordImg {
+  width: 100%;
+}
+#h5_invite .localBigWordImg img {
+  width: 100%;
+}
+#h5_invite .brandList {
+  width: 100%;
+}
+#h5_invite .brandList .brand_top {
+  width: 100%;
+  height: .94rem;
+}
+#h5_invite .brandList .brand_top img {
+  width: 1.14rem;
+  height: .94rem;
+}
+#h5_invite .brandList .brand_top p {
+  font-size: .3rem;
+}
+#h5_invite .brand_source {
+  width: 100%;
+  height: 2rem;
+}
+#h5_invite .brand_source img {
+  margin-left: .2rem;
+  width: 3rem;
+}
+#h5_invite .brand_source > div {
+  width: 9rem;
+  height: 1.7rem;
+  font-size: .27rem;
+  margin-top: .4rem;
+  margin-left: .2rem;
+  margin-right: .2rem;
+}
+#h5_invite .brand_source p {
+  margin: 0;
+}
+#h5_invite .brand_source .brand_source_p1 {
+  font-weight: bold;
+  margin-bottom: .1rem;
+  font-size: .3rem;
+}
+#h5_invite .brand_source .brand_source_p2 {
+  color: #666;
+  font-size: .25rem;
+  line-height: 1.4;
+}
+#h5_invite .brand_title {
+  min-height: .5rem;
+  font-size: .27rem;
+  font-weight: bold;
+  color: #333333;
+}
+#h5_invite .brand_title .colCover {
+  display: block;
+  width: .7rem;
+  height: .1rem;
+  background: -webkit-linear-gradient(left, #fff, #333);
+  margin-right: .1rem;
+}
+#h5_invite .brand_title .colCover1 {
+  display: block;
+  width: .7rem;
+  height: .1rem;
+  background: -webkit-linear-gradient(left, #333, #fff);
+  margin-left: .1rem;
+}
+#h5_invite .tip {
+  text-align: center;
+  font-size: .25rem;
+  color: #666;
+  margin: 0;
+  margin-bottom: .4rem;
+}
+#h5_invite .inviteBtn {
+  width: 6.3rem;
+  height: .96rem;
+  font-size: .32rem;
+  font-weight: bold;
+  text-align: center;
+  line-height: .96rem;
+  border: none;
+  border-radius: .5rem;
+  position: absolute;
+  left: 50%;
+  margin-left: -3.15rem;
+  margin-top: .1rem;
+  color: #333;
+  background: linear-gradient(to bottom, #FFEE7C, #FFD946);
+  -webkit-touch-callout: none;
+  /* iOS Safari */
+  -webkit-user-select: none;
+  /* Chrome/Safari/Opera */
+  -khtml-user-select: none;
+  /* Konqueror */
+  -moz-user-select: none;
+  /* Firefox */
+  -ms-user-select: none;
+  /* Internet Explorer/Edge */
+  user-select: none;
+  /* Non-prefixed version, currently not supported by any browser */
+}
+.am-modal-content {
+  height: 6.4rem;
+  width: 6.54rem;
+  top: 0;
+  left: 50%;
+  margin-left: -3.27rem;
+  margin-bottom: .31rem;
+  border-radius: .2rem;
+}
+.am-modal-content p {
+  font-size: .3rem;
+  font-weight: bold;
+  color: #666;
+  height: 1.2rem;
+  margin: 0;
+  line-height: 1.2rem;
+}
+.am-modal-content .register_item {
+  width: 100%;
+  height: 1rem;
+}
+.am-modal-content .am-list-line {
+  width: 100%;
+  height: 1rem;
+}
+.am-modal-content .am-list-line .am-input-label {
+  width: 1.4rem;
+  font-size: .4rem;
+  font-weight: bold;
+}
+.am-modal-content .am-list-line .am-input-control {
+  height: 1rem;
+  line-height: .5rem;
+}
+.am-modal-content .am-list-line .am-input-control input {
+  height: 1rem;
+  font-size: .3rem;
+  font-weight: bold;
+}
+.am-modal-content .am-list-item {
+  width: 100%;
+  height: 1rem;
+  border: .02rem solid #f0f0f0;
+  padding-left: .3rem;
+  padding-right: .3rem;
+  border-radius: .2rem;
+  background-color: #f0f0f0;
+  color: #333;
+}
+.am-modal-content .am-input-label {
+  font-size: .3rem!important;
+}
+.am-modal-content .getYzcodeBtn {
+  width: 4rem;
+  height: 1rem;
+  margin-left: .3rem;
+  border: .03rem solid #FFD946!important;
+  border-radius: .2rem;
+  font-size: .3rem;
+  text-align: center;
+  color: orange;
+  -webkit-touch-callout: none;
+  /* iOS Safari */
+  -webkit-user-select: none;
+  /* Chrome/Safari/Opera */
+  -khtml-user-select: none;
+  /* Konqueror */
+  -moz-user-select: none;
+  /* Firefox */
+  -ms-user-select: none;
+  /* Internet Explorer/Edge */
+  user-select: none;
+  /* Non-prefixed version, currently not supported by any browser */
+}
+.am-modal-content .getYzcodeBtn span {
+  display: inline-block;
+  width: 2rem;
+  height: .96rem;
+  line-height: .96rem;
+}
+.am-modal-content .inviteBtns {
+  width: 100%;
+  height: .96rem;
+  font-size: .32rem;
+  font-weight: bold;
+  text-align: center;
+  line-height: .96rem;
+  border: none;
+  border-radius: .5rem;
+  color: #333;
+  background: linear-gradient(to bottom, #FFEE7C, #FFD946);
+  -webkit-touch-callout: none;
+  /* iOS Safari */
+  -webkit-user-select: none;
+  /* Chrome/Safari/Opera */
+  -khtml-user-select: none;
+  /* Konqueror */
+  -moz-user-select: none;
+  /* Firefox */
+  -ms-user-select: none;
+  /* Internet Explorer/Edge */
+  user-select: none;
+  /* Non-prefixed version, currently not supported by any browser */
+}
+.am-toast-notice-content .am-toast-text {
+  min-width: 4rem;
+  min-height: 1.5rem;
+}
+.am-toast-notice-content .am-toast-text > div {
+  font-size: .3rem;
+  line-height: 1.5rem;
+}
+.am-toast > span {
+  position: fixed;
+  top: 30%;
+  max-width: 100%;
+}
+.coverMask {
+  width: 100%;
+  height: 100%;
+  z-index: 1999;
+  background-color: rgba(0, 0, 0, 0.4);
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+}
+.coverMask img {
+  width: 1.2rem;
+  height: 1.2rem;
+  position: absolute;
+  top: .24rem;
+  right: .78rem;
+}
+.coverMask p {
+  margin: 0;
+  font-size: .38rem;
+  font-weight: bold;
+  color: #F5D853;
+  position: absolute;
+  width: 100%;
+  text-align: center;
+  top: 2.3rem;
+}
+.midImg {
+  width: 100%;
+}
+.midImg img {
+  width: 100%;
+}
+.botBtn {
+  width: 100%;
+  height: 1.2rem;
+  position: fixed;
+  bottom: 0;
+}
+.am-modal-popup-slide-up {
+  top: 50%;
+  height: 6.5rem;
+  margin-top: -3.2rem;
+}

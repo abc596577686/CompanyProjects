@@ -1,0 +1,133 @@
+view, scroll-view, swiper, movable-view, cover-view, icon, text, rich-text,
+progress, button, checkbox, form, input, label, picker, picker-view, radio,
+slider, switch, textarea, navigator, audio, image, video, camera, live-player,
+live-pusher, map, canvas, open-data, web-view {
+  padding: 0;
+  margin: 0;
+  line-height: 1;
+  box-sizing: border-box;
+}
+
+/*
+  基础样式
+  */
+
+page {
+  background-color: #f6f6f6;
+  font-family: "Helvetica Neue",
+                 "Hiragino Sans GB",
+                 "Microsoft YaHei",
+                 "\9ED1\4F53",
+                 Arial,
+                 sans-serif;
+  font-size: 32rpx;
+  line-height: 1;
+}
+
+image, navigator {
+  width: 100%;
+  display: block;
+}
+
+image {
+  height: 0;
+}
+
+.border-t {
+  position: relative;
+}
+
+.border-t::after {
+  position: absolute;
+  content: '';
+  left: 0;
+  right: 0;
+  top: 0;
+  background: #f0f0f0;
+  height: 1px;
+  transform: scaleY(0.5);
+}
+
+/*
+  隐藏scroll-view滚动条
+  */
+
+::-webkit-scrollbar {
+  width: 0;
+  height: 0;
+  color: transparent;
+}
+
+/*
+  文本单行显示
+  */
+
+.line-01 {
+  display: -webkit-box;
+  word-break: break-all;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 1;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/*
+  文本两行显示
+  */
+
+.line-02 {
+  display: -webkit-box;
+  word-break: break-all;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/*  重写 radio 样式  */
+
+/* radio .wx-radio-input{
+   border-radius: 50%;
+   width: 40rpx;
+   height: 40rpx;
+}
+radio .wx-radio-input.wx-radio-input-checked{
+   border: none;
+   background: red;
+}
+radio .wx-radio-input.wx-radio-input-checked::before{
+   border-radius: 50%;
+   width: 40rpx;
+   height: 40rpx;
+   line-height: 40rpx;
+   text-align: center;
+   font-size:30rpx;
+   color:#fff;
+   background: transparent;
+   transform:translate(-50%, -50%) scale(1);
+   -webkit-transform:translate(-50%, -50%) scale(1);
+} */
+
+/*  重写 checkbox 样式  */
+
+/* checkbox .wx-checkbox-input{
+   border-radius: 50%;
+   width: 40rpx;
+   height: 40rpx;
+}
+checkbox .wx-checkbox-input.wx-checkbox-input-checked{
+   border: none;
+   background: red;
+}
+checkbox .wx-checkbox-input.wx-checkbox-input-checked::before{
+   border-radius: 50%;
+   width: 40rpx;
+   height: 40rpx;
+   line-height: 40rpx;
+   text-align: center;
+   font-size:30rpx;
+   color:#fff;
+   background: transparent;
+   transform:translate(-50%, -50%) scale(1);
+   -webkit-transform:translate(-50%, -50%) scale(1);
+} */

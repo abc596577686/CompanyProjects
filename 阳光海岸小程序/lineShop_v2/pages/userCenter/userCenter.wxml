@@ -1,0 +1,216 @@
+<!--pages/userCenter/userCenter.wxml-->
+
+<!-- <view class="section">
+  <image src='{{userInfo.avatarUrl}}'></image>
+  <view>{{userInfo.nickName}}</view>
+</view> -->
+<loading wx:if='{{isLoading}}'></loading>
+
+<view class='backBar'></view>
+<view class='container'>
+  <view class='topHeadWrap'>
+    <view class='userInfo'>
+      <navigator url='/pages/userInfo/userInfo' class='avatar'>
+        <image mode='widthFix' src='{{userInfo.headerImage}}'></image>
+      </navigator>
+      <view class='textInfo'>
+        <!-- <text class='phone'>{{userInfo.mobile || '未绑定手机号'}}</text>  -->
+        <text class='phone'>{{userInfo.nickname}}</text>
+        <view class='vipWrap'>
+          <view class='vipBox'>
+            <view class='imageWrap'>
+              <image class='vipIcon' mode="widthFix" src='/assets/images/icon_vip.png'></image>
+            </view>
+            <text class='text'>会员</text>
+          </view>
+        </view>
+        <!-- <view class='bindPhone'>{{userInfo.mobile}}</view> -->
+      </view>
+      <view>
+        <navigator hover-class='none' url='vipCenter/vipCenter?barCodePath={{userInfo.barCodePath}}&headerImage={{userInfo.headerImage}}&nickname={{userInfo.nickname}}' class='memberCard'>
+          <image mode="widthFix" src='/assets/images/icon_member_card.png'></image>
+        </navigator>
+      </view>
+    </view>
+
+    <view class="allList">
+      <view class="mylist">
+          我的订单
+      </view>
+      <navigator hover-class='none' class='allItem' url='/pages/allOrder/allOrder?status=0'>
+        <!-- <view class='imgWrap'>
+          <image class='icon' mode="widthFix" src="/assets/images/icon_order_2.png"></image>
+        </view> -->
+        <text class='text allt'>查看全部订单</text>
+        <image class='seeMore'  src='/assets/images/icon_more.png'></image>
+      </navigator>
+    </view>
+
+    <view class='orderTypes'>
+      <navigator hover-class='none' class='item' url='/pages/allOrder/allOrder?status=1'>
+        <view class='imgWrap'>
+          <image class='icon' mode="widthFix" src="/assets/images/icon_waitPay.png"></image>
+          <text class='tag' wx:if="{{orderInfo.unpayCount - 0}}">{{orderInfo.unpayCount}}</text>
+        </view>
+        <text class='text'>待付款</text>
+      </navigator>
+      <navigator hover-class='none' class='item' url='/pages/allOrder/allOrder?status=2'>
+        <view class='imgWrap'>
+          <image class='icon' mode="widthFix" src="/assets/images/icon_waitSend.png"></image>
+          <text class='tag' wx:if="{{orderInfo.unsentCount - 0}}">{{orderInfo.unsentCount}}</text>
+        </view>
+        <text class='text'>待发货</text>
+      </navigator>
+      <navigator hover-class='none' class='item' url='/pages/allOrder/allOrder?status=3'>
+        <view class='imgWrap'>
+          <image class='icon' mode="widthFix" src="/assets/images/icon_takeDelivery.png"></image>
+          <text class='tag' wx:if="{{orderInfo.undeliveryCount - 0}}">{{orderInfo.undeliveryCount}}</text>
+        </view>
+        <text class='text'>待收货</text>
+      </navigator>
+      <navigator hover-class='none' class='item' url='/pages/allOrder/allOrder?status=6'>
+        <view class='imgWrap'>
+          <image class='icon' mode="widthFix" src="/assets/images/icon_refund.png"></image>
+          <text class='tag' wx:if="{{orderInfo.refuntCount - 0}}">{{orderInfo.refuntCount}}</text>
+        </view>
+        <text class='text'>退款/售后</text>
+      </navigator>
+    </view>
+  </view>
+  <!-- coupon -->
+  <!-- <view class='activeImgerBox' catchtap='showCoupon' wx:if='{{activeList.length !=0}}'> -->
+  <block wx:if='{{activeList.length > 0}}'>
+    <swiper class='activeImgerBox' autoplay='{{auto}}' indicator-dots='{{activeList.length > 1 ? "1" : ""}}' interval='2000' current='{{current}}'>
+      <block wx:for='{{activeList}}' wx:key='{{index}}'>
+        <swiper-item>
+          <view bindtap='showCouponer' data-idx='{{index}}' style="height:100px;">
+            <image src="{{item.taskImagePath}}" class="slide-image" mode='widthFix' />
+          </view>
+        </swiper-item>
+      </block>
+    </swiper>
+  </block>
+  <!-- </view> -->
+  <view class='projectWrap'>
+    <navigator class='item' hover-class='none' url='myCoupon/myCoupon'>
+      <view class='left'>
+        <view class='imgWrap'>
+          <image class='icon' mode='widthFix' src="/assets/images/icon_coupon.png"></image>
+        </view>
+        <text>我的优惠券</text>
+      </view>
+      <view class='right'>
+        <text class='tips' wx:if="{{userInfo.couponCount > 0}}">{{userInfo.couponCount}}张优惠券</text>
+        <image class='seeMoreIcon' mode='widthFix' src='/assets/images/icon_more.png'></image>
+      </view>
+    </navigator>
+    <navigator class='item' hover-class='none' url='/pages/addressList/addressList?userCenter=1'>
+      <view class='left'>
+        <view class='imgWrap'>
+          <image class='icon' mode='widthFix' src="/assets/images/icon_address_2.png"></image>
+        </view>
+        <text>收货地址</text>
+      </view>
+      <view class='right'>
+        <text class='tips'></text>
+        <image class='seeMoreIcon' mode='widthFix' src='/assets/images/icon_more.png'></image>
+      </view>
+    </navigator>
+    <view class='item'>
+      <view class='left'>
+        <view class='imgWrap'>
+          <image class='icon' mode='widthFix' src="/assets/images/footer/icon_contact.png"></image>
+        </view>
+        <text>在线客服</text>
+      </view>
+      <view class='right'>
+        <!-- <text class='tips'></text> -->
+        <!-- 唤起客服按钮 -->
+        <button class='tips kk' open-type='contact'>在线客服</button>
+        <text class='tips'></text>
+        <image class='seeMoreIcon' mode='widthFix' src='/assets/images/icon_more.png'></image>
+      </view>
+    </view>
+    <navigator class='item' url='tips/tips' hover-class='none'>
+      <view class='left'>
+        <view class='imgWrap'>
+          <image class='icon' mode='widthFix' src="/assets/images/icon_feedBack.png"></image>
+        </view>
+        <text>意见反馈</text>
+      </view>
+      <view class='right'>
+        <text class='tips'></text>
+        <image class='seeMoreIcon' mode='widthFix' src='/assets/images/icon_more.png'></image>
+      </view>
+    </navigator>
+  </view>
+</view>
+<!-- 红包活动 -->
+<view class='bg' wx:if='{{ isShowMaskLayer }}'></view>
+
+<view class='bger' wx:if='{{ isShowMaskLayer }}' catchtap='hideMask'>
+  <block wx:for='{{activeList}}' wx:key='{{index}}' wx:if='{{activeList.length != 0}}'>
+    <view class='box' wx:if='{{item.isClick}}'>
+      <view class='redPacket' wx:if='{{item.isActivity=="0"&&item.isClick}}'>
+        <view class='redHead'>
+          <image class='redHeader' src='/assets/images/head.png'></image>
+          <view class='headTitle'>
+            <text class='headInfo'>{{item.taskName}}</text>
+          </view>
+        </view>
+        <view class='redMain'>
+          <view class='mainTitle'>
+            <view class='left'>
+              <text class='line'></text>
+              <text class='dot'></text>
+            </view>
+            <view class='center'>
+              <text class='cen-info'>本店更多精选优惠</text>
+            </view>
+            <view class='right'>
+              <text class='dot'></text>
+              <text class='line'></text>
+            </view>
+          </view>
+          <scroll-view class='mainItem' scroll-y='true'>
+            <view class='red-item' wx:for='{{item.couponList}}' wx:key='{{index}}'>
+              <view class='left-item'>
+                <view>
+                  <text class='yuan'>￥</text>
+                  <text class='item-num'>{{item.giveAmount}}</text>
+                </view>
+                <view>
+                  <text class='full'>满{{item.fullAmount}}使用</text>
+                </view>
+              </view>
+              <view class='right-item'>
+                <text class='right-title'>{{item.couponName}}</text>
+                <text class='right-info'>{{item.effectiveTimeFormat}}</text>
+              </view>
+
+            </view>
+          </scroll-view>
+
+          <view class='btn' catchtap='getAll' data-index='{{index}}'>一键领取</view>
+
+        </view>
+      </view>
+      <view class='activeImgBox' wx:if='{{item.isActivity=="1" && item.isClick}}' bindtap='getAll' data-index='{{index}}'>
+        <image class='activeImg' src='{{item.activityImagePath}}' mode='widthFix' bindload='imageLoad' binderror="imageLoadError" data-index='{{index}}'></image>
+      </view>
+      <view class='iconBox'>
+        <icon class='cancel' type='cancel' size='40' color='white' catchtap='cancelCoupon' wx:if='{{!isShowBox}}' wx:if='{{item.isActivity=="0"}}'></icon>
+        <icon class='cancel' type='cancel' size='40' color='white' catchtap='cancelCoupon' wx:if='{{!isShowBox}}' wx:if='{{item.isActivity=="1" && bottom}}'></icon>
+      </view>
+    </view>
+  </block>
+  <view class='successBox' wx:if='{{isShowBox}}'>
+    <view class='suc-title'>领取成功</view>
+    <view class='suc-info'>你已成功领取优惠劵,赶紧购物哦</view>
+    <view class='see' catchtap='seeCoupon'>查看优惠劵</view>
+    <icon class='noUse' type='cancel' size='23' color='#ccc' bindtap='cancel'></icon>
+  </view>
+</view>
+
+<!-- tabBar -->
+<!-- <tabBar activeIndex="3"></tabBar> -->

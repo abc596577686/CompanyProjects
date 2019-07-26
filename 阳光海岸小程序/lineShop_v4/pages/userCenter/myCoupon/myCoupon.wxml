@@ -1,0 +1,61 @@
+<!--pages/userCenter/myCoupon/myCoupon.wxml-->
+<loading wx:if='{{isLoading}}'></loading>
+<view class='container'>
+  <view class='tabBar border-t'>
+    <view class='tab-item' bindtap='changePage' data-change='0' style='color:{{show==0?"#FB4A4C":"#333"}}'>
+      <text>未使用</text>
+      <view class='line' style='visibility:{{show==0?"visible":"hidden"}}'></view>
+    </view>
+    <view class='tab-item' bindtap='changePage' data-change='1' style='color:{{show==1?"#FB4A4C":"#333"}}'>
+      <text>已使用</text>
+      <view class='line' style='visibility:{{show==1?"visible":"hidden"}}'></view>
+    </view>
+    <view class='tab-item' bindtap='changePage' data-change='2' style='color:{{show==2?"#FB4A4C":"#333"}}'>
+      <text>已过期</text>
+      <view class='line' style='visibility:{{show==2?"visible":"hidden"}}'></view>
+    </view>
+  </view>
+  <view class='box' wx:if='{{showList}}'>
+
+    <view class='coupon {{show==0?"canUse":"unUse"}}'>
+      <view class='coupon-item' wx:for='{{couponList}}' wx:key='{{index}}'>
+        <view class='coupon-top'>
+          <view class='coupon-left'>
+            <view class='price'>
+              <text class='log'>￥</text>
+              <text class='num'>{{item.giveAmount}}</text>
+            </view>
+            <text class='info' wx:if='{{item.typeName==="代金券"}}'>无金额门槛</text>
+            <text class='info' wx:else>满{{item.fullAmount}}使用</text>
+            
+          </view>
+          <view class='coupon-right'>
+            <view class='categories'>
+              <text class='cate-icon'>{{item.couponTypeName}}</text>
+              <text class='cate-info'>{{item.couponName}}</text>
+            </view>
+            <view class='time'>
+              <text>{{item.effectiveTimeFormat}}</text>
+              <!-- <text wx:else>{{item.effectiveTime}}(仅剩{{item.rest}}天)</text> -->
+              <text class='btn-use' style='visibility:{{show==0?"visible":"hidden"}}' catchtap='goSearch' data-id='{{item.couponId}}'>立即使用</text>
+            </view>
+          </view>
+        </view>
+        <view class='coupon-bottom border-t' bindtap='changeCollapes' data-id='{{index}}'>
+          <text>{{item.title}}</text>
+          <image class='seeMore' src='../../../assets/images/icon_seeMore.png'></image>
+        </view>
+        <view class='coupon-collpase border-t' wx:if='{{item.bindNames && active===index}}'>
+          <!-- <text class='col-title'>以下商品适用：</text> -->
+          <text class='col-info'>{{item.bindNames}}</text>
+        </view>
+      </view>
+    </view>
+  </view>
+  <view class='empty'  wx:else>
+    <view class='toastBox'>
+      <image src='/assets/images/icon_coupon@2x.png' class='toastImg' mode='widthFix'></image>
+      <text class='toastInfo'>您还没有优惠券</text>
+    </view>
+  </view>
+</view>

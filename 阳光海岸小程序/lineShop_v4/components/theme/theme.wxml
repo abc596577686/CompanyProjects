@@ -1,0 +1,28 @@
+<!--components/theme/theme.wxml-->
+<view class='themeWrap'>
+  <navigator url='{{data.jumpUrl}}' hover-class='none' class='topWrap'>
+    <image mode="widthFix" class="topImage" src="{{data.picture}}"></image>
+  </navigator>
+  <scroll-view class="themeScrollWrap" scroll-x="true" scroll-with-animation="true">
+    <block wx:for="{{data.products}}" wx:key="{{index}}">
+      <navigator hover-class='none' wx:if="{{item.itemType == 'more'}}" class='scroll-view-item more' url='{{item.jumpUrl}}'>
+        <view class='goodsMore'>
+          <text class='title'>{{item.title}}</text>
+          <view class='line'></view>
+          <text>{{item.desc}}</text>
+        </view>
+      </navigator>
+      <navigator hover-class='none' wx:else class='scroll-view-item' url='{{item.jumpUrl}}'>
+        <view class='goodsItem'>
+          <view class='imageWrap'>
+            <image class='goodsImage' mode="widthFix" src="{{item.imageUrl}}"></image>
+            <text class='secKill' wx:if="{{item.isSeckillProduct == 1}}">限时购</text>
+          </view>
+          <text class='goodsText line-02'>{{item.productName}}</text>
+          <text class='goodsText price'>¥ {{item.price}}</text>
+        </view>
+      </navigator>
+    </block>
+
+  </scroll-view>
+</view>

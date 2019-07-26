@@ -1,0 +1,8 @@
+{
+  "navigationBarTitleText": "订单详情",
+  "navigationBarBackgroundColor": "#fff",
+  "usingComponents": {
+    "loading": "/components/loading/loading",
+    "UserElipse" : "/components/UserElipse/UserElipse"
+  }
+}

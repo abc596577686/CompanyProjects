@@ -1,0 +1,11 @@
+{
+  "usingComponents": {
+    "goodTwoColumns": "/components/goodTwoColumns/goodTwoColumns",
+    "bannerMore": "/components/bannerMore/bannerMore",
+    "bannerAlone": "/components/bannerAlone/bannerAlone",
+    "bannerDouble": "/components/bannerDouble/bannerDouble",
+    "navAlone": "/components/navAlone/navAlone",
+    "navDouble": "/components/navDouble/navDouble",
+    "theme": "/components/theme/theme"
+  }
+}

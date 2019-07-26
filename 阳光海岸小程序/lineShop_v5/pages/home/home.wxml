@@ -1,0 +1,178 @@
+<!-- home.wxml  -->
+
+<!-- loading  -->
+<loading wx:if="{{isLoading}}"></loading>
+
+<!-- topHead  -->
+<view id='topHead' class='topHead'>
+  <view class='topHeadWrap'>
+    <view class='searchWrap' bindtap='jumpSearchEnv'>
+      <image src='/assets/images/icon_search.png' mode="widthFix"></image>
+      <!-- <input placeholder="商品" placeholder-style='color:#ccc'></input> -->
+      <text class='text'>{{placeholderText}}</text>
+      <view class='scanCodeBtnWrap' catchtap='scanCodeEnv'>
+        <image src='/assets/images/icon_scanCode.png' mode="widthFix"></image>
+        <!-- <text>{{scanText}}</text> -->
+      </view>
+    </view>
+  </view>
+
+  <!-- tabBar  -->
+  <!-- <scroll-view class='tabWrap' wx:if="{{tabList}}" scroll-x="true" scroll-with-animation="true" scroll-left="{{scrollLeft}}" style='position:{{posStatus}}'>
+    <view class='tabBox' wx:for="{{tabList}}" wx:key="id">
+      <view id="{{index}}" class="tabItem {{activeId == index ? 'active' : ''}}" data-id="{{item.channelId}}" bindtap='switchTabEnv'>{{item.channelName}}</view>
+    </view>
+  </scroll-view> -->
+
+</view>
+<!-- <view class='content' style="margin-top:{{topHeadWrapHeight + 'px'}}"> -->
+<view class='content'>
+  <block wx:if="{{channelList.length}}" wx:for="{{channelList}}" wx:key="{{index}}">
+    <view hidden="{{activeId != index}}" data-index="{{index}}">
+      <block wx:for="{{item}}" wx:key="{{index}}">
+        <!-- bannerMore  -->
+        <!-- <bannerMore bind:jumpUrlEnv="_jumpUrlEnv" wx:if="{{item.type == 0 && item.attribute == 0 && item.contents}}" data="{{item.contents}}"></bannerMore>  -->
+        <bannerMore wx:if="{{item.type == 0 && item.attribute == 0}}" data="{{item.contents}}"></bannerMore>
+
+        <!-- bannerAlone  -->
+        <bannerAlone wx:if="{{item.type == 0 && item.attribute == 1 && item}}" data="{{item}}"></bannerAlone>
+
+        <!-- bannerDouble  -->
+        <bannerDouble wx:if="{{item.type == 0 && item.attribute == 2 && item.contents}}" data="{{item.contents}}"></bannerDouble>
+
+        <!-- navAlone  -->
+        <navAlone wx:if="{{item.type == 1 && item.attribute == 0 && item.contents.length}}" data="{{item.contents}}"></navAlone>
+
+        <!-- navDouble  -->
+        <!-- <navDouble wx:if="{{item.type == 1 && item.attribute == 1}}"></navDouble> -->
+
+        <!-- theme  -->
+        <theme wx:if="{{item.type == 2}}" data="{{item}}"></theme>
+
+        <!-- goodTwoColumns  -->
+        <goodsTwoColumns wx:if="{{item.type == 3 && item.products.length}}" data="{{item.products}}"></goodsTwoColumns>
+      </block>
+    </view>
+  </block>
+
+</view>
+
+<timeout wx:if="{{!isLoading && timeout}}" bind:refreshEnv="refreshEnv"></timeout>
+
+<!-- tabBar -->
+<!-- <tabBar activeIndex="0"></tabBar> -->
+
+<!-- 提示语  -->
+<toast wx:if="{{msgTips}}" message="{{msgTips}}"></toast>
+
+<!-- 红包活动 -->
+<view class='bg' wx:if='{{ isShowMaskLayer && activeList.length > 0}}'></view>
+
+<view class='bger' wx:if='{{ isShowMaskLayer && activeList.length > 0}}' catchtap='hideMask'>
+  <block wx:for='{{activeList}}' wx:key='{{index}}'>
+    <view class='box'  wx:if='{{item.isRegister == "1" && item.isClick}}'>
+      <view class='redPacket new' wx:if='{{item.isRegister == "1" && item.isClick}}'>
+        <view class='redHead'>
+          <image class='redHeader' src='/assets/images/head.png'></image>
+          <view class='headTitle'>
+            <text class='headInfo'>{{item.taskName}}</text>
+          </view>
+        </view>
+        <view class='redMain'>
+          <view class='mainTitle'>
+            <view class='left'>
+              <text class='line'></text>
+              <text class='dot'></text>
+            </view>
+            <view class='center'>
+              <text class='cen-info'>本店更多精选优惠</text>
+            </view>
+            <view class='right'>
+              <text class='dot'></text>
+              <text class='line'></text>
+            </view>
+          </view>
+          <scroll-view class='mainItem' scroll-y='true'>
+            <view class='red-item' wx:for='{{item.couponList}}' wx:key='{{index}}'>
+              <view class='left-item'>
+                <view>
+                  <text class='yuan'>￥</text>
+                  <text class='item-num'>{{item.giveAmount}}</text>
+                </view>
+                <view>
+                  <text class='full'>满{{item.fullAmount}}使用</text>
+                </view>
+              </view>
+              <view class='right-item'>
+                <text class='right-title'>{{item.couponName}}</text>
+                <text class='right-info'>{{item.effectiveTimeFormat}}</text>
+              </view>
+            </view>
+          </scroll-view>
+        </view>
+      </view>
+      <view class='iconBox' wx:if='{{item.isRegister == "1" && item.isClick}}'>
+        <icon class='cancel' type='cancel' size='40' color='white' catchtap='cancelCouponer'></icon>
+      </view>
+    </view>
+    <view class='box' wx:if='{{item.isRegister == "0"&&item.isClick}}'>
+      <view class='redPacket' wx:if='{{item.isRegister == "0" && item.isActivity=="0" && item.isClick}}'>
+        <view class='redHead'>
+          <image class='redHeader' src='/assets/images/head.png'></image>
+          <view class='headTitle'>
+            <text class='headInfo'>{{item.taskName}}</text>
+          </view>
+        </view>
+        <view class='redMain'>
+          <view class='mainTitle'>
+            <view class='left'>
+              <text class='line'></text>
+              <text class='dot'></text>
+            </view>
+            <view class='center'>
+              <text class='cen-info'>本店更多精选优惠</text>
+            </view>
+            <view class='right'>
+              <text class='dot'></text>
+              <text class='line'></text>
+            </view>
+          </view>
+          <scroll-view class='mainItem' scroll-y='true'>
+            <view class='red-item' wx:for='{{item.couponList}}' wx:key='{{index}}'>
+              <view class='left-item'>
+                <view>
+                  <text class='yuan'>￥</text>
+                  <text class='item-num'>{{item.giveAmount}}</text>
+                </view>
+                <view>
+                  <text class='full'>满{{item.fullAmount}}使用</text>
+                </view>
+              </view>
+              <view class='right-item'>
+                <text class='right-title'>{{item.couponName}}</text>
+                <text class='right-info'>{{item.effectiveTimeFormat}}</text>
+              </view>
+
+            </view>
+          </scroll-view>
+
+          <view class='btn' catchtap='getAll' data-index='{{index}}'>一键领取</view>
+
+        </view>
+      </view>
+      <view class='activeImgBox' wx:if='{{item.isRegister == "0" && item.isActivity=="1" && item.isClick}}' catchtap='getAll' data-index='{{index}}'>
+        <image class='activeImg' src='{{item.activityImagePath}}' mode='widthFix' bindload='imageLoad' binderror="imageLoadError" data-index='{{index}}'></image>
+      </view>
+      <view class='iconBox'>
+        <icon class='cancel' type='cancel' size='40' color='white' data-idx='{{index}}' catchtap='cancelCouponer' wx:if='{{!isShowBox&&item.isActivity=="0"}}'></icon>
+        <icon class='cancel newer' type='cancel' size='40' color='white' data-idx='{{index}}' catchtap='cancelCouponer' wx:if='{{!isShowBox&&item.isActivity=="1"&&bottom}}'></icon>
+      </view>
+    </view>
+  </block>
+  <view class='successBox' wx:if='{{isShowBox}}'>
+    <view class='suc-title'>领取成功</view>
+    <view class='suc-info'>你已成功领取优惠劵,赶紧购物哦</view>
+    <view class='see' catchtap='seeCoupon'>查看优惠劵</view>
+    <icon class='noUse' type='cancel' size='23' color='#ccc' bindtap='cancel'></icon>
+  </view>
+</view>

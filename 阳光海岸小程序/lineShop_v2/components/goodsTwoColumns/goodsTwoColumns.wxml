@@ -1,0 +1,16 @@
+<!--components/goodTwoColumns/goodTwoColumns.wxml-->
+
+<view class='goodsListWrap'>
+  <block wx:for="{{data}}" wx:key="{{index}}">
+    <view class='goodsWrap'>
+      <navigator url="{{item.jumpUrl}}" hover-class="none" class='goods'>
+        <view class='goodsImgWrap'>
+          <image class='goodsImg' mode="widthFix" src="{{item.imageUrl}}"></image>
+          <text class='secKill' wx:if="{{item.isSeckillProduct == 1}}">限时购</text>
+        </view>
+        <text class='goodsText'>{{item.productName}}</text>
+        <text class='goodsText price'>¥ {{item.price}}</text>
+      </navigator>
+    </view>
+  </block>
+</view>

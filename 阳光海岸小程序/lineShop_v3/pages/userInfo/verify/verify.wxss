@@ -1,0 +1,75 @@
+/* pages/userInfo/verify/verify.wxss */
+
+.progressWrap {
+  background: #fff;
+  padding: 50rpx 100rpx;
+  margin-top: 1px;
+}
+
+.iconStatus {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 0 60rpx;
+}
+
+.iconStatus .icon {
+  width: 24rpx;
+  height: 24rpx;
+  background: #d9d9d9;
+  border-radius: 100%;
+}
+
+.line {
+  flex: 1;
+  border-top: 1px dashed #d9d9d9;
+}
+
+.iconStatus .icon.imgWrap {
+  width: 38rpx;
+  min-height: 38rpx;
+}
+
+.textStatus {
+  margin-top: 30rpx;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  font-size: 28rpx;
+  color: #999;
+}
+
+.textStatus .text.active {
+  color: #333;
+}
+
+.inputList {
+  margin-top: 20rpx;
+  background: #fff;
+}
+
+.inputList .item {
+  padding: 25rpx 30rpx;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.inputList input {
+  flex: 1;
+}
+
+.getCode{
+  font-size: 26rpx;
+  color: #FB4A4C;
+}
+
+.bindBtn{
+  margin: 50rpx 70rpx;
+  background: #FFD946;
+  color: #333;
+  padding: 24rpx 0;
+  text-align: center;
+  border-radius: 10rpx;
+}

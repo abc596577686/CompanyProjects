@@ -1,0 +1,27 @@
+<!--pages/innerLogin/innerLogin.wxml-->
+
+<view class='loginContainer'>
+  <image class='login_bg' src='/assets/images/img_login_bg.png' mode='widthFix'></image>
+  <view class='formWrap'>
+    <!-- <input class='input' type='number' value="15803838875" placeholder="请输入手机号码" placeholder-style="#ccc" maxlength="11" confirm-type="确定" adjust-position="false" bindconfirm="bindconfirmEnv"></input> -->
+    <view class='label'>授权说明</view>
+    <view class='authorDesc'>
+      获取您的手机号以便为您提供更好的服务。
+    </view>
+    <button open-type='getPhoneNumber' bindgetphonenumber="getPhoneNumberEnv" class='bindPhone'>绑定微信手机号</button>
+  </view>
+
+  <view class='policyAgree'>
+    <!-- <checkbox class='checkbox' disabled="false" checked="true" color="#ccc"></checkbox> -->
+    <!-- <text class='desc'>我已阅读同意《阳光海岸隐私保护政策》</text> -->
+    <view class='bindOtherPhone'>
+      <view class='line border-t'></view>
+      <text class='title'>其他手机号登陆</text>
+      <view class='line border-t'></view>
+    </view>
+    <view bindtap='bindOtherPhoneEnv' class='imgWrap'>
+      <image mode='widthFix' src='/assets/images/icon_phone.png'></image>
+    </view>
+  </view>
+
+</view>

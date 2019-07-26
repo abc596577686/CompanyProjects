@@ -1,0 +1,80 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+/* 默认图片撑满 */
+img{
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+/* 页面大图 */
+#topImg{
+    width: 8.76rem;
+    height: 6.48rem;
+    position: absolute;
+    top: 4rem;
+    left: 3.12rem;
+}
+.imgBox{
+    width: 100%;
+}
+.pageTip1{
+    width: 6rem;
+    height: .8rem;
+    font-family: HiraginoSansGB-W6;
+    font-size: .72rem;
+    color: #666666;
+    position: absolute;
+    top:  11.6rem;
+    left: 6.44rem;
+    /* vertical-align: middle; */
+}
+.pageTip2{
+    width: 10rem;
+    height: .8rem;
+    font-family: HiraginoSansGB-W6;
+    font-size: .56rem;
+    color: #666666;
+    position: absolute;
+    top:  13rem;
+    left: 2.8rem;
+}
+.goDown{
+    width: 13.72rem;
+    height: 1.48rem;
+    background-color: #FFD946;
+    text-align: center;
+    line-height: 1.48rem;
+    border: none;
+    border-radius: .12rem;
+    position: absolute;
+    left: .64rem;
+    top: 14.8rem;
+    font-size: .7rem;
+}
+.pageTip{
+    width: 100%;
+    height: .8rem;
+    position: absolute;
+    bottom: .96rem;
+    background-color: #fff;     
+}
+.pageTip img{
+    width: .6rem;
+    height: .6rem;
+    position: absolute;
+    left: 2.56rem;
+    top: 0;
+}
+.pageTip p{
+    width: 9.2rem;
+    height: .6rem;
+    position: absolute;
+    left: 3.56rem;
+    top: 0;
+    font-size: .56rem;
+    color: #FA5F5F;
+    font-family: HiraginoSansGB-W3;
+    line-height: .58rem;
+}

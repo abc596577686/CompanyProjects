@@ -1,0 +1,10 @@
+<!--components/bannerMore.wxml-->
+
+<swiper style="height:{{imageHeight + 'px'}}" indicator-dots="{{indicatorDots}}"
+  autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}" >
+  <block wx:for="{{data}}" wx:key="{{item}}">
+    <swiper-item>
+      <image bindload="imageLoad" src="{{item.pictureIcon}}" class="slide-image" style="height:{{imageHeight + 'px'}}"/>
+    </swiper-item>
+  </block>
+</swiper>

@@ -1,0 +1,128 @@
+page{
+    width: 100%;
+    /* height: 100%; */
+    background-color: #fff;
+}
+
+.selectValue {
+    width: 100%;
+    text-align: center;
+}
+.container {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    padding: 200rpx 0;
+    box-sizing: border-box;
+}
+  
+/* 顶部点选 */
+#topTit{
+    width: 100%;    
+    height: 84rpx;
+    border-bottom: 1rpx solid #E5E5E5;
+    display: flex;
+    /* justify-content: space-evenly; */
+    /* padding-left: 200rpx; */
+    /* padding-right: 200rpx; */
+    position: relative;
+    justify-content: center;
+    background-color: #fff;
+    align-items: center;
+}
+.tip{
+    color: #999999;
+    font-size: 26rpx;
+    /* padding:0 .853333rem; */
+    margin-left: 1rem;
+    margin-right: 1rem;
+}
+.titImage{
+    width: 31rpx;
+    height: 31rpx;
+    position: absolute;
+    top: 22rpx;
+    right: 28rpx;
+    z-index: 21474836470;
+}
+.tip{
+    text-align: center;
+    line-height: 84rpx;
+    width: 117rpx;
+    height: 84rpx;
+    font-size:27rpx;
+    /* border-bottom: 5rpx solid #fff; */
+}
+.active{
+    /* border-bottom: 5rpx solid #fff; */
+    color: #333333;
+}
+/* 商品列表 */
+.productList{
+    background-color: #F0F0F0;
+    font-size: 0;
+    /* display: flex; */
+    /* justify-content: space-evenly; */
+}
+.proMain{
+    display: inline-block;
+    width: 360rpx;
+    height: 450rpx;
+    background-color: #fff;
+    margin-left: 10rpx;
+    margin-top: 10rpx;
+    position: relative;
+}
+.proMaImage{
+    width: 180rpx;
+    height: 235rpx;
+    position: absolute;
+    top: 48rpx;
+    left: 90rpx;
+}
+.proTitle{
+    width: 308rpx;
+    height: 64rpx;
+    font-size: 26rpx;
+    line-height: 32rpx;
+    color: #333333;
+    position: absolute;
+    left: 24rpx;
+    bottom: 71rpx;
+    overflow:hidden; 
+    text-overflow:ellipsis;
+    display:-webkit-box;
+    -webkit-box-orient:vertical; 
+    -webkit-line-clamp:2;
+}
+.proPrice{
+    width: 119rpx;
+    height: 25rpx;
+    color: #FB4A4C;
+    line-height: 25rpx;
+    position: absolute;
+    left: 24rpx;
+    bottom: 24rpx;
+    font-size: 25rpx;
+}
+.proMa{
+    width: 16rpx;
+    height: 25rpx;
+    position: absolute;
+    top: 30rpx;
+    right: 100rpx;
+}
+.endWrap{
+    width: 100%;
+    height: 120rpx;
+    position: relative;
+}
+.endImg{
+    width: 40rpx;
+    /* height: 40rpx; */
+    position: absolute;
+    top: 30rpx;
+    left: 355rpx;
+}

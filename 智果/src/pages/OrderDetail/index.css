@@ -1,0 +1,136 @@
+.detail_container {
+  background-color: #f0f0f0;
+}
+.detail_container .btnWrap {
+  display: flex;
+  flex-direction: column;
+}
+.detail_container .btnWrap .btn {
+  margin: 2px;
+  display: inline-block;
+  font-size: 11px;
+  padding: 4px 8px;
+}
+.detail_container .detail_main {
+  background-color: #fff;
+  width: 1220px;
+  min-height: 800px;
+  margin: 0 auto;
+  margin-top: 15px;
+  border: 1px transparent solid;
+}
+.detail_container .detail_main .content {
+  padding: 60px;
+  min-height: 100vh;
+}
+.detail_container .detail_main .titleBtn {
+  width: 200px;
+  padding: 8px 20px;
+  margin: 0;
+  background: #e40000;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+  font-size: 17px;
+  color: #fff;
+}
+.detail_container .detail_main .infoBox {
+  margin-bottom: 20px;
+}
+.detail_container .detail_main .log_main {
+  padding: 20px;
+  margin-top: 10px;
+  border: 1px solid #e8e8e8;
+}
+.detail_container .detail_main .log_main .pack.none {
+  display: none;
+}
+.detail_container .detail_main .log_main .pack .packHead {
+  font-weight: 700;
+}
+.detail_container .detail_main .log_main .pack .packHead > span {
+  margin-right: 15px;
+}
+.detail_container .detail_main .log_main .pack .pack-item {
+  position: relative;
+  padding-left: 10px;
+  margin-top: 10px;
+}
+.detail_container .detail_main .log_main .pack .pack-item::after {
+  content: '';
+  position: absolute;
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  top: 50%;
+  margin-top: -2px;
+  left: -2px;
+  background-color: #ccc;
+}
+.detail_container .detail_main .order_main,
+.detail_container .detail_main .log_main {
+  display: flex;
+  flex-direction: row;
+}
+.detail_container .detail_main .order_main li,
+.detail_container .detail_main .log_main li {
+  line-height: 24px;
+}
+.detail_container .detail_main .order_main li span,
+.detail_container .detail_main .log_main li span {
+  width: 70px;
+}
+.detail_container .detail_main .order_main .left,
+.detail_container .detail_main .log_main .left {
+  width: 40%;
+}
+.detail_container .detail_main .order_main .right,
+.detail_container .detail_main .log_main .right {
+  width: 60%;
+}
+.detail_container .detail_main .goodTable {
+  width: 100%;
+  border-collapse: collapse;
+  border: 1px solid #e8e8e8;
+  background-color: #fff;
+}
+.detail_container .detail_main .goodTable thead td {
+  padding: 12px;
+  line-height: 1.42857143;
+  font-size: 14px;
+  text-align: center;
+  border: 1px solid #e8e8e8;
+  background-color: #f5f7f9;
+  font-weight: 600;
+}
+.detail_container .detail_main .goodTable tbody tr td {
+  text-align: center;
+  padding: 6px;
+  border: 1px solid #e8e8e8;
+}
+.detail_container .detail_main .goodTable tbody tr td:first-child {
+  border-right-color: #fff;
+}
+.detail_container .detail_main .goodTable tbody tr td.goodInfo {
+  text-align: left;
+  vertical-align: top;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  border-right-color: #fff;
+}
+.detail_container .detail_main .goodTable tbody tr td.goodInfo .tag {
+  padding-left: 6px;
+  font-size: 9px;
+  color: #777;
+  -webkit-transform: scale(0.75);
+  -o-transform: scale(1);
+}
+.detail_container .detail_main .goodTable tbody tr td.goodPrice {
+  color: #aaa;
+  text-align: right;
+}
+.detail_container .detail_main .goodTable tbody tr td img {
+  width: 40px;
+  height: 40px;
+}

@@ -1,0 +1,163 @@
+* {
+  margin: 0;
+  padding: 0;
+  font-family: PingFangSC-Regular, sans-serif !important;
+}
+img {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+#mainPage {
+  height: calc(100vh);
+  background: #fff;
+}
+#mainPage header {
+  width: 100%;
+  margin: 0 auto;
+  background-color: #333;
+}
+#mainPage header .swiper-pagination-bullet {
+  border-radius: 0%;
+  width: 60px;
+}
+#mainPage header .swiper-container-horizontal > .swiper-pagination-bullets,
+#mainPage header .swiper-pagination-custom,
+#mainPage header .swiper-pagination-fraction {
+  bottom: 60px;
+}
+#mainPage header .swiper-pagination-bullet-active {
+  background: #ED9121;
+}
+#mainPage header .headerTitles {
+  width: 100%;
+  height: 80px;
+  background-color: #fff;
+  z-index: 20;
+  border-bottom: 2px solid #f0f0f0;
+}
+#mainPage header .headerTitles img {
+  width: 57px;
+  height: 57px;
+  float: left;
+  margin-left: 128px;
+  margin-top: 12px;
+}
+#mainPage header .headerTitles .hT_txt {
+  width: 120px;
+  height: 55px;
+  float: left;
+  margin-left: 18px;
+  margin-top: 12px;
+}
+#mainPage header .headerTitles .hT_txt1 {
+  width: 73px;
+  height: 31px;
+  font-size: 23px;
+  line-height: 31px;
+  font-weight: bold;
+  color: #000;
+}
+#mainPage header .headerTitles .hT_txt2 {
+  width: 114px;
+  height: 21px;
+  font-size: 15px;
+  line-height: 21px;
+  color: #000000;
+}
+#mainPage header .tabss {
+  float: right;
+  z-index: 10;
+  width: 400px;
+  height: 40px;
+  margin-top: 28px;
+  display: -webkit-flex;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+#mainPage header .tabss li {
+  width: 80px;
+  height: 25px;
+  line-height: 22px;
+  font-size: 15px;
+  color: #000;
+  text-align: center;
+  margin-right: 10px;
+  cursor: pointer;
+}
+#mainPage .mainContent {
+  width: 100%;
+  height: 400px;
+  display: -webkit-flex;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+#mainPage .mainContent .contactus {
+  width: 270px;
+  height: 200px;
+  margin-right: 200px;
+  margin-top: 80px;
+}
+#mainPage .mainContent .contactus ul {
+  width: 100px;
+  height: 23px;
+  font-size: 23px;
+  line-height: 23px;
+}
+#mainPage .mainContent .contactus .ca_coverline {
+  width: 150px;
+  height: 2px;
+  background-color: #f0f0f0;
+  margin-top: 20px;
+}
+#mainPage .mainContent .contactus .txt {
+  width: 250px;
+  height: 18px;
+  font-size: 15px;
+  color: #666;
+  margin-top: 10px;
+}
+#mainPage .mainContent .ewCode {
+  width: 600px;
+  height: 300px;
+  margin-top: 80px;
+  font-size: 0;
+}
+#mainPage .mainContent .ewCode .ewCodeMain {
+  width: 150px;
+  height: 300px;
+  display: inline-block;
+  margin-right: 30px;
+}
+#mainPage .mainContent .ewCode .ewCodeMain ul {
+  width: 170px;
+  height: 23px;
+  font-size: 23px;
+  line-height: 23px;
+}
+#mainPage .mainContent .ewCode .ewCodeMain .ca_coverline {
+  width: 150px;
+  height: 2px;
+  background-color: #f0f0f0;
+  margin-top: 20px;
+}
+#mainPage .mainContent .ewCode .ewCodeMain .showcode {
+  margin-top: 14px;
+  width: 150px;
+  height: 150px;
+}
+#mainPage footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 70px;
+  background-color: #333;
+  color: #fff;
+  text-align: center;
+  line-height: 70px;
+  font-size: 12px;
+}

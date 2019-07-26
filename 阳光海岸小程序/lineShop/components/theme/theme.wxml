@@ -1,0 +1,11 @@
+<!--components/theme/theme.wxml-->
+<view class='themeWrap'>
+  <image src="{{data.picture}}"></image>
+  <scroll-view scroll-x="true" style="height: 200px;">
+    <view class='scroll-view-item' wx:for="{{data.products}}" wx:key="{{index}}">
+      <image class='image' src="{{item.imageUrl}}"></image>
+      <text class='text'>{{item.productName}}</text>
+      <text class='price'>{{item.price}}</text>
+    </view>
+  </scroll-view>
+</view>

@@ -1,0 +1,26 @@
+<!--pages/login/login.wxml-->
+
+<view class='loginContainer'>
+  <image class="logo" mode='widthFix' src='/assets/images/iiop.png'></image>
+  <text class="txt">订单微管家</text>
+  <button class='loginBtn'  open-type="getUserInfo" bindgetuserinfo="getUserInfoEnv" loading="{{loading}}" wx:if="{{!isReadyLogin}}">
+    <image class="btnImg" mode='widthFix' src='/assets/images/weixin@2x.png'/>
+    微信登录
+  </button>
+  <button class='loginBtn'  open-type="getPhoneNumber" bindgetphonenumber="getPhoneNumberEnv" loading="{{loading}}" wx:if="{{isReadyLogin}}">
+    <image class="btnImg" mode='widthFix' src='/assets/images/weixin@2x.png'/>
+    绑定手机
+  </button>
+  <!-- <view animation="{{productSpecSelectPlainAni}}" id="productSpecSelectPlain" class='specSelectWrap' wx:if="{{isShowProductSpecSelectPlain}}">
+    <text>用户信息授权</text>
+    <view class="codeSec">
+      <text class="inIphoneCodeTXT">手机号:</text>
+      <input class="inIphoneCode" type='number' cursor-spacing='100' value='{{iphoneCode}}' bindinput='setIphoneCode'/>
+      <button class='goinBtn' catchtap="checkIphoneCode" loading="{{loading}}">
+        同意授权
+      </button>
+    </view>
+  </view> -->
+  <!-- 遮罩层  -->
+  <view animation="{{maskLayerAni}}" class='maskLayer' wx:if="{{isShowMaskLayer}}" catchtap='_clickMaskLayer'></view>
+</view>

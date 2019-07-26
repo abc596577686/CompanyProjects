@@ -1,0 +1,9 @@
+{
+  "navigationBarTitleText": "确认订单",
+  "navigationBarBackgroundColor": "#fff",
+  "usingComponents": {
+    "loading": "/components/loading/loading",
+    "toast": "/components/toast/toast",
+    "btn" : "/components/btn/btn"
+  }
+}

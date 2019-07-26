@@ -1,0 +1,9 @@
+<!--pages/after/after.wxml-->
+<view class='container'>
+    <icon type='success' size='75' color='#2EA7E0' class='suss'></icon>
+    <view  class='already'><text>售后申请已提交</text></view>
+    <view  class='hold'><text>您的申请已提交，请耐心等待平台</text></view>
+    <view class='btn'>
+      <navigator hover-class='none' url='/pages/serviceProgress/serviceProgress?itemId={{itemId}}'><button >查看售后详情</button></navigator>
+    </view>
+</view>

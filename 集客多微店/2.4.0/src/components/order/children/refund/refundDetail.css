@@ -1,0 +1,237 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+img{
+    width: 100%;
+    height: 100%;
+    display: block;
+}
+/* 状态栏 */
+.tk_mainStatus{
+    width: 100%;
+    height: 3.626667rem;
+    font-size: 0;
+    background-color: #fff;
+    padding-top: 1.152rem;
+    padding-left: 1.493333rem;
+    /* padding-right: 1.493333rem; */
+}
+.imgdiv{
+    width: 100%;
+    height: .64rem;
+    font-size: 0;
+    /* position: absolute; */
+    /* left: 1.493333rem; */
+}
+.txtdiv{
+    width: 100%;
+    height: .853333rem;
+    margin-top: .213333rem;
+}
+.innerimg{
+    display: inline-block;
+    width: .426667rem;
+    height: .426667rem;
+}
+.long{
+    display: inline-block;
+    width: 5.845333rem;
+    height: .21rem;
+    border-top: .042667rem dashed #FB4A4C;
+}
+.glong{
+    display: inline-block;
+    width: 5.845333rem;
+    height: .21rem;
+    border-top: .042667rem dashed #999999;
+}
+.innerdiv{
+    width: 3rem;
+    text-align: center;
+    font-size: .4rem;
+    line-height: .554667rem;
+    color: #FB4A4C;
+    float: left;
+    margin-top: .213333rem;
+}
+.tk_applyStatus{
+    width: 3rem;
+    height: 3.626667rem;
+    display: inline-block;
+    position: relative;
+}
+.tk_checkStatus{
+    width: 3rem;
+    height: 3.626667rem;
+    display: inline-block;
+    position: relative;
+    left: 3.6rem;
+}
+.tk_overStatus{
+    width: 3rem;
+    height: 3.626667rem;
+    display: inline-block;
+    position: relative;
+    right: -6.954667rem;
+}
+.innerimg1{
+    display: inline-block;
+    width: .426667rem;
+    height: .426667rem;
+}
+.short{
+    display: inline-block;
+    width: 2.730667rem;
+    height: .21rem;
+    border-top: .042667rem dashed #FB4A4C;
+}
+.gshort{
+    display: inline-block;
+    width: 2.730667rem;
+    height: .21rem;
+    border-top: .042667rem dashed #999999;
+}
+.infoTip{
+    width: 100%;
+    /* height: 5.077333rem; */
+    background-color: #fff;
+    border-top: .426667rem solid #DDDDDD;
+    padding-top: 1.109333rem;
+    padding-left: .597333rem;
+    padding-bottom: 1.109333rem;
+}
+.toptip{
+    width: 100%;
+    height: .682667rem;
+    position: relative;
+}
+.toptip img{
+    width: .682667rem;
+    height: .682667rem;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+.toptip span{
+    width: 12.8rem;
+    height: .682667rem;
+    font-size: .6rem;
+    line-height: .682667rem;
+    color: #333333;
+    position: absolute;
+    top: 0;
+    left: 1.066667rem;
+}
+.showtitle{
+    width: 100%;
+    /* height: ; */
+    padding-top: .64rem;
+    position: relative;
+
+}
+.littlesqu{
+    width: .170667rem;
+    height: .170667rem;
+    background-color: #DCDCDC;
+    position: absolute;
+    left: 0;
+    top: 1rem;
+}
+.maintilte{
+    width: 14.122667rem;
+    /* top: .64rem;
+    left: .426667rem; */
+    color: #666666;
+    font-size: .597333rem;
+    position: relative;
+    left: .6rem;
+}
+.product{
+    width: 100%;
+    height: 4.2rem;
+    position: relative;
+    background-color: #fff;
+    border-top: .512rem solid #DDDDDD;
+}
+.product img{
+    width: 2.816rem;
+    height: 2.816rem;
+    position: absolute;
+    top: .426667rem;
+    left: .554667rem;
+}
+.productName{
+    width: 11.434667rem;
+    height: 1.5rem;
+    position: absolute;
+    right: .597333rem;
+    top: .426667rem;
+    color: #333333;
+    font-size: .554667rem;
+    line-height: .7rem;
+    overflow:hidden; 
+    text-overflow:ellipsis;
+    display:-webkit-box; 
+    -webkit-box-orient:vertical;
+    -webkit-line-clamp:2; 
+}
+.quality{
+    width: .554667rem;
+    height: .426667rem;
+    font-size: .426667rem;
+    color: #999999;
+    position: absolute;
+    top: 2.534667rem;
+    right: 1.325333rem;
+}
+.reason{
+    background-color: #FFF;
+    width: 100%;
+    /* height: 6.5rem; */
+    border-top: .426667rem solid  #DDDDDD;
+}
+.reason > div{
+    width: 100%;
+    height: 2.090667rem;
+    color: #333333;
+    font-size: .597333rem;
+}
+
+.lit{
+    display: block;
+    width: 100%;
+    height: .05rem;
+    background-color: #DCDCDC;
+    opacity: .6;
+}
+.title1{
+    width: 2.816rem;
+    /* height: ; */
+    color: #999999;
+    font-size: .597333rem;
+}
+.bottomBtn{
+    width: 100%;
+    height: 1.92rem;
+    background-color: #fff;
+    position: fixed;
+    bottom: 0;
+    /* border-top: .042667rem solid #DCDCDC; */
+}
+.btn1{
+    width: 2.901333rem;
+    height: 1.024rem;
+    position: absolute;
+    top: .469333rem;
+    right: .768rem;
+    border: .042667rem solid #C9C9C9;
+    font-size: .512rem;
+    text-align: center;
+    line-height: 1.024rem;
+    color: #666666;
+}
+.cover{
+    width: 100%;
+    height: 1.92rem;
+}

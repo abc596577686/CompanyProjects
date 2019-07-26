@@ -1,0 +1,19 @@
+<!--components/goodsRowList/goodsRowList.wxml-->
+<!-- <text>components/goodsRowList/goodsRowList.wxml</text> -->
+<view class=''>
+  <scroll-view class="scrollView" scroll-x="true" scroll-with-animation="true">
+    <block wx:for="{{goodsList}}" wx:key="{{index}}">
+      <navigator hover-class='none' class='scroll-view-item' url="{{item.jumpUrl || ''}}">
+        <view class='goodsItem'>
+          <view class='imageWrap'>
+            <image class='goodsImage' mode="widthFix" src="{{item.imageUrl || ''}}"></image>
+            <text class='secKill' wx:if="{{item.isSeckillProduct == 1}}">限时购</text>
+          </view>
+          <text class='goodsText line-02'>{{item.name}}</text>
+          <text class='goodsText price'>¥ {{item.price}}</text>
+        </view>
+      </navigator>
+    </block>
+  </scroll-view>
+</view>
+<!-- <view>{{goodsList}}</view> -->

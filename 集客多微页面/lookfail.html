@@ -1,0 +1,60 @@
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="width=device-width,user-scalable=no,initial-scale=0.33333,minimum-scale=0.33333,maximum-scale=0.33333" />
+    <title>审核失败</title>
+    <link rel="stylesheet" href="css/lookfail.css"/>
+    <script src="./js/wechat.js"></script>
+    <script src="./js/jquery-3.2.1.js"></script>
+    <script>
+        //1.获取像素比
+        var pixelRatio=1/window.devicePixelRatio;
+        // console.log(pixelRatio);
+        //2.通过js动态来设置视口
+        document.write('<meta name="viewport" content="width=device-width,initial-scale='+pixelRatio+',minimum-scale='+pixelRatio*2+',maximum-scale='+pixelRatio+'">');
+        //3.获取html节点
+        var html=document.getElementsByTagName('html')[0];
+        //console.log(html)
+        //4.获取屏幕宽度
+        var pageWidth=html.getBoundingClientRect().width;
+        // console.log(pageWidth);
+        //屏幕宽度/固定数值=基准值;
+        html.style.fontSize=pageWidth/15+'px';
+    </script>
+</head>
+<body>
+    <!-- 页面背景图 -->
+    <header>
+        <img src="./img/vote_end.png">
+    </header>
+    <!-- 报名状态 -->
+    <div class="status">认证失败</div>
+    <div class='tip'></div>
+    <!-- 参与投票按钮 -->
+    <button class="btn_vote">重新上传</button>
+</body>
+<script>
+    //获取URL上参数
+    function getUrlPara(paraName) {
+    	var reg = new RegExp("(^|&)" + paraName + "=([^&]*)(&|$)", "i");
+       	var r = window.location.search.substr(1).match(reg);
+        if (r != null){
+        	return unescape(r[2]);
+        }
+       	return null;    
+    }
+
+    var storeId = getUrlPara('storeId')
+
+    // 页面初载时接口
+    $.post('/clt/index.json?a=v1/entrollCheckInfo',{
+
+    },function(res){
+        $('.tip').html(res.data.reason)
+    })
+    // 重新上传
+    $('.btn_vote').click(function(){
+        window.location.replace ( 'matchregister.html')
+    })
+</script>
+</html>

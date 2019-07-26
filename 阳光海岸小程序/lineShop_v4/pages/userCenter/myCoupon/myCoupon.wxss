@@ -1,0 +1,256 @@
+/* pages/userCenter/myCoupon/myCoupon.wxss */
+page {
+  width: 100%;
+  height: 100%;
+}
+.container {
+  background-color: #f0f0f0;
+  height: 100%;
+  width: 100%;
+  padding-top: 80rpx;
+  
+}
+.tabBar {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  background-color: #fff;
+  height: 78rpx;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
+  z-index: 10
+  
+}
+.box {
+  margin-top: 22rpx;
+}
+.coupon .coupon-item {
+  background-color: #fff;
+  margin-left: 24rpx;
+  margin-right: 28rpx;
+  margin-bottom: 24rpx;
+  /* height: 226rpx; */
+  border-radius: 10rpx;
+  position: relative;
+  overflow: hidden;
+}
+.coupon-item .coupon-top {
+  display: flex;
+  flex-direction: row;
+  height: 164rpx;
+  
+}
+.coupon .coupon-bottom {
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 0 8rpx;
+  font-size: 20rpx;
+  margin: 0 30rpx;
+  align-items: center;
+  height: 62rpx;
+  display: flex;
+}
+.coupon-bottom .seeMore {
+  width: 16rpx;
+  height: 10rpx;
+  display: inline-block;
+}
+.coupon-collpase {
+  display: flex;
+  flex-direction: column;
+  font-size: 20rpx;
+  align-items: flex-start;
+  margin: 0 30rpx;
+  padding: 24rpx 0;
+  padding-right: 32rpx;
+}
+.col-info {
+display: -webkit-box;    
+-webkit-box-orient: vertical;    
+-webkit-line-clamp: 3;    
+overflow: hidden;
+line-height: 1.3;
+}
+.coupon-item::after,.coupon-item::before {
+  position: absolute;
+  content: '';
+  top: 50%;
+  margin-top: -10rpx;
+  width: 20rpx;
+  height: 20rpx;
+  background-color: #f0f0f0;
+  border-radius: 50%;
+}
+.coupon-item::after {
+  left: -10rpx;
+}
+.coupon-item::before {
+  right: -10rpx;
+}
+.coupon-item .coupon-left {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.coupon-left .num {
+  color: #FB4A4C;
+  font-size: 70rpx;
+}
+.coupon-left .log {
+  color: #FB4A4C;
+}
+.coupon-left .info {
+  font-size: 20rpx;
+  margin-top: 18rpx;
+}
+.coupon-item .coupon-right {
+  flex: 3;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  /* align-items: center; */
+   padding-left: 30rpx; 
+
+}
+.coupon-right .categories {
+  display: flex;
+  align-items: center;
+}
+.coupon-right .cate-icon {
+  width: 66rpx;
+  height: 28rpx;
+  display: inline-block; 
+  font-size: 20rpx;
+  text-align: center;
+  line-height: 28rpx;
+  color: #fff;
+  background-color: #FB4A4C;
+  border-radius: 5rpx;
+  margin-right: 10rpx; 
+
+  
+}
+.coupon-right .cate-info {
+  font-size: 24rpx;
+  color: #333;
+}
+.coupon-right .time {
+  width: 100%;
+  margin-top: 34rpx;
+  color: #666;
+  font-size: 22rpx;
+  display: flex;
+  justify-content: space-between;
+}
+.time .btn-use {
+  width: 108rpx;
+  padding: 6rpx 2rpx;
+  border: 2rpx solid #666;
+  text-align: center; 
+  /* line-height: 38rpx; */
+  border-radius: 18rpx;
+  margin-right: 30rpx;
+  color: #333;
+}
+
+.sel-icon {
+  position: absolute;
+  background-color: #FB4A4C;
+  width: 0;
+  height: 0;
+  top: 0;
+  right: 0;
+  border-top: 78rpx solid red;
+  border-left: 78rpx solid #fff;
+}
+.success {
+  position: absolute;
+  content: '';
+  width: 26rpx;
+  height: 18rpx;
+  top: 10rpx;
+  right: 6rpx;
+  color: #fff;
+}
+
+.unUse .coupon-item {
+  background-color: #e1e1e1;
+}
+.unUse .num,.unUse .log {
+  color: #333;
+}
+.unUse .coupon-right .cate-icon {
+  background-color: #666;
+}
+.unUse .sel-icon {
+  display: none;
+}
+.active {
+  color : #FB4A4C;
+}
+.noUse {
+  width: 546rpx;
+  height: 80rpx;
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  margin-left: -273rpx; 
+  margin-bottom: 50rpx;
+  text-align: center;
+  line-height: 80rpx;
+  border: 1px solid #FB4A4C; 
+  color: #FB4A4C;
+  border-radius: 16rpx;
+}
+.tab-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: 28rpx;
+  justify-content: center;
+  position: relative;
+  height: 100%;
+}
+.tab-item .line {
+  width: 80rpx;
+  height: 0;
+  border: 2rpx solid #FB4A4C;
+  margin-top: 16rpx;
+  position: absolute;
+  bottom: 0;
+}
+.empty {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+ 
+}
+.toastBox {
+  display: flex;
+  flex-direction: column;
+  width: 400rpx;
+  align-items: center;
+  justify-content: center;
+  /* margin-top: -50rpx; */
+ 
+
+}
+.toastImg {
+  width: 160rpx;
+  /* height: 100rpx; */
+  margin-bottom: 30rpx;
+}
+.toastInfo {
+   color: #999;
+   font-size: 26rpx; 
+}
+
+
+

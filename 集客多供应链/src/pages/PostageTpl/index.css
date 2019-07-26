@@ -1,0 +1,86 @@
+.okl .ant-table-tbody > tr > td {
+  width: 1px !important;
+}
+th {
+  width: 50px;
+}
+.goods-page {
+  font-size: 12px;
+}
+.goods-page .top-other-btn .ant-btn {
+  margin-right: 10px;
+}
+.goods-page .bottom-other-btn {
+  margin-top: 10px;
+}
+.goods-page .bottom-other-btn .ant-btn {
+  margin-right: 10px;
+}
+.goodsSpec {
+  margin-bottom: 15px;
+}
+.goodsSpec .ant-card-body {
+  padding: 15px;
+}
+.goodsSpec .innerBox {
+  padding-top: 15px;
+  margin-top: 15px;
+  border-top: 1px solid #d9d9d9;
+}
+.goodsSpec .autoCompleteInput {
+  float: left;
+}
+.goodsSpec .autoCompleteInput .autoComplete {
+  float: left;
+  margin-right: 10px;
+  margin-bottom: 10px;
+}
+.goodsSpec .btnAddSpec {
+  float: left;
+}
+.goodsSpecItem .ant-card-body {
+  padding: 10px;
+}
+.goodsSpecItem .ant-form-item {
+  margin-bottom: 10px !important;
+}
+.goodsSpecBtnGroup button {
+  margin-right: 10px;
+}
+.goods-edit-title-inner {
+  background-color: #f8f8f8;
+  font-size: 14px;
+  font-weight: 700;
+  padding: 10px;
+  margin: 20px 0;
+}
+.deleteBtn {
+  float: left;
+}
+.addSpecImgBtn {
+  margin: 10px 0 0 10px;
+}
+.deleteSpecBtn {
+  margin: 4px 0 0 10px;
+}
+.avatar-uploader .ant-upload {
+  width: 80px;
+  height: 80px;
+}
+.avatar-uploader .ant-upload img {
+  width: 100%;
+}
+.postlist a {
+  display: block;
+  margin-bottom: 3px;
+}
+.grolinlist a {
+  display: block;
+  margin-bottom: 3px;
+}
+.postageTplTable th {
+  text-align: center!important;
+}
+.postageTplTable tr {
+  text-align: center;
+}

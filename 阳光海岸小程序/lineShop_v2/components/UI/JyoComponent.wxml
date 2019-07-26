@@ -1,0 +1,48 @@
+<!-- 排列滚动视图组件 -->
+<template name="Jyo-SortListView">
+  <view class="{{_theme}}">
+    <scroll-view id="{{_id}}" class="Jyo-SortListView" wx:if="{{_isVisible}}" data-id="{{_id}}" scroll-y="true" 
+    scroll-with-animation="true" enable-back-to-top="true" scroll-into-view="{{toFast}}" bindscroll="{{_scrollLog}}"
+    scroll-top="{{scrollTop}}" upper-threshold="50" bindscrolltoupper="refresh"  >
+      <view class="hotTit">
+          热门品牌  
+      </view>
+      <view class="leftCoverV"></view>
+      <view class="rightCoverV"></view>
+      <!-- 热门品牌数据 -->
+      <view class="hotProList">
+          <block wx:for="{{hotlist}}">
+              <view class="hotProduct" data-brandId="{{item.brandId}}" catchtap="{{_onSelect1}}" data-brand='{{item.brandName}}'>  
+                  <image src="{{item.brandPic}}" mode="widthFix"></image>
+                  <view class="hotli">{{item.brandName}}</view>
+              </view>
+          </block>
+      </view>
+      <!-- 锚点导航 -->
+      <block wx:for="{{list}}">
+        <view class="{{item.ict===1?'Jyo-SortListViewClassificationTitle':'Jyo-SortListViewItem'}} {{item.hb===1?'Jyo-SortListViewHasBorder':''}}" 
+        id="{{item.id}}" data-title="{{item.title}}" data-brandId="{{item.brandId}}" data-desc="{{item.desc}}" data-other="{{item.other}}" data-brand='{{item.brandName}}'
+        data-url="{{item.url}}" catchtap="{{_onSelect}}" data-canClick="{{item.cc}}">
+          <image class="brandpicimg" src="{{item.url}}" wx:if="{{item.ict!=1}}" mode="widthFix"></image>
+          <!-- <view class="brandTxt"> -->
+            {{item.title}}
+          <!-- </view> -->
+          <!-- <view wx:if="{{item.desc}}" class="Jyo-SortListViewDesc">{{item.desc}}</view> -->
+        </view>
+      </block>
+      <!-- 回到顶部 -->
+      <!-- <view class="goTop" bindtap="{{_gotop}}" wx:if="{{isShow == 1}}">
+          <image class="goTopImg" src="../../assets/images/gotop.png"></image>
+          <view class="goTopTxt">顶部</view>
+      </view> -->
+      <!-- <view class="Jyo-SortListViewFooterText" wx:if="{{_footerText}}">{{_footerText}}</view> -->
+      <view class="coverddiv"></view>
+    </scroll-view>
+    <view class="Jyo-SortListView-FastBar" wx:if="{{_isVisible}}">
+      <view class="Jyo-SortListView-FastBarFrame">
+        <view wx:for="{{fastList}}" wx:key="*this" data-value="{{item}}" catchtouchstart="{{_onFast}}">{{item}}</view>
+      </view>
+    </view>
+  </view>
+</template>
+

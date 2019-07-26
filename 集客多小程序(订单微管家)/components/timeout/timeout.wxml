@@ -1,0 +1,9 @@
+<!--components/timeout/timeout.wxml-->
+
+<view class='timeout'>
+  <view class='imgWrap'>
+    <image mode='widthFix' src='/assets/images/icon_networdError.png'></image>
+  </view>
+  <view class='text'>网络异常，请重新尝试</view>
+  <view class='refresh' catchtap='refreshEnv'>重新加载</view>
+</view>

@@ -1,0 +1,53 @@
+.applyIntoWrap{
+	text-align: center;
+	width: 100%;
+	padding: 0.43rem;
+}
+.applyInto{
+	display: inline-block;
+	width: 100%;
+	font-size: 16px;
+	color: #fff;
+	background: #008EE5;
+	border-radius: 5px;
+	padding: 0.68rem 0;
+}
+.tltle{
+	text-align: center;
+	font-size: 0.77rem;
+	color: #008EE5;
+	margin: 1.57rem 0;
+}
+.applyIntoWrap{
+	margin-top: 0.85rem;
+}
+.subTitle{
+	font-size: 0.68rem;
+	color: #333;
+	text-align: center;
+	margin-bottom: 2rem;
+}
+.item{
+	display: flex;
+	width: 100%;
+	padding: 0 0.85rem;
+	margin-bottom: 0.43rem;
+}
+.item .imgWrap{
+	flex: 0 0 6.53rem;
+}
+.item .imgWrap img{
+	width: 100%;
+}
+.item .textWrap{
+	flex: 1;
+}
+.item .textWrap .text{
+	font-size: 0.68rem;
+	color: #333;
+	line-height: 1.8;
+}
+.item .tips{
+	color: #008EE5;
+	font-size: 0.68rem;
+}

@@ -1,0 +1,12 @@
+{
+  "navigationBarTitleText": "我的订单",
+  "navigationBarBackgroundColor": "#fff",
+  "usingComponents": {
+    "loading": "/components/loading/loading",
+    "timeout": "/components/timeout/timeout",
+    "noMore": "/components/noMore/noMore",
+    "UserElipse" :"/components/UserElipse/UserElipse"
+  },
+  "enablePullDownRefresh": true,
+  "backgroundTextStyle": "dark"
+}

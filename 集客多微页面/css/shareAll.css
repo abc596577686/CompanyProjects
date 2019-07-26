@@ -1,0 +1,84 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+img{
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+.cl1{
+    width: 100%;
+    /* height: ; */
+    position: relative;
+    padding-left: .76rem;
+    padding-right: .76rem;
+    padding-top: .92rem;
+    padding-bottom: .92rem;
+    background-color: #fff;
+    border-bottom: .04rem solid #f0f0f0;
+}
+.climg{
+    border-radius: 50%;
+    overflow: hidden;
+    width: 1.4rem;
+    height: 1.4rem;
+}
+.name{
+    width: 8rem;
+    height: .56rem;
+    color: #333333;
+    line-height: .56rem;
+    font-weight: bold;
+    font-size: .56rem;
+    position: absolute;
+    left: 2.64rem;
+    top: .92rem;
+}
+.txt{
+    width: 11.36rem;
+    /* text-indent: 2em; */
+    font-size: .56rem;
+    color: #333333;
+    margin-left: 1.84rem;
+}
+.btn{
+    width: 100%;
+    height: 2.4rem;
+    background-color: #fff;
+    position: fixed;
+    bottom: 0;
+}
+.bottomCover{
+    width: 100%;
+    height: 2.4rem;
+    background-color: #fff;
+}
+.goBtn{
+    width: 13.72rem;
+    height: 1.56rem;
+    background-color: #FB4A4C;
+    border: none;
+    color: #fff;
+    font-weight: bold;
+    border-radius: .2rem;
+    margin-top: .4rem;
+    font-size: .6rem;
+}
+.goBtn2{
+    width: 13.72rem;
+    height: 1.56rem;
+    background-color: #FB4A4C;
+    border: none;
+    color: #fff;
+    font-weight: bold;
+    border-radius: .2rem;
+    margin-top: .4rem;
+    margin-left: .6rem;
+    font-size: .6rem;
+}
+.bottomCover{
+    width: 100%;
+    height: 2.4rem;
+    background-color: #fff;
+}

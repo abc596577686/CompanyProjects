@@ -1,0 +1,109 @@
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <!--压缩比方案  -->
+    <!-- <script>!function(e){function t(a){if(i[a])return i[a].exports;var n=i[a]={exports:{},id:a,loaded:!1};return e[a].call(n.exports,n,n.exports,t),n.loaded=!0,n.exports}var i={};return t.m=e,t.c=i,t.p="",t(0)}([function(e,t){"use strict";Object.defineProperty(t,"__esModule",{value:!0});var i=window;t["default"]=i.flex=function(e,t){var a=e||100,n=t||1,r=i.document,o=navigator.userAgent,d=o.match(/Android[\S\s]+AppleWebkit\/(\d{3})/i),l=o.match(/U3\/((\d+|\.){5,})/i),c=l&&parseInt(l[1].split(".").join(""),10)>=80,p=navigator.appVersion.match(/(iphone|ipad|ipod)/gi),s=i.devicePixelRatio||1;p||d&&d[1]>534||c||(s=1);var u=1/s,m=r.querySelector('meta[name="viewport"]');m||(m=r.createElement("meta"),m.setAttribute("name","viewport"),r.head.appendChild(m)),m.setAttribute("content","width=device-width,user-scalable=no,initial-scale="+u+",maximum-scale="+u+",minimum-scale="+u),r.documentElement.style.fontSize=a/2*s*n+"px"},e.exports=t["default"]}]);  flex(100, 1);</script> -->
+    <meta name="viewport" content="width=device-width,user-scalable=no,initial-scale=0.33333,minimum-scale=0.33333,maximum-scale=0.33333" />
+    <title>投票结束</title>
+    <script src="./js/wechat.js"></script>
+    <script src="./js/jquery-2.1.0.js"></script>
+    <link rel="stylesheet" href="css/match.css">
+    <script>
+        //1.获取像素比
+        var pixelRatio=1/window.devicePixelRatio;
+        // console.log(pixelRatio);
+        //2.通过js动态来设置视口
+        document.write('<meta name="viewport" content="width=device-width,initial-scale='+pixelRatio+',minimum-scale='+pixelRatio*2+',maximum-scale='+pixelRatio+'">');
+        //3.获取html节点
+        var html=document.getElementsByTagName('html')[0];
+        //console.log(html)
+        //4.获取屏幕宽度
+        var pageWidth=html.getBoundingClientRect().width;
+        // console.log(pageWidth);
+        //屏幕宽度/固定数值=基准值;
+        html.style.fontSize=pageWidth/15+'px';
+</script>
+</head>
+<body>
+    <div class="main">
+        <img src="img/z5@2x.png" alt="">
+    </div>
+    <div class="name">
+
+    </div>
+    <div class="lookReult" onclick="goLook()">
+        <img src="img/yjjx.png" alt="">
+    </div>
+    <!--投票优胜奖品  -->
+    <div class="coverimg1">
+         <img class="img1" src="img/ysimg.png" alt="load error"> 
+    </div>
+    <!--投票参与奖品  -->
+     <div class="coverimg2">
+        <img class="img2" src="img/cyimg.png" alt="load error">
+    </div> 
+    <!--查看结果  -->
+    <script>
+        var status = null  //比赛状态
+        // 抓取参数
+        var activityId = getUrlPara("activityId");
+        // 参赛人名字
+        $.post("/clt/index.json?a=v1/activityInfo", {
+            isH5Test : true,
+            activityId : activityId,
+        },function(data){
+            // 串联数据
+            if(data.data.length != 0 ){
+                $(".name").html(data.data.votePlayerName)
+                status = data.data.status
+                //  投票优胜奖品
+                // $(".img1").attr('src',data.data.winImage)
+                //  投票参与奖品
+                // $(".img2").attr('src',data.data.lostLmage)
+            }else{
+                alert('数据获取失败 请检查网络并重试')
+            }
+        }, "json");
+        // 查看比赛结果
+        function goLook(){
+            $.post("/clt/index.json?a=v1/activityInfo", {
+                isH5Test : true,
+                activityId : activityId,
+            },function(data){
+                // 获取状态
+                if(data.data.length != 0 ){
+                    status = data.data.status
+                    if(status == 1){
+                        alert('投票还在进行中 稍候片刻哦')
+                    }else if(status == 2){
+                        alert('比赛还在进行中 稍候片刻哦')
+                    }else if(status == 3){
+                        window.location.href = 'results.html?' + 'activityId=' + activityId
+                    }
+                }else{ 
+                    alert('数据获取失败 请检查网络并重试')
+                }
+            }, "json");
+        }
+        //获取URL上参数
+        function getUrlPara(paraName) {
+                var reg = new RegExp("(^|&)" + paraName + "=([^&]*)(&|$)", "i");
+                var r = window.location.search.substr(1).match(reg);
+                if (r != null) return unescape(r[2]);
+                return null;    
+        }
+    </script>
+    <!--去除弹窗默认样式  -->
+    <script>
+        window.alert = function(name){
+            var iframe = document.createElement("IFRAME");
+            iframe.style.display="none";
+            iframe.setAttribute("src", 'data:text/plain,');
+            document.documentElement.appendChild(iframe);
+            window.frames[0].window.alert(name);
+            iframe.parentNode.removeChild(iframe);
+        }
+    </script>
+    <script src="/js/jquery-2.1.4.min.js" type="text/javascript"></script>
+</body>
+</html>

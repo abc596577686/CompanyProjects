@@ -1,0 +1,13 @@
+{
+  "navigationBarTitleText": "",
+  "navigationBarBackgroundColor": "#fff",
+  "usingComponents": {
+    "banner": "/components/bannerProductDetail/bannerProductDetail",
+    "goodsRowList": "/components/goodsRowList/goodsRowList",
+    "areaPicker": "/components/areaPicker/areaPicker",
+    "toast": "/components/toast/toast",
+    "loading": "/components/loading/loading",
+    "timeout": "/components/timeout/timeout",
+    "poster": "/components/wxa-plugin-canvas-master/miniprogram_dist/poster/index"
+  }
+}

@@ -1,0 +1,213 @@
+.toptit{
+	width: 100%;
+	height: 1.877333rem;
+	position: relative;
+	padding-top: .64rem;
+	padding-left: .554667rem;
+	background-color: #fff;
+}
+.top_t{
+	width: .469333rem;
+	height: .853333rem;
+	position: absolute;
+}
+.top_o{
+	width:3.84rem;
+	height: .853333rem;
+	line-height: .682667rem;
+	position: absolute;
+	left: 6.314667rem;
+	top: .810667rem;
+	font-size: .682667rem;
+	color: #333333;
+}
+.sure{
+	width: 1.493333rem;
+	height: .853333rem;
+	line-height: .682667rem;
+	font-size: .682667rem;
+	color: #333333;
+	position: absolute;
+	left: 14.122667rem;
+	top: .853333rem;
+}
+.gte{
+	display: block;
+	width: 100%;
+	height:.085333rem;
+	background-color: #f0f0f0;
+}
+.gte1{
+	display: block;
+	width: 100%;
+	height:.04rem;
+	background-color: #f0f0f0;
+}
+.peoInfo{
+	width: 100%;
+	position: relative;
+	background-color: #fff;
+}
+.peoName{
+	width: 2.133333rem;
+	height: .853333rem;
+	font-size: .597333rem;
+	color: #333333;
+	position: absolute;
+	left: 1.749333rem;
+	top: .725333rem;
+}
+.peoClass{
+	width: 2.133333rem;
+	height: .853333rem;
+	font-size: .597333rem;
+	color: #333333;
+	position: absolute;
+	left: 1.749333rem;
+	top: 1.749333rem;
+}
+.name{
+	width: 100%;
+	height: 2.133333rem;
+	position: relative;
+}
+.nametit{
+	display: block;
+	width: 1.706667rem;
+	height: .853333rem;
+	line-height: .853333rem;
+	position: absolute;
+	left: .597333rem;
+	top: .75rem;
+	font-size: .682667rem;
+	color: #333333;
+}
+.namein{
+	display: block;
+	width: 8.533333rem;
+	height: .853333rem;
+	line-height: .682667rem;
+	position: absolute;
+	left: 4.266667rem;
+	top: .725333rem;
+	font-size: .682667rem;
+	color: #333333;
+}
+.phone{
+	width: 100%;
+	height: 2.133333rem;
+	position: relative;
+}
+.phonetit{
+	display: block;
+	width: 2.56rem;
+	height: .853333rem;
+	line-height: .853333rem;
+	position: absolute;
+	left: .597333rem;
+	top: .75rem;
+	font-size: .682667rem;
+	color: #333333;
+}
+.phonein{
+	display: block;
+	width: 8.533333rem;
+	height: .853333rem;
+	line-height: .682667rem;
+	position: absolute;
+	left: 4.266667rem;
+	top: .725333rem;
+	font-size: .682667rem;
+	color: #333333;
+}
+.email{
+	width: 100%;
+	height: 2.133333rem;
+	position: relative;
+}
+.emailtit{
+	display: block;
+	// width: 2.56rem;
+	height: .853333rem;
+	line-height: .853333rem;
+	position: absolute;
+	left: .597333rem;
+	top: .75rem;
+	font-size: .682667rem;
+	color: #333333;
+}
+.emailin{
+	display: block;
+	width: 11.533333rem;
+	height: .853333rem;
+	line-height: .682667rem;
+	position: absolute;
+	left: 4.266667rem;
+	top: .725333rem;
+	font-size: .682667rem;
+	color: #333333;
+}
+.pack{
+	width: 100%;
+	height: 2.133333rem;
+	position: relative;
+}
+.packtit{
+	display: block;
+	width: 3.413333rem;
+	height: .853333rem;
+	line-height: .853333rem;
+	position: absolute;
+	left: .597333rem;
+	top: .75rem;
+	font-size: .682667rem;
+	color: #333333;
+}
+.packin{
+	display: block;
+	width: 8.533333rem;
+	height: .853333rem;
+	line-height: .853333rem;
+	position: absolute;
+	left: 4.266667rem;
+	top: .725333rem;
+	font-size: .682667rem;
+	color: #333333;
+}
+.packimg{
+	width: .341333rem;
+	height: .597333rem;
+	position: absolute;
+	left: 15.146667rem;
+	top: .597333rem;
+}
+.packnum{
+	width: 100%;
+	height: 2.133333rem;
+	position: relative;
+}
+.packnumtit{
+	display: block;
+	width: 3.413333rem;
+	height: .853333rem;
+	line-height: .853333rem;
+	position: absolute;
+	left: .597333rem;
+	top: .75rem;
+	font-size: .682667rem;
+	color: #333333;
+}
+.packnumin{
+	display: block;
+	width: 8.533333rem;
+	height: .853333rem;
+	line-height: .682667rem;
+	position: absolute;
+	left: 4.266667rem;
+	top: .71rem;
+	font-size: .682667rem;
+	color: #333333;
+}
+.item{
+	border-bottom: .5px solid #f5f5f5;
+}

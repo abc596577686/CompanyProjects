@@ -1,0 +1,8 @@
+{
+  "navigationBarTitleText": "选择套餐商品属性",
+  "navigationBarBackgroundColor": "#fff",
+  "usingComponents": {
+    "toast": "/components/toast/toast",
+    "loading": "/components/loading/loading"
+  }
+}

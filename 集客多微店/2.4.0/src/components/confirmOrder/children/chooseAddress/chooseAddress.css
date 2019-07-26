@@ -1,0 +1,131 @@
+.rating_page {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #f5f5f5;
+    z-index: 10;
+}
+
+.scroll_container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    overflow-y: auto;
+}
+
+.list_cotainer {
+    padding-bottom: 5rem;
+}
+
+.add_icon_footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 2.5rem;
+    background-color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 204;
+    
+}
+.add_icon_footerspan {
+    /*@include sc(.7rem, $blue);*/
+    font-size: .7rem;
+    color: #fe5000;
+    margin-left: .3rem;
+}
+
+.my_address_info_box {
+    border-bottom: 1px solid #eee;
+    font-size: 14px;
+    padding: 14px 0 14px 20px;
+    background: #fff;
+    overflow: hidden;
+    position: relative;
+}
+
+.address_content {
+    width: 85%;
+    overflow: hidden;
+}
+
+.address_list_name {
+    float: left;
+    width: 23%;
+    color: #666;
+    font-size: 14px;
+}
+
+.address_list_tel {
+    float: left;
+    width: 75%;
+    color: #666;
+    font-size: 14px;
+}
+
+.clear_content {
+    clear: both;
+    width: 100%;
+}
+
+.address_default_div {
+    float: left;
+    width: 23%;
+}
+
+.address_default_div button {
+    width: 31px;
+    height: 17px;
+    line-height: 13px;
+    background: #fff;
+    border-radius: 3px;
+    color: #fe5000;
+    font-size: 12px;
+    margin-top: 5px;
+    border: 1px solid #fe5000;
+}
+
+.address_details {
+    float: left;
+    width: 72%;
+    font-size: 13px;
+    color: #999;
+    word-wrap: break-word;
+    margin-top: 5px;
+}
+
+.address_edit_icon {
+    position: absolute;
+    float: right;
+    right: 0;
+    top: 0;
+    width: 15%;
+    height: 100%;
+}
+
+.router-slid-enter-active,
+.router-slid-leave-active {
+    transition: all .4s;
+}
+
+.router-slid-enter,
+.router-slid-leave-active {
+    transform: translate3d(2rem, 0, 0);
+    opacity: 0;
+}
+
+/*//  .router-fade-enter-active,
+//  .router-fade-leave-active {
+//      transition: all .4s;
+//  }
+//  .router-fade-enter,
+//  .router-fade-leave-active {
+//      transform: translate3d(2rem, 0, 0);
+//      opacity: 0;
+//  }*/

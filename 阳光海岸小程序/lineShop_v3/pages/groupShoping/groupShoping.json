@@ -1,0 +1,10 @@
+{
+  "usingComponents" : {
+    "btn" : "/components/btn/btn",
+    "groupUser":"/components/groupUser/groupUser",
+    "loading": "/components/loading/loading",
+    "goodsTwoColumns": "/components/goodsTwoColumns/goodsTwoColumns",
+    "noMore": "/components/noMore/noMore",
+    "UserElipse":"/components/UserElipse/UserElipse"
+  }
+}

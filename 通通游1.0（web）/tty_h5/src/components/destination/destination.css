@@ -1,0 +1,149 @@
+.toptit{
+    width: 100%;
+    height: 2.005333rem;
+    background-color: #3677ff;
+    font-size: .682667rem;
+    color: #ffffff;
+    text-align: center;
+    line-height: 2.005333rem;
+    position: relative;
+}
+.topim1{
+    display: block;
+    width: .426667rem;
+    height: .768rem;
+    position: absolute;
+    left: .512rem;
+    top: .597333rem;
+}
+.topim2{
+    display: block;
+    width: .768rem;
+    height: .768rem;
+    position: absolute;
+    left: 14.72rem;
+    top: .597333rem;
+}
+.maintxt{   
+    width: 100%;
+    // height: 14.933333rem;
+    font-size: 0;
+    display: flex;
+}
+.maintxt > div{
+    display: inline-block;
+}
+.mainPick{
+    flex: 0 0 4.053333rem;
+    // width: 4.053333rem;
+    height: 14.933333rem;
+    background-color: #fff;
+}
+.mainPick > div{
+    float: left;
+    width: 4.053333rem;
+    height: 2.133333rem;
+    font-size: .597333rem;
+    color: #333333;
+    text-align: center;
+    line-height: 2.133333rem;
+    border-bottom: 0.04rem solid #f5f5f5;
+}
+.mainShow{
+    flex: 1;
+    // width: 11.136rem;
+    // height: 14.933333rem;
+    margin-left: .384rem !important;
+    font-size: .426667rem;
+    padding: 0.43rem;
+    padding-left: 0;
+    overflow: hidden;
+}
+.active{
+    background-color: #f5f5f5;
+    color: #008ee5;
+}
+
+.allLine{
+    width: 100%; 
+}
+.allLine .imgWrap{
+    height: 4.78rem;
+    width: 100%;
+    overflow: hidden;
+    text-align: center;
+    position: relative;
+}
+.allLine img,
+.hotList .item img{
+    height: 100%;
+    display: inline-block;
+}
+.allLine .text,
+.hotList .item .text{
+    position: absolute;
+    bottom: 0.43rem;
+    left: 0.43rem;
+    right: 0.43rem;
+    color: #fff;
+    font-size: 14px;
+    text-align: left;
+}
+.allLine .text .name{
+    text-align: left;
+}
+.allLine .text .bottom{
+    overflow: hidden;
+}
+.allLine .text .bottom .left{
+    float: left;
+}
+.allLine .text .bottom .right{
+    float: right;
+}
+
+.h4{
+    font-size: 12px;
+    color: #999;
+    margin: 0.51rem 0;
+}
+.hotList{
+    overflow: hidden;
+    margin-right: -0.43rem;
+}
+.hotList .item{
+    width: 5.38rem;
+    height: 3.67rem;
+    float: left;
+    margin-right: 0.34rem;
+    margin-bottom: 0.34rem;
+    text-align: center;
+    overflow: hidden;
+    position: relative;
+}
+.hotList .item .text{
+    font-size: 13px;
+}
+.hotList .item .text .subTitle{
+    font-size: 0.51rem;
+    margin-top: 0.21rem;
+}
+
+.countryList{
+    width: 100%;
+    overflow: hidden;
+}
+.countryList .item{
+    float: left;
+    width: 3.6rem;
+    padding: 0.6rem 0;
+    text-align: center;
+    background: #fff;
+    font-size: 13px;
+    margin: 0.04rem 0 0 0.04rem;
+    transition: background .3s;
+}
+.countryList .item.active{
+    background: #3677FF;
+    color: #fff;
+}

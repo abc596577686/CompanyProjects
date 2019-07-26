@@ -1,0 +1,11 @@
+.menu-page .btn {
+  padding: 2px;
+  border: 1px solid #1890ff;
+  border-radius: 2px;
+  margin-right: 5px;
+}
+.backgrounds {
+  background-color: #fff!important;
+  padding: 27px;
+  padding-left: 30px;
+}

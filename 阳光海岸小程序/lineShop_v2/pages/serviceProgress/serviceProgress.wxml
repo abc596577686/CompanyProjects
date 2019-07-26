@@ -1,0 +1,144 @@
+<!--pages/refund/refund.wxml-->
+<loading wx:if='{{isLoading}}'></loading>
+<view class='container'>
+  <view class='header'>
+    <block wx:for='{{headerList[dataList.status]}}' wx:key='{{index}}'>
+      <view class=' status-item {{index-1>dataList.statusInfo.statusStep?"status-no":" status-yes "}}'>
+        <!--退货圆 -->
+        <view wx:if='{{dataList.status==1}}' class='refundCir'>
+          <block wx:if='{{dataList.statusInfo.statusStep!=4}}'>
+            <view class='{{index-1>dataList.statusInfo.statusStep?"circle no":"circle"}}' wx:if='{{dataList.statusInfo.statusStep==4&&index==4||dataList.statusInfo.statusStep==3&&index==4?false:true}}'></view>
+            <icon type='success' class='base-cir' size='15' color='#FB4A4C' wx:if='{{dataList.statusInfo.statusStep==3&&index==4}}'></icon>
+          </block>
+          <block wx:if='{{dataList.statusInfo.statusStep==4}}'>
+            <view class='{{index==0||index-1>dataList.statusInfo.statusStep?"circle":"circle no"}}' wx:if='{{dataList.statusInfo.statusStep==4&&index==4||dataList.statusInfo.statusStep==3&&index==4?false:true}}'></view>
+            <icon type='clear' class='base-cir base-cirno' wx:if='{{index==4}}' size='15' color='#FB4A4C'></icon>
+            <icon type='success' class='base-cir' size='15' color='#FB4A4C' wx:if='{{dataList.statusInfo.statusStep==3&&index==4}}'></icon>
+          </block>
+        </view>
+        <!--退款圆  -->
+        <view wx:if='{{dataList.status==0}}' class='refundCir'>
+          <block wx:if='{{dataList.statusInfo.statusStep!=2}}'>
+            <view class='{{index-1>dataList.statusInfo.statusStep?"circler no":"circler"}}' wx:if='{{dataList.statusInfo.statusStep==1&&index==2||dataList.statusInfo.statusStep==2&&index==2?false:true}}'></view>
+            <icon type='clear' class='base-cir base-circle' wx:if='{{dataList.statusInfo.statusStep==2&&index==2}}' size='15' color='#FB4A4C'></icon>
+            <icon type='success' class='base-cir base-circle' size='15' color='#FB4A4C' wx:if='{{dataList.statusInfo.statusStep==1&&index==2}}'></icon>
+          </block>
+          <block wx:if='{{dataList.statusInfo.statusStep==2}}'>
+            <view class='{{index==0||index-1>dataList.statusInfo.statusStep?"circler":"circler no"}}' wx:if='{{dataList.statusInfo.statusStep==1&&index==2||dataList.statusInfo.statusStep==2&&index==2?false:true}}'></view>
+            <icon type='clear' class='base-cir base-circle base-circleno' wx:if='{{index==2}}' size='15' color='#FB4A4C'></icon>
+            <icon type='success' class='base-cir base-circle' size='15' color='#FB4A4C' wx:if='{{dataList.statusInfo.statusStep==1&&index==2}}'></icon>
+          </block>
+        </view>
+        
+        <!-- <view wx:if='{{dataList.status==2}}' class='refundCir'>
+          <block wx:if='{{dataList.statusInfo.statusStep!=2}}'>
+            <view class='{{index-1>dataList.statusInfo.statusStep?"circler no":"circler"}}' wx:if='{{dataList.statusInfo.statusStep==1&&index==2||dataList.statusInfo.statusStep==2&&index==2?false:true}}'></view>
+            <icon type='clear' class='base-cir base-circle' wx:if='{{dataList.statusInfo.statusStep==2&&index==2}}' size='15' color='#FB4A4C'></icon>
+            <icon type='success' class='base-cir base-circle' size='15' color='#FB4A4C' wx:if='{{dataList.statusInfo.statusStep==1&&index==2}}'></icon>
+          </block>
+          <block wx:if='{{dataList.statusInfo.statusStep==2}}'>
+            <view class='{{index==0||index-1>dataList.statusInfo.statusStep?"circler":"circler no"}}' wx:if='{{dataList.statusInfo.statusStep==1&&index==2||dataList.statusInfo.statusStep==2&&index==2?false:true}}'></view>
+            <icon type='clear' class='base-cir base-circle base-circleno' wx:if='{{index==2}}' size='15' color='#FB4A4C'></icon>
+            <icon type='success' class='base-cir base-circle' size='15' color='#FB4A4C' wx:if='{{dataList.statusInfo.statusStep==1&&index==2}}'></icon>
+          </block>
+        </view> -->
+        <!--文字狀態  -->
+
+        <block wx:if='{{dataList.statusInfo.statusStep==4}}'>
+          <text style='color:{{index!=0&&index!=4?"#999":"#FB4A4C"}}'>{{index==4?"售后关闭":item}}</text>
+        </block>
+        <block wx:elif='{{dataList.status==0&&dataList.statusInfo.statusStep==2}}'>
+          <text style='color:{{index==1?"#999":"#FB4A4C"}}'>{{index==2?"售后关闭":item}}</text>
+        </block>
+        <!-- <block wx:elif='{{dataList.status==2&&dataList.statusInfo.statusStep==2}}'>
+          <text style='color:{{index==1?"#999":"#FB4A4C"}}'>{{index==2?"售后关闭":item}}</text>
+        </block> -->
+        <block wx:else>
+          <text>{{item}}</text>
+        </block>
+      </view>
+    </block>
+  </view>
+  <view class='statusStep'>
+    <view class='statusHead'>
+      <block wx:if='{{dataList.status==1}}'>
+        <text class='clock' wx:if='{{dataList.statusInfo.statusStep<3}}'></text>
+        <icon class='base' type='cancel' color="#ccc" size='16' wx:if='{{dataList.statusInfo.statusStep==4}}'></icon>
+        <icon class='complete base' size='16' type='success_circle' color="rgb(162, 229, 255)" wx:if='{{dataList.statusInfo.statusStep==3}}'></icon>
+      </block>
+      <block wx:if='{{dataList.status==0}}'>
+        <text class='clock' wx:if='{{dataList.statusInfo.statusStep==0}}'></text>
+        <icon class='base' type='cancel' size='16' color='#ccc' wx:if='{{dataList.statusInfo.statusStep==2}}'></icon>
+        <icon class='complete base' size='16' type='success_circle' color='#61D2FE' wx:if='{{dataList.statusInfo.statusStep==1}}'></icon>
+      </block>
+      
+      <!-- <text class='one'>{{dataList.statusInfo.promptHeader}}</text>  -->
+      <text class='one' wx:if="{{refundStatusInfo.title}}">{{refundStatusInfo.title}}</text>
+    </view>
+    <view class='statusInfo' wx:if="{{refundStatusInfo.content}}">
+      <view class='box'>
+        <text class='dot'></text>
+      </view>
+      <!-- <text class='two'>{{dataList.statusInfo.promptMes}}</text> -->
+      <text class='two'>{{refundStatusInfo.content}}</text>
+    </view>
+    <view class='statusTime' wx:if="{{refundStatusInfo.refundTimeTitle}}">
+      <view class='box'>
+        <text class='dot'></text>
+      </view>
+      <!-- <text class='time'>售后时间：{{dataList.statusInfo.promptime}}</text> -->
+      <text class='time'>{{refundStatusInfo.refundTimeTitle}}</text>
+    </view>
+    <view class='copyWrap' wx:if="{{dataList.statusInfo.statusStep == 1 && dataList.status == 1}}">
+      <text class='reBtn' bindtap='copyTextEnv'>复制</text>
+    </view>
+  </view>
+  <view class='goodInfo'>
+    <view class='imgBox'>
+      <image src='{{goodsInfo.image}}' mode='widthFix'></image>
+    </view>
+    <view>
+      <view class='goodName'>
+        <text>{{goodsInfo.productName || '无'}}</text>
+      </view>
+      <view class='goodNum'>
+        <text>x {{goodsInfo.refundCount || 1}}</text>
+      </view>
+    </view>
+  </view>
+
+  <view class='refund-item'>
+    <view class='item border-b'>
+      <text class='name'>退款原因：</text>
+      <text class='mes'>{{refundInfo.refundReason || '无'}}</text>
+    </view>
+    <view class='item border-b'>
+      <text class='name'>退款金额：</text>
+      <text class='mes'>￥{{refundInfo.refundAmount || '无'}}</text>
+    </view>
+    <view class='item'>
+      <text class='name'>问题描述：</text>
+      <text class='mes'>{{refundInfo.refundExplain || '无'}}</text>
+    </view>
+    <view class='item'>
+      <view class='refundImgs' data-imgs="{{refundInfo.refundImages}}" bindtap='previewImgEnv'>
+        <block wx:for="{{refundInfo.refundImages}}" wx:key="index">
+          <view class='imgWrap'>
+            <image mode='widthFix' src='{{item}}'></image>
+          </view>
+        </block>
+      </view>
+    </view>
+  </view>
+  <!-- 退款申请关闭 -->
+  <view class='footer' wx:if="{{dataList.statusInfo.statusStep == '2' && refundInfo.refundStatus!=4 && refundInfo.refundStatus!=7 && refundInfo.refundStatus!=8 && refundInfo.refundStatus!=9}}">
+    <text class='reBtn' bindtap='reApplication'>再次申请</text>
+  </view>
+  <!--退货审核未通过  -->
+  <view class='footer' wx:if="{{dataList.statusInfo.statusStep == '4' && refundInfo.refundStatus!=4 && refundInfo.refundStatus!=7 && refundInfo.refundStatus!=8 && refundInfo.refundStatus!=9}}">
+    <text class='reBtn' bindtap='reApplication'>再次申请</text>
+  </view>
+  <view class='footer' wx:if="{{dataList.status == 1 && dataList.statusInfo.statusStep == '1'}}">
+    <text class='reBtn' bindtap='reEditEnv'>填写单号</text>
+  </view>
+</view>

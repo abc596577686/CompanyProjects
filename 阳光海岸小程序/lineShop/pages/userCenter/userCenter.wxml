@@ -1,0 +1,4 @@
+<view class="section">
+  <image src='{{userInfo.avatarUrl}}'></image>
+  <view>{{userInfo.nickName}}</view>
+</view>

@@ -1,0 +1,22 @@
+<!--components/areaPicker/areaPicker.wxml-->
+
+<view class='pickerWrapper'>
+  <!-- <view>{{curProvince.areaName}} {{curCity.areaName}} {{curDistrict.areaName}}</view> -->
+
+  <view class='top'>
+    <view class='btn cancel' catchtap="cancelEnv">取消</view>
+    <view class='btn ok' catchtap="submitEnv">确定</view>
+  </view>
+
+  <picker-view indicator-style="height: 40px;" style="width: 100%; height: 200px;" value="{{regionValue}}" bindchange="selectedAreaEnv">
+    <picker-view-column>
+      <view class='item' wx:for="{{provinces}}" wx:key="{{index}}">{{item.areaName}}</view>
+    </picker-view-column>
+    <picker-view-column>
+      <view class='item' wx:for="{{citys}}" wx:key="{{index}}">{{item.areaName}}</view>
+    </picker-view-column>
+    <picker-view-column>
+      <view class='item' wx:for="{{districts}}" wx:key="{{index}}">{{item.areaName}}</view>
+    </picker-view-column>
+  </picker-view>
+</view>

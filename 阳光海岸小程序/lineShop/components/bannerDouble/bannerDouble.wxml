@@ -1,0 +1,4 @@
+<!--components/bannerDouble/bannerDouble.wxml-->
+<view class="imageWrap">
+   <image class='image' bindload='imageLoad' style="height:{{imageHeight + 'px'}}" wx:for="{{data}}" wx:key="{{index}}" src="{{item.pictureIcon}}"></image> 
+</view>

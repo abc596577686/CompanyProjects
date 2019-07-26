@@ -1,0 +1,60 @@
+#h5_inviteReady {
+  min-height: calc(100vh);
+  background-color: #fff;
+}
+#h5_inviteReady .codeImg {
+  width: 100%;
+  position: absolute;
+  top: 0;
+}
+#h5_inviteReady .codeTxt {
+  width: 6rem;
+  min-height: 1rem;
+  position: absolute;
+  top: 4.4rem;
+  left: 50%;
+  margin-left: -3rem;
+  font-size: .4rem;
+  line-height: .4rem;
+  word-wrap: break-word;
+  font-weight: bold;
+  text-align: center;
+}
+#h5_inviteReady .inviteBtns {
+  position: absolute;
+  top: 6rem;
+  width: 80%;
+  height: .96rem;
+  left: 10%;
+  font-size: .32rem;
+  font-weight: bold;
+  text-align: center;
+  line-height: .96rem;
+  border: none!important;
+  border-radius: .5rem;
+  color: #333;
+  background: linear-gradient(to bottom, #FFEE7C, #FFD946);
+  box-shadow: 0 8px 16px 0 #FFEE7C, 0 6px 20px 0 #FFEE7C;
+  -webkit-touch-callout: none;
+  /* iOS Safari */
+  -webkit-user-select: none;
+  /* Chrome/Safari/Opera */
+  -khtml-user-select: none;
+  /* Konqueror */
+  -moz-user-select: none;
+  /* Firefox */
+  -ms-user-select: none;
+  /* Internet Explorer/Edge */
+  user-select: none;
+  /* Non-prefixed version, currently not supported by any browser */
+}
+#h5_inviteReady .logoImg {
+  width: 1.44rem;
+  position: absolute;
+  top: 2.44rem;
+  margin-left: 50%;
+  left: -0.72rem;
+  z-index: 999;
+  overflow: hidden;
+  border-radius: 50%;
+}

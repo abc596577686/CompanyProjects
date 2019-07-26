@@ -1,0 +1,8 @@
+{
+    "navigationBarTitleText": "品类",
+    "usingComponents": {
+        "loading": "/components/loading/loading",
+        "tabBar": "/components/tabBar/tabBar",
+        "timeout": "/components/timeout/timeout"
+    }
+}

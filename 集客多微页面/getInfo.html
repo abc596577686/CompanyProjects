@@ -1,0 +1,438 @@
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="width=device-width,user-scalable=no,initial-scale=0.33333,minimum-scale=0.33333,maximum-scale=0.33333" />
+    <title>教练狂欢日</title>
+    <link rel="stylesheet" href="./css/getInfo.css">
+    <script src="./js/jquery-3.2.1.js"></script>
+    <!-- <script src="./js/wechat.js"></script> -->
+    <script>
+        //1.获取像素比
+        var pixelRatio=1/window.devicePixelRatio;
+        // console.log(pixelRatio);
+        //2.通过js动态来设置视口
+        document.write('<meta name="viewport" content="width=device-width,initial-scale='+pixelRatio+',minimum-scale='+pixelRatio*2+',maximum-scale='+pixelRatio+'">');
+        //3.获取html节点
+        var html=document.getElementsByTagName('html')[0];
+        //console.log(html)
+        //4.获取屏幕宽度
+        var pageWidth=html.getBoundingClientRect().width;
+        // console.log(pageWidth);
+        //屏幕宽度/固定数值=基准值;
+        html.style.fontSize=pageWidth/15+'px';
+    </script>
+</head> 
+<body>
+    <div id="pageshow" style="display:none; margin-bottom:60px;">
+        <!-- 页面大图 -->
+        <section id="topImg">
+            <div class="imgBox">
+                <img class="bigim" src='' >
+                <!-- <img src="./img/bigimg.png"> -->
+            </div>
+        </section>
+        <!-- 底部领取 -->
+        <footer style="z-index:1">
+            <button class="clickBtn">领取好礼</button>
+        </footer>
+        <!-- 注册 -->
+        <!-- <section id="register" style="display:none;z-index:2"> -->
+        <section id="register" style="display:none;z-index:2">
+            <div class="reg_name">
+                请先完成注册
+                <span class="reg_name_closesp">
+                    <img src="./img/closeimg.png">
+                </span>
+            </div>
+            <div class="reg_main">
+                <input type="number" class="phone" id="phone" placeholder="手机号">
+                <input type="number" class="code" placeholder="验证码" maxlength="6">
+                <button class="getcode" onclick="settime(this)">获取验证码</button>
+                <button class="goRegister">立即注册</button>
+            </div>
+        </section>
+        <!-- 资质认证 -->
+        <section id="qualification" style="display:none;z-index:2">
+            <div class="reg_name">
+                资质认证
+                <span class="qua_name_closesp">
+                    <img src="./img/closeimg.png">
+                </span>
+            </div>
+            <div class="qua_main">
+                <input type="text" class="phone1" placeholder="姓名">
+                <input type="text" class="code1" placeholder="您的身份证号">
+            </div>
+            <button class="goQua">认证</button>
+            <span class="tip">请上传身份证正面及健身教练证书照片</span>
+            <!-- 上传模块 -->
+            <!-- 正面 -->
+            <div class="positive" style="text-align:center;">
+            	
+                <img src="./img/zm.png" class="insideImg pimg1" style="display:inline-block;width:auto;height:100%">
+                <p class="insideP ptxt1">身份证正面照</p>
+                <input type="file" name="file1" class="file1">
+            </div>
+            <!-- 反面 -->
+            <div class="peverse">
+                <img src="./img/fm.png" class="insideImg pimg2">
+                <p class="insideP ptxt2">教练证书照片</p>
+                <input type="file" name="file2" class="file2">
+            </div>
+            <span class="tip2Img">
+                <img src="./img/tip2img.png">
+            </span>
+            <span class="tip2">如果上传照片不清晰,将会被驳回,请仔细检查</span>
+        </section>
+        <!-- loading -->
+        <img src="./img/loading.gif" class="loading" style="display:none">
+        <!-- alert -->
+        <div id="div_alert"></div>
+        <div class="localtop" style="display:none"></div>
+    </div>
+</body>
+<script>
+
+	// 移动端影响input定位
+   	(function bottonm(){
+       if($(document).height() < $(window).height()){
+            $('#register').css({'position':'fixed','bottom':'0'});
+            $(document).height( $(window).height()+'px');  
+       }  
+   	})();
+	
+    //获取URL上参数
+    function getUrlPara(paraName) {
+    	var reg = new RegExp("(^|&)" + paraName + "=([^&]*)(&|$)", "i");
+       	var r = window.location.search.substr(1).match(reg);
+        if (r != null){
+        	return unescape(r[2]);
+        }
+       	return null;    
+    }
+    
+    var resultCode = '';
+    var storeId = getUrlPara('storeId');
+    var isReUpload = getUrlPara('isReUpload');
+    
+    $(function(){
+	 	// 页面初载时接口
+	    $.post("/clt/coachAuthentication/checkCoachInfo.msp", {storeId : storeId, isReUpload: isReUpload}, function(res) {
+	        if(res.code == '-20'){  //活动已结束 跳转活动结束页面
+	            window.location.replace ( 'nomatch.html'+ '?storeId=' + res.storeId);
+	        }else if(res.code == '-21' || res.code == '-10'){ 
+	        	resultCode = res.code;
+	        	//跳转开团前领取好礼页面
+	        	//本页面不处理
+	            $('.bigim').attr('src',res.mainImage);
+	            $('#pageshow').show();
+	        }else if(res.code == '-19'){  //等待审核
+	        	if(res.status == '2'){ 
+	        		//审核成功
+	        		window.location.replace ( 'prize.html' + '?storeId=' + res.storeId);
+	            }else if(res.isReUpload == '1'){ 
+	            	isReUpload = res.isReUpload;
+	            	resultCode = '-21';
+	            	$('.bigim').attr('src',res.mainImage);
+		            $('#pageshow').show();
+	            }else{
+	            	window.location.replace ( 'waitless.html' + '?storeId=' + res.storeId);
+	            }
+	        }else{  //错误信息
+	        	alert(res.msg)
+	        }
+	    });
+    });
+     
+  	// 注册关闭按钮
+    $('.reg_name_closesp').click(function(){
+         $('body').css('top', '');
+         $('body').removeClass('addfix') 
+         $('html').removeClass('addfix')
+         $('#pageshow').removeClass('addfix')
+         var tt = $('.localtop').html()
+         $(window).scrollTop(tt)
+         $('.localtop').html('')
+
+         $('#register').hide();
+    });
+     
+    // 资质认证关闭按钮
+    $('.qua_name_closesp').click(function(){
+         $('body').css('top', '');
+         $('body').removeClass('addfix')
+         $('html').removeClass('addfix')
+         $('#pageshow').removeClass('addfix')
+         var tt = $('.localtop').html()
+         $(window).scrollTop(tt)
+         $('.localtop').html('')
+
+         $('#qualification').hide();
+    });
+    
+ 	// 底部领取好礼按钮
+    $('.clickBtn').click(function(){
+        if(resultCode == '-10'){  // -10 未注册
+            $('#register').show(); //跳出注册
+            var top
+            top = $(window).scrollTop();
+            $('.localtop').html(top)
+            $('body').css("top",-top+"px");
+            $('body').addClass('addfix')
+            $('html').addClass('addfix')
+            $('#pageshow').addClass('addfix')
+        }else if(resultCode == '-21'){
+            $('#qualification').show(); //跳出资质认证
+            var top
+            top = $(window).scrollTop();
+            $('.localtop').html(top)
+            $('body').css("top",-top+"px");
+            $('body').addClass('addfix')
+            $('html').addClass('addfix')
+            $('#pageshow').addClass('addfix')
+        }
+    });
+    
+ 	// 验证码
+    var countdown = 60;             //验证码初始
+    var phone = $("#phone").val();
+    var timeoutKey = 0;            	//倒计时控制变量
+    var linkKey = 1;              	//接口控制变量
+
+    function settime(obj) {
+      	//如果输入为空
+      	var phone = $("#phone").val();
+        if (phone == '') {
+            $("#div_alert").html("请输入手机号");
+            tanchuang();
+            $('#phone').focus();
+            return false;       
+        }else if(phone.length != 11){
+            $("#div_alert").html("请输入正确的手机号码");
+            tanchuang();
+            $('#phone').focus();
+            return false;  
+        }
+
+        if (linkKey == 1) {                                        
+        	//当接口控制开启 可走接口交互验证码
+        	$.post("/api/user/sendCode.msp", { 
+               	mobile: phone,
+                countryCode: 86,
+                codeType: 5
+        	},function(data){
+            	console.log(data)
+            	if (data.code == '0'){                                 
+            		//发送失败 跳出提示 不进行倒计时
+                	var k1 = data.msg
+                	$("#div_alert").html(k1);
+                	tanchuang();
+                	clearTimeout(ttt);
+            	}else if(data.code == '1'){                            
+            		//发送成功 进入倒计时 按钮持续不可操作 直到cuntdown为0后恢复
+                	var k2 = data.msg
+                	$("#div_alert").html(k2);
+                	tanchuang();
+                	timeoutKey = 1;         //倒计时控制变量 开启
+                	linkKey = 0;            //接口关闭                                     
+            	}
+        	}, "json");
+        }
+
+        if(timeoutKey == '1' && linkKey != '1'){                //倒计时控制开启  接口控制关闭  此时进行倒计时
+            obj.setAttribute("disabled", true);                //不可选中
+            $(".getcode").html("重新发送(" + countdown + ")");
+            countdown--;                                       //数字倒计时  
+        }
+
+        if (countdown == 0) {                                  //倒计时结束 重置按钮 可重新走接口
+            linkKey++                 //开启接口
+            timeoutKey--              //关闭倒计时
+            obj.removeAttribute("disabled");  //重置倒计时按钮样式
+            $(".getcode").html("获取验证码");
+            countdown = 60;
+            return;
+        }
+
+        var ttt = setTimeout(function(){
+            settime(obj)
+        }, 1000) 
+    }
+    
+    // 立即注册
+    $('.goRegister').click(function(){
+        var storeId = getUrlPara('storeId')
+        var mobile = $('.phone').val()
+        var smsCode = $('.code').val()
+        
+        $.post("/clt/wap/userRegister.msp", {
+            isCoach : true,
+            storeId : storeId,
+            mobile : mobile,
+            smsCode : smsCode
+        }, function(res) {
+            if(res.code == 1){  
+            	//注册成功
+                $("#div_alert").html(res.msg);
+                tanchuang();
+                
+                $('body').css('top', '');
+                $('body').removeClass('addfix') 
+                $('html').removeClass('addfix')
+                $('#pageshow').removeClass('addfix')
+                var tt = $('.localtop').html()
+                $(window).scrollTop(tt)
+                $('.localtop').html('')
+                
+                $('#register').hide();
+                resultCode = '-21';
+                
+             	// 注册成功发送短信
+                var phone = $("#phone").val();
+                $.post("/clt/user/sendRegisterSucc.msp", {
+                    mobile: phone,
+                    countryCode: 86,
+                    codeType: 6
+                },function(res){});
+            }else{  
+            	//注册失败
+                $("#div_alert").html(res.msg);
+                tanchuang();
+            }
+        })
+    });
+
+    // 身份证正面及教练证
+    var aPeoImg = '';
+    var bPeoImg = '';
+
+    // 上传身份证正面
+    $('.file1').change(function(e){
+        $('.loading').show();  
+        
+        let file = e.target.files[0];
+        let params = new FormData(); 
+        params.append('file',file);
+        params.append('chunk','0');
+
+        $.ajax({
+            url: '/clt/user/webUploadImage.msp' ,
+            type: 'POST',
+            data: params,
+            cache: true,
+            contentType: false,
+            processData: false,
+            success: function (res) {
+                console.log(res)
+                $('.loading').hide();  //loading
+                $('.ptxt1').hide();
+                $('.pimg1').attr('src',res.userImageAbso)
+            },
+            error: function (res) {
+                alert('网络异常请重试')
+            }
+        });
+    })
+
+    // 上传教练证
+    $('.file2').change(function(e){
+        $('.loading').show();  
+        
+        let file = e.target.files[0];
+        let params = new FormData(); 
+        params.append('file',file);
+        params.append('chunk','0');
+
+        $.ajax({
+            url: '/clt/user/webUploadImage.msp' ,
+            type: 'POST',
+            data: params,
+            cache: true,
+            contentType: false,
+            processData: false,
+            success: function (res) {
+                console.log(res)
+                $('.loading').hide();  //loading
+                $('.ptxt2').hide();
+                $('.pimg2').attr('src',res.userImageAbso)
+            },
+            error: function (res) {
+                alert('网络异常请重试')
+            }
+        });
+    });
+    
+    // 资质认证信息保存
+    $('.goQua').click(function(){
+        // 检查是否为空
+        var namekey = $('.phone1').val()
+        if(namekey.length < 1){
+            $("#div_alert").html("请输入正确的姓名");
+            tanchuang();
+            return;
+        }
+        // 检查身份证
+        var codekey = $('.code1').val()
+        if(codekey.length != 18){
+            $("#div_alert").html("请输入正确的身份证号");
+            tanchuang();
+            return;
+        }
+        // 检查证件
+        if( $('.ptxt1').css('display') == 'block' || $('.ptxt2').css('display') == 'block'){
+            $("#div_alert").html("请上传证件");
+            tanchuang();
+            return;
+        }
+        
+        var aPeoImg = $('.pimg1').attr('src')
+        var bPeoImg = $('.pimg2').attr('src')
+        
+        // 上传信息
+        $.post("/clt/coachAuthentication/authentication.msp", {
+            name : namekey,
+            identityNo : codekey,
+            identityFront : aPeoImg,
+            coachImage: bPeoImg
+	  	}, function(res) {
+            console.log(res)
+            if(res.code == '0'){   //信息有误 上传失败
+                $("#div_alert").html(res.msg);
+                tanchuang();
+            }else{
+            	window.location.replace ( 'waitless.html')
+            }
+        })
+    });
+       
+  	//通用神奇小弹窗
+    function tanchuang(){
+        var cler;
+        var i = 0;
+        var count = 5;
+        if (cler!= null && cler!= undefined) {
+            window.clearInterval(cler);
+        }
+        
+        $("#div_alert").fadeIn();
+        i = 0;
+        var tcount = 2;
+        count = tcount;
+        timerun();
+        function timerun() {
+            if (i >= count) {
+                $("#div_alert").fadeOut();
+                window.clearInterval(cler);
+            }else {
+                cler = window.setTimeout(timerun, 900);
+            }
+            i++;
+        }
+    }
+</script>
+<style>
+ 	.addfix{
+ 		position:fixed;
+ 	}
+ </style>
+</html>

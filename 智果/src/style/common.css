@@ -1,0 +1,310 @@
+@charset "utf-8";
+/* 全局公用样式 */
+html {
+  min-height: 100%;
+  position: relative;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  font: 12px/150% microsoft yahei;
+}
+#root {
+  height: 100%;
+}
+body {
+  min-width: 1220px !important;
+  font: 12px/150% tahoma, arial, Microsoft YaHei, Hiragino Sans GB, "\u5b8b\u4f53", sans-serif !important;
+  -webkit-font-smoothing: antialiased;
+  color: #666;
+  background-color: #fff;
+}
+body,
+button,
+input,
+select,
+textarea {
+  font: 12px Arial, Helvetica, sans-serif;
+  color: #333;
+}
+input,
+select,
+textarea {
+  font-size: 100%;
+}
+a {
+  text-decoration: none;
+  color: #333 !important;
+}
+a:hover {
+  text-decoration: none;
+}
+a:active {
+  text-decoration: none;
+}
+a:visited {
+  text-decoration: none;
+}
+a.blue_link {
+  color: #06c;
+}
+a.blue_link:hover {
+  color: #f60;
+}
+.clearfix:after {
+  display: block;
+  content: ".";
+  height: 0;
+  visibility: hidden;
+  clear: both;
+  font-size: 0;
+  line-height: 0;
+}
+.clearfix {
+  *zoom: 1;
+}
+i {
+  display: inline-block;
+}
+img {
+  border: 0 none;
+  vertical-align: top;
+}
+em {
+  font-style: normal;
+}
+button::-moz-focus-inner {
+  padding: 0;
+  border: 0;
+}
+.minW {
+  width: 1220px !important;
+  margin: 0 auto;
+}
+.form-control {
+  display: block;
+  height: 34px;
+  padding: 6px 12px;
+  font-size: 12px;
+  line-height: 1.42857143;
+  color: #555;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+  -webkit-transition: border-color ease-in-out 0.15s, -webkit-box-shadow ease-in-out 0.15s;
+  -o-transition: border-color ease-in-out 0.15s, box-shadow ease-in-out 0.15s;
+  transition: border-color ease-in-out 0.15s, box-shadow ease-in-out 0.15s;
+}
+.form-control:focus {
+  border-color: #66afe9;
+  outline: 0;
+  -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(102, 175, 233, 0.6);
+  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(102, 175, 233, 0.6);
+}
+.input-sm {
+  line-height: 1.5;
+  border-radius: 3px;
+  height: 28px;
+  padding: 5px 10px;
+  font-size: 13px;
+}
+.btn {
+  display: inline-block;
+  padding: 6px 12px;
+  margin-bottom: 0;
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 1.42857143;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: middle;
+  -ms-touch-action: manipulation;
+  touch-action: manipulation;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  background-image: none;
+  border: 1px solid transparent;
+  border-radius: 2px;
+  margin-left: 5px;
+}
+.btn-primary {
+  color: #fff;
+  background-color: #428bca;
+  border-color: #357ebd;
+}
+.btn-primary:hover {
+  color: #fff;
+  background-color: #3379b5;
+  border-color: #2a6496;
+}
+.btn-primary.disabled {
+  background-color: #337ab7;
+  border-color: #2e6da4;
+}
+.btn-sm,
+.btn-xs {
+  padding: 4px 10px 5px 10px;
+  font-size: 13px;
+  line-height: 1.5;
+}
+.btn-danger {
+  color: #fff;
+  background-color: #e31436;
+  border-color: #e31436;
+}
+.btn-danger:hover {
+  color: #fff;
+  background-color: #f1353d;
+  border-color: #ec111b;
+}
+.btn-default {
+  color: #333;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  padding: 6px 13px;
+}
+.btn-default:hover {
+  color: #333;
+  background-color: #ededed;
+  border-color: #b3b3b3;
+}
+.text-danger {
+  color: #e31436;
+}
+.hasError .form-control {
+  border-color: #a94442;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+}
+.ant-pagination {
+  text-align: right;
+  margin: 20px 10px !important;
+}
+.wechatIcon {
+  color: #1fb922;
+}
+table,
+tr,
+td,
+th,
+thead,
+tbody {
+  position: static;
+}
+.ant-modal-body .order-search {
+  margin-bottom: 20px;
+}
+.ant-modal-body table {
+  width: 100%;
+  max-width: 100%;
+  text-align: center;
+}
+.ant-modal-body table tr {
+  border-bottom: 1px solid #eae7e7;
+}
+.ant-modal-body table td {
+  padding: 8px;
+  line-height: 1.42857143;
+  vertical-align: middle;
+  text-align: center;
+  background: #f7f7f7;
+  color: #333;
+  font-size: 13px;
+  border-top: none;
+}
+.ant-modal-body table td.ad-box {
+  width: 320px;
+  word-break: break-all;
+  word-wrap: break-word;
+}
+.ant-modal-body .form-inline .form-group {
+  display: inline-block;
+  margin-bottom: 0;
+  vertical-align: middle;
+  margin-right: 5px;
+}
+.ant-modal-body .form-inline .form-control {
+  display: inline-block;
+  vertical-align: middle;
+  float: none;
+  margin: 0;
+  width: 140px;
+}
+.ant-modal-body .label {
+  display: inline-block;
+  max-width: 100%;
+  margin-bottom: 5px;
+  text-align: left;
+  margin-right: 5px;
+  color: #333;
+  font-weight: 400;
+  font-size: 14px;
+}
+.ant-tabs-nav .ant-tabs-tab-active {
+  color: #e31436!important;
+}
+.ant-tabs-nav .ant-tabs-tab:hover {
+  color: #e31436!important;
+}
+.ant-tabs-ink-bar {
+  background-color: #e31436!important;
+}
+.ant-pagination-item-link:hover {
+  border-color: #e31436!important;
+}
+.ant-pagination-item-link:active {
+  border-color: #e31436!important;
+}
+.ant-pagination-next:focus .ant-pagination-item-link,
+.ant-pagination-next:hover .ant-pagination-item-link {
+  border-color: #e31436!important;
+}
+.ant-pagination-next:active .ant-pagination-item-link {
+  border-color: #e31436!important;
+}
+.ant-pagination-prev:active .ant-pagination-item-link {
+  border-color: #e31436!important;
+}
+.ant-pagination-prev:visited .ant-pagination-item-link {
+  border-color: #e31436!important;
+}
+.ant-input {
+  border-radius: 0!important;
+}
+.ant-input:focus,
+.ant-input:hover {
+  border-color: #d9d9d9!important;
+}
+.ant-btn {
+  border-radius: 2px!important;
+  font-size: 12px!important;
+}
+.ant-btn-primary {
+  background-color: #e31436!important;
+  border-color: #e31436!important;
+}
+.ant-btn:focus,
+.ant-btn:hover {
+  color: #d9d9d9!important;
+  border-color: #d9d9d9!important;
+}
+.ant-pagination-item:hover {
+  border-color: #e31436 !important;
+}
+.ant-pagination-item-active {
+  border-color: #e31436!important;
+}
+.ant-spin-nested-loading > div > .ant-spin .ant-spin-dot {
+  position: fixed!important;
+}
+.ant-spin-nested-loading > div > .ant-spin-sm .ant-spin-dot {
+  position: absolute!important;
+}
+.ant-spin .ant-spin-dot i {
+  background-color: #e31436!important;
+}
+.ant-table-thead > tr > th {
+  text-align: center!important;
+}

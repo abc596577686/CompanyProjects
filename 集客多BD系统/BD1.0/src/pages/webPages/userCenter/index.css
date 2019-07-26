@@ -1,0 +1,149 @@
+#superWebUserCenter {
+  padding: .3rem;
+  background-color: #002140;
+  min-height: calc(100vh);
+}
+#superWebUserCenter .pageTitle {
+  width: 100%;
+  height: 1rem;
+  line-height: 1rem;
+  background-color: #999;
+  color: #000;
+  font-size: .3rem;
+  text-align: center;
+  font-weight: bold;
+}
+#superWebUserCenter .head {
+  width: 100%;
+  height: .8rem;
+  background-color: #fff;
+}
+#superWebUserCenter .head_flex {
+  height: .8rem;
+}
+#superWebUserCenter .head_img {
+  width: .6rem;
+  height: .6rem;
+  border-radius: 50%;
+  overflow: hidden;
+}
+#superWebUserCenter .head_name {
+  width: 5rem;
+  height: .6rem;
+  text-align: left;
+  line-height: .6rem;
+  font-size: .3rem;
+  font-weight: bold;
+  margin-left: .2rem;
+}
+#superWebUserCenter .head_search {
+  width: .6rem;
+  height: .6rem;
+  margin-left: .9rem;
+  cursor: pointer;
+}
+#superWebUserCenter .head_search :first-child {
+  width: .6rem;
+  height: .6rem;
+}
+#superWebUserCenter .currentMonthList {
+  width: 100%;
+  height: 1.6rem;
+  background-color: #fff;
+  font-size: .3rem;
+  color: #333;
+  font-weight: bold;
+}
+#superWebUserCenter .currentMonthList .am-flexbox {
+  width: 100%;
+  height: 1.6rem;
+}
+#superWebUserCenter .currentMonthList div {
+  width: 2rem;
+}
+#superWebUserCenter .currentMonthList div p {
+  text-align: center;
+  margin-bottom: .1rem;
+}
+#superWebUserCenter .currentMonthLists {
+  width: 100%;
+  height: 1.6rem;
+  background-color: #fff;
+  font-size: .3rem;
+  color: #333;
+  font-weight: bold;
+}
+#superWebUserCenter .currentMonthLists .am-flexbox {
+  width: 100%;
+  height: 1.6rem;
+}
+#superWebUserCenter .currentMonthLists div {
+  width: 3rem;
+}
+#superWebUserCenter .currentMonthLists div p {
+  text-align: center;
+  margin-bottom: .1rem;
+}
+#superWebUserCenter .client .am-card-header {
+  font-size: .37rem;
+  font-weight: bold;
+}
+#superWebUserCenter .client .am-card-body {
+  padding: 0;
+  width: 100%;
+  height: .8rem;
+}
+#superWebUserCenter .client .am-card-body p {
+  margin: 0;
+  font-size: .3rem;
+  font-weight: bold;
+}
+#superWebUserCenter .client .am-card-body .client_icon {
+  width: .4rem;
+  height: .4rem;
+  margin-left: 4.8rem;
+}
+#superWebUserCenter .management .am-card-header {
+  font-size: .37rem;
+  font-weight: bold;
+}
+#superWebUserCenter .management .am-card-body {
+  padding: 0;
+  width: 100%;
+  height: 1.7rem;
+}
+#superWebUserCenter .management .am-card-body p {
+  margin: 0;
+  font-size: .3rem;
+  font-weight: bold;
+}
+#superWebUserCenter .management .am-card-body .client_icon {
+  width: .4rem;
+  height: .4rem;
+  margin-left: 4.8rem;
+}
+#superWebUserCenter .return {
+  width: 100%;
+  height: .8rem;
+  background-color: #fff;
+  -webkit-touch-callout: none;
+  /*系统默认菜单被禁用*/
+  -webkit-user-select: none;
+  /*webkit浏览器*/
+  -khtml-user-select: none;
+  /*早期浏览器*/
+  -moz-user-select: none;
+  /*火狐*/
+  -ms-user-select: none;
+  /*IE10*/
+  user-select: none;
+}
+#superWebUserCenter .return :first-child {
+  width: 100%;
+  height: .8rem;
+  line-height: .8rem;
+  font-size: .36rem;
+  background-color: #fff;
+  color: #333;
+  font-weight: bold;
+}

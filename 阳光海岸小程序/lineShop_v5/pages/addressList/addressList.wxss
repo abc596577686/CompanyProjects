@@ -1,0 +1,133 @@
+/* pages/addressList/addressList.wxss */
+
+page {
+  background: #fff;
+  padding-bottom: 120rpx;
+}
+
+.addressItem {
+  margin-left: 24rpx;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  color: #0c0306;
+  padding: 34rpx 0;
+}
+
+.nameWrap {
+  display: flex;
+  flex-direction: column;
+  font-size: 30rpx;
+  width: 120rpx;
+  color: #666;
+}
+
+.nameWrap .name {
+  margin-bottom: 14rpx;
+}
+
+.iconText {
+  width: 60rpx;
+  text-align: center;
+  padding: 4rpx 0;  
+  font-size: 22rpx;
+  color: #fff;
+  background: #2EA7E0;
+  border-radius: 4rpx;
+  /* height: 30rpx; */
+  /* line-height: 30rpx; */
+  
+}
+
+.infoWrap {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  color: #666;
+}
+
+.phone {
+  font-size: 30rpx;
+}
+
+.address {
+  margin-top: 20rpx;
+  font-size: 26rpx;
+  line-height: 1.3;
+}
+
+.address {
+  white-space: normal;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.handleWrap .btn {
+  width: 28rpx;
+  margin: 0 26rpx;
+}
+
+.handleWrap {
+  display: flex;
+  align-items: center;
+}
+
+.bottomLine {
+  position: relative;
+}
+
+.bottomLine::after {
+  position: absolute;
+  content: '';
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 1rpx;
+  background: #f0f0f0;
+  transform: scaleY(0.6);
+}
+
+.btnWrap{
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 20rpx 28rpx;
+}
+.addAddressBtn{
+  width: 100%;
+  border-radius: 8rpx;
+  background: #2EA7E0;
+  color: #fff;
+  font-size: 30rpx;
+  text-align: center;
+  padding: 26rpx 0;
+}
+.bg {
+  width: 100%;
+  height: 100%;
+  border: 1rpx solid transparent;
+}
+
+.empty {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 400rpx;
+}
+
+.emptyInfo {
+  color: #999;
+  font-size: 26rpx;
+}
+
+.emptyImg {
+  width: 160rpx;
+  /* height: 100rpx; */
+  margin-bottom: 50rpx;
+}
+

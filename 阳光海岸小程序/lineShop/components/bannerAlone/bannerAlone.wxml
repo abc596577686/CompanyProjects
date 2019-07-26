@@ -1,0 +1,3 @@
+<!--components/bannerAlone/bannerAlone.wxml-->
+
+<image class='image' bindload="imageLoad" style="height:{{imageHeight + 'px'}}" src='{{data.picture}}'></image>

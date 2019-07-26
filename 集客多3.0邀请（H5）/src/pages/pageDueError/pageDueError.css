@@ -1,0 +1,55 @@
+#h5_pageDueError {
+  min-height: calc(100vh);
+  background-color: #fff;
+}
+#h5_pageDueError .codeImg {
+  width: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+#h5_pageDueError .codeTxt {
+  width: 100%;
+  height: .4rem;
+  position: absolute;
+  top: 5.36rem;
+  font-size: .4rem;
+  font-weight: bold;
+  text-align: center;
+}
+#h5_pageDueError .codeTxta {
+  width: 100%;
+  height: .4rem;
+  position: absolute;
+  top: 6.16rem;
+  font-size: .4rem;
+  font-weight: bold;
+  text-align: center;
+}
+#h5_pageDueError .inviteBtns {
+  position: absolute;
+  top: 8rem;
+  width: 80%;
+  height: .96rem;
+  left: 10%;
+  font-size: .32rem;
+  font-weight: bold;
+  text-align: center;
+  line-height: .96rem;
+  border: none;
+  border-radius: .5rem;
+  color: #333;
+  background: linear-gradient(to bottom, #FFEE7C, #FFD946);
+  -webkit-touch-callout: none;
+  /* iOS Safari */
+  -webkit-user-select: none;
+  /* Chrome/Safari/Opera */
+  -khtml-user-select: none;
+  /* Konqueror */
+  -moz-user-select: none;
+  /* Firefox */
+  -ms-user-select: none;
+  /* Internet Explorer/Edge */
+  user-select: none;
+  /* Non-prefixed version, currently not supported by any browser */
+}

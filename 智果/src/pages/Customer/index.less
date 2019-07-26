@@ -1,0 +1,146 @@
+.cus_container{
+  background-color: #f0f0f0;
+  //min-height:800px;
+  .cus_table{
+    margin-top:15px;
+    min-height:100vh;
+    background-color: #fff;
+    position: relative;
+    box-shadow: 0 2px 8px rgba(0,0,0,.09) ;
+    padding-bottom:15px;
+    .table_search{
+      display: flex;
+      flex-direction: row;
+      justify-content: flex-start;
+      background-color: #fff;
+      padding:20px 0 0 50px;
+      .search_item{
+        width:208px;
+        display: flex;
+        align-items: center;
+        margin-right:20px;
+        span{
+          margin-bottom:2px;
+          margin-right:10px;
+        }
+        input{
+          width: 140px !important;
+        }
+        button{
+          margin-left:10px;
+          span{
+            margin:0!important;
+          }
+        }
+      }
+    }
+    .table_box{
+      padding:20px 40px;
+      background-color: #fff;
+      min-height:300px;
+      .empty{
+        position: absolute;
+        top:50%;
+        left:50%;
+        -webkit-transform: translate(-50%,-50%);
+        -moz-transform: translate(-50%,-50%);
+        -ms-transform: translate(-50%,-50%);
+        -o-transform: translate(-50%,-50%);
+        transform: translate(-50%,-50%);
+        
+      }
+      .table{
+        width:100%;
+        background-color: #fff;
+        thead{
+          th{
+            //text-align: center;
+            background-color: #ebecf0;
+            padding:8px;
+            border:1px solid #dcdee3;;
+            font-size:12px;
+            text-align: left;
+          }
+        }
+        tbody{
+          tr{
+            &:hover{
+              td{
+                background: #ebecf9;
+              }
+            }
+          }
+          td{
+            //text-align: center;
+            border: 1px solid #dcdee3;;
+            padding:8px;
+            //height:60px;
+            font-size:12px;
+            text-align: left;
+            &.address{
+              width:350px;
+            }
+            &.index{
+              width:45px;
+            }
+            &.user{
+              width:150px;
+            }
+            &.idcard{
+              width:200px;
+            }
+
+            .btn-address{
+              padding:2px 4px;
+              text-align: center;
+              border: 1px solid #ff5000;
+              //margin:0 auto;
+              border-radius: 3px;
+              background: #ffd6cc;
+              color: #f30;
+              cursor: pointer;
+            }
+            .no-address{
+              cursor: pointer;
+              &:hover{
+                color: #e31436;
+              }
+            }
+            .op:hover{
+              color: #e31436!important;
+            }
+          }
+          .row{
+            td{
+              background-color: #fff;
+              height:20px;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+.form-control{
+  float: left;
+  margin-left:5px;
+  max-width: 120px;
+}
+.addressBox{
+  .ant-form-item-label{
+    label{
+      color: #e31436!important;
+      font-size:12px!important;
+      font-weight:bold;
+    }
+  }
+  .ant-form-item{
+    margin-bottom:5px;
+  }
+  .form-control{
+    &:first-child{
+      margin:0;
+    }
+    border-radius: 0;
+  }
+}

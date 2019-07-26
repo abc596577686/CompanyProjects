@@ -1,0 +1,28 @@
+<!--pages/userInfo/bindNewPhone/bindNewPhone.wxml-->
+
+<view class='progressWrap'>
+  <view class='iconStatus'>
+    <view class='icon'></view>
+    <view class='line'></view>
+    <view class='icon imgWrap'>
+      <image mode='widthFix' src='/assets/images/icon_select.png'></image>
+    </view>
+  </view>
+  <view class='textStatus'>
+    <view class='text'>验证旧手机</view>
+    <view class='text'>绑定新手机</view>
+  </view>
+</view>
+<view class='inputList'>
+  <view class='item'>
+    <input value='{{phoneNumber}}' placeholder='请输入手机号' bindinput='phoneNumberEnv'></input>
+    <view class='getCode' bindtap='sendCodeEnv'>{{codeText}}</view>
+  </view>
+  <view class='item border-t'>
+    <input value='{{smsCode}}' placeholder='请输入验证码' bindinput='smsCodeEnv'></input>
+  </view>
+</view>
+
+<view class="bindBtn {{!isBind ? 'disabled': ''}}" bindtap='bindPhoneEnv'>立即绑定</view>
+<!-- 提示语  -->
+<toast wx:if="{{msgTips}}" message="{{msgTips}}"></toast>

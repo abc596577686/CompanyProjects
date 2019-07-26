@@ -1,0 +1,164 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+img{
+    width: 100%;
+    height: 100%;
+}
+.showdetail{
+    width: 100%;
+    height: 2.858667rem;
+    background-color: #fff;
+}
+.pf_txt{
+    font-size: .768rem;
+    width: 2rem;
+    
+    height: 2.858667rem;
+    float: left;
+    /* vertical-align: middle */
+    line-height: 2.858667rem;
+    color: #333333;
+    font-weight: bold;
+    text-align: center;
+}
+.productImgUrl{
+    float: left;
+    margin-left: .34rem;
+    margin-right: .34rem;
+    margin-top: .4rem;
+    width: 2.048rem;
+    display: inline-block;
+}
+.upMoudle{
+    width: 100%;
+    height: 19rem;
+    background-color: #fff;
+    border-top: .042667rem solid #f0f0f0;
+    border-bottom: .042667rem solid #f0f0f0;
+    padding-left: .682667rem;
+    padding-right: .682667rem;
+    padding-top: .469333rem;
+}
+.content{
+    width: 14.6rem;
+    height: 5.12rem;
+    font-size: .7rem;
+    color: #333;
+}
+.txt_1{
+    width: 100%;
+    height: .554667rem;
+    /* text-align: center; */
+    color: #333333;
+    font-size: .512rem;
+    line-height: .554667rem;
+    /* padding-bottom: .469333rem; */
+}
+.upload{
+    margin-top: .426667rem;
+    width: 100%;
+    font-size: 0;
+    /* height: 8.533333rem; */
+}
+/* .upload > div{
+    width: 3.2rem;
+    height: 3.2rem;
+    border: .042667rem dashed #333;
+    display: inline-block;
+    margin-top: .426667rem;
+    margin-right: .6rem;
+    background-image: url('../../common/images/photo.png');
+    background-size: 48% 44%;
+    background-repeat: no-repeat;
+    background-position:47% 30%;
+    position: relative;
+}
+.upload input{
+    opacity: 0;
+    width: 100%;
+    height: 73%;
+    float: left;
+    z-index: 999;
+} */
+.readyImg_1{
+    width: 3.2rem;
+    height: 3.2rem;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 99;
+}
+.readyImg_2{
+    width: 3.2rem;
+    height: 3.2rem;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 99;
+}
+.readyImg_3{
+    width: 3.2rem;
+    height: 3.2rem;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 99;
+}
+.readyImg_4{
+    width: 3.2rem;
+    height: 3.2rem;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 99;
+}
+.readyImg_5{
+    width: 3.2rem;
+    height: 3.2rem;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 99;
+}
+.upt{
+    width: 3.2rem;
+    height: .554667rem;
+    line-height: .554667rem;
+    color: #999;
+    text-align: center;
+    font-size: .554667rem;
+    margin-top: 2.2rem;
+}
+.upBtnTxt{
+    width: 100%;
+    height: .554667rem;
+    color: #999999;
+    line-height: .554667rem;
+    text-align: right;
+    font-size: .554667rem;
+    margin-top: .853333rem;
+    /* padding-right: .682667rem; */
+}
+.upBtn{
+    width: 2.901333rem;
+    height: 1.024rem;
+    text-align: center;
+    line-height: .95rem;
+    font-size: .597333rem;
+    border: .042667rem solid #FB4A4C;
+    color: #FB4A4C;
+    background-color: #fff;
+    font-weight: bold;
+    margin-left: 11.6rem;
+    margin-top: .426667rem;
+}
+.return1{
+    position: absolute;
+    right: -.3rem;
+    top: -.3rem;
+    width: .853333rem;
+    height: .853333rem;
+    z-index: 9999;
+}

@@ -1,0 +1,613 @@
+*{
+    margin: 0;
+    padding: 0
+}
+img{
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+header{
+    width: 100%;
+    height: 14rem;
+    position: relative;
+}
+.toptit{
+    width: 100%;
+    height: .64rem;
+    font-size: .64rem;
+    line-height: .64rem;
+    text-align: center;
+    font-weight: 600;
+    color: #333333;
+    position: absolute;
+    bottom: .52rem;
+}
+.toplitimg1{
+    width: 1rem;
+    height: .4rem;
+    position: absolute;
+    bottom: .64rem;
+    left: 4.5rem;
+}
+.toplitimg2{
+    width: 1rem;
+    height: .4rem;
+    position: absolute;
+    bottom: .64rem;
+    right: 4.5rem;
+}
+.timeTip{
+    width: 100%;
+    height: 2.48rem;
+    padding-top: .4rem;
+}
+.timeTip > div{
+    width: 100%;
+    height: .56rem;
+    font-size: .56rem;
+    color: #333333;
+    text-align: center;
+    margin-bottom: .5rem;
+}
+.sureBtn{
+    width: 100%;
+    height: 1.6rem;
+}
+.sureBtn1{
+    width: 6.88rem;
+    height: 1.6rem;
+    border: none;
+    border-radius: .3rem;
+    background-color: #FFD946;
+    float: left;
+    margin-left: .24rem;
+    font-size: .68rem;
+}
+.sureBtn2{
+    width: 6.88rem;
+    height: 1.6rem;
+    border: none;
+    border-radius: .3rem;
+    background-color: #FB4A4C;
+    float: right;
+    margin-right: .24rem;
+    font-size: .68rem;
+    color: #fff;
+}
+.pageMainShow{
+    width: 100%;
+    height: 40rem;
+    position: relative;
+    background-image: url('../img/pageimg.png');
+    background-size: 100% 100%;
+}
+.maintit{
+    width: 100%;
+    height: .64rem;
+    font-size: .64rem;
+    line-height: .64rem;
+    text-align: center;
+    font-weight: 600;
+    color: #333333;
+    position: absolute;
+    top: 1.3rem;
+}
+.mainlitimg1{
+    width: 1rem;
+    height: .4rem;
+    position: absolute;
+    top: 1.4rem;
+    left: 4.5rem;
+}
+.mainlitimg2{
+    width: 1rem;
+    height: .4rem;
+    position: absolute;
+    top: 1.4rem;
+    right: 4.5rem;
+}
+.apresent{
+    width: 100%;
+    height: 9rem;
+    position: relative;
+    top: 5.56rem;
+}
+.aPre{
+    width: 5.72rem;
+    height: 2rem;
+    position: absolute;
+    left: 4.65rem;
+    /* top: 5.56rem; */
+    background-image: url('../img/yellowsicle.png');
+    background-size: 100% 100%;
+    font-size: .48rem;
+    text-align: center;
+    line-height: 1.5rem;
+    font-weight: 600;
+}
+.aPretxt{
+    color: #fff;
+    position: absolute;
+    top: 4rem;
+    font-size: .56rem;
+    text-indent: .8rem;
+    padding-left: .9rem;
+    padding-right: .9rem;
+}
+.peresentMain{
+    width: 100%;
+    height: 5.24rem;
+    position: absolute;
+    top: 2.7rem;
+
+    /* display: -webkit-flex;  
+    display: flex;
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    justify-content: space-evenly; */
+
+    /* display: -webkit-box;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-box-pack: center;
+    -webkit-justify-content: center;
+    justify-content: center; */
+}
+.peresentMain > div{
+    /* width: 3.6rem; */
+    /* height: 4.8rem; */
+    width: 4.64rem;
+    height: 4.04rem;
+
+    float: left;
+    /* margin-left: 1.1rem; */
+}
+.peresentMain div:first-child{
+    /* margin-left: 2.1rem; */
+    margin-left: .54rem;
+}
+.peresentMainName{
+    width: 100%;
+    height: .5rem;
+    position: absolute;
+    top: 8rem;
+
+    /* display: -webkit-flex;  
+    display: flex;
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    justify-content: space-evenly; */
+
+    /* display: -webkit-box;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-box-pack: center;
+    -webkit-justify-content: center;
+    justify-content: center; */
+}
+.peresentMainName > div{
+    width: 3.6rem;
+    height: .48rem;
+    font-size: .48rem;
+    color: #fff;
+    text-align: center;
+    line-height: .48rem;
+
+    float: left;
+    margin-left: 1.1rem;
+}
+.Coupon{
+    width: 4.52rem;
+    height: 2.52rem;
+    position: absolute;
+    left: 5.2rem;
+    top: 3rem;
+}
+/* 比赛规则 */
+.competitionRules{
+    width: 100%;
+    height: 10.4rem;
+    position: relative;   
+}
+.competitionRules_txt{
+    position: relative;
+    top: 3rem;
+    width: 100%;
+    height: 6rem;
+}
+.competitionRules_txt li {
+    position: relative;
+    left: .64rem; 
+    width: 13.68rem;
+    height: 2rem;
+    line-height: .96rem;
+    text-indent: .64rem;
+    font-size: .56rem;
+    list-style: none;
+}
+/* 比赛流程 */
+.competitionKer{
+    width: 100%;
+    height: 6rem;
+    position: relative;  
+}
+.ker{
+    width: 14rem;
+    height: 2.8rem;
+    position: absolute;
+    left: .48rem;
+    bottom: .4rem;
+}
+/* 合作伙伴 */
+.competitionPeo{
+    width: 100%;
+    height: auto;
+    min-height: 8.57rem;
+    position: relative;  
+}
+.workPeo{
+    width: 100%;
+    height: auto;
+    min-height: 2.52rem;
+    position: relative;
+    top: 3rem;
+    /* 去除默认间隔 */
+    font-size: 0; 
+}
+.workPeo > div{
+    width: 3.68rem;
+    height: 2.52rem;
+    display: inline-block;
+    margin-left: 1rem;
+    margin-bottom: .5rem;
+}
+.competitionKefu{
+    width: 100%;
+    height: 10.4rem;
+    position: relative; 
+    top: 3rem; 
+}
+.maintit1{
+    width: 100%;
+    height: .64rem;
+    font-size: .64rem;
+    line-height: .64rem;
+    text-align: center;
+    font-weight: 600;
+    color: #333333;
+    position: absolute;
+    top: 2.5rem;
+}
+.secCode{
+    width: 100%;
+    height: 4.32rem;
+    position: relative;
+    top: 4.6rem;
+
+    /* display: -webkit-flex;  
+    display: flex;
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    justify-content: space-evenly; */
+
+    /* display: -webkit-box;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-box-pack: center;
+    -webkit-justify-content: center;
+    justify-content: center; */
+}
+.secCode > div {
+    width: 4.32rem;
+    height: 4.32rem;
+
+    float: left;
+    margin-left: 2rem;
+}
+.secCode1{
+    width: 100%;
+    height: .56rem;
+    position: relative;
+    top: 5rem;
+    
+    /* display: -webkit-flex;  
+    display: flex;
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    justify-content: space-evenly; */
+
+    /* display: -webkit-box;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-box-pack: center;
+    -webkit-justify-content: center;
+    justify-content: center; */
+}
+.secCode1 > div {
+    text-align: center;
+    line-height: .56rem;
+    font-size: .56rem;
+    width: 4.32rem;
+    height: .56rem;
+
+    float: left;
+    margin-left: 2rem;
+}
+/* 填写信息 */
+.liaojie{
+    position: fixed;
+    left:.68rem;
+    /* top: 6rem; */
+    bottom: 6rem;
+    width: 13.6rem;
+    height:14.64rem;
+    border-radius: 5px;
+    background-color: #fff;
+    z-index: 1000;
+}
+.background{
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    left: 0;
+    top: 0;
+    z-index: 999;
+    background-color: #000;
+    opacity: .3;
+}
+.closeCover{
+    width: 2rem;
+    height: 2rem;
+    position: absolute;
+    top: 0rem;
+    right: 0rem;
+}
+.topDiv{
+    width: 100%;
+    height: 2.04rem;
+    font-size: .6rem;
+    color: #333333;
+    text-align: center;
+    line-height: 2.04rem;
+    position: relative;
+    /* padding-bottom: .8rem; */
+}
+.topDiv1{
+    width: 100%;
+    height: 2.04rem;
+    font-size: .6rem;
+    color: #333333;
+    text-align: center;
+    line-height: 2.04rem;
+    position: relative;
+    /* padding-bottom: .8rem; */
+}
+.coversspp{
+    width: 100%;
+    height: .04rem;
+    background: #333;
+    opacity: .1;
+}
+.liaojiesp{
+    width: .52rem;
+    height: .52rem;
+    display: block;
+    position: absolute;
+    top: .6rem;
+    right: .6rem;
+}
+.liaojiesp img{
+    width: 100%;
+    height: 100%;
+    display: block;
+}
+.liaojiemain{
+    width: 100%;
+    height: 11.3rem;
+    /* padding: .8rem; */
+    position: relative;
+}
+.inp{
+    width: 12rem;
+    height: 1.6rem;
+    background-color: #F0F0F0;
+    border: none;
+    margin-left: .8rem;
+    text-indent: .4rem;
+    font-size: .56rem;
+    margin-bottom: .44rem;
+}
+.beiTip{
+    padding-top: .2rem;
+    width: 100%;
+    height: .48rem;
+    color: #FB4A4C;
+    font-size: .48rem;
+    text-indent: .9rem;
+}
+.liaojieBtn{
+    width: 12rem;
+    height: 1.48rem;
+    text-align: center;
+    line-height: 1.48rem;
+    font-size: .7rem;
+    color: #fff;
+    border: none;
+    background-color: #FB4A4C;
+    border-radius: .2rem;
+    position: absolute;
+    /* bottom: .4rem; */
+    bottom: 0;
+    left: .8rem;
+}
+/* 了解集客多 */
+.knowMore{
+    position: fixed;
+    left:.68rem;
+    top: 4rem;
+    width: 13.6rem;
+    height:17rem;
+    border-radius: 5px;
+    background-color: #fff;
+    z-index: 1000;
+}
+.closeCover1{
+    width: 2rem;
+    height: 2rem;
+    position: absolute;
+    top: 0rem;
+    right: 0rem;
+}
+.moreTxt{
+    width: 11.64rem;
+    height: 7rem;
+    font-size: .6rem;
+    color: #333333;
+    word-wrap: auto;
+    margin-left: 1rem;
+    text-indent: .6rem;
+    margin-top: 1.8rem;
+}
+.isknow{
+    width: 12rem;
+    height: 1.48rem;
+    font-size: .6rem;
+    color: #fff;
+    border-radius: .2rem;
+    font-family: HiraginoSansGB-W3;
+    position: absolute;
+    left: .8rem;
+    bottom: 1.12rem;
+    border: none;
+    background-color: #FB4A4C;
+}
+/* 注册 */
+/* 注册 */
+#register{
+    background-color: #fff;
+    position: fixed;
+    /* top: 17.1rem; */
+    bottom: 0;
+    width: 100%;
+    height: 9.24rem;
+    z-index: 1000;
+    /* padding: .64rem; */
+}
+.reg_name{
+    width: 100%;
+    height: 2.04rem;
+    border-bottom: .04rem solid lightgrey;
+    line-height: 2.04rem;
+    font-size: .6rem;
+    color: #333333;
+    font-family: HiraginoSansGB-W3;
+    text-indent: .56rem;
+}
+/* 关闭按钮 */
+.reg_name_closesp{
+    display: block;
+    width: .52rem;
+    height: .52rem;
+    position: absolute;
+    top: .8rem;
+    right: .8rem;
+    /* padding: .8rem; */
+}
+.kkktr{
+    width: 2rem;
+    height: 2rem;
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+.reg_main{
+    width: 100%;
+    height: 7.48rem;
+    background-color: #fff;
+    position: relative;
+}
+.phone{
+    border: none;
+    width: 13.76rem;
+    height: 1.6rem;
+    background-color: #F0F0F0;
+    border-radius: .04rem;
+    position: absolute;
+    left: .64rem;
+    top: .8rem;
+    font-size: .52rem;
+    color: #999999;
+    font-family: HiraginoSansGB-W3;
+    padding-left: .44rem;
+    padding-top: .56rem;
+    padding-bottom: .56rem;
+}
+.code{
+    border: none;
+    width: 10rem;
+    height: 1.6rem;
+    background-color: #F0F0F0;
+    border-radius: .04rem;
+    position: absolute;
+    left: .64rem;
+    top: 3rem;
+    font-size: .52rem;
+    color: #999999;
+    font-family: HiraginoSansGB-W3;
+    padding-left: .44rem;
+    padding-top: .56rem;
+    padding-bottom: .56rem;
+}
+.getcode{
+    border: none;
+    width: 3.56rem;
+    height: 1.6rem;
+    background-color: #FFD946;
+    border-radius: .04rem;
+    position: absolute;
+    right: .64rem;
+    top: 3rem;
+    font-size: .52rem;
+    color: #333333;
+    font-family: HiraginoSansGB-W3;
+    text-align: center;
+    vertical-align: center;
+}
+.goRegister{
+    border: none;
+    width: 13.72rem;
+    height: 1.48rem;
+    background-color: #FFD946;
+    border-radius: .04rem;
+    position: absolute;
+    left: .64rem;
+    bottom: .74rem;
+    font-size: .52rem;
+    color: #333333;
+    font-family: HiraginoSansGB-W3;
+    text-align: center;
+    vertical-align: center;
+}
+/* alert */
+#div_alert{
+    width: 8rem; 
+    height: 1.4rem; 
+    text-align:center; 
+    background-color:black; 
+    color: White;
+    display: none; 
+    position:fixed;
+    top: 6rem;
+    left: 3.485rem;  
+    border:1px solid grey; 
+    border-top:0;
+    border-radius: 0.2rem;
+    font-size: .6rem;
+    line-height: 1.4rem;
+    z-index: 9999999999; 
+}

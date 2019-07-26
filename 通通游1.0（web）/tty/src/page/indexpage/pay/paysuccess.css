@@ -1,0 +1,107 @@
+.payState{
+    width: 100%;
+    height: 5.802667rem;
+    background-color: #fff;
+    position: relative;
+}
+.payImg{
+    width: 2.389333rem;
+    height: 2.389333rem;
+    position: absolute;
+    left: 6.8rem;
+    top: .597333rem;
+}
+.paysc{
+    width: 2.986667rem;
+    height: .64rem;
+    font-size: .682667rem;
+    color: #333333;
+    position: absolute;
+    left: 6.613333rem;
+    top: 3.669333rem;
+}
+.paysc2{
+    width: 3.84rem;
+    height: .64rem;
+    font-size: .469333rem;
+    color: #333333;
+    position: absolute;
+    left: 6.4rem;
+    top: 4.778667rem;   
+}
+.paysc3{
+    width: .298667rem;
+    height: .426667rem;
+    position: absolute;
+    left: 9.642667rem;
+    top: 4.851333rem;
+}
+.realPay{
+  width: 100%;
+  height: 3.157333rem;
+  background-color: #fff;
+  position: relative;
+}
+.realPay_1{
+    display: block;
+    width: 2.56rem;
+    height: .554667rem;
+    position: absolute;
+    left: .597333rem;
+    top: .853333rem;
+    font-size: .554667rem;
+    color: #666666;
+}
+.realPay_2{
+    display: block;
+    width: 2.56rem;
+    height: .554667rem;
+    position: absolute;
+    left: 3.712rem;
+    top: .853333rem;
+    font-size: .554667rem;
+    color: #fb4a4c;
+}
+.realPay_3{
+    display: block;
+    width: 2.56rem;
+    height: .554667rem;
+    position: absolute;
+    left: .597333rem;
+    top: 1.877333rem;
+    font-size: .554667rem;
+    color: #666666;
+}
+.realPay_4{
+    display: block;
+    width: 2.56rem;
+    height: .554667rem;
+    position: absolute;
+    left: 3.712rem;
+    top: 1.877333rem;
+    font-size: .554667rem;
+    color: #666666;
+}
+.request{
+    width: 100%;
+    height: 1.877333rem;
+    background-color: #fff;
+    position: relative;
+}
+.request div{
+    width: 3.2rem;
+    height: .597333rem;
+    font-size: .597333rem;
+    color: #666666;
+    position: absolute;
+    left: .64rem;
+    top: .682667rem;
+}
+.request span{
+    display: block;
+    width: .341333rem;
+    height: .512rem;
+    position: absolute;
+    left: 15.061333rem;
+    top: .768rem;
+}

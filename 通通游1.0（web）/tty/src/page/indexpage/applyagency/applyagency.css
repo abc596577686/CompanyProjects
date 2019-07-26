@@ -1,0 +1,89 @@
+
+.apply{
+    width: 5.546667rem;
+    height: .682667rem;
+    font-size: .682667rem;
+    font-weight: 600;
+    color: #333333;
+    position: absolute;
+    left: 5.546667rem;
+    top: 1.536rem;
+}
+body{
+     background-color: #fff 
+}
+.peophone{
+    width: 5.12rem;
+    height: .597333rem;
+    line-height:  .597333rem;
+    font-size: .64rem;
+    color: #333333;
+    position: absolute;
+    left: 1.92rem;
+    top: 4.992rem;
+}
+.phonenum{
+    width: 8.533333rem;
+    height: .597333rem;
+    line-height:  .597333rem;
+    font-size: .64rem;
+    position: absolute;
+    left: 1.92rem;
+    height: .597333rem;
+    position: absolute;
+    left: 6.5rem;
+    top: 4.96rem;
+}
+.peoname{
+    width: 5.12rem;
+    height: .597333rem;
+    line-height:  .597333rem;
+    font-size: .64rem;
+    color: #333333;
+    position: absolute;
+    left: 1.92rem;
+    top: 7.594667rem;
+}
+.name{
+    display: block;
+    width: 8.533333rem;
+    height: .853333rem;
+    line-height:  .853333rem;
+    font-size: .64rem;
+    position: absolute;
+    left: 6.5rem;
+    top: 7.46rem;
+}
+.givename{
+    width: 5.12rem;
+    height: .597333rem;
+    line-height:  .597333rem;
+    font-size: .64rem;
+    color: #333333;
+    position: absolute;
+    left: 1.92rem;
+    top: 10.24rem;
+}
+.gname{
+    display: block;
+    width: 8.533333rem;
+    height: .853333rem;
+    line-height:  .853333rem;
+    font-size: .64rem;
+    position: absolute;
+    left: 6.5rem;
+    top: 10.11rem;
+}
+.onputBtn{
+    width: 15.018667rem;
+    height: 2.090667rem;
+    background-color: #008ee5;
+    font-size: .725333rem;
+    color: #ffffff;
+    text-align: center;
+    line-height: 2.090667rem;
+    position: absolute;
+    left: .512rem;
+    top: 13.525333rem;
+    border-radius: .341333rem .341333rem .341333rem .341333rem ;
+}

@@ -1,0 +1,231 @@
+*{
+    margin: 0;
+    padding: 0
+}
+body{
+    background-color: #F0F0F0;
+}
+img{
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+input{
+    border: none;
+}
+
+.inpu{
+    width: 100%;
+    height: 1.96rem;
+    /* line-height: 1.96rem; */
+    /* font-size: .56rem; */
+    /* text-indent: .6rem; */
+    background-color: #fff;
+    position: relative;
+}
+.inpu > input{
+    border: none;
+    width: 100%;
+    height: .8rem;
+    position: absolute;
+    top: .65rem;
+    text-indent: .8rem;
+    font-size: .56rem;
+}
+.cover{
+    display: block;
+    width: 100%;
+    height: .04rem;
+    background-color: #999;
+    opacity: .5;
+}
+/* 上传 */
+.uploadDiv{
+    width: 100%;
+    height: 5.76rem;
+    background-color: #fff;
+}
+.uploadDiv > span{
+    display: block;
+    padding-top: .72rem;
+    padding-bottom: .72rem;
+    font-size: .56rem;
+    text-indent: .6rem;
+}
+.covertt{
+    width: 2.6rem;
+    display: block;
+    /* padding-top: .72rem; */
+    /* padding-bottom: .72rem; */
+    font-size: .56rem;
+    /* text-indent: .6rem; */
+}
+.uoloadMain{
+    width: 100%;
+    height: 3rem;
+    font-size: 0;
+    /* display: -webkit-flex;  
+    display: flex;
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    justify-content: space-evenly; */
+
+    /* display: -webkit-box;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-box-pack: center;
+    -webkit-justify-content: center;
+    justify-content: center; */
+}
+.uoloadMain > div{
+    width: 2.92rem;
+    height: 2.9rem;
+    border: .048rem dashed #333;
+    position: relative;
+    display: inline-block;
+    margin-left: .6rem;
+    padding: 0.04rem;
+}
+.coverImg{
+    width: .84rem;
+    height: .84rem;
+    /* padding: 0.6rem; */
+    position: absolute;
+    left: 1rem;
+    top: 0.6rem;
+}
+.covertt{
+    display: block;
+    width: 2.92rem;
+    height: .52rem;
+    font-size: .4rem;
+    line-height: .48rem;
+    color: #999999;
+    position: absolute;
+    /* left: 0.23rem; */
+    top: 1.8rem;
+    text-align: center;
+}
+.peoTit{
+    width: 100%;
+    height: 5.52rem;
+    background-color: #fff;
+}
+.peoTit span{
+    display: block;
+    padding-top: .72rem;
+    padding-bottom: .72rem;
+    font-size: .56rem;
+    text-indent: .6rem;
+}
+#txtarea{
+    width: 13.64rem;
+    height: 2.6rem;
+    resize: none;
+    border: .04rem solid #999999;
+    margin-left: .6rem;
+    font-size: .6rem;
+    padding: .12rem;
+}
+.upBtn{
+    width: 100%;
+    height: 1.96rem;
+    background-color: #FB4A4C;
+    border: none;
+    font-size: .64rem;
+    text-align: center;
+    line-height: 1.96rem;
+    color: #fff;
+    position: fixed;
+    bottom: 0;
+}
+.file1{
+    width: 2.4rem;
+    height: 2.9rem;
+    position: absolute;
+    top: 0;
+    left: 0.3rem;
+    opacity: 0;
+}
+.file2{
+    width: 2.4rem;
+    height: 2.9rem;
+    position: absolute;
+    top: 0;
+    left: 0.3rem;
+    opacity: 0;
+}
+.file3{
+    width: 2.4rem;
+    height: 2.9rem;
+    position: absolute;
+    top: 0;
+    left: 0.3rem;
+    opacity: 0;
+}
+.file4{
+    width: 2.4rem;
+    height: 2.9rem;
+    position: absolute;
+    top: 0;
+    left: 0.3rem;
+    opacity: 0;
+}
+.poImg{
+    width: 100%;
+    height: 100%;
+    display: none;
+    z-index: 99999;
+}
+.poImg1{
+    width: 100%;
+    height: 100%;
+    display: none;
+    z-index: 99999;
+}
+.poImg2{
+    width: 100%;
+    height: 100%;
+    display: none;
+    z-index: 99999;
+}
+.poImg3{
+    width: 100%;
+    height: 100%;
+    display: none;
+    z-index: 99999;
+}
+.poImg4{
+    width: 100%;
+    height: 100%;
+    display: none;
+    z-index: 99999;
+}
+/* loading圈 */
+.loading{
+    width: 2rem;
+    height: 2rem;
+    position: fixed;
+    top: 10rem;
+    left: 6.6rem;
+    z-index: 5;
+}
+/* 弹窗 */
+#div_alert{
+    width: 8rem; 
+    height: 1.4rem; 
+    text-align:center; 
+    background-color:black; 
+    color: White;
+    display: none; 
+    position:fixed;
+    top: 6rem;
+    left: 3.485rem;  
+    border:1px solid grey; 
+    border-top:0;
+    border-radius: 0.2rem;
+    font-size: .6rem;
+    line-height: 1.4rem; 
+    z-index: 9999999999;
+}

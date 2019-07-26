@@ -1,0 +1,2 @@
+<!--components/navDouble/navDouble.wxml-->
+<view>{{innerHTML}}</view>

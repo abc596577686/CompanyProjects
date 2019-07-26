@@ -1,0 +1,222 @@
+{
+	"description": "项目配置文件。",
+	"setting": {
+		"urlCheck": true,
+		"es6": true,
+		"postcss": true,
+		"minified": true,
+		"newFeature": true,
+		"autoAudits": false
+	},
+	"compileType": "miniprogram",
+	"libVersion": "1.9.93",
+	"appid": "wx79f91dc2f11a9c28",
+	"projectname": "lineShop_v4",
+	"isGameTourist": false,
+	"simulatorType": "wechat",
+	"simulatorPluginLibVersion": {},
+	"condition": {
+		"search": {
+			"current": -1,
+			"list": []
+		},
+		"conversation": {
+			"current": -1,
+			"list": []
+		},
+		"plugin": {
+			"current": -1,
+			"list": []
+		},
+		"game": {
+			"currentL": -1,
+			"list": []
+		},
+		"miniprogram": {
+			"current": 0,
+			"list": [
+				{
+					"id": 0,
+					"name": "productDetail",
+					"pathName": "pages/productDetail/productDetail",
+					"query": "",
+					"scene": "1001"
+				},
+				{
+					"id": -1,
+					"name": "allOrder",
+					"pathName": "pages/allOrder/allOrder",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "server",
+					"pathName": "pages/serviceProgress/serviceProgress",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "orderDetail",
+					"pathName": "pages/orderDetail/orderDetail",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "orderpay",
+					"pathName": "pages/orderPayStatus/orderPayStatus",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "servicePro",
+					"pathName": "pages/serviceProgress/serviceProgress",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "user",
+					"pathName": "pages/userCenter/userCenter",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "coupon",
+					"pathName": "pages/coupon/coupon",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "community",
+					"pathName": "pages/community/community",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "addressDetail",
+					"pathName": "pages/addressDetail/addressDetail",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "addressDetail",
+					"pathName": "pages/addressDetail/addressDetail",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "newCart",
+					"pathName": "pages/newCart/newCart",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "groupProduct",
+					"pathName": "pages/groupProduct/groupProduct",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "customerService",
+					"pathName": "pages/customerService/customerService",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "2",
+					"pathName": "pages/showDetail/showDetail",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "1",
+					"pathName": "pages/type/type",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "confirm",
+					"pathName": "pages/confirmOrder/confirmOrder",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "innerLogin",
+					"pathName": "pages/innerLogin/innerLogin",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "userInfo",
+					"pathName": "pages/userInfo/userInfo",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "verify",
+					"pathName": "pages/userInfo/verify/verify",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "bindNewPhone",
+					"pathName": "pages/userInfo/bindNewPhone/bindNewPhone",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "bindNewPhone",
+					"pathName": "pages/userInfo/bindNewPhone/bindNewPhone",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "cart",
+					"pathName": "pages/cart/cart",
+					"query": ""
+				},
+				{
+					"id": 23,
+					"name": "groupShoping",
+					"pathName": "pages/groupShoping/groupShoping",
+					"query": ""
+				},
+				{
+					"id": 24,
+					"name": "groupDetail",
+					"pathName": "pages/groupDetail/groupDetail",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "groupPin",
+					"pathName": "pages/groupPin/groupPin",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "121",
+					"pathName": "pages/userCenter/userCenter",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "celebrityAdd",
+					"pathName": "pages/celebrityAdd/celebrityAdd",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "celebrityList",
+					"pathName": "pages/celebrityList/celebrityList",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "登录页",
+					"pathName": "pages/login/login",
+					"query": ""
+				}
+			]
+		}
+	}
+}

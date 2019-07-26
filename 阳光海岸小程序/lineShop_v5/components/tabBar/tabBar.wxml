@@ -1,0 +1,13 @@
+<!--components/tabBar/tabBar.wxml-->
+
+<view class='tabBarWrap'>
+  <block wx:for="{{tabBar.list}}" wx:key="{{index}}">
+    <navigator open-type="{{index == 2 ? 'navigate' : 'redirect'}}" hover-class='none' url='{{item.pagePath}}' class='tabItem'>
+      <view class='imgWrap'>
+        <image wx:if="{{activeIndex == index}}" mode='widthFix' src='{{item.selectedIconPath}}'></image>
+        <image wx:else mode='widthFix' src='{{item.iconPath}}'></image>
+      </view>
+      <text class='text'>{{item.text}}</text>
+    </navigator>
+  </block>
+</view>

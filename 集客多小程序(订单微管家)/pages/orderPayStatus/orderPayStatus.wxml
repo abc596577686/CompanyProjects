@@ -1,0 +1,51 @@
+<!--pages/orderMes/orderMes.wxml-->
+<loading wx:if='{{isLoading}}'></loading>
+<view class='container'>
+  <view class='orderHeader' bindtap='redirectToEnv'>
+    <view class='orderMes' wx:if="{{orderInfo.status === '1'}}">
+      <text>买家未付款</text>
+    </view>
+    <view class='orderMes' wx:if="{{orderInfo.status !== '1'}}">
+      <text>买家已付款</text>
+    </view>
+    <view class='good'>
+      <text class='goodMes' wx:if="{{orderInfo.status === '1'}}">请您先付款</text>
+      <text class='goodMes' wx:if="{{orderInfo.status !== '1'}}">您的包裹准备就绪</text>
+      <view class='query'>
+        <text class='search'>订单查询</text>
+        <image src='../../assets/images/icon_justDo.png' class='justDo'></image>
+      </view>
+    </view>
+  </view>
+  <view class='orderInfo'>
+    <view class='money'>
+      <text class='name'>实付金额</text>
+      <text class='num'>¥{{orderInfo.payAmount}}</text>
+    </view>
+    <view class='orderNum'>
+      <text class='name'>订单号</text>
+      <text class='num'>{{orderInfo.orderNo}}</text>
+    </view>
+  </view>
+  <view class='userMes'>
+    <view class='userHead'>收件人信息</view>
+    <view class='item'>
+      <text class='name'>收件人</text>
+      <text class='num'>{{orderInfo.name}}</text>
+    </view>
+    <view class='item'>
+      <text class='name'>联系电话</text>
+      <text class='num'>{{orderInfo.mobile}}</text>
+    </view>
+    <view class='item'>
+      <text class='name'>收货地址</text>
+      <text class='num address'>{{orderInfo.address}}</text>
+    </view>
+  </view>
+
+  <!-- <view class='footer'>
+    <button class='continue' bindtap='containueEnv'>继续购物</button>
+  </view> -->
+
+
+</view>

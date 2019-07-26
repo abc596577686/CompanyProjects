@@ -1,0 +1,110 @@
+.knum{
+    width: 100%;
+    height: 1.536rem;
+    background-color: #fff;
+    position: relative;
+}
+.knum .k1{
+     display: block;
+    width: 2.56rem;
+    height: .597333rem;
+    font-size: .597333rem;
+    color: #666666;
+    position: absolute;
+    left: .554667rem;
+    top: .469333rem;
+}
+.knum .k2{
+    display: block;
+    width: 9rem;
+    height: .597333rem;
+    font-size: .597333rem;
+    color: #666666;
+    position: absolute;
+    left: 3.413333rem;
+    top: .469333rem;
+} 
+.midtip{
+    width: 100%;
+    height: 1.493333rem;
+    background-color: #fff;
+    position: relative;
+}
+.midtip .mt_1{
+    width: 1.92rem;
+    height: .554667rem;
+    display: block;
+    position: absolute;
+    left: .554667rem;
+    top: .469333rem;
+    font-size: .554667rem;
+    color: #666666;
+}
+.midtip .mt_2{
+    width: 1.92rem;
+    height: .554667rem;
+    display: block;
+    position: absolute;
+    left: 13.909333rem;
+    top: .469333rem;
+     font-size: .554667rem;
+    color: #fb4a4c;
+}
+.sfz{
+        width: 100%;
+        height: 2.517333rem;
+        position: relative;
+        background-color: #fff;
+    }
+    .sfz_img{
+        width: .768rem;
+        height: .768rem;
+        position: absolute;
+        left: .597333rem;
+        top: .426667rem;
+    }
+    .sfz_t1{
+        width: 1.92rem;
+        height: .554667rem;
+        font-size: .554667rem;
+        color: #666666;
+        position: absolute;
+        left: 1.664rem;
+        top: .512rem;
+    }
+    .sfz_t2{
+        width: 1.92rem;
+        height: .554667rem;
+        font-size: .554667rem;
+        color: #666666;
+        position: absolute;
+        left: 3.712rem;
+        top: .512rem;
+    }
+    .sfz_t3{
+        width: 4rem;
+        height: .554667rem;
+        font-size: .554667rem;
+        color: #666666;
+        position: absolute;
+        left: 1.664rem;
+        top: 1.493333rem;
+    }
+    .sfz_t4{
+        width: 7.68rem;
+        height: .554667rem;
+        font-size: .554667rem;
+        color: #666666;
+        position: absolute;
+        left: 4rem;
+        top: 1.493333rem;
+    }
+    .sfz_t5{
+        width: 7.68rem;
+        height: .554667rem;
+        font-size: .554667rem;
+        color: #666666;
+        position: absolute;
+        left: 5rem;
+        top: 1.493333rem;
+    }

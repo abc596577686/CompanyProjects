@@ -1,0 +1,5 @@
+{
+  "dependencies": {
+    "wxa-plugin-canvas": "^1.1.11"
+  }
+}

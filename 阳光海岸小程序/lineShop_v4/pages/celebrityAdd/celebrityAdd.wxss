@@ -1,0 +1,154 @@
+/* pages/celebrityAdd/celebrityAdd.wxss */
+.idNumTitle {
+  padding: 30rpx 20rpx;
+  background-color: #f6f6f6;
+  font-size: 28rpx;
+}
+.idNumTitle text {
+  color: #999;
+}
+.idNumBox input {
+  width: 100%;
+  border: 1rpx solid #eee;
+  height: 98rpx;
+  padding-left: 20rpx;
+  background-color: #fff;
+}
+.idImgWarn {
+  padding: 30rpx 60rpx;
+  font-size: 26rpx;
+  color: #999;
+  background-color: #fff;
+  padding-bottom: 37rpx;
+}
+.idHeader {
+  font-size: 26rpx;
+  color: #333;
+  padding:  0 25rpx;
+  margin-bottom: 30rpx;
+}
+.idMain {
+  background-color: #fff;
+  padding: 0 25rpx;
+  display: flex;
+  flex-direction: row;
+  padding-bottom: 30rpx;
+}
+
+.main-left {
+  width: 50%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  padding-right: 5rpx;
+}
+
+.imgBox {
+  width: 338rpx;
+  height: 214rpx;
+  margin-bottom: 41rpx;
+  position: relative;
+  border: 1rpx dashed #ccc;
+}
+
+.userImg {
+  width: 100%;
+  height: 100%;
+}
+
+.idName {
+  color: #666;
+  font-size: 24rpx;
+}
+
+.Loadbtn {
+  width: 124rpx;
+  height: 47rpx;
+  color: #fff;
+  border-radius: 30rpx;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-left: -62rpx;
+  margin-top: -23rpx;
+  text-align: center;
+  line-height: 47rpx;
+  background-color: #000;
+  opacity: 0.5;
+}
+
+.main-right {
+  padding-left: 5rpx;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+.maskLayer {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgba(0, 0, 0, 0.70);
+  z-index: 50;
+  opacity: 0;
+}
+.warnInfo {
+  line-height: 1.3;
+}
+.explainBox {
+  position: fixed;
+  width: 70%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+}
+.idTxt {
+  font-size: 24rpx;
+  color: #666;
+}
+.ex-info {
+  flex-direction: column;
+  display: flex;
+  text-align: center;
+}
+.handleBtn {
+  padding: 20rpx 10rpx;
+  border-radius: 20rpx;
+  border: 1rpx solid red;
+  width: 50%;
+  text-align: center;
+}
+.knowMoreBox {
+  position: fixed;
+  top: 50%;
+  left: 50%；
+}
+.ex-head {
+  color: #333;
+  font-size: 28rpx;
+  padding: 50rpx 0;
+}
+.explain {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding-left: 30rpx;
+  padding-right: 50rpx;
+  background-color: #f6f6f6;
+}
+.ex-main {
+  font-size: 26rpx;
+  color: #999;
+  line-height: 1.5;
+}
+.txt {
+  font-size: 26rpx;
+}

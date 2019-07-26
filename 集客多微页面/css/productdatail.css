@@ -1,0 +1,24 @@
+*{
+    margin: 0;
+    padding: 0
+}
+img{
+    display: block;
+    width: 100%;
+    /* height: 100%; */
+}
+header{
+    width: 14.3rem;
+    height: 1.84rem;
+    font-size: .56rem;
+    color: #333333;
+    line-height: .6rem;
+    /* text-indent: .68rem; */
+    /* padding-left: .68rem; */
+    padding-top: .52rem;
+    margin-left: .5rem;
+}
+.pageimg{
+    width: 100%;
+    /* height: 14.2rem; */
+}

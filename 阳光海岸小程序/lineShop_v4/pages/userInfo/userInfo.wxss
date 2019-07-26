@@ -1,0 +1,45 @@
+/* pages/userInfo/userInfo.wxss */
+
+page {
+  background: #f0f0f0;
+  margin-top: 1px;
+}
+
+.item{
+  background: #fff;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  padding: 30rpx 25rpx;
+  color: #333;
+  font-size: 28rpx;
+}
+
+.item .lable{
+  margin-right: 20rpx;
+}
+
+.item .content{
+  text-align: right;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.headWrap{
+  width: 96rpx;
+  min-height: 96rpx;
+  border-radius: 100%;
+  overflow: hidden;
+  margin-right: 20rpx;
+}
+
+.infoList{
+  margin-top: 40rpx;
+}
+
+.seeMoreIcon {
+  width: 14rpx;
+  margin-left: 26rpx;
+}

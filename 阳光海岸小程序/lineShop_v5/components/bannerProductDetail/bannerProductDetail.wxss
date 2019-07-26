@@ -1,0 +1,13 @@
+/* components/bannerProductDetail/bannerProductDetail.wxss */
+
+swiper-item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #fff;
+}
+
+.slide-image {
+  display: block;
+  min-height: 750rpx;
+}

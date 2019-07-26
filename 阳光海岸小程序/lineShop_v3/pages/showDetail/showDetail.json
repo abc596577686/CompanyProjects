@@ -1,0 +1,11 @@
+{
+    "navigationBarTitleText": "",
+    "navigationBarBackgroundColor": "#fff",
+    "usingComponents": {
+        "loading": "/components/loading/loading",
+        "goodsTwoColumns": "/components/goodsTwoColumns/goodsTwoColumns",
+        "noMore": "/components/noMore/noMore"
+    },
+    "enablePullDownRefresh": true,
+    "backgroundTextStyle": "dark"
+}

@@ -1,0 +1,18 @@
+/* components/btn/btn.wxss */
+.footer {
+  /* position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0; */
+  padding: 27rpx 35rpx;
+  background-color: #fff;
+}
+.footer-btn {
+  width: 100%;
+  padding: 27rpx 0;
+  background-color: #FB4A4C;
+  color: #fff;
+  font-size: 30rpx;
+  text-align: center;
+  border-radius: 10rpx;
+}

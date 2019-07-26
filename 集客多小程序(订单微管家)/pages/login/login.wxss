@@ -1,0 +1,761 @@
+/* pages/login/login.wxss */
+
+.loginContainer{
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+}
+.logo{
+  width: 127rpx; 
+  display: block;
+}
+.txt{
+  position: relative;
+  top: -200rpx;
+  font-size: 36rpx;
+  color: #333;
+  font-weight: bold;
+}
+.loginBtn{
+  margin-bottom: 160rpx;
+  width: 390rpx;
+  height: 88rpx;
+  font-size: 30rpx;
+  color: #fff;
+  text-align: center;
+  text-indent: 50rpx;
+  padding: 26rpx 0;
+  border-radius: 40rpx;
+  background-color: #4FBF78;
+  font-weight: bold;
+  position: relative;
+}
+.btnImg{
+  width: 51rpx;
+  height: 42rpx;
+  position: absolute;
+  top: 22rpx;
+  left: 95rpx;
+}
+/*
+  商品规格
+  */
+
+  .specSelectWrap {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: #fff;
+    z-index: 100;
+    transform: translate3d(0, 100%, 0);
+  }
+  
+  .specSelectWrap .bottomBtn {
+    text-align: center;
+    width: 100%;
+    height: 98rpx;
+    padding: 36rpx 0;
+    font-size: 30rpx;
+    color: #fff;
+    background: #fb4a4c;
+  }
+  
+  .specSelectWrap .topWrap {
+    margin-bottom: 50rpx;
+    padding: 12rpx 20rpx 0;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+  
+  .specSelectWrap .topWrap .imgWrap {
+    width: 136rpx;
+    height: 136rpx;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 34rpx;
+  }
+  
+  .specSelectWrap .topWrap .imgWrap image {
+    width: 100%;
+  }
+  
+  .specSelectWrap .topBox {
+    display: flex;
+    flex-direction: row;
+  }
+  
+  .specSelectWrap .specDesc {
+    height: 134rpx;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    /* align-items: center; */
+  }
+  
+  .specSelectWrap .price {
+    font-size: 34rpx;
+    color: #fb4a4c;
+    display: block;
+    margin-bottom: 16rpx;
+  }
+  
+  .specSelectWrap .specs {
+    font-size: 24rpx;
+    color: #999;
+  }
+  
+  .specSelectWrap .specs .label {
+    margin-right: 10rpx;
+  }
+  
+  .specSelectWrap .closeWrap {
+    top: 20rpx;
+    right: 20rpx;
+    width: 50rpx;
+    height: 50rpx;
+    padding: 15rpx;
+  }
+  
+  .specSelectWrap .closeWrap image {
+    width: 100%;
+  }
+  
+  .goodsNumberWrap, .taxWrap {
+    color: #333;
+    padding: 28rpx 20rpx;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+  }
+  
+  .goodsNumberWrap .label, .taxWrap .label {
+    font-size: 28rpx;
+  }
+  
+  .goodsNumberWrap .handle {
+    /* width: 100%; */
+    display: flex;
+    height: 53rpx;
+    flex-direction: row;
+    /* position: relative; */
+    border: 1rpx solid #959595;
+    border-radius: 10rpx;
+  }
+  
+  /* .goodsNumberWrap .handle::after {
+    position: absolute;
+    content: '';
+    top: 0rpx;
+    left: -1rpx;
+    width: 200%;
+    height: 200%;
+    transform: scale(0.5);
+    transform-origin: 0 0;
+    border: 1rpx solid #959595;
+    border-radius: 10rpx;
+    z-index: 100;
+  } */
+  
+  .goodsNumberWrap .handle .btn {
+    width: 64rpx;
+    height: 46rpx;
+    line-height: 46rpx;
+    text-align: center;
+    position: relative;
+  }
+  
+  .goodsNumberWrap .handle .inputWrap {
+    width: 78rpx;
+    position: relative;
+  }
+  
+  .goodsNumberWrap .handle .inputWrap::after,
+  .goodsNumberWrap .handle .inputWrap::before {
+    position: absolute;
+    content: '';
+    width: 1rpx;
+    height: 100%;
+    background: #ccc;
+    transform: scaleX(0.5);
+    top: 0;
+  }
+  
+  .goodsNumberWrap .handle .inputWrap::after {
+    left: 0;
+  }
+  
+  .goodsNumberWrap .handle .inputWrap::before {
+    right: 0;
+  }
+  
+  .goodsNumberWrap .handle .inputWrap input {
+    text-align: center;
+    font-size: 28rpx;
+    color: #333;
+    border: none;
+    outline: none;
+  }
+  
+  .goodsNumberWrap .handle .btn.disabled {
+    background: #f5f5f5;
+  }
+  
+  .topLine {
+    position: relative;
+  }
+  
+  .topLine::after {
+    position: absolute;
+    content: '';
+    left: 0;
+    right: 0;
+    top: 0;
+    height: 1rpx;
+    background: #f0f0f0;
+    transform: scaleY(0.5);
+  }
+  
+  .taxWrap .tag {
+    padding: 10rpx;
+    color: #fff;
+    font-size: 20rpx;
+    background: #f99a99;
+  }
+  
+  /*
+    规格选择
+    */
+  
+  .specTypeItem {
+    padding: 0 28rpx;
+    font-size: 0;
+  }
+  
+  .specTypeItem .title {
+    color: #999;
+    font-size: 26rpx;
+    padding: 15rpx 0 20rpx 0;
+    margin-left: 5rpx;
+  }
+  
+  .specTypeItem .item {
+    color: #333;
+    font-size: 24rpx;
+    padding: 14rpx 26rpx;
+    display: inline-block;
+    border: 1rpx solid #999;
+    border-radius: 10rpx;
+    margin-right: 22rpx;
+    margin-bottom: 28rpx;
+  }
+  
+  .specTypeItem .item.disabled {
+    color: #e5e5e5;
+    border: 1rpx dashed #e5e5e5;
+  }
+  
+  .specTypeItem .item.selected {
+    color: #fff;
+    border-color: #ff969e;
+    background: #ff969e;
+  }
+  
+  .communityer {
+    flex: 1;
+    /* padding: 18rpx 29rpx; *//* background-color: #fff; *//* margin-bottom: 19rpx; *//* display: flex;
+    flex-direction: column;
+    justify-content: center; */
+  }
+  
+  .question {
+    font-size: 26rpx;
+    color: #333;
+    display: flex;
+    align-items: center;
+  }
+  
+  .qus-info {
+    font-size: 26rpx;
+    color: #333;
+    width: 492rpx;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    height: 40rpx;
+    line-height: 40rpx;
+    /* font-weight: 600; */
+  }
+  
+  .qus-icon, .an-icon {
+    height: 26rpx;
+    width: 26rpx;
+    display: inline-block;
+    background-color: #fe5000;
+    text-align: center;
+    line-height: 26rpx;
+    color: #fff;
+    font-size: 20rpx;
+    margin-right: 16rpx;
+    vertical-align: text-top;
+    border-radius: 2rpx;
+  }
+  
+  .an-icon {
+    background-color: #999;
+  }
+  
+  .answer {
+    /* height: 33.33%; *//* padding-bottom: 30rpx; */
+    color: #999;
+    font-size: 26rpx;
+    position: relative;
+    display: flex;
+    padding-top: 20rpx;
+    align-items: center;
+    /* justify-content: flex-start; */
+  }
+  
+  .an-info {
+    width: 492rpx;
+    display: -webkit-box;
+    word-break: break-all;
+    line-height: 26rpx;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  
+  .phoneTip {
+    width: 545rpx;
+    height: 404rpx;
+    position: fixed;
+    top: 300rpx;
+    left: 102rpx;
+    background-color: #fff;
+    z-index: 60;
+    border-radius: 15rpx;
+    padding: 28rpx;
+  }
+  
+  .covertitle {
+    width: 100%;
+    height: 36rpx;
+    color: #333;
+    position: absolute;
+    top: 51rpx;
+    left: 0;
+    text-align: center;
+    font-weight: bold;
+    font-size: 36rpx;
+  }
+  
+  .covertitle1 {
+    width: 486rpx;
+    height: 36rpx;
+    color: #333;
+    position: absolute;
+    left: 28rpx;
+    top: 119rpx;
+    text-align: center;
+    /* font-weight: bold; */
+    font-size: 30rpx;
+    line-height: 35rpx;
+  }
+  
+  .phoneTip input {
+    width: 480rpx;
+    height: 68rpx;
+    position: absolute;
+    left: 30rpx;
+    top: 209rpx;
+    border: 1rpx solid #ddd;
+    padding-left: 20rpx;
+  }
+  
+  .cover {
+    width: 100%;
+    height: 100%;
+    background-color: #000;
+    opacity: 0.3;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 51;
+  }
+  
+  .btn1 {
+    width: 222rpx;
+    height: 66rpx;
+    border: 1rpx solid #fb4a4c;
+    text-align: center;
+    line-height: 66rpx;
+    font-size: 30rpx;
+    background-color: #fff;
+    position: absolute;
+    left: 34rpx;
+    bottom: 33rpx;
+    color: #fb4a4c;
+  }
+  
+  .btn2 {
+    width: 222rpx;
+    height: 66rpx;
+    border: 1rpx solid #fb4a4c;
+    text-align: center;
+    line-height: 66rpx;
+    font-size: 30rpx;
+    background-color: #fb4a4c;
+    color: #fff;
+    position: absolute;
+    right: 34rpx;
+    bottom: 33rpx;
+  }
+  
+  .emptyView {
+    width: 100%;
+    height: 1015rpx;
+    /* height: 1020rpx; *//* background-color: #f0f0f0; */
+    text-align: center;
+    line-height: 1015rpx;
+    /* position: fixed; */
+    position: relative;
+    /* top: 100rpx; *//* left: 0; */
+  }
+  
+  .groupBox {
+    background-color: #fff;
+    margin-bottom: 20rpx;
+  }
+  
+  .box-header {
+    background-color: #fff;
+    display: flex;
+    justify-content: space-between;
+    margin: 0 33rpx;
+    padding: 24rpx 0;
+    border-bottom: 1rpx solid #eee;
+    font-size: 26rpx;
+    color: #333;
+  }
+  
+  .head-right {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+  }
+  
+  .more {
+    width: 15rpx;
+    height: 12rpx;
+    margin-left: 10rpx;
+  }
+  
+  .scrollBox {
+    height: 280rpx;
+    overflow: hidden;
+    position: relative;
+  }
+  .oneItem {
+    height: 140rpx;
+  }
+  
+  .scrollBoxer {
+    height: 700rpx;
+    overflow: hidden;
+    position: relative;
+  }
+  
+  .scroll {
+    position: absolute;
+    width: 100%;
+    top: 0;
+    left: 0;
+    transition: all 2s;
+  }
+  
+  .scroller {
+    position: absolute;
+    width: 100%;
+    top: 0;
+    left: 0;
+  }
+  
+  .scroll-item {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+    padding: 20rpx 0;
+    height: 140rpx;
+    border-bottom: 1rpx solid #eee;
+    margin-left: 30rpx;
+    margin-right: 20rpx;
+  }
+  
+  .s-left {
+    /* padding-left: 31rpx; */
+    align-items: center;
+    display: flex;
+    flex-direction: row;
+  }
+  
+  .s-imgBox {
+    width: 90rpx;
+    height: 90rpx;
+    border-radius: 50%;
+    overflow: hidden;
+    background-color: #999;
+    margin-right: 25rpx;
+  }
+  
+  .s-name{
+    width: 200rpx;
+  }
+  .scrollBoxer .s-name{
+    width: 150rpx;
+    font-size: 28rpx;
+  }
+  
+  .s-img {
+    width: 100%;
+    height: 100%;
+  }
+  
+  .s-right {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+  }
+  
+  .s-rest {
+    color: #333;
+    font-size: 26rpx;
+  }
+  
+  .s-rest text {
+    color: #fb4a4c;
+    font-size: 28rpx;
+  }
+  
+  .s-restTime {
+    font-size: 22rpx;
+    color: #999;
+    margin-top: 20rpx;
+  }
+  
+  .s-btn {
+    color: #fff;
+    font-size: 30rpx;
+    padding: 15rpx 25rpx;
+    border-radius: 5rpx;
+    background-color: #fb4a4c;
+    margin-left: 15rpx;
+  }
+  
+  .s-info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: #333;
+    font-size: 28rpx;
+  }
+  
+  .s-info text {
+    margin: 10rpx;
+    margin-left: 0;
+  }
+  .s-info .restTime{
+    font-size: 24rpx;
+    color: #999;
+  }
+  
+  .groupBoxDetail {
+    background-color: #fff;
+    position: fixed;
+    top: 50%;
+    width: 90%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    z-index: 1000;
+    border-radius: 5rpx;
+  }
+  
+  .de-header {
+    font-size: 36rpx;
+    color: #333;
+    text-align: center;
+    padding: 40rpx 0;
+    font-weight: 600;
+    /* border-bottom: 1rpx solid #999; */
+  }
+  
+  .close {
+    width: 24rpx;
+    top: 15rpx;
+    right: 15rpx;
+    position: absolute;
+  }
+  
+  .de-footer {
+    padding: 31rpx 0;
+    text-align: center;
+    font-size: 26rpx;
+    color: #666;
+  }
+  .groupBuy {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  .groupBuy text {
+    margin-bottom: 7rpx;
+  
+  }
+  .describer {
+    background-color: #fff;
+    padding: 20rpx;
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+    left: 0;
+  }
+  .des-header {
+    padding: 10rpx 0;
+    color: #333;
+    font-size: 26rpx;
+    display: flex;
+    flex-direction: row;
+  
+  }
+  .des-line {
+    width: 0rpx ;
+    border:3rpx solid #fb4a4c;
+    height: 30rpx;
+    border-radius: 3rpx;
+    margin-right: 20rpx;
+  }
+  .des-main {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  .des-main text {
+    width: 50%;
+    margin-bottom: 10rpx;
+    color: #333;
+    font-size: 24rpx;
+  }
+  .contentView{
+    width: 100%;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    background-color: #fff;
+  }
+  .btu{
+    width: 100%;
+    background-color: #3d97f2;
+    color: #fff;
+    font-size: 30rpx;
+  }
+  
+  .warntit{
+    /* width: 100%; */
+    height: 1rem;
+    color: #FB4A4C;
+    font-size: .7rem;
+    line-height: 1rem;
+    display: block;
+    /* position: absolute; */
+    /* right: .2rem; */
+    /* bottom: .3rem; */
+    text-align: right;
+    margin-right: 20rpx;
+  }
+  
+  .inputClass{
+    height: 50rpx;
+    
+    line-height: 1;
+  }
+  .maskLayer {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(0, 0, 0, 0.70);
+    z-index: 50;
+    opacity: 0;
+  }
+  .specSelectWrap{
+    width: 100%;
+    height: 600rpx;
+    padding: 40rpx;
+  }
+  .specSelectWrap text{
+    font-size: 35rpx;
+  }
+  .codeSec{
+    width: 100%;
+    height:80rpx;
+    margin-top: 80rpx;
+    /* border: 1px solid #4FBF78; */
+  }
+  .inIphoneCodeTXT{
+    width: 120rpx;
+    height: 50rpx;
+    line-height: 50rpx;
+    display: inline-block;
+  }
+  .inIphoneCode{
+    /* width: 100%; */
+    width: 445rpx;
+    display: inline-block;
+    height: 35rpx;
+    line-height: 35rpx;
+    position: relative;
+    top: 8rpx;
+    font-size: 35rpx;
+    margin-left: 10rpx;
+    border-bottom: 2rpx solid #333;
+    text-align: left;
+    padding-left: 30rpx;
+    /* margin-top: 20rpx; */
+    /* height: 400rpx;
+    padding: 40rpx; */
+  }
+  .goinBtn{
+    /* margin-bottom: 160rpx; */
+    width: 350rpx;
+    height: 75rpx;
+    font-size: 30rpx;
+    color: #fff;
+    text-align: center;
+    /* text-indent: 50rpx; */
+    padding: 22rpx 0;
+    border-radius: 40rpx;
+    background-color: #4FBF78;
+    font-weight: bold;
+    position: relative;
+    left: 160rpx;
+    top: 90rpx;
+  }
+  .btnImg{
+    width: 51rpx;
+    height: 42rpx;
+    position: absolute;
+    top: 22rpx;
+    left: 95rpx;
+  }

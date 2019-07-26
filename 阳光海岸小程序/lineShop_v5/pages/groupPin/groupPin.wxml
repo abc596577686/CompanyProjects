@@ -1,0 +1,66 @@
+<!--pages/groupShoping/groupShoping.wxml-->
+<view class='container'>
+  <view class='top'>
+    <view class='shopMes'>
+      <block wx:if='{{status=="1"}}'>
+        <icon type='success' color='#2EA7E0' size='19'></icon>
+        <text class='mes'>拼团成功</text>
+      </block>
+      <block wx:if='{{status=="0"}}'>
+        <icon type='clear' color='#2EA7E0' size='19'></icon>
+        <text class='mes'>拼团失败</text>
+      </block>
+    </view>
+    <view class='goodMes' wx:if='{{status=="1"}}'>商家正在努力发货，请耐心等待</view>
+    <view class='goodMes' wx:else>这个团没有拼成功，将尽快退款！</view>
+    <!--拼团头像 -->
+    <groupUser></groupUser>
+    <block wx:if='{{status=="1"}}'>
+      <btn btnInfo='去首页逛逛'></btn>
+    </block>
+    <block wx:if='{{status=="0"}}'>
+      <btn btnInfo='再来一单'></btn>
+    </block>
+  </view>
+  <view class='bottom'>
+    <view class='goodName'>
+      <view class='left'>商品名称</view>
+      <view class='right'>
+        <text class='nameInfo'>眼镜蛇氮泵 健身补剂肌酸粉诅咒氮...</text>
+        <image class='more' src='/assets/images/icon_justDo.png' mode='widthFix'></image>
+      </view>
+    </view>
+    <view class='groupKonw' bindtap='showAddress'>
+      <view class='left'>订单信息</view>
+      <view class='right'>收件人 · 收货地址 · 成团时间</view>
+    </view>
+  </view>
+</view>
+<block wx:if='{{status=="0"}}'>
+  <view class='footer'>
+    <view class='footer-btn'>去首页逛逛</view>
+  </view>
+</block>
+<view class='bg' wx:if='{{showMasker}}'></view>
+<view class='bger' wx:if='{{showMasker}}'catchtap='hideMasker'>
+  <view class='knowDetailBox' wx:if='{{showDetailBox}}'>
+    <view class='box-head'>
+      <text>订单信息</text>
+      <image src='/assets/images/close.png' class='close' catchtap='hideMasker'></image>
+    </view>
+    <view class='box-main'>
+      <view class='main-item'>
+        <text>· 收货人：格瓦*136****2448</text>
+        <image class='more' src='/assets/images/icon_justDo.png' mode='widthFix'></image>
+      </view>
+      <view class='main-item'>
+        <text>· 收货地址：江苏省苏州市昆山...</text>
+        <image class='more' src='/assets/images/icon_justDo.png' mode='widthFix'></image>
+      </view>
+      <view class='main-item'>
+        <text>· 成团时间：2018-6-13  09:31</text>
+        <image class='more' src='/assets/images/icon_justDo.png' mode='widthFix'></image>
+      </view>
+    </view>
+  </view>
+</view>

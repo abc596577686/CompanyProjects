@@ -1,0 +1,253 @@
+.scrollWrap-top-bottom{
+  position: absolute;
+  width: 100%;
+  overflow: hidden;
+  top: 1.877333rem;
+  bottom: 0;
+}
+.toptit{
+    width: 100%;
+    height: 1.877333rem;
+    position: relative;
+    padding-top: .64rem; 
+    padding-left: .554667rem; 
+    background-color: #fff;
+    border-bottom: 0.04rem solid #f5f5f5;
+}
+.top_t{
+    width: .469333rem;
+    height: .853333rem;
+    position: absolute;
+}
+.top_o{
+    width: 5.12rem;
+    height: .853333rem;
+    line-height: .682667rem;
+    position: absolute;
+    left: 6.570667rem;
+    top: .810667rem;
+    font-size: .682667rem;
+    color: #333333;
+}
+/*粗线  */
+.gte{
+    display: block;
+    width: 100%;
+    height:.085333rem;
+    background-color: #f5f5f5;
+}
+/*细线  */
+.gte1{
+    display: block;
+    width: 100%;
+    height:.04rem;
+    background-color: #f5f5f5;
+}
+/*粗X2  */
+.gte2{
+    display: block;
+    width: 100%;
+    height:.426667rem;
+    background-color: #f5f5f5;
+}
+
+.payState{
+    width: 100%;
+    height: 5.802667rem;
+    background-color: #fff;
+    position: relative;
+    border-bottom: 0.04rem solid #f5f5f5;
+}
+.payImg{
+    width: 2.389333rem;
+    height: 2.389333rem;
+    position: absolute;
+    left: 6.8rem;
+    top: .597333rem;
+}
+.paysc{
+    width: 2.986667rem;
+    height: .64rem;
+    font-size: .682667rem;
+    color: #333333;
+    position: absolute;
+    left: 6.613333rem;
+    top: 3.669333rem;
+}
+.paysc2{
+    width: 3.84rem;
+    height: .64rem;
+    font-size: .469333rem;
+    color: #333333;
+    position: absolute;
+    left: 6.4rem;
+    top: 4.778667rem;   
+}
+.paysc3{
+    width: .298667rem;
+    height: .426667rem;
+    position: absolute;
+    left: 9.642667rem;
+    top: 4.851333rem;
+}
+.realPay{
+  width: 100%;
+  height: 3.157333rem;
+  background-color: #fff;
+  position: relative;
+}
+.realPay_1{
+    display: block;
+    width: 2.56rem;
+    height: .554667rem;
+    position: absolute;
+    left: .597333rem;
+    top: .853333rem;
+    font-size: .554667rem;
+    color: #666666;
+}
+.realPay_2{
+    display: block;
+    width: 2.56rem;
+    height: .554667rem;
+    position: absolute;
+    left: 3.712rem;
+    top: .853333rem;
+    font-size: .554667rem;
+    color: #fb4a4c;
+}
+.realPay_3{
+    display: block;
+    width: 2.56rem;
+    height: .554667rem;
+    position: absolute;
+    left: .597333rem;
+    top: 1.877333rem;
+    font-size: .554667rem;
+    color: #666666;
+}
+.realPay_4{
+    display: block;
+    width: 2.56rem;
+    height: .554667rem;
+    position: absolute;
+    left: 3.712rem;
+    top: 1.877333rem;
+    font-size: .554667rem;
+    color: #666666;
+}
+.request{
+    width: 100%;
+    height: 1.877333rem;
+    background-color: #fff;
+    position: relative;
+}
+.request div{
+    width: 3.2rem;
+    height: .597333rem;
+    font-size: .597333rem;
+    color: #666666;
+    position: absolute;
+    left: .64rem;
+    top: .682667rem;
+}
+.request span{
+    display: block;
+    width: .341333rem;
+    height: .512rem;
+    position: absolute;
+    left: 15.061333rem;
+    top: .768rem;
+}
+.knum{
+    width: 100%;
+    height: 1.536rem;
+    background-color: #fff;
+    position: relative;
+    border-bottom: 0.04rem solid #f5f5f5;
+}
+.knum .k1{
+     display: block;
+    width: 2.56rem;
+    height: .597333rem;
+    font-size: .597333rem;
+    color: #666666;
+    position: absolute;
+    left: .554667rem;
+    top: .469333rem;
+}
+.knum .k2{
+    display: block;
+    width: 9rem;
+    height: .597333rem;
+    font-size: .597333rem;
+    color: #666666;
+    position: absolute;
+    left: 3.413333rem;
+    top: .469333rem;
+} 
+.Peoinfo{
+    width: 100%;
+    height: auto;
+    background-color: #fff;
+}
+.info1{
+    position: relative;
+    width: 100%;
+    height: 1.493333rem;
+    font-size: .554667rem;
+    color: #646464;
+    padding-left: .597333rem;
+    padding-top: .469333rem;
+    /* line-height: 1.493333rem; */
+}
+.infomain{
+    width: 100%;
+    height: 2.645333rem;
+    background-color: #fff;
+    position: relative;
+}
+.main1{
+    width: 1.906667rem;
+    height: .554667rem;
+    font-size: .554667rem;
+    color: #646464;
+    position: absolute;
+    left: .554667rem;
+    top: .512rem;
+}
+.main3{
+    width: 9rem;
+    height: .554667rem;
+    font-size: .554667rem;
+    color: #646464;
+    position: absolute;
+    left: 2.902667rem;
+    top: .512rem;
+}
+.main2{
+    width: 1.906667rem;
+    height: .554667rem;
+    font-size: .554667rem;
+    color: #646464;
+    position: absolute;
+    left: .554667rem;
+    top: 1.621333rem;
+}
+.main4{
+     width: 9rem;
+    height: .554667rem;
+    font-size: .554667rem;
+    color: #646464;
+    position: absolute;
+    left: 2.902667rem;
+    top: 1.621333rem;
+}
+.goimg{
+    display: block;
+    width: .341333rem;
+    height: .512rem;
+    position: absolute;
+    left: 15.061333rem; 
+     top: .5rem;  
+}

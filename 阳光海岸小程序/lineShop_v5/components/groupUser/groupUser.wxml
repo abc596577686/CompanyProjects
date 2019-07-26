@@ -1,0 +1,9 @@
+<!--components/groupUser/groupUser.wxml-->
+<view class='groupUser'>
+  <block wx:for='{{data}}' wx:key='{{index}}'>
+    <view class='imgBox'>
+      <text class='icon' wx:if ='{{index=="0"}}'>团长</text>
+      <image class='userImg' src='{{item}}'></image>
+    </view>
+  </block>
+</view>

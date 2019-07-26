@@ -1,0 +1,15 @@
+<!--components/bannerMore.wxml-->
+<view>
+  <swiper style="height:{{imageHeight + 'px'}}" indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" indicator-color="rgba(0, 0, 0, .3)" indicator-active-color="rgba(255,255,255,1)" interval="{{interval}}" duration="{{duration}}">
+    <block wx:for="{{data}}" wx:key="{{index}}">
+      <swiper-item>
+         <navigator url="{{item.jumpUrl}}" hover-class="none">
+          <image bindload='imageLoad' mode="widthFix" src="{{item.pictureIcon}}" class="slide-image" />
+        </navigator>
+        <!-- <view bindtap='jumpUrlEnv' width="100%" height="{{imgHeight + 'px'}}"  data-url="{{item.jumpUrl}}" hover-class="none">
+          <image lazy-load='true' mode="widthFix" src="{{item.pictureIcon}}" class="slide-image" />
+        </view> -->
+      </swiper-item>
+    </block>
+  </swiper>
+</view>

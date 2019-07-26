@@ -1,0 +1,7 @@
+{
+  "navigationBarTitleText": "填写单号",
+  "navigationBarBackgroundColor": "#fff",
+  "usingComponents": {
+    "toast": "/components/toast/toast"
+  }
+}

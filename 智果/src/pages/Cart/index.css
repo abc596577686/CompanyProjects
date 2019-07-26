@@ -1,0 +1,285 @@
+.cart-container {
+  width: 100%;
+  background-color: #f0f0f0;
+}
+.cart-container .cartBox {
+  margin: 0 15px;
+}
+.cart-container .cartBox .box-title {
+  margin-top: 20px;
+  height: 35px;
+  overflow: hidden;
+}
+.cart-container .cartBox .box-title .t-item {
+  float: left;
+  height: 35px;
+}
+.cart-container .cartBox .box-title .t-item a {
+  display: block;
+  font-size: 16px;
+  color: #FF4200;
+  height: 35px;
+  padding: 0 20px;
+  line-height: 1.1;
+  font-weight: 700;
+  position: relative;
+}
+.cart-container .cartBox .box-title .t-active {
+  border-bottom: #FF4200 2px solid;
+  color: #FF4200;
+}
+.cart-container .cartBox .table {
+  margin-top: 20px;
+  width: 100%;
+  padding: 0 15px;
+}
+.cart-container .cartBox .table .check-th {
+  width: 140px;
+}
+.cart-container .cartBox .table thead th {
+  border-bottom: none;
+  color: #666;
+  font-weight: normal;
+  text-align: center;
+  padding: 0 8px;
+  font-size: 14px;
+  vertical-align: bottom;
+  padding-bottom: 20px;
+}
+.cart-container .cartBox .table thead .text-left {
+  text-align: left;
+}
+.cart-container .cartBox .table thead .fl {
+  float: left;
+}
+.cart-container .cartBox .table tbody .goodMain td {
+  padding: 8px;
+  border-bottom: 1px solid #ddd;
+  text-align: center;
+  background-color: #fff;
+}
+.cart-container .cartBox .table tbody .goodMain.active td {
+  background-color: #FFF9EE;
+}
+.cart-container .cartBox .table tbody .all-check {
+  padding: 10px 15px;
+  text-align: left;
+  border-left: 1px solid #ddd;
+  border-right: 1px solid #ddd;
+  background-color: #fafafa;
+}
+.cart-container .cartBox .table tbody .all-check td {
+  padding: 8px 17px;
+}
+.cart-container .cartBox .table tbody .all-check .check-box {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+}
+.cart-container .cartBox .table tbody .check-th {
+  text-align: left;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
+}
+.cart-container .cartBox .table tbody .check-th .imgBox {
+  padding: 15px 8px;
+}
+.cart-container .cartBox .table tbody .check-th .imgBox .goodImg {
+  width: 70px;
+  height: 70px;
+}
+.cart-container .cartBox .table tbody .goodsInfo {
+  width: 270px;
+  text-align: left;
+  word-break: break-all;
+  word-wrap: break-word;
+}
+.cart-container .cartBox .table tbody .goodsInfo .p-goods a span {
+  margin: 10px 0 10px;
+  line-height: 18px;
+  font-size: 14px;
+}
+.cart-container .cartBox .table tbody .numBox-td .input-group {
+  width: 140px;
+  margin: 0 auto;
+  position: relative;
+  display: table;
+  border-collapse: separate;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.cart-container .cartBox .table tbody .numBox-td .input-group .numBox-btn {
+  position: relative;
+  font-size: 0;
+  white-space: nowrap;
+  display: table-cell;
+  border-collapse: separate;
+}
+.cart-container .cartBox .table tbody .numBox-td .input-group .numBox-btn .btn {
+  display: inline-block;
+  border-color: #ccc;
+  background-color: #FAFAFA;
+  border-radius: 0;
+  color: #333;
+  border-width: 1px;
+  padding: 6px 13px;
+  font-size: 14px;
+  outline: none !important;
+  font-weight: 400;
+  line-height: 1.42857143;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: middle;
+  cursor: pointer;
+  user-select: none;
+  margin: 0;
+}
+.cart-container .cartBox .table tbody .numBox-td .input-group .numBox {
+  text-align: center;
+  display: table-cell;
+  position: relative;
+  z-index: 2;
+  float: left;
+  width: 100%;
+  margin-bottom: 0;
+  font-size: 12px;
+  height: 34px;
+  padding: 6px 12px;
+  line-height: 1.42857143;
+  color: #555;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  transition: border-color ease-in-out 0.15s, box-shadow ease-in-out 0.15s;
+  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+}
+.cart-container .cartBox .table tbody .goods-spec {
+  height: 100%;
+  width: 240px;
+  position: relative;
+}
+.cart-container .cartBox .table tbody .goods-spec .s-in {
+  width: 100%;
+}
+.cart-container .cartBox .table tbody .goods-spec .s-in .in-c {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.cart-container .cartBox .table tbody .goods-spec .s-in .dec {
+  display: none;
+}
+.cart-container .cartBox .table tbody .del i {
+  font-size: 16px;
+}
+.cart-container .cartBox .table tbody .del i:hover {
+  color: #FF4200;
+}
+.cart-container .cartBox .table tbody .sep-row td {
+  background: transparent;
+  border-top: none;
+  padding: 0;
+  height: 10px;
+}
+.cart-container .cartBox .table tbody .operate {
+  position: relative;
+}
+.cart-container .cartBox .table tbody .operate .handleBox {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  top: 18px;
+  left: -175px;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  z-index: 999;
+}
+.cart-container .cartBox .table tbody .operate .handleBox .hand-h {
+  padding: 8px 14px;
+  background-color: #f7f7f7;
+  border-bottom: 1px solid #ebebeb;
+  border-radius: 5px 5px 0 0;
+  font-weight: 300;
+}
+.cart-container .cartBox .table tbody .operate .handleBox .hand-f {
+  padding: 9px 14px;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 1.42857143;
+}
+.cart-container .cartBox .table tbody .operate .handleBox .hand-f .btnBox {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+}
+.cart-container .cartBox .table tbody .operate .handleBox .hand-f .btnBox .btn {
+  min-width: 60px;
+  height: 25px;
+  line-height: 23px;
+  padding: 1px 5px;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: middle;
+  border: 1px solid #ccc;
+}
+.cart-container .cartBox .table tbody .operate .handleBox .hand-f .btnBox .confirm {
+  background-color: #428bca;
+  border-color: #357ebd;
+  color: #fff;
+}
+.cart-container .cartBox .table tbody .operate .handleBox .arrow {
+  position: absolute;
+  top: 50%;
+  right: -10px;
+  width: 0;
+  height: 0;
+  border-width: 10px 0 10px 10px;
+  border-style: solid;
+  border-color: transparent transparent transparent #f0f0f0;
+  margin-top: -10px;
+}
+.cart-container .cartBox .table tbody .operate .handleBox .arrow:after {
+  content: '';
+}
+.cart-container .cartBox .footerBar {
+  background-color: #fff;
+  padding: 5px 12px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+}
+.cart-container .cartBox .footerBar .left {
+  font-size: 12px;
+}
+.cart-container .cartBox .footerBar .left span {
+  font-size: 16px;
+  color: #FF4200!important;
+}
+.cart-container .cartBox .footerBar .right {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.cart-container .cartBox .footerBar .right .price {
+  color: #FF4200;
+  font-size: 24px;
+  font-weight: 700;
+}
+.cart-container .cartBox .footerBar .right .btn_buy {
+  height: 40px;
+  width: 140px;
+  background-color: #FF4200;
+  color: #fff;
+  font-size: 14px;
+  text-align: center;
+  line-height: 40px;
+  margin: 10px;
+  border-radius: 2px;
+  cursor: pointer;
+}

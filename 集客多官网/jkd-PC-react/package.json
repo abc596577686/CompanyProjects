@@ -1,0 +1,44 @@
+{
+  "name": "my-appcd",
+  "version": "0.1.0",
+  "private": true,
+  "homepage": ".",
+  "dependencies": {
+    "antd": "^3.13.3",
+    "bundle-loader": "^0.5.6",
+    "enquire": "0.0.2",
+    "enquire-js": "^0.2.1",
+    "enquire.js": "^2.1.6",
+    "rc-banner-anim": "^2.2.2",
+    "rc-queue-anim": "^1.6.11",
+    "rc-scroll-anim": "^2.5.6",
+    "rc-tween-one": "^2.3.2",
+    "react": "^16.7.0",
+    "react-app-rewired": "^2.0.2-next.0",
+    "react-dom": "^16.7.0",
+    "react-responsive": "^6.1.1",
+    "react-router": "^2.8.1",
+    "react-scripts": "^2.1.5",
+    "swiper": "^4.4.6"
+  },
+  "scripts": {
+    "start": "react-app-rewired start",
+    "build": "react-app-rewired build",
+    "test": "react-app-rewired test",
+    "eject": "react-scripts eject"
+  },
+  "eslintConfig": {
+    "extends": "react-app"
+  },
+  "browserslist": [
+    ">0.2%",
+    "not dead",
+    "not ie <= 11",
+    "not op_mini all"
+  ],
+  "devDependencies": {
+    "babel-plugin-import": "^1.11.0",
+    "image-webpack-loader": "^4.6.0",
+    "react-router-dom": "^4.3.1"
+  }
+}

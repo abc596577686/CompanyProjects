@@ -1,0 +1,9 @@
+{
+    "navigationBarBackgroundColor": "#fff",
+    "usingComponents": {
+      "loading": "/components/loading/loading",
+      "timeout": "/components/timeout/timeout"
+    },
+    "enablePullDownRefresh": true,
+    "backgroundTextStyle": "dark"
+  }

@@ -1,0 +1,63 @@
+.flowstep{
+  margin: 0 auto;
+  padding: 10px 0  20px 50px;
+  width: 660px;
+  position: absolute;
+  top: 10px;
+  right: 0px;
+  //z-index: 9999;
+  ul{
+    .step_li{
+      float: left;
+      text-align: center;
+      width:140px;
+      .itemBox{
+        .step-name{
+          color: #888;
+          font-weight: 700;
+          padding: 3px 0;
+        }
+        .step-no{
+          color: #fff;
+          font-family: 'arial black';
+          font-size: 18px;
+          height: 34px;
+          line-height: 34px;
+          background: url('../../resource/assets/images/flow-icon.png') no-repeat scroll 50% -102px;
+          .num{
+            display: block;
+          }
+        }
+        &.item-done{
+          .step-no{
+            background-position: 50% -170px;
+            .num{
+              display: none;
+            }
+          }
+        }
+
+      }
+      &.frist_li{
+        .itemBox{
+          .step-no{
+            background-position: 50% -204px;
+          }
+        }
+      }
+      &.last_li{
+        .itemBox{
+          &.item-done{
+            .step-no{
+              //background-position: 50% -204px;
+            }
+          }
+          .step-no{
+            background-position: 50% -136px;;
+          }
+
+        }
+      }
+    }
+  }
+}

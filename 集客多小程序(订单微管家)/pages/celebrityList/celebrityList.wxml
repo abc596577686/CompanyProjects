@@ -1,0 +1,63 @@
+<!--pages/celebrityList/celebrityList.wxml-->
+<view class='container'>
+  <view class='userItem' wx:for='{{userList}}' wx:key='{{index}}' catchtap='editUserInfo' data-info='{{item}}'>
+    <view class='userName'>{{item.identityName}}</view>
+    <view class='idNum'>{{item.identityNo}}</view>
+    <view class='idHandle'>
+      <view class='handle-left'>
+        <view class='circleBox' catchtap='setDefault' data-info='{{item}}' data-index='{{index}}'>
+          <icon class='circle' type='circle' size='20' color='#000' wx:if='{{item.isDefault=="0"}}'></icon>
+          <icon class='circle-success' type='success' size='20' color='#FB4A4C' wx:if='{{item.isDefault=="1"}}'></icon>
+        </view>
+        <text class='left-info'>账户默认实名人</text>
+      </view>
+      <view class='handle-right' catchtap='_showMaskLayer' data-id='{{item.certificationId}}' catchtap='delUserInfo'>
+        <image class='rubish-icon' mode='widthFix' src='/assets/images/icon_clear.png'></image>
+        <text>删除</text>
+      </view>
+    </view>
+  </view>
+</view>
+<block wx:if='{{userList.length=="0"}}'>
+  <view class='explainBox'>
+    <image class='ex-img' src='/assets/images/id_empty.png' mode='widthFix'></image>
+    <view class='ex-info'>
+      <text>你还没有实名认证信息哦~</text>
+      <text>为了能顺利下单，添加一个吧！</text>
+    </view>
+    <view class='handleBtn' catchtap='addUserInfo'>添加实名信息</view>
+    <view class='knowMore'>
+      <image src='/assets/images/question.png ' mode='widthFix' class='ques'></image>
+      <text class='knowMoreBtn' catchtap='knowMoreInfo'>了解实名认证</text>
+    </view>
+  </view>
+</block>
+<view class='detailBox' wx:if='{{showDetailBox}}'>
+  <text class='de-title one' wx:if='{{userList.length=="1"}}'>海关需要购买跨境商品需提供订购人实名信息，若删除所有认证信息，下单时需重新认证，确认删除吗？</text>
+  <text class='de-title' wx:else>确认删除该实名人信息</text>
+  <view class='de-footer'>
+    <text class='cancle' catchtap='cancleEnv'>取消</text>
+    <text class='confrim' catchtap='confirmEnv'>确认</text>
+  </view>
+</view>
+<view class='knowMoreBox' wx:if='{{showKnowMore}}'>
+  <view class='k-title'>
+    <text>为什么要实名认证</text>
+    <image src='/assets/images/close.png' class='close' catchtap='_hideMaskLayer' mode='widthFix'></image>
+  </view>
+  <view class='k-main'>
+    <text>订购人可以为自己或他人购买跨境商品（订购人可以和收货人不为同一人）</text>
+    <text>根据海关要求订购人的真实姓名和身份证号必须真实且一致否则无法通过海关清关
+    </text>
+    <text>你的身份证信息将加密保管，集客多将保证信息安全，绝不对外泄露</text>
+  </view>
+  <btn btnInfo='我知道了' catchtap='_hideMaskLayer'></btn>
+</view>
+
+<!-- 遮罩层  -->
+<view animation="{{maskLayerAni}}" class='maskLayer' wx:if="{{isShowMaskLayer}}" catchtap='_clickMaskLayer'></view>
+<loading wx:if="{{isLoading}}"></loading>
+<!--  -->
+<view class='footer' wx:if='{{userList.length>0}}'>
+  <view class='footer-btn' catchtap='addUserInfo'>添加实名信息</view>
+</view>

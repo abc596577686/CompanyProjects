@@ -1,0 +1,264 @@
+/* pages/community/community.wxss */
+
+.bg {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 10;
+  background-color: black;
+  opacity: 0.50;
+}
+
+.bger {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 13;
+}
+
+page {
+  width: 100%;
+  height: 100%;
+}
+
+.container {
+  /* background-color: #f0f0f0; */
+  padding-bottom: 100rpx;
+  position: relative;
+  /* height: 100%;  */
+}
+
+.good-item {
+  height: 180rpx;
+  width: 100%;
+  margin: 1rpx 0;
+  background-color: #fff;
+  display: flex;
+  flex-direction: row;
+  /* position: absolute;
+  top: 0; */
+}
+
+.img-box {
+  width: 190rpx;
+  height: 100%;
+  /* background-color: red; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.good-img {
+  height: 144rpx;
+  width: 144rpx;
+  /* background-color: hotpink; */
+}
+
+.good-info {
+  width: 560rpx;
+  height: 100%;
+  padding-top: 36rpx;
+  color: #333;
+  font-size: 28rpx;
+  padding-right: 100rpx;
+  position: relative;
+}
+
+.seeMore {
+  position: absolute;
+  width: 14rpx;
+  height: 24rpx;
+  top: 50%;
+  right: 28rpx;
+  margin-top: -12rpx;
+}
+
+.main {
+  width: 100%;
+  height: 100%;
+}
+
+.community {
+  padding: 18rpx 29rpx;
+  background-color: #fff;
+  margin-bottom: 19rpx;
+}
+
+.question {
+  font-size: 30rpx;
+  color: #333;
+  display: flex;
+  padding-top: 20rpx;
+  padding-bottom: 30rpx;
+}
+.qus-info {
+  font-size : 30rpx;
+  color: #333;
+  width: 492rpx;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  height: 40rpx;
+  /* font-weight: 600; */
+}
+
+.qus-icon, .an-icon {
+  height: 30rpx;
+  width: 30rpx;
+  display: inline-block;
+  background-color: #fe5000;
+  text-align: center;
+  line-height: 30rpx;
+  color: #fff;
+  font-size: 20rpx;
+  margin-right: 16rpx;
+  vertical-align: text-top;
+  border-radius: 2rpx;
+}
+
+.an-icon {
+  background-color: #999;
+}
+
+.answer {
+  /* height: 33.33%; */
+  padding-bottom: 30rpx;
+  color: #999;
+  font-size: 30rpx;
+  position: relative;
+  display: flex;
+  /* justify-content: flex-start; */
+}
+
+.an-info {
+  width: 492rpx;
+  display: -webkit-box;
+  word-break: break-all;
+  line-height: 34rpx;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.an-copy {
+  width: 108rpx;
+  height: 48rpx;
+  border: 1rpx solid #c9c9c9;
+  text-align: center;
+  line-height: 48rpx;
+  position: absolute;
+  top: 0;
+  right: 0;
+
+  border-radius: 2rpx;
+}
+
+.extra {
+  /* height: 33.33%; */
+  padding: 10rpx;
+  color: #999;
+  font-size: 22rpx;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.footer {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  height: 90rpx;
+  background-color: #fff;
+  padding: 12rpx 26rpx;
+  /* z-index: 12; */
+}
+
+/* .footer-focus {
+  height: 218rpx;
+  position: absolute;
+  top: 0;
+  left: 0;
+  
+} */
+
+.foot-inp {
+  height: 100%;
+  border: 2rpx #c9c9c9 solid;
+  border-radius: 5rpx;
+  font-size: 28rpx;
+  color: #999;
+  padding-left: 26rpx;
+  padding-top: 20rpx;
+  overflow: hidden;
+}
+
+.foot-area {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 300rpx;
+  background-color: #fff;
+  padding: 20rpx 18rpx;
+  padding-bottom: 50rpx;
+}
+
+.foot-area textarea {
+  height: 80%;
+  width: 100%;
+  border: 2rpx #c9c9c9 solid;
+  border-radius: 5rpx;
+  font-size: 28rpx;
+  color: #333;
+  padding: 24rpx;
+}
+
+.btnBox {
+  display: flex;
+  justify-content: flex-end;
+  padding-top: 50rpx;
+  height: 20%;
+  align-items: center;
+}
+
+.btn {
+  width: 100rpx;
+  height: 50rpx;
+  background-color: #FB4A4C;
+  display: inline-block;
+  border-radius: 10rpx;
+  text-align: center;
+  line-height: 50rpx;
+  color: #fff;
+  opacity: 1;
+}
+
+/* -webkit-input-placeholder {
+    vertical-align: top; */
+
+/* } */
+
+.writequs {
+  height: 100%;
+  width: 100%;
+  text-align: center;
+}
+
+.write {
+  /* margin-top: 205rpx; */
+  display: block;
+  width: 261rpx;
+  /* height: 88rpx; */
+  margin: 300rpx auto;
+  margin-bottom: 52rpx;
+}
+
+.frist {
+  color: #999;
+  font-size: 30rpx;
+}

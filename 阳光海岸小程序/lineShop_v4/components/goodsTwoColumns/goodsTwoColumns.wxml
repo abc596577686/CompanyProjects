@@ -1,0 +1,29 @@
+<!--components/goodTwoColumns/goodTwoColumns.wxml-->
+
+<view class='goodsListWrap'>
+  <block wx:for="{{data}}" wx:key="{{index}}">
+    <view class='goodsWrap'>
+      <navigator url="{{item.jumpUrl}}" hover-class="none" class='goods'>
+        <view class='goodsImgWrap'>
+          <image class='goodsImg' mode="widthFix" src="{{item.imageUrl}}"></image>
+          <text class='secKill' wx:if="{{item.isSeckillProduct == 1}}">限时购</text>
+        </view>
+        <view class='goodsText'>{{item.productName}}</view>
+        <view class='goodsFooter'>
+          <text class='price' wx:if='{{item.isCollageProduct=="0"}}'>¥{{item.price}}</text>
+          <text class='price' wx:if='{{item.isCollageProduct=="1"}}'>¥{{item.collagePrice}}</text>
+          <block wx:if='{{item.isCollageProduct=="1"}}'>
+            <text class='groupNum'>{{item.salesDetails}}</text>
+            <view class='imgBox'>
+              <block wx:for='{{item.customerImageUrlList || item.headImgList ||item.ImgUrlList}}' wx:for-item='itemImg' wx:key='{{index}}'>
+                <view class='img'>
+                  <image src='{{itemImg}}' mode='widthFix'></image>
+                </view>
+              </block>
+            </view>
+          </block>
+        </view>
+      </navigator>
+    </view>
+  </block>
+</view>

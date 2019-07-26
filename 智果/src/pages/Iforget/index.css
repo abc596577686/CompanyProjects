@@ -1,0 +1,38 @@
+.forget_container {
+  background-color: #f0f0f0;
+  min-height: 600px;
+}
+.forget_container .header {
+  padding-top: 50px;
+}
+.forget_container .header h1 {
+  text-align: center;
+  color: #FF4200;
+}
+.forget_container .content {
+  width: 800px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.forget_container .content .item {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  margin: 20px;
+  min-width: 500px;
+  align-items: center;
+}
+.forget_container .content .item .getCode {
+  margin-left: 20px;
+}
+.forget_container .content .item .share {
+  margin-right: 35px;
+}
+.forget_container .content .item span {
+  margin-right: 20px;
+}
+.titletxt {
+  color: #FF4200!important;
+}

@@ -1,0 +1,82 @@
+.cus_container {
+  background-color: #f0f0f0;
+}
+.cus_container .cus_table {
+  margin-top: 15px;
+  min-height: 100vh;
+  background-color: #fff;
+  position: relative;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.09);
+}
+.cus_container .cus_table .table_search {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  background-color: #fff;
+  padding: 20px 0 20px 50px;
+}
+.cus_container .cus_table .table_search .search_item {
+  width: 208px;
+  display: flex;
+  align-items: center;
+  margin-right: 20px;
+}
+.cus_container .cus_table .table_search .search_item span {
+  margin-bottom: 2px;
+  margin-right: 10px;
+}
+.cus_container .cus_table .table_search .search_item input {
+  width: 140px !important;
+}
+.cus_container .cus_table .table_search .search_item button {
+  margin-left: 10px;
+}
+.cus_container .cus_table .table_search .search_item button span {
+  margin: 0!important;
+}
+.cus_container .cus_table .table_box {
+  padding: 20px 40px;
+  background-color: #fff;
+  min-height: 300px;
+}
+.cus_container .cus_table .table_box .empty {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  -moz-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  -o-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
+.cus_container .cus_table .table_box .table {
+  width: 100%;
+  background-color: #fff;
+  padding: 0 50px;
+}
+.cus_container .cus_table .table_box .table thead th {
+  text-align: center;
+}
+.cus_container .cus_table .table_box .table tbody td {
+  background-color: #f0f0f0;
+  text-align: center;
+  padding: 8px;
+  font-size: 13px;
+}
+.cus_container .cus_table .table_box .table tbody td:first-child {
+  border-radius: 10px 0 0 10px;
+}
+.cus_container .cus_table .table_box .table tbody td:last-child {
+  -webkit-border-radius: 0 10px 10px 0;
+  -moz-border-radius: 0 10px 10px 0;
+  border-radius: 0 10px 10px 0;
+}
+.cus_container .cus_table .table_box .table tbody .row td {
+  background-color: #fff;
+  height: 20px;
+}
+.form-control {
+  float: left;
+  margin-left: 5px;
+  max-width: 120px;
+}

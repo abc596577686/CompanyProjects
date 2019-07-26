@@ -1,0 +1,13 @@
+<!--pages/insidePage/insidePage.wxml-->
+
+<view wx:for="{{insideData}}" wx:key="{{index}}">
+  <!--多图  -->
+  <image wx:if="{{item.type === '0' && item.attribute === '0'}}" class='headImage' src="{{item.contents[0].pictureIcon}}" mode="widthFix"></image>
+
+  <!--单图  -->
+  <image wx:if="{{item.type === '0' && item.attribute === '1'}}" class='headImage' src="{{item.picture}}" mode="widthFix"></image>
+
+  <!--商品列表 一行两列  -->
+  <goodsTwoColumns wx:if="{{item.type == 3}}" data="{{item.products}}"></goodsTwoColumns>
+</view>
+ <!-- style="height:{{ headImageHeight +'px'}}" -->

@@ -1,0 +1,21 @@
+/* components/bannerDouble/bannerDouble.wxss */
+
+.imageWrap {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  margin: 8rpx 0;
+}
+
+.imageWrap .image {
+  display: inline-block;
+  flex: 1;
+}
+
+.imageWrap .image:nth-child(2n+1) {
+  margin-right: 4rpx;
+}
+
+.imageWrap .image:nth-child(2n) {
+  margin-left: 4rpx;
+}

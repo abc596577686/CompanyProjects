@@ -1,0 +1,214 @@
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="width=device-width,user-scalable=no,initial-scale=0.33333,minimum-scale=0.33333,maximum-scale=0.33333" />
+    <title>活动倒计时</title>
+    <link rel="stylesheet" href="./css/timeOutPage.css"/>
+     <script src="https://res.wx.qq.com/open/js/jweixin-1.3.2.js"></script>
+    <script src="./js/jquery-3.2.1.js"></script>
+    <script>
+        //1.获取像素比
+        var pixelRatio=1/window.devicePixelRatio;
+        // console.log(pixelRatio);
+        //2.通过js动态来设置视口
+        document.write('<meta name="viewport" content="width=device-width,initial-scale='+pixelRatio+',minimum-scale='+pixelRatio*2+',maximum-scale='+pixelRatio+'">');
+        //3.获取html节点
+        var html=document.getElementsByTagName('html')[0];
+        //console.log(html)
+        //4.获取屏幕宽度
+        var pageWidth=html.getBoundingClientRect().width;
+        // console.log(pageWidth);
+        //屏幕宽度/固定数值=基准值;
+        html.style.fontSize=pageWidth/15+'px';
+    </script>
+</head>
+<body>
+    <!-- 页面背景图 -->
+    <header>
+        <img src="./img/bigtimeout.png">
+        <div class="time">
+            <div class="t1"></div>
+            <div>:</div>
+            <div class="t2"></div>
+            <div>:</div>
+            <div class="t3"></div>
+        </div>
+    </header>
+</body>
+<script>
+
+//是否重新上传
+var isReUpload = getUrlPara('isReUpload');
+
+$(function() {
+ 	// 页面初载时接口
+    $.post("/clt/activity/checkRegisterVote.msp", {isReUpload: isReUpload}, function(res) {
+        if(res.code == '1'){  
+        	if(res.status == '0'){
+        		//未注册(点击按钮注册)
+        		window.location.replace ( 'invote.html')
+        	}else if(res.status == '1'){
+        		//报名未开始
+        		window.location.replace ( 'invote.html')
+        	}else if(res.status == '2'){
+        		//报名已开始
+        		//init();
+        		window.location.replace ( 'invote.html')
+        	}else if(res.status == '11'){
+        		//报名已结束
+        		window.location.replace ( 'registerEnd.html')
+        	}else if(res.status == '5'){
+        		//审核已成功
+        		window.location.replace ( 'votemain.html')
+        	}else if(res.status == '6' || res.status == '7'){
+        		if(res.status == '7' && res.isReUpload == '1'){ 
+        			// 重新提交审核
+        		}else{
+        			// 待审核和审核失败
+	        		window.location.replace ( 'waitvote.html')
+        		}
+        	}else if(res.status == '3'){
+        		// 投票未开始
+        		if(res.activityLevel == '3'){
+        			// 第二轮投票未开始
+        		//	window.location.href = 'timeOutPage.html'
+        		init();
+        	
+        		}else{
+        			window.location.replace ( 'votemain.html')
+        		}
+        	}else if(res.status == '4'){
+        		// 投票已开始
+        		window.location.replace( 'votemain.html')
+        	}else if(res.status == '10'){
+        		// 投票已结束
+        		window.location.replace( 'matchResult.html')
+        	}
+        }else{  //错误信息
+        	// alert(res.msg)
+        }
+    });
+ 	
+ 	
+    var link = location.href.split('#')[0];
+	var title =  '集客多杯';
+	var imgUrl = window.location.origin + '/wap/img/logo.png';
+	var desc = '为你喜爱的选手投票吧！';
+   	$.post("/clt/weixin/getToken.msp", {url: link}, function(res) {
+   		wx.config({
+   	        debug: false, // 开启调试模式,调用的所有api的返回值会在客户端alert出来，若要查看传入的参数，可以在pc端打开，参数信息会通过log打出，仅在pc端时才会打印。
+   	        appId: res.appId, // 必填，公众号的唯一标识
+   	        timestamp: res.timestamp, // 必填，生成签名的时间戳
+   	        nonceStr: res.nonceStr, // 必填，生成签名的随机串
+   	        signature: res.signature, // 必填，签名，见附录1
+   	        jsApiList: [
+   	            'onMenuShareAppMessage', // 获取“分享给朋友”按钮点击状态及自定义分享内容接口
+   	            'onMenuShareTimeline' // 获取“分享到朋友圈”按钮点击状态及自定义分享内容接口
+   	        ] // 必填，需要使用的JS接口列表，所有JS接口列表见附录2
+   	    });
+
+   	    wx.ready(function () {
+   	        wx.onMenuShareTimeline({
+   	            title: title, // 分享标题
+   	            link: link, // 分享链接
+   	            imgUrl: window.location.origin + '/wap/img/logo.png', // 分享图标
+   	            success() {
+   	                console.log('分享成功')
+   	            },
+   	            cancel() {
+   	            	//console.log('分享11成功')
+   	                // 用户取消分享后执行的回调函数
+   	            }
+   	        })
+   	        
+   	        
+   	        // 分享给朋友
+   	        wx.onMenuShareAppMessage({
+   	            title: title, // 分享标题
+   	            desc: desc, // 分享描述
+   	            link: link, // 分享链接
+   	            imgUrl: window.location.origin + '/wap/img/logo.png', // 分享图标
+   	            success: function() {
+   	            	console.log('分享成功')
+   	            },
+   	            cancel: function() {
+   	            	//console.log('分享111成功')
+   	                // 用户取消分享后执行的回调函数
+   	            }
+   	        })
+   	    });
+	})
+});
+
+
+    //获取URL上参数
+    function getUrlPara(paraName) {
+    	var reg = new RegExp("(^|&)" + paraName + "=([^&]*)(&|$)", "i");
+       	var r = window.location.search.substr(1).match(reg);
+        if (r != null){
+        	return unescape(r[2]);
+        }
+       	return null;
+    }
+    var storeId = getUrlPara('storeId')
+    
+    function init(){
+    	// 页面初载时接口
+        $.post('/clt/index.json?a=v1/entrollCheckInfo',{
+            
+        },function(res){
+            console.log(res)
+            // 倒计时
+            var _ordertimer = null;
+            var stTime = res.data.startTime
+            // console.log(stTime)  
+            function leftTimer(stTime) {
+                var now =  new Date().getTime();  
+                var leftTime =  stTime - now;            //计算剩余的毫秒数
+                if(leftTime < 0){
+                    window.clearInterval(_ordertimer);
+                }
+                // console.log(leftTime)
+                var hours = parseInt(leftTime / 1000 / 60 / 60 % 24, 10); //计算剩余的小时
+                var minutes = parseInt(leftTime / 1000 / 60 % 60, 10);//计算剩余的分钟
+                var seconds = parseInt(leftTime / 1000 % 60, 10);//计算剩余的秒数
+                hours = checkTime(hours);
+                minutes = checkTime(minutes);
+                seconds = checkTime(seconds);
+
+                if(hours == 00 && minutes == 00 && seconds ==00){
+                    window.clearInterval(leftTimer)
+                    leftTimer == null 
+                    window.location.replace( 'votemain.html')
+                }
+                // if (days >= 0 || hours >= 0 || minutes >= 0 || seconds >= 0) document.getElementById("timer").innerHTML = days + "天" + hours + "小时" + minutes + "分" + seconds + "秒";
+                // if (days <= 0 && hours <= 0 && minutes <= 0 && seconds <= 0) {
+                //     window.clearInterval(_ordertimer);
+                //     _ordertimer = null;
+                // }
+                $('.t1').html(hours)
+                $('.t2').html(minutes)
+                $('.t3').html(seconds)
+                // leftTime = leftTime-1000
+                // console.log(seconds)
+            }
+            function checkTime(i){ //将0-9的数字前面加上0，例1变为01 
+                if(i<10){ 
+                    i = "0" + i; 
+                } 
+                return i; 
+            }
+            // if(data2<date1)return;//设置的时间小于现在时间退出
+            _ordertimer = setInterval(function(){
+                leftTimer(stTime)
+            }, 1000);   
+        })	
+    }
+    
+    
+    // 投票按钮
+    $('.btn_vote').click(function(){
+        alert('跳转参与投票')
+    })
+</script>
+</html>

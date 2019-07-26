@@ -1,0 +1,83 @@
+*{
+    margin: 0;
+    padding: 0;
+    border: none;
+}
+body {
+  margin:0;
+  padding: 0;
+  background-image:none;
+}
+/*公用hr小分割线  */
+hr{
+    width: 100%;
+    height: .01rem;
+    opacity: 1;
+    background-color: grey;
+}
+img{
+    width: 100%;
+    height: 100%;
+}
+.imgPlay{
+    width: 15rem;
+    height: 12.96rem;
+    background-color: grey;
+}
+.imgTit{
+    width: 15rem;
+    height: 3.08rem;
+    position: relative;
+}
+.whiteSpace{
+    display: block;
+    width: 15rem;
+    height: .32rem;
+}
+.advertisingImg{
+    width: 15rem;
+}
+.advertisingImg div{
+    width: 15rem;
+    height: 21.44rem;
+}
+.bottomSpan{
+    display: block;
+    width: 15rem;
+    height: 51px;
+}
+.payButton{
+    width: 15rem;
+    height: 2.04rem;
+    position: fixed;
+    bottom: 0;
+    background-color: #FB4A4C;
+}
+.payButtonSp{
+    width: 2.4rem;
+    height:  .6rem;
+    font-size: .6rem;
+    color: #FFFFFF;
+}
+.imgTit1{
+    display: block;
+    width: 13.04rem;
+    height: .6rem;
+    position: absolute;
+    left: .52rem;
+    top: .72rem;
+    font-size: .6rem;
+    color: #262535;
+    font-weight: 600;
+}
+.imgTit2{
+    display: block;
+    width: 1.76rem;
+    height: .64rem;
+    position: absolute;
+    left: .52rem;
+    top: 1.84rem;
+    font-size: .8rem;
+    color: #FB4A4C;
+}
+

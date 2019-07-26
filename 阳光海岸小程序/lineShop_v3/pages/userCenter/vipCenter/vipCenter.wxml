@@ -1,0 +1,16 @@
+<!--pages/userCenter/vipCenter/vipCenter.wxml-->
+<view class='container'>
+  <view class='userImg'>
+    <image src='{{headerImage}}' mode='widthFix'></image>
+  </view>
+  <view class='userName'>
+    <text>{{nickname}}</text>
+  </view>
+  <view class='code'>
+    <image mode='widthFix' src='{{barCodeImage}}' lazy-load='{{false}}'></image>
+  </view>
+  <view class='info'>
+    <text>{{barCode}}</text>
+  </view>
+  <text class='helpInfo'>门店购买商品时请出示条形码</text>
+</view>

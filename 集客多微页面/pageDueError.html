@@ -1,0 +1,41 @@
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="width=device-width,user-scalable=no,initial-scale=0.33333,minimum-scale=0.33333,maximum-scale=0.33333" />
+    <title>邀请开店</title>
+    <link rel="stylesheet" href="./css/pageDueError.css">
+    <script src="./js/jquery-3.2.1.js"></script>
+    <script>
+            //1.获取像素比
+            var pixelRatio=1/window.devicePixelRatio;
+            // console.log(pixelRatio);
+            //2.通过js动态来设置视口
+            document.write('<meta name="viewport" content="width=device-width,initial-scale='+pixelRatio+',minimum-scale='+pixelRatio*2+',maximum-scale='+pixelRatio+'">');
+            //3.获取html节点
+            var html=document.getElementsByTagName('html')[0];
+            //console.log(html)
+            //4.获取屏幕宽度
+            var pageWidth=html.getBoundingClientRect().width;
+            // console.log(pageWidth);
+            //屏幕宽度/固定数值=基准值;
+            html.style.fontSize=pageWidth/15+'px';
+    </script>
+</head>
+<body>
+    <div class="bg-1">
+        <div class="bg-2">
+            <img src="./img/icon1.png">
+        </div>
+    </div>
+    <div class="bg-3">
+        很抱歉,该链接邀请已失效
+    </div>
+    <div class='bg-4'>
+        请联系您的小伙伴,重新获取邀请链接
+    </div>
+</body>
+
+
+    
+
+</html>

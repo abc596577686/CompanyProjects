@@ -1,0 +1,87 @@
+{
+  "pages": [
+    "pages/home/home",
+    "pages/mobileBind/mobileBind",
+    "pages/productDetail/productDetail",
+    "components/bannerMore/bannerMore",
+    "pages/login/login",
+    "pages/innerLogin/innerLogin",
+    "pages/type/type",
+    "pages/cart/cart",
+    "pages/addressList/addressList",
+    "pages/addressDetail/addressDetail",
+    "pages/userCenter/userCenter",
+    "pages/groupProduct/groupProduct",
+    "pages/confirmOrder/confirmOrder",
+    "pages/theme/theme",
+    "pages/insidePage/insidePage",
+    "pages/search/search",
+    "pages/allOrder/allOrder",
+    "pages/orderDetail/orderDetail",
+    "pages/logistics/logistics",
+    "pages/orderPayStatus/orderPayStatus",
+    "pages/feedback/feedback",
+    "pages/customerService/customerService",
+    "pages/customerServiceResult/customerServiceResult",
+    "pages/serviceProgress/serviceProgress",
+    "pages/serviceProgress/writeOrder/writeOrder",
+    "pages/logs/logs",
+    "pages/dealers/dealers",
+    "pages/userCenter/vipCenter/vipCenter",
+    "pages/userCenter/tips/tips",
+    "pages/coupon/coupon",
+    "pages/userCenter/myCoupon/myCoupon",
+    "pages/community/community",
+    "pages/showDetail/showDetail",
+    "pages/answer/answer",
+    "pages/newCart/newCart",
+    "pages/rush/rush",
+    "pages/userInfo/userInfo",
+    "pages/userInfo/verify/verify",
+    "pages/userInfo/bindNewPhone/bindNewPhone",
+    "pages/groupShoping/groupShoping",
+    "pages/groupDetail/groupDetail",
+    "pages/groupPin/groupPin"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#ffd900",
+    "navigationBarTitleText": "阳光海岸",
+    "navigationBarTextStyle": "black",
+    "backgroundColor": "#f6f6f6",
+    "navigationStyle": "default"
+  },
+  "tabBar": {
+    "backgroundColor": "#fff",
+    "selectedColor": "#000",
+    "list": [
+      {
+        "pagePath": "pages/home/home",
+        "iconPath": "/assets/images/footer/icon_home.png",
+        "selectedIconPath": "/assets/images/footer/icon_home_active.png",
+        "text": "首页"
+      },
+      {
+        "pagePath": "pages/type/type",
+        "iconPath": "/assets/images/footer/icon_type.png",
+        "selectedIconPath": "/assets/images/footer/icon_type_active.png",
+        "text": "品类"
+      },
+      {
+        "pagePath": "pages/cart/cart",
+        "iconPath": "/assets/images/footer/icon_cart.png",
+        "selectedIconPath": "/assets/images/footer/icon_cart_active.png",
+        "text": "购物车"
+      },
+      {
+        "pagePath": "pages/userCenter/userCenter",
+        "iconPath": "/assets/images/footer/icon_people.png",
+        "selectedIconPath": "/assets/images/footer/icon_people_active.png",
+        "text": "我的"
+      }
+    ]
+  },
+  "networkTimeout": {
+    "request": 6000
+  }
+}

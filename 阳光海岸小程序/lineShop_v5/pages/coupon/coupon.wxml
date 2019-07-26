@@ -1,0 +1,46 @@
+<!--pages/cart/firmOrder/coupon/coupon.wxml-->
+<view class='container'>
+  <view class='tabBar border-t'>
+    <view class='tab-item' bindtap='changeTabEnv' data-index='0' style='color:{{show==0?"#2EA7E0":"#333"}}'>
+      <text>可用优惠劵</text>
+      <view class='line' style='visibility:{{show==0?"visible":"hidden"}}'></view>
+    </view>
+    <view class='tab-item' bindtap='changeTabEnv' data-index='1' style='color:{{show==1?"#2EA7E0":"#333"}}'>
+      <text>不可使用优惠劵</text>
+      <view class='line' style='visibility:{{show==1?"visible":"hidden"}}'></view>
+    </view>
+  </view>
+  <view class='box'>
+    <view class='coupon {{show==0?"canUse":"unUse"}}'>
+      <view class='coupon-item' wx:for='{{couponList[couponTitle[show]]}}' data-index='{{index}}' catchtap='selectCoupon' wx:key='{{index}}' data-id='{{item.userCouponId}}' data-name='{{item.couponName}}' data-click='{{item.canClick}}'>
+        <view class='coupon-left'>
+          <view class='price'>
+            <text class='log'>￥</text>
+            <text class='num'>{{item.giveAmount}}</text>
+          </view>
+          <text class='info' wx:if='{{item.typeName=="代金券"}}'>无金额门槛</text>
+          <text class='info' wx:else>满{{item.fullAmount}}使用</text>
+        </view>
+        <view class='coupon-right'>
+          <view class='categories'>
+            <text class='cate-icon'>{{item.couponTypeName}}</text>
+            <text class='cate-info'>{{item.couponName}}</text>
+          </view>
+          <view class='time'>
+            <text>{{item.effectiveTimeFormat}}</text>
+          </view>
+        </view>
+        <block wx:if='{{item.isChecked}}'>
+          <view class='sel-icon'>
+          </view>
+          <view class='success'>√</view>
+        </block>
+      </view>
+    </view>
+  </view>
+  <view class='footer'>
+    <view class='noUse' hover-class='none' catchtap='noUseEnv'>
+      <text>不使用优惠劵</text>
+    </view>
+  </view>
+</view>

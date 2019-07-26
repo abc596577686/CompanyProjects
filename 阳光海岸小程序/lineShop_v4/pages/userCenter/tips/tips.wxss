@@ -1,0 +1,56 @@
+/* pages/userCenter/tips/tips.wxss */
+.problems {
+  margin-left: 18rpx;
+  margin-right: 24rpx;
+  height: 362rpx;
+  background-color: #fff;
+  margin-top: 28rpx;
+  position: relative;
+}
+.problems textarea {
+  padding: 22rpx 48rpx;
+  border-radius: 6rpx;
+  height: 360rpx;
+  width: 100%;
+  font-size: 28rpx;
+}
+.tel {
+  margin: 0 auto;
+  padding: 22rpx 0;
+  padding-left: 18rpx;
+  padding-right: 22rpx;
+}
+.tel input {
+  height: 90rpx;
+  padding: 0 22rpx;
+  background-color: #fff;
+  border-radius: 6rpx;
+  font-size: 28rpx;
+}
+.btn {
+  width: 100%;
+  height: 120rpx;
+  position: absolute;
+  bottom: 0;
+  background-color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 24rpx 32rpx;
+}
+.btn .btner {
+  width: 100%;
+  height: 74rpx;
+  background-color: #FB4A4C;
+  text-align: center;
+  line-height: 74rpx;
+  color: #333333;
+  font-size: 34rpx;
+  border-radius: 10rpx;
+}
+.curNumber {
+  position: absolute;
+  bottom: 30rpx;
+  right: 20rpx;
+  color: #999; 
+}

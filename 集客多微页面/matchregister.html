@@ -1,0 +1,495 @@
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="width=device-width,user-scalable=no,initial-scale=0.33333,minimum-scale=0.33333,maximum-scale=0.33333" />
+    <title>报名</title>
+    <link rel="stylesheet" href="./css/matchregister.css"/>
+    <script src="./js/jquery-3.2.1.js"></script>
+    <script src="https://res.wx.qq.com/open/js/jweixin-1.3.2.js"></script>
+    <!-- 截屏功能 -->
+    <link rel="stylesheet" type="text/css" href="css/aui.css"/>
+    <link rel="stylesheet" href="css/intial.css" />
+    <script>
+        //1.获取像素比
+        var pixelRatio=1/window.devicePixelRatio;
+        // console.log(pixelRatio);
+        //2.通过js动态来设置视口
+        document.write('<meta name="viewport" content="width=device-width,initial-scale='+pixelRatio+',minimum-scale='+pixelRatio*2+',maximum-scale='+pixelRatio+'">');
+        //3.获取html节点
+        var html=document.getElementsByTagName('html')[0];
+        //console.log(html)
+        //4.获取屏幕宽度
+        var pageWidth=html.getBoundingClientRect().width;
+        // console.log(pageWidth);
+        //屏幕宽度/固定数值=基准值;
+        html.style.fontSize=pageWidth/15+'px';
+    </script>
+</head>
+<body>
+    <!-- 页面背景图 -->
+    <div class="inpu">
+        <input type="text" class="name" placeholder="姓名" style="font-size: .56rem;">
+    </div>
+    <span class="cover"></span>
+    <div class="inpu">
+        <input type="number" class="phone" placeholder="手机号" style="font-size: .56rem;">
+    </div>
+    <span class="cover"></span>
+    <div class="inpu">
+        <input type="text" class="mainarea" placeholder="请输入详细地址" style="font-size: .56rem;">
+    </div>
+    <span class="cover"></span>
+    <div class="uploadDiv">
+        <span>上传图片：1张主图+3张辅图(上传时可手动缩放及旋转)</span>
+        <div class="uoloadMain">
+            <div>
+                <img src="./img/upCover.png" class="coverImg c1">
+                <span class="covertt k1">主图</span>
+                <img class="poImg1" src="">
+                <button class="btn btn1" style="float: left"></button>
+            </div>
+            <div>
+                <img src="./img/upCover.png" class="coverImg c2">
+                <span class="covertt k2">辅图1</span>
+                <img class="poImg2" src="">
+                <button class="btn btn2" style="float: left"></button>
+            </div>
+            <div>
+                <img src="./img/upCover.png" class="coverImg c3">
+                <span class="covertt k3">辅图2</span>
+                <img class="poImg3" src="">
+                <button class="btn btn3" style="float: left"></button>
+            </div>
+            <div>
+                <img src="./img/upCover.png" class="coverImg c4">
+                <span class="covertt k4">辅图3</span>
+                <img class="poImg4" src="">
+                <button class="btn btn4" style="float: left"></button>
+            </div>
+        </div>
+    </div>
+    <!--图片裁剪-->
+    <div class="clipbg clipbg1  displaynone">
+        <div id="clipArea"></div>
+        <div class="loading1 displaynone">正在载入图片...</div>
+        <div class="footer">
+            <dl>
+            <dd style="background: #FFD946; color: #000;border: none;height: 1.5rem;line-height: 1.5rem;font-size: .6rem">选取照片
+                <input type="file" id="file" accept="image/*" >
+                <!-- <input type="file" id="file2" accept="image/*" > -->
+            </dd>
+            <dd style="height: 1.5rem;line-height: 1.5rem;font-size: .6rem" id="clipBtn">完成裁剪</dd>
+            </dl>
+            <!-- <div style="font-size: .6rem" class="back">取消</div> -->
+        </div>
+    </div>
+
+    <span class="cover"></span>
+    <span class="cover"></span>
+    <div class="peoTit">
+        <span>描述</span>
+        <textarea name="area" id="txtarea" placeholder="最少10个字"></textarea>
+    </div>
+    <button class="upBtn">
+        提交
+    </button>
+    <img src="./img/loading.gif" class="loading" style="display:none">
+
+    <div id="div_alert">0-0-0</div>
+    <div class="upurl1" style="display: none"></div>
+    <div class="upurl2" style="display: none"></div>
+    <div class="upurl3" style="display: none"></div>
+    <div class="upurl4" style="display: none"></div>
+</body>
+<script type="text/javascript" src="js/camera.js/hammer.min.js" ></script>
+<script type="text/javascript" src="js/camera.js/lrz.all.bundle.js" ></script>
+<script type="text/javascript" src="js/camera.js/iscroll-zoom-min.js" ></script>
+<script type="text/javascript" src="js/camera.js/PhotoClip.js" ></script>
+<script>
+//是否重新上传
+var isReUpload = getUrlPara('isReUpload');
+
+$(function() {
+ 	// 页面初载时接口
+    $.post("/clt/activity/checkRegisterVote.msp", {isReUpload: isReUpload}, function(res) {
+        if(res.code == '1'){  
+        	if(res.status == '0'){
+        		//未注册(点击按钮注册)
+        		window.location.replace('invote.html')
+        	}else if(res.status == '1'){
+        		//报名未开始
+        		window.location.replace('invote.html')
+        	}else if(res.status == '2'){
+        		//报名已开始
+        		//init();
+        	}else if(res.status == '5'){
+        		//审核已成功
+        		window.location.replace( 'votemain.html')
+        	}else if(res.status == '11'){
+        		//报名已结束
+        		window.location.replace( 'registerEnd.html')
+        	}else if(res.status == '6' || res.status == '7'){
+        		if(res.status == '7' && res.isReUpload == '1'){ 
+        			// 重新提交审核
+        		}else{
+        			// 待审核和审核失败
+	        		window.location.replace('waitvote.html')
+        		}
+        	}else if(res.status == '3'){
+        		// 投票未开始
+        		if(res.activityLevel == '3'){
+        			// 第二轮投票未开始
+        			window.location.replace( 'timeOutPage.html')
+        		}else{
+        			window.location.replace( 'votemain.html')
+        		}
+        	}else if(res.status == '4'){
+        		// 投票已开始
+        		window.location.replace( 'votemain.html')
+        	}else if(res.status == '10'){
+        		// 投票已结束
+        		window.location.replace('matchResult.html')
+        	}
+        }else{  //错误信息
+        	// alert(res.msg)
+        }
+    });
+ 	
+ 	
+	var link = location.href.split('#')[0];
+	var title =  '集客多杯';
+	var imgUrl = window.location.origin + '/wap/img/logo.png';
+	var desc = '为你喜爱的选手投票吧！';
+   	$.post("/clt/weixin/getToken.msp", {url: link}, function(res) {
+   		wx.config({
+   	        debug: false, // 开启调试模式,调用的所有api的返回值会在客户端alert出来，若要查看传入的参数，可以在pc端打开，参数信息会通过log打出，仅在pc端时才会打印。
+   	        appId: res.appId, // 必填，公众号的唯一标识
+   	        timestamp: res.timestamp, // 必填，生成签名的时间戳
+   	        nonceStr: res.nonceStr, // 必填，生成签名的随机串
+   	        signature: res.signature, // 必填，签名，见附录1
+   	        jsApiList: [
+   	            'onMenuShareAppMessage', // 获取“分享给朋友”按钮点击状态及自定义分享内容接口
+   	            'onMenuShareTimeline' // 获取“分享到朋友圈”按钮点击状态及自定义分享内容接口
+   	        ] // 必填，需要使用的JS接口列表，所有JS接口列表见附录2
+   	    });
+
+   	    wx.ready(function () {
+   	        wx.onMenuShareTimeline({
+   	            title: title, // 分享标题
+   	            link: link, // 分享链接
+   	            imgUrl: window.location.origin + '/wap/img/logo.png', // 分享图标
+   	            success() {
+   	                console.log('分享成功')
+   	            },
+   	            cancel() {
+   	            	//console.log('分享11成功')
+   	                // 用户取消分享后执行的回调函数
+   	            }
+   	        })
+   	        
+   	        
+   	        // 分享给朋友
+   	        wx.onMenuShareAppMessage({
+   	            title: title, // 分享标题
+   	            desc: desc, // 分享描述
+   	            link: link, // 分享链接
+   	            imgUrl: window.location.origin + '/wap/img/logo.png', // 分享图标
+   	            success: function() {
+   	            	console.log('分享成功')
+   	            },
+   	            cancel: function() {
+   	            	//console.log('分享111成功')
+   	                // 用户取消分享后执行的回调函数
+   	            }
+   	        })
+   	    });
+	})
+});
+
+    //获取URL上参数
+    function getUrlPara(paraName) {
+        var reg = new RegExp("(^|&)" + paraName + "=([^&]*)(&|$)", "i");
+        var r = window.location.search.substr(1).match(reg);
+        if (r != null){
+            return unescape(r[2]);
+        }
+        return null;
+    }
+
+    // 销毁截图器实例
+    var clipArea = ''
+
+    $('.btn').each(function(index){
+        $(this).click(function(){
+            var clipArea = new PhotoClip();
+            clipArea = null
+
+            $(".clipbg").fadeIn()
+            var clipArea = new PhotoClip("#clipArea", {
+                // size: [300, 300],//裁剪框大小
+                adaptive:['70%',''],
+                rotateFree:true,
+                // file:['file1','file2'],
+                outputSize:[0,0],//打开图片大小，[0,0]表示原图大小
+                file: "#file",
+                ok: "#clipBtn",
+                loadStart: function() { //图片开始加载的回调函数。this 指向当前 PhotoClip 的实例对象，并将正在加载的 file 对象作为参数传入。（如果是使用非 file 的方式加载图片，则该参数为图片的 url）
+                    // $(".loading").removeClass("displaynone");
+                    $('.loading1').show()
+                },
+                loadComplete: function() {//图片加载完成的回调函数。this 指向当前 PhotoClip 的实例对象，并将图片的 <img> 对象作为参数传入。
+                    // $(".loading").addClass("displaynone");
+                    $('.loading1').hide()
+                },
+                done: function(dataURL) { //裁剪完成的回调函数。this 指向当前 PhotoClip 的实例对象，会将裁剪出的图像数据DataURL作为参数传入。			
+                    // console.log(dataURL);//dataURL裁剪后图片地址base64格式提交给后台处理
+                    $(".clipbg").fadeOut()
+                    
+                    var base64String = dataURL/*base64图片串*/;
+
+                    //这里对base64串进行操作，去掉url头，并转换为byte
+                    var bytes = window.atob(base64String.split(',')[1]);
+
+                    //处理异常，将ASCII码小于0的转换为大于0，这里有两种写法
+                    // 第一种：
+                    var ab = new ArrayBuffer(bytes.length);
+                    var ia = new Uint8Array(ab);
+                    for(var i = 0; i < bytes.length; i++){
+                        ia[i] = bytes.charCodeAt(i); //这里有点疑惑，ia是怎么改变ab的？注：①
+                    }
+                    //Blob对象
+                    var blob = new Blob([ab], {type: 'image/jpeg'}); //type为图片的格式
+
+                    //FormData对象
+                    var form = new FormData();
+                    //TDOD Ajax或者其他方式上传FormData对象
+
+                    //FormData对象接受三个参数，第三个参数为文件名，通常我们只传前两个参数，第三个参数不传则使用默认文件名，这里使用的Blob对象，所以需要一个文件名，用时间戳代替。
+                    form.append('file',blob, Date.now() + '.jpg');
+
+                    // console.log(form)
+
+                    $.ajax({
+                        url: '/clt/user/webUploadImage.msp' ,
+                        type: 'POST',
+                        data: form,
+                        cache: true,
+                        contentType: false,
+                        processData: false,
+                        success: function (res) {
+                            if(index == 0){
+                                console.log('第'+index+'张照片的上传')
+                                $('.poImg1').attr('src',res.userImageAbso)
+                                $('.upurl1').html(res.userImage)
+                                $('.poImg1').show()
+                                $('.c1').hide()
+                                $('.k1').hide()
+                                clipArea.destroy();
+                            }else if(index == 1){
+                                console.log('第'+index+'张照片的上传')
+                                $('.poImg2').attr('src',res.userImageAbso)
+                                $('.upurl2').html(res.userImage)
+                                $('.poImg2').show()
+                                $('.c2').hide()
+                                $('.k2').hide()
+                                clipArea.destroy();
+                            }else if(index == 2){
+                                console.log('第'+index+'张照片的上传')
+                                $('.poImg3').attr('src',res.userImageAbso)
+                                $('.upurl3').html(res.userImage)
+                                $('.poImg3').show()
+                                $('.c3').hide()
+                                $('.k3').hide()
+                                clipArea.destroy();
+                            }else if(index == 3){
+                                console.log('第'+index+'张照片的上传')
+                                $('.poImg4').attr('src',res.userImageAbso)
+                                $('.upurl4').html(res.userImage)
+                                $('.poImg4').show()
+                                $('.c4').hide()
+                                $('.k4').hide()
+                                clipArea.destroy();
+                            }
+                        },
+                        error: function (res) {
+                            alert('网络异常请重试')
+                        }
+                    });
+                }
+            });
+            // 取消截图
+            $(".back").click(function(){
+                $(".clipbg").fadeOut()
+        
+                var clipArea = new PhotoClip("#clipArea",{
+                    adaptive:['70%',''],
+                    rotateFree:true,
+                    // file:['file1','file2'],
+                    outputSize:[0,0],//打开图片大小，[0,0]表示原图大小
+                    file: "#file",
+                    ok: "#clipBtn",
+                    loadStart: function() {
+                        clipArea.destroy();
+                    }
+                });
+                console.log(clipArea)
+            })
+        })
+    })
+
+
+    //通用神奇小弹窗
+    function tanchuang(){
+        var cler;
+        var i = 0;
+        var count = 5;
+        if (cler!= null && cler!= undefined) {
+            window.clearInterval(cler);
+        }
+        $("#div_alert").fadeIn();
+        i = 0;
+        var tcount = 2;
+        count = tcount;
+        timerun();
+        function timerun() {
+            if (i >= count) {
+                $("#div_alert").fadeOut();
+                window.clearInterval(cler);
+            }else {
+                cler = window.setTimeout(timerun, 900);
+            }
+            i++;
+        }
+    }
+
+    // 提交
+    $('.upBtn').click(function(){
+        $('.loading').show();
+        var content =  $('#txtarea').val()
+        var playerName = $('.name').val()
+        var playerMobile = $('.phone').val()
+        var areaId = 310112
+        var cityId = 310100
+        var provinceId = 310000
+        var address = $('.mainarea').val()
+        var image1 = $('.upurl1').html()
+        var image2 = $('.upurl2').html()
+        var image3 = $('.upurl3').html()
+        var image4 = $('.upurl4').html()
+
+        $.post('/clt/activity/entrollActivity.msp',{
+            content:content,
+            playerName:playerName,
+            playerMobile:playerMobile,
+            areaId:areaId,
+            cityId:cityId,
+            provinceId:provinceId,
+            address:address,
+            image1:image1,
+            image2:image2,
+            image3:image3,
+            image4:image4,
+        },function(res){
+            console.log(res)
+            $('.loading').hide();
+            if(res.code != '1'){
+                $("#div_alert").html(res.msg);
+                tanchuang();
+            }else{
+                window.location.replace ( 'waitvote.html') 
+            }
+        })
+    })
+</script>
+<style>
+    #headimg{
+        width: 12rem;
+        height: 12rem;
+        border: .08rem solid #ffffff;
+        border-radius:100% ;
+        margin: auto;
+        margin-bottom: 1.7rem;
+        background-size:100% 100% !important;
+        background-repeat:no-repeat;
+        background-position: center center;
+    }
+    .btn{
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        border: none;
+        padding: 0;
+        opacity: 0;
+    }
+    
+    /*截图上传页面*/
+    .clipbg{
+        position: fixed;
+        background: black;
+        top: 0;
+        z-index: 999;
+        width: 100%;
+        height: 100%;
+        left: 0;
+    }
+    .loading1{
+        position: absolute;
+        top: 32%;
+        width: 48%;
+        left: 26%;
+        height: 1.6rem;
+        line-height: 1.6rem;
+        z-index: 99999;
+        text-align: center;
+        color: #ffffff;
+        border-radius:0.2rem ;
+        background: #9f9f9f;
+    }
+    .clipbg #clipArea{
+        width: 100%;
+        height: 70%;
+        margin: auto;
+
+    }
+    .clipbg .footer{
+        width: 90%;
+        position: fixed;
+        left: 5%;
+        bottom: 0px;
+        text-align: center;
+    }
+    .clipbg dl{
+        background: #ffffff;
+        border-radius: 0.4rem;
+        overflow: hidden;
+        margin-bottom: 0.6rem;
+    }
+    .clipbg dd{
+        position: relative;
+        height: 2.25rem;
+        line-height: 2.25rem;
+        border-bottom:1px solid #999999 ;
+    }
+    .clipbg .back{
+        height: 1.8rem;
+        line-height:1.8rem;
+        border-radius: 0.4rem;
+        margin-bottom: 0.4rem;
+        background: #ffffff;
+    }
+    .clipbg dd input{
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        z-index: 11;
+        filter:alpha(opacity=0);  
+        -moz-opacity:0;  
+        -khtml-opacity: 0;  
+        opacity: 0; 
+    }
+</style>
+</html>

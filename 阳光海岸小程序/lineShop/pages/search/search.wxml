@@ -1,0 +1,10 @@
+<view class="container">
+  <view>我是搜索页</view>
+  <input type='text' placeholder='目的地/关键词' value='{{searchKeywords}}' bindinput='inputChange'/>
+  <view class='searchBtn' bindtap='searchEnv'>搜索</view>
+  <view>搜索历史：</view>
+  <block wx:for='{{searchHistory}}' wx:key>
+    <view>{{item}}</view>
+  </block>
+</view>
+

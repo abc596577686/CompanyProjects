@@ -1,0 +1,41 @@
+.goodss-page {
+  font-size: 12px;
+}
+.goodss-page .top-other-btn .ant-btn {
+  margin-right: 10px;
+}
+.goodss-page .bottom-other-btn {
+  margin-top: 10px;
+}
+.goodss-page .bottom-other-btn .ant-btn {
+  margin-right: 10px;
+}
+.goodss-page .tableData {
+  min-width: 300px;
+  min-height: 460px;
+}
+.goodss-page .tableDatas {
+  width: 900px;
+  min-height: 460px;
+  margin-left: 20px;
+}
+.goodss-page .ant-card-body {
+  overflow: hidden;
+}
+.goodss-page .m-t-lg {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+}
+.goodss-page .resourceListStyle {
+  margin-top: 10px;
+  color: rgba(0, 0, 0, 0.65);
+}
+.resourcelist * {
+  font-size: 15px!important;
+}
+.resourcelist .m-t-lg {
+  background-color: #fff !important;
+  padding: 27px;
+  min-height: 520px;
+}

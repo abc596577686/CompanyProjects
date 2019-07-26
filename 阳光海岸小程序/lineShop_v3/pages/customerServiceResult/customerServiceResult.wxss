@@ -1,0 +1,30 @@
+/* pages/after/after.wxss */
+.suss {
+  width: 149rpx;
+  height: 149rpx;
+  margin: 150rpx 300rpx;
+}
+.already {
+  color: #333;
+  font-size: 30rpx;
+  margin-top: 41rpx;
+  text-align: center;
+}
+.hold {
+  color: #999;
+  font-size: 28rpx;
+  text-align: center;
+  margin-top: 28rpx;
+}
+.btn {
+  margin-top: 150rpx;
+  padding: 0 32rpx;
+  
+}
+.btn button {
+  height: 74rpx;
+  background-color: #FB4A4C;
+  color: #fff;
+  line-height: 74rpx;
+  font-size: 34rpx;
+}

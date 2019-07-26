@@ -1,0 +1,537 @@
+*{
+    margin: 0;
+    padding: 0
+}
+body{
+    background-color: #fff;
+}
+img{
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+header{
+    width: 100%;
+    height: 7.2rem;
+}
+.page{
+    width: 100%;
+    height: 34rem;
+    position: relative;
+    background-color: #fff;
+}
+.maintxt{
+    width: 100%;
+    height: 16.8rem;
+    position: relative;
+    top: 4.2rem;
+    background-color: #fff;
+}
+.maintxt > div{
+    background-color: #F4F9FF;
+    width: 13rem;
+    height: 2.52rem;
+    margin-bottom: .28rem;
+    position: relative;
+    left: 1rem;
+
+    /* float: left; */
+    /* margin-left: 1rem; */
+}
+.page span{
+    display: block;
+    width: 100%;
+    font-size: .52rem;
+    text-align: center;
+    line-height: .52rem;
+    color: #666666;
+    position: absolute;
+    top: 2.5rem;
+}
+/* 黄点 */
+.maintit{
+    width: 100%;
+    height: .64rem;
+    font-size: .64rem;
+    line-height: .64rem;
+    text-align: center;
+    font-weight: 600;
+    color: #333333;
+    position: absolute;
+    top: 1.3rem;
+}
+.mainlitimg1{
+    width: 1rem;
+    height: .4rem;
+    position: absolute;
+    top: 1.4rem;
+    left: 4.5rem;
+}
+.mainlitimg2{
+    width: 1rem;
+    height: .4rem;
+    position: absolute;
+    top: 1.4rem;
+    right: 4.5rem;
+}
+.mingci{
+    width: 1.8rem;
+    line-height:  .48rem;
+    height: .48rem;
+    font-size: .48rem;
+    position: absolute;
+    left: .2rem;
+    top: 1rem
+}
+.num{
+    line-height:  .48rem;
+    width: 1.2rem;
+    height: .48rem;
+    font-size: .48rem;
+    position: absolute;
+    left: 2.2rem;
+    top: 1rem
+}
+.peoImg11{
+    width: 1.56rem;
+    height: 1.56rem;
+    position: absolute;
+    left: 3.24rem;
+    top: .48rem;
+}
+.ploname{
+    line-height:  .48rem;
+    width: 2rem;
+    height: .48rem;
+    font-size: .48rem;
+    position: absolute;
+    left: 5.32rem;
+    top: 1rem
+}
+.matNumber{
+    width: 1.44rem;
+    line-height:  .48rem;
+    height: .48rem;
+    font-size: .48rem;
+    position: absolute;
+    /* left: 5.32rem; */
+    right: 1.4rem;
+    top: 1rem;
+    color: #599BD9;
+}
+.matT{
+    width: 1.44rem;
+    line-height:  .48rem;
+    height: .48rem;
+    font-size: .48rem;
+    position: absolute;
+    /* left: 5.32rem; */
+    right: .1rem;
+    top: 1rem;
+}
+.botto{
+    width: 100%;
+    height: 1.6rem;
+    position: relative;
+    top: 16rem;
+
+    /* display: -webkit-flex;  
+    display: flex;
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    justify-content: space-evenly; */
+}
+.botto > div{
+    width: 1.2rem;
+    height: .9rem;
+
+    float: left;
+    margin-left: 1rem;
+}
+/* 展示奖品 */
+.pageMainShow{
+    width: 100%;
+    height: 40rem;
+    position: relative;
+    background-image: url('../img/pageimg.png');
+    background-size: 100% 100%;
+}
+.maintit{
+    width: 100%;
+    height: .64rem;
+    font-size: .64rem;
+    line-height: .64rem;
+    text-align: center;
+    font-weight: 600;
+    color: #333333;
+    position: absolute;
+    top: 1.3rem;
+}
+.mainlitimg1{
+    width: 1rem;
+    height: .4rem;
+    position: absolute;
+    top: 1.4rem;
+    left: 4.5rem;
+}
+.mainlitimg2{
+    width: 1rem;
+    height: .4rem;
+    position: absolute;
+    top: 1.4rem;
+    right: 4.5rem;
+}
+.apresent{
+    width: 100%;
+    height: 9rem;
+    position: relative;
+    top: 5.56rem;
+}
+.peresentMain{
+    width: 100%;
+    height: 5.24rem;
+    position: absolute;
+    top: 2.7rem;
+
+    /* display: -webkit-flex;  
+    display: flex;
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    justify-content: space-evenly; */
+}
+.peresentMain > div{
+    /* width: 3.6rem;
+    height: 4.8rem; */
+    width: 4.64rem;
+    height: 4.04rem;
+
+    float: left;
+    /* margin-left: 1.1rem; */
+}
+.peresentMain div:first-child{
+    /* margin-left: 2.1rem; */
+    margin-left: .54rem;
+}
+.peresentMainName{
+    width: 100%;
+    height: .5rem;
+    position: absolute;
+    top: 8rem;
+
+    /* display: -webkit-flex;  
+    display: flex;
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    justify-content: space-evenly; */
+}
+.peresentMainName > div{
+    width: 3.6rem;
+    height: .48rem;
+    font-size: .48rem;
+    color: #fff;
+    text-align: center;
+    line-height: .48rem;
+
+    float: left;
+    margin-left: 1.1rem;
+}
+.Coupon{
+    width: 4.52rem;
+    height: 2.52rem;
+    position: absolute;
+    left: 5.2rem;
+    top: 3rem;
+}
+.aPre{
+    width: 5.72rem;
+    height: 2rem;
+    position: absolute;
+    left: 4.65rem;
+    /* top: 5.56rem; */
+    background-image: url('../img/yellowsicle.png');
+    background-size: 100% 100%;
+    font-size: .48rem;
+    text-align: center;
+    line-height: 1.5rem;
+    font-weight: 600;
+}
+/* 比赛流程 */
+.competitionKer{
+    width: 100%;
+    height: 6rem;
+    position: relative;  
+}
+.ker{
+    width: 14rem;
+    height: 2.8rem;
+    position: absolute;
+    left: .48rem;
+    bottom: .4rem;
+}
+.littletip{
+    width: 12rem;
+    height: .52rem;
+    line-height: .52rem;
+    color: #FB4A4C;
+    padding: .8rem;  
+    font-size: .52rem; 
+}
+.gettbtn{
+    width: 100%;
+    height: 1.96rem;
+    background-color: #FB4A4C;
+    text-align: center;
+    line-height:  1.96rem;
+    border: none;
+    color: #fff;
+    font-size: .64rem;
+}
+/* 填写信息 */
+.liaojie{
+    position: fixed;
+    left:.68rem;
+    /* top: 6rem; */
+    bottom: 6rem;
+    width: 13.6rem;
+    height:14.64rem;
+    border-radius: 5px;
+    background-color: #fff;
+    z-index: 1000;
+}
+.background{
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    left: 0;
+    top: 0;
+    z-index: 999;
+    background-color: #000;
+    opacity: .3;
+}
+.closeCover{
+    width: 2rem;
+    height: 2rem;
+    position: absolute;
+    top: 0rem;
+    right: 0rem;
+}
+.topDiv{
+    width: 100%;
+    height: 2.04rem;
+    font-size: .6rem;
+    color: #333333;
+    text-align: center;
+    line-height: 2.04rem;
+    position: relative;
+    padding-bottom: .8rem;
+}
+.coversspp{
+    width: 100%;
+    height: .04rem;
+    background: #333;
+    opacity: .1;
+}
+.coversspp{
+    width: 100%;
+    height: .04rem;
+    background: #333;
+    opacity: .3;
+}
+.liaojiesp{
+    width: .52rem;
+    height: .52rem;
+    display: block;
+    position: absolute;
+    top: .6rem;
+    right: .6rem;
+}
+.liaojiesp img{
+    width: 100%;
+    height: 100%;
+    display: block;
+}
+.liaojiemain{
+    width: 100%;
+    height: 11.3rem;
+    /* padding: .8rem; */
+    position: relative;
+}
+.inp{
+    width: 12rem;
+    height: 1.6rem;
+    background-color: #F0F0F0;
+    border: none;
+    margin-left: .8rem;
+    text-indent: .4rem;
+    font-size: .56rem;
+    margin-bottom: .44rem;
+}
+.beiTip{
+    padding-top: .2rem;
+    width: 100%;
+    height: .48rem;
+    color: #FB4A4C;
+    font-size: .48rem;
+    text-indent: .9rem;
+}
+.liaojieBtn{
+    width: 12rem;
+    height: 1.48rem;
+    text-align: center;
+    line-height: 1.48rem;
+    font-size: .7rem;
+    color: #fff;
+    border: none;
+    background-color: #FB4A4C;
+    border-radius: .2rem;
+    position: absolute;
+    /* bottom: .4rem; */
+    bottom: 0;
+    left: .8rem;
+}
+/* 蒙层 */
+.background{
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    left: 0;
+    top: 0;
+    z-index: 999;
+    background-color: #000;
+    opacity: .3;
+}
+.aPretxt{
+    color: #fff;
+    position: absolute;
+    top: 4rem;
+    font-size: .56rem;
+    text-indent: .8rem;
+    padding-left: .9rem;
+    padding-right: .9rem;
+}
+/* alert */
+#div_alert{
+    width: 8rem; 
+    height: 1.4rem; 
+    text-align:center; 
+    background-color:black; 
+    color: white;
+    display: none; 
+    position:fixed;
+    top: 7rem;
+    left: 3.485rem;  
+    border:1px solid grey; 
+    border-top:0;
+    border-radius: 0.2rem;
+    font-size: .6rem;
+    line-height: 1.4rem; 
+    z-index: 9999999999;
+}
+/* 注册 */
+#register{
+    background-color: #fff;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    height: 9.24rem;
+    z-index: 1000;
+    /* padding: .64rem; */
+}
+.reg_name{
+    width: 100%;
+    height: 2.04rem;
+    border-bottom: .04rem solid lightgrey;
+    line-height: 2.04rem;
+    font-size: .6rem;
+    color: #333333;
+    font-family: HiraginoSansGB-W3;
+    text-indent: .56rem;
+}
+/* 关闭按钮 */
+.reg_name_closesp{
+    display: block;
+    width: .52rem;
+    height: .52rem;
+    position: absolute;
+    top: .8rem;
+    right: .8rem;
+    /* padding: .8rem; */
+}
+.kkktr{
+    width: 2rem;
+    height: 2rem;
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+.reg_main{
+    width: 100%;
+    height: 7.48rem;
+    background-color: #fff;
+    position: relative;
+}
+.phone{
+    border: none;
+    width: 13.76rem;
+    height: 1.6rem;
+    background-color: #F0F0F0;
+    border-radius: .04rem;
+    position: absolute;
+    left: .64rem;
+    top: .8rem;
+    font-size: .52rem;
+    color: #999999;
+    font-family: HiraginoSansGB-W3;
+    padding-left: .44rem;
+    padding-top: .56rem;
+    padding-bottom: .56rem;
+}
+.code{
+    border: none;
+    width: 10rem;
+    height: 1.6rem;
+    background-color: #F0F0F0;
+    border-radius: .04rem;
+    position: absolute;
+    left: .64rem;
+    top: 3rem;
+    font-size: .52rem;
+    color: #999999;
+    font-family: HiraginoSansGB-W3;
+    padding-left: .44rem;
+    padding-top: .56rem;
+    padding-bottom: .56rem;
+}
+.getcode{
+    border: none;
+    width: 3.56rem;
+    height: 1.6rem;
+    background-color: #FFD946;
+    border-radius: .04rem;
+    position: absolute;
+    right: .64rem;
+    top: 3rem;
+    font-size: .52rem;
+    color: #333333;
+    font-family: HiraginoSansGB-W3;
+    text-align: center;
+    vertical-align: center;
+}
+.goRegister{
+    border: none;
+    width: 13.72rem;
+    height: 1.48rem;
+    background-color: #FFD946;
+    border-radius: .04rem;
+    position: absolute;
+    left: .64rem;
+    bottom: .74rem;
+    font-size: .52rem;
+    color: #333333;
+    font-family: HiraginoSansGB-W3;
+    text-align: center;
+    vertical-align: center;
+}

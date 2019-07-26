@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=0">
+    <title>邀请</title>
+    <link rel="stylesheet" href="./css/weui.css">
+    <link rel="stylesheet" href="./css/invite.css">
+    <script src="./js/jquery-3.2.1.js"></script>
+    <style>
+        body {
+            text-align: center;
+        }
+        
+        .store-name {
+            margin-top: 40px;
+            color: #999;
+        }
+        
+        .bottom_download a {
+            display: block;
+            line-height: 45px;
+            color: #fff;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="cat_seller">
+    </div>
+    <div class="store-name">
+        <p>邀请代理商名额已经上限,快联系他升级吧</p>
+    </div>
+    <div class="bottom_download">
+		<a href="javascript:void(0)" id="click">进入店主的店铺</a>
+    </div>
+</body>
+<script>
+	$("#click").click(function(){
+   		 window.location.href = "http://www.jikeduo.com.cn/wap/index?shopid=" + getUrlPara("s");
+	});
+
+    //获取URL上参数
+    function getUrlPara(paraName) {
+    	var reg = new RegExp("(^|&)" + paraName + "=([^&]*)(&|$)", "i");
+       	var r = window.location.search.substr(1).match(reg);
+        if (r != null){
+        	return unescape(r[2]);
+        }
+       	return null;    
+    }
+</script>
+</html>
+

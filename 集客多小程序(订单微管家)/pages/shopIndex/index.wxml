@@ -1,0 +1,17 @@
+<!--index.wxml-->
+<view class="container">
+  <view class="userinfo">
+    <!-- <button wx:if="{{!hasUserInfo && canIUse}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo"> 获取头像昵称 </button>
+    <block wx:else>
+      <image bindtap="bindViewTap" class="userinfo-avatar" src="{{userInfo.avatarUrl}}" mode="cover"></image>
+      <text class="userinfo-nickname">{{userInfo.nickName}}</text>
+    </block> -->
+    <image class="pageTopImg" src="/assets/images/iiop.png" mode=''lazy-load="{{true}}"></image>
+  </view>
+  <view class="titlea">
+    <text>订单微管家</text>
+  </view>
+  <view class="titleb">
+   <text>一款帮助店铺提供用户自助下单、快速出单、查询物流等订单管理功能的微信小程序。</text>
+  </view>
+</view>

@@ -1,0 +1,56 @@
+<import src="../../components/UI/JyoComponent.wxml" />
+<loading wx:if="{{isLoading}}"></loading>
+<view id='topTit' class='haveLine'>
+  <block wx:for="{{catalogs}}" wx:key="select">
+    <text data-select="{{item.select}}" class="{{item.select == catalogSelect ? 'active':''}} tip" bind:tap="chooseCatalog">{{item.catalogName}}</text>
+  </block>
+  <image class='titImage' mode='widthFix' src='/assets/images/icon_search.png' bindtap='jumpSearchEnv'></image>
+</view>
+<view id="pageMaina" wx:if="{{isActivePage == 0 && isSh == 1}}"  style="height:{{localHeight+'rpx'}}">
+  <scroll-view scroll-y="true" class='leftscroll' style="height:{{localHeight+'rpx'}}" bindscrolltoupper="upper" bindscrolltolower="lower" bindscroll="scroll">
+    <view class="leftPilot" >
+<!-- <<<<<<< HEAD
+=======
+      <!-- <block wx:for="{{dhlist}}" wx:key="select">
+        <text data-select="{{item.catId}}" class="{{item.catId == dhSelect ? 'active1':''}} leftList" catch:tap="choosedhlist">{{item.catName}}</text>
+      </block> -->
+<!-- >>>>>>> c236cdf73c756807898a4bdf97119a1ccea1c0a5 -->
+      <block wx:for="{{dhlist}}" wx:key="select">
+        <text data-select="{{item.catId}}" id="{{index}}" class="{{index == dhSelect ? 'active1':''}} leftList" catch:tap="choosedhlist">{{item.catName}}</text>
+      </block>
+    </view>
+    <!-- <view class='borromCover'></view> -->
+  </scroll-view>
+  <scroll-view scroll-y="true" class='rightscroll' style="height:{{localHeight+'rpx'}}"  bindscrolltoupper="upper" bindscrolltolower="lower" bindscroll="scroll">
+    <view class="rightView" style="height:{{localHeight+'rpx'}}">
+      <block>
+        <image class='topImage' src="{{topImageurl}}"></image>   
+      </block>
+      <view class="midTit" bind:tap="firstGateto">
+        <text>查看全部</text>
+        <text>{{viewName}}</text>
+        <image class='midIconImage' src='../../assets/images/yjjx.png'></image>
+      </view>
+      <view class="showProList">
+        <view class="spl_tit" wx:if="{{ishow_spl}}">
+          此分类没有商品啦 T ^T
+        </view>
+        <block wx:for="{{dhProlist}}" wx:key="catName" wx:key="catPic">
+          <view class="showPro">
+            <image data-select="{{item.catId}}" mode="widthFix" class='proImage' src="{{item.catPic}}" bind:tap="secondGateto" data-name='{{item.catName}}'></image>
+            <view class="showProName">{{item.catName}}</view>
+          </view>
+        </block>
+      </view>
+    </view>
+  </scroll-view>
+</view>
+<view id="pageMainb" wx:if="{{isActivePage == 1 && isSh == 1}}">
+  <!-- 锚点导航 -->
+  <template is="Jyo-SortListView" data="{{...sortListView1}}"></template>
+</view>
+
+<timeout wx:if="{{!isLoading && timeout}}" bind:refreshEnv="refreshEnv"></timeout>
+
+<!-- tabBar -->
+<!-- <tabBar activeIndex="1"></tabBar> -->

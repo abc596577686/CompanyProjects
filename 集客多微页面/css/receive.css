@@ -1,0 +1,348 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+span{
+    display: block;
+}
+img{
+    width: 100%;
+    height: 100%;
+    display: block;
+}
+bgc{
+    width: 100%;
+    background-color: #fff;
+    display: none; 
+}
+.topImg{
+    width: 100%;
+    height: 6.68rem;
+}
+.gte{
+    width: 100%;
+    height: .32rem;
+    background-color: #f0f0f0;
+    display: block;
+}
+.middleTit{
+    width: 100%;
+    height: 13.04rem;
+    position: relative;
+}
+.midT2{
+    width: 3rem;
+    height: .68rem;
+    line-height: .68rem;
+    color: #333333;
+    font-size: .68rem;
+    position: absolute;
+    left: 6.32rem;
+    top: 1.36rem;
+    font-weight: 700;
+}
+.midT1{
+    width: 1.16rem;
+    height: .84rem;
+    position: absolute;
+    left: 4.72rem;
+    top: 1.32rem;
+}
+.midT3{
+    width: 1.16rem;
+    height: .84rem;
+    position: absolute;
+    left: 9.44rem;
+    top: 1.32rem;
+}
+.dirImg1{
+    width: 1.44rem;
+    height: 1.44rem;
+    position: absolute;
+    left: 1.24rem;
+    top: 3.28rem;
+}
+.dirImg2{
+    width: 1.44rem;
+    height: 1.44rem;
+    position: absolute;
+    left: 1.24rem;
+    top: 6.64rem;
+}
+.dirImg3{
+    width: 1.44rem;
+    height: 1.44rem;
+    position: absolute;
+    left: 1.24rem;
+    top: 10rem;
+}
+.newT1{
+    width: 9.8rem;
+    height: .56rem;
+    line-height: .56rem;
+    font-size: .56rem;
+    color: #333333;
+    position: absolute;
+    left: 3.8rem;
+    top: 3.28rem;
+}
+.newT2{
+    width: 9.8rem;
+    height: .52rem;
+    line-height: .52rem;
+    font-size: .52rem;
+    color: #333333;
+    position: absolute;
+    left: 3.8rem;
+    top: 4.2rem;
+}
+.newT3{
+    width: 9.8rem;
+    height: .56rem;
+    line-height: .56rem;
+    font-size: .56rem;
+    color: #333333;
+    position: absolute;
+    left: 3.8rem;
+    top: 6.64rem;
+}
+.newT4{
+    width: 9.8rem;
+    height: .52rem;
+    line-height: .52rem;
+    font-size: .52rem;
+    color: #333333;
+    position: absolute;
+    left: 3.8rem;
+    top:7.52rem;
+}
+.newT5{
+    width: 9.8rem;
+    height: .56rem;
+    line-height: .56rem;
+    font-size: .56rem;
+    color: #333333;
+    position: absolute;
+    left: 3.8rem;
+    top: 10rem;
+}
+.newT6{
+    width: 9.8rem;
+    height: .52rem;
+    line-height: .52rem;
+    font-size: .52rem;
+    color: #333333;
+    position: absolute;
+    left: 3.8rem;
+    top: 10.88rem;
+}
+.rule{
+    width: 100%;
+    height: 8.2rem;
+    position: relative;
+}
+.ruleT1{
+    width: 9.8rem;
+    height: .6rem;
+    font-size: .6rem;
+    line-height: .6rem;
+    color: #333333;
+    position: absolute;
+    left: 1.28rem;
+    top: 3.04rem;
+}
+.ruleT2{
+    width: 12rem;
+    height: .6rem;
+    font-size: .6rem;
+    line-height: .6rem;
+    color: #333333;
+    position: absolute;
+    left: 1.28rem;
+    top: 4.8rem;
+}
+.ruleT3{
+    width: 9.8rem;
+    height: .6rem;
+    font-size: .6rem;
+    line-height: .6rem;
+    color: #333333;
+    position: absolute;
+    left: 1.28rem;
+    top: 6.48rem;
+}
+.grey{
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #000000;
+    opacity: 0.3;
+    z-index: 1000;
+    display: none;
+}
+.getRed{
+    width: 11.68rem;
+    height: 11.64rem;
+    position: fixed;
+    left: 1.72rem;
+    top: 6.36rem;
+    background-image: url('../img/zu48.png'); 
+    z-index: 2000;
+    background-size: cover;
+    display: none;
+}
+.rmbBiao{
+    width: .52rem;
+    height: .6rem;
+    position: absolute;
+    left: 3.36rem;
+    top: 1.28rem;
+}
+.price{
+    width: 3.4rem;
+    height: 1.48rem;
+    line-height: 1.48rem;
+    color: #ffffff;
+    font-size: 1.84rem;
+    position: absolute;
+    left: 4.2rem;
+    top: 1.72rem;
+    font-weight: 700;
+    text-align:center;
+}
+.closeGet{
+    width: 1.24rem;
+    height: 1.24rem;
+    position: absolute;
+    left: 11rem;
+    top: -.4rem;
+}
+.tip{
+    width: 6.4rem;
+    height: .68rem;
+    line-height: .68rem;
+    color: #ffffff;
+    font-size: .68rem;
+    position: absolute;
+    left: 3.04rem;
+    top: 9.2rem;
+    /* font-weight: 700; */ 
+}
+.getBtn{
+    width: 4.16rem;
+    height: 4.16rem;
+    position: absolute;
+    left: 3.72rem;
+    top: 3.84rem; 
+}
+.getBtn11{
+    display: block;
+    width: 1.96rem;
+    height: 2.04rem;
+    font-size: .96rem;
+    color: #666666;
+    /* text-align: center; */
+    /* line-height: 4.16rem; */
+     position: relative;  
+     left: 1.12rem;   
+     top: -3.4rem; 
+
+}
+.getBtnT1{
+    display: block;
+    width: 1.96rem;
+    height: 2.04rem;
+    font-size: .96rem;
+    color: #666666;
+    position: relative; 
+    left: 1.12rem;  
+    top: -3.2rem;  
+}
+.ready{
+    width: 11.68rem;
+    height: 13rem;
+    /* position: relative; */
+    position: fixed;
+    left: 1.72rem;
+    top: 5rem;
+    background-image: url('../img/zu49.png'); 
+    z-index: 20000;
+    background-size: 100%;
+    background-repeat: no-repeat; 
+    display: none;
+}
+.rmbImg1{
+    width: .52rem;
+    height: .6rem;
+    position: absolute;
+    left: 3.4rem;
+    top: 2.6rem;
+}
+.readyPrice{
+    width: 3.4rem;
+    height: 1.48rem;
+    line-height: 1.48rem;
+    color: #ffffff;
+    font-size: 1.84rem;
+    position: absolute;
+    left: 4.35rem;
+    top: 2.55rem;
+    font-weight: 700;
+}
+.getSuceess{
+    width: 4.16rem;
+    height: 4.16rem;
+    position: absolute;
+    left: 3.76rem;
+    top: 4.88rem;
+}
+.getsucc1{
+    width: 10.2rem;
+    height: .64rem;
+    color: #ffffff;
+    font-size: .64rem;
+    line-height: .64rem;
+    position: absolute;
+    left: 1.09rem;
+    bottom: 3rem;
+}
+.goUse{
+    width: 9rem;
+    height: 1.8rem;
+    text-align: center;
+    line-height: 1.8rem;
+    background-color: #fff;
+    color: #333333;
+    font-size: .68rem;
+    border-radius: .32rem .32rem .32rem .32rem;
+    position: absolute;
+    left: 1.36rem;
+    bottom: .7rem;
+}
+.closeReady{
+    width: 1.2rem;
+    height: 1.2rem;
+    position: absolute;
+    left: 11.1rem;
+    top: 3.1rem;
+}
+.getRR{
+    width: 100%;
+    height: 2.56rem;
+    position: relative;
+}
+.getBtnR{
+    width: 13.88rem;
+    height: 1.52rem;
+    color: #ffffff;
+    background-color: #fb4a4c;
+    font-size: .64rem;
+    line-height: 1.52rem;
+    text-align: center;
+    border-radius: .32rem .32rem .32rem .32rem;
+    position: absolute;
+    left: .56rem;
+    top: .56rem;
+}

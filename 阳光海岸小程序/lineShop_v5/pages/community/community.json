@@ -1,0 +1,6 @@
+{
+  "navigationBarBackgroundColor": "#fff",
+ "usingComponents": {
+  "loading": "/components/loading/loading"
+} 
+}

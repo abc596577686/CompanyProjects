@@ -1,0 +1,716 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=0">
+    <meta name="viewport" content="width=device-width,viewport-fit=cover">
+    <title>注册</title>
+    <link rel="stylesheet" href="/base/share/css/weui.css">
+    <link rel="stylesheet" href="/base/share/css/invite.css">
+    <link rel="stylesheet" href="./css/register.css">
+    <link rel="stylesheet" href="./css/swiper.min.css">
+    <!-- 数据埋点 -->
+    <script>
+        (function(para) {
+            var p = para.sdk_url, n = para.name, w = window, d = document, s = 'script',x = null,y = null;
+            w['sensorsDataAnalytic201505'] = n;
+            w[n] = w[n] || function(a) {return function() {(w[n]._q = w[n]._q || []).push([a, arguments]);}};
+            var ifs = ['track','quick','register','registerPage','registerOnce','trackSignup', 'trackAbtest', 'setProfile','setOnceProfile','appendProfile', 'incrementProfile', 'deleteProfile', 'unsetProfile', 'identify','login','logout','trackLink','clearAllRegister','getAppStatus'];
+            for (var i = 0; i < ifs.length; i++) {
+                w[n][ifs[i]] = w[n].call(null, ifs[i]);
+            }
+            if (!w[n]._t) {
+                x = d.createElement(s), y = d.getElementsByTagName(s)[0];
+                x.async = 1;
+                x.src = p;
+                x.setAttribute('charset','UTF-8');
+                y.parentNode.insertBefore(x, y);
+                w[n].para = para;
+            }
+        })
+        ({
+          sdk_url: 'http://static.sensorsdata.cn/sdk/1.10.9/sensorsdata.min.js',
+          heatmap_url: 'http://static.sensorsdata.cn/sdk/1.10.9/heatmap.min.js',
+          name: 'sa',
+          // web_url: 'http://sa.jikeduo.com.cn/?project=default',
+          web_url: 'http://sa.jikeduo.com.cn/?project=production',
+          // server_url: 'http://sa.jikeduo.com.cn:8106/sa?project=default',
+          server_url: 'http://sa.jikeduo.com.cn:8106/sa?project=production',
+          heatmap:{
+            clickmap:'default',
+            scroll_notice_map:'default',
+            loadTimeout:  3000,
+            isTrackLink: true,
+            collect_url: function(){
+              return true;
+            },
+            collect_element: function(element_target){
+              // 如果这个元素有属性sensors-disable=true时候，不采集
+              if(element_target.getAttribute('sensors-disable') === 'true'){
+                console.log('不采集');
+                return false;
+              } else{
+                console.log('采集');
+                return true;
+              }
+            },
+            collect_input:function(element_target){
+              //例如如果元素的id是a，就采集这个元素里的内容
+              if(element_target.id === 'a'){
+                return true;
+              }
+            },
+            scroll_delay_time: 2000
+          }
+        });
+        
+        let user_id = localStorage.getItem('__userId__') || '';
+        sa.login(user_id)
+        sa.quick('autoTrack');
+
+    </script>
+
+	<script src="https://res.wx.qq.com/open/js/jweixin-1.3.2.js"></script>
+    <script>
+        //1.获取像素比
+        var pixelRatio=1/window.devicePixelRatio;
+        // console.log(pixelRatio);
+        //2.通过js动态来设置视口
+        document.write('<meta name="viewport" content="width=device-width,initial-scale='+pixelRatio+',minimum-scale='+pixelRatio*2+',maximum-scale='+pixelRatio+'">');
+        //3.获取html节点
+        var html=document.getElementsByTagName('html')[0];
+        //console.log(html)
+        //4.获取屏幕宽度
+        var pageWidth=html.getBoundingClientRect().width;
+        // console.log(pageWidth);
+        //屏幕宽度/固定数值=基准值;
+        html.style.fontSize=pageWidth/15+'px';
+    </script>
+    <style>
+        /* html,body {
+            -webkit-overflow-scroll: touch !important;
+            overflow: auto !important;
+            height: 100% !important;
+        } */
+        .clearfix:after {
+            visibility: hidden;
+            display: block;
+            font-size: 0;
+            content: " ";
+            clear: both;
+            height: 0
+        }
+        
+        *:first-child+html .clearfix {
+            zoom: 1
+        }
+        
+        .it-name,
+        .it-desc {
+            display: block;
+            width: 100%;
+            text-align: center;
+            color: #605d5a;
+            font-size: 20px;
+        }
+        
+        .it-name {
+            width: 100%;
+            padding-top: 110px;
+            line-height: 35px;
+            text-align: center;
+            font-size: 23px;
+            font-weight: 800;
+        }
+        
+        .phone span,
+        input.phone_ipt {
+            display: inline-block
+        }
+        .swiper-container {
+            width: 100%;
+            height: 7.6rem;
+            background-color: #fff;
+        }
+        .swiper-slide {
+            height: 90%;
+            text-align: center;
+            font-size: .768rem;
+            background: #fff;
+            /* box-shadow: 0px 0px .2rem .04rem #f0f0f0; */
+            display: -webkit-box;
+            display: -ms-flexbox;
+            display: -webkit-flex;
+            display: flex;
+            -webkit-box-pack: center;
+            -ms-flex-pack: center;
+            -webkit-justify-content: center;
+            justify-content: center;
+            -webkit-box-align: center;
+            -ms-flex-align: center;
+            -webkit-align-items: center;
+            align-items: center;
+        }
+        .weui-actionsheet{
+            width: 100%;
+            height: 9.68rem;
+            border: none;
+        }
+        body {
+            padding-bottom: constant(safe-area-inset-bottom);
+        }
+    </style>
+</head>
+
+<body>
+    <div id="conets">
+        <div class="int_top">
+            <div class="showPeople">
+                <div class="mainPeo">
+                    <div class="txt1" style="font-size: .55rem;"></div>
+                    <div class="tt" style="line-height: .72rem;font-size: .42rem"></div>
+                </div>
+                <div class="peoImg" style="z-index: 999;top:3.2rem;">
+                    <img class="peoImgUrl" src="" style="width: 100%;height: 100%;display: block">
+                </div>
+            </div>
+        </div>
+        <div class="trouble">
+            <img src="./img/sec1.png">
+        </div>
+        <div class="sec2" style="width: 100%;">
+            <img src="./img/sec2.png">
+        </div>
+        <div class="sec3" style="width: 100%;">
+            <img src="./img/sec3.png">
+        </div>
+        <!-- 他们都在用集客多 轮播图 -->
+        <div class="swiper-container">
+            <!-- <div class="swiper-wrapper" style="margin-top: .426667rem;padding-left: 1rem;padding-right: 1rem;"> -->
+            <div class="swiper-wrapper" style="margin-top: .426667rem;padding-left: .1rem">
+                <div class="swiper-slide">
+                    <img src="./img/kk1.png" style="width: 82%;height: 100%;display: block">
+                </div>
+                <div class="swiper-slide">
+                    <img src="./img/kk2.png" style="width: 82%;height: 100%;display: block">
+                </div>
+                <div class="swiper-slide">
+                    <img src="./img/kk3.png" style="width: 82%;height: 100%;display: block">
+                </div>
+            </div>
+            <div class="swiper-pagination"></div>
+        </div>
+        <div class="sec4" style="width: 100%;">
+            <img src="./img/sec4.png">
+        </div>
+        <div class="bottomcover" style="width: 100%;height: 2.64rem">
+
+        </div>
+        <div class="foot">
+            <button class="btn" style="line-height: 1.6rem;width: 13rem;margin-left: 1rem;margin-top: .4rem;" id="showAndroidActionSheet"></button>
+        </div>
+        <div class="footcover" style="display: none">
+
+        </div>
+    </div>
+    <!-- alert -->
+    <div id="div_alert">0-0-0</div>
+    <!-- 弹窗 -->
+    <section id="register" style="z-index:1002;display: none">
+        <div class="reg_name">
+            请先完成注册
+            <span class="reg_name_closesp">
+                <img src="./img/closeimg.png">
+            </span>
+        </div>
+        <div class="reg_main">
+            <input type="number" class="phone" id="phone" placeholder="手机号" style="line-height: 0.65rem"> 
+            <input type="number" class="code" placeholder="验证码" maxlength="6" style="line-height: 0.65rem">
+            <button class="getcode" onclick="settime(this)">获取验证码</button>
+            <button class="goRegister" style="font-size: .6rem;color: #fff;font-weight: bold;border-radius: .2rem;">确认</button>
+        </div>
+    </section>
+    <div class="weui-mask" style="display: none"></div>
+    <!-- 分享箭头 -->
+    <div class="sharejt" style="display: none">
+        <img src="./img/sharecc.png">
+    </div>
+    <div class="sharetxt" style="display: none">
+        点击进行分享哦~
+    </div>
+    <div class="localtop" style="display: none"></div>
+    <script src="./js/swiper.js"></script>
+    <script src="/base/share/js/jquery-2.1.4.min.js" type="text/javascript"></script>
+    <script>
+        var swiper = new Swiper('.swiper-container', {
+            slidesPerView: 1,
+            spaceBetween: 30,
+            freeMode : false,
+            pagination: {
+                el: '.swiper-pagination',
+                clickable: true,
+            },
+        });
+    </script>
+    <script>
+        var u = navigator.userAgent;
+        var isIOS = !!u.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/); //ios终端
+        if (isIOS) {        
+            if (screen.height == 812 && screen.width == 375){
+                $(".foot").css("bottom","1rem")
+                $(".footcover").css("display","block")
+            }else{
+                $(".foot").css("bottom","0")
+                $(".footcover").css("display","none")
+            } 
+        }   
+        // 移动端影响input定位
+        // (function bottonm(){
+            // if($(document).height() > $(window).height()){
+            //     $('#register').css({'position':'fixed','bottom':'0'});
+            //     $(document).height( $(window).height()+'px');  
+            //     console.log($(document).height())
+            // } 
+        // })(); 
+
+        window.alert = function(name){
+            var iframe = document.createElement("IFRAME");
+            iframe.style.display="none";
+            iframe.setAttribute("src", 'data:text/plain,');
+            document.documentElement.appendChild(iframe);
+            window.frames[0].window.alert(name);
+            iframe.parentNode.removeChild(iframe);
+        }  
+        $(".weui-mask").on('click', function() {
+            $('#register').hide();
+            $('.weui-mask').fadeOut(200);
+            $('.sharejt').hide();
+            $('.sharetxt').hide();
+            // $('#register').fadeIn(200);
+            // $('.weui-mask').fadeIn(200);
+        });
+        
+        
+	    $(function(){
+	    	var storeId = getUrlPara("s");
+	    	console.log(storeId)
+	    	 $.post("/clt/wap/ckeckIsAgent.msp", {
+	 	        storeId: storeId,
+	 	        type: 1
+	 	  	}, function(data) {
+	 	       if(data.code == '1'){
+	                if(data.type == '1'){
+	 	                // 已经是卖家
+	 	              	if(data.isShareUser == false){  
+                            window.location.href = "inDownload.html?s=" + data.storeId;
+                        }else{
+                            init();   //是邀请人本人
+                        }
+	 	            }else if(data.type == '3'){
+	 	              	//代理商邀请页面
+	 					window.location.replace( "officialshow.html?productId=" + data.inviteGiftId+"&storeId=" + storeIdKey)
+	 	            }else if(data.type == '4'){
+	 	                //名额已满
+	 	                window.location.replace("inFullQuota.html?s=" + data.storeId)
+	 	            }else if(data.type == '5'){
+	 	                //邀请代理商界面过期
+	 	              	window.location.replace("pageDueError.html?s=" + data.storeId)
+	 	            }else if(data.type == '6'){
+	 	                //已经是买家 不能领取红包
+	 	              	window.location.replace("notuse.html?s=" + data.storeId)
+	 	            }else{
+	 	            	init();
+	 	            }
+	 	        }else{
+	 	        	$("#useless").css({"display": "block"});
+	 	        }
+	 	   	}, "json");
+	    }) 
+        
+        function getUrlPara(paraName) {
+            var reg = new RegExp("(^|&)" + paraName + "=([^&]*)(&|$)", "i");
+            var r = window.location.search.substr(1).match(reg);
+            if (r != null) return unescape(r[2]);
+            return null;
+        }
+        
+        var countdown = 60;
+        var code = 1;
+        var sid = getUrlPara("s");
+        var isOpen=true;
+		var storeLogo = '';
+        var storeName = '';
+        function init(){
+        	$.post("/clt/wap/getStoreInfo.msp", {
+                storeId : sid
+            },function(data) {
+               	if (data.code == '1') {
+                    if(data.shopName !=''){
+                    	storeName = data.shopName
+                        $('.txt1').html('我是'+storeName)
+                    }
+                    if(data.logo !=''){
+                    	logo = data.logo
+                        $('.peoImgUrl').attr('src',logo)
+                    }
+                    if(data.joinDays !=''){
+                        joinDays = data.joinDays
+                        $('.tt').html('我已使用集客多出售运动补剂'+joinDays+'天了  很给力，现在邀请你免费体验~')
+                    }
+                    if(data.isShareUser == true){
+                        $('#showAndroidActionSheet').html('邀请好友免费体验')
+                    }else{
+                        $('#showAndroidActionSheet').html('立即注册免费体验')
+                    }
+                    $("#showAndroidActionSheet").on('click', function() {
+                        if(data.isShareUser == true){
+                            $('.sharejt').fadeIn(200);
+                            $('.sharetxt').fadeIn(200);
+                            $('.weui-mask').fadeIn(200);
+                        }else{
+                            $('#register').fadeIn(200);
+                            $('.weui-mask').fadeIn(200);
+                        }
+                    });
+                    var link = location.href.split('#')[0];
+                    var title =  storeName+'邀请你加入集客多';
+                    var imgUrl = storeLogo;
+                    var desc = '听说打开这条链接的人都赚了大钱';
+                    $.post("/clt/weixin/getToken.msp", {url: link}, function(res) {
+                        wx.config({
+                            debug: false, // 开启调试模式,调用的所有api的返回值会在客户端alert出来，若要查看传入的参数，可以在pc端打开，参数信息会通过log打出，仅在pc端时才会打印。
+                            appId: res.appId, // 必填，公众号的唯一标识
+                            timestamp: res.timestamp, // 必填，生成签名的时间戳
+                            nonceStr: res.nonceStr, // 必填，生成签名的随机串
+                            signature: res.signature, // 必填，签名，见附录1
+                            jsApiList: [
+                                'onMenuShareAppMessage', // 获取“分享给朋友”按钮点击状态及自定义分享内容接口
+                                'onMenuShareTimeline' // 获取“分享到朋友圈”按钮点击状态及自定义分享内容接口
+                            ] // 必填，需要使用的JS接口列表，所有JS接口列表见附录2
+                        });
+
+                        wx.ready(function () {
+                            wx.onMenuShareTimeline({
+                                title: title, // 分享标题
+                                link: link, // 分享链接
+                                imgUrl: imgUrl, // 分享图标
+                                success() {
+                                    console.log('分享成功')
+                                },
+                                cancel() {
+                                    //console.log('分享11成功')
+                                    // 用户取消分享后执行的回调函数
+                                }
+                            })
+                            
+                            
+                            // 分享给朋友
+                            wx.onMenuShareAppMessage({
+                                title: title, // 分享标题
+                                desc: desc, // 分享描述
+                                link: link, // 分享链接
+                                imgUrl: imgUrl, // 分享图标
+                                success: function() {
+                                    console.log('分享成功')
+                                },
+                                cancel: function() {
+                                    //console.log('分享111成功')
+                                    // 用户取消分享后执行的回调函数
+                                }
+                            })
+                        });
+                    })
+                }else if(data.code == '-10'){
+                    //已经是卖家
+                    if(data.isShareUser == false){ //自己
+						window.location.replace( "inDownload.html?s=" + sid)
+					}
+                }else{
+                    //邀请代理商界面过期
+                    // window.location.replace("pageDueError.html?s=" + sid)
+                } 
+            }, "json");
+        	
+            var androidActionSheet = $('#androidActionsheet');
+            var androidMask = androidActionSheet.find('.weui-mask');
+            $('.sclose').on('click', hideActionSheet);
+
+            function hideActionSheet() {
+                androidMask.removeClass('weui-actionsheet_toggle');
+                androidActionSheet.fadeOut(200);
+                // $("#conets").css("position", "relative");
+                $('body').css('top', '');
+                // $('body').removeClass('addfix') 
+                var tt = $('.localtop').html()
+                $(window).scrollTop(tt)
+                $('.localtop').html('')
+            }
+            $('.xiala').on("click", function() {
+            	if(isOpen){
+            		$('#area_id').slideToggle();	
+            	}
+            });
+
+        }
+        
+        //获取URL上参数
+        function getUrlPara(paraName) {
+            var reg = new RegExp("(^|&)" + paraName + "=([^&]*)(&|$)", "i");
+            var r = window.location.search.substr(1).match(reg);
+            if (r != null) return unescape(r[2]);
+            return null;
+        }
+
+        //通用神奇小弹窗
+        function tanchuang(){
+            var cler;
+            var i = 0;
+            var count = 5;
+            if (cler!= null && cler!= undefined) {
+                window.clearInterval(cler);
+            }
+            // $("#div_alert").html("");
+            $("#div_alert").fadeIn();
+            i = 0;
+            var tcount = 2;
+            count = tcount;
+            timerun();
+            function timerun() {
+                if (i >= count) {
+                    // document.getElementById("div_alert").style.display = "none";
+                    $("#div_alert").fadeOut();
+                    window.clearInterval(cler);
+                }else {
+                    cler = window.setTimeout(timerun, 900);
+                }
+                i++;
+            }
+        }
+
+        function settime(obj) {
+            var area_code = $("#area_code").val();
+            var phone = $("#phone").val();
+            if (phone =='') {
+                $("#div_alert").html('请输入手机号');
+                tanchuang();
+                $('#phone').focus();
+                return false;
+            }
+            if (countdown ==59) {
+                $.post("/clt/user/sendCode.msp", {
+                    mobile: phone,
+                    countryCode: 86,
+                    codeType: 5
+                },function(data) {
+                    if (data.code == 0) {
+                    	countdown = 0;
+                    	alert(data.msg);
+                        clearTimeout(ttt);
+                    }else{
+                        // 发送成功
+                        $("#div_alert").html('发送成功');
+                        tanchuang();
+                        // timeoutKey = 1;         //倒计时控制变量 开启
+                	    // linkKey = 0;            //接口关闭    
+                    }
+                }, "json");
+            }
+            
+            if (countdown == 0) {
+                obj.removeAttribute("disabled");
+                $(".getcode").html("获取验证码");
+                countdown = 60;
+                return;
+            } else {
+                obj.setAttribute("disabled", true);
+                $(".getcode").html("重新发送(" + countdown + ")");
+                countdown--;
+            }
+            setTimeout(function() {
+                settime(obj)
+            }, 1000)
+        }
+
+        function sumbit() {
+            var area_code = $("#area_code").val();
+            var phone = $("#phone").val();
+            var phone_code = $("#phone_code").val();
+            var store_id = $("#store_id").val();
+
+            if (phone == '') {
+                // alert('请输入手机号');
+                $("#div_alert").html('请输入手机号');
+                tanchuang();
+                $('#phone').focus();
+                return false;
+            }
+            if (phone_code == '') {
+                alert('请输入验证码');
+                $('#phone_code').focus();
+                return false;
+            }
+            // if (area_code =="86") {
+                // if (!phone.match(/^1[3|4|5|7|8][0-9]{9}$/)) {
+                    // alert('请输入正确的手机号');
+                    // $('#phone').focus();
+                    // return false;
+                // }
+            // }
+
+            var isSign = getUrlPara('isSignShare')
+            var sidd = getUrlPara("s");
+            console.log(isSign)
+                    
+            $.post("/clt/wap/userRegister.msp", {
+                mobile: phone,
+                smsCode: phone_code,
+                storeId: sidd,
+                isSignShare: isSign,
+                isVipSignUp: true,
+            }, function(data, textStatus, resObj) {
+                if(data.code == '1') {
+                    sessionStorage.storeName = data.storeName;
+                    // 注册成功发送短信
+                    var phone = $("#phone").val();
+                    var area_code = 86;
+                    $.post("/clt/user/sendRegisterSucc.msp", {
+                        mobile: phone,
+                        countryCode: area_code,
+                        codeType: 6
+                    },function(res){
+                        
+                    })
+                    window.location.replace ( "code.html?code=" + code);
+                }else{
+                    alert(data.msg);
+                }
+            }, "json");
+
+            $('body').css('top', '');
+            $('body').removeClass('addfix') 
+            var tt = $('.localtop').html()
+            $(window).scrollTop(tt)
+            $('.localtop').html('')
+            $("#androidActionsheet").css('display', 'none');
+        }
+
+        $('.bt').on('click', '#submit', function() {
+            var phone_code = $("#phone_code").val();
+            if (phone_code == '') {
+                return false;
+            }
+        })
+        $('#area_id').on('click', 'li', function() {
+            var num = $(this).index();
+            var area = $(this).html();
+            if (num == 0) {
+                $("#area").html(area);
+                $("#country").html('+61');
+                $("#area_code").val('61');
+            }
+            if (num == 1) {
+                $("#area").html(area);
+                $("#country").html('+1');
+                $("#area_code").val('1');
+            }
+            if (num == 2) {
+                $("#area").html(area);
+                $("#country").html('+1');
+                $("#area_code").val('1');
+            }
+            if (num == 3) {
+                $("#area").html(area);
+                $("#country").html('+64');
+                $("#area_code").val('64');
+            }
+            if (num == 4) {
+                $("#area").html(area);
+                $("#country").html('+86');
+                $("#area_code").val('86');
+            }
+            $('.none').slideToggle();
+        })
+        // 注册关闭按钮
+        $('.reg_name_closesp').click(function(){
+            $('body').css('top', '');
+            $('body').removeClass('addfix') 
+            $('html').removeClass('addfix')
+            $('#pageshow').removeClass('addfix')
+            var tt = $('.localtop').html()
+            $(window).scrollTop(tt)
+            $('.localtop').html('')
+
+            $('#register').hide();
+            $('.weui-mask').fadeOut(200);
+        });
+
+        // 立即注册
+        $('.goRegister').click(function(){
+            var storeId = getUrlPara('s')
+            var mobile = $('.phone').val()
+            var smsCode = $('.code').val()
+            // $(".goRegister").css("disabled","disabled")
+            
+            $(".goRegister").attr('disabled',true);
+            $.post("/clt/wap/userRegister.msp", {
+                isCoach : true,
+                storeId : storeId,
+                mobile : mobile,
+                smsCode : smsCode
+            }, function(res) {
+                if(res.code == 1){  
+                    //注册成功
+                    $("#div_alert").html(res.msg);
+                    tanchuang();
+                    
+                    $('body').css('top', '');
+                    $('body').removeClass('addfix') 
+                    $('html').removeClass('addfix')
+                    $('#pageshow').removeClass('addfix')
+                    var tt = $('.localtop').html()
+                    $(window).scrollTop(tt)
+                    $('.localtop').html('')
+                    
+                    $('#register').hide();
+                    resultCode = '-21';
+                    
+                    // 注册成功发送短信
+                    var phone = $("#phone").val();
+                    $.post("/clt/user/sendRegisterSucc.msp", {
+                        mobile: phone,
+                        countryCode: 86,
+                        codeType: 6
+                    },function(res){
+
+                    });
+                    window.location.replace ( "code.html?code=" + code);
+
+                    setTimeout(()=>{
+                        $(".goRegister").attr('disabled',false);
+                    },1000)
+                }else{  
+                    //注册失败
+                    setTimeout(()=>{
+                        $(".goRegister").attr('disabled',false);
+                    },1000)
+                    $("#div_alert").html(res.msg);
+                    tanchuang();
+                }
+            })
+        });
+    </script>
+    <script>
+      window.onload = function() {
+        sa.track('inviteH5View', {
+          inviteType: '邀请VIP',
+          inviteCode: ''
+        })
+      }
+    </script>
+</body>
+<style>
+    .addfix{
+        position:fixed;
+    }
+</style>
+</html>

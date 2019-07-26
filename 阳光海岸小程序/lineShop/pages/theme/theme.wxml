@@ -1,0 +1,4 @@
+<view>专题 -- 母婴用品</view>
+
+
+<navigator url='../productDetail/productDetail'>双肩包 -- 商品详情</navigator>

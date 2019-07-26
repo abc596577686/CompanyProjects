@@ -1,0 +1,10 @@
+/* components/noMore/noMore.wxss */
+
+.endWrap{
+  width: 100%;
+  height: 120rpx;
+  padding: 60rpx 0;
+  text-align: center;
+  font-size: 24rpx;
+  color: #999;
+}

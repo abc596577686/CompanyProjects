@@ -1,0 +1,130 @@
+/* pages/innerLogin/innerLogin.wxss */
+
+page {
+  background: #fff;
+}
+
+.loginBtn {
+  /* margin-bottom: 160rpx; */
+  width: 526rpx;
+  font-size: 30rpx;
+  color: #333;
+  text-align: center;
+  padding: 26rpx 0;
+  background-color: #ffd800;
+  font-weight: bold;
+}
+
+.bindPhone{
+  background: #fed731;
+  padding:26rpx 0;
+  margin-top: 100rpx;
+  font-size: 30rpx;
+}
+.bindPhone::after{
+  border: 0;
+}
+
+.loginContainer {
+  /* background: #fff; */
+}
+
+.login_bg {
+  width: 100%;
+  display: block;
+}
+
+.formWrap {
+  display: flex;
+  flex-direction: column;
+  margin: 0 110rpx;
+  margin-top: 100rpx;
+}
+
+.formWrap .input {
+  padding: 0 50rpx;
+  font-size: 28rpx;
+  height: 88rpx;
+  box-sizing: padding-box;
+  background-color: #f8f8f8;
+}
+
+.formWrap .input {
+  margin-bottom: 76rpx;
+}
+
+.formWrap .input, .loginBtn {
+  border-radius: 40rpx;
+}
+
+.formWrap .label{
+  font-size: 34rpx;
+  margin-bottom: 20rpx;
+}
+
+.authorDesc{
+  font-size: 28rpx;
+  color: #999;
+  line-height: 1.4;
+}
+
+.policyAgree {
+  position: absolute;
+  bottom: 82rpx;
+  left: 0;
+  right: 0;
+  font-size: 26rpx;
+  color: #666;
+  text-align: center;
+}
+checkbox{
+  vertical-align: middle;
+  display: inline-block;
+}
+
+checkbox .wx-checkbox-input {
+  border-radius: 5rpx;
+  width: 22rpx;
+  height: 22rpx;
+  border: 1rpx solid #ccc;
+}
+
+checkbox .wx-checkbox-input.wx-checkbox-input-checked {
+  background: #fff;
+}
+
+checkbox .wx-checkbox-input.wx-checkbox-input-checked::before {
+  width: 22rpx;
+  height: 22rpx;
+  line-height: 22rpx;
+  text-align: center;
+  font-size: 20rpx;
+  color: #ccc;
+  /* background: transparent; */
+  /* transform: translate(-50%, -50%) scale(1);   */
+  /* -webkit-transform:translate(-50%, -50%) scale(1);  */
+}
+
+.bindOtherPhone{
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 0 50rpx;
+}
+
+.bindOtherPhone .line{
+  flex: 1;
+}
+
+.bindOtherPhone .title {
+  margin: 0 50rpx;
+  color: #666;
+}
+
+.policyAgree .imgWrap{
+  width: 118rpx;
+  min-height: 80rpx;
+  padding-top: 10rpx;
+  display: inline-block;
+}

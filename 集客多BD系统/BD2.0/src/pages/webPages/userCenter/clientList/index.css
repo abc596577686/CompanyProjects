@@ -1,0 +1,336 @@
+#superWebClientList {
+  padding: .3rem;
+  background-color: #002140;
+  min-height: calc(100vh);
+}
+#superWebClientList .pageTitle {
+  position: relative;
+  width: 100%;
+  height: 1rem;
+  line-height: 1rem;
+  background-color: #999;
+  color: #000;
+  font-size: .3rem;
+  text-align: center;
+  font-weight: bold;
+}
+#superWebClientList .pageTitle .am-icon {
+  position: absolute;
+  width: 1rem;
+  height: .7rem;
+  top: .5rem;
+  right: .6rem;
+  padding: .1rem;
+}
+#superWebClientList .pageTitle .returnIcons {
+  width: .7rem;
+  height: .7rem;
+  position: absolute;
+  right: .2rem;
+  top: .2rem;
+}
+#superWebClientList .pageTitle .returnIcons svg {
+  width: 100%;
+  height: 100%;
+}
+#superWebClientList .pageTitle .returnIcon {
+  width: .45rem;
+  height: .58rem;
+  position: absolute;
+  left: .2rem;
+  top: .2rem;
+}
+#superWebClientList .pageTitle .returnIcon svg {
+  width: 100%;
+  height: 100%;
+}
+#superWebClientList .head {
+  width: 100%;
+  height: .8rem;
+  background-color: #fff;
+}
+#superWebClientList .head_flex {
+  height: .8rem;
+}
+#superWebClientList .head_img {
+  width: .6rem;
+  height: .6rem;
+  border-radius: 50%;
+  overflow: hidden;
+}
+#superWebClientList .head_name {
+  width: 4rem;
+  height: .6rem;
+  text-align: left;
+  line-height: .6rem;
+  font-size: .4rem;
+  font-weight: bold;
+  margin-left: .2rem;
+}
+#superWebClientList .head_name input {
+  margin-top: .17rem;
+  font-size: .3rem;
+}
+#superWebClientList .head_search {
+  width: .6rem;
+  height: .6rem;
+  margin-left: .9rem;
+  cursor: pointer;
+}
+#superWebClientList .head_search :first-child {
+  width: .6rem;
+  height: .6rem;
+}
+#superWebClientList .mainUserInfo {
+  width: 100%;
+  height: 4.2rem;
+  margin-bottom: .3rem;
+  background-color: #fff;
+}
+#superWebClientList .mainUserInfo .head_flexs {
+  width: 100%;
+  min-height: 2.6rem;
+}
+#superWebClientList .mainUserInfo .userHeadImg {
+  width: 1rem;
+  height: 2.3rem;
+}
+#superWebClientList .mainUserInfo .userHeadImg img {
+  width: .9rem;
+  height: .9rem;
+  border-radius: 50%;
+  overflow: hidden;
+  margin-right: .1rem;
+}
+#superWebClientList .mainUserInfo .userHeadImg a {
+  height: .5rem;
+  line-height: .5rem;
+  margin-top: .2rem;
+  margin-right: .1rem;
+  border: .02rem solid #333;
+  background-color: #fff;
+}
+#superWebClientList .mainUserInfo .userHeadImg span {
+  height: .5rem;
+  line-height: .5rem;
+  color: #333;
+  font-size: .3rem;
+  font-weight: bold;
+  display: inline-block;
+}
+#superWebClientList .mainUserInfo .userHeadImg .dataStatusSp {
+  font-size: .27rem;
+  margin-top: .2rem;
+  padding: .03rem;
+  background-color: #f0f0f0;
+}
+#superWebClientList .mainUserInfo .userMaintxt {
+  margin-left: .2rem;
+  width: 2.7rem;
+  height: 1.8rem;
+  color: #333;
+  font-size: .25rem;
+  font-weight: bold;
+}
+#superWebClientList .mainUserInfo .userMaintxt p {
+  margin-bottom: .1rem;
+}
+#superWebClientList .mainUserInfo .userCopy {
+  width: 1rem;
+  height: 1.8rem;
+  padding-top: .4rem;
+}
+#superWebClientList .mainUserInfo .userCopy :first-child {
+  background-color: #fff;
+}
+#superWebClientList .mainUserInfo .userCopy a {
+  border: .02rem solid #333;
+}
+#superWebClientList .mainUserInfo .userCopy span {
+  color: #333;
+  font-size: .3rem;
+  font-weight: bold;
+}
+#superWebClientList .mainUserInfo .userMoreInfo {
+  padding-top: .4rem;
+  margin-left: .2rem;
+  width: 3.3rem;
+  height: 3.8rem;
+  color: #333;
+  font-size: .25rem;
+  font-weight: bold;
+}
+#superWebClientList .mainUserInfo .userMoreInfo p {
+  margin-bottom: .1rem;
+}
+#superWebClientList .foo-menu {
+  position: fixed;
+  bottom: 0;
+  width: 92.8%;
+  z-index: 1000 !important;
+  border: none;
+}
+#superWebClientList .kt {
+  bottom: 420px;
+}
+#superWebClientList .menu-active .top-nav-bar {
+  z-index: 80;
+}
+#superWebClientList .top-nav-bar {
+  position: relative;
+  background-color: #008AE6;
+  color: #FFF;
+}
+#superWebClientList .am-navbar-title {
+  color: #FFF!important;
+}
+#superWebClientList .menu-mask {
+  content: ' ';
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #000;
+  opacity: 0.4;
+  z-index: 79;
+}
+#superWebClientList .am-list-content {
+  font-size: .3rem;
+  font-weight: bold;
+  line-height: .8rem;
+  height: .8rem;
+}
+#superWebClientList .am-radio .am-radio-checked {
+  height: .8rem;
+}
+#superWebClientList .am-radio-input {
+  height: .8rem;
+}
+#superWebClientList .am-list .am-list-item.am-radio-item .am-list-line .am-list-extra .am-radio-inner {
+  top: .35rem;
+  right: .4rem;
+}
+#superWebClientList .am-radio-inner {
+  width: .4rem!important;
+  height: .4rem!important;
+}
+#superWebClientList .am-radio-inner :first-child {
+  width: .4rem;
+  height: .4rem;
+}
+#superWebClientList .am-radio-inner:after {
+  width: .1rem!important;
+  height: .2rem!important;
+}
+#superWebClientList .am-modal-content {
+  width: 80%;
+}
+.sureBtn {
+  width: 92.8%;
+  text-align: center;
+  position: fixed;
+  bottom: 0;
+  left: .3rem;
+  height: 1rem;
+  background-color: #fff;
+  z-index: 100000000;
+  font-size: .4rem;
+  line-height: 1rem;
+  color: #000;
+  font-weight: bold;
+  border-bottom: .02rem solid #f0f0f0;
+  border-top: .02rem solid #f0f0f0;
+}
+.am-list-footer {
+  min-height: .4rem;
+  font-size: .3rem;
+}
+.list-view-section-body {
+  background-color: #002140;
+}
+.toTop {
+  width: 1rem;
+  height: 1rem;
+  position: fixed;
+  bottom: .6rem;
+  right: .6rem;
+  border-radius: 50%;
+  border: .02rem solid #333;
+  overflow: hidden;
+  background-color: #fff;
+}
+.toTop i {
+  width: .7rem;
+  height: .7rem;
+  margin-left: .14rem;
+  margin-top: .15rem;
+}
+.toTop i svg {
+  width: .7rem;
+  height: .7rem;
+}
+.topCover {
+  width: 100%;
+  height: .6rem;
+  position: relative;
+}
+.topCover .resetBtn {
+  height: .5rem;
+  width: 1.8rem;
+  display: inline-block;
+  position: absolute!important;
+  right: .04rem;
+}
+.topCover .resetBtn span {
+  width: 1.8rem;
+  display: inline-block;
+  line-height: .5rem;
+  color: #333;
+  font-size: .27rem;
+}
+.totalp {
+  width: 3rem;
+  display: inline-block;
+  text-align: left;
+  color: #999;
+  font-weight: bold;
+  font-size: .3rem;
+}
+.am-modal-title {
+  font-size: .3rem!important;
+}
+.am-modal-alert-content {
+  font-size: .3rem!important;
+  padding-top: .3rem;
+  padding-bottom: .3rem;
+}
+.am-modal-button {
+  font-size: .35rem!important;
+  margin-top: .3rem;
+}
+.am-modal-transparent {
+  font-size: .36rem!important;
+  width: 80%!important;
+  padding: .3rem;
+}
+.am-modal-transparent .am-modal-body {
+  height: 70%;
+}
+.am-modal-footer {
+  padding-top: .3rem!important;
+  padding: .2rem;
+}
+.am-list-body {
+  height: 100%!important;
+}
+.am-list {
+  height: 100%!important;
+}
+.am-modal-button-group-v {
+  padding-top: .3rem;
+}
+.am-modal-button {
+  padding-top: .22rem;
+  min-height: .7rem;
+}

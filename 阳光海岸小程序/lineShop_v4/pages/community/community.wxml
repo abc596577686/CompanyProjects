@@ -1,0 +1,53 @@
+<!--pages/community/community.wxml-->
+<loading wx:if="{{isLoading}}"></loading>
+<view class='container'>
+  <view class='good-item' bindtap='goDetail'>
+    <view class='img-box'>
+      <image class='good-img' src='{{goodInfo.imageUrl}}'></image>
+    </view>
+    <view class='good-info'>
+      <text>{{goodInfo.productName}}</text>
+      <image class='seeMore' src='/assets/images/icon_more.png '></image>
+    </view>
+  </view>
+  <view class='main'>
+    <block wx:if='{{!isFocus&&list.length}}'>
+      <view class='community' wx:for='{{list}}' wx:key='{{item.questionId}}' data-id='{{item.questionId}}' catchtap='goAnswerList'>  
+        <view class='question'>
+          <text class='qus-icon'>问</text>
+          <text class='qus-info'>{{item.content}}</text>
+        </view>
+        <view class='answer'>
+          <text class='an-icon' style='background:{{item.answerNumber?"#67CCCC":"#999"}}'>答</text>
+          <text class='an-info' style='color:{{item.answerNumber?"#333":"#999"}}'>{{item.answerNumber?item.answerContent:'暂无回答，快来回答吧'}}</text>
+          <text class='an-copy' wx:if='{{item.answerNumber}}' data-copy='{{item.answerContent}}' catchtap='copyAnswer'>复制</text>
+        </view>
+        <view class='extra items'>
+          <text class='ex-num' style='visibility:{{item.answerNumber?"visible":"hidden"}}'>查看{{item.answerNumber}}个回答</text>
+          <text class='ex-time'>{{item.createTime}}</text>
+        </view>
+      </view>
+    </block>
+    <block wx:if='{{dataLoaded&&!list.length}}'>
+      <view class='writequs'>
+        <image class='write' src='/assets/images/icon_star@2x.png' mode='widthFix'></image>
+        <text class='frist'>发布你的第一个问题吧</text>
+      </view>
+    </block>
+  </view>
+  <view class='footer' wx:if='{{!isFocus}}'>
+    <view class='foot-inp' catchtap='inpFocus'>
+      <text>{{content?content:'向已买的人提问，4-50个字'}}</text>
+    </view>
+  </view>
+</view>
+<view class='bg' wx:if='{{isFocus}}'>
+</view>
+<view class='bger' wx:if='{{isFocus}}' catchtap='bgtap'>
+  <view class='foot-area' catchtap='noPro'>
+    <textarea placeholder='{{placeholder1}}' maxlength='50'  show-confirm-bar='' bindinput='getQuestion' value='{{content}}' cursor-spacing='110' fixed='1' focus='1'></textarea>
+    <view class='btnBox'>
+      <text class='btn' catchtap='_addQuestiones'>发布</text>
+    </view>
+  </view>
+</view>

@@ -1,0 +1,17 @@
+{
+  "usingComponents": {
+    "goodsTwoColumns": "/components/goodsTwoColumns/goodsTwoColumns",
+    "bannerMore": "/components/bannerMore/bannerMore",
+    "bannerAlone": "/components/bannerAlone/bannerAlone",
+    "bannerDouble": "/components/bannerDouble/bannerDouble",
+    "navAlone": "/components/navAlone/navAlone",
+    "navDouble": "/components/navDouble/navDouble",
+    "theme": "/components/theme/theme",
+    "loading": "/components/loading/loading",
+    "toast": "/components/toast/toast",
+    "tabBar": "/components/tabBar/tabBar",
+    "timeout": "/components/timeout/timeout"
+  },
+  "enablePullDownRefresh": true,
+  "backgroundTextStyle": "dark"
+}

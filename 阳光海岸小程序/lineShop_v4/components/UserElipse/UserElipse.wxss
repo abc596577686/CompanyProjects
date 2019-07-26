@@ -1,0 +1,47 @@
+/* components/groupUser/groupUser.wxss */
+.groupUser {
+  /* margin-bottom: 37rpx; */
+  display: flex;
+  justify-content: center;
+  position: relative;
+  /* padding-bottom: 37rpx; */
+  /* border-bottom: 1rpx solid #ccc; */
+}
+.imgBox {
+  height: 70rpx;
+  width: 70rpx;
+  margin-left: 5rpx;
+  /* border-radius: 50%; */
+  /* overflow: hidden; */
+  position: relative;
+}
+.userImg {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  /* background-color: #FB4A4C; */
+}
+.imgBox .icon {
+  position: absolute;
+  top: -8rpx;
+  left: -16rpx;
+  padding: 4rpx 8rpx;
+  background-color: #FFD946;
+  font-size: 16rpx;
+  border-radius: 10rpx;
+}
+.small {
+  height: 50rpx;
+  width: 50rpx;
+  position: absolute;
+  top: 0；
+}
+.imgBox .iconer {
+  position: absolute;
+  top: -8rpx;
+  left: -12rpx;
+  padding: 3rpx 6rpx;
+  background-color: #FFD946;
+  font-size: 10rpx;
+  border-radius: 5rpx;
+}

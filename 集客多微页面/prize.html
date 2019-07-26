@@ -1,0 +1,278 @@
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="width=device-width,user-scalable=no,initial-scale=0.33333,minimum-scale=0.33333,maximum-scale=0.33333" />
+    <title>召集开团</title>
+    <link rel="stylesheet" href="./css/price.css">
+    <!-- 库存条 -->
+    <link rel="stylesheet" type="text/css" href="./css/tit.css" />
+    <script src="./js/wechat.js"></script>
+    <script src="./js/jquery-3.2.1.js"></script>
+    
+    <script>
+        //1.获取像素比
+        var pixelRatio=1/window.devicePixelRatio;
+        // console.log(pixelRatio);
+        //2.通过js动态来设置视口
+        document.write('<meta name="viewport" content="width=device-width,initial-scale='+pixelRatio+',minimum-scale='+pixelRatio*2+',maximum-scale='+pixelRatio+'">');
+        //3.获取html节点
+        var html=document.getElementsByTagName('html')[0];
+        //console.log(html)
+        //4.获取屏幕宽度
+        var pageWidth=html.getBoundingClientRect().width;
+        // console.log(pageWidth);
+        //屏幕宽度/固定数值=基准值;
+        html.style.fontSize=pageWidth/15+'px';
+    </script>
+</head>
+<body>
+    <!-- 顶部下载提示 -->
+    <div class="downloadContainer">
+        <div class="box">
+            <img class="logo" src="./img/logo.png">
+            <span class="text">下载集客多APP</span>
+            <a class="downloadBtn" href="http://a.app.qq.com/o/simple.jsp?pkgname=com.webapp.jkd">立即下载</a>
+        </div>
+    </div>
+    <!-- 商品展示 -->
+    <div class="productShow">
+        <div class="proImg">
+            <img style="width:100%;height:100%" src="" class="prImg_img">
+        </div>
+        <div class="proName"></div>
+        <!-- 库存量 -->
+        <div class="Inventory">
+            <span class="numTip"></span>
+            <div class="votebox">
+                <dl class="barbox">
+                    <dd class="barline" style="border-radius:.5rem;border:.04rem solid #FE4846">
+                        <!--w为百分比控制  -->
+                        <div w="" style="width:0px;" class="charts"></div>
+                    </dd>
+                </dl>
+            </div>
+        </div>
+    </div>
+    <!-- 中间条 -->
+    <span class="coversp"></span>
+    <!-- 邀请好友 -->
+    <div class="invite">
+        <div class="inviteTip">
+            <span class="inviteCirc"></span>
+            <div class="littleTip"></div>
+            <!-- <div style="display:none">活动奖品已领完,别灰心,集客多为您准备了一张优惠券,快下载集客多使用吧</div> -->
+            <!-- <div >恭喜您成功邀请3为好友,快下载集客多,领取奖品吧,如何使用在下方有介绍哦</div> -->
+        </div>
+        <div class="peoImg">
+            <span class="littleKi">邀请人</span>
+            <div class="peoinfoImg">
+                <img src="./img/headimg.png" id="peoinfoImg1">
+            </div>
+            <div class="peoinfoImg">
+                <img src="./img/headimg.png" id="peoinfoImg2">
+            </div> 
+            <div class="peoinfoImg">
+                <img src="./img/headimg.png" id="peoinfoImg3">
+            </div>
+            <div class="peoinfoImg">
+                <img src="./img/headimg.png" id="peoinfoImg4">
+            </div>
+        </div>
+        <!-- 邀请好友按钮 -->
+        <button class="invitePre">
+            邀请好友
+        </button>
+    </div>
+    <!-- 中间条 -->
+    <span class="coversp"></span>
+    <!-- 底部大图 -->
+    <div class="bottomImg">
+        <img src="" class="bottomImg_img" style="width:100%;height:100%">
+    </div>
+    <!-- 中间条 -->
+    <span class="coversp"></span>
+    <!-- 二维码 -->
+    <div class="twoDimensionalCode">
+        <div class="dimensionImg">
+            <img src="" class="dimen_img" style="width:100%;height:100%">
+        </div>
+        <p>活动中有任何问题，可咨询客服微信</p>
+    </div>
+    <!-- 邀请好友蒙层 -->
+    <div class="cover"> 
+        <div class="covercnt"></div>
+        <div>
+            <img src="./img/present.png" class="covercntimg1">
+        </div>
+        <div>
+            <img src="./img/jiantou11.png" class="covercntimg2">
+        </div>
+    </div>
+</body>
+
+<!-- 载入页面数据 -->
+<script>
+     //获取URL上参数
+    function getUrlPara(paraName) {
+    	var reg = new RegExp("(^|&)" + paraName + "=([^&]*)(&|$)", "i");
+       	var r = window.location.search.substr(1).match(reg);
+        if (r != null){
+        	return unescape(r[2]);
+        }
+       	return null;    
+    }
+    var storeId = getUrlPara('storeId')
+    
+    $(function() {
+	    // 页面初载时接口
+	    $.post("/clt/coachAuthentication/checkCoachInfo.msp", {storeId : storeId}, function(res) {
+	        console.log(res.msg)
+	        if(res.code == '-20'){  //活动已结束 跳转活动结束页面
+	            window.location.replace ( 'nomatch.html'+ '?storeId=' + res.storeId)
+	        }else if(res.code == '-21'){  //已经是老用户 可独立开团
+	            window.location.replace ( 'oldperson.html'+ '?storeId=' + res.storeId)
+	        }else if(res.code == '-10'){  //跳转开团前领取好礼页面
+	        	window.location.replace ( 'getInfo.html'+ '?storeId=' + res.storeId)
+	        }else if(res.code == '-19'){  //等待审核
+	        	console.log(res.msg)
+	        	if(res.status == '2'){
+	        		//获取页面数据
+	        		$.post("/clt/index.json?a=v1/fitnessCoachInfo", {}, function(res) {
+	                    console.log(res)
+	                    // 库存剩余
+	                    $('.numTip').html(res.desc)
+	                    // 库存条百分比
+	                    var pecnta = res.activityPrize.quantity
+	                    var pecntb = res.activityPrize.totalQuantity
+	                    var pecnt = pecnta/pecntb
+	                    // 取百分数
+	                    var str = Number(pecnt*100).toFixed(0);
+	                    // str+="%";
+	                    // 确定库存百分比
+	                    $('.charts').attr("w",str)
+	                    // 加载库存条
+	                    function animate(){
+	                        $(".charts").each(function(i,item){
+	                            var a=parseInt($(item).attr("w"));
+	                            $(item).animate({
+	                                width: a+"%"
+	                            },1000);
+	                        });
+	                    }
+	                    animate();
+	                    // 商品名字
+	                    $('.proName').html(res.activityPrize.productName)
+	                    // 商品图片
+	                    $('.prImg_img').attr('src', res.activityPrize.imageURL)
+	                    // 邀请人图片
+	                    var resPeoImgList = res.headImageList
+	                    if(resPeoImgList.length >= 1){
+	                        $('#peoinfoImg1').attr('src',resPeoImgList[0].imageUrl)
+	                    }
+	                    if(resPeoImgList.length >= 2){
+	                        $('#peoinfoImg2').attr('src',resPeoImgList[1].imageUrl)
+	                    }
+	                    if(resPeoImgList.length >= 3){
+	                        $('#peoinfoImg3').attr('src',resPeoImgList[2].imageUrl)
+	                    }
+	                    if(resPeoImgList.length >= 4){
+	                        $('#peoinfoImg4').attr('src',resPeoImgList[3].imageUrl)
+	                    }
+	                    if(res.headImageList >= 4){
+	                        $('.invitePre').html('下载集客多')
+	                    }
+	                    // 邀请好友
+	                    $('.invitePre').click(function(){
+	                        if(res.headImageList >= 4){
+	                            window.location.href = "http://a.app.qq.com/o/simple.jsp?pkgname=com.webapp.jkd";
+	                        }else{
+	                            $('.cover').show()
+	                        }
+	                    })
+
+	                    // 提示文字
+	                    $('.littleTip').html(res.surplus)
+	                    // 二维码
+	                    $('.dimen_img').attr('src',res.codeImageList[0].imageUrl)
+	                    // 底部大图
+	                    $('.bottomImg_img').attr('src',res.mainImageList[0].imageUrl)
+	                })
+	        	}else{
+	        		// 审核中或者审核失败
+	        		window.location.replace ( 'waitless.html' + '?storeId=' + res.storeId;)
+	        	}
+	        }else{  //错误信息
+	        	alert(res.msg)
+	        }
+	    });
+	    
+	    wxShowOptionMenu();
+		if(isWeiXin()){
+		   var link = "/wap/in.html";
+		   var title =  '开团领好礼';
+		   var imgUrl = './img/logo.png';
+		   var desc = '邀您一起领好礼！';
+		   $.post("/clt/weixin/getToken.msp", {url: link}, function(res) {
+		       if(res.code == '1'){ 
+				   wx.config({
+				        debug: false, // 开启调试模式,调用的所有api的返回值会在客户端alert出来，若要查看传入的参数，可以在pc端打开，参数信息会通过log打出，仅在pc端时才会打印。
+		                appId: res.appId, // 必填，公众号的唯一标识
+		                timestamp: res.timestamp, // 必填，生成签名的时间戳
+		                nonceStr: res.nonceStr, // 必填，生成签名的随机串
+		                signature: res.signature, // 必填，签名，见附录1
+				        jsApiList: [
+				            'onMenuShareAppMessage', // 获取“分享给朋友”按钮点击状态及自定义分享内容接口
+				            'onMenuShareTimeline' // 获取“分享到朋友圈”按钮点击状态及自定义分享内容接口
+				        ] // 必填，需要使用的JS接口列表，所有JS接口列表见附录2
+				    });
+		   
+				    wx.ready(function () {
+				    	
+				        wx.onMenuShareTimeline({
+				            title: title, // 分享标题
+				            link: link, // 分享链接
+				            imgUrl: imgUrl, // 分享图标
+				            success() {
+				                console.log('分享成功')
+				            },
+				            cancel() {
+				            	console.log('分享11成功')
+				                // 用户取消分享后执行的回调函数
+				            }
+				        })
+				        
+				        
+				        // 分享给朋友
+				        wx.onMenuShareAppMessage({
+				            title: title, // 分享标题
+				            desc: desc, // 分享描述
+				            link: link, // 分享链接
+				            imgUrl: imgUrl, // 分享图标
+				            success: function() {
+				            	console.log('分享成功')
+				            },
+				            cancel: function() {
+				            	console.log('分享111成功')
+				                // 用户取消分享后执行的回调函数
+				            }
+				        })
+				    });
+		       }
+		   });
+		}
+    });
+    
+    // 前往独自开团
+    $('.pageBtn').click(function(){
+        window.location.replace ("getInfo.html");
+    });
+
+   
+
+    // 蒙层点击隐藏
+    $('.cover').click(function(){
+        $('.cover').hide()
+    })
+</script>
+
+</html>

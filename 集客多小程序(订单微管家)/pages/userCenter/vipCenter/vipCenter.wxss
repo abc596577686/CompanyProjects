@@ -1,0 +1,52 @@
+/* pages/userCenter/vipCenter/vipCenter.wxss */
+.container {
+  width: 680rpx;
+  height: 540rpx;
+  background-color: #fff;
+  margin: 0 auto;
+  margin-top: 146rpx;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-radius: 20rpx;
+
+}
+.userImg {
+  width: 152rpx;
+  height: 152rpx;
+  /* background-color: red; */
+  border-radius: 50%;
+  margin-top: -76rpx;
+  overflow: hidden;
+}
+.userImg image {
+  width: 100%;
+  height: 100%;
+}
+.userName {
+  margin-top: 28rpx;
+}
+.userName text {
+  font-size: 30rpx;
+  color: #333;
+}
+.code {
+  margin-top: 40rpx;
+  width: 680rpx;
+  height: 210rpx;
+  /* background-color: hotpink; */
+}
+.code image {
+  width: 100%;
+  height: 100%;
+}
+.info {
+  margin-top: 30rpx;
+  font-size: 32rpx;
+  color: #000;
+}
+.helpInfo {
+  color: #999;
+  font-size: 30rpx;
+  margin-top: 30rpx;
+}

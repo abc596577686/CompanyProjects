@@ -1,0 +1,189 @@
+* {
+    margin: 0;
+    padding: 0;
+    -webkit-tap-highlight-color: rgba(0,0,0,0);
+	-webkit-tap-highlight-color: transparent;
+}
+
+.int_top {
+    background: url(/base/share/img/bgjkd@2x.png) no-repeat;
+    background-size: 100% 100%;
+    height: 276px;
+    position: relative;
+}
+
+.join {
+    position: absolute;
+    top: 53px;
+    left: calc(50% - 35px);
+    z-index: 2;
+    width: 100px;
+    color: #505050;
+    font-size: 14px;
+}
+
+.int_cent img {
+    width: 100%;
+}
+
+.foot {
+    width: 80%;
+    margin: auto;
+    padding-top: 10px;
+    padding-bottom: 20px;
+}
+
+.btn {
+    width: 100%;
+    height: 40px;
+    border: 0;
+    background: #FB511E;
+    color: #fff;
+    font-size: 15px;
+    border-radius: 5px;
+}
+
+.muban {
+    padding-left: 15px;
+    padding-right: 15px;
+    border-radius: 5px;
+    height: 320px;
+    overflow: hidden;
+    color: #666;
+}
+
+.sf_close {
+    width: 28px;
+    height: 28px;
+    margin-bottom: 35px;
+    background: url(/base/share/img/icon_guanbi@2x.png) no-repeat;
+    position: relative;
+    margin-left: 90%;
+    margin-top: 20px;
+}
+
+p.slect_p {
+    float: left;
+    font-size: 13px;
+}
+
+p.slect_mu {
+    float: left;
+    margin-left: 40%;
+    margin-right: 5%;
+    font-size: 13px;
+}
+
+img.xia {
+    width: 15px;
+    margin-bottom: 4px;
+}
+
+.none li {
+    list-style: none;
+    line-height: 40px;
+    border-bottom: 1px solid #eee;
+    font-size: 13px;
+}
+
+.none {
+    display: none;
+}
+
+.slect {
+    border-bottom: 1px solid #eee;
+    margin-bottom: 10px;
+}
+
+.phone {
+    height: 50px;
+    line-height: 40px;
+    font-size: 16px;
+    border-bottom: 1px solid #eee;
+    margin-bottom: 10px;
+}
+
+.phone span {
+    margin-right: 10%;
+}
+
+input.phone_ipt {
+    border: 0;
+    height: 40px;
+    outline: none;
+    font-size:15px;
+}
+
+.yzm {
+    height: 50px;
+    line-height: 40px;
+    font-size: 13px;
+    border-bottom: 1px solid #eee;
+}
+
+.yzm span {
+    margin-right: 3%;
+}
+
+input.yzm_ipt {
+    border: 0;
+    width: 35%;
+    height: 40px;
+    outline: none;
+}
+
+.yzm_bt {
+    border: 1px solid #FE5000;
+    color: #FE5000;
+    background: #fff;
+    float: right;
+    margin-top: 8px;
+    padding: 4px;
+    border-radius: 3px;
+    font-size: 12px;
+    outline: none;
+}
+
+.bt {
+    width: 100%;
+    margin: auto;
+    height: 36px;
+    margin-top: 38px;
+}
+
+.bt button {
+    width: 100%;
+    height: 100%;
+    border: 0;
+    background: #FB511E;
+    color: #fff;
+    font-size: 14px;
+    border-radius: 4px;
+}
+
+.cat_css,
+.cat_seller {
+    width: 100%;
+    margin-top: 100px;
+    height: 263px;
+}
+
+.cat_css {
+    background: url(/base/share/img/yqm@2x.png) center no-repeat;
+    background-size: 270px 263px;
+    text-align: center;
+}
+
+.cat_seller {
+    background: url(/base/share/img/dz2x.png) center no-repeat;
+    background-size: 270px 263px;
+    text-align: center;
+}
+
+.bottom_download {
+    width: 100%;
+    height: 50px;
+    margin-top: 20px;
+    background: url(/base/share/img/download-bottom.png) center no-repeat;
+    background-size: 270px 50px;
+}

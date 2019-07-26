@@ -1,0 +1,211 @@
+
+*{
+    margin: 0;
+    padding: 0;
+}
+.toptit{
+    width: 100%;
+    height:1.877333rem;
+    background-color: #fff;
+    font-size: 0;
+}
+.toptit > span{
+    margin-left: .7rem;
+    margin-right: .6rem;
+    display: inline-block;
+    font-size: .6rem;
+    width: 25%;
+    height: 1.877333rem;
+    text-align: center;
+    line-height: 1.877333rem;
+}
+.couponlist{
+    width: 100%;
+    /* padding-top: .554667rem; */
+    padding-left: .554667rem;
+}
+.list{
+    width: 14.933333rem;
+    height: 4.821333rem;
+    background-color: #fff;
+    margin-top: .554667rem;
+    position: relative;
+    overflow: hidden;
+}
+.priceimg{
+    width: .55rem;
+    height: .55rem;
+    color: #FB4A4C;
+    position: absolute;
+    left: .810667rem;
+    top: 1.3rem;
+    text-align: center;
+    line-height:.5rem;
+    font-size: .55rem;
+}
+.price{
+    width: 2.133333rem;
+    height: 1.237333rem;
+    text-align: center;
+    line-height:1.237333rem;
+    color: #FB4A4C;
+    font-size: 1.237333rem;
+    font-weight: 700;
+    position: absolute;
+    left: 1.3rem;
+    top: .8rem;
+}
+.fulluse{
+    width: 4.13333rem;
+    height: .426667rem;
+    font-size: .3rem;
+    color: #333333;
+    text-align: left;
+    line-height: .426667rem;
+    position: absolute;
+    left: .853333rem;
+    top: 2.3rem;
+}
+.coverline{
+    width: 13.653333rem;
+    height: .042667rem;
+    background-color: #D2D2D2;
+    position: absolute;
+    left: .64rem;
+    top: 3.4rem;
+    opacity: 1;
+}
+.leftd{
+    width: .64rem;
+    height: .64rem;
+    background-color: #F5F5F5;
+    position: absolute;
+    left: -0.35rem;
+    top: 1.7rem;
+    border-radius: 50%;
+    z-index: 999999;
+}
+.rightd{
+    width: .64rem;
+    height: .64rem;
+    background-color: #F5F5F5;
+    position: absolute;
+    right: -0.35rem;
+    top: 1.7rem;
+    border-radius: 50%;
+    z-index: 999999;
+}
+.useCvor{
+    width: 4.913333rem;
+    height: .426667rem;
+    font-size: .426667rem;
+    color: #333333;
+    line-height: .426667rem;
+    text-align: left;
+    line-height: .426667rem;
+    position: absolute;
+    left: .8rem;
+    top: 4rem;
+}
+.im{
+    width: .341333rem;
+    height: .213333rem;
+    position: absolute;
+    right: .5rem;
+    bottom: .394667rem;
+}
+.down{
+    width: 1.28rem;
+    height: 1.28rem;
+    position: absolute;
+    right: .4rem;
+    bottom: .104667rem;
+}
+.up{
+    display: none;
+    width: 1.28rem;
+    height: 1.28rem;
+    position: absolute;
+    right: .4rem;
+    bottom: .104667rem;
+}
+.cardtype{
+    width: 2rem;
+    height: .73rem;
+    background-color: #FB4A4C;
+    font-size: .384rem;
+    text-align: center;
+    line-height: .73rem;
+    color: #fff;
+    position: absolute;
+    left: 4.8077333rem;
+    top: .853333rem;
+}
+.cardName{
+    width: 7rem;
+    height: 1.4rem;
+    font-size: .4rem;
+    line-height: .62rem;
+    color: #333333;
+    text-align: left;
+    position: absolute;
+    left: 7.125333rem;
+    top: .85rem;
+}
+.cardtitle{
+    width: 7.68rem;
+    height: .597333rem;
+    font-size: .4rem;
+    line-height: .597333rem;
+    color: #666666;
+    text-align: left;
+    position: absolute;
+    left: 5.1rem;
+    top: 2.25rem;
+}
+.nowUse{
+    width: 2.5rem;
+    height: .810667rem;
+    line-height: .70667rem;
+    text-align: center;
+    color: #333333;
+    border: .042667rem solid #666666;
+    border-radius: .213333rem;
+    font-size: .426667rem;
+    position: absolute;
+    top: 2.1rem;
+    right: .8rem;
+}
+.otherProduct{
+    display: none;
+    /* border-top: .042667rem solid #DCDCDC; */
+    width: 14.933333rem;
+    background-color: #fff;
+    padding-left: .64rem;
+    padding-top: .3rem;
+}
+.line{
+    width: 13.653333rem;
+    height: .042667rem;
+    background-color: #D2D2D2;
+    opacity: 1;
+}
+.useCvor1{
+    width:5rem;
+    height: .56667rem;
+    font-size: .426667rem;
+    color: #333333;
+    line-height: .56667rem;
+    text-align: left;
+    margin-top: .426667rem;
+    margin-bottom: .2rem;
+    margin-left: .1rem;
+}
+.bfproduct{
+    width: 13.4rem;
+    margin-left: .1rem;
+    color: #333333;
+    font-size: .426667rem;
+    line-height: .7rem;
+    padding-bottom: .5rem;
+}

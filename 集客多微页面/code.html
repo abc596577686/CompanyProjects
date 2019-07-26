@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=0">
+    <title>绑定成功</title>
+    <link rel="stylesheet" href="/base/share/css/weui.css">
+    <link rel="stylesheet" href="/base/share/css/invite.css">
+    <script src="./js/wechat.js"></script>
+    <script>
+            //1.获取像素比
+            var pixelRatio=1/window.devicePixelRatio;
+            // console.log(pixelRatio);
+            //2.通过js动态来设置视口
+            document.write('<meta name="viewport" content="width=device-width,initial-scale='+pixelRatio+',minimum-scale='+pixelRatio*2+',maximum-scale='+pixelRatio+'">');
+            //3.获取html节点
+            var html=document.getElementsByTagName('html')[0];
+            //console.log(html)
+            //4.获取屏幕宽度
+            var pageWidth=html.getBoundingClientRect().width;
+            // console.log(pageWidth);
+            //屏幕宽度/固定数值=基准值;
+            html.style.fontSize=pageWidth/15+'px';
+        </script>
+    <style>
+        body {
+            background: #fff8ec;
+            text-align: center;
+        }
+        
+        .cat_css span {
+            display: block;
+            padding-top: 50px;
+        }
+        
+        .cat_css p {
+            color: #fff;
+            font-size: 18px;
+        }
+        
+        .store-name {
+            margin-top: 40px;
+            color: #999;
+        }
+        
+        .bottom_download a {
+            display: block;
+            line-height: 45px;
+            color: #fff;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="cat_css">
+        <img style="width: 100%;height: 100%;display: block" src="/base/share/img/bigimg2.png">
+        <div class="dag">
+            <img style="width: 100%;" src="/base/share/img/dagou2@2x.png">
+        </div>
+        <div class="dag_txt">恭喜您已成功注册集客多!</div>
+        <a class="downBtn" href="http://a.app.qq.com/o/simple.jsp?pkgname=com.webapp.jkd">
+            下载集客多APP
+        </a>
+    </div>
+    <!-- <div class="store-name">
+        <p><span id="storeName"></span>，邀请你来开店啦！</p>
+    </div> -->
+    <!-- <div class="bottom_download">
+        <a href="http://a.app.qq.com/o/simple.jsp?pkgname=com.webapp.jkd">下载集客多</a>
+    </div> -->
+</body>
+<script src="/base/share/js/jquery-2.1.4.min.js" type="text/javascript"></script>
+<script>
+    //获取URL上参数
+    function getUrlPara(paraName) {
+        var reg = new RegExp("(^|&)" + paraName + "=([^&]*)(&|$)", "i");
+        var r = window.location.search.substr(1).match(reg);
+        if (r != null) return unescape(r[2]);
+        return null;
+    }
+    
+    $(function() {
+        var code = getUrlPara("code");
+        $("#yqcode").html(code);
+        $("#storeName").html(sessionStorage.storeName);
+    });
+</script>
+
+</html>

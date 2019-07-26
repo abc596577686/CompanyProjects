@@ -1,0 +1,88 @@
+
+*{
+    margin: 0;
+    padding: 0;
+}
+img{
+    width: 100%;
+    height: 100%;
+    display: block;
+}
+.toptit{
+    width: 100%;
+    padding: .554667rem;
+    background-color: #fff;
+    /* border-bottom: 1.621333rem solid #F0F0F0; */
+}
+.toptit span{
+    color: #666666;
+    margin-left: .64rem;
+}
+.toptit > div{
+    width: 100%;
+    height: 1rem;
+    line-height: 1rem;
+    font-size: .597333rem;
+    color: #333333;
+}
+.cover{
+    width: 100%;
+    font-size: .597333rem;
+    color: #333333;
+    height: 1.621333rem;
+    line-height: 1.621333rem;
+    text-align: left;
+    text-indent: .554667rem;
+    background-color: #F0F0F0;
+}
+.cardlist{
+    width: 100%;
+    padding: .554667rem;
+    background-color: #fff;
+    font-size: 0;
+}
+.cover1{
+    border-bottom: .042667rem solid #F0F0F0;
+}
+.cardlist  span{
+    display: inline-block;
+}
+.sure{
+    width: .682667rem;
+    height: .682667rem;
+    font-size: .597333rem;
+    position: relative;
+    top: .16rem;
+    /* margin-top: .128rem; */
+    /* line-height: .682667rem; */
+}
+.sure > img{
+    display: block;
+}
+.name{
+    width: 4rem;
+    height: .682667rem;
+    line-height: .682667rem;
+    margin-left: .64rem;
+    font-size: .597333rem;
+}
+.cardNum{
+    width: 8rem;
+    height: .682667rem;
+    line-height: .682667rem;
+    margin-left: .64rem;
+    font-size: .597333rem;
+}
+.next{
+    width: 14.890667rem;
+    height: 1.706667rem;
+    border: none;
+    border-radius: .213333rem;
+    font-size: .768rem;
+    color: #ffffff;
+    text-align: center;
+    line-height: 1.706667rem;
+    background-color: #999999;
+    margin-left: .554667rem;
+    margin-top: .810667rem;
+}

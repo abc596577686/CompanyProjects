@@ -1,0 +1,52 @@
+.bookInfo{
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	width: 100%;
+	background: #f5f5f5;
+	z-index: 999999;
+}
+.bookInfo .title{
+	height: 2.048rem;
+	line-height: 2.048rem;
+	text-align: center;
+	position: relative;
+	font-size: 0.682667rem;
+	// border-bottom: 0.021333rem solid #ccc;
+	box-shadow: 0 1px 6px #ece8e8;
+	z-index: 999;
+}
+
+.bookInfo .title img{
+	position: absolute;
+	left: 0.64rem;
+	top: 0.56667rem;
+	width: 0.512rem;
+}
+
+.bookInfo .artical{
+	position: absolute;
+	top: 2.048rem;
+	bottom: 0;
+	width: 100%;
+	overflow: hidden;
+	padding: 0.853333rem;
+}
+.bookInfo .artical h6{
+	font-size: 0.597333rem;
+	color: #333;
+	font-weight: normal;
+}
+.bookInfo .artical p, 
+.bookInfo .artical .bookInfoDesc{
+	font-size: 0.554667rem;
+	color: #666;
+	font-weight: normal;
+	line-height: 2;
+}
+.bookInfo .artical p.indent{
+	text-indent: 2em;
+}
+.bookInfo .artical .bookInfoDesc{
+	padding-bottom: 1rem;
+}

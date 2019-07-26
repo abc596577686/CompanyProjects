@@ -1,0 +1,8 @@
+<!--pages/login/login.wxml-->
+
+<view class='loginContainer'>
+  <!--<image class="logo" mode='widthFix' src='/assets/images/img_logo.png'></image> -->
+  <image class="logo" mode='widthFix' src='/assets/images/zuu7@2x.png'></image>
+  
+  <button class='loginBtn'  open-type="getUserInfo" bindgetuserinfo="getUserInfoEnv" loading="{{loading}}">微信登录</button>
+</view>

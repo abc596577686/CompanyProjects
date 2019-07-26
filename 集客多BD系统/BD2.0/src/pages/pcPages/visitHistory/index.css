@@ -1,0 +1,43 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+.superVisitList {
+  background-color: #fff;
+  padding-top: 27px;
+}
+.superVisitList .ant-table-thead tr th:nth-child(1) {
+  min-width: 100px!important;
+}
+.superVisitList .ant-table-thead tr th:nth-child(2) {
+  min-width: 80px!important;
+}
+.superVisitList .ant-table-thead tr th:nth-child(3) {
+  min-width: 100px!important;
+}
+.superVisitList .ant-table-thead tr th:nth-child(4) {
+  min-width: 120px!important;
+}
+.superVisitList .ant-table-thead tr th:nth-child(5) {
+  min-width: 150px!important;
+}
+.superVisitList .ant-table-thead tr th:nth-child(6) {
+  min-width: 250px!important;
+}
+.superVisitList .m-t-lg {
+  background-color: #fff;
+  padding: 27px;
+  padding-top: 10px;
+  min-height: 520px;
+}
+.superVisitList .userList {
+  width: 100%;
+  height: 100%;
+}
+.superVisitList .addBtn {
+  display: block;
+  margin-left: 27px;
+}
+.superVisitList .addBdModal {
+  width: 300px;
+}

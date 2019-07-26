@@ -1,0 +1,555 @@
+*{
+    margin: 0;
+    padding: 0;
+    border: none;
+}
+body {
+    margin:0;
+    padding: 0;
+    background-image:none;
+}
+img{
+    width: 100%;
+    height: 100%;
+}
+input{
+    outline:none;
+}
+/* 修饰用hr线  */
+hr{
+    width: 15rem;
+    height: .02rem;
+    background-color: grey;
+    opacity: 0.3;
+}
+.topTitle{
+    width: 100%;
+    height: 2.6rem;
+    position: relative;
+}
+.titleFspan{
+    display: block;
+    width: .44rem;
+    height: .8rem;
+    position: absolute;
+    left: .68rem;
+    top: 1.28rem;
+}
+.titleSspan{
+    display: block;
+    width: 4.72rem;
+    height: .64rem;
+    line-height: .64rem;
+    font-size: .68rem;
+    position: absolute;
+    left: 6.16rem;
+    top: 1.36rem;
+}
+
+.warnTxt{
+    width: 15rem;
+    height: 1.44rem;
+    position: relative;
+    background-color: #EDEDED;
+}
+.warnTxt p{
+    width: 11.2rem;
+    height: .48rem;
+    line-height: .48rem;
+    color: #999999;
+    font-size: .48rem;
+    position: absolute;
+    left: .52rem;
+    top: .52rem;
+}
+.phoneKey{
+    width: 15rem;
+    height: 2rem;
+    position: relative;
+    background-color:#FFFFFF; 
+}
+#area_code{
+    display: block;
+    width: 2rem;
+    height: 1rem;
+    position: absolute;
+    left: .64rem;
+    top: .46rem;
+    font-size: .56rem;
+    line-height: .44rem;
+    color: #333333;
+}
+.phoneKey input{
+    width: 11rem;
+    height: 1rem;
+    position: absolute;
+    left: 3.04rem;
+    top: .46rem;
+    font-size: .56rem;
+    border: none;
+    color: #333333;
+}
+.verification{
+    position: relative;
+    width: 15rem;
+    height: 2rem;
+}
+.verification span{
+    width: 2.68rem;
+    height: .8rem;
+    line-height: .56rem;
+    position: absolute;
+    left: .6rem;
+    top: .68rem;
+    font-size: .56rem;
+    color: #333333;
+}
+.verification input{
+    width: 6.36rem;
+    height: 1rem;
+    line-height: .52rem;
+    position: absolute;
+    left: 3.04rem;
+    top: .48rem;
+    color: #333333;
+    font-size: .56rem;
+    
+}
+.verification button{
+    width: 3.6rem;
+    height: 1.04rem;
+    border-radius: .12rem .12rem .12rem .12rem;
+    display: block;
+    position: absolute;
+    left: 10.32rem;
+    top: .44rem;
+    /* padding: .1rem; */
+    font-size: .48rem;
+    color: white;
+    background-color: #FB4A4C;
+}
+#btn{
+    font-size: .36rem;
+}
+.warnTxt2{
+    width: 15rem;
+    height: 1.44rem;
+    position: relative;
+    background-color: #EDEDED;
+}
+.warnTxt2 p{
+    width: 14rem;
+    height: .52rem;
+    line-height: .52rem;
+    font-size: .48rem;
+    color: #999999;
+    position: absolute;
+    left: .6rem;
+    top: .48rem;
+}
+.addressee{
+    width: 15rem;
+    height: 2rem;
+    position: relative;
+}
+.addressee span{
+    display: block;
+    position: absolute;
+    font-size: .56rem;
+    line-height: .52rem;
+    width: 2.5rem;
+    height: 1rem;
+    left: .6rem;
+    top: .72rem;
+    color: #333333;
+}
+.addressee input{
+    width: 10rem;
+    height: 1rem;
+    position: absolute;
+    left: 3.04rem;
+    top: .47rem;
+    font-size: .56rem;
+    color: #333333;
+}
+.phoneShow{
+    width: 15rem;
+    height: 2rem;
+    position: relative;
+}
+.phoneShow span{
+    display: block;
+    position: absolute;
+    font-size: .56rem;
+    line-height: .52rem;
+    width: 2.5rem;
+    height: 1rem;
+    left: .6rem;
+    top: .72rem;
+    color: #333333;
+}
+.phoneShow input{
+    width: 10rem;
+    height: 1rem;
+    position: absolute;
+    left: 3.04rem;
+    top: .53rem;
+    font-size: .56rem;
+    color: #333333;
+}
+.cityTable{
+    width: 15rem;
+    height: 2rem;
+    /* position: relative; */
+}
+#selectPic{
+    width: .32rem;
+    height: .52rem;
+    position: absolute;
+    left: 14.16rem;
+    top: 14.4rem
+}
+#select{
+    display: block;
+    line-height: .56rem;
+    width: 11rem;
+    height: 1rem;
+    font-size: .56rem;
+    color: #333333;
+    float: left;
+    margin-left: 0.3rem;
+    margin-top: .76rem;
+}
+#select1{
+    display: block;
+    /* position: absolute; */
+    font-size: .56rem;
+    line-height: .56rem;
+    width: 2.2rem;
+    height: 1rem;
+    color: #333333;
+    float: left;
+    margin-left: .6rem;
+    margin-top: .76rem;
+}
+.cT-1{
+    display: block;
+    position: absolute;
+    font-size: .28rem;
+    line-height: .26rem;
+    width: 1.82rem;
+    height: .26rem;
+    left: .3rem;
+    top: .35rem;
+    color: #333333;
+}
+.cT-2{
+    display: block;
+    position: absolute;
+    font-size: .28rem;
+    line-height: .26rem;
+    width: 1.82rem;
+    height: .26rem;
+    left: 1.2rem;
+    top: .35rem;
+    color: #999999;
+}
+.cT-3{
+    display: block;
+    width: .15rem;
+    height: .25rem;
+    color: #999999;
+    position: absolute;
+    left: 82%;
+    top: .36rem;
+}
+.mainAdress{
+    width: 15rem;
+    height: 3.4rem;
+    position: relative;
+}
+.mA-1{
+    width: 5.6rem;
+    height: .7rem;
+    display: block;
+    position: absolute;
+    left: .6rem;
+    top: .72rem;
+    font-size: .56rem;
+    line-height: .56rem;
+    color: #333333;
+}
+.mA-2{
+    width: 5.6rem;
+    height: .7rem;
+    display: block;
+    position: absolute;
+    left: 4.7rem;
+    top: .72rem;
+    font-size: .56rem;
+    line-height: .56rem;
+    color: #999999;
+}
+.mainAdress input{
+    width: 13rem;
+    height: 1rem;
+    display: block;
+    position: absolute;
+    left: .64rem;
+    top: 1.7rem;
+    font-size: .56rem;
+    line-height: 1rem;
+    color: #333333;
+}
+.userInfo{
+    width: 15rem;
+    height: 2rem;
+    position: relative;
+}
+.userInfo span{
+    display: block;
+    position: absolute;
+    font-size: .56rem;
+    line-height: 1rem;
+    width: 2.5rem;
+    height: 1rem;
+    left: .6rem;
+    top: .52rem;
+    color: #333333;
+}
+.userInfo input{
+    width: 10rem;
+    height: 1rem;
+    position: absolute;
+    left: 3.04rem;
+    top: .53rem;
+    font-size: .56rem;
+    color: #333333;
+}
+.payBtnAr{
+    width: 15rem;
+    height: 2.72rem;
+    position: fixed;
+    bottom: 0;
+    background-color: white;
+    z-index: 100;
+}
+.payBtn{
+    width:13.72rem;
+    height: 1.52rem;
+    background-color: #FB4A4C;
+    border-radius: .2rem .2rem .2rem .2rem;
+    color: white;
+    font-size: .6rem;
+    margin-left: .64rem;
+    margin-top: .68rem;
+    z-index: 1000;
+}
+.suShow{
+    width: 15rem;
+    height: 6.24rem;
+    position: fixed;
+    bottom: 2.72rem;
+    background-color: #FFFFFF;
+    z-index: 200;
+    display: none;
+}
+.zfan{
+    width: 15rem;
+    height: 2.72rem;
+    bottom: 0;
+    background-color: white;
+    position: relative;
+}
+.payBtn1{
+    width:13.72rem;
+    height: 1.52rem;
+    background-color: #FB4A4C;
+    border-radius: .2rem .2rem .2rem .2rem;
+    color: white;
+    font-size: .6rem;
+    margin-left: .64rem;
+    margin-top: .63rem;
+    z-index: 1001;
+}
+.payWay{
+    width: 15rem;
+    height: 2.08rem;
+    background-color: white;
+    position: relative;
+}
+.pW1{
+    width: 4.4rem;
+    height: .86rem;
+    position: absolute;
+    left: .56rem; 
+    top: .76rem;
+    font-size: .6rem;
+    color: #333333;
+    line-height: .56rem;
+}
+.pW2{
+    width: .52rem;
+    height: .52rem;
+    position: absolute;
+    left: 14rem;
+    top: .8rem;
+}
+.pWTime{
+    width: 15rem;
+    height: 2.08rem;
+    background-color: white;
+    position: relative;
+}
+.pW3{
+    width: 7rem;
+    height: 1rem;
+    position: absolute;
+    left: .48rem; 
+    top: .76rem;
+    font-size: .56rem;
+    color: #333333;
+    line-height: .56rem;
+}
+.pW4{
+    width: 1.44rem;
+    height: .52rem;
+    position: absolute;
+    left: 13.04rem;
+    top: .72rem;
+    font-size: .64rem;
+    color: #FB4A4C;
+}
+.weiXin{
+    width: 15rem;
+    height: 2.08rem;
+    background-color: white;
+    position: relative;
+}
+.pW5{
+    width: .88rem;
+    height: .88rem;
+    position: absolute;
+    left: .44rem; 
+    top: .6rem;
+}
+.pW6{
+    width: 4rem;
+    height: 1rem;
+    position: absolute;
+    left: 2rem; 
+    top: .76rem;
+    font-size:  .56rem;
+    color: #333333;
+    line-height: .56rem;
+}
+.pw7{
+    width: .8rem;
+    height: .76rem;
+    position: absolute;
+    left: 13.8rem;
+    top: .68rem;
+    /* display: none; */   
+    /* 目前默认微信 添加支付宝后 可直接取消注释 进行点选选择 */
+}
+.zfBao{
+    width: 100%;
+    height: 1.03rem;
+    background-color: white;
+    position: relative;
+}
+.pW8{
+    width: .88rem;
+    height: .88rem;
+    position: absolute;
+    left: .44rem; 
+    top: .6rem;
+}
+.pW9{
+    width: 2.28rem;
+    height: .56rem;
+    position: absolute;
+    left: 2rem; 
+    top: .76rem;
+    font-size:  .56rem;
+    color: #333333;
+    line-height: .56rem;
+}
+.pw10{
+    width: .8rem;
+    height: .76rem;
+    position: absolute;
+    left: 13.8rem;
+    top: .68rem;
+    display: none;
+}
+.greyPw{
+    width: 100%;
+    height: 100%;
+    background-color: #000000;
+    opacity: 0.301;
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: 10;
+    display: none;
+}
+.hidSp{
+    display: none;
+}
+#div_alert{
+    width: 8rem; 
+    height: 1.4rem; 
+    text-align:center; 
+    background-color:black; 
+    color: White;
+    display: none; 
+    position:fixed;
+    top: 6rem;
+    left: 3.485rem;  
+    border:1px solid grey; 
+    border-top:0;
+    border-radius: 0.2rem;
+    font-size: .6rem;
+    line-height: 1.4rem 
+}
+.sm_tit{
+    width: 15rem;
+    height: 5.64rem;
+    position: relative;
+}
+.sm_tit_1{
+    width: 5.28rem;
+    height: .64rem;
+    position: absolute;
+    left: 1.68rem;
+    top: .56rem;
+    font-size: .52rem;
+    color: #666666;
+}
+.sm_tit_2{
+    width: 12.56rem;
+    height: 1.68rem;
+    position: absolute;
+    left: 1.68rem;
+    top: 1.44rem;
+    font-size: .44rem;
+    color: #666666;
+}
+.sm_tit_3{
+    width: 12.56rem;
+    height: 1.68rem;
+    position: absolute;
+    left: 1.68rem;
+    top: 3.12rem;
+    font-size: .44rem;
+    color: #666666;
+}
+.sm_tit_im{
+    width: .68rem;
+    height: .68rem;
+    display: block;
+    position: absolute;
+    top: .65rem;
+    left: .6rem;
+}

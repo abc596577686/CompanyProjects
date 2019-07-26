@@ -1,0 +1,272 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+img{
+    width: 100%;
+    height: 100%;
+    display: block;
+}
+.trouble{
+    width: 100%;
+    /* height: 10.666667rem; */
+}
+
+.tit1{
+    width: 2rem;
+    height: 2rem;
+    position: absolute;
+    top: 1rem;
+    left: 4rem;
+    border-radius: 50%;
+    overflow: hidden;
+}
+.tt{
+    width: 9.32rem;
+    height: 1.6rem;
+    color: #333;
+    text-align: center;
+    margin-top: .3rem;
+    color: #fb4a4c;
+    padding-left: .2rem;
+    padding-right: .2rem;
+    font-weight: bold;
+}
+.tit2{
+    width: 6rem;
+    /* height: .8rem; */
+    /* padding-left: .3rem; */
+    /* padding-right: .3rem; */
+    line-height: .6rem;
+    font-size: .68rem;
+    color: #333333;
+    position: absolute;
+    top: 1.1rem;
+    left: 6.5rem;
+    font-weight: bold;
+    text-align: left;
+}
+.tit3{
+    width: 6rem;
+    height: .8rem;
+    line-height: .8rem;
+    font-size: .4rem;
+    color: #666666;
+    position: absolute;
+    top: 2.1rem;
+    left: 6.5rem;
+    /* font-weight: bold; */
+    text-align: left;
+}
+.tit4{
+    width: 11.4rem;
+    height: 2.6rem;
+    line-height: .9rem;
+    font-size: .52rem;
+    color: #333333;
+    position: absolute;
+    left: .83rem;
+    top: 3.2rem;
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    word-break: break-all;
+    text-align: left
+}
+
+/* 注册 */
+#register{
+    background-color: #fff;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    height: 9.24rem;
+    /* padding: .64rem; */
+}
+.reg_name{
+    width: 100%;
+    height: 2.04rem;
+    border-bottom: .04rem solid lightgrey;
+    line-height: 2.04rem;
+    font-size: .6rem;
+    color: #333333;
+    font-family: HiraginoSansGB-W3;
+    text-indent: .56rem;
+}
+/* 关闭按钮 */
+.reg_name_closesp{
+    /* display: block;
+    width: .52rem;
+    height: .52rem;
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: .8rem; */
+
+
+    width: 2.08rem;
+    height: 2.08rem;
+    display: block;
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+.reg_name_closesp img{
+    display: block;
+    width: .52rem;
+    height: .52rem;
+    position: absolute;
+    top: 0;
+    right: 0;
+    position: absolute;
+    top: .8rem;
+    right: .8rem;
+}
+
+.reg_main{
+    width: 100%;
+    height: 7.48rem;
+    background-color: #fff;
+    position: relative;
+}
+.phone{
+    border: none;
+    width: 13.3rem;
+    height: .6rem;
+    background-color: #F0F0F0;
+    border-radius: .04rem;
+    position: absolute;
+    left: .64rem;
+    top: .8rem;
+    font-size: .65rem;
+    color: #999999;
+    font-family: HiraginoSansGB-W3;
+    padding-left: .44rem;
+    padding-top: .56rem;
+    padding-bottom: .56rem;
+}
+.code{
+    border: none;
+    width: 13.3rem;
+    height: .6rem;
+    background-color: #F0F0F0;
+    border-radius: .04rem;
+    position: absolute;
+    left: .64rem;
+    top: 3rem;
+    font-size: .65rem;
+    color: #999999;
+    font-family: HiraginoSansGB-W3;
+    padding-left: .44rem;
+    padding-top: .56rem;
+    padding-bottom: .56rem;
+}
+.getcode{
+    border: none;
+    width: 4.8rem;
+    height: 1.12rem;
+    background-color: #fff;
+    border-radius: .04rem;
+    border: .04rem solid #FB4A4C;
+    position: absolute;
+    right: 1rem;
+    top: 3.3rem;
+    font-size: .52rem;
+    color: #fb4a4c;
+    font-family: HiraginoSansGB-W3;
+    text-align: center;
+    vertical-align: middle;
+}
+.goRegister{
+    border: none;
+    width: 13.72rem;
+    height: 1.48rem;
+    background-color: #FB4A4C;
+    border-radius: .04rem;
+    position: absolute;
+    left: .64rem;
+    bottom: .74rem;
+    font-size: .52rem;
+    color: #333333;
+    font-family: HiraginoSansGB-W3;
+    text-align: center;
+    vertical-align: middle;
+}
+/* alert */
+#div_alert{
+    width: 8rem; 
+    min-height: 1.4rem; 
+    text-align:center; 
+    background-color:black; 
+    color: white;
+    display: none; 
+    position:fixed;
+    top: 7rem;
+    left: 3.485rem;  
+    border:1px solid grey; 
+    border-top:0;
+    border-radius: 0.2rem;
+    font-size: .6rem;
+    line-height: 1.4rem; 
+    z-index: 9999999999;
+}
+.sharejt{
+    width: 2.68rem;
+    height: 3.04rem;
+    position: fixed;
+    top: .2rem;
+    right: 1.72rem;
+    z-index: 1002;
+}
+.sharetxt{
+    width: 5.6rem;
+    height: .68rem;
+    color: #fff;
+    font-size: .68rem;
+    position: fixed;
+    right: .6rem;
+    top: 3.4rem;
+    z-index: 1002;
+}
+.foot{
+    padding:0;
+    z-index:2;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    height: 2.4rem;
+    background-color: #fff;
+    border: .03rem solid #f0f0f0;
+}
+/* iphoneX 适配 */
+/* @media only screen and (device-width: 375px) and (device-height: 812px) and(-webkit-device-pixel-ratio: 3){
+    .foot{
+        padding:0;
+        z-index:2;
+        position: fixed;
+        bottom: 1.36rem;
+        width: 100%;
+        height: 2.4rem;
+        background-color: #fff;
+        border: .03rem solid #f0f0f0;
+    }
+    .footcover{
+        display: block;
+        width: 100%;
+        height: 1.36rem;
+        position: fixed;
+        bottom: 0;
+        background-color: #fff;
+    }
+} */
+.footcover{
+    display: block;
+    width: 100%;
+    height: 1rem;
+    position: fixed;
+    bottom: 0;
+    background-color: #fff;
+    z-index: 2;
+}
+

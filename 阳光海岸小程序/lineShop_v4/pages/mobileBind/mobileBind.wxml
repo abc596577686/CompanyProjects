@@ -1,0 +1,25 @@
+<view class='loginContainer'>
+  <image class='login_bg' src='/assets/images/img_login_bg.png' mode='widthFix'></image>
+  <view class='formWrap'>
+    <view class='inputWrap'>
+      <input class='input' type='number' value="{{phoneNumber}}" placeholder="请输入手机号码" placeholder-style="#ccc" maxlength="11" confirm-type="确定" adjust-position="false" bindconfirm="bindconfirmEnv" bindinput='inputValueEnv'></input>
+    </view>
+
+    <view class='inputWrap'>
+      <input class='input' type='number' value="{{codeNumber}}" placeholder='请输入验证码' placeholder-style="#ccc" bindinput='codeValueEnv'></input>
+      <view bindtap='getCodeEnv' class='getCode'>{{codeText}}</view>
+    </view>
+
+    <view bindtap='bingOtherPhoneEnv' class='bingOtherPhone'>绑定</view>
+  </view>
+
+  <!-- <view class='policyAgree'>
+    <checkbox class='checkbox' disabled="false" checked="true" color="#ccc"></checkbox>
+    <text class='desc'>我已阅读同意《阳光海岸隐私保护政策》</text>
+  </view> -->
+
+</view>
+
+
+<!-- 提示语  -->
+<toast wx:if="{{msgTips}}" message="{{msgTips}}"></toast>

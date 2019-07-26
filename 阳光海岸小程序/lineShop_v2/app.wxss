@@ -1,0 +1,2 @@
+/**app.wxss**/
+@import 'assets/styles/base.wxss';

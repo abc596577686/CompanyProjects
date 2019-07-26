@@ -1,0 +1,205 @@
+/* pages/celebrityList/celebrityList.wxss */
+.container {
+  margin-bottom: 150rpx;
+}
+.userItem {
+  margin: 25rpx 25rpx 0 25rpx;
+  border-radius: 10rpx;
+  background-color: #fff;
+}
+.userName {
+  padding: 20rpx;
+  /* background-color: #fff; */
+  color: #333;
+  font-size: 32rpx;
+}
+.idNum {
+  padding: 20rpx;
+  /* background-color: #fff; */
+  color: #333;
+  font-size: 28rpx;
+  
+}
+.idHandle {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 10rpx 30rpx;
+  /* background-color: #fff; */
+  /* margin-bottom: 20rpx; */
+   font-size: 28rpx;
+  color: #333;
+}
+.maskLayer {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgba(0, 0, 0, 0.70);
+  z-index: 50;
+  opacity: 0;
+}
+.handle-left {
+  display: flex;
+  align-items: center;
+}
+.left-info {
+  margin-left: 18rpx;
+}
+.footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 27rpx 35rpx;
+  background-color: #fff;
+  z-index: 10
+}
+.footer-btn {
+  width: 100%;
+  padding: 27rpx 0;
+  background-color: #2EA7E0;
+  color: #fff;
+  font-size: 30rpx;
+  text-align: center;
+  border-radius: 10rpx;
+}
+.handle-right {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.rubish-icon {
+  width: 24rpx;
+  margin-right: 10rpx;
+}
+.detailBox {
+  width: 520rpx;
+  border-radius: 20rpx;
+  background-color: #fff;
+  display: flex;
+  flex-direction: column;
+  position: fixed;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%,-50%);
+  z-index:1111;
+
+  
+}
+.de-title {
+  padding: 60rpx 50rpx 40rpx 42rpx;
+  font-size: 30rpx;
+  color: #333;
+  text-align: center;
+}
+.one {
+  text-align: left;
+  line-height: 1.3;
+}
+.de-footer {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  padding-bottom: 34rpx;
+}
+.cancle,.confrim {
+  padding: 20rpx 10rpx;
+  width: 206rpx;
+  text-align: center;
+  border: 1rpx solid #2EA7E0;
+  border-radius: 5rpx;
+  color: #2EA7E0;
+}
+.confrim {
+  background-color: #2EA7E0;
+  color: #fff;
+}
+.explainBox {
+  position: fixed;
+  width: 70%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+}
+.ex-img {
+  width: 206rpx;
+}
+.idTxt {
+  font-size: 24rpx;
+  color: #666;
+}
+.ex-info {
+  flex-direction: column;
+  display: flex;
+  text-align: center;
+  color: #666;
+  font-size: 28rpx;
+}
+.ex-info text {
+  line-height: 1.3;
+}
+.ques {
+  width: 28rpx;
+}
+.handleBtn {
+  padding: 20rpx 10rpx;
+  border-radius: 20rpx;
+  border: 1rpx solid #2EA7E0;
+  color: #2EA7E0;
+  width: 500rpx;
+  text-align: center;
+  margin-top: 30rpx;
+  margin-bottom: 30rpx;
+}
+.knowMore {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  font-size: 24rpx;
+  color: #666;
+}
+.knowMoreBox {
+  width: 680rpx;
+  background-color: #fff;
+  position: fixed;
+  display: flex;
+  flex-direction: column;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  border-radius: 20rpx;
+  z-index: 1000;
+  
+
+}
+.k-title {
+  padding: 40rpx 20rpx;
+  text-align: center;
+  font-size: 36rpx;
+  position: relative;
+}
+.close {
+  position: absolute;
+  top: 20rpx;
+  right: 20rpx;
+  width: 28rpx;
+}
+.k-main {
+  padding: 0 50rpx;
+  display: flex;
+  flex-direction: column;
+  font-size: 30rpx;
+  color: #333;
+  
+}
+.k-main text {
+  line-height: 1.3;
+}

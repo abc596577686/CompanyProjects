@@ -1,0 +1,136 @@
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=0">
+    <title>跳转入口</title>
+    <link rel="stylesheet" href="css/useless.css"/>
+    <script src="./js/wechat.js"></script>
+</head>
+<body>
+<div id="useless" style="display:none;">
+	<div class="jt_im">
+        <img src="img/jt@.png">
+    </div>
+    <div class="jt_wz">
+        <img src="img/sx@.png">
+    </div>
+    <div class="yellowGr">
+        <div class="yG_1">
+             <img src="img/ji@.png">  
+        </div>
+    </div>
+    <div class="bottomTit_1">微信授权请求超时</div>
+    <div class="bottomTit_2">请点击右上角按钮,选择“刷新”页面 </div>
+</div>
+<script>
+    //1.获取像素比
+    var pixelRatio=1/window.devicePixelRatio;
+    console.log(pixelRatio);
+    //2.通过js动态来设置视口
+    document.write('<meta name="viewport" content="width=device-width,initial-scale='+pixelRatio+',minimum-scale='+pixelRatio*2+',maximum-scale='+pixelRatio+'">');
+    //3.获取html节点
+    var html=document.getElementsByTagName('html')[0];
+    //        console.log(html)
+    //4.获取屏幕宽度
+    var pageWidth=html.getBoundingClientRect().width;
+    console.log(pageWidth);
+    //屏幕宽度/固定数值=基准值;
+    html.style.fontSize=pageWidth/15+'px';
+</script>
+<script src="js/jquery-2.1.4.min.js" type="text/javascript"></script>
+<script>
+	$(function() {
+	    var storeId = getUrlPara("b");
+		var storeIdKey = getUrlPara("b");
+		var type = getUrlPara("c");
+		var isF = getUrlPara("d");
+        // var storeId = getUrlPara("activityId");
+		// 俯卧撑比赛 跳转接口
+	    $.post("/clt/wap/ckeckIsAgent.msp", {
+	        storeId: storeId,
+			type: type,
+	  	}, function(data) {
+	       if(data.code == '1'){
+                var activityId = data.activityId
+                if(data.type == '1'){
+					//已经是卖家
+					if(data.isShareUser == true){ //自己
+						window.location.replace("register?s=" + data.storeId)
+						// window.location.href = "register.html?s=" + data.storeId;
+					}else{
+						window.location.replace("inDownload?s=" + data.storeId)
+						// window.location.href = "inDownload.html?s=" + data.storeId;
+					}
+	            }else if(data.type == '2'){
+	               	//店长邀请页面
+	               	if(isF == 1){
+						window.location.replace("register?s=" + data.storeId+'&isSignShare=true')
+	               		// window.location.href = "register.html?s=" + data.storeId+'&isSignShare=true';
+	               	}else{
+						window.location.replace("register?s=" + data.storeId)
+	               		// window.location.href = "register.html?s=" + data.storeId;
+	               	}
+	           	}else if(data.type == '3'){
+					//代理商邀请页面
+					window.location.replace("officialshow.html?productId=" + data.inviteGiftId+"&storeId=" + storeIdKey)
+					// window.location.href = "officialshow.html?productId=" + data.inviteGiftId+"&storeId=" + storeIdKey;
+	            }else if(data.type == '4'){
+					//名额已满
+					window.location.replace("inFullQuota.html?s=" + data.storeId)
+	               	// window.location.href = "inFullQuota.html?s=" + data.storeId;
+	            }else if(data.type == '5'){
+					//邀请代理商界面过期
+					window.location.replace("pageDueError.html?s=" + data.storeId)
+	              	// window.location.href = "pageDueError.html?s=" + data.storeId;
+	            }else if(data.type == '6'){
+					//已经是买家 不能领取红包
+					window.location.replace("notuse.html?s=" + data.storeId)
+	              	// window.location.href = "notuse.html?s=" + data.storeId;
+	            }else if(data.type == '7'){
+					//领取过红包
+					window.location.replace("getfor.html?s=" + data.storeId)
+	              	// window.location.href = "getfor.html?s=" + data.storeId;
+	            }else if(data.type == '8'){
+					//可以领取红包
+					window.location.replace("receive.html?s=" + data.userId)
+	              	// window.location.href = "receive.html?s=" + data.userId;
+	            }else if(data.type == '9'){  
+					//参与过 结束
+					window.location.replace('results.html?activityId=' + activityId)
+	              	// window.location.href = 'results.html?activityId=' + activityId
+	           	}else if(data.type == '10'){  
+					//参与过 未结束
+					window.location.replace('match.html?activityId=' + activityId)
+	              	// window.location.href = 'match.html?activityId=' + activityId
+	           	}else if(data.type == '11'){ 
+					//未参与 当前无活动
+					window.location.replace('nomatch.html?')
+                    // window.location.href = 'nomatch.html?'
+	           	}else if(data.type == '12'){ 
+					//未参与 准备中
+					window.location.replace('loading.html?activityId=' + activityId)
+	              	// window.location.href = 'loading.html?activityId=' + activityId
+	           	}else if(data.type == '13'){ 
+					//未参与 投票中
+					window.location.replace('vote.html?activityId=' + activityId)
+	              	// window.location.href = 'vote.html?activityId=' + activityId
+	           	}else if(data.type == '14'){ 
+                    //未参与 投票结束 比赛中
+	              	alert('活动已结束')
+	           	}
+	        }else{
+	        	$("#useless").css({"display": "block"});
+	        }
+	   	}, "json");
+	});
+    
+    //获取URL上参数
+    function getUrlPara(paraName) {
+        var reg = new RegExp("(^|&)" + paraName + "=([^&]*)(&|$)", "i");
+        var r = window.location.search.substr(1).match(reg);
+        if (r != null) return unescape(r[2]);
+        return null;
+    }
+</script>
+</body>
+</html>

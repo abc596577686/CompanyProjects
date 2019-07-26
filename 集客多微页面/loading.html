@@ -1,0 +1,155 @@
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <!--压缩比方案  -->
+    <!-- <script>!function(e){function t(a){if(i[a])return i[a].exports;var n=i[a]={exports:{},id:a,loaded:!1};return e[a].call(n.exports,n,n.exports,t),n.loaded=!0,n.exports}var i={};return t.m=e,t.c=i,t.p="",t(0)}([function(e,t){"use strict";Object.defineProperty(t,"__esModule",{value:!0});var i=window;t["default"]=i.flex=function(e,t){var a=e||100,n=t||1,r=i.document,o=navigator.userAgent,d=o.match(/Android[\S\s]+AppleWebkit\/(\d{3})/i),l=o.match(/U3\/((\d+|\.){5,})/i),c=l&&parseInt(l[1].split(".").join(""),10)>=80,p=navigator.appVersion.match(/(iphone|ipad|ipod)/gi),s=i.devicePixelRatio||1;p||d&&d[1]>534||c||(s=1);var u=1/s,m=r.querySelector('meta[name="viewport"]');m||(m=r.createElement("meta"),m.setAttribute("name","viewport"),r.head.appendChild(m)),m.setAttribute("content","width=device-width,user-scalable=no,initial-scale="+u+",maximum-scale="+u+",minimum-scale="+u),r.documentElement.style.fontSize=a/2*s*n+"px"},e.exports=t["default"]}]);  flex(100, 1);</script> -->
+    <meta name="viewport" content="width=device-width,user-scalable=no,initial-scale=0.33333,minimum-scale=0.33333,maximum-scale=0.33333" />
+    <title>活动倒计时</title>
+    <script src="./js/jquery-2.1.0.js"></script>
+    <link rel="stylesheet" href="css/loading.css">
+    <script>
+        //1.获取像素比
+        var pixelRatio=1/window.devicePixelRatio;
+        // console.log(pixelRatio);
+        //2.通过js动态来设置视口
+        document.write('<meta name="viewport" content="width=device-width,initial-scale='+pixelRatio+',minimum-scale='+pixelRatio*2+',maximum-scale='+pixelRatio+'">');
+        //3.获取html节点
+        var html=document.getElementsByTagName('html')[0];
+        //console.log(html)
+        //4.获取屏幕宽度
+        var pageWidth=html.getBoundingClientRect().width;
+        // console.log(pageWidth);
+        //屏幕宽度/固定数值=基准值;
+        html.style.fontSize=pageWidth/15+'px';
+</script>
+</head>
+<body>
+    <div class="main">
+        <img src="img/zu29@2x.png" alt="">
+    </div>
+    <!--倒计时  -->
+    <!-- <div class="time time_a">00</div>
+    <div class="time time_b">00</div>
+    <div class="time time_c">00</div> -->
+    
+    <div class="timeoutDiv">
+        <span class="yeTime time_a">
+            <!-- <img src="./img/yellowdiv.png" alt="error"> -->
+        </span>
+        <span class="maohao">
+            <img src="./img/maohao.png" alt="error">
+        </span>
+        <span class="yeTime time_b">
+            <!-- <img src="./img/yellowdiv.png" alt="error"> -->
+        </span>
+        <span class="maohao">
+            <img src="./img/maohao.png" alt="error">
+        </span>
+        <span class="yeTime time_c">
+            <!-- <img src="./img/yellowdiv.png" alt="error"> -->
+        </span>
+    </div>
+
+    <!--参与活动按钮  -->
+    <div class="goin" onclick="goVote()">
+        参与活动
+    </div>
+    <!--倒计时  -->
+    <script>
+        var staus = null
+        var nowtime
+        var starttime
+        var istime = false
+        var activityId = getUrlPara("activityId")
+        $.ajaxSettings.async = false;   //改同步
+        $.post("/clt/index.json?a=v1/activityInfo", {
+            isH5Test : true,
+            activityId : activityId,
+        },function(data){
+            if (data.systemTime != null || data.data.startTime != null){
+                nowtime = data.systemTime
+                starttime = data.data.startTime
+            }
+        }, "json");
+
+        // console.log(status)
+
+        setInterval(function () {
+            var time = starttime - nowtime;
+            if(time < 0 ){
+                $('.time_a').html('00');
+                $('.time_b').html('00');
+                $('.time_c').html('00');
+                return
+            }
+            // var day = parseInt(time / 1000 / 60 / 60 / 24);
+            var hour = parseInt(time / 1000 / 60 / 60 % 24);
+            var minute = parseInt(time / 1000 / 60 % 60);
+            var seconds = parseInt(time / 1000 % 60);
+            hour = checkTime(hour); 
+            minute = checkTime(minute); 
+            seconds = checkTime(seconds);
+            $('.time_a').html(hour);
+            $('.time_b').html(minute);
+            $('.time_c').html(seconds);
+            // 定时器执行每次加一秒
+            nowtime = eval(nowtime + '+' + 1000)
+        }, 1000);
+
+        
+        
+        // 如果是单数 自动加拨0
+        function checkTime(i){  //将0-9的数字前面加上0，例1变为01 
+            if(i<10){ 
+                i ="0" + i; 
+            } 
+            return i; 
+        }
+        
+        // 点击参与投票
+        function goVote(){
+            $.post("/clt/index.json?a=v1/activityInfo", {  //重新获取状态
+                isH5Test : true,
+                activityId : activityId,
+            },function(data){
+                if (data){
+                    var status = data.data.status
+                    if(status != null ){
+                        if(status == 0){
+                            alert('比赛即将开始 稍候片刻')
+                        }else if(status == 1){
+                            window.location.href = 'vote.html?'+'activityId=' + activityId
+                        }else if(status == 2){
+                            alert('投票已经结束啦')
+                        }else if(status == 3){
+                            alert('比赛已经结束啦')
+                        }
+                    }else{
+                        alert('比赛进入异次元啦 刷新页面重试')
+                    }
+                }
+            }, "json");
+        }
+        
+        //获取URL上参数
+        function getUrlPara(paraName) {
+            var reg = new RegExp("(^|&)" + paraName + "=([^&]*)(&|$)", "i");
+            var r = window.location.search.substr(1).match(reg);
+            if (r != null) return unescape(r[2]);
+            return null;
+        }
+    </script>
+    <!--去除弹窗默认样式  -->
+    <script>
+        window.alert = function(name){
+            var iframe = document.createElement("IFRAME");
+            iframe.style.display="none";
+            iframe.setAttribute("src", 'data:text/plain,');
+            document.documentElement.appendChild(iframe);
+            window.frames[0].window.alert(name);
+            iframe.parentNode.removeChild(iframe);
+        }  
+    </script>  
+    <script src="js/jquery-2.1.4.min.js" type="text/javascript"></script>
+</body>
+</html>

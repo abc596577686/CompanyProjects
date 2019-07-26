@@ -1,0 +1,82 @@
+/* components/goodsRowList/goodsRowList.wxss */
+
+.scrollView{
+  width: 100%;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+
+.scroll-view-item {
+  width: 170rpx; 
+  padding: 15rpx;
+  box-sizing: content-box;
+  display: inline-block;
+}
+
+.goodsItem {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+.imageWrap {
+  position: relative;
+  width: 170rpx;
+  margin-bottom: 8rpx;
+  text-align: center;
+}
+
+.goodsImage {
+  width: 100%;
+  display: inline-block;
+}
+
+.secKill {
+  position: absolute;
+  bottom: 8rpx;
+  left: 0rpx;
+  color: #FB4A4C;
+  font-size: 22rpx;
+  padding: 5rpx;
+}
+
+.secKill::after {
+  position: absolute;
+  content: '';
+  width: 200%;
+  height: 200%;
+  left: 0;
+  top: 0;
+  border: 1rpx solid #FB4A4C;
+  transform: scale(0.5);
+  transform-origin: -1rpx -1rpx;
+}
+
+.goodsText {
+  
+  white-space: normal;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  align-content: center;
+}
+
+.goodsText {
+  font-size: 24rpx;
+  line-height: 1.3;
+  overflow: hidden;
+  color: #333;
+  width: 146rpx;
+
+}
+
+.price {
+  color: #FB4A4C;
+  font-size: 32rpx;
+  margin-top: 15rpx;
+  text-align: center;
+}

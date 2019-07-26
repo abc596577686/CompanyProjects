@@ -1,0 +1,12 @@
+<!--pages/userCenter/tips/tips.wxml-->
+<view class='problems'>
+  <textarea placeholder='请简单的描述情况,我们会尽快为您解决...' maxlength='{{max}}' bindinput='inputs' value='{{content}}'>
+  </textarea>
+   <text class='curNumber'>{{curNumber}}/{{max}}</text>
+</view>
+<view class='tel'>
+  <input type='number' placeholder='请填写正确的手机号码，保证客服及时联系到你' maxlength='11' bindinput='getMobile' value='{{mobile}}'></input>
+</view>
+<view class='btn'>
+  <view class='btner' catchtap='_submitFeedback'>提交</view>
+</view>

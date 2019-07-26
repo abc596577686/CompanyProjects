@@ -1,0 +1,257 @@
+{
+	"description": "项目配置文件。",
+	"setting": {
+		"urlCheck": false,
+		"es6": true,
+		"postcss": true,
+		"minified": true,
+		"newFeature": true,
+		"autoAudits": false
+	},
+	"compileType": "miniprogram",
+	"libVersion": "2.7.0",
+	"appid": "wx20363725ee160d72",
+	"projectname": "%E9%9B%86%E5%AE%A2%E5%A4%9A%E5%B0%8F%E7%A8%8B%E5%BA%8F",
+	"isGameTourist": false,
+	"simulatorType": "wechat",
+	"simulatorPluginLibVersion": {},
+	"condition": {
+		"search": {
+			"current": -1,
+			"list": []
+		},
+		"conversation": {
+			"current": -1,
+			"list": []
+		},
+		"plugin": {
+			"current": -1,
+			"list": []
+		},
+		"game": {
+			"currentL": -1,
+			"list": []
+		},
+		"miniprogram": {
+			"current": 32,
+			"list": [
+				{
+					"id": -1,
+					"name": "productDetail",
+					"pathName": "pages/productDetail/productDetail",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "allOrder",
+					"pathName": "pages/allOrder/allOrder",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "server",
+					"pathName": "pages/serviceProgress/serviceProgress",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "orderDetail",
+					"pathName": "pages/orderDetail/orderDetail",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "orderpay",
+					"pathName": "pages/orderPayStatus/orderPayStatus",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "servicePro",
+					"pathName": "pages/serviceProgress/serviceProgress",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "user",
+					"pathName": "pages/userCenter/userCenter",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "coupon",
+					"pathName": "pages/coupon/coupon",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "community",
+					"pathName": "pages/community/community",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "addressDetail",
+					"pathName": "pages/addressDetail/addressDetail",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "addressDetail",
+					"pathName": "pages/addressDetail/addressDetail",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "newCart",
+					"pathName": "pages/newCart/newCart",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "groupProduct",
+					"pathName": "pages/groupProduct/groupProduct",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "customerService",
+					"pathName": "pages/customerService/customerService",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "confirm",
+					"pathName": "pages/confirmOrder/confirmOrder",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "innerLogin",
+					"pathName": "pages/innerLogin/innerLogin",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "userInfo",
+					"pathName": "pages/userInfo/userInfo",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "verify",
+					"pathName": "pages/userInfo/verify/verify",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "bindNewPhone",
+					"pathName": "pages/userInfo/bindNewPhone/bindNewPhone",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "bindNewPhone",
+					"pathName": "pages/userInfo/bindNewPhone/bindNewPhone",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "cart",
+					"pathName": "pages/cart/cart",
+					"query": ""
+				},
+				{
+					"id": 23,
+					"name": "groupShoping",
+					"pathName": "pages/groupShoping/groupShoping",
+					"query": ""
+				},
+				{
+					"id": 24,
+					"name": "groupDetail",
+					"pathName": "pages/groupDetail/groupDetail",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "groupPin",
+					"pathName": "pages/groupPin/groupPin",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "celebrityAdd",
+					"pathName": "pages/celebrityAdd/celebrityAdd",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "celebrityList",
+					"pathName": "pages/celebrityList/celebrityList",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "login",
+					"pathName": "pages/login/login",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "confirmOrder",
+					"pathName": "pages/confirmOrder/confirmOrder",
+					"query": ""
+				},
+				{
+					"id": 28,
+					"name": "商品详情页 国内商品 多规格",
+					"pathName": "pages/productDetail/productDetail",
+					"query": "shareUserSecret=cdsIUM2q&productId=145423"
+				},
+				{
+					"id": 29,
+					"name": "商品详情 多规格",
+					"pathName": "pages/productDetail/productDetail",
+					"query": "shareUserSecret=NkkcYEsG&productId=145517"
+				},
+				{
+					"id": 30,
+					"name": "商品详情页 组合商品",
+					"pathName": "pages/productDetail/productDetail",
+					"query": "shareUserSecret=UZzBSq9o&productId=145662"
+				},
+				{
+					"id": 31,
+					"name": "商品详情页",
+					"pathName": "pages/productDetail/productDetail",
+					"query": "shareUserSecret=cdsIUM2q&productId=145423"
+				},
+				{
+					"id": 32,
+					"name": "多规格 组合商品 ",
+					"pathName": "pages/productDetail/productDetail",
+					"query": "shareUserSecret=IqpxafPy&productId=145917"
+				},
+				{
+					"id": -1,
+					"name": "多规格 组合商品 11",
+					"pathName": "pages/productDetail/productDetail",
+					"query": "shareUserSecret=3qSKbx2T&productId=145424"
+				},
+				{
+					"id": -1,
+					"name": "多规格 组合商品 上下",
+					"pathName": "pages/productDetail/productDetail",
+					"query": "shareUserSecret=ZTQNPhkI&productId=145811"
+				},
+				{
+					"id": -1,
+					"name": "多规格 组合商品 限时购",
+					"pathName": "pages/productDetail/productDetail",
+					"query": "shareUserSecret=tGfHKGnw&productId=145863"
+				}
+			]
+		}
+	}
+}

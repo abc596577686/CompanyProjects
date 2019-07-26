@@ -1,0 +1,6 @@
+<!--components/noMore/noMore.wxml-->
+<view class="endWrap">
+  <!-- <image class='endImg' src='/assets/images/endd.png' mode='widthFix'></image> -->
+  <!-- <loading wx:if='{{isLoading}}'></loading> -->
+  <view>---- 已经到底了 ----</view>
+</view>

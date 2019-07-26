@@ -1,0 +1,583 @@
+.scrollWrap-top-bottom{
+  position: absolute;
+  width: 100%;
+  overflow: hidden;
+  top: 1.877333rem;
+  bottom: 1.92rem;
+}
+.top{
+    width: 100%;
+    height: 1.877333rem;
+    background-color: #fff;
+    position: relative;
+    border-bottom: 1px solid #f5f5f5;
+}
+.waittopim{
+    width: .469333rem;
+    height: .853333rem;
+    position: absolute;
+    left: .64rem;
+    top: .64rem;
+}
+.waittopim img{
+    width: 100%;
+    height: 100%;
+    display: block;
+}
+.waittoptit{
+    width: 3.2rem;
+    height: .853333rem;
+    line-height: .853333rem;
+    position: absolute;
+    font-size: .725333rem;
+    color: #333333;
+    left: 6.570667rem;
+    top: .768rem
+}
+.grein{
+    display: block;
+    background-color: #f0f0f0;
+    width: 100%;
+    height: .469333rem;
+}
+.grein1{
+    display: block;
+    background-color: #f0f0f0;
+    width: 100%;
+    height: 1.28rem;
+    position: relative;
+}
+.cpxx{
+    height: .682667rem;
+    font-size: .469333rem;
+    color: #666666;
+    display: block;
+    position: absolute;
+    left: .597333rem;
+    top: .426667rem;
+}
+.readybtn{
+    width: 16rem;
+    height: 1.92rem;
+    position: relative;
+    background-color: #fff;
+}
+.cancelbtn{
+    width: 2.944rem;
+    height: 1.066667rem;
+    border: 1px solid  #999999;
+    position: absolute;
+    left: 9.088rem;
+    top: .469333rem;
+    font-size: .512rem;
+    color: #666666;
+    text-align: center;
+    line-height: 1.066667rem;
+    
+}
+.paybtn{
+    width: 2.944rem;
+    height: 1.066667rem;
+    border: 1px solid #FB4A4C;
+    position: absolute;
+    left: 12.458667rem;
+    top: .469333rem;
+    font-size: .512rem;
+    color: #666666;
+    text-align: center;
+    line-height: 1.066667rem;
+}
+.promain{
+    width: 100%;
+    height: 4.949333rem;
+    background-color: #fff;
+    position: relative;
+}
+.promain_im{
+    width: 5.290667rem;
+    height: 3.925333rem;
+    position: absolute;
+    left: .554667rem;
+    top: .512rem;
+}
+.promain_im img{
+    display: block;
+    height: 100%;
+}
+.promain_tit{
+    width: 9.258667rem;
+    height: 1.606667rem;
+    line-height: 1.3;
+    overflow: hidden;
+    font-size: .597333rem;
+    color: #666666;
+    position: absolute;
+    left: 6.058667rem;
+    top: .512rem;
+}
+.promain_peonum{
+    width: 8.106667rem;
+    line-height: 1.5;
+    font-size: .512rem;
+    color: #999999;
+    position: absolute;
+    left: 6.101333rem;
+    top: 2.602667rem;
+}
+.promain_peotime{
+    width: 8.106667rem;
+    line-height: 1.5;
+    font-size: .512rem;
+    color: #999999;
+    position: absolute;
+    left: 6.101333rem;
+    top: 3.625333rem;
+}
+.promain_state{
+    width: 2.944rem;
+    height: 1.024rem;
+    line-height: 1.024rem;
+    font-size: .554667rem;
+    color: #FB4A4C;
+    border: 1px solid #FB4A4C; 
+    text-align: center;
+    position: absolute;
+    left: 12.544rem;
+    top: 3.541333rem;
+}
+.knum{
+    width: 100%;
+    height: 1.536rem;
+    background-color: #fff;
+    position: relative;
+    border-bottom: 0.04rem solid #f5f5f5;
+}
+.knum .k1{
+     display: block;
+    width: 4rem;
+    height: .55rem;
+    font-size: .597333rem;
+    color: #666666;
+    position: absolute;
+    left: .554667rem;
+    top: .469333rem;
+}
+.knum .k2{
+    display: block;
+    width: 9rem;
+    height: .597333rem;
+    font-size: .597333rem;
+    color: #666666;
+    position: absolute;
+    left: 3.413333rem;
+    top: .469333rem;
+} 
+.remark{
+    font-size: 0.6rem;
+    padding: .3rem .5rem;
+    line-height: 1.5;
+    background: #fff;
+}
+.allpay{
+  width: 16rem;
+  height: 3.456rem;
+  background-color: #fff;
+  position: relative;
+}
+.total{
+  width: 2.773333rem;
+  height: 1.066667rem;
+  line-height: .768rem;
+  position: absolute;
+  left: .512rem;
+  top: 1.109333rem;
+  font-size: .768rem;
+  color: #666666;
+}
+.totali{
+  height: .853333rem;
+  line-height: .768rem;
+  position: absolute;
+  right: 0.8rem;
+  top: 1.194667rem;
+  font-size:.768rem;
+  color: #FB4A4C;
+}
+.tottit{
+  width: 2.773333rem;
+  height: 1.066667rem;
+  line-height: .512rem;
+  position: absolute;
+  left: .55rem;
+  top: 2.432rem;
+  font-size: .512rem;
+  color: #FB4A4C;
+}
+.tottiti{
+  height: .853333rem;
+  line-height: .768rem;
+  position: absolute;
+  right: 0;
+  top: 2.389333rem;
+  font-size: .512rem;
+  color: #666666;
+}
+.gg{
+    display: block;
+    width: .341333rem;
+    height: .512rem;
+    position: absolute;
+    left: 15.061333rem;
+    top: .269333rem;
+}
+.gg img{
+    width: 100%;
+    height: 100%;
+}
+.k3{
+    width: 12.8rem;
+    height: .554667rem;
+    font-size: .554667rem;
+    color: #666666;
+    padding-left: .554667rem;
+}
+.lastsure{
+    width: 100%;
+    height: 1.92rem;
+    position: relative;
+    background-color: #fff;
+    padding-right: .64rem;
+    position: fixed;
+    bottom: 0;
+    right: 0;
+}
+.last1{
+    display: block;
+    width: 2.944rem;
+    height: 1.066667rem;
+    text-align: center;
+    color: #666666;
+    font-size: .554667rem;
+    line-height: 1.066667rem;
+    border: 1px solid #999999;
+    /* position: absolute; */
+    /* left: 5.717333rem; */
+    margin-left: .426667rem;
+    float: right;
+     margin-top: .469333rem; 
+}
+.last2{
+    display: block;
+    width: 2.944rem;
+    height: 1.066667rem;
+    text-align: center;
+    color: #666666;
+    font-size: .554667rem;
+    line-height: 1.066667rem;
+    border: 1px solid #999999;
+    /* position: absolute; */
+    /* left: 9.088rem; */
+    float: right;
+    margin-left: .426667rem;
+    margin-top: .469333rem;
+}
+.last3{
+    display: block;
+    width: 2.944rem;
+    height: 1.066667rem;
+    text-align: center;
+    color: #FB4A4C;
+    font-size: .554667rem;
+    line-height: 1.066667rem;
+    border: 1px solid #FB4A4C;
+    /* position: absolute; */
+    /* left: 12.416rem; */
+    float: right;
+    margin-left: .426667rem;
+    margin-top: .469333rem;
+}
+.greycover{
+    display: block;
+    z-index: 1000; 
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #000000;
+    opacity: 0.3;
+}
+.cancelll{
+    position: fixed;
+    z-index: 2000;
+    left: 2.346667rem;
+    top: 9.496rem;
+    background-color: #fff;
+    color:#666666;
+    font-size: .64rem;
+    width: 10.88rem;
+    height: 5.504rem;
+    padding: 1.5rem;
+    text-align: center;
+}
+.cele1{
+  width: 1.706667rem;
+  height: .682667rem;
+  color: #009EE5;
+  font-size: .725333rem;
+  position: absolute;
+  left: 1.873333rem;
+  top: 4.196rem;
+}
+.cele2{
+  width: 1.706667rem;
+  height: .682667rem;
+  color: #009EE5;
+  font-size: .725333rem;
+  position: absolute;
+  left: 7.673333rem;
+  top: 4.196rem;
+}
+.download{
+  background-color: #fff;
+  position: fixed;
+  top: 4.28rem;
+  left: 1.53rem;
+  z-index: 999909;
+  width: 12.8rem;
+  height: 18.533333rem;
+  border: 3px solid black;
+  padding: 1.28rem;
+  padding-top: 2rem;
+}
+.greycover{
+  display: block;
+  z-index: 1000; 
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #000000;
+  opacity: 0.3;
+}
+.refundreq{
+  position: fixed;
+  z-index: 2000;
+  left: .554667rem;
+  bottom: .853333rem; 
+  width: 14.933333rem;
+  height: 11.946667rem;
+  background-color: #fff;
+}
+.refundreq span{
+    font-size: .64rem;
+    color: #333333;
+    position: absolute;
+    left: 5.589333rem;
+    top: .768rem;
+}
+.responsecl{
+    width: .853333rem;
+    height: .853333rem;
+    position: absolute;
+    left: 13.5rem;
+    top: .426667rem;
+}
+.responsecl img{
+    width: 100%;
+    height: 100%;
+    display: block;
+}
+.refundreq textarea{
+    border: 0.1rem solid #f5f5f5;
+    width: 12.8rem;
+    height: 7.68rem;
+    position: absolute;
+    left: 1.024rem;
+    top: 1.834667rem;
+    outline:none;resize:none;
+    font-size: .725333rem;
+    color: #000;
+}
+.tijiao{
+    width: 10.709333rem;
+    height: 1.408rem;
+    line-height: 1.408rem;
+    text-align: center;
+    background-color: #008ee5;
+    border-radius: .341333rem .341333rem .341333rem .341333rem;
+    position: absolute;
+    left: 2.133333rem;
+    bottom: .384rem;
+    font-size: .682667rem;
+    color: #ffffff;
+}
+.downloadb{
+    background-color: #fff;
+    position: fixed;
+    top: 4.28rem;
+    left: 1.53rem;
+    z-index: 999909;
+    width: 12.8rem;
+    height: 18.533333rem;
+    border: 3px solid black;
+    padding: 1.28rem;
+    padding-top: 2rem;
+}
+.errSp{
+    display: block;
+    border: 1px solid black;
+    position: absolute;
+    top: -1.626667rem;
+    right: -.9rem;
+    width: 1.28rem;
+    height: .853333rem;
+    text-align: center;
+    line-height: .853333rem;
+}
+.errSpe{
+    display: block;
+    border: 1px solid black;
+    position: absolute;
+    top: -1.026667rem;
+    right: -.9rem;
+    width: 1.28rem;
+    height: .853333rem;
+    text-align: center;
+    line-height: .853333rem;
+}
+.eer{
+    width: 100%;
+    height: 1.28rem;
+    font-size: .4rem;
+    color: black;
+    line-height: 1.28rem;
+    position: relative;
+    padding-left: .213333rem;
+}
+.err1{
+    width: 2.28rem;
+    height: 1rem;
+    padding: 0;
+    border: 1px solid black;
+    text-align: center;
+    position: absolute;
+    right: .213333rem;
+    top: .085333rem;
+}
+
+.refundjin{
+    width: 2.944rem;
+    height: 1.024rem;
+    color: #FB4A4C;
+    border: 1px solid #FB4A4C;
+    text-align: center;
+    line-height: 1.024rem;
+    font-size: .554667rem;
+    position: absolute;
+    left: 12.544rem;
+    top: 3.498667rem;
+}
+.proinfo{
+  width: 100%;
+  background-color: #fff;
+  position: relative;
+}
+.proinfo .item{
+  border-bottom: 0.04rem solid #f5f5f5;
+  position: relative;
+  overflow: hidden;
+  padding: .1rem .5rem;
+  line-height: 3;
+}
+.maintit{
+  width: 100%;
+  height: 1.536rem;
+}
+.mainnum{
+  width: 100%;
+  height: 1.536rem;
+}
+.maintime{
+  width: 100%;
+  height: 1.536rem;
+}
+.mt_1{
+  width: 2.56rem;
+  height: .64rem;
+  line-height: .64rem;
+  position: absolute;
+  left: .512rem;
+  top: .512rem;
+  font-size: .55rem;
+  color: #666666;   
+}
+.mt_2{
+  width: 2.133333rem;
+  height: .64rem;
+  line-height: .64rem;
+  position: absolute;
+  left: 3.2rem;
+  top: .512rem;
+  font-size: .55rem;
+  color: #FB4A4C;  
+}
+.mn_1{
+  width: 2.56rem;
+  height: .64rem;
+  line-height: .64rem;
+  position: absolute;
+  left: .512rem;
+  top: 2.048rem;
+  font-size: .469333rem;
+  color: #666666;   
+}
+.mn_2{
+  width: 8.533333rem;
+  height: .64rem;
+  line-height: .64rem;
+  left: 3.2rem;
+  top: 2.048rem;
+  font-size: .57rem;
+  color: #FB4A4C;
+}
+.mi_1{
+  width: 2.56rem;
+  height: .64rem;
+  left: .512rem;
+  top: 2rem;
+  font-size: .57rem;
+  color: #666666;   
+  float: left;
+}
+.mi_1.color {
+color: #FB4A4C;
+}
+.mi_2{
+  width: 8.533333rem;
+  height: .64rem;
+  left: 3.2rem;
+  top: 0;
+  font-size: .57rem;
+  color: #666666;
+  float: left;
+}
+.cover{
+    width: 2.133333rem;
+    position: absolute;
+    left: 0;
+    top: 0;
+    background-color: #DDDDDD;
+    opacity: .7;
+}
+.supplier{
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: block;
+    padding: 0.26rem 0.34rem;
+    background: rgba(0,0,0,.5);
+    color: #fff;
+    font-size: 0.47rem;
+}

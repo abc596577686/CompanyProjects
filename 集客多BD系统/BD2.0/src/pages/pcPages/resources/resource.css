@@ -1,0 +1,26 @@
+.teamMainlist {
+  top: 20px;
+  width: 900px!important;
+}
+.teamMainlist .visitHistoryBox {
+  margin-top: 10px;
+}
+.teamMainlist .historyList {
+  border: 1px solid #d9d9d9;
+  height: 130px;
+  overflow-y: scroll;
+  padding-top: 20px;
+  padding-left: 20px;
+}
+#mainPagess .od_list__card .ant-tag {
+  height: 40px;
+  margin-right: 20px;
+  padding: 10px 20px;
+  font-size: 12px;
+  font-weight: 700;
+  margin-bottom: 10px;
+  border: 1px solid #e2e2e2;
+}
+#mainPagess .lh_s {
+  line-height: 34px;
+}

@@ -1,0 +1,149 @@
+.knum{
+    width: 100%;
+    height: 1.536rem;
+    background-color: #fff;
+    position: relative;
+}
+.knum .k1{
+     display: block;
+    width: 2.56rem;
+    height: .597333rem;
+    font-size: .597333rem;
+    color: #666666;
+    position: absolute;
+    left: .554667rem;
+    top: .469333rem;
+}
+.knum .k2{
+    display: block;
+    width: 9rem;
+    height: .597333rem;
+    font-size: .597333rem;
+    color: #666666;
+    position: absolute;
+    left: 3.413333rem;
+    top: .469333rem;
+} 
+.midtip{
+    width: 100%;
+    height: 1.493333rem;
+    background-color: #fff;
+    position: relative;
+}
+.midtip .mt_1{
+    width: 1.92rem;
+    height: .554667rem;
+    display: block;
+    position: absolute;
+    left: .554667rem;
+    top: .469333rem;
+    font-size: .554667rem;
+    color: #666666;
+}
+.midtip .mt_2{
+    width: 1.92rem;
+    height: .554667rem;
+    display: block;
+    position: absolute;
+    left: 13.909333rem;
+    top: .469333rem;
+     font-size: .554667rem;
+    color: #fb4a4c;
+}
+.paytype{
+    width: 100%;
+    height: 9.898667rem;
+    background-color: #fff;
+    position: fixed;
+    bottom: 0;
+}
+.pt_1{
+    width: 100%;
+    height: 1.749333rem;
+    position: relative;
+}
+.pt1tit{
+    display: block;
+    width: 2.773333rem;
+    height: .597333rem;
+    font-size: .64rem;
+    color: #666666;
+    position: absolute;
+    left: .554667rem;
+    top: .554667rem;
+}
+.pt1_img{
+    display: block;
+    width: .768rem;
+    height: .768rem;
+    position: absolute;
+    left: 14.72rem;
+    top: .512rem; 
+}
+.pt_2{
+    width: 100%;
+    height: 1.749333rem;
+    position: relative;
+}
+.pt2tit{
+    display: block;
+    width: 6.826667rem;
+    height: .597333rem;
+    font-size: .64rem;
+    color: #666666;
+    position: absolute;
+    left: .554667rem;
+    top: .554667rem;
+}
+.pt2price{
+    display: block;
+    width: 2.133333rem;
+    height: .597333rem;
+    font-size: .64rem;
+    color: #fb4a4c;
+    position: absolute;
+    left: 13.653333rem;
+    top: .554667rem;
+}
+.weixin{
+    width: 100%;
+    height: 1.706667rem;
+    position: relative;
+}
+.wx_img{
+    width: .938667rem;
+    height: .938667rem;
+    position: absolute;
+    left: .469333rem;
+    top: .384rem;
+}
+.wxzff{
+    width: 4rem;
+    height: .597333rem;
+    font-size: .597333rem;
+    color: #666666;
+    position: absolute;
+    left: 2.133333rem;
+    top: .554667rem;
+}
+.wx_img2{
+    width: .938667rem;
+    height: .938667rem;
+    position: absolute;
+    left: 14.677333rem;
+    top: .384rem;
+}
+.makesurepay{
+    width: 14.677333rem;
+    height: 1.621333rem;
+    background-color: #008ee5;
+    text-align: center;
+    line-height: 1.621333rem;
+    border-radius: .213333rem .213333rem .213333rem .213333rem;
+    font-size: .682667rem;
+    color: #ffffff;
+    position: absolute;
+    left: .682667rem;
+    bottom: .725333rem;
+}
+

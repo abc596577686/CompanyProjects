@@ -1,0 +1,452 @@
+<view class='container' style='padding-bottom:{{btuBottom}}'>
+  <!--引入区域选择组件  -->
+  <view class='pageContainer' wx:if="{{productInfo}}">
+
+    <!-- <canvas canvas-id="shareCanvas" style="width:600rpx;height:900rpx"></canvas> -->
+    <!-- <canvas canvas-id='canvas_poster' class='wx-poster' style="width:600rpx;height:900rpx"></canvas> -->
+
+    <!--轮播图  -->
+    <!-- <view class='bannerWrap' wx:if="{{bannerImages.length}}">  -->
+    <view class='bannerWrap' bindtap='_previewImgEnv'>
+      <banner bannerImages="{{bannerImages}}"></banner>
+    </view>
+
+    <!--商品信息  -->
+    <view class='productDesc'>
+
+      <!--秒杀商品  -->
+      <view class='skillColumn' wx:if="{{productInfo.isSeckillProduct === '1'}}">
+        <view class='skillPrice' wx:if="{{productInfo}}">¥{{productInfo.price}}
+          <!-- <text class='typeTips'>经销商专项</text> -->
+        </view>
+        <!-- <text class='timeTips'>{{productInfo.seckillReadDateTips}}</text> -->
+        <view class='timeTips' catchtap='quickIntoEnv' wx:if="{{productInfo.isSeckillReadStatus === '1'}}">
+          <text>{{productInfo.seckillReadDateTips || '秒杀尚未开始'}}</text>
+          <image class='intoIcon' mode='widthFix' src='/assets/images/icon_more_white.png'></image>
+        </view>
+        <!--距离结束倒计时  -->
+        <view class='timeTips' catchtap='quickIntoEnv' wx:if="{{productInfo.isSeckillReadStatus === '0'}}">
+          <text> 距结束 {{seckillHour || '00'}} : {{seckillMin || '00'}} : {{seckillSec || '00'}}</text>
+          <image class='intoIcon' mode='widthFix' src='/assets/images/icon_more_white.png'></image>
+          <!-- 距结束 -->
+        </view>
+      </view>
+
+      <!-- 分享按钮 -->
+      <!-- <image class="shareImg" src="" mode="widthFix" lazy-load="false"/> -->
+
+      <view class='priceBox' wx:if="{{productInfo.isSeckillProduct === '0'}}">
+
+        <view>
+          <!-- 非组合商品价格  -->
+          <text class='plainPrice' wx:if="{{productInfo.isGroupProduct === '0' && productInfo && productInfo.isCollageProduct =='0'}}">¥{{productInfo.price}}</text>
+          <text class='plainPrice' wx:if="{{productInfo.isGroupProduct === '0' &&productInfo.isCollageProduct === '1' && productInfo}}">¥{{productInfo.collagePrice}}</text>
+
+          <!-- 组合商品价格  -->
+          <text class='plainPrice' wx:if="{{productInfo.isGroupProduct === '1' && productInfo.groupPriceRegion}}">¥{{productInfo.groupPriceRegion}}</text>
+
+          <text class='taobaoPrice' wx:if="{{productInfo.originalPrice}}">¥{{productInfo.taobaoPrice}}</text>
+        </view>
+        <view class='groupDetail' wx:if='{{isCollageProduct=="1"}}'>
+          {{salesDetails}}·{{collageSize}}人团
+        </view>
+      </view>
+
+      <!-- 分享按钮 -->
+      <!-- <view class='shareView' >
+        <image class="shareImg" mode="widthFix"  src="/assets/images/share@2xx.png" />
+        <text class='sharete'>分享</text>
+      </view> -->
+
+      <!-- <poster id="poster" class='shareView' config="{{shareConfig}}" bind:success="onPosterSuccess" bind:fail="onPosterFail"> -->
+      <poster id="poster" class='shareView' config="{{shareConfig}}" bind:success="onPosterSuccess" bind:fail="onPosterFail">
+        <image class="shareImg" mode="widthFix"  src="/assets/images/share@2xx.png" />
+        <text class='sharete'>分享</text>
+      </poster>
+
+      <!-- <image src="data:image/png;base64,{{captchaImage}}" style="width:100px;height:100px;" ></image> -->
+
+      <text class='productName'>{{productInfo.productName}}</text>
+      <text class='productTips'>{{productInfo.productEffectIntro}}</text>
+      <!--  商品类型 -->
+      <view class='productTypes'>
+        <block wx:for="{{productInfo.infoList}}" wx:key="{{index}}">
+          <view class='item'>
+            <image class='icon' mode='widthFix' src="/assets/images/icon_icon.png"></image>
+            <text>{{item.value}}</text>
+          </view>
+        </block>
+      </view>
+    </view>
+
+    <!--参团列表  -->
+    <!--描述信息  -->
+    <view class='describer' wx:if='{{showDetail}}'>
+      <view class='des-header'>
+        <view class='des-line'></view>
+        <view>二人团 | 拼团玩法</view>
+      </view>
+      <view class='des-main'>
+        <text>1.选择商品，开团或拼团</text>
+        <text>2.付款后邀请好友参团</text>
+        <text>3.达到拼团人数，顺利开团</text>
+        <text>4.规定时间内拼团不成</text>
+      </view>
+
+    </view>
+    <!--拼团详情  -->
+    <view class='groupBoxDetail' wx:if='{{showDetail}}'>
+      <view class='de-header'>
+        <text>正在拼团</text>
+        <image src='/assets/images/close.png' class='close' mode='widthFix' catchtap='hideDetail'></image>
+      </view>
+      <view class='scrollBoxer'>
+        <view class='scroll'>
+          <view class='scroll-item' wx:for='{{groupList}}' wx:key='{{index}}'>
+            <view class='s-left'>
+              <view class='s-imgBox'>
+                <image class='s-img' mode='widthFix' src='{{item.imageUrl}}'></image>
+              </view>
+              <view class='s-name line-01'>{{item.userName}}</view>
+            </view>
+            <view class='s-right'>
+              <view class='s-info'>
+                <text>还差{{item.needPeopleNumber}}人成团</text>
+                <text>剩余{{item.restTime}}</text>
+              </view>
+              <view class='s-btn' catchtap='grouPin' data-groupId='{{item.collageId}}' wx:if='{{item.isJoinedCollage=="0"}}'>去拼单</view>
+              <view class='s-btn' catchtap='grouPin' data-groupId='{{item.collageId}}' wx:if='{{item.isJoinedCollage=="1"}}'>去邀请</view>
+            </view>
+          </view>
+        </view>
+      </view>
+      <view class='de-footer'>
+        最多显示5个正在拼团的人
+      </view>
+    </view>
+    <!--轮播列表  -->
+    <view wx:if='{{!showDetail}}'>
+      <view class='groupBox' wx:if='{{fakerGroupList.length>0&&productInfo.isSoldOut=="0"}}'>
+        <view class='box-header'>
+          <view class='head-left' wx:if='{{fakerGroupList.length>2}}'>{{applyOrderSize}}人正在拼单，可直接参与</view>
+          <view class='head-left' wx:if='{{fakerGroupList.length <= 2}}'>小伙伴正在拼单，可直接参与</view>
+          <view class='head-right' bindtap='showGroupBox' wx:if='{{fakerGroupList.length>2}}'>
+            <text>查看更多</text>
+            <image src='/assets/images/icon_justDo.png' class='more'></image>
+          </view>
+        </view>
+        <view class='scrollBox {{fakerGroupList.length == 1? "oneItem":""}}' bindtouchstart='pauseEnv' bindtouchend='startEnv'>
+          <view class='{{top==0?"scroller":"scroll"}}' id='scrollEle' style='top:{{-top+"px"}}'>
+            <view class='scroll-item' wx:for='{{fakerGroupList}}' wx:key='{{index}}'>
+              <view class='s-left'>
+                <view class='s-imgBox'>
+                  <image class='s-img' mode='widthFix' src='{{item.imageUrl}}'></image>
+                </view>
+                <view class='s-name line-01'>{{item.userName}}</view>
+              </view>
+              <view class='s-right'>
+                <view class='s-info'>
+                  <text>还差{{item.needPeopleNumber}}人成团</text>
+                  <text class='restTime'>剩余{{item.restTime}}</text>
+                </view>
+                <view class='s-btn' catchtap='grouPin' data-collageid='{{item.collageId}}' data-join='{{item.isJoinedCollage}}' wx:if='{{item.isJoinedCollage=="0"}}' data-orderid='{{item.orderId}}'>去拼单</view>
+                <view class='s-btn' catchtap='grouPin' data-collageid='{{item.collageId}}' wx:if='{{item.isJoinedCollage=="1"}}' data-join='{{item.isJoinedCollage}}' data-orderid='{{item.joinedOrderId}}'>去邀请</view>
+              </view>
+            </view>
+          </view>
+        </view>
+      </view>
+
+
+      <!--配送信息  -->
+      <view class='dispatchInfo'>
+        <view class='item' bindtap='_showAreaPickerEnv'>
+          <view class='label'>
+            <text class='title'>配送</text>
+            <view class='address'>
+              <text wx:if="{{fullAddress}}">{{fullAddress}}</text>
+              <text wx:else class='placeholder'>请选择收货地址</text>
+            </view>
+
+          </view>
+          <image class='icon_more' mode='widthFix' src='/assets/images/icon_more.png'></image>
+        </view>
+        <view class='item' catchtap='_showTransPlainEnv'>
+          <view class='label'>
+            <text class='title'>运费</text>
+            <text class='address' wx:if="{{postage}}">{{postage + '元'}}</text>
+            <text class='address' wx:else>0元</text>
+          </view>
+          <image class='icon_more' mode='widthFix' src='/assets/images/icon_more.png'></image>
+        </view>
+        <view class='item' catchtap='_showProductIntroInfoEnv'>
+          <view class='label'>
+            <text class='title'>说明</text>
+            <view class='tips' wx:if="{{productIntroTitles}}">
+              <block wx:for="{{productIntroTitles}}" wx:key="{{index}}">
+                <text>{{item}}<text wx:if="{{index != productIntroTitles.length -1}}"> | </text></text>
+              </block>
+            </view>
+            <text wx:else>无</text>
+          </view>
+          <image class='icon_more' mode='widthFix' src='/assets/images/icon_more.png'></image>
+        </view>
+      </view>
+
+      <!-- 社区  -->
+      <navigator url='/pages/community/community?productId={{productInfo.productId}}' class='community'>
+        <!-- <text class='title' wx:if='{{questionData.hasQuestion}}'>有疑问？问问买过的人</text>  -->
+        <view class='communityer'>
+          <view class='question'>
+            <text class='qus-icon'>问</text>
+            <text class='qus-info'>{{questionData.question}}</text>
+          </view>
+          <view class='answer' wx:if='{{questionData.hasQuestion!=0}}'>
+            <text class='an-icon' style='background:{{questionData.answer?"#67CCCC":"#999"}}'>答</text>
+            <text class='an-info' style='color:{{questionData.answer?"#333":"#999"}}'>{{questionData.answer?questionData.answer:'暂无回答，快来回答吧'}}</text>
+          </view>
+        </view>
+        <image class='icon_more' mode='widthFix' src='/assets/images/icon_more.png'></image>
+      </navigator>
+
+      <!--推荐/热销商品列表  -->
+      <view class='moreGoods' wx:if='{{goodsListHotSale.length>0}}'>
+        <view class='tabWrap'>
+          <block wx:for="{{recommendTitle}}" wx:key="{{index}}">
+            <view class="item {{index === curTabIndex ? 'active' : ''}}" data-index="{{index}}" bindtap='changeTabIndexEnv'>
+              <text class='text'>{{item}}</text>
+            </view>
+          </block>
+        </view>
+        <view class='content'>
+          <view class='goodsListWrap' hidden="{{curTabIndex === 1}}"  class='overheight'>
+            <goodsRowList goodsList="{{goodsListHotSale}}"></goodsRowList>
+          </view>
+          <view class='goodsListWrap' hidden="{{curTabIndex === 0}}"  class='overheight'>
+            <goodsRowList goodsList="{{goodsListRecommend}}"></goodsRowList>
+          </view>
+        </view>
+      </view>
+
+      <!--产品介绍/购买答疑  -->
+      <view class='goodsService'>
+        <view class='tabWrap'>
+          <view class='tabBox'>
+            <block wx:for="{{serviceTitle}}" wx:key="{{index}}">
+              <view class="item {{index === curTabIndexService ? 'active' : ''}}" data-index="{{index}}" bindtap='changeTabIndexServiceEnv'>
+                <text class='text'>{{item}}</text>
+              </view>
+            </block>
+          </view>
+        </view>
+        <view class='content'>
+          <view class='serviceInfo' hidden="{{curTabIndexService === 1}}">
+            <block wx:for="{{productInfo.productDesc}}" wx:key="{{index}}">
+              <image mode='widthFix' src='{{item.src}}'></image>
+            </block>
+          </view>
+          <view class='answerQuestion' hidden="{{curTabIndexService === 0}}">
+            <block wx:for="{{productInfo.purchaseDoubtList}}" wx:key="{{index}}">
+              <view class='item'>
+                <view class='question'>
+                  <text class='icon'>Q</text>
+                  <text class='text'>{{item.title}}</text>
+                </view>
+                <view class='answer'>
+                  <text class='icon'>A</text>
+                  <text class='text'>{{item.description}}</text>
+                </view>
+              </view>
+            </block>
+          </view>
+        </view>
+      </view>
+
+      <!--底部菜单  -->
+      <view class='bottomBar {{isIphoneX?"bottomBarX":""}}'>
+        <view class='jumpItem'>
+          <navigator open-type='switchTab' hover-class="none" url='/pages/home/home' class='item'>
+            <view class='imgWrap'>
+              <image class='icon' mode='widthFix' src='/assets/images/footer/icon_home.png'></image>
+            </view>
+            <text class='text'>首页</text>
+          </navigator>
+          <view class='item'>
+            <button open-type='contact' session-from='来自商品详情' style="margin-top:2rpx;">
+              <view class='imgWrap'>
+                <image class='icon' style="width:40rpx;" mode='widthFix' src='/assets/images/footer/icon_contact.png'></image>
+              </view>
+              <text class='text'>客服</text>
+            </button>
+          </view>
+
+          <navigator hover-class="none" url='/pages/newCart/newCart' class='item'>
+            <view class='imgWrap'>
+              <image class='icon' mode='widthFix' src='/assets/images/footer/icon_cart.png'></image>
+            </view>
+            <text class='text'>购物车</text>
+            <view wx:if="{{cartProductNumbers != 0 && cartProductNumbers}}" class='cartNum'>{{cartProductNumbers}}</view>
+          </navigator>
+        </view>
+        <view class='userActionWrap'>
+          <block wx:if='{{isCollageProduct==0}}'>
+            <view wx:if="{{productInfo.isSeckillProduct == '1' && productInfo.isSoldOut == '0' && productInfo.isSeckillReadStatus == '1'}}" data-id='{{productInfo.productId}}' bindtap='showphone' class='item remind buy'>开抢提醒</view>
+            <view wx:if="{{productInfo.isSoldOut == '0' && isstart == 1}}" class='item cart' bindtap='addShoppingCartEnv'>加入购物车</view>
+            <view wx:if="{{productInfo.isSoldOut == '0' && isstart == 1}}" class='item buy' bindtap='buyNowEnv'>立即购买</view>
+            <view wx:if="{{productInfo.isSoldOut == '0' && productInfo.isSeckillProduct == 0}}" class='item cart' bindtap='addShoppingCartEnv'>加入购物车</view>
+            <view wx:if="{{productInfo.isSoldOut == '0' && productInfo.isSeckillProduct == 0}}" class='item buy' bindtap='buyNowEnv'>立即购买</view>
+          </block>
+          <view wx:if="{{productInfo.isSoldOut == '1'}}" class='item soldOut'>商品已售罄 </view>
+          <!--团购按钮  -->
+          <view wx:if="{{productInfo.isSoldOut == '0' && isCollageProduct == 1}}" class='item cart groupBuy' bindtap='buyNowEnv'>
+            <text>￥{{productInfo.price}}</text>
+            <text>单独购买</text>
+          </view>
+          <view wx:if="{{productInfo.isSoldOut == '0' && isCollageProduct == 1}}" class='item buy groupBuy' bindtap='groupBuy'>
+            <text>￥{{productInfo.collagePrice}}</text>
+            <text>发起拼单</text>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+
+  <view class="phoneTip" wx:if='{{isphone == 1}}'>
+    <text class="covertitle">设置短信提醒</text>
+    <text class="covertitle1">请留下您的手机号码，商品开抢前阳光海岸会第一时间通知您</text>
+    <input value="{{inputNum}}" type="number" bindblur="changecode"></input>
+    <button class="btn1" bindtap='hidephone'>取消</button>
+    <button class="btn2" bindtap='sendphone'>确定</button>
+  </view>
+  <view class="cover" wx:if='{{isphone == 1}}'></view>
+
+  <timeout wx:if="{{!isLoading && timeout}}" bind:refreshEnv="refreshEnv"></timeout>
+
+  <!-- 商品规格选择  -->
+  <view animation="{{productSpecSelectPlainAni}}" id="productSpecSelectPlain" class='specSelectWrap' wx:if="{{isShowProductSpecSelectPlain}}">
+
+    <view class='topWrap'>
+      <view class='topBox'>
+        <view class='imgWrap'>
+          <image mode='widthFix' src="{{specImage}}"></image>
+        </view>
+        <view class='specDesc'>
+          <text class='price' wx:if="{{productInfo.isGroupProduct === '0' && !isCollageBuy}}">¥{{productInfo.price}}</text>
+          <text class='price' wx:if="{{productInfo.isGroupProduct === '1' && !isCollageBuy}}">¥{{productInfo.groupPriceRegion}}</text>
+          <text class='price' wx:if="{{isCollageBuy}}">¥{{collagePrice}}</text>
+
+          <view class='specs' wx:if="{{productSpecList && productSpecList.length}}">
+            <text wx:if="{{!isSelectedFinish && !isSelected}}">请选择规格</text>
+            <text wx:if="{{!isSelectedFinish && isSelected}}">请选择{{tipSelectSpecTypes}}</text>
+            <view wx:if="{{isSelectedFinish}}">
+              <text class='label'>已选:</text>
+              <block wx:for="{{selectedSpecName}}" wx:key="{{index}}">
+                <text>{{item}}<text wx:if="{{index !== selectedSpecName.length -1}}">、</text></text>
+              </block>
+            </view>
+          </view>
+        </view>
+      </view>
+      <view class='closeWrap' bindtap='closeSpecSelectPlainEnv'>
+        <image class='closeBtn' mode='widthFix' src='/assets/images/icon_close.png' catchtap='closeSpecSelectPlainEnv'></image>
+      </view>
+    </view>
+    <view class='specList' wx:if="{{productSpecList && productSpecList.length}}">
+
+      <!--一级规格  -->
+      <view class='specTypeItem'>
+        <view class='title' wx:if="{{selectSpecType.length}}">{{selectSpecType[0]}}</view>
+        <view>
+          <block wx:for="{{productSpecList}}" wx:key="{{index}}">
+            <view wx:if="{{productSpecList[index].primarySpecId !== productSpecList[index+1].primarySpecId}}" class="item {{item.primaryDisabled ? 'disabled' : ''}} {{item.primarySelected ? 'selected' : ''}}" data-spec="{{item}}" data-index="{{index}}" bindtap='selectPrimarySpecEnvs'>{{item.primarySpecName}}</view>
+          </block>
+        </view>
+      </view>
+
+      <!-- 二级规格  -->
+      <view class='specTypeItem topLine' wx:if="{{selectSpecType[1]}}">
+        <view class='title' wx:if="{{selectSpecType.length}}">{{selectSpecType[1]}}</view>
+        <view>
+          <block wx:for="{{productSpecList}}" wx:key="{{index}}">
+            <view class="item {{item.secondaryDisabled ? 'disabled' : ''}} {{item.secondarySelected ? 'selected' : ''}}" wx:if="{{index+1 < productSpecList.length / 2}}" data-spec="{{item}}" data-index="{{index}}" bindtap='selectSecondarySpecEnvs'>{{item.secondarySpecName}}</view>
+          </block>
+        </view>
+      </view>
+
+    </view>
+    <view class='goodsNumberWrap topLine'>
+      <text class='label'>数量</text>
+      <view class='handle'>
+        <view class="btn reduce {{!isReduce ? 'disabled' : ''}}" catchtap='reduceNumEnv'>-</view>
+        <view class='inputWrap'>
+          <input value="{{inputGoodsNum}}" type="number" bindinput="changeInputValEnv" bindblur="inputBlurEnv"></input>
+        </view>
+        <view class="btn add {{!isAdd ? 'disabled' : ''}}" catchtap='addNumEnv'>+</view>
+      </view>
+    </view>
+    <view class='taxWrap topLine' wx:if="{{productInfo.productType === '2'}}">
+      <text class='label'>进口税</text>
+      <view class='tag'>本商品已包税</view>
+    </view>
+    <view class='bottomBtn' bindtap='checkBuyEnv'>确定</view>
+  </view>
+
+  <!-- 运费说明  -->
+  <view animation="{{transExplainAni}}" id="bottomBounce" class='bottomBounce' wx:if="{{isShowTransExplains}}">
+    <view class='topTitle'>
+      <text>运费说明</text>
+      <image class='closeBtn' mode='widthFix' src='/assets/images/icon_close.png' catchtap='_closeTransExplainEnv'></image>
+    </view>
+    <scroll-view scroll-y style='height:200px' class='content'>
+      <view wx:if="{{transExplains && transExplains.length}}">
+        <block wx:for="{{transExplains}}" wx:key="index">
+          <text class='item'>{{item}}</text>
+        </block>
+      </view>
+      <view wx:else>
+        <text class='item'>无</text>
+      </view>
+    </scroll-view>
+  </view>
+
+  <!-- 商品说明  -->
+  <view animation="{{productIntroInfoAni}}" id="productIntroInfo" class='productIntroInfo' wx:if="{{isShowProductIntroInfo}}">
+    <view class='topTitle'>
+      <text>商品说明</text>
+      <image class='closeBtn' mode='widthFix' src='/assets/images/icon_close.png' catchtap='_closeProductIntroInfoEnv'></image>
+    </view>
+    <scroll-view scroll-y style='height:200px;' class='content'>
+      <view wx:if="{{productIntroList && productIntroList.length}}">
+        <block wx:for="{{productIntroList}}" wx:key="index">
+          <text class='item'>
+          <text class='title'>{{item.title}}</text>
+          <text class='desc'>{{item.introduction}}</text>
+          </text>
+        </block>
+      </view>
+      <view wx:else>
+        <text class='item'>无</text>
+      </view>
+    </scroll-view>
+  </view>
+  <!-- 适配x -->
+  <view class='contentView' style='padding-bottom:{{btuBottom}}'>
+    <button class='but'></button>
+  </view>
+
+  <!--区域选择器  -->
+  <!-- <view>{{curProvince.areaName}} {{curCity.areaName}} {{curDistrict.areaName}}</view> -->
+  <view id="pickerContainer" class='pickerContainer' animation="{{showAreaPickerAni}}">
+    <areaPicker wx:if="{{regionList.length && addressIndex.length}}" data-regionList="{{regionList}}" data-addressId="{{addressId}}" data-addressIndex="{{addressIndex}}" bind:cancelEnv="_cancelEnv" bind:submitEnv="_submitEnv" bind:changeEnv="_changeEnv"></areaPicker>
+  </view>
+
+  <!-- 遮罩层  -->
+  <view animation="{{maskLayerAni}}" class='maskLayer' wx:if="{{isShowMaskLayer}}" catchtap='_clickMaskLayer'></view>
+
+  <!-- 提示语  -->
+  <toast wx:if="{{msgTips}}" message="{{msgTips}}"></toast>
+
+  <!-- loading  -->
+  <loading wx:if="{{isLoading}}"></loading>
+
+</view>

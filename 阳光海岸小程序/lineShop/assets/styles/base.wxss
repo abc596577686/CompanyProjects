@@ -1,0 +1,25 @@
+view, scroll-view, swiper, movable-view, cover-view, icon, text, rich-text,
+progress, button, checkbox, form, input, label, picker, picker-view, radio,
+slider, switch, textarea, navigator, audio, image, video, camera, live-player,
+live-pusher, map, canvas, open-data, web-view {
+  padding: 0;
+  margin: 0;
+  line-height: 1;
+  box-sizing: border-box;
+}
+
+image {
+  width: 100%;
+}
+
+page {
+  background-color: #f6f6f6;
+  font-family: "Helvetica Neue",
+                 "Hiragino Sans GB",
+                 "Microsoft YaHei",
+                 "\9ED1\4F53",
+                 Arial,
+                 sans-serif;
+  font-size: 32rpx;
+  line-height: 1;
+}

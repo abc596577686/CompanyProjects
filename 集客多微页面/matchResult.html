@@ -1,0 +1,585 @@
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="width=device-width,user-scalable=no,initial-scale=0.33333,minimum-scale=0.33333,maximum-scale=0.33333" />
+    <title>比赛结果</title>
+    <link rel="stylesheet" href="./css/matchResult.css"/>
+    <script src="./js/jquery-3.2.1.js"></script>
+    <script src="https://res.wx.qq.com/open/js/jweixin-1.3.2.js"></script>
+    <!-- 滚动 -->
+    <!-- <link rel="stylesheet" href="./css/swiper.min.css"> -->
+    <!-- 分页 -->
+    <script src="js/jquery.pagination.min.js"></script>
+    <link rel="stylesheet" href="css/jquery.pagination.css" />
+
+    <script>
+        //1.获取像素比
+        var pixelRatio=1/window.devicePixelRatio;
+        // console.log(pixelRatio);
+        //2.通过js动态来设置视口
+        document.write('<meta name="viewport" content="width=device-width,initial-scale='+pixelRatio+',minimum-scale='+pixelRatio*2+',maximum-scale='+pixelRatio+'">');
+        //3.获取html节点
+        var html=document.getElementsByTagName('html')[0];
+        //console.log(html)
+        //4.获取屏幕宽度
+        var pageWidth=html.getBoundingClientRect().width;
+        // console.log(pageWidth);
+        //屏幕宽度/固定数值=基准值;
+        html.style.fontSize=pageWidth/15+'px';
+    </script>
+</head>
+<body>
+    <!-- 页面背景图 -->
+    <header>
+        <img src="./img/bg2.png">
+    </header>
+    <div class="page">
+        <div class="maintit">
+            比赛奖品
+        </div>
+        <img class="mainlitimg1" src="./img/leftyua.png" >
+        <img class="mainlitimg2" src="./img/rightyua.png" >
+        <span class="mainsp"></span>
+        <div class="maintxt">
+        </div>
+        <div class="botto">
+            <!-- 分页器 -->
+            <div class="pagenation">
+                <div class="box">
+                    <div id="pagination2" class="page fl"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- 展示 -->
+    <div class="pageMainShow">
+        <div class="maintit">
+            比赛奖品
+        </div>
+        <img class="mainlitimg1" src="./img/leftyua.png" >
+        <img class="mainlitimg2" src="./img/rightyua.png" >
+        <!-- 前10 -->
+        <div class="apresent apresent1">
+        </div>
+        <!-- 前30 -->
+        <div class="apresent apresent2">
+        </div>
+        <!-- 抽奖奖品 -->
+        <div class="apresent apresent3">
+        </div>
+        <!-- 参与投票奖 -->
+        <div class="apresent apresent4" style="height:6rem;">
+        </div>
+    </div>
+    <!-- 领取流程 -->
+    <div class="competitionKer">
+        <div class="maintit">
+            领取流程
+        </div>
+        <img class="mainlitimg1" src="./img/leftyua.png" >
+        <img class="mainlitimg2" src="./img/rightyua.png" >
+        <div class="ker">
+            <img src="./img/test11.png">
+        </div>
+    </div>
+    <!-- 备注 -->
+    <div class="littletip">
+        备注：比赛结束后，实物奖品会以邮寄的形式发放
+    </div>
+    <!-- 领取好礼 -->
+    <button class="gettbtn">
+        领取奖励
+    </button>
+    <!-- 填写信息 -->
+    <div class="liaojie" style="display: none;">
+        <div class="topDiv">填写信息</div>
+        <span class="coversspp" style="display: block;"></span>
+        <div class="closeCover">
+            <span class="liaojiesp">
+                    <img src="./img/close.png">
+            </span>
+        </div>
+        <div class="liaojiemain">
+            <input type="text" class="inp name1" placeholder="姓名">
+            <input type="number" class="inp phone1" placeholder="手机号码">
+            <!-- <input type="text" class="inp area1" placeholder="所在地区"> -->
+            <input type="text" class="inp mainarea1" placeholder="街道、小区门牌等详细地址">
+            <div class="beiTip">
+                备注：填写信息是为了邮寄奖品哦
+            </div>
+            <button class="liaojieBtn">
+                领取奖励
+            </button>
+        </div>
+    </div>
+    <!-- 蒙层 -->
+    <div class="background" style="display: none;"></div>
+    <!-- alert -->
+    <div id="div_alert">0-0-0</div>
+    <!-- 注册 -->
+    <section id="register" style="display: none;">
+        <div class="reg_name">
+            请先完成注册
+            <span class="kkktr">
+                <span class="reg_name_closesp">
+                    <img src="./img/close.png">
+                </span>
+            </span>
+        </div>
+        <div class="reg_main">
+            <input type="number" class="phone" id="phone" placeholder="手机号">
+            <input type="number" class="code" placeholder="验证码" maxlength="6">
+            <button class="getcode" onclick="settime(this)">获取验证码</button>
+            <button class="goRegister">立即注册</button>
+        </div>
+    </section>
+    <div class="localtop" style="display: none"></div>
+</body>
+<!-- Swiper JS -->
+<script>
+    // 移动端影响input定位
+    (function bottonm(){  
+        if($(document).height()<$(window).height()){  
+            $('#register').css({'position':'fixed','bottom':'0'});  
+            $(document).height($(window).height()+'px');  
+        }  
+    })();  
+
+    //获取URL上参数
+    function getUrlPara(paraName) {
+    	var reg = new RegExp("(^|&)" + paraName + "=([^&]*)(&|$)", "i");
+       	var r = window.location.search.substr(1).match(reg);
+        if (r != null){
+        	return unescape(r[2]);
+        }
+       	return null;
+    }
+    
+    $(function() {
+	 	// 页面初载时接口
+	    $.post("/clt/activity/checkRegisterVote.msp", {}, function(res) {
+	        if(res.code == '1'){  
+	        	if(res.status == '0'){
+	        		//未注册(点击按钮注册)
+	        		window.location.replace( 'invote.html')
+	        	}else if(res.status == '1'){
+	        		//报名未开始
+	        		window.location.replace( 'invote.html')
+	        	}else if(res.status == '2'){
+	        		//报名已开始
+	        		window.location.replace('invote.html')
+	        	}else if(res.status == '5'){
+	        		//审核已成功
+	        		window.location.replace( 'votemain.html')
+	        	}else if(res.status == '11'){
+	        		//报名已结束
+	        		window.location.replace( 'registerEnd.html')
+	        	}else if(res.status == '6' || res.status == '7'){
+	        		// 待审核和审核失败
+	        		window.location.replace( 'waitvote.html')
+	        	}else if(res.status == '3'){
+	        		// 投票未开始
+	        		if(res.activityLevel == '3'){
+	        			// 第二轮投票未开始
+	        			window.location.replace( 'timeOutPage.html')
+	        		}else{
+	        			window.location.replace( 'votemain.html')
+	        		}
+	        	}else if(res.status == '4'){
+	        		// 投票已开始
+	        		window.location.replace ( 'votemain.html')
+	        	}else if(res.status == '10'){
+	        		// 投票已结束
+	        		init(res.activityLevel);
+	        	}
+	        }else{  //错误信息
+	        	alert(res.msg)
+	        }
+	    });
+	 	
+	 	
+	    var link = location.href.split('#')[0];
+		var title =  '集客多杯';
+		var imgUrl = window.location.origin + '/wap/img/logo.png';
+		var desc = '为你喜爱的选手投票吧！';
+	   	$.post("/clt/weixin/getToken.msp", {url: link}, function(res) {
+	   		wx.config({
+	   	        debug: false, // 开启调试模式,调用的所有api的返回值会在客户端alert出来，若要查看传入的参数，可以在pc端打开，参数信息会通过log打出，仅在pc端时才会打印。
+	   	        appId: res.appId, // 必填，公众号的唯一标识
+	   	        timestamp: res.timestamp, // 必填，生成签名的时间戳
+	   	        nonceStr: res.nonceStr, // 必填，生成签名的随机串
+	   	        signature: res.signature, // 必填，签名，见附录1
+	   	        jsApiList: [
+	   	            'onMenuShareAppMessage', // 获取“分享给朋友”按钮点击状态及自定义分享内容接口
+	   	            'onMenuShareTimeline' // 获取“分享到朋友圈”按钮点击状态及自定义分享内容接口
+	   	        ] // 必填，需要使用的JS接口列表，所有JS接口列表见附录2
+	   	    });
+
+	   	    wx.ready(function () {
+	   	        wx.onMenuShareTimeline({
+	   	            title: title, // 分享标题
+	   	            link: link, // 分享链接
+	   	            imgUrl: window.location.origin + '/wap/img/logo.png', // 分享图标
+	   	            success() {
+	   	                console.log('分享成功')
+	   	            },
+	   	            cancel() {
+	   	            	//console.log('分享11成功')
+	   	                // 用户取消分享后执行的回调函数
+	   	            }
+	   	        })
+	   	        
+	   	        
+	   	        // 分享给朋友
+	   	        wx.onMenuShareAppMessage({
+	   	            title: title, // 分享标题
+	   	            desc: desc, // 分享描述
+	   	            link: link, // 分享链接
+	   	            imgUrl: window.location.origin + '/wap/img/logo.png', // 分享图标
+	   	            success: function() {
+	   	            	console.log('分享成功')
+	   	            },
+	   	            cancel: function() {
+	   	            	//console.log('分享111成功')
+	   	                // 用户取消分享后执行的回调函数
+	   	            }
+	   	        })
+	   	    });
+    	})
+    });
+    
+    var sort = 2
+    var pageidx = 1
+    var pagesize = 10
+    
+    function init(activityLevel){
+    	console.log('activityLevel----'+activityLevel)
+    	// 页面初载时接口
+        $.post('/clt/index.json?a=v1/activityResult',{
+            sort : sort,
+            pageidx : pageidx,
+            pagesize : pagesize,
+            activityLevel: activityLevel,
+        },function(res){
+            console.log(res)
+            if(res.activityLevel == 2){
+                $('.mainsp').html('(Top30)')
+            }else if(res.activityLevel == 3){
+                $('.mainsp').html('(Top10)')
+            }
+            
+            // 点击领取奖励按钮
+            $('.gettbtn').click(function(){
+                if(res.data.status == 1){
+                    // 显示注册
+                    $('#register').show()
+                    $('.background').show()
+
+                    var top
+                    top = $(window).scrollTop();
+                    $('.localtop').html(top)
+                    $('body').css("top",-top+"px");
+                    $('body').addClass('addfix')
+                }else{
+                    window.location.href="http://a.app.qq.com/o/simple.jsp?pkgname=com.webapp.jkd"
+                }
+            })
+
+            // 绘制页面
+            $('.maintxt').html('')
+            var i = null
+            var index = res.dataList.length
+            var pagedata = ''
+            for(i=0; i<index; i++){ 
+                pagedata += "<div><div class='mingci'>"+res.dataList[i].lelvelName+"</div><div class='num'>"+res.dataList[i].number
+                +"</div><div class='peoImg11'><img src='"+res.dataList[i].imageUrl+"'></div><div class='ploname'>"+res.dataList[i].name+
+                "</div><div class='matNumber l1'>"+res.dataList[i].score+"</div><div class='matT l1'>票</div><div class='matNumber l2'>"+res.dataList[i].finalGrade+"</div><div class='matT l2'>分</div></div>"
+            }
+            $(".maintxt").append(pagedata);
+
+
+            if(res.activityLevel == 2){   //第一轮
+                $('.l2').hide()
+            }else{
+                $('.l1').hide()
+            }
+            if(res.activityLevel == 3){   //第二轮  
+                $('.l1').hide()
+            }else{
+                $('.l2').hide()
+            }
+
+          
+            var totalPage = res.totalPage
+            console.log(totalPage)
+            // 底部分页栏
+            $("#pagination2").pagination({
+                currentPage: 1,
+                totalPage: totalPage,
+                isShow: false,
+                count: 3,
+                prevPageText: "<",
+                nextPageText: ">",
+                callback: function(current) {
+                    console.log(current)
+
+                    // 重新载入分页
+                    $.post('/clt/index.json?a=v1/activityResult',{
+                        sort : 1,
+                        pageidx : current,
+                        pagesize : 10,
+                        activityLevel: activityLevel,
+                    },function(res){
+                        console.log(res)
+                        if(res.dataList.length == 0){  
+                            $('.ui-pagination-container>a:last').hide()
+                            $("#div_alert").html('已经最后一页啦');
+                            tanchuang();
+                            return
+                        }else{
+                            $('.maintxt').html('')
+                            var i = null
+                            var index = res.dataList.length
+                            var pagedata = ''
+                            for(i=0; i<index; i++){ 
+                                pagedata += "<div><div class='mingci'>"+res.dataList[i].lelvelName+"</div><div class='num'>"+res.dataList[i].number
+                                +"</div><div class='peoImg11'><img src='"+res.dataList[i].imageUrl+"'></div><div class='ploname'>"+res.dataList[i].name+
+                                "</div><div class='matNumber l1'>"+res.dataList[i].score+"</div><div class='matT l1'>票</div><div class='matNumber l2'>"+res.dataList[i].finalGrade+"</div><div class='matT l2'>分</div></div>"
+                            }
+                            $(".maintxt").append(pagedata);
+                            
+                            var activityLevel = getUrlPara('activityLevel')
+
+                            if(res.activityLevel == 2){   //第一轮
+                                $('.l2').hide()
+                            }else{
+                                $('.l1').hide()
+                            }
+                            if(res.activityLevel == 3){   //第二轮  
+                                $('.l1').hide()
+                            }else{
+                                $('.l2').hide()
+                            }
+                            
+                            // 自动调整高度 
+                            // console.log($('.mainShowDiv').length)
+                            var locheight = ($('.mainShowDiv').length)*3.64+7.6    // 计算原始带边框元素高度
+                            $('.mainShow').css('height',locheight+'rem')   
+                            var viewheight = ((window.screen.availHeight) * 0.8);  //当前工作区的高度 暂定0.8比例
+                            // console.log(viewheight)
+                            var afterScrollHeight = $('.pagenation').offset().top  //当前可视工作区高度 eg：iphone6 = 667
+                            // console.log(afterScrollHeight)
+                            $(window).scrollTop(afterScrollHeight - viewheight )
+                        }
+                    })
+                }
+            });
+                
+            // 前十名奖品
+            $('.apresent1').html('')
+            var i = null
+            var pagedata = "";
+                pagedata += "<div class='aPre'>前10名奖品</div><div class='peresentMain'><div><img src='" + res.activityPrizeListMap[0].prizeList[0].imageURL + 
+                    "'></div><div><img src='" + res.activityPrizeListMap[0].prizeList[1].imageURL + "'></div><div><img src='"+res.activityPrizeListMap[0].prizeList[2].imageURL+"'></div></div><div>"+res.activityPrizeListMap[0].prizeList[1].content+"</div><div>"+res.activityPrizeListMap[0].prizeList[2].content+"</div></div>"
+            $(".apresent1").append(pagedata);
+            
+            // 前30名奖品
+            $('.apresent2').html('')
+            var i = null
+            var pagedata = "";
+                pagedata += "<div class='aPre'>前30名奖品</div><div class='peresentMain'><div><img src='" + res.activityPrizeListMap[1].prizeList[0].imageURL + 
+                    "'></div><div><img src='" + res.activityPrizeListMap[1].prizeList[1].imageURL + "'></div><div><img src='"+res.activityPrizeListMap[1].prizeList[2].imageURL+"'></div></div><div>"+res.activityPrizeListMap[1].prizeList[1].content+"</div><div>"+res.activityPrizeListMap[1].prizeList[2].content+"</div></div>"
+            $(".apresent2").append(pagedata);
+            
+            // 抽奖奖品
+            $('.apresent3').html('')
+            var i = null
+            var pagedata = "";
+                pagedata += "<div class='aPre'>抽奖奖品</div><div class='peresentMain'><div><img src='" + res.activityPrizeListMap[2].prizeList[0].imageURL + 
+                    "'></div><div><img src='" + res.activityPrizeListMap[2].prizeList[1].imageURL + "'></div><div><img src='"+res.activityPrizeListMap[2].prizeList[2].imageURL+"'></div></div><div>"+res.activityPrizeListMap[2].prizeList[1].content+"</div><div>"+res.activityPrizeListMap[2].prizeList[2].content+"</div></div>"
+            $(".apresent3").append(pagedata);
+
+            // 优惠券
+            $('.apresent4').html('')
+            var i = null
+            var pagedata = "";
+                pagedata +=  "<div class='aPre'>参与奖</div><div class='Coupon'><img src='"+res.activityPrizeListMap[3].prizeList[0].imageURL+"'></div>"
+            $(".apresent4").append(pagedata);
+
+        });
+    }
+
+    //通用神奇小弹窗
+    function tanchuang(){
+        var cler;
+        var i = 0;
+        var count = 5;
+        if (cler!= null && cler!= undefined) {
+            window.clearInterval(cler);
+        }
+        // $("#div_alert").html("");
+        $("#div_alert").fadeIn();
+        i = 0;
+        var tcount = 2;
+        count = tcount;
+        timerun();
+        function timerun() {
+            if (i >= count) {
+                // document.getElementById("div_alert").style.display = "none";
+                $("#div_alert").fadeOut();
+                window.clearInterval(cler);
+            }else {
+                cler = window.setTimeout(timerun, 900);
+            }
+            i++;
+        }
+    }
+    
+    // 关闭
+    $('.closeCover').click(function(){
+        $('body').css('top', '');
+        $('body').removeClass('addfix') 
+        var tt = $('.localtop').html()
+        $(window).scrollTop(tt)
+        $('.localtop').html('')
+
+        $('.liaojie').hide()
+        $('.background').hide()
+    })
+    
+    // 注册
+    // 验证码
+    var countdown = 60;             //验证码初始
+    var userid = getUrlPara("userid"); 
+    var phone = $("#phone").val();
+
+    var timeoutKey = 0;                               //倒计时控制变量
+    var linkKey = 1;                                  //接口控制变量
+
+    function settime(obj) {
+    var area_code = 86;
+    var phone = $("#phone").val();
+    
+    if (phone =='') {                                           //如果输入为空
+        $("#div_alert").html("请输入手机号");
+        tanchuang();
+        $('#phone').focus();
+        return false;       
+    }
+
+    // if (area_code == "86") {
+    //     if (!phone.match(/^1[3|4|5|7|8][0-9]{9}$/)) {           //检查手机号格式
+    //         // $("#div_alert").html("请输入正确的手机号");           //恢复默认样式
+    //         // tanchuang();
+    //         $("#div_alert").html("请输入正确的手机号");
+    //         tanchuang();
+    //         timeoutKey = 0              //关闭倒计时
+    //         linkKey = 1                 //开启接口
+    //         obj.removeAttribute("disabled");  //重置倒计时按钮样式
+    //         $(".getcode").html("获取验证码");
+    //         countdown = 60;
+    //         $('#phone').focus();
+    //         return false;
+    //     }
+    // }  
+
+    if (linkKey == 1) {                                        //当接口控制开启 可走接口交互验证码
+        // $.post("/api/user/sendCode.msp", {
+        $.post("/api/user/sendCode.msp", { 
+                mobile: phone,
+                countryCode: area_code,
+                codeType: 5
+        },function(data){
+            console.log(data)
+            if (data.code == '0'){                                 //发送失败 跳出提示 不进行倒计时
+                var k1 = data.msg
+                // $("#div_alert").html(k1);
+                // tanchuang();
+                alert(k1)
+                clearTimeout(ttt);
+            }else if(data.code == '1'){                            //发送成功 进入倒计时 按钮持续不可操作 直到cuntdown为0后恢复
+                var k2 = data.msg
+                $("#div_alert").html(k2);
+                tanchuang();
+                timeoutKey = 1;         //倒计时控制变量 开启
+                linkKey = 0;            //接口关闭                                     
+            }
+        }, "json");
+    }
+
+    if(timeoutKey == '1' & linkKey != '1'){                //倒计时控制开启  接口控制关闭  此时进行倒计时
+        obj.setAttribute("disabled", true);                //不可选中
+        $(".getcode").html("重新发送(" + countdown + ")");
+        countdown--;                                       //数字倒计时  
+    }
+
+    if (countdown == 0) {                                  //倒计时结束 重置按钮 可重新走接口
+        linkKey++                 //开启接口
+        timeoutKey--              //关闭倒计时
+        obj.removeAttribute("disabled");  //重置倒计时按钮样式
+        $(".getcode").html("获取验证码");
+        countdown = 60;
+        return;
+    }
+
+    var ttt = setTimeout(function(){
+        settime(obj)
+    }, 1000) 
+    }
+    // 提交注册信息
+    $('.goRegister').click(function(){
+        var phone = $("#phone").val();
+        var phone_code = $(".code").val();
+        $.post("/clt/wap/userRegister.msp", {
+                isVote:true,
+                mobile: phone,
+                smsCode: phone_code,
+                storeId: 1055,
+        }, function(data) {   //注册成功
+                if (data.code == '1') {
+                    $('body').css('top', '');
+                    $('body').removeClass('addfix') 
+                    var tt = $('.localtop').html()
+                    $(window).scrollTop(tt)
+                    $('.localtop').html('')
+
+                    $('#register').hide()
+                    $('.background').hide()
+
+                    // 注册成功发送短信
+                    var phone = $("#phone").val();
+                    var area_code = 86;
+                    $.post("/clt/user/sendRegisterSucc.msp", {
+                        mobile: phone,
+                        countryCode: area_code,
+                        codeType: 6
+                    },function(res){
+                        if(res){
+                            location.reload()
+                        }  
+                    })
+                } else {  //注册失败 显示错误信息
+                    $("#div_alert").html(data.msg);
+                    tanchuang();
+                }
+        }, "json");
+    })
+    
+    // 注册关闭
+    $('.kkktr').click(function(){
+        $('body').css('top', '');
+        $('body').removeClass('addfix') 
+        var tt = $('.localtop').html()
+        $(window).scrollTop(tt)
+        $('.localtop').html('')
+        
+        $('#register').hide();
+        $('.background').hide();
+    })
+</script>
+<style>
+    .addfix{
+        position:fixed;
+    }
+</style>
+</html>

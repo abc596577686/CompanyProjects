@@ -1,0 +1,17 @@
+<!--components/navAlone/navAlone.wxml-->
+<view class='navWrap'>
+  <block wx:for="{{data}}" wx:key="{{index}}">
+    <navigator class='navItem' url="{{item.jumpUrl+'&name='+item.navigationName}}" hover-class='none' wx:if="{{item.jumpUrl != '/pages/rush/rush'}}">
+      <view class='navImg'>
+        <image mode="widthFix" src='{{item.pictureIcon}}'></image>
+      </view>
+      <text class='navText'>{{item.navigationName}}</text>
+    </navigator>
+    <navigator class='navItem' url="{{item.jumpUrl}}" hover-class='none' wx:if="{{item.jumpUrl == '/pages/rush/rush'}}">
+      <view class='navImg'>
+        <image mode="widthFix" src='{{item.pictureIcon}}'></image>
+      </view>
+      <text class='navText'>{{item.navigationName}}</text>
+    </navigator>
+  </block>
+</view>

@@ -1,0 +1,101 @@
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="width=device-width,user-scalable=no,initial-scale=0.33333,minimum-scale=0.33333,maximum-scale=0.33333" />
+    <title>教练认证</title>
+    <link rel="stylesheet" href="./css/failure.css">
+    <script src="./js/wechat.js"></script>
+    <script src="./js/jquery-3.2.1.js"></script>
+    <script>
+        //1.获取像素比
+        var pixelRatio=1/window.devicePixelRatio;
+        // console.log(pixelRatio);
+        //2.通过js动态来设置视口
+        document.write('<meta name="viewport" content="width=device-width,initial-scale='+pixelRatio+',minimum-scale='+pixelRatio*2+',maximum-scale='+pixelRatio+'">');
+        //3.获取html节点
+        var html=document.getElementsByTagName('html')[0];
+        //console.log(html)
+        //4.获取屏幕宽度
+        var pageWidth=html.getBoundingClientRect().width;
+        // console.log(pageWidth);
+        //屏幕宽度/固定数值=基准值;
+        html.style.fontSize=pageWidth/15+'px';
+    </script>
+</head> 
+<body>
+	<div id="checkFail" style="display:none;">
+	    <!-- 页面大图 -->
+	    <section id="topImg">
+	        <div class="imgBox">
+	            <img src="./img/vote_end.png" style="height:auto;">
+	        </div>
+	    </section>
+	    <p class="pageTip1">认证失败</p>
+	    <p id="refuseReason" class="pageTip2">身份证信息与证书信息不符,请重新上传资质照片</p>
+	    <button class="reUpload">重新上传</button>
+   	</div>
+    <div id="checkDeal" style="display:none; text-align:center;">
+    	<!-- 页面背景图 -->
+    	<header>
+        	<img src="./img/topimg2.png" style="height:auto;display:inline-block;width:50%;margin-top:1rem;">
+    	</header>
+    	<div class="pagetip1">待审核</div>
+    	<div class="pagetip2">
+        	审核通过后，再邀请3人即可获取奖品。
+    	</div>
+    	<a href="http://a.app.qq.com/o/simple.jsp?pkgname=com.webapp.jkd" class="downLoad">下载集客多</a>
+   	</div>
+   	<div id="collTips" style="display:none;" class="tips"><img src="img/icon-laba.png"/> 收藏该链接，以便后续查询审核进度。</div>
+</body>
+<script>
+    //获取URL上参数
+    function getUrlPara(paraName) {
+    	var reg = new RegExp("(^|&)" + paraName + "=([^&]*)(&|$)", "i");
+       	var r = window.location.search.substr(1).match(reg);
+        if (r != null){
+        	return unescape(r[2]);
+        }
+       	return null;    
+    }
+  
+    var storeId = getUrlPara('storeId')
+    
+    $(function() {
+	    // 页面初载时接口
+	    $.post("/clt/coachAuthentication/checkCoachInfo.msp", {storeId : storeId}, function(res) {
+	        console.log(res.msg)
+	        if(res.code == '-20'){  //活动已结束 跳转活动结束页面
+	            window.location.replace ( 'nomatch.html'+ '?storeId=' + res.storeId)
+	        }else if(res.code == '-21'){  //已经是老用户 可独立开团
+	            window.location.replace ( 'oldperson.html'+ '?storeId=' + res.storeId)
+	        }else if(res.code == '-10'){  //跳转开团前领取好礼页面
+	        	window.location.replace ( 'getInfo.html'+ '?storeId=' + res.storeId)
+	        }else if(res.code == '-19'){  //等待审核
+	        	console.log(res.msg)
+	        	if(res.status == '2'){
+	        		// 审核成功
+	        		window.location.replace ( 'prize.html' + '?storeId=' + res.storeId);
+	        	}else if(res.status == '1'){
+	        		// 等待审核
+	        		$('#checkFail').hide();
+	        		$('#checkDeal').show();
+	        		$('#collTips').show();
+	        	}else{
+	        		// 审核失败
+	        		$('#checkFail').show();
+	        		$('#checkDeal').hide();
+	        		$('#collTips').show();
+	        		$("#refuseReason").html(res.reason);
+	        	}
+	        }else{  //错误信息
+	        	alert(res.msg)
+	        }
+	    })
+    })
+    
+    // 返回上一页
+    $('.reUpload').click(function(){
+        window.location.replace ( "getInfo.html?isReUpload=1&storeId=" + storeId);
+    })
+</script>
+</html>

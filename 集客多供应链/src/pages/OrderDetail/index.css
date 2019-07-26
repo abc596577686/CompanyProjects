@@ -1,0 +1,72 @@
+.detail-page .breadBox {
+  background-color: #fff;
+  margin: 0 20px;
+}
+.detail-page .itemer {
+  height: 30px;
+}
+.detail-page .breadBox {
+  padding: 20px;
+  font-size: 16px;
+
+}
+.detail-page .status-content .li_item {
+  list-style: none;
+  height: 40px;
+  line-height: 40px;
+}
+.detail-page .status-content .li_item .circle {
+  width: 4px;
+  height: 4px;
+  background: red;
+  border-radius: 50%;
+  display: block;
+  float: left;
+  margin: 18px 7px;
+  -webkit-border-radius: 50%;
+  vertical-align: middle;
+}
+.detail-page .detail-info .orderInfo-title {
+  font-size: 14px;
+  font-weight: 600;
+  height: 40px;
+  line-height: 40px;
+  border-bottom: 1px dashed #ddd;
+}
+.detail-page .detail-info .orderInfo-main {
+  padding-top: 10px;
+}
+.detail-page .detail-info .orderInfo-main .item {
+  line-height: 30px;
+}
+.detail-page .detail-info .add-title {
+  color: red;
+  margin: 0px 0px 10px;
+  font-size: 14px;
+  height: 40px;
+  line-height: 40px;
+}
+.detail-page .detail-info .tags {
+  color: #5d5d5d;
+  font-weight: 600;
+  height: 30px;
+}
+.detail-page .detail-info .log-info {
+  padding: 5px;
+}
+.detail-page .goodsInfo {
+  margin-top: 30px;
+}
+.detail-page .footer .items {
+  height: 20px;
+}
+.detail-page .footer .tags {
+  color: #5d5d5d;
+  font-weight: 600;
+}
+.detail-page .bread {
+  color: #000;
+}
+.detail-page .bread.current {
+  color: #ccc;
+}

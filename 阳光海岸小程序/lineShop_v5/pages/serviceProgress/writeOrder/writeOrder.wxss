@@ -1,0 +1,176 @@
+/* pages/refund/writeOrder/writeOrder.wxss */
+/* pages/customerService/customerService.wxss */
+.goodInfo {
+  height: 176rpx;
+  background-color: #fff;
+  display: flex;
+  flex-direction: row;
+  margin-bottom: 20rpx;
+  
+}
+
+.goodName {
+  width: 536rpx;
+  color: #333;
+  font-size: 26rpx;
+  padding-top: 20rpx;
+  line-height: 30rpx;
+}
+.goodNum {
+  width: 536rpx;
+  display: flex;
+  justify-content: flex-end;
+  color: #999;
+  font-size: 26rpx;
+  padding-right: 20rpx;
+}
+.seeMore {
+  width: 24rpx;
+  height: 14rpx;
+}
+.ser-item {
+  height: 98rpx;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-left: 31rpx;
+  padding-right: 16rpx;
+  background-color: #fff;
+  margin-bottom: 20rpx;
+}
+.ser-left {
+  color: #333;
+  font-size: 26rpx;
+}
+.ser-right {
+  color: #666;
+  font-size: 26rpx;
+  display: flex;
+  align-items: center;
+}
+.tuihuo {
+  margin-right: 18rpx;
+}
+.num {
+  color: #2EA7E0;
+  font-size: 28rpx;
+}
+.problems {
+  width: 100%;
+  height: 282rpx;
+  background-color: #fff;
+  padding: 36rpx 0;
+  padding-left: 177rpx;
+  color: #333;
+  font-size: 28rpx;
+}
+.proarea .info {
+  font-size: 28rpx;
+  position: absolute;
+  color: #333;
+  top: 37rpx;
+  left: 26rpx;
+}
+.proarea {
+  position: relative;
+  height: 478rpx;
+  background-color: #fff;
+}
+
+.imgArea {
+  background: #fff;
+  padding: 30rpx;
+  color: #a0a0a0;
+  display: flex;
+  flex-direction: row;
+  margin-bottom: 150rpx;
+}
+
+.imgWrap {
+  display: flex;
+  flex-direction: row;
+}
+
+.imgWrap .imgBox {
+  width: 144rpx;
+  height: 144rpx;
+  overflow: hidden;
+  border: 1px dashed #ccc;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.imgWrap .imgBox image {
+   width: 100%;
+}
+
+.bandle {
+  width: 144rpx;
+  height: 144rpx;
+  border: 1rpx dotted #ccc;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.camera{
+  display: block;
+}
+
+.Mesmore {
+  text-align: center;
+  display: inline-block;
+  /* width: 100%; */
+  font-size: 22rpx;
+  line-height: 1.3;
+}
+
+.camera {
+  width: 45rpx;
+  /* height: 37rpx; */
+  margin-bottom: 20rpx;
+}
+
+.footer {
+  position: fixed;
+  bottom: 0;
+  height: 120rpx;
+  width: 100%;
+  background-color: #fff;
+  padding: 23rpx 32rpx;
+}
+
+.btn {
+  color: #fff;
+  background-color: #2EA7E0;
+  height: 74rpx;
+  width: 686rpx;
+  line-height: 74rpx;
+  font-size: 34rpx;
+  border-radius: 10rpx;
+
+}
+
+.goodInfo {
+  height: 176rpx;
+  background-color: #fff;
+  display: flex;
+  flex-direction: row;
+  margin-bottom: 20rpx;
+  
+}
+.imgBox {
+  width: 186rpx;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.imgBox image {
+  width: 132rpx;
+  height: 132rpx;
+  background-color: yellowgreen;
+
+}

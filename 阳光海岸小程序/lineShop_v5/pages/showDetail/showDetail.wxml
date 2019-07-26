@@ -1,0 +1,36 @@
+<!-- loading  -->
+<loading wx:if="{{isLoading}}"></loading>
+<!-- topcover -->
+<view id='topTit'>
+    <block>
+        <view data-select="0" class="{{isSelect == 0 ? 'active':''}} tip" bind:tap="chooseCatalog">销量</view>
+        <view data-select="1" class="{{isSelect == 1 ? 'active':''}} tip" bind:tap="chooseCatalog">人气</view>
+        <view data-select="2" class="{{isSelect == 2 ? 'active':''}} tip" bind:tap="chooseCatalog">价格</view>
+        <image class='proMa' src='../../assets/images/y1.png' wx:if="{{isSortCt == 0}}"></image>
+        <image class='proMa' src='../../assets/images/y2.png' wx:if="{{isSortCt == 1}}"></image>
+        <image class='proMa' src='../../assets/images/y3.png' wx:if="{{isSortCt == 2}}"></image>
+    </block>
+</view>
+<scroll-view class="productList" scroll-y="true" style="height:{{localHeight+'rpx'}}" bindscrolltolower="bottom" scroll-top="{{scrollTop}}" wx:if='{{!isEmpty}}'>
+      <!--searchResultWrap  -->
+    <view class='searchResultWrap' wx:if="{{productlistData.length}}">
+        <goodsTwoColumns data="{{productlistData}}"></goodsTwoColumns>
+    </view>
+    
+    <noMore wx:if="{{isShowEnd == 1}}"></noMore>
+    <!-- <block wx:for="{{productlistData}}">
+        <view class="proMain">
+                <image class='proMaImage' src="{{item.imageUrl}}" mode="widthFix"></image>
+                <view class="proTitle">
+                    {{item.productName}}
+                </view>
+                <view class="proPrice">
+                    {{item.price?'￥'+item.price:'价格暂无'}}
+                </view>
+        </view>
+    </block> -->
+</scroll-view>
+ <view class='empty' wx:if='{{isEmpty}}'>
+    <image class='emptyImg' src='/assets/images/emptyy.png' mode='widthFix'></image>
+    <text class='emptyInfo'>该分类暂时还没有商品哦~</text>
+  </view>

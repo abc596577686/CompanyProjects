@@ -1,0 +1,183 @@
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="width=device-width,user-scalable=no,initial-scale=0.33333,minimum-scale=0.33333,maximum-scale=0.33333" />
+    <!--<meta   http-equiv="Expires"   CONTENT="0">-->
+    <!--<meta   http-equiv="Cache-Control"   CONTENT="no-cache">-->
+    <!--<meta   http-equiv="Pragma"   CONTENT="no-cache">-->
+    <link rel="stylesheet" href="./css/swiper.min.css">
+    <title>集客多大礼包</title>
+    <link rel="stylesheet" href="./css/A21.css">
+    <script src="./js/jquery-3.2.1.js"></script>
+    <script>
+            //1.获取像素比
+            var pixelRatio=1/window.devicePixelRatio;
+            // console.log(pixelRatio);
+            //2.通过js动态来设置视口
+            document.write('<meta name="viewport" content="width=device-width,initial-scale='+pixelRatio+',minimum-scale='+pixelRatio*2+',maximum-scale='+pixelRatio+'">');
+            //3.获取html节点
+            var html=document.getElementsByTagName('html')[0];
+            //console.log(html)
+            //4.获取屏幕宽度
+            var pageWidth=html.getBoundingClientRect().width;
+            // console.log(pageWidth);
+            //屏幕宽度/固定数值=基准值;
+            html.style.fontSize=pageWidth/15+'px';
+    </script>
+    <!--轮播图样式  -->
+    <style>
+    html, body {
+        position: relative;
+        height: 100%;
+    }
+    body {
+        background: #eee;
+        font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+        font-size: 14px;
+        color:#000;
+        margin: 0;
+        padding: 0;
+    }
+    .swiper-container {
+        width: 100%;
+        height: 100%;
+        
+    }
+    .swiper-slide {
+        text-align: center;
+        font-size: 18px;
+        background: #fff;
+        
+        /* Center slide text vertically */
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: -webkit-flex;
+        display: flex;
+        -webkit-box-pack: center;
+        -ms-flex-pack: center;
+        -webkit-justify-content: center;
+        justify-content: center;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
+        -webkit-align-items: center;
+        align-items: center;
+    }
+    </style>
+</head>
+<body>
+    <!-- swiper轮播 -->
+    <div class='imgPlay'>
+        <div class="swiper-container">
+            <div class="swiper-wrapper">
+                <!-- 此处轮播图 -->
+            </div>
+            <!-- Add Pagination -->
+             <div class="swiper-pagination"></div>
+        </div>
+    </div>
+
+    <!--商品信息 -->
+    <div class='imgTit'> 
+        <!-- 以下动态添加商品信息 -->
+        <span class='imgTit1' id="imgTy1"> </span>
+        <span class='imgTit2' id="imgTy2"> </span>
+    </div> 
+    <span class="whiteSpace"></span> 
+
+    <!--静态图  -->
+    <div class='advertisingImg'>
+        <!-- 此处动态添加静态大图 -->
+    </div>
+    <span class='bottomSpan'></span>
+    <button class="payButton" onclick="payBtn()">
+        <span class='payButtonSp'>立即购买</span>
+    </button>
+    <span id="wewewo" style="display:none">000</span>
+
+
+    <!-- swiper -->
+    <script src="./js/swiper.min.js"></script>
+    <!--<script src="./js/jquery-3.2.1.js"></script>-->
+    <script>
+	var code = getUrlPara("code");
+	var storeId = getUrlPara("storeId");
+    var swiper = new Swiper('.swiper-container', {
+        pagination: '.swiper-pagination',
+        nextButton: '.swiper-button-next',
+        prevButton: '.swiper-button-prev',
+        paginationClickable: true,
+        spaceBetween: 0,
+        centeredSlides: true,
+        observer:true,
+        autoplay: 2000,
+        autoplayDisableOnInteraction: false
+	});
+
+
+  	//获取URL上参数
+    function getUrlPara(paraName){
+    	var reg = new RegExp("(^|&)" + paraName + "=([^&]*)(&|$)", "i");
+        var r = window.location.search.substr(1).match(reg);
+        if (r != null) {
+        	return unescape(r[2]);
+        }
+        return null;
+    }
+    
+	// 确认button单击
+    var code = 1 ;    //成功为1  失败为0
+    var storeId = getUrlPara("s");
+    var productId = getUrlPara("p");
+    
+    var payBtn = (function() {
+    	// window.location.href = "/wap/inConfirm.html?code=" + code + "&storeId=" + storeId;
+        window.location.replace ( "inConfirm.html?s=" + storeId);
+    });
+
+    $(function() {
+    	$.ajax({
+            url: '/wap/index.json?a=v1/invitationDetail',
+            async: true,
+            type: "get",
+            dataType: 'json',
+            success: function(resp) {
+                if (resp.code == "1") {
+                    // 调入商品信息
+                    $("#imgTy1").html(resp.data.name);
+                    $("#imgTy2").html(resp.data.price);
+
+                    // 商品banner图片
+                    if(resp.headerImageList != null){
+                        var i = null;
+                        var a = resp.headerImageList;
+                        for(var i=0; i< a.length; i++){
+                            var addImg = document.createElement("div");
+                            addImg.className = 'swiper-slide';
+                            addImg.innerHTML = '<img src = " ' + a[0].imageUrl + ' "/> ';
+                            $(".swiper-wrapper").append(addImg) ;
+                        }
+                    }
+                    
+                  	// 商品详情列表
+                    if(resp.data.productDesc != null){
+                        var r = null;
+                        var b = resp.data.productDesc;
+                        for(var r=0; r< b.length; r++){
+                            var addImg1 = document.createElement("div");
+                            addImg1.innerHTML = '<img src = " '+b[r].src+' "/> ';
+                            $(".advertisingImg").append(addImg1);
+                        }
+                    }
+                } else {
+ 					alert("请再微信页面访问邀请函");  
+                }
+            },
+            error: function() {
+                 window.location.reload();
+            }
+        });
+    });    
+</script>
+<script src="./js/jquery-3.2.1.js"></script>
+</body>
+</html>

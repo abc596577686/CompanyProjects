@@ -1,0 +1,96 @@
+<!--pages/groupProduct/groupProduct.wxml-->
+<view wx:if="{{goodsList && goodsList.length}}">
+  <view class='goodsList'>
+    <block wx:for="{{goodsList}}" wx:key="{{index}}">
+      <view class="goodsItem">
+        <view class="imgWrap">
+          <image mode='widthFix' src='{{item.imageUrl}}'></image>
+        </view>
+        <view class="goodDesc">
+          <view class="info">
+            <view class="goodName">{{item.productName}}</view>
+            <view class="goodNumWrap">x{{item.saleTimes}}</view>
+          </view>
+          <view class='sepcPrice'>¥{{item.price}}</view>
+          <view class='selectSpec'>
+            <view class="selectedSpecs">
+              <view wx:if="{{item.isSelectedFinish && item.productSpecList.length}}">已选：{{item.selectedSpecsText}}</view>
+            </view>
+            <view class="handleBtn" wx:if="{{item.isSpceProduct === '1'}}" data-goods="{{item}}" data-index="{{index}}" catchtap="{{item.isSelectedFinish ? 'changeSpecEnv' : 'selectSpecEnv'}}">{{item.isSelectedFinish ? '修改规格' : '选择规格'}}</view>
+          </view>
+        </view>
+      </view>
+    </block>
+  </view>
+</view>
+<view class='numberHandle'>
+  <view class='label'>选择数量</view>
+  <view class='handle'>
+    <view class="btn reduce {{!isReduce ? 'disabled' : ''}}" catchtap='reduceNumEnv'>-</view>
+    <view class='inputWrap'>
+      <input value="{{inputGoodsNum}}" type="number" bindinput="changeInputValEnv" bindblur="inputBlurEnv"></input>
+    </view>
+    <view class="btn add {{!isAdd ? 'disabled' : ''}}" catchtap='addNumEnv'>+</view>
+  </view>
+</view>
+
+<!-- 商品规格选择  -->
+<view animation="{{productSpecSelectPlainAni}}" id="productSpecSelectPlain" class='specSelectWrap' wx:if="{{isShowProductSpecSelectPlain}}">
+  <view class='topWrap'>
+    <view class='topBox'>
+      <view class='imgWrap'>
+        <image mode='widthFix' src="{{curGoods.imageUrl}}"></image>
+      </view>
+      <view class='specDesc'>
+        <text class='price'>¥ {{curGoods.specPrice}}</text>
+        <view class='specs' wx:if="{{curGoods.productSpecList && curGoods.productSpecList.length}}">
+          <text wx:if="{{!curGoods.isSelectedFinish && !curGoods.isSelected}}">请选择规格</text>
+          <text wx:if="{{!curGoods.isSelectedFinish && curGoods.isSelected}}">请选择{{curGoods.tipSelectSpecTypes}}</text>
+          <view wx:if="{{curGoods.isSelectedFinish}}">
+            <text class='label'>已选:</text>
+            <block wx:for="{{curGoods.selectedSpecType}}" wx:key="{{index}}">
+              <text>{{item}}<text wx:if="{{index !== curGoods.selectedSpecType.length -1}}">、</text></text>
+            </block>
+          </view>
+        </view>
+      </view>
+    </view>
+    <view class='closeWrap' bindtap='closeSpecSelectPlainEnv'>
+      <image class='closeBtn' mode='widthFix' src='/assets/images/icon_close.png' catchtap='closeSpecSelectPlainEnv'></image>
+    </view>
+  </view>
+  <view class='specList' wx:if="{{curGoods.productSpecList && curGoods.productSpecList.length}}">
+
+    <!--一级规格  -->
+    <view class='specTypeItem'>
+      <view class='title' wx:if="{{curGoods.selectSpecType.length}}">{{curGoods.productSpecType[0]}}</view>
+      <view>
+        <block wx:for="{{curGoods.productSpecList}}" wx:key="{{index}}">
+          <view wx:if="{{curGoods.productSpecList[index].primarySpecId !== curGoods.productSpecList[index+1].primarySpecId}}" class="item {{item.primaryDisabled ? 'disabled' : ''}} {{item.primarySelected ? 'selected' : ''}}" data-spec="{{item}}" data-index="{{index}}" bindtap='selectPrimarySpecEnvs'>{{item.primarySpecName}}</view>
+        </block>
+      </view> 
+    </view>
+
+    <!-- 二级规格  -->
+    <view class='specTypeItem topLine' wx:if="{{curGoods.productSpecType[1]}}">
+      <view class='title'>{{curGoods.productSpecType[1]}}</view>
+      <view>
+        <block wx:for="{{curGoods.productSpecList}}" wx:key="{{index}}">
+          <view class="item {{item.secondaryDisabled ? 'disabled' : ''}} {{item.secondarySelected ? 'selected' : ''}}" wx:if="{{index < curGoods.productSpecList.length}}" data-spec="{{item}}" data-index="{{index}}" bindtap='selectSecondarySpecEnvs'>{{item.secondarySpecName}}</view>
+        </block>
+      </view>
+    </view>
+  </view>
+  <view class='innerConfirm' catchtap='innerConfirmEnv'>确定</view>
+</view>
+
+<view class='confirmSelect' bindtap='confirmSelectEnv'>确定</view>
+
+<!-- loading  -->
+<loading wx:if="{{isLoading}}"></loading>
+
+<!-- 遮罩层  -->
+<view animation="{{maskLayerAni}}" class='maskLayer' wx:if="{{isShowMaskLayer}}" catchtap='_clickMaskLayer'></view>
+
+<!-- 提示语  -->
+<toast wx:if="{{msgTips}}" message="{{msgTips}}"></toast>

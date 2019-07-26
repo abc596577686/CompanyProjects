@@ -1,0 +1,8 @@
+<!--components/bannerDouble/bannerDouble.wxml-->
+<view class="imageWrap">
+  <block wx:for="{{data}}" wx:key="{{index}}">
+    <navigator class='image' url="{{item.jumpUrl+'&name='+item.title}}" hover-class='none'>
+        <image mode="widthFix" src="{{item.pictureIcon}}"></image>
+    </navigator>
+  </block>
+</view>

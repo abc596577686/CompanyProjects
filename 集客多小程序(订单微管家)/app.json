@@ -1,0 +1,42 @@
+{
+  "pages": [
+    "pages/productDetail/productDetail",
+    "pages/shopIndex/index",
+    "pages/login/login",
+    "pages/innerLogin/innerLogin",
+    "pages/addressList/addressList",
+    "pages/addressDetail/addressDetail",
+    "pages/groupProduct/groupProduct",
+    "pages/confirmOrder/confirmOrder",
+    "pages/allOrder/allOrder",
+    "pages/orderDetail/orderDetail",
+    "pages/logistics/logistics",
+    "pages/orderPayStatus/orderPayStatus",
+    "pages/showDetail/showDetail",
+    "pages/celebrityList/celebrityList",
+    "pages/celebrityAdd/celebrityAdd",
+    "pages/groupShoping/groupShoping",
+    "pages/groupDetail/groupDetail",
+    "pages/groupPin/groupPin",
+    "pages/index/index",
+    "pages/search/search",
+    "pages/serviceProgress/serviceProgress",
+    "pages/serviceProgress/writeOrder/writeOrder",
+    "pages/userCenter/myCoupon/myCoupon",
+    "pages/userCenter/userCenter",
+    "pages/userInfo/bindNewPhone/bindNewPhone",
+    "pages/userInfo/verify/verify"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#4FBF78",
+    "navigationBarTitleText": "集客多",
+    "navigationBarTextStyle": "black",
+    "backgroundColor": "#f6f6f6",
+    "navigationStyle": "default"
+  },
+  "networkTimeout": {
+    "request": 6000
+  },
+  "sitemapLocation": "sitemap.json"
+}

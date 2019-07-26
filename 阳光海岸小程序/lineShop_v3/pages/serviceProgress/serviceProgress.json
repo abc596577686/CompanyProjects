@@ -1,0 +1,7 @@
+{
+  "navigationBarTitleText": "售后进度",
+  "navigationBarBackgroundColor": "#fff",
+  "usingComponents": {
+    "loading": "/components/loading/loading"
+  }
+}

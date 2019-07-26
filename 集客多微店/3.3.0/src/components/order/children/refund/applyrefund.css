@@ -1,0 +1,220 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+img{
+    width: 100%;
+    height: 100%;
+    display: block;
+}
+
+/* 商品 */
+.product{
+    width: 100%;
+    padding: .597333rem;
+    background-color: #fff;
+    position: relative;
+}
+.product img{
+    width: 2.816rem;
+    height: 2.816rem;
+}
+.proName{
+    font-size: .554667rem;
+    color: #333333;
+    width: 11.434667rem;
+    height: 1.237333rem;
+    line-height: .64rem;
+    position: absolute;
+    top: .597333rem;
+    right: .597333rem;
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    word-break: break-all;
+}
+.proNum{
+    width: 4.266667rem;
+    height: .554667rem;
+    color: #999999;
+    font-size: .554667rem;
+    line-height: .554667rem;
+    position: absolute;
+    bottom: 1rem;
+    right: .597333rem;
+    text-align: right;
+}
+.service{
+    width: 100%;
+    height: 6.6rem;
+    background-color: #fff;
+    border-top: .384rem solid #DDDDDD;
+}
+.service > div{
+    width: 100%;
+    height: 2.048rem;
+    position: relative;
+    padding-top: .170667rem;
+}
+.botCover{
+    display: block;
+    width: 100%;
+    height: .05rem;
+    background-color: #999999;
+    opacity: .2;
+}
+.localsp{
+    width: 4.13333rem;
+    height: .597333rem;
+    line-height: .597333rem;
+    font-size: .554667rem;
+    color: #333333;
+    position: absolute;
+    left: .597333rem;
+    top: .768rem;
+}
+.localspRed{
+    width: 4.13333rem;
+    height: .597333rem;
+    line-height: .597333rem;
+    font-size: .554667rem;
+    color: #FB4A4C;
+    position: absolute;
+    left: 3.5rem;
+    top: .768rem;
+}
+/* 下拉框 */
+.typeclc{
+    width: 7.2rem;
+    float: right;
+    height: 2.048rem;
+    background-color: #fff;
+    text-align: center;
+}
+.maxRefund{
+    width: 100%;
+    height: 1.493333rem;
+    line-height: 1.493333rem;
+    text-indent: .597333rem;
+    font-size: .512rem;
+    color: #999999;
+    background-color: #DCDCDC;
+    /* opacity: .2; */
+}
+.refundslid{
+    width: 100%;
+    height: 10.197333rem;
+    background-color: #fff;
+    padding: .597333rem;
+    position: relative;
+}
+.slida{
+    width: 3.413333rem;
+    height: .554667rem;
+    line-height: .554667rem;
+    font-size: .6rem;
+    color: #333333;
+    margin-top: 0.1rem;
+}
+#respTextarea{
+    width: 11.946667rem;
+    height: 3.413333rem;
+    font-size: .6rem;
+    line-height: .8rem;
+    color: #333333; 
+    position: absolute;
+    top: .597333rem;
+    right: .597333rem;
+    resize:none;
+    padding: 0.1rem;
+}
+.uploadmoudle{
+    /* width: 3.072rem; */
+    /* height: 3.072rem; */
+    width: 100%;
+    height: 3.2rem;
+    position: relative;
+    bottom: -4.293333rem;
+    font-size: 0;
+}
+.updiv{
+    display: inline-block;
+    width: 3.072rem;
+    height: 3.072rem;
+    /* margin-left: .597333rem; */
+    border: .042667rem solid #A0A0A0;
+    position: relative;
+}
+.photoimg{
+    width: .981333rem;
+    height: .810667rem;
+    position: absolute;
+    top: .5rem;
+    left: 1rem;
+}
+.phtxt1{
+    width: 100%;
+    height: .426667rem;
+    font-size: .426667rem;
+    text-align: center;
+    line-height: .426667rem;
+    position: absolute;
+    top: 1.6rem;
+    color: #A0A0A0;
+}
+.phtxt2{
+    width: 100%;
+    height: .426667rem;
+    font-size: .426667rem;
+    text-align: center;
+    line-height: .426667rem;
+    position: absolute;
+    top: 2.28rem;
+    color: #A0A0A0;
+}
+.getApply{
+    width: 100%;
+    height: 2.56rem;
+    background-color: #fff;
+    position: fixed;
+    bottom: 0;
+}
+.applyBtn{
+    width: 14.634667rem;
+    height: 1.578667rem;
+    background-color: #FB4A4C;
+    text-align: center;
+    line-height: 1.578667rem;
+    color: #fff;
+    font-size: .725333rem;
+    position: absolute;
+    top: .512rem;
+    left: .682667rem;
+    border-radius: .213333rem;
+}
+.updiv > input{
+    display: block;
+    width: 2.56rem;
+    height: 2.56rem;
+    position: absolute;
+    top: .128rem;
+    left: .128rem;
+    z-index: 9999;
+    background-color: black;
+    opacity: 0;
+}
+#file1{
+    /* opacity: 0; */
+}
+#file2{
+    /* opacity: 0; */
+}
+#file3{
+    /* opacity: 0; */
+}
+.im{
+    width: 100%;
+    height: 100%;
+    display: block;
+}

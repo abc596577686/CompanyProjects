@@ -1,0 +1,7 @@
+{
+  "navigationBarBackgroundColor": "#fff",
+  "usingComponents": {
+    "goodsTwoColumns": "/components/goodsTwoColumns/goodsTwoColumns",
+    "loading": "/components/loading/loading"
+  }
+}

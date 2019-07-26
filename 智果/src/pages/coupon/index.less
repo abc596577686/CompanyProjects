@@ -1,0 +1,172 @@
+@charset "UTF-8";
+.coupon_container{
+  background-color: #f0f0f0;
+  .coupon_content{
+    margin: 15px auto;
+    width:1220px;
+    border-radius: 20px 20px 0 0 ;
+    background-color: #fff;
+    min-height:800px;
+    .coupon_title{
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      padding:20px;
+      padding-bottom:0;
+      border-bottom: 1px solid #ddd;
+      .left_handle{
+        ul{
+          margin-bottom:0!important;
+          li{
+            float: left;
+            border-bottom: 2px solid transparent;
+            margin-right:5px;
+            margin-bottom:-1px;
+            &.active{
+              a{
+                color: #ec641f!important;
+              }
+              border-bottom: 2px solid #ec641f;
+            }
+            a{
+              padding: 10px;
+              font-size: 14px;
+              display: block;
+            }
+          }
+        }
+      }
+      .right_handle{
+        display: flex;
+        align-items: center;
+        a{
+          margin-left:15px;
+          &.active{
+            color: #ec641f!important;
+          }
+        }
+      }
+    }
+    .coupon_list{
+      ul{
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        li{
+          //float: left;
+          width:30%;
+          margin:20px;
+          background-color: #f7f7f7;
+          padding:15px;
+          padding-bottom:5px;
+          position: relative;
+          &:after,&:before{
+            content: '';
+            background-color: #fff;
+            width:20px;
+            height:20px;
+            position: absolute;
+            top:50%;
+            margin-top:-10px;
+            border-radius: 50%;
+          }
+          &.colorRed{
+            color: red;
+          }
+          &:after{
+            left:-10px;
+          }
+          &:before{
+            right:-10px;
+          }
+          .coupon-top{
+            display: flex;
+            flex-direction:row;
+            justify-content: space-between;
+            padding-bottom:10px;
+            border-bottom:1px dashed #000000;
+            .c-left{
+              .a{
+                font-size:26px;
+              }
+              .b{
+                font-size:50px;
+              }
+
+            }
+            .c-center{
+              padding-top:22px;
+              .c-c-top{
+                display: flex;
+                align-items: center;
+                margin-bottom:10px;
+              }
+              .tags{
+                color: #fff;
+                font-size:10px;
+                margin-right:10px;
+                padding:1px 3px;
+                background-color: red;
+                -webkit-border-radius: 2px;
+                -moz-border-radius: 2px;
+                border-radius: 2px;
+                vertical-align: middle;
+              }
+              .info{
+                font-size:12px;
+              }
+            }
+            .c-right{
+              display: flex;
+              align-items: flex-end;
+              .btn{
+                font-size:10px;
+                padding:3px 5px;
+                border-radius: 3px;
+                border:1px solid #000;
+              }
+            }
+          }
+          .coupon-bottom{
+            .bottom{
+              display: flex;
+              justify-content: flex-end;
+              align-items: center;
+              padding:3px 0;
+              cursor: pointer;
+              span{
+                margin-right:10px;
+                font-size:12px;
+              }
+            }
+            .bottom-hidden{
+              position: relative;
+              line-height: 20px;
+              max-height: 40px;
+              overflow: hidden;
+            }
+            .bottom-hidden::after{
+              content: "..."; position: absolute; bottom: 0; right: 0; padding-left: 40px;
+              background: -webkit-linear-gradient(left, transparent, #fff 55%);
+              background: -o-linear-gradient(right, transparent, #fff 55%);
+              background: -moz-linear-gradient(right, transparent, #fff 55%);
+              background: linear-gradient(to right, transparent, #fff 55%);
+            }//兼容
+
+            .bottom-hidden{
+              //border-top:1px dashed #000000;
+              overflow: hidden;
+              text-overflow: ellipsis;
+              display: -webkit-box;
+              -webkit-line-clamp: 2;
+              -webkit-box-orient: vertical;
+            }
+            .hidden{
+              display: none;
+            }
+          }
+        }
+      }
+    }
+  }
+}

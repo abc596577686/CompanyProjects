@@ -1,0 +1,10 @@
+{
+  "navigationBarTitleText": "购物车",
+  "backgroundTextStyle": "dark",
+  "backgroundColor": "#f0f0f0",
+  "usingComponents": {
+    "loading": "/components/loading/loading",
+    "timeout": "/components/timeout/timeout"
+  },
+  "enablePullDownRefresh": true
+}

@@ -1,0 +1,3 @@
+<!--components/toast/toast.wxml-->
+
+<view class='toast'>{{message}}</view>

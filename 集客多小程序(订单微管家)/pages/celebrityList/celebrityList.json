@@ -1,0 +1,7 @@
+{
+  "navigationBarTitleText": "实名认证",
+  "usingComponents": {
+    "btn": "/components/btn/btn",
+    "loading": "/components/loading/loading"
+  }
+}

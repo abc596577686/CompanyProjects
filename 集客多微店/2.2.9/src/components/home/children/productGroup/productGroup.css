@@ -1,0 +1,115 @@
+.head_top {
+    background-color: #fff;
+    /*@include wh(100%, 1.95rem);*/
+    width: 100%;
+    height: 1.95rem;
+}
+
+.search_none {
+    margin: 0 auto;
+    /*@include font(0.5rem, 1.75rem);*/
+    font-size: .5rem;
+    line-height: 1.75rem;
+    color: #999;
+    background-color: #fff;
+    text-align: center;
+    margin-top: 0.125rem;
+}
+
+.sc-goods-lis {
+    font-size: 0.52rem;
+    padding: 0.213rem 0;
+    list-style: none;
+    margin: 0;
+}
+
+.clearfix {
+    zoom: 1;
+}
+
+.goods-card {
+    position: relative;
+    padding: 0.213rem 0 0.213rem 0.213rem;
+    border: 1px solid #eee;
+    background: #fff;
+    width: 50%;
+    float: left;
+}
+
+.link {
+    display: block;
+    background: #fff;
+    margin: 0 0.1rem;
+}
+
+.photo-block img {
+    max-width: 80%;
+    margin-left: 10%;
+    height: 6rem;
+}
+
+.loader_more {
+    font-size: .6rem;
+    line-height: 3;
+    text-align: center;
+    color: #999;
+}
+
+.min-height-price {
+    margin-bottom: 0.43rem;
+    display: block;
+}
+
+.goods-price>span {
+    font-style: normal;
+    color: #ff6600;
+    font-size: 0.6rem;
+}
+
+.clearfix:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+.btn1 {
+    position: absolute;
+    background-image: url(../../../../common/images/icon_gouwuche.png);
+    right: .5rem;
+    bottom: 0.68rem;
+    height: 0.9rem;
+    width: 1rem;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.empty_data {
+    font-size: .5rem;
+    color: #666;
+    text-align: center;
+    line-height: 2rem;
+}
+
+.return_top {
+    position: fixed;
+    bottom: 3rem;
+    right: 0;
+    z-index: 9999999;
+    text-align: center;
+    padding: .8rem;
+}
+.return_top .back_top_svg {
+    width: 1.5rem;
+    height: 1.5rem;
+}
+
+.goods-title {
+    font-size: 0.6rem;
+    min-height: 1.56rem;
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    /* autoprefixer: off */
+    -webkit-box-orient: vertical;
+    /* autoprefixer: on */
+}

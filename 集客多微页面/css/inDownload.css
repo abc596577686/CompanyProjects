@@ -1,0 +1,80 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+img{
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+.cat_seller{
+    width: 100%;
+    height: 15rem;
+    background-image: url('../img/dz2x.png');
+    background-size: 12rem 12rem !important;
+    text-align: center;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+.pageim{
+    font-size: 0;
+    width: 100%;
+    height: 26.68rem;
+    background-image: url('../img/headimg11.png');
+    background-size: 100% 100%;
+}
+.headimg{
+    width: 2.4rem;
+    height: 2.4rem;
+    position: absolute;
+    top: 3rem;
+    left: 6.2rem;
+}
+.toptxt{
+    width: 100%;
+    height: .56rem;
+    text-align: center;
+    position: absolute;
+    top: 6.52rem;
+    color: #333;
+    /* z-index: 999; */
+    font-size: .56rem;
+    font-weight: bold;
+}
+.goimg{
+    width: 11.96rem;
+    height: 7.36rem;
+    position: absolute;
+    left: 1.55rem;
+    top: 10.4rem;
+}
+.already{
+    width: 100%;
+    height: .72rem;
+    color: #A07931;
+    font-size: .72rem;
+    position: absolute;
+    top: 13.2rem;
+    text-align: center;
+    font-weight: bold;
+}
+.bottom_download{
+    width: 9.08rem;
+    height: 1.4rem;
+    background-color: #F84C51;
+    color: #fff;
+    font-size: .56rem;
+    text-align: center;
+    border-radius: .2rem;
+    position: absolute;
+    left: 2.96rem;
+    top: 14.9rem;
+}
+.bottom_download a{
+    width: 9.08rem;
+    height: 1.4rem;
+    border-radius: .2rem;
+    text-decoration: none;
+    line-height:  1.4rem;
+    color: #fff;
+}

@@ -1,0 +1,662 @@
+.containerrr{
+    background-color: #fcfcfc;
+    min-height: calc(100vh);
+    .user{
+      // width: 20px;
+      // height: 20px;
+      // position: absolute;
+      // left: 0;
+      // top: 0;
+      // background-color: #DDD!important;
+      // svg{
+      //   width: 20px;
+      //   height: 20px;
+      //   margin-top: 8px;
+      // }
+      background: url('../../resource/assets/images/user-icon.png') no-repeat;
+      background-position: 0 -15px;
+      display: block;
+      width: 20px;
+      height: 20px;
+      position: absolute;
+      left: 10px;
+      top: 9px;
+    }
+  .warntit{
+    height: 30px;
+    line-height: 30px;
+    background-color: #ffffcc;
+    text-align: center;
+    color: #ff9933;
+    border-bottom: 1px solid #e1e1e1;
+  }
+  .login_wrap {
+    // background-color:#B03060;
+    // padding: 63px 0 0;
+    padding-top: 3.6%;
+    position: relative;
+    // padding-bottom: 20px;
+    // height: calc(80vh);
+    height: 475px;
+    background-image: url('../../resource/assets/images/login-banner.jpg');
+    background-size: 990px 100%;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-color: #E31939;
+    // padding-left: 10%;
+    .wrap {
+      width: 1140px;
+      margin: 0 auto;
+      .left_banner {
+        float: left;
+        margin-top: 45px;
+        width: 510px;
+        img {
+          width: 100%;
+          vertical-align: middle;
+        }
+      }
+      .loginBox,.codebox{
+        position: relative;
+        float: right;
+        width: 387px;
+        height: 356px;
+        padding: 103px 29px 0;
+        background-color: #fff;
+        .error_tips {
+          position: absolute;
+          top: 74px;
+          left: 29px;
+          width: 328px;
+          height: 24px;
+          overflow: hidden;
+          padding: 0 10px 0 36px;
+          border: 1px solid #e5debc;
+          border-radius: 2px;
+          background: #fff7d1 url('../../resource/assets/images/login_new.png') no-repeat -324px -153px;
+          line-height: 23px;
+          color: #999;
+        }
+        .clearfix {
+          h3 {
+            float: left;
+            font-size: 14px;
+            color: #666;
+            font-weight: bold;
+            line-height: 30px;
+          }
+          .regist_new{
+            float: right;
+            line-height: 30px;
+          }
+        }
+        .login_form{
+          position: relative;
+        }
+        .form_item_wrap{
+          width: 330px;
+          margin: 0 auto;
+        }
+        .form_item{
+          position: relative;
+          z-index: 100;
+          height: 40px;
+          margin-bottom: 12px;
+          padding: 5px 18px;
+          border: 1px solid #dddddd;
+          background: #FFF;
+          line-height: 24px;
+
+          &.cur{
+            z-index: 101;
+            // border: 1px solid #aaa;
+          }
+          label{
+            display: inline-block;
+            width: 35px;
+            vertical-align: middle;
+            color: #666;
+            background-color: #DDD!important;
+            &.user_ico{
+              position: absolute;
+              left: -1px;
+              top: 0;
+              width: 40px;
+              height: 40px;
+              background: url('../../resource/assets/images/icon_me2.png') ;
+              background-size: 50% 50%;
+              background-repeat: no-repeat;
+              background-position: center center;
+            }
+            &.ecode_ico{
+              position: absolute;
+              left: -1px;
+              top: 0;
+              width: 40px;
+              height: 40px;
+              background: url('../../resource/assets/images/icon_daifahuo@2x.png') ;
+              background-size: 50% 50%;
+              background-repeat: no-repeat;
+              background-position: center center;
+            }
+            &.yzcode_ico{
+              position: absolute;
+              left: -1px;
+              top: 0;
+              width: 40px;
+              height: 40px;
+              background: url('../../resource/assets/images/icon_type2.png') ;
+              background-size: 50% 50%;
+              background-repeat: no-repeat;
+              background-position: center center;
+            }
+          }
+          input{
+            width: 230px;
+            height: 24px;
+            margin-left: 45px;
+            border: 0 none;
+            line-height: 24px;
+            vertical-align: middle;
+            font-family: "Microsoft YaHei";
+            font-size: 14px;
+            outline: none;
+          }
+          .getCode{
+            position: absolute;
+            right: 0;
+            top: 0;
+            padding: 14px 18px;
+            height: 52px;
+            line-height: 24px;
+            z-index: 110;
+            background-color: #fdbb36;
+            color: #fff;
+            &:hover{
+              background-color: #FDB51B;
+              cursor: pointer;
+            }
+          }
+        }
+        .login_btn{
+          width: 330px;
+          height: 35px;
+          border: 0 none;
+          border-radius: 3px;
+          background: #E31939;
+          font-size: 16px;
+          color: #FFF;
+          cursor: pointer;
+          text-shadow: 1px 1px 1px #ff7373;
+          font-family: "Microsoft YaHei";
+          line-height: 35px;
+        }
+
+        .login_pc,
+        .dimension_code {
+          display: block;
+          
+        }
+        .login_code,
+        .switch_pc {
+          display: none;
+        }
+        &.box_login_switch {
+          .login_pc,
+          .dimension_code {
+            display: none;
+          }
+          .login_code,
+          .switch_pc {
+            display: block;
+          }
+        }
+        .join_login_wrap{
+          // width: 400px;
+          width: 387px;
+          position: relative;
+          left: -29px;
+          border-radius: 5px;
+          z-index: 10;
+          padding-bottom: 0px;
+          background-color: #dddddd;
+          padding-left: 35px;
+          padding-right: 35px;
+          p{
+            padding: 10px 0 3px 0;
+            color: #666;
+            display: inline-block;
+            width: 50%;
+          }
+          .zc{
+            text-align: right;
+            color: #ff3c3c;
+          }
+          .account_list{
+            float: left;
+            width: 230px;
+            li{
+              float: left;
+              margin: 0 20px 0 0;
+              a{
+                display: inline-block;
+                height: 35px;
+                font-size: 12px;
+                line-height: 35px;
+                width: 160px
+              }
+            }
+          }
+        }
+        .login_code{
+          .login_code_title{
+            color: #666;
+            font-size: 14px;
+            font-weight: bold;
+            line-height: 16px;
+            text-align: center;
+            em{
+              display: inline-block;
+              color: #ff3c3c;
+            }
+          }
+          .login_code_pic{
+            position: relative;
+            width: 180px;
+            height: 180px;
+            margin: 20px auto 0;
+            border: 1px solid #dedede;
+            .picture_code{
+              width: 180px;
+              height: 180px;
+              img{
+                width: 100%;
+              }
+            }
+            .shade{
+              display: none;
+              position: absolute;
+              top: 0;
+              left: 0;
+              width: 180px;
+              height: 180px;
+              text-align: center;
+              background-color: #fff;
+              opacity: .8;
+              filter: alpha(opacity=80);
+            }
+            .meg_error{
+              display: none;
+              position: absolute;
+              top: 0;
+              left: 0;
+              width: 180px;
+              height: 180px;
+              text-align: center;
+              h5{
+                margin: 0;
+                padding: 58px 0 15px;
+                font-weight: normal;
+              }
+              .refresh_btn{
+                display: inline-block;
+                width: 110px;
+                height: 35px;
+                background-color: #ff3c3c;
+                border-radius: 4px;
+                color: #fff;
+                text-align: center;
+                line-height: 35px;
+              }
+            }
+          }
+          .login_code_success{
+            display: none;
+            padding-bottom: 65px;
+            color: #666;
+            text-align: center;
+            p{
+              padding-top: 20px;
+              line-height: 14px;
+            }
+            h5{
+              margin: 0;
+              padding-top: 10px;
+              font-size: 14px;
+              font-weight: normal;
+              line-height: 18px;
+            }
+          }
+          .login_code_handle{
+            padding: 20px 0 50px;
+            color: #666;
+            text-align: center;
+            .refresh{
+              display: inline-block;
+              color: #666;
+            }
+          }
+
+
+        }
+        .login_switch{
+          position: absolute;
+          right: 0;
+          bottom: -3px;
+          em{
+            display: inline-block;
+            _display: none;
+            display: none\9;
+            position: absolute;
+            right: 20px;
+            bottom: 20px;
+            width: 0;
+            height: 0;
+            overflow: hidden;
+            border: 43px solid transparent;
+            border-right-color: #fff;
+            transform: rotate(46deg);
+            -ms-transform: rotate(46deg);
+            -moz-transform: rotate(46deg);
+            -webkit-transform: rotate(46deg);
+            -o-transform: rotate(46deg);
+          }
+          .bind{
+            display: block;
+            width: 62px;
+            height: 62px;
+            cursor: pointer;
+            &.switch_pc{
+              background: url('../../resource/assets/images/codeSwich.png') no-repeat 0 0;
+              &:hover{
+                background: url('../../resource/assets/images/codeSwich.png') no-repeat 0 -88px;
+              }
+            }
+            &.dimension_code{
+              background: url('../../resource/assets/images/codeSwich.png') no-repeat -88px 0;
+              &:hover{
+                background: url('../../resource/assets/images/codeSwich.png') no-repeat -88px -88px;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  .footerr{
+    width: 100%;
+    height: calc(10vh);
+    // background-color: #303030;
+    // position: absolute;
+    // bottom: 0;
+    color: #333;
+    text-align: center;
+    line-height: calc(10vh);
+    // vertical-align: middle;
+    font-size: 12px;
+  }
+  .showpage{
+    display: block;
+  }
+  .hidepage{
+    display: none;
+  }
+  .codebox{
+    // height: 378px;
+    height: 331px;
+  }
+  .checkbox{
+    // width: 328px;
+    width: 230px;
+    height: 70px;
+    // background-color: #000;
+    position: absolute;
+    top: 0px;
+    border-bottom: 2px solid #D5D5D5;
+  }
+  .checkbox > div{
+    font-size: 15px;
+    width: 100px;
+    height: 70px;
+    display: inline-block;
+    // border-bottom: 3px solid #ff3c3c;
+    text-align: center;
+    line-height: 70px;
+    font-weight: bold;
+    color: grey;
+  }
+  .kc{
+    margin-left: 30px;
+  }
+  .silde1{
+    border-bottom: 3px solid #ff3c3c;
+    color: #000!important;
+    z-index: 2;
+    cursor: pointer;
+  }
+  .slide2{
+    // border-bottom: 3px solid #EEEEEE;
+    display: none;
+    cursor: pointer;
+  }
+  .ewCode{
+    display: inline-block;
+    width: 230px;
+    height: 30px;
+    margin-bottom: 14px;
+    // background-color: #B03060
+    position: relative;
+  }
+  .ewCodeimg{
+    margin-left: 12px;
+    display: inline-block;
+    width: 80px;
+    height: 30px;
+    margin-bottom: 14px;
+    position: absolute;
+    // background-color: #B03060
+  }
+  .ewcodein{
+    position: absolute;
+    top: 0;
+    left: 0;
+    border: none;
+    width: 225px;
+    height: 30px;
+    text-align: left;
+    // border: 1px solid #dedede;
+    border: 1px solid #f0f0f0;
+    text-indent: 58px;
+  }
+  .codeimg{
+    // display: inline-block;
+    position: absolute;
+    left: 0;
+    top: 5px;
+    width: 100%;
+    height: 100%;
+  }
+  .phonein{
+    width: 324px;
+    height: 30px;
+    // background-color: #fff;
+    line-height: 30px;
+    //
+    position: relative;
+    text-align: left;
+  }
+  .eecode{
+    width: 200px;
+    // text-indent: 20px;
+    border: 1px solid #f0f0f0;
+    // padding-left: 25px!important;
+  }
+  input{
+    border: none;
+  }
+  .getcodebtn{
+    border-radius: 2px;
+    border: none;
+    color: #fff;
+    font-size: 12px;
+    background-color: #E31939;
+    width: 93px;
+    height: 39px;
+    position: absolute;
+    font-weight: bold;
+    text-align: center;
+  }
+  .codein{
+    width: 250px;
+    height: 30px;
+    line-height: 30px;
+    position: relative;
+    text-align: left;
+  }
+  .gcode{
+    width: 150px!important;
+    border: 1px solid #f0f0f0;
+  }
+  .linechen{
+    top: 82px;
+  }
+  .login_btn1{
+    width: 330px;
+    height: 35px;
+    border: 0 none;
+    border-radius: 3px;
+    background: #E31939;
+    font-size: 16px;
+    color: #FFF;
+    cursor: pointer;
+    text-shadow: 1px 1px 1px #ff7373;
+    font-family: "Microsoft YaHei";
+    line-height: 35px;
+    position: relative;
+  }
+
+  .ewCode1{
+    display: inline-block;
+    width: 230px;
+    height: 30px;
+    margin-bottom: 14px;
+    // background-color: #B03060
+    position: absolute;
+  }
+  .ewcodein1{
+    position: absolute;
+    top: 219px;
+    left: 29px;
+    border: none;
+    width: 238px;
+    height: 40px;
+    text-align: left;
+    border: 1px solid #dedede;
+    text-indent: 21px;
+    background-color: #fff;
+    border: 1px solid #DDD;
+  }
+
+  .ewCodeimg1{
+    margin-left: 18px;
+    display: inline-block;
+    width: 80px;
+    height: 30px;
+    margin-bottom: 14px;
+    position: absolute;
+    top: 3px;
+    left: 200px;
+  }
+  .midcover{
+    width: 327px;
+    height: 3px;
+    background-color: #D5D5D5;
+    position: absolute;
+    top: 67px;
+    z-index: 1;
+  }
+  .oo{
+    width: 236px!important;
+    display: inline-block;
+  }
+  .ecode{
+    width: 160px!important;
+  }
+  // .user{
+  //   width: 40px;
+  //   height: 40px;
+  //   position: absolute;
+  //   left: 0;
+  //   top: 0;
+  //   // background-color: #DDD!important;
+  // }
+  // .user :first-child{
+  //   width: 20px;
+  //   height: 20px;
+  //   margin-top: 8px;
+  //   margin-left: 10px;
+  // }
+  .anticon-user ::before{
+    width: 20px;
+    height: 20px;
+    margin-top: 8px;
+  }
+  .lock{
+    display: block;
+    width: 20px;
+    height: 20px;
+    position: absolute;
+    left: 10px;
+    top: 9px;
+    background: url('../../resource/assets/images/user-icon.png') no-repeat;
+    background-position: 0 -36px;
+  }
+  // .lock :first-child{
+  //   width: 20px;
+  //   height: 20px;
+  //   margin-top: 8px;
+  //   margin-left: 10px;
+  // }
+  .anticon-lock ::before{
+    width: 20px;
+    height: 20px;
+    margin-top: 8px;
+  }
+  .yzform{
+    // width: 40px;
+    // height: 40px;
+    // position: absolute;
+    // left: 0;
+    // top: 0;
+    // background-color: #DDD!important;
+    display: block;
+    width: 20px;
+    height: 20px;
+    position: absolute;
+    left: 10px;
+    top: 9px;
+    background: url('../../resource/assets/images/user-icon.png') no-repeat;
+    background-position: 0 -57px;
+  }
+  .yzform :first-child{
+    width: 20px;
+    height: 20px;
+    margin-top: 8px;
+    margin-left: 10px;
+  }
+  .anticon-yzform ::before{
+    width: 20px;
+    height: 20px;
+    margin-top: 8px;
+  }
+}
+.regist{
+  position: absolute;
+  top: 26px;
+  right: 27px;
+  font-size: 12px;
+  color: #E31939!important;
+}
+.forget{
+  color: #E31939!important;
+}

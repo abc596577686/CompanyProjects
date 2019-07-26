@@ -1,0 +1,226 @@
+.control-main{
+  min-height:130vh;
+  margin-top:20px;
+  .editbtn{
+    cursor: pointer;
+  }
+  .user-left{
+    width: 209px;
+    float: left;
+    overflow: hidden;
+    background-color: #fbfbfb;
+    min-height:100vh;
+    height:auto;
+    .sideNav{
+      width: 209px;
+      height: 183px;
+      display: inline-block;
+      overflow: hidden;
+      .userName{
+        width: 209px;
+        height: 40px;
+        line-height: 40px;
+        background-color: #E31939;
+        font-size: 14px;
+        color: #fff;
+        padding:0 10px;
+        margin-bottom:0;
+
+      }
+      .userInfo{
+        width: 209px;
+        height: 130px;
+        padding-top: 13px;
+        background: url(../../resource/assets/images/userinfo_bg.png) no-repeat;
+        overflow: hidden;
+        .myInfo{
+          width: 209px;
+          height: 80px;
+          margin-bottom: 12px;
+          float: left;
+          .photo{
+            width: 80px;
+            height: 80px;
+            margin: 0 20px 0 15px;
+            border-radius: 50%;
+            float: left;
+            display: inline-block;
+            overflow: hidden;
+            position: relative;
+            top: 0;
+            left: 0;
+            z-index:99;
+            .headImg{
+              background: url("../../resource/assets/images/people.gif") no-repeat;
+              width:100%;
+              height:100%;
+              position: absolute;
+              top:0;
+              left:0;
+              z-index:101;
+            }
+            img{
+              width:100%;
+              height:100%;
+              position: absolute;
+              top:0;
+              left:0;
+              z-index:101;
+            }
+            .mask{
+              background: url("../../resource/assets/images/mask.png") no-repeat;
+              width:100%;
+              height:100%;
+              top:0;
+              left:0;
+              z-index:102;
+              position: absolute;
+            }
+          }
+          .info-op{
+            width: 80px;
+            height: 80px;
+            float: left;
+            display: inline-block;
+            overflow: hidden;
+            li{
+              width: 80px;
+              height: 25px;
+              line-height: 25px;
+              i{
+                width: 16px;
+                height: 16px;
+                display: inline-block;
+                vertical-align: middle;
+                background: url("../../resource/assets/images/user-center.png") no-repeat;
+              }
+              span{
+                padding-left: 5px;
+                vertical-align: middle;
+                color: #999;
+                font-size:13px;
+              }
+              &.info-op1{
+                i{
+                  background-position: 0px 0px;
+                }
+              }
+              &.info-op2{
+                i{
+                  background-position: 0px -25px;
+                }
+              }
+              &.info-op3{
+                i{
+                  background-position: 0px -200px;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+    .navList{
+      padding-bottom:50px;
+      .func{
+        margin-left: 30px;
+        clear: both;
+        height: auto;
+        .title{
+          height: 22px;
+          width: 168px;
+          margin: 11px 0;
+          i{
+            margin-top: 2px;
+            margin-right: 11px;
+            display: inline-block;
+            vertical-align: middle;
+            background: url('../../resource/assets/images/user-center.png') no-repeat;
+          }
+          span{
+            font-size: 15px;
+            color: #333;
+            display: inline-block;
+            vertical-align: middle;
+          }
+        }
+        &.func1{
+          .title{
+            i{
+              width: 21px;
+              height: 17px;
+              background-position: -68px -236px;
+            }
+          }
+        }
+        &.func2{
+          .title{
+            i{
+              margin-right: 12px;
+              width: 19px;
+              height: 17px;
+              background-position: 0px -236px;
+            }
+          }
+        }
+        &.func3{
+          .title{
+            i{
+              margin-right: 12px;
+              width: 19px;
+              height: 17px;
+              background-position: -34px -237px;
+            }
+          }
+        }
+        .child-item{
+          width: 109px;
+          height: 30px;
+          display: block;
+          padding: 0 28px 0 31px;
+          line-height: 30px;
+          cursor: pointer;
+          text-decoration: none;
+          box-sizing: content-box;
+          span{
+            float: left;
+            display: inline-block;
+            font-size:12px;
+            &.active{
+              color:#e31436;
+            }
+          }
+          i{
+            width: 5px;
+            height: 9px;
+            margin-top: 10px;
+            float: right;
+            background: url('../../resource/assets/images/user-center.png') no-repeat;
+            background-position: -35px -200px;
+          }
+        }
+      }
+
+    }
+  }
+  .user-right{
+    overflow: hidden;
+    padding-left:30px;
+    .right-title{
+      height:40px;
+      margin-bottom:15px;
+      font-size: 16px;
+      color: #3C3C3C;
+      width:100px;
+      text-align: center;
+      border-bottom: 2px #ff6600 solid;
+    }
+    .right-main{
+      //max-height:100vh;
+      //overflow-y: scroll;
+      //&::-webkit-scrollbar {
+      //  display: none;
+      //}
+    }
+  }
+}

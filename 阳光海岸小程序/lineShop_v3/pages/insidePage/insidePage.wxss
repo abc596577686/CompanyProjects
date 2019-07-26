@@ -1,0 +1,19 @@
+/* pages/insidePage/insidePage.wxss */
+.empty {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 400rpx;
+}
+
+.emptyInfo {
+  color: #999;
+  font-size: 26rpx;
+}
+
+.emptyImg {
+  width: 160rpx;
+  /* height: 100rpx; */
+  margin-bottom: 50rpx;
+}

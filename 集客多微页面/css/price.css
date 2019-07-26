@@ -1,0 +1,272 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+/* 默认图片撑满 */
+img{
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+/* 过渡层 */
+.coversp{
+    display: block;
+    width: 100%;
+    height: .4rem;
+    background-color: lightgrey;
+    opacity: .4;
+}
+/* 顶部下载框 */
+.downloadContainer {
+    width: 100%;
+    height: 2rem;
+    /* padding: 0.4rem; */
+    /* padding-top: .6rem; */
+    background: #333;
+    color: #fff;
+    font-size: 0.55rem;
+}
+.box{
+    overflow: hidden;
+}
+.logo{
+    width: 1.11rem;
+    height: 1.11rem;
+    float: left;
+    margin-top: .45rem;
+    margin-left: .45rem;
+}
+.text{
+    margin-left: 0.3rem;
+    color: #fff;
+    margin-top: 0.15rem;
+    display: inline-block;
+    margin-top: .6rem;
+    
+}
+.close{
+    float: right;
+    height: 1.11rem;
+    line-height: 1.11rem;
+    color: #fff;
+    font-size: 14px;
+    padding: 0 .5rem;
+}
+.downloadBtn{
+    display: inline-block;
+    float: right;
+    background: #FDD754;
+    color: #333;
+    font-size: 0.51rem;
+    padding: 0 0.25rem;
+    height: 1.11rem;
+    line-height: 1.11rem;
+    border-radius: 4px;
+    margin-right: .7rem;
+    margin-top: .45rem;
+    text-decoration: none;
+}
+/* 商品展示 */
+.productShow{
+    width: 100%;
+    height: 3.84rem;
+    background-color: #fff;
+    position: relative;
+}
+.proImg{
+    width: 2.32rem;
+    height: 2.8rem;
+    position: absolute;
+    left: .8rem;
+    top: .52rem;
+    /* background-color: #999999; */
+}
+.proName{
+    position: absolute;
+    right: .44rem;
+    top: .64rem;
+    width: 10.48rem;
+    height: 1.12rem;
+    line-height: .57rem;
+    font-size: .56rem;
+    color: #333333;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    overflow: hidden;
+}
+/* 库存 */
+.Inventory{
+    width: 2.44rem;
+    height: .68rem;
+    /* background-color: #999999; */
+    position: absolute;
+    left: 4.08rem;
+    bottom: .55rem;
+}
+.numTip{
+    color: #FE4846;
+    font-size: .5rem;
+    line-height: .68rem;
+    width: 3.56rem;
+    height: .68rem;
+    position: absolute;
+    z-index: 70;
+    top: 0;
+    left: 1.4rem;
+}
+/* 邀请好友 */
+.invite{
+    width: 100%;
+    height: 7.12rem;
+    /* background-color: #fff; */
+    position: relative;
+}
+.inviteTip{
+    width: 100%;
+    height: .52rem;
+    color: #666666;
+    font-size: .52rem;
+}
+.littleKi{
+    width: 2rem;
+    height: .7rem;
+    background-color: #FB4A4C;
+    text-align: center;
+    line-height: .7rem;
+    font-size: .5rem;
+    border-radius: .32rem;
+    display: block;
+    color: #fff;
+    position: absolute;
+    top: -.4rem;
+    left: 1.6rem;
+}
+.inviteTip >div{
+    font-size: .52rem;
+    display: block;
+    width: 13.2rem;
+    height: 1.1rem;
+    line-height: .7rem;
+    position: absolute;
+    left: 1rem;
+    top: .31rem;
+}
+.inviteCirc{
+    display: block;
+    width: .2rem;
+    height: .2rem;
+    border-radius: 50%;
+    background-color: #999999;
+    position: absolute;
+    left: .52rem;
+    top: .5rem;
+}
+.peoImg{
+    width: 100%;
+    height: 2.4rem;
+    background-color: #fff;
+    position: relative;
+    top: 1.7rem;
+}
+.peoinfoImg{
+    width: 2.4rem;
+    height: 2.4rem;
+    float: left;
+    margin-left: .48rem;
+    border-radius: 50%;
+    overflow: hidden;
+}
+.bottomImg{
+    width: 15rem;
+    height: 74.12rem;
+    background-color: #fff;
+}
+/* 底部二维码 */
+.twoDimensionalCode{
+    width: 100%;
+    height: 7.44rem;
+    background-color: #fff;
+    position: relative;
+    /* display: -webkit-flex;
+    display: flex;
+    justify-content: center;
+    flex-direction:row;
+    align-items:center; */
+}
+.dimensionImg{
+    width: 4.68rem;
+    height: 4.68rem;
+    position: absolute;
+    left: 5.2rem;
+    top: .88rem;
+    /* background-color: #333333; */
+}
+.twoDimensionalCode p{
+    width: 100%;
+    height: .6rem;
+    line-height: .6rem;
+    font-size: .6rem;
+    color: #666666;
+    font-family: Hiragino Sans GB;
+    position: absolute;
+    bottom: .8rem;
+    text-align: center;
+}
+/* 邀请好友按钮 */
+.invite button{
+    width: 13.76rem;
+    height: 1.52rem;
+    background-color: #FFD946;
+    border-radius: .32rem;
+    position: absolute;
+    left: .6rem;
+    bottom: .38rem;
+    border: none;
+}
+.covercnt{
+    width: 100%;
+    height: 100%;
+    background-color: #000;
+    opacity: .7;
+    z-index: 100;
+    position: fixed;
+    top: 0;
+    left: 0;
+}
+.covercntimg1{
+    /* display: none; */
+    width: 4rem;
+    height: 3.88rem;
+    position: fixed;
+    left: 5.52rem;
+    top: 5.96rem;
+    z-index: 101;
+}
+.covercntimg2{
+    /* display: none; */
+    width: 4rem;
+    height: 3.88rem;
+    position: fixed;
+    right: 3.16rem;
+    top: 1.76rem;
+    z-index: 101;
+}
+.cover{
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 100;
+    display: none;
+}
+/* loading圈 */
+.loading{
+    width: 4rem;
+    height: 4rem;
+    position: fixed;
+    top: 10rem;
+    left: 5.5rem;
+    z-index: 5;
+}

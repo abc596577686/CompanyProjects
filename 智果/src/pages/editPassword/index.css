@@ -1,0 +1,35 @@
+.pass_container {
+  margin: 50px auto;
+  width: 600px;
+  min-height: 100vh;
+}
+.pass_container .inputBox .item {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  padding: 10px;
+  align-items: center;
+  width: 400px;
+  margin-bottom: 20px;
+}
+.pass_container .inputBox .item .ipt {
+  width: 300px;
+}
+.pass_container .inputBox .item .spaner {
+  width: 80px;
+  margin-right: 10px;
+}
+.pass_container .inputBox .item .imgBox {
+  width: 80px;
+  height: 80px;
+  background-color: #f0f0f0;
+  margin-right: 40px;
+}
+.pass_container .inputBox .item .imgBox img {
+  width: 100%;
+  height: 100%;
+}
+.avatarImg {
+  width: 124px!important;
+  height: 124px!important;
+}

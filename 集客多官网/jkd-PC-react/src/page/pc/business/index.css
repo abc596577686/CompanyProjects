@@ -1,0 +1,303 @@
+* {
+  margin: 0;
+  padding: 0;
+  font-family: PingFangSC-Regular, sans-serif !important;
+}
+img {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+#mainPage {
+  background: #f5f5f5;
+}
+#mainPage .headimg {
+  cursor: pointer;
+}
+#mainPage header {
+  width: 100%;
+  margin: 0 auto;
+  background-color: #333;
+}
+#mainPage header .swiper-pagination-bullet {
+  border-radius: 0%;
+  width: 60px;
+}
+#mainPage header .swiper-container-horizontal > .swiper-pagination-bullets,
+#mainPage header .swiper-pagination-custom,
+#mainPage header .swiper-pagination-fraction {
+  bottom: 60px;
+}
+#mainPage header .swiper-pagination-bullet-active {
+  background: #ED9121;
+}
+#mainPage header .headerTitle {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 180px;
+  z-index: 10;
+}
+#mainPage header .headerTitle img {
+  width: 57px;
+  height: 57px;
+  float: left;
+  margin-left: 128px;
+  margin-top: 46px;
+}
+#mainPage header .headerTitle .hT_txt {
+  width: 120px;
+  height: 55px;
+  float: left;
+  margin-left: 18px;
+  margin-top: 48px;
+}
+#mainPage header .headerTitle .hT_txt1 {
+  width: 73px;
+  height: 31px;
+  font-size: 23px;
+  line-height: 31px;
+  font-weight: bold;
+  color: #fff;
+}
+#mainPage header .headerTitle .hT_txt2 {
+  width: 114px;
+  height: 21px;
+  font-size: 15px;
+  line-height: 21px;
+  color: #fff;
+}
+#mainPage header .headerTitles {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 80px;
+  background-color: #fff;
+  z-index: 20;
+}
+#mainPage header .headerTitles img {
+  width: 57px;
+  height: 57px;
+  float: left;
+  margin-left: 128px;
+  margin-top: 12px;
+}
+#mainPage header .headerTitles .hT_txt {
+  width: 120px;
+  height: 55px;
+  float: left;
+  margin-left: 18px;
+  margin-top: 12px;
+}
+#mainPage header .headerTitles .hT_txt1 {
+  width: 73px;
+  height: 31px;
+  font-size: 23px;
+  line-height: 31px;
+  font-weight: bold;
+  color: #000;
+}
+#mainPage header .headerTitles .hT_txt2 {
+  width: 114px;
+  height: 21px;
+  font-size: 15px;
+  line-height: 21px;
+  color: #000000;
+}
+#mainPage header .tabs {
+  float: right;
+  z-index: 10;
+  width: 400px;
+  height: 40px;
+  margin-top: 62px;
+  display: -webkit-flex;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+#mainPage header .tabs li {
+  width: 80px;
+  height: 25px;
+  line-height: 22px;
+  font-size: 15px;
+  color: #fff;
+  text-align: center;
+  margin-right: 10px;
+  cursor: pointer;
+}
+#mainPage header .tabss {
+  float: right;
+  z-index: 10;
+  width: 400px;
+  height: 40px;
+  margin-top: 28px;
+  display: -webkit-flex;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+#mainPage header .tabss li {
+  width: 80px;
+  height: 25px;
+  line-height: 22px;
+  font-size: 15px;
+  color: #000;
+  text-align: center;
+  margin-right: 10px;
+  cursor: pointer;
+}
+#mainPage .headerDh {
+  width: 100%;
+  background-color: #fff;
+}
+#mainPage .headerDh .hD_txt {
+  color: #666;
+  height: 150px;
+  font-size: 26px;
+  text-align: left;
+  line-height: 49px;
+}
+#mainPage .headerDh .hD_contentshow {
+  height: 285px;
+  display: -webkit-flex;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-top: 100px;
+}
+#mainPage .headerDh .hD_contentshow ul {
+  width: 237px;
+  height: 285px;
+  margin-left: 20px;
+  margin-right: 20px;
+}
+#mainPage .swiper-slide {
+  background: none;
+}
+#mainPage .swiper-pagination-bullet {
+  border-radius: 0%;
+  width: 60px;
+}
+#mainPage .swiper-container-horizontal > .swiper-pagination-bullets,
+#mainPage .swiper-pagination-custom,
+#mainPage .swiper-pagination-fraction {
+  bottom: 10px;
+  z-index: 1000;
+}
+#mainPage .swiper-pagination-bullet-active {
+  background: #ED9121;
+}
+#mainPage .rightDiv {
+  width: 110px;
+  height: 330px;
+  position: fixed;
+  bottom: 70px;
+  right: 20px;
+  z-index: 30;
+}
+#mainPage .rightDiv .ant-back-top {
+  right: 0!important;
+  bottom: 0!important;
+}
+#mainPage .rightDiv div {
+  width: 100px;
+  height: 100px;
+  box-shadow: #999 1px 1px 10px;
+  margin-bottom: 10px;
+  position: relative;
+  cursor: pointer;
+}
+#mainPage .rightDiv div img {
+  width: 100px;
+  height: 100px;
+}
+#mainPage .rightDiv div .cover1 {
+  width: 300px;
+  height: 100px;
+  position: absolute;
+  right: 120px;
+  top: 0px;
+  text-align: center;
+  line-height: 100px;
+  font-size: 22px;
+  font-weight: bold;
+  background-color: #f0f0f0;
+}
+#mainPage .rightDiv div .cover {
+  width: 200px;
+  height: 200px;
+  position: absolute;
+  right: 120px;
+  top: -100px;
+  background-color: #999;
+}
+#mainPage .rightDiv div .cover img {
+  width: 100%;
+  height: 100%;
+}
+#mainPage .historyContent {
+  width: 100%;
+}
+#mainPage .voice {
+  width: 100%;
+  height: 500px;
+  padding-top: 50px;
+  background-color: #fff;
+}
+#mainPage .voice ul {
+  width: 100%;
+  height: 47px;
+  font-size: 34px;
+  line-height: 47px;
+  font-weight: bold;
+  color: #333;
+  text-align: center;
+}
+#mainPage .voice p {
+  width: 100%;
+  height: 38px;
+  font-size: 27px;
+  line-height: 38px;
+  font-weight: bold;
+  color: #333;
+  text-align: center;
+}
+#mainPage .voice .cont {
+  width: 100%;
+  margin-top: 50px;
+  display: -webkit-flex;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+#mainPage .voice .cont > div {
+  width: 300px;
+  margin-right: 50px;
+}
+#mainPage .bot {
+  margin-bottom: 20px;
+}
+#mainPage footer {
+  width: 100%;
+  height: 70px;
+  background-color: #333;
+  color: #fff;
+  text-align: center;
+  line-height: 70px;
+  font-size: 12px;
+}
+.swiper-containers {
+  overflow: hidden;
+}
+.swiper-containerss {
+  overflow: hidden;
+}
+.gourl {
+  cursor: pointer;
+}

@@ -1,0 +1,7 @@
+{
+  "navigationBarTitleText": "修改手机号",
+  "navigationBarBackgroundColor": "#fff",
+  "usingComponents": {
+    "toast": "/components/toast/toast"
+  }
+}

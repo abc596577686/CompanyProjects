@@ -1,0 +1,68 @@
+<!--pages/community/community/answer/answer.wxml-->
+<!-- <textarea></textarea> -->
+<loading wx:if="{{isLoading}}"></loading>
+<view class='container'>
+  <view class='good-item' bindtap='goDetail'>
+    <view class='img-box'>
+      <image class='good-img' src='{{goodInfo.imageUrl}}'></image>
+    </view>
+    <view class='good-info'>
+      <text>{{goodInfo.productName}}</text>
+      <image class='seeMore' src='/assets/images/icon_more.png '></image>
+    </view>
+  </view>
+  <view class='question'>
+    <text class='qus-icon'>问</text>
+    <text class='qus-info'>{{goodInfo.question}}</text>
+  </view>
+  <block wx:if='{{!isFocus}}'>
+    <view class='answerList'>
+      <view class='an-header'>
+        <text class='an-icon'>答</text>
+        <text class='an-count' wx:if='{{total!=="0"}}'>买家的回答（{{total}}）</text>
+        <text class='an-noCount' wx:else>暂无回答</text>
+      </view>
+      <view class='List' wx:if='{{answerList.length}}'>
+        <view class='an-item' wx:for='{{answerList}}' wx:key='{{index}}'>
+          <view class='userInfo'>
+            <view class='userTop'>
+              <image class='userHead' src='{{item.headerImage}}'></image>
+              <text class='userName'>{{item.userName}}</text>
+            </view>
+            <text class='time'>{{item.createTime}}</text>
+          </view>
+          <view class='an-info'>
+            <text>{{item.content}}</text>
+          </view>
+          <view class='copyBox'>
+            <text class='copy' catchtap='copyAnswer' data-copy='{{item.content}}'>复制</text>
+          </view>
+        </view>
+      </view>
+      <block wx:if='{{dataLoaded&&!answerList.length}}'>
+        <view class='writequs'>
+          <image class='write' src='/assets/images/icon_star@2x.png' mode='widthFix'></image>
+          <text class='frist'>暂无回答，快来回答吧！</text>
+        </view>
+      </block>
+    </view>
+  </block>
+
+  <view class='footer' wx:if='{{!isFocus1}}'>
+    <view class='foot-inp' catchtap='inpFocus'>
+      <text>{{content?content:'近期购买才能回答哦，4-100个字'}}</text>
+    </view>
+  </view>
+  <view class='bg' wx:if='{{isFocus1}}'>
+  </view>
+  <view class='bger' wx:if='{{isFocus1}}' catchtap='bgtap'>
+    <view class='foot-area' catchtap='noPro'>
+          <textarea placeholder='{{placeholder1}}' maxlength='150'  show-confirm-bar='' bindinput='getAnswer' value='{{content}}' cursor-spacing='110' fixed='1' ></textarea>       
+        <!-- <input placeholder='{{placeholder1}}' maxlength='140' focus='{{isFocus1}}' bindinput='getAnswer' value='{{content}}' catchtap='{{getFocus}}'cursor-spacing='110'></input>
+      <view class='faker' contenteditable="true">{{content}}</view>   -->
+      <view class='btnBox'>
+        <text class='btn' catchtap='_addAnswer'>发布</text>
+      </view>
+    </view>
+  </view>
+</view>

@@ -1,0 +1,286 @@
+.register_container {
+  min-height: 600px;
+}
+.register_container .item > span {
+  margin-right: 20px;
+}
+.register_container input {
+  border: none;
+}
+.register_container .ant-modal-content {
+  height: 488px!important;
+  overflow: scroll!important;
+}
+.register_container .leftpic {
+  float: left;
+}
+.register_container .register_header {
+  width: 100%;
+  height: calc(12vh);
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+.register_container .register_header .status_item {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  color: #FF4200;
+}
+.register_container .register_header .status_item.noRearch .circle {
+  color: #fff;
+  border-color: #ddd;
+  background-color: #ddd;
+}
+.register_container .register_header .status_item.noRearch .info {
+  color: #000;
+}
+.register_container .register_header .status_item .circle {
+  background: #fff;
+  display: inline-block;
+  border: 1px solid #FF4200;
+  width: 28px;
+  height: 28px;
+  line-height: 26px;
+  border-radius: 14px;
+  color: #FF4200;
+  text-align: center;
+  margin-right: 6px;
+}
+.register_container .register_header .status_item .line {
+  width: 145px;
+  display: inline-block;
+  height: 1px;
+  background-color: #FF4200;
+  margin: 0 20px;
+}
+.register_container .register_header .status_item .info {
+  font-size: 16px;
+  font-weight: bold;
+}
+.register_container .register_main {
+  padding-top: 1.7%;
+  position: relative;
+  height: 476px;
+  background-image: url('../../resource/assets/images/login-banner.jpg');
+  background-size: 990px 100%;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-color: #E31939;
+}
+.register_container .register_content {
+  background-color: #fff;
+  margin-right: 105px;
+  width: 387px;
+  min-height: 370px;
+  height: 433px;
+  float: right;
+  overflow: hidden;
+  border: 1px #ddd solid;
+  padding-top: 10px;
+  display: flex;
+  flex-direction: column;
+}
+.register_container .register_content .item {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  margin: 15px;
+  align-items: center;
+}
+.register_container .register_content .item .getCode {
+  margin-left: 20px;
+  color: #fff;
+  background-color: #e31939;
+  width: 143px;
+  margin-top: -2px;
+}
+.register_container .s {
+  text-align: right;
+  width: 80px;
+}
+.register_container .ps {
+  width: 237px!important;
+  text-indent: 22px;
+  margin-left: 21px;
+}
+.register_container .ms {
+  width: 237px!important;
+  text-indent: 22px;
+  margin-left: 21px;
+}
+.register_container .qs {
+  width: 237px!important;
+  text-indent: 22px;
+  margin-left: 21px;
+}
+.register_container .ys {
+  width: 115px!important;
+  text-indent: 22px;
+  margin-left: 21px;
+}
+.register_container .ep {
+  margin: -2px !important;
+  margin-top: 16px!important;
+}
+.register_container .ewCodeimg22 {
+  display: inline-block;
+  width: 162px;
+  height: 30px;
+  margin-bottom: 18px;
+  position: relative;
+  left: 23px;
+}
+.register_container .xieyi {
+  width: 100%;
+  text-align: center;
+}
+.register_container .yunject {
+  width: 15px;
+  height: 15px;
+  position: relative;
+  top: 2px;
+  right: 5px;
+}
+.register_container .localmodal {
+  width: 800px;
+  height: 420px;
+}
+.register_container .ant-modal-body {
+  padding-bottom: 0;
+}
+.register_container .successimg {
+  height: 50px;
+  display: flex;
+  width: 100%;
+  justify-content: center;
+}
+.register_container .successimg img {
+  width: 50px;
+  height: 50px;
+}
+.register_container .successtxt {
+  width: 100%;
+  height: 50px;
+  text-align: center;
+  line-height: 50px;
+  color: #e31939;
+  font-weight: bold;
+  font-size: 20px;
+}
+.register_container .successtxt2 {
+  width: 100%;
+  height: 20px;
+  text-align: center;
+  line-height: 20px;
+  color: #999;
+  font-weight: bold;
+  font-size: 12px;
+}
+.register_container .successtxt3 {
+  width: 100%;
+  height: 15px;
+  text-align: center;
+  line-height: 15px;
+  color: #999;
+  font-weight: bold;
+  font-size: 12px;
+}
+.register_container .codeimgg {
+  padding-top: 30px;
+  height: 137px;
+  display: flex;
+  width: 384px;
+  justify-content: center;
+}
+.register_container .codeimgg img {
+  width: 100px;
+  height: 100px;
+}
+.register_container .linkbtn_res {
+  width: 100px;
+  height: 30px;
+  margin: 0 auto;
+  text-align: center;
+  line-height: 30px;
+  background-color: #e31939;
+  border: none;
+  color: #fff;
+  font-size: 14px;
+  border-radius: 5px;
+  justify-content: center;
+  display: flex;
+  margin-top: 30px;
+  cursor: pointer;
+}
+.register_container .footerw {
+  background-color: #fff!important;
+  color: #333 !important;
+}
+.register_container .alreadyGet {
+  display: block!important;
+  text-indent: 264px;
+}
+.register_container .alreadyGetSp {
+  color: #e31939;
+}
+.register_container .lt {
+  margin-right: 65px!important;
+}
+.register_container .item > div {
+  position: relative;
+}
+.register_container .user {
+  background: url('../../resource/assets/images/user-icon.png') no-repeat;
+  background-position: 0 -15px;
+  display: block;
+  width: 20px;
+  height: 20px;
+  position: absolute;
+  left: 10px;
+  top: 9px;
+  z-index: 1;
+}
+.register_container .lock {
+  display: block;
+  width: 20px;
+  height: 20px;
+  position: absolute;
+  left: 10px;
+  top: 9px;
+  background: url('../../resource/assets/images/user-icon.png') no-repeat;
+  background-position: 0 -36px;
+  z-index: 1;
+}
+.register_container .yzform {
+  display: block;
+  width: 20px;
+  height: 20px;
+  position: absolute;
+  left: 10px;
+  top: 9px;
+  background: url('../../resource/assets/images/user-icon.png') no-repeat;
+  background-position: 0 -57px;
+  z-index: 1;
+}
+.register_container .outwidth {
+  width: 327px;
+  height: 40px;
+  position: relative;
+  z-index: 100;
+  padding: 7px 18px;
+  border: 1px solid #dddddd;
+  background: #FFF;
+  line-height: 24px;
+}
+.register_container .outwidths {
+  width: 165px;
+  height: 40px;
+  position: relative;
+  z-index: 100;
+  padding: 7px 18px;
+  border: 1px solid #dddddd;
+  background: #FFF;
+  line-height: 24px;
+}

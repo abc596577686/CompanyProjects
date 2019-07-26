@@ -1,0 +1,10 @@
+{
+  "navigationBarTitleText": "收货地址管理",
+  "navigationBarBackgroundColor": "#fff",
+  "usingComponents": {
+    "loading": "/components/loading/loading",
+    "timeout": "/components/timeout/timeout"
+  },
+  "enablePullDownRefresh": true,
+  "backgroundTextStyle": "dark"
+}

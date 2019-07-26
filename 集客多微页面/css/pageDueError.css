@@ -1,0 +1,52 @@
+html,
+body {
+	height: 100%;
+	width: 100%;
+	padding: 0;
+	margin: 0;
+}
+img{
+    width: 100%;
+    height: 100%
+}
+ul {
+	margin: 0;
+	padding: 0;
+}
+li {
+	list-style: none
+}
+.bg-1{
+    width:4.16rem;
+    height: 4.16rem;
+    position: relative;
+    left: 5.44rem;
+    top: 6.52rem;
+    background-color: #FFD946;
+    border-radius: 1.2rem;
+}
+.bg-2{
+    width: 2.72rem;
+    height: 2.36rem;
+    position: absolute;
+    left: .72rem;
+    top: .92rem
+}
+.bg-3{
+    width: 7.6rem;
+    height: 1.2rem;
+    position: absolute;
+    left: 4.16rem;
+    top: 11.84rem;
+    font-size: .56rem;
+    color: #666666;
+}
+.bg-4{
+    width: 10.4rem;
+    height: 1.2rem;
+    position: absolute;
+    left: 2.76rem;
+    top: 12.8rem;
+    font-size: .56rem;
+    color: #666666;
+}

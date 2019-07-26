@@ -1,0 +1,75 @@
+.sync-main {
+  background-color: #fff;
+  padding: 10px;
+  min-height: 100vh;
+}
+.sync-main .flex-box {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  width: 700px;
+  padding: 20px 0;
+}
+.sync-main .search-box {
+  width: 300px;
+  display: inline-block;
+  margin-right: 40px;
+}
+.sync-content {
+  background-color: #f0f0f0;
+}
+.ant-table-row .itemer,
+.ant-table-thead .itemer {
+  text-align: center;
+  white-space: nowrap;
+  max-height: 30px;
+  padding: 8px;
+  font-size: 12px;
+}
+.someMsg {
+  width: 320px;
+  overflow: hidden;
+  cursor: pointer;
+  text-overflow: ellipsis;
+  text-align: left !important;
+}
+.msgTitle {
+  font-size: 12px;
+  font-weight: 700;
+}
+.msgCont {
+  font-size: 12px;
+}
+.orderDetailModal .ant-modal-body {
+  padding: 10px !important;
+}
+.orderDetailModal .ant-form-item {
+  margin-bottom: 5px;
+  padding: 0;
+  line-height: 1;
+  font-size: 12px;
+}
+.orderDetailModal .ant-form-item.inp {
+  margin-bottom: 5px;
+}
+.orderDetailModal .ant-form-item .ant-form-item-label {
+  line-height: 20px;
+  font-weight: 700;
+}
+.orderDetailModal .ant-form-item .ant-form-item-control {
+  line-height: 20px;
+  font-size: 11px!important;
+}
+.orderDetailModal .ant-form-item .ant-form-item-control .ant-input {
+  width: 50%;
+}
+.orderDetailModal .ant-form label {
+  font-size: 12px;
+}
+.orderDetailModal .scroll-box textarea {
+  height: 200px;
+  width: 600px;
+  background-color: #f7f7f7;
+  cursor: not-allowed;
+}

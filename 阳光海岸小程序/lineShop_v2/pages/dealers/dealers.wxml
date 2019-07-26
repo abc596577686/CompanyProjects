@@ -1,0 +1,2 @@
+<!--pages/dealers/dealers.wxml-->
+<text>{{text}}</text>

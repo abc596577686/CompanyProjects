@@ -1,0 +1,70 @@
+<!--components/theme/theme.wxml-->
+
+<!-- topHead is hide  -->
+<loading wx:if='{{isLoading}}'></loading>
+<view animation="{{containerAnimation}}" id='hideContainer' class='hideContainer' wx:if="{{isShowContainer}}" catchtap='hideContainerEnv'>
+  <view id="hideHeadWrap" class='hideHeadWrap' animation="{{sliderAnimation}}">
+    <view class='titleWrap'>
+      <text class='title'>切换楼层</text>
+      <view class='imgWrap switchBtn' catchtap='hideContainerEnv'>
+        <image mode='widthFix' class='icon' src='/assets/images/icon_floor.png'></image>
+      </view>
+    </view>
+    <view class='tabList'>
+      <block wx:for="{{themeNavs}}" wx:key="id">
+        <view id="{{index}}" class="tabItem {{activeId == index ? 'active' : ''}}" catchtap='switchHideTabEnv'>{{item.tabName}}</view>
+      </block>
+    </view>
+  </view>
+</view>
+
+<!--containerScroll  -->
+<scroll-view style="height:{{outHeight+'px'}}" scroll-y scroll-with-animation="true" bindscroll="containerScrollEnv" class='themeDetailWrap' scroll-into-view="{{outToView}}">
+
+  <view id='headWrap' class='headWrap'>
+    <image class='slide-image' src="{{bannerImg}}" mode='widthFix'></image>
+  </view>
+
+  <!--tabBar  -->
+  <view id="tabContainer" wx:if="{{themeNavs.length > 1}}" class="tabContainer {{isFixed ? 'fixed' : ''}}">
+    <!-- 右侧查看更多  -->
+    <view wx:if="{{themeNavs.length >= 4}}" class='seeMoreWrap' bindtap='seeMoreEnv'>
+      <image class='icon' mode='widthFix' src='/assets/images/icon_seeMore.png'></image>
+    </view>
+    
+    <!-- tab大于5个时显示 -->
+    <scroll-view class='tabWrap' wx:if="{{themeNavs.length >= 4}}" scroll-x="true" scroll-with-animation="true" scroll-left="{{scrollLeft}}" style='position:{{posStatus}}' bindscroll="goodsListScrollEnv">
+      <block wx:for="{{themeNavs}}" wx:key="id">
+        <view class='tabBox'>
+          <view id="{{index}}" class="tabItem {{activeId == index ? 'active' : ''}}" bindtap='switchTabEnv'>{{item.tabName}}</view>
+        </view>
+      </block>
+    </scroll-view>
+
+    <!-- tab少于4个时显示  -->
+    <view class='tabWrap' wx:if="{{themeNavs.length < 4}}">
+      <block wx:for="{{themeNavs}}" wx:key="id">
+        <view class='tabBox'>
+          <view id="{{index}}" class="tabItem {{activeId == index ? 'active' : ''}}" bindtap='switchTabEnv'>{{item.tabName}}</view>
+        </view>
+      </block>
+    </view>
+
+  </view>
+
+  <!-- goodsList  -->
+  <view id="themeGoods" class='themeGoods'>
+    <scroll-view style="height:{{goodsListHeight+'px'}}" scroll-y scroll-into-view="{{toView}}" scroll-with-animation="true" bindscroll="goodsListScrollViewEnv">
+      <block wx:for="{{goodsList}}" wx:key="{{index}}">
+        <view id="toView_{{index}}" data-id="toView_{{index}}" class='scroll-view-item themeGoodsBox'>
+          <image wx:if="{{pageId!=1}}" class='themeTitle' src='{{item.picture}}' mode='widthFix'></image>
+          <goodsTwoColumns wx:if="{{item.products.length}}" data="{{item.products}}"></goodsTwoColumns>
+        </view>
+      </block>
+    </scroll-view>
+  </view>
+
+</scroll-view>
+
+
+<timeout wx:if="{{!isLoading && timeout}}" bind:refreshEnv="refreshEnv"></timeout>

@@ -1,0 +1,40 @@
+*{
+    margin: 0;
+    padding: 0
+}
+img{
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+header{
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+.time{
+    width: 12rem;
+    height: 1.04rem;
+    position: absolute;
+    bottom: 6rem;
+    margin-left: 3rem;
+    /* padding-left: 3.96rem; */
+    /* padding-right: 3.96rem; */
+
+    /* display: -webkit-flex;  
+    display: flex;
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    justify-content: space-evenly; */
+}
+.time > div{
+    width: 1.7rem;
+    height: 1.04rem;
+    color: #fff;
+    text-align: center;
+    line-height: 1.04rem;
+
+    float: left;
+
+}
